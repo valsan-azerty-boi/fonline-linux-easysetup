@@ -1,5 +1,6 @@
 [comment]
 
+
 [data]
 lang=engl
 
@@ -10,11 +11,11 @@ lang=engl
 3 1020 D _var p name_mem_npc_player = 1 #
 5 1030 D _param p ST_INTELLECT < 4 @
 2 2000 None 0 #
-3 2010 #
+4 2010 #
 65506 2020 #
 0 2030 @
 3 3000 None 0 #
-3 3010 #
+4 3010 #
 65506 3020 #
 0 3030 @
 4 4000 None 0 #

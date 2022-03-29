@@ -15,6 +15,7 @@
 #include "mapdata_h.fos"
 #include "serializator.fos"
 #include "utils_h.fos"
+#include "lexems_h.fos"
 
 // max size of the array working as "database"
 #define MAX_ARRAY_SIZE    (16000)
@@ -1503,7 +1504,15 @@ int AddMember(uint faction, uint playerId, bool applyModifiers)
         data.ModifyFaction(playerId, faction);
         // alter teamid
         if(valid(player))
+		{
             SetGroupIndex(player, faction);
+			if(faction>=200)
+			{
+			string factionname;
+			GetFactionNameStr(faction, factionname);
+			SetLexem(player, "$faction", factionname);
+			}
+			}
 
         // retrieve local variable for rank
         @var = GetLocalVar(LVAR_factions_player_rank, playerId);
@@ -1686,7 +1695,10 @@ int ExpelMember(uint faction, uint playerId, bool applyModifiers)
         var = FACTION_NONE;
         // alter teamid
         if(valid(player))
+			{
             SetGroupIndex(player, FACTION_NONE);
+			UnsetLexem(player, "$faction");
+			}
 
         @var = GetLocalVar(LVAR_factions_player_rank, playerId);
         if(!valid(var))

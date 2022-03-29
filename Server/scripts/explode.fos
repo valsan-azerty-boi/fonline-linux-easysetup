@@ -18,13 +18,15 @@
 #include "world_common_h.fos"
 #define __TRAPS_MODULE__
 #include "traps_h.fos"
+#include "_math.fos"
+#include "_colors.fos"
 
 import void InjureCritter(Critter& cr, uint dmg, uint dmgType, uint8 dir, uint attackerId) from "combat";
 import void QuakeScreen(Map& map) from "effects";
 import bool IsTCTown(Map@ map) from "town";
 import void ExplodeEmitterOnHex(Map& map, uint16 hexX, uint16 hexY) from "special_map_objects";
 
-#define EXPLODE_CLEARANCE_EXPERIENCE    (50)
+#define EXPLODE_CLEARANCE_EXPERIENCE    (150)
 
 #define DOOR_RESPAWN_TIME               (REAL_MINUTE(30))     // real minutes
 
@@ -49,7 +51,7 @@ bool OnUseExplode(Critter& cr, Item& explode, Critter@ targetCr, Item@ targetIte
         return false;
 
     bool isExpert = cr.Perk[PE_DEMOLITION_EXPERT] != 0;
-    int  trapsSkill = cr.Skill[SK_TRAPS];
+    int  trapsSkill = MIN(cr.Skill[SK_TRAPS]*2,300);
     if(trapsSkill < 0)
         trapsSkill = 0;
 
@@ -72,8 +74,8 @@ bool OnUseExplode(Critter& cr, Item& explode, Critter@ targetCr, Item@ targetIte
         SETFLAG(activateExpl.Flags, ITEM_TRAP);
         _ExplodeSetNumEvent(activateExpl, numEvent);
         _ExplodeSetOwner(activateExpl, cr.Id);
-        activateExpl.TrapValue = TRAPS_HIDE(cr.Skill[SK_TRAPS]);
-        _Complexity(activateExpl) = cr.Skill[SK_TRAPS];
+        activateExpl.TrapValue = TRAPS_HIDE(MIN(cr.Skill[SK_TRAPS]*2,300));
+        _Complexity(activateExpl) = MIN(cr.Skill[SK_TRAPS]*2,300);
         _ExplodeSetBonusDamage(activateExpl, trapsSkill);
         _ExplodeSetBonusRadius(activateExpl, isExpert ? cr.Perk[PE_DEMOLITION_EXPERT] : 0);
         if(int(cr.Timeout[TO_REMOVE_FROM_GAME]) < int(GAME_MINUTE(timer + 5)))
@@ -94,8 +96,8 @@ bool OnUseExplode(Critter& cr, Item& explode, Critter@ targetCr, Item@ targetIte
         SETFLAG(expl.Flags, ITEM_TRAP);
         _ExplodeSetSwitch(expl, explSwitch);
         _ExplodeSetOwner(expl, cr.Id);
-        expl.TrapValue = TRAPS_HIDE(cr.Skill[SK_TRAPS]);
-        _Complexity(expl) = cr.Skill[SK_TRAPS];
+        expl.TrapValue = TRAPS_HIDE(MIN(cr.Skill[SK_TRAPS]*2,300));
+        _Complexity(expl) = MIN(cr.Skill[SK_TRAPS]*2,300);
         _ExplodeSetBonusDamage(expl, trapsSkill);
         _ExplodeSetBonusRadius(expl, isExpert ? cr.Perk[PE_DEMOLITION_EXPERT] : 0);
 
@@ -139,7 +141,7 @@ bool OnUseExplode(Critter& cr, Item& explode, Critter@ targetCr, Item@ targetIte
         if(!valid(mine))
             return false;
 
-        MakeMine(mine, cr.Id, cr.Skill[SK_TRAPS], cr.Skill[SK_TRAPS], trapsSkill, isExpert ? cr.Perk[PE_DEMOLITION_EXPERT] : 0);
+        MakeMine(mine, cr.Id, MIN(cr.Skill[SK_TRAPS]*2,300), MIN(cr.Skill[SK_TRAPS]*2,300), trapsSkill, isExpert ? cr.Perk[PE_DEMOLITION_EXPERT] : 0);
     }
     // Deactivate dynamite explosion, plastic explosion or mine
     else if(pid == PID_ACTIVE_DYNAMITE || pid == PID_ACTIVE_PLASTIC_EXPLOSIVE || pid == PID_ACTIVE_MINE)
@@ -147,7 +149,7 @@ bool OnUseExplode(Critter& cr, Item& explode, Critter@ targetCr, Item@ targetIte
         if(pid == PID_ACTIVE_DYNAMITE)
             EraseTimeEvent(_ExplodeGetNumEvent(explode));
 
-        int chance = cr.Skill[SK_TRAPS] - (cr.Id == _ExplodeGetOwner(explode) ? _Complexity(explode) : (_Complexity(explode) / 2));
+        int chance = MIN(cr.Skill[SK_TRAPS]*2,300) - (cr.Id == _ExplodeGetOwner(explode) ? _Complexity(explode) : (_Complexity(explode) / 2));
         chance = CLAMP(chance, 5, 95);
 
         // Success
@@ -155,7 +157,7 @@ bool OnUseExplode(Critter& cr, Item& explode, Critter@ targetCr, Item@ targetIte
         {
             if(pid == PID_ACTIVE_DYNAMITE)
                 cr.AddItem(PID_DYNAMITE, 1);
-            // else if(pid==PID_ACTIVE_MINE) cr.AddItem(PID_MINE,1);
+            else if(pid==PID_ACTIVE_MINE) cr.AddItem(PID_MINE,1);
             else if(pid == PID_ACTIVE_PLASTIC_EXPLOSIVE)
                 cr.AddItem(PID_PLASTIC_EXPLOSIVES, 1);
             {
@@ -177,7 +179,7 @@ bool OnUseExplode(Critter& cr, Item& explode, Critter@ targetCr, Item@ targetIte
                         if(!IsTCTown(map))
                             SubReputation(cr, ReputationIndex(map.GetLocation().GetProtoId()), REP_ATK_PENALTY);
                         cr.ToDead(ANIM2_DEAD_EXPLODE, null);
-                        _SetTimeout(cr, TO_REPLICATION, REAL_MINUTE(8));
+                        //_SetTimeout(cr, TO_REPLICATION, REAL_MINUTE(8));
                         ExpLog("Explosion inside suicide bomber " + cr.Name + ", item id " + explode.Id);
                     }
                 }
@@ -239,7 +241,7 @@ uint e_Explode(array<uint>@ values)
                 if(!IsTCTown(map))
                     SubReputation(cr, ReputationIndex(map.GetLocation().GetProtoId()), REP_ATK_PENALTY);
                 cr.ToDead(ANIM2_DEAD_EXPLODE, null);
-                _SetTimeout(cr, TO_REPLICATION, REAL_MINUTE(8));
+                //_SetTimeout(cr, TO_REPLICATION, REAL_MINUTE(8));
                 ExpLog("Explosion inside suicide bomber " + cr.Name + ", item id " + item.Id);
             }
         }
@@ -282,6 +284,72 @@ void MakeMine(Item& mine, uint explodeOwner, uint complexity, uint hideSkill, ui
 
 /*@}*/
 
+void RemoveActiveExplosives(Map@ map, uint16 hexX, uint16 hexY, uint radius)
+{
+    if(!valid(map))
+        return;
+
+    if(radius <= 0)
+        radius = 1;
+
+    //items on ground
+    array<Item@> plasticExplosives;
+    uint plasticExplosivesCnt = map.GetItems(PID_ACTIVE_PLASTIC_EXPLOSIVE, plasticExplosives);
+    for(uint i=0; i < plasticExplosivesCnt; ++i)
+    {
+        if(GetDistantion(hexX, hexY, plasticExplosives[i].HexX, plasticExplosives[i].HexY) <= radius)
+            DeleteItem(plasticExplosives[i]);
+    }
+
+    array<Item@> dynamites;
+    uint dynamitesCnt = map.GetItems(PID_ACTIVE_DYNAMITE, dynamites);
+    for(uint i=0; i < dynamitesCnt; ++i)
+    {
+        if(GetDistantion(hexX, hexY, dynamites[i].HexX, dynamites[i].HexY) <= radius)
+            DeleteItem(dynamites[i]);
+    }
+
+    array<Item@> mines;
+    uint minesCnt = map.GetItems(PID_ACTIVE_MINE, mines);
+    for(uint i=0; i < minesCnt; ++i)
+    {
+        if(GetDistantion(hexX, hexY, mines[i].HexX, mines[i].HexY) <= radius)
+            DeleteItem(mines[i]);
+    }
+
+    //items in containers
+    array<Item@> containers;
+    uint containersCnt = map.GetItemsByType(ITEM_TYPE_CONTAINER, containers);
+    for(uint i=0; i < containersCnt; ++i)
+    {
+        if(GetDistantion(hexX, hexY, containers[i].HexX, containers[i].HexY) <= radius)
+        {
+            array<Item@> containerItems;
+            uint         containerItemsCnt = containers[i].GetItems(0, containerItems);
+            for(uint i = 0; i < containerItemsCnt; i++)
+                if(containerItems[i].GetProtoId() == PID_ACTIVE_PLASTIC_EXPLOSIVE
+                || containerItems[i].GetProtoId() == PID_ACTIVE_DYNAMITE
+                || containerItems[i].GetProtoId() == PID_ACTIVE_MINE)
+                    DeleteItem(containerItems[i]);
+        }
+    }
+
+    //items in critters
+    array<Critter@> critters;
+    uint crittersCnt = map.GetCrittersHex(hexX, hexY, radius, FIND_ALL, critters);
+    for(uint i=0; i < crittersCnt; ++i)
+    {
+        array<Item@> critterItems;
+        uint         critterItemCount = critters[i].GetItems(0, critterItems);
+        for(uint i = 0; i < critterItemCount; i++)
+            if(critterItems[i].GetProtoId() == PID_ACTIVE_PLASTIC_EXPLOSIVE
+            || critterItems[i].GetProtoId() == PID_ACTIVE_DYNAMITE
+            || critterItems[i].GetProtoId() == PID_ACTIVE_MINE)
+                DeleteItem(critterItems[i]);
+    }    
+}
+
+
 void Explode(Map@ map, uint16 hexX, uint16 hexY, Critter@ cr, uint16 explodePid, uint ownerId, int bonusDamage, int bonusRadius)   // Export
 {
     uint16 effectPid;
@@ -298,6 +366,7 @@ void Explode(Map@ map, uint16 hexX, uint16 hexY, Critter@ cr, uint16 explodePid,
         damage = Random(30, 50);
         damageType = DAMAGE_EXPLODE;
         damageRadius = 3;
+        RemoveActiveExplosives(map, hexX, hexY, (damageRadius+bonusRadius));
         break;
     case PID_ACTIVE_PLASTIC_EXPLOSIVE:
         effectPid = PID_EXPLODE_ROCKET;
@@ -305,6 +374,7 @@ void Explode(Map@ map, uint16 hexX, uint16 hexY, Critter@ cr, uint16 explodePid,
         damage = Random(40, 80);
         damageType = DAMAGE_EXPLODE;
         damageRadius = 3;
+        RemoveActiveExplosives(map, hexX, hexY, (damageRadius+bonusRadius));
         break;
     case PID_ACTIVE_MINE:
         effectPid = PID_EXPLODE_ROCKET;
@@ -318,7 +388,9 @@ void Explode(Map@ map, uint16 hexX, uint16 hexY, Critter@ cr, uint16 explodePid,
         return;
     }
 
-    damage += bonusDamage;
+    //damage += bonusDamage;
+	damage = damage + (damage * bonusDamage)/55; // 25-07-2013 Cubik: zmniejszony dmg dla ladunkow explodujacych o œrednio -50
+
     if(damage <= 0)
         damage = 1;
     damageRadius += bonusRadius;
@@ -326,16 +398,19 @@ void Explode(Map@ map, uint16 hexX, uint16 hexY, Critter@ cr, uint16 explodePid,
         damageRadius = 1;
 
     if(valid(map))
-        ExplodeEx(map, hexX, hexY, effectPid, effectRadius, damage, damageType, damageRadius, ownerId);
-    else if(valid(cr))
+        ExplodeEx(map, hexX, hexY, effectPid, effectRadius, damage, damageType, damageRadius, ownerId, explodePid);
+    if(valid(cr))
     {
-        InjureCritter(cr, damage, damageType, cr.Dir, ownerId);
+        //InjureCritter(cr, damage, damageType, cr.Dir, ownerId);
+		cr.ToDead(ANIM2_DEAD_EXPLODE, null);
+        //_SetTimeout(cr, TO_REPLICATION, REAL_MINUTE(8));
+        ExpLog("Explosion inside suicide bomber " + cr.Name);
         if(cr.IsNpc() && cr.IsDead())
             LogExperience(cr, cr.Stat[ST_KILL_EXPERIENCE], SK_TRAPS, "Explode", 0);
     }
 }
 
-void ExplodeEx(Map& map, uint16 hexX, uint16 hexY, uint16 effectPid, uint effectRadius, uint damage, uint damageType, uint damageRadius, uint ownerId)   // Export
+void ExplodeEx(Map& map, uint16 hexX, uint16 hexY, uint16 effectPid, uint effectRadius, uint damage, uint damageType, uint damageRadius, uint ownerId, uint16 explodePid)   // Export
 {
     map.RunEffect(effectPid, hexX, hexY, effectRadius);
     map.PlaySound(Random(0, 1) == 0 ? "WHN1XXX1.ACM" : "WHN1XXX2.ACM");
@@ -366,19 +441,22 @@ void ExplodeEx(Map& map, uint16 hexX, uint16 hexY, uint16 effectPid, uint effect
 
     if(damageType == DAMAGE_EXPLODE)
     {
-        uint16 hx = hexX;
+        Critter@ attacker = GetCritter(ownerId);    
+			
+		uint16 hx = hexX;
         uint16 hy = hexY;
         Item@  door = map.GetDoor(hx, hy);
-        if(valid(door) && door.GetScriptId() == 0)
-            ExplodeDoor(door, damage);
+        if(valid(door) && door.GetScriptId() == 0 && valid(attacker))
+            ExplodeDoor(door, damage, attacker, explodePid);
+			
         for(uint i = 0; i < 6; i++)
         {
             hx = hexX;
             hy = hexY;
             map.MoveHexByDir(hx, hy, i, 1);
             @door = map.GetDoor(hx, hy);
-            if(valid(door) && door.GetScriptId() == 0)
-                ExplodeDoor(door, damage);
+            if(valid(door) && door.GetScriptId() == 0 && valid(attacker))
+                ExplodeDoor(door, damage, attacker, explodePid);
         }
     }
 
@@ -397,19 +475,70 @@ void ExplodeEx(Map& map, uint16 hexX, uint16 hexY, uint16 effectPid, uint effect
     }
 }
 
-void ExplodeDoor(Item& door, int damage)
+void ExplodeDoor(Item& door, int damage, Critter& attacker, uint16 explodePid)
 {
     if(door.Accessory != ACCESSORY_HEX)
         return;
-    if(door.Proto.Material != MATERIAL_METAL || damage >= Random(1, 400))
+
+	uint16 hexX = 0;
+    uint16 hexY = 0;
+    Map@   map = door.GetMapPosition(hexX, hexY);
+	
+	// drzwi ktore maja door.Val6 == 0 nie powinny byc rozwalane, podobnie jak te ktore maja skrypt, 
+	// w skrypcie bunkra wszystkim drzwiom, ktore nie maja Val6=0, ustawiane sa door.Val7 i door.Val6 = 9999999, 
+	// zeby nie mozna bylo rozwalac drzwi do korytarza zbrojowni bez otwierania kluczem !!!
+	if(door.Val6 == 9999999) 
+	{
+		map.SetText(hexX, hexY, COLOR_RED, "The doors are invulnerable to explosions.");
+		return;
+	}
+		
+    switch(explodePid)
     {
-        if(IsTown(GetMap(door.MapId)))
+    case PID_ACTIVE_DYNAMITE:
+		damage*=1.5;
+		if(door.Proto.Material == MATERIAL_METAL && damage >= 0) damage*=1.0;
+		if((door.Proto.Material == MATERIAL_STONE || door.Proto.Material == MATERIAL_CEMENT)  && damage >= 0) damage*=1.75;
+		if((door.Proto.Material == MATERIAL_WOOD  || door.Proto.Material == MATERIAL_LEATHER) && damage >= 0) damage*=1.25;	
+        break;
+    case PID_ACTIVE_PLASTIC_EXPLOSIVE:
+        damage*=1.5;
+		if(door.Proto.Material == MATERIAL_METAL && damage >= 0) damage*=1.75;
+		if((door.Proto.Material == MATERIAL_STONE || door.Proto.Material == MATERIAL_CEMENT)  && damage >= 0) damage*=1.0;
+		if((door.Proto.Material == MATERIAL_WOOD  || door.Proto.Material == MATERIAL_LEATHER) && damage >= 0) damage*=1.25;	
+        break;
+    default:
+        Log("Invalid explode pid.");
+        return;
+    }
+	
+	
+	if(damage>int(door.Val7))
+		damage=int(door.Val7);
+		
+	int _door_HP_left = int(door.Val7) - damage;		
+	
+	if(_door_HP_left <=0)
+    {					        
+		map.SetText(hexX, hexY, COLOR_RED, "" + damage);
+
+		if(IsTown(GetMap(door.MapId)))
         {
-            uint[] values = { door.MapId, door.HexX, door.HexY, door.GetProtoId() };
+            door.Val7 = door.Val6; // Val6 - maksymalne HP drzwi, Val7 - aktualne HP drzwi; przypisanie Val6 do Val7 aby zrespione drzwi mia³y pe³n¹ iloœæ HP
+			uint[] values = { door.MapId, door.HexX, door.HexY, door.GetProtoId(), door.Val6, door.Val7 };
             CreateTimeEvent(AFTER(DOOR_RESPAWN_TIME), "e_RespawnDoor", values, true);
         }
         DeleteItem(door);
+		attacker.Say(SAY_NETMSG, "The doors were destroyed.");
     }
+	else
+	{
+		
+		door.Val7 = _door_HP_left;
+		map.SetText(hexX, hexY, COLOR_RED, "" + damage);	
+		//map.SetText(hexX, hexY, COLOR_DRED, "HP: " + door.Val7 + "/" + door.Val6);		
+		attacker.Say(SAY_NETMSG, "The doors treshold left: " + door.Val7); 
+	}
 }
 
 uint e_RespawnDoor(array<uint>@ values)
@@ -439,6 +568,10 @@ uint e_RespawnDoor(array<uint>@ values)
     }                  // retry
     door.LockerOpen(); // the door are spawned closed, but with "opened" picture, so these two force them to look closed
     door.LockerClose();
+	
+	door.Val6 = values[4];
+	door.Val7 = values[5];
+	
     _TIMEEND;
     return 0;
 }

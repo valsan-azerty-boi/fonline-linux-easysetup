@@ -92,6 +92,9 @@ void _Dead(Map& map, Critter& player, Critter@ killer)
 {
     if(player.IsNpc())   // hehe
         return;
+    if(!valid(killer))   // was giving null pointer errors on certain deaths
+        return;
+        
     uint faction = GetGroupIndex(player);
     // if(faction == FACTION_NONE || faction == FACTION_UNKNOWN)
     //    return;

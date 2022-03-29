@@ -31,7 +31,7 @@ void _Wild(Critter& npc, bool firstTime)
 }
 
 
-uint Shitrate = 666;
+uint Shitrate = 333;
 void change_shitrate(Critter& cr, int p0, int p1, int p2)
 {
     Shitrate = p0;
@@ -59,13 +59,13 @@ void _Idle(Critter& npc)
         MoveRandom(npc, 14, 3, false);
     }
 
-    if(Random(0, Shitrate) == 0)
+    if(Random(0, 100) == 0)
     {
-        if(IsTown(npc.GetMap()) || Random(0, 19) == 0)      // Brahmin outside towns produce shit 20 times slower
+        if(IsTown(npc.GetMap()))      // Brahmin outside towns produce shit 20 times slower
             Shit(npc);
     }
 
-    if(Random(0, 300000) == 0)
+    if(Random(0, 3000) == 0)
         npc.Say(SAY_NORM_ON_HEAD, "Moo. Moo I say.");
     // till next move
     npc.Wait(Random(500, 20000));

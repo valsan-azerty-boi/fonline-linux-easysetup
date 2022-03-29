@@ -172,7 +172,11 @@ uint GetItemCostPlain(Item& item, Critter& cr, Critter& trader)
     uint cost = item.Proto.Cost;
 
     if(item.IsDeteriorable())
-        cost = (cost * (MAX_DETERIORATION - item.Deterioration)) / MAX_DETERIORATION;
+        //cost = (cost * (MAX_DETERIORATION - item.Deterioration)) / MAX_DETERIORATION;
+		{
+		if(((cost * (MAX_DETERIORATION - item.Deterioration)) / MAX_DETERIORATION)<cost/2) return 0;
+		else cost= (cost * (MAX_DETERIORATION - item.Deterioration)) / MAX_DETERIORATION;
+		}
 
     if(GetTraderLevel(trader, TradingItemType(item)) == 0)
     {
@@ -252,7 +256,7 @@ uint TradingItemType(uint pid)
         case PID_44_MAGNUM_JHP:
         case PID_44_MAGNUM_FMJ:
         case PID_45_CALIBER_AMMO:
-        case PID_22_AMMO:
+        //case PID_22_AMMO:
         case PID_223_FMJ:
         case PID_SHOTGUN_SHELLS:
         case PID_2MM_EC_AMMO:

@@ -21,12 +21,12 @@ import void CheckPrimitiveTool(Critter& crit, Item& item) from "production";
 #define VEIN_BATCH_URANIUM         (1)
 #define VEIN_BATCH_GOLD            (1)
 
-#define VEIN_CAPACITY_IRON         (4)
-#define VEIN_CAPACITY_IRON2        (4)
-#define VEIN_CAPACITY_MINERALS     (4)
-#define VEIN_CAPACITY_MINERALS2    (4)
-#define VEIN_CAPACITY_URANIUM      (4)
-#define VEIN_CAPACITY_GOLD         (1)
+#define VEIN_CAPACITY_IRON         (8)
+#define VEIN_CAPACITY_IRON2        (8)
+#define VEIN_CAPACITY_MINERALS     (8)
+#define VEIN_CAPACITY_MINERALS2    (8)
+#define VEIN_CAPACITY_URANIUM      (8)
+#define VEIN_CAPACITY_GOLD         (4)
 
 #define VEIN_CAPACITY              # (vein)                   vein.Val0
 
@@ -39,8 +39,8 @@ bool Dig(Critter@ miner, Item@ tool, Item@ vein, uint16 productPid, uint amount,
     uint16 veinPid = vein.GetProtoId();
     uint16 toolPid = tool.GetProtoId();
     if(((veinPid == PID_VEIN_IRON || veinPid == PID_VEIN_MINERALS) && (toolPid == PID_PRIMITIVE_TOOL || toolPid == PID_SLEDGEHAMMER || toolPid == PID_SUPER_SLEDGE)) ||
-       ((veinPid == PID_VEIN_IRON2) && (toolPid == PID_SLEDGEHAMMER || toolPid == PID_SUPER_SLEDGE)) ||
-       ((veinPid == PID_VEIN_MINERALS2 || veinPid == PID_VEIN_URANIUM || veinPid == PID_VEIN_GOLD) && (toolPid == PID_SUPER_SLEDGE)))
+       ((veinPid == PID_VEIN_IRON2 || veinPid==PID_VEIN_MINERALS2) && (toolPid == PID_SLEDGEHAMMER || toolPid == PID_SUPER_SLEDGE)) ||
+       ((veinPid == PID_VEIN_URANIUM || veinPid == PID_VEIN_GOLD) && (toolPid == PID_SUPER_SLEDGE)))
     {
         miner.SayMsg(SAY_NETMSG, TEXTMSG_TEXT, msgIndex);
         miner.AddItem(productPid, amount);

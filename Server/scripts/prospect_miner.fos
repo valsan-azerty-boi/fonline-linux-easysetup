@@ -28,8 +28,11 @@ void _Idle(Critter& npc)
 
     if(Random(0, 2) == 0)
         MoveRandom(npc, 4);
-    else if(Random(0, 1) == 0)       // mine
+    else if((Random(0, 1) == 0))       // mine
     {
+		//Log("NPC WEIGHT: " + npc.ItemsWeight());
+		if(npc.ItemsWeight()<=200000)
+		{
         // npc.Say(SAY_NORM, "Looking for facility...");
         // get mine facilities
         uint         num = 0;
@@ -60,6 +63,7 @@ void _Idle(Critter& npc)
         }
         // else
         //	npc.Say(SAY_NORM_ON_HEAD, "Couldn't find one...");
+		}
     }
     // till next move
     npc.Wait(Random(500, 20000));

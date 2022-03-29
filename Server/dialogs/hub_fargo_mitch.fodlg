@@ -18,7 +18,7 @@ lang=engl
 2 4010 #
 0 4020 @
 4 5000 None 0 #
-5 5010 R _script dialog@r_AddMoney 1 20 R _param p ST_EXPERIENCE + 200 R _var p q_spawn_hub = 2 @
+5 5010 R _script dialog@r_AddMoney 1 120 R _param p ST_EXPERIENCE + 400 R _var p q_spawn_hub = 2 @
 5 6000 None 0 #
 0 6010 &
 

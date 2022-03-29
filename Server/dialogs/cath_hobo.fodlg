@@ -1,5 +1,6 @@
 [comment]
 
+
 [data]
 lang=engl
 
@@ -51,10 +52,10 @@ lang=engl
 0 16010 @
 17 17000 None 0 @
 18 18000 None 0 #
-19 18010 R _item p PID_LEATHER_ARMOR_MK_II + 1 R _item p PID_ROPE + 1 R _param p REPUTATION_CATHEDRAL + 500 R _var p q_cath_basement = 4 R _script quest_cath_basement@r_DeleteMap 0  R _param p ST_EXPERIENCE + 150 #
-19 18020 R _item p PID_STIMPAK + 5 R _item p PID_DOCTORS_BAG + 1 R _param p REPUTATION_CATHEDRAL + 500 R _var p q_cath_basement = 4 R _script quest_cath_basement@r_DeleteMap 0  R _param p ST_EXPERIENCE + 150 #
-19 18030 R _item p PID_SCOPED_HUNTING_RIFLE + 1 R _item p PID_223_FMJ + 50 R _param p REPUTATION_CATHEDRAL + 500 R _var p q_cath_basement = 4 R _script quest_cath_basement@r_DeleteMap 0  R _param p ST_EXPERIENCE + 150 #
-20 18040 R _var p q_cath_basement = 4 R _param p REPUTATION_CATHEDRAL + 1000 R _item p PID_LASER_PISTOL + 1 R _script quest_cath_basement@r_DeleteMap 0  R _param p ST_EXPERIENCE + 150 @
+19 18010 R _item p PID_LEATHER_ARMOR_MK_II + 1 R _item p PID_ROPE + 1 R _param p REPUTATION_CATHEDRAL + 500 R _var p q_cath_basement = 4 R _script quest_cath_basement@r_DeleteMap 0  R _param p ST_EXPERIENCE + 1500 #
+19 18020 R _item p PID_STIMPAK + 5 R _item p PID_DOCTORS_BAG + 1 R _param p REPUTATION_CATHEDRAL + 500 R _var p q_cath_basement = 4 R _script quest_cath_basement@r_DeleteMap 0  R _param p ST_EXPERIENCE + 1500 #
+19 18030 R _item p PID_SCOPED_HUNTING_RIFLE + 1 R _item p PID_223_FMJ + 50 R _param p REPUTATION_CATHEDRAL + 500 R _var p q_cath_basement = 4 R _script quest_cath_basement@r_DeleteMap 0  R _param p ST_EXPERIENCE + 1500 #
+20 18040 R _var p q_cath_basement = 4 R _param p REPUTATION_CATHEDRAL + 1000 R _item p PID_LASER_PISTOL + 1 R _script quest_cath_basement@r_DeleteMap 0  R _param p ST_EXPERIENCE + 1500 @
 19 19000 None 0 #
 0 19010 @
 20 20000 None 0 #

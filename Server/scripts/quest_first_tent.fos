@@ -5,6 +5,7 @@
 // quest_first_tent.fos
 //
 
+#include "_colors.fos"
 #include "_macros.fos"
 #include "_npc_pids.fos"
 #include "mapdata_h.fos"
@@ -57,6 +58,10 @@ void StartFirstTentQuest(Critter& player)
         SetTurnBasedAvailability(GetLocation(locId));
     }
 
+    Location@ location = GetLocation(locId);
+    location.Color = COLOR_WM_QUEST;
+    location.Update();
+
     GameVar@ qFirstTentLoc1Id = GetLocalVar(LVAR_q_first_tent_loc1_id, player.Id);
     qFirstTentLoc1Id = locId;
 
@@ -83,6 +88,11 @@ void r_SpawnFarmhouse(Critter& player, Critter@ npc)
     {
         SetTurnBasedAvailability(GetLocation(locId));
     }
+
+    Location@ location = GetLocation(locId);
+    location.Color = COLOR_WM_QUEST;
+    location.Update();
+
 
     GameVar@ qFirstTentLoc2Id = GetLocalVar(LVAR_q_first_tent_loc2_id, player.Id);
     qFirstTentLoc2Id = locId;

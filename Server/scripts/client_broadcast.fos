@@ -150,6 +150,19 @@ void BroadcastDraw()
 
     for(uint b = 0; b < Broadcast.length(); b++)
     {
+        if(Broadcast[b].type == BROADCAST_BASE_CONTROL)
+        {
+            DrawText(Broadcast[b].message
+                     # ifdef __DEBUG__
+                     + " [" + ELAPSED_TIME + "/" + Broadcast[b].time + "]"
+                     # endif
+                     , 0, BROADCAST_START + (lines * BROADCAST_LINE), __ScreenWidth, BROADCAST_LINE * (Broadcast[b].extra == 0 ? 2 : 1), COLOR_GREEN, FONT_FALLOUT, FT_CENTERX | FT_BORDERED);
+            lines += (Broadcast[b].extra == 0 ? 2 : 1);
+        }
+    }
+
+    for(uint b = 0; b < Broadcast.length(); b++)
+    {
         if(Broadcast[b].type == BROADCAST_REQUESTHELP)
         {
             DrawText(Broadcast[b].message
@@ -212,8 +225,10 @@ void BroadcastDraw()
 void _ReceiveDump(int type, int time, int setup, string@ message, array<int>@ data)
 {
     BroadcastDebugMessage("broadcast dump: <" + message + ">");
-    if(message == "" || message == " ")
+    if(message == "" || message == " ") {
+        Broadcast.resize(0);
         return;
+    }
     array<string@>@ dump = split(message, BROADCAST_SEPARATOR_MAIN);
 
     BroadcastDebugMessage("received dump: " + dump.length());
@@ -266,6 +281,20 @@ void _ReceiveDump(int type, int time, int setup, string@ message, array<int>@ da
     BroadcastDebugMessage("dump end");
 }
 
+int FindBaseControl(uint location)
+{
+    if(Broadcast.length() == 0)
+        return(-1);
+
+    for(uint b = 0; b < Broadcast.length(); b++)
+    {
+        if(Broadcast[b].type == BROADCAST_BASE_CONTROL && Broadcast[b].extra == location)
+            return(b);
+    }
+    return(-1);
+}
+
+
 void _Receive(int type, int time, int setup, string@ message, array<int>@ data)
 {
     if(!valid(message) || message == " ")
@@ -283,13 +312,33 @@ void _Receive(int type, int time, int setup, string@ message, array<int>@ data)
     }
 
     BroadcastDebugMessage("received type<" + type + "> time<" + time + "> setup<" + setup + "> message<" + message + "> data<" + _data + ">");
-
+    int oldB;
     bool isError = true;
     switch(type)
     {
     case BROADCAST_MESSAGE:
         Broadcast.insertLast(CBroadcast(type, ELAPSED_TIME + time, message, setup));
         Message("|" + (setup <= 0 ? COLOR_GREEN_RED : setup) + " " + message);
+        isError = false;
+        break;
+    case BROADCAST_BASE_CONTROL:
+        oldB = FindBaseControl(data[0]);
+
+        if(oldB >= 0)
+        {
+            Broadcast[oldB].message = message;
+            Broadcast[oldB].time = ELAPSED_TIME +time;
+        }
+        else
+        {
+            Broadcast.insertLast(CBroadcast(type, ELAPSED_TIME + time, message, data[0]));
+        }
+
+        isError = false;
+        break;
+    case BROADCAST_BASE_RADIO:
+        Broadcast.insertLast(CBroadcast(type, ELAPSED_TIME + time, message, setup));
+        Message("|" + COLOR_LGRAY + " " + message);
         isError = false;
         break;
     case BROADCAST_REQUESTHELP:

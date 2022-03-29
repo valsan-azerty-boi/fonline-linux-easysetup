@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              145
 MaxHexY              260
-WorkHexX             95
-WorkHexY             162
+WorkHexX             83
+WorkHexY             198
 ScriptModule         -
 ScriptFunc           -
 NoLogOut             0
@@ -1011,17 +1011,17 @@ tile       64   58             art\tiles\bld2043.frm
 tile       66   58             art\tiles\bld2043.frm
 tile       68   58             art\tiles\shipflr1.frm
 tile       70   58             art\tiles\shipflr1.frm
-tile       72   58             art\tiles\GRT2001.FRM
-tile       74   58             art\tiles\GRT2001.FRM
-tile       76   58             art\tiles\GRT2001.FRM
-tile       78   58             art\tiles\GRT2001.FRM
-tile       80   58             art\tiles\GRT2001.FRM
-tile       82   58             art\tiles\GRT2001.FRM
-tile       84   58             art\tiles\GRT2001.FRM
-tile       86   58             art\tiles\GRT2001.FRM
-tile       88   58             art\tiles\GRT2001.FRM
-tile       90   58             art\tiles\GRT2001.FRM
-tile       92   58             art\tiles\GRT2001.FRM
+tile       72   58             art\tiles\grt2001.frm
+tile       74   58             art\tiles\grt2001.frm
+tile       76   58             art\tiles\grt2001.frm
+tile       78   58             art\tiles\grt2001.frm
+tile       80   58             art\tiles\grt2001.frm
+tile       82   58             art\tiles\grt2001.frm
+tile       84   58             art\tiles\grt2001.frm
+tile       86   58             art\tiles\grt2001.frm
+tile       88   58             art\tiles\grt2001.frm
+tile       90   58             art\tiles\grt2001.frm
+tile       92   58             art\tiles\grt2001.frm
 tile       94   58             art\tiles\shipflr1.frm
 tile       96   58             art\tiles\bld2043.frm
 tile       98   58             art\tiles\bld2043.frm
@@ -1067,17 +1067,17 @@ tile       64   60             art\tiles\bld2043.frm
 tile       66   60             art\tiles\bld2043.frm
 tile       68   60             art\tiles\shipflr1.frm
 tile       70   60             art\tiles\shipflr1.frm
-tile       72   60             art\tiles\GRT2001.FRM
-tile       74   60             art\tiles\GRT2001.FRM
-tile       76   60             art\tiles\GRT2001.FRM
-tile       78   60             art\tiles\GRT2001.FRM
-tile       80   60             art\tiles\GRT2001.FRM
-tile       82   60             art\tiles\GRT2001.FRM
-tile       84   60             art\tiles\GRT2001.FRM
-tile       86   60             art\tiles\GRT2001.FRM
-tile       88   60             art\tiles\GRT2001.FRM
-tile       90   60             art\tiles\GRT2001.FRM
-tile       92   60             art\tiles\GRT2001.FRM
+tile       72   60             art\tiles\grt2001.frm
+tile       74   60             art\tiles\grt2001.frm
+tile       76   60             art\tiles\grt2001.frm
+tile       78   60             art\tiles\grt2001.frm
+tile       80   60             art\tiles\grt2001.frm
+tile       82   60             art\tiles\grt2001.frm
+tile       84   60             art\tiles\grt2001.frm
+tile       86   60             art\tiles\grt2001.frm
+tile       88   60             art\tiles\grt2001.frm
+tile       90   60             art\tiles\grt2001.frm
+tile       92   60             art\tiles\grt2001.frm
 tile       94   60             art\tiles\shipflr1.frm
 tile       96   60             art\tiles\bld2043.frm
 tile       98   60             art\tiles\bld2043.frm
@@ -1122,8 +1122,8 @@ tile       64   62             art\tiles\bld2043.frm
 tile       66   62             art\tiles\bld2043.frm
 tile       68   62             art\tiles\shipflr1.frm
 tile       70   62             art\tiles\shipflr1.frm
-tile       72   62             art\tiles\GRT2001.FRM
-tile       74   62             art\tiles\GRT2001.FRM
+tile       72   62             art\tiles\grt2001.frm
+tile       74   62             art\tiles\grt2001.frm
 tile       76   62             art\tiles\shipflr1.frm
 tile       78   62             art\tiles\shipflr1.frm
 tile       80   62             art\tiles\shipflr1.frm
@@ -1131,8 +1131,8 @@ tile       82   62             art\tiles\shipflr1.frm
 tile       84   62             art\tiles\shipflr1.frm
 tile       86   62             art\tiles\shipflr1.frm
 tile       88   62             art\tiles\shipflr1.frm
-tile       90   62             art\tiles\GRT2001.FRM
-tile       92   62             art\tiles\GRT2001.FRM
+tile       90   62             art\tiles\grt2001.frm
+tile       92   62             art\tiles\grt2001.frm
 tile       94   62             art\tiles\shipflr1.frm
 tile       96   62             art\tiles\bld2043.frm
 tile       98   62             art\tiles\bld2043.frm
@@ -1177,8 +1177,8 @@ tile       64   64             art\tiles\bld2043.frm
 tile       66   64             art\tiles\bld2043.frm
 tile       68   64             art\tiles\shipflr1.frm
 tile       70   64             art\tiles\shipflr1.frm
-tile       72   64             art\tiles\GRT2001.FRM
-tile       74   64             art\tiles\GRT2001.FRM
+tile       72   64             art\tiles\grt2001.frm
+tile       74   64             art\tiles\grt2001.frm
 tile       76   64             art\tiles\shipflr1.frm
 tile       78   64             art\tiles\shipflr1.frm
 tile       80   64             art\tiles\shipflr1.frm
@@ -1186,8 +1186,8 @@ tile       82   64             art\tiles\shipflr1.frm
 tile       84   64             art\tiles\shipflr1.frm
 tile       86   64             art\tiles\shipflr1.frm
 tile       88   64             art\tiles\shipflr1.frm
-tile       90   64             art\tiles\GRT2001.FRM
-tile       92   64             art\tiles\GRT2001.FRM
+tile       90   64             art\tiles\grt2001.frm
+tile       92   64             art\tiles\grt2001.frm
 tile       94   64             art\tiles\shipflr1.frm
 tile       96   64             art\tiles\bld2043.frm
 tile       98   64             art\tiles\bld2043.frm
@@ -1230,17 +1230,17 @@ tile       64   66             art\tiles\bld2043.frm
 tile       66   66             art\tiles\bld2043.frm
 tile       68   66             art\tiles\shipflr1.frm
 tile       70   66             art\tiles\shipflr1.frm
-tile       72   66             art\tiles\GRT2001.FRM
-tile       74   66             art\tiles\GRT2001.FRM
+tile       72   66             art\tiles\grt2001.frm
+tile       74   66             art\tiles\grt2001.frm
 tile       76   66             art\tiles\shipflr1.frm
 tile       78   66             art\tiles\shipflr1.frm
-tile       80   66             art\tiles\GRT2001.FRM
-tile       82   66             art\tiles\GRT2001.FRM
-tile       84   66             art\tiles\GRT2001.FRM
+tile       80   66             art\tiles\grt2001.frm
+tile       82   66             art\tiles\grt2001.frm
+tile       84   66             art\tiles\grt2001.frm
 tile       86   66             art\tiles\shipflr1.frm
 tile       88   66             art\tiles\shipflr1.frm
-tile       90   66             art\tiles\GRT2001.FRM
-tile       92   66             art\tiles\GRT2001.FRM
+tile       90   66             art\tiles\grt2001.frm
+tile       92   66             art\tiles\grt2001.frm
 tile       94   66             art\tiles\shipflr1.frm
 tile       96   66             art\tiles\bld2043.frm
 tile       98   66             art\tiles\bld2043.frm
@@ -1280,17 +1280,17 @@ tile       64   68             art\tiles\bld2043.frm
 tile       66   68             art\tiles\bld2043.frm
 tile       68   68             art\tiles\shipflr1.frm
 tile       70   68             art\tiles\shipflr1.frm
-tile       72   68             art\tiles\GRT2001.FRM
-tile       74   68             art\tiles\GRT2001.FRM
+tile       72   68             art\tiles\grt2001.frm
+tile       74   68             art\tiles\grt2001.frm
 tile       76   68             art\tiles\shipflr1.frm
 tile       78   68             art\tiles\shipflr1.frm
-tile       80   68             art\tiles\GRT2001.FRM
-tile       82   68             art\tiles\GRT2001.FRM
-tile       84   68             art\tiles\GRT2001.FRM
+tile       80   68             art\tiles\grt2001.frm
+tile       82   68             art\tiles\grt2001.frm
+tile       84   68             art\tiles\grt2001.frm
 tile       86   68             art\tiles\shipflr1.frm
 tile       88   68             art\tiles\shipflr1.frm
-tile       90   68             art\tiles\GRT2001.FRM
-tile       92   68             art\tiles\GRT2001.FRM
+tile       90   68             art\tiles\grt2001.frm
+tile       92   68             art\tiles\grt2001.frm
 tile       94   68             art\tiles\shipflr1.frm
 tile       96   68             art\tiles\bld2043.frm
 tile       98   68             art\tiles\bld2043.frm
@@ -1329,17 +1329,17 @@ tile       64   70             art\tiles\bld2043.frm
 tile       66   70             art\tiles\bld2043.frm
 tile       68   70             art\tiles\shipflr1.frm
 tile       70   70             art\tiles\shipflr1.frm
-tile       72   70             art\tiles\GRT2001.FRM
-tile       74   70             art\tiles\GRT2001.FRM
+tile       72   70             art\tiles\grt2001.frm
+tile       74   70             art\tiles\grt2001.frm
 tile       76   70             art\tiles\shipflr1.frm
 tile       78   70             art\tiles\shipflr1.frm
-tile       80   70             art\tiles\GRT2001.FRM
-tile       82   70             art\tiles\GRT2001.FRM
-tile       84   70             art\tiles\GRT2001.FRM
+tile       80   70             art\tiles\grt2001.frm
+tile       82   70             art\tiles\grt2001.frm
+tile       84   70             art\tiles\grt2001.frm
 tile       86   70             art\tiles\shipflr1.frm
 tile       88   70             art\tiles\shipflr1.frm
-tile       90   70             art\tiles\GRT2001.FRM
-tile       92   70             art\tiles\GRT2001.FRM
+tile       90   70             art\tiles\grt2001.frm
+tile       92   70             art\tiles\grt2001.frm
 tile       94   70             art\tiles\shipflr1.frm
 tile       96   70             art\tiles\bld2043.frm
 tile       98   70             art\tiles\bld2043.frm
@@ -1381,8 +1381,8 @@ tile       64   72             art\tiles\bld2043.frm
 tile       66   72             art\tiles\bld2043.frm
 tile       68   72             art\tiles\shipflr1.frm
 tile       70   72             art\tiles\shipflr1.frm
-tile       72   72             art\tiles\GRT2001.FRM
-tile       74   72             art\tiles\GRT2001.FRM
+tile       72   72             art\tiles\grt2001.frm
+tile       74   72             art\tiles\grt2001.frm
 tile       76   72             art\tiles\shipflr1.frm
 tile       78   72             art\tiles\shipflr1.frm
 tile       80   72             art\tiles\shipflr1.frm
@@ -1390,8 +1390,8 @@ tile       82   72             art\tiles\shipflr1.frm
 tile       84   72             art\tiles\shipflr1.frm
 tile       86   72             art\tiles\shipflr1.frm
 tile       88   72             art\tiles\shipflr1.frm
-tile       90   72             art\tiles\GRT2001.FRM
-tile       92   72             art\tiles\GRT2001.FRM
+tile       90   72             art\tiles\grt2001.frm
+tile       92   72             art\tiles\grt2001.frm
 tile       94   72             art\tiles\shipflr1.frm
 tile       96   72             art\tiles\bld2043.frm
 tile       98   72             art\tiles\bld2043.frm
@@ -1433,8 +1433,8 @@ tile       64   74             art\tiles\bld2043.frm
 tile       66   74             art\tiles\bld2043.frm
 tile       68   74             art\tiles\shipflr1.frm
 tile       70   74             art\tiles\shipflr1.frm
-tile       72   74             art\tiles\GRT2001.FRM
-tile       74   74             art\tiles\GRT2001.FRM
+tile       72   74             art\tiles\grt2001.frm
+tile       74   74             art\tiles\grt2001.frm
 tile       76   74             art\tiles\shipflr1.frm
 tile       78   74             art\tiles\shipflr1.frm
 tile       80   74             art\tiles\shipflr1.frm
@@ -1442,8 +1442,8 @@ tile       82   74             art\tiles\shipflr1.frm
 tile       84   74             art\tiles\shipflr1.frm
 tile       86   74             art\tiles\shipflr1.frm
 tile       88   74             art\tiles\shipflr1.frm
-tile       90   74             art\tiles\GRT2001.FRM
-tile       92   74             art\tiles\GRT2001.FRM
+tile       90   74             art\tiles\grt2001.frm
+tile       92   74             art\tiles\grt2001.frm
 tile       94   74             art\tiles\shipflr1.frm
 tile       96   74             art\tiles\bld2043.frm
 tile       98   74             art\tiles\bld2043.frm
@@ -1486,8 +1486,8 @@ tile       64   76             art\tiles\bld2043.frm
 tile       66   76             art\tiles\bld2043.frm
 tile       68   76             art\tiles\shipflr1.frm
 tile       70   76             art\tiles\shipflr1.frm
-tile       72   76             art\tiles\GRT2001.FRM
-tile       74   76             art\tiles\GRT2001.FRM
+tile       72   76             art\tiles\grt2001.frm
+tile       74   76             art\tiles\grt2001.frm
 tile       76   76             art\tiles\shipflr1.frm
 tile       78   76             art\tiles\shipflr1.frm
 tile       80   76             art\tiles\shipflr1.frm
@@ -1495,8 +1495,8 @@ tile       82   76             art\tiles\shipflr1.frm
 tile       84   76             art\tiles\shipflr1.frm
 tile       86   76             art\tiles\shipflr1.frm
 tile       88   76             art\tiles\shipflr1.frm
-tile       90   76             art\tiles\GRT2001.FRM
-tile       92   76             art\tiles\GRT2001.FRM
+tile       90   76             art\tiles\grt2001.frm
+tile       92   76             art\tiles\grt2001.frm
 tile       94   76             art\tiles\shipflr1.frm
 tile       96   76             art\tiles\bld2043.frm
 tile       98   76             art\tiles\bld2043.frm
@@ -1539,8 +1539,8 @@ tile       64   78             art\tiles\bld2043.frm
 tile       66   78             art\tiles\bld2043.frm
 tile       68   78             art\tiles\shipflr1.frm
 tile       70   78             art\tiles\shipflr1.frm
-tile       72   78             art\tiles\GRT2001.FRM
-tile       74   78             art\tiles\GRT2001.FRM
+tile       72   78             art\tiles\grt2001.frm
+tile       74   78             art\tiles\grt2001.frm
 tile       76   78             art\tiles\shipflr1.frm
 tile       78   78             art\tiles\shipflr1.frm
 tile       80   78             art\tiles\shipflr1.frm
@@ -1548,8 +1548,8 @@ tile       82   78             art\tiles\shipflr1.frm
 tile       84   78             art\tiles\shipflr1.frm
 tile       86   78             art\tiles\shipflr1.frm
 tile       88   78             art\tiles\shipflr1.frm
-tile       90   78             art\tiles\GRT2001.FRM
-tile       92   78             art\tiles\GRT2001.FRM
+tile       90   78             art\tiles\grt2001.frm
+tile       92   78             art\tiles\grt2001.frm
 tile       94   78             art\tiles\shipflr1.frm
 tile       96   78             art\tiles\bld2043.frm
 tile       98   78             art\tiles\bld2043.frm
@@ -1591,8 +1591,8 @@ tile       64   80             art\tiles\bld2043.frm
 tile       66   80             art\tiles\bld2043.frm
 tile       68   80             art\tiles\shipflr1.frm
 tile       70   80             art\tiles\shipflr1.frm
-tile       72   80             art\tiles\GRT2001.FRM
-tile       74   80             art\tiles\GRT2001.FRM
+tile       72   80             art\tiles\grt2001.frm
+tile       74   80             art\tiles\grt2001.frm
 tile       76   80             art\tiles\shipflr1.frm
 tile       78   80             art\tiles\shipflr1.frm
 tile       80   80             art\tiles\shipflr1.frm
@@ -1600,8 +1600,8 @@ tile       82   80             art\tiles\shipflr1.frm
 tile       84   80             art\tiles\shipflr1.frm
 tile       86   80             art\tiles\shipflr1.frm
 tile       88   80             art\tiles\shipflr1.frm
-tile       90   80             art\tiles\GRT2001.FRM
-tile       92   80             art\tiles\GRT2001.FRM
+tile       90   80             art\tiles\grt2001.frm
+tile       92   80             art\tiles\grt2001.frm
 tile       94   80             art\tiles\shipflr1.frm
 tile       96   80             art\tiles\bld2043.frm
 tile       98   80             art\tiles\bld2043.frm
@@ -1644,8 +1644,8 @@ tile       64   82             art\tiles\bld2043.frm
 tile       66   82             art\tiles\bld2043.frm
 tile       68   82             art\tiles\shipflr1.frm
 tile       70   82             art\tiles\shipflr1.frm
-tile       72   82             art\tiles\GRT2001.FRM
-tile       74   82             art\tiles\GRT2001.FRM
+tile       72   82             art\tiles\grt2001.frm
+tile       74   82             art\tiles\grt2001.frm
 tile       76   82             art\tiles\shipflr1.frm
 tile       78   82             art\tiles\shipflr1.frm
 tile       80   82             art\tiles\shipflr1.frm
@@ -1653,8 +1653,8 @@ tile       82   82             art\tiles\shipflr1.frm
 tile       84   82             art\tiles\shipflr1.frm
 tile       86   82             art\tiles\shipflr1.frm
 tile       88   82             art\tiles\shipflr1.frm
-tile       90   82             art\tiles\GRT2001.FRM
-tile       92   82             art\tiles\GRT2001.FRM
+tile       90   82             art\tiles\grt2001.frm
+tile       92   82             art\tiles\grt2001.frm
 tile       94   82             art\tiles\shipflr1.frm
 tile       96   82             art\tiles\bld2043.frm
 tile       98   82             art\tiles\bld2043.frm
@@ -1697,8 +1697,8 @@ tile       64   84             art\tiles\bld2043.frm
 tile       66   84             art\tiles\bld2043.frm
 tile       68   84             art\tiles\shipflr1.frm
 tile       70   84             art\tiles\shipflr1.frm
-tile       72   84             art\tiles\GRT2001.FRM
-tile       74   84             art\tiles\GRT2001.FRM
+tile       72   84             art\tiles\grt2001.frm
+tile       74   84             art\tiles\grt2001.frm
 tile       76   84             art\tiles\shipflr1.frm
 tile       78   84             art\tiles\shipflr1.frm
 tile       80   84             art\tiles\shipflr1.frm
@@ -1706,8 +1706,8 @@ tile       82   84             art\tiles\shipflr1.frm
 tile       84   84             art\tiles\shipflr1.frm
 tile       86   84             art\tiles\shipflr1.frm
 tile       88   84             art\tiles\shipflr1.frm
-tile       90   84             art\tiles\GRT2001.FRM
-tile       92   84             art\tiles\GRT2001.FRM
+tile       90   84             art\tiles\grt2001.frm
+tile       92   84             art\tiles\grt2001.frm
 tile       94   84             art\tiles\shipflr1.frm
 tile       96   84             art\tiles\bld2043.frm
 tile       98   84             art\tiles\bld2043.frm
@@ -1750,8 +1750,8 @@ tile       64   86             art\tiles\bld2043.frm
 tile       66   86             art\tiles\bld2043.frm
 tile       68   86             art\tiles\shipflr1.frm
 tile       70   86             art\tiles\shipflr1.frm
-tile       72   86             art\tiles\GRT2001.FRM
-tile       74   86             art\tiles\GRT2001.FRM
+tile       72   86             art\tiles\grt2001.frm
+tile       74   86             art\tiles\grt2001.frm
 tile       76   86             art\tiles\shipflr1.frm
 tile       78   86             art\tiles\shipflr1.frm
 tile       80   86             art\tiles\shipflr1.frm
@@ -1759,8 +1759,8 @@ tile       82   86             art\tiles\shipflr1.frm
 tile       84   86             art\tiles\shipflr1.frm
 tile       86   86             art\tiles\shipflr1.frm
 tile       88   86             art\tiles\shipflr1.frm
-tile       90   86             art\tiles\GRT2001.FRM
-tile       92   86             art\tiles\GRT2001.FRM
+tile       90   86             art\tiles\grt2001.frm
+tile       92   86             art\tiles\grt2001.frm
 tile       94   86             art\tiles\shipflr1.frm
 tile       96   86             art\tiles\bld2043.frm
 tile       98   86             art\tiles\bld2043.frm
@@ -1806,8 +1806,8 @@ tile       64   88             art\tiles\bld2043.frm
 tile       66   88             art\tiles\bld2043.frm
 tile       68   88             art\tiles\shipflr1.frm
 tile       70   88             art\tiles\shipflr1.frm
-tile       72   88             art\tiles\GRT2001.FRM
-tile       74   88             art\tiles\GRT2001.FRM
+tile       72   88             art\tiles\grt2001.frm
+tile       74   88             art\tiles\grt2001.frm
 tile       76   88             art\tiles\shipflr1.frm
 tile       78   88             art\tiles\shipflr1.frm
 tile       80   88             art\tiles\shipflr1.frm
@@ -1815,8 +1815,8 @@ tile       82   88             art\tiles\shipflr1.frm
 tile       84   88             art\tiles\shipflr1.frm
 tile       86   88             art\tiles\shipflr1.frm
 tile       88   88             art\tiles\shipflr1.frm
-tile       90   88             art\tiles\GRT2001.FRM
-tile       92   88             art\tiles\GRT2001.FRM
+tile       90   88             art\tiles\grt2001.frm
+tile       92   88             art\tiles\grt2001.frm
 tile       94   88             art\tiles\shipflr1.frm
 tile       96   88             art\tiles\bld2043.frm
 tile       98   88             art\tiles\bld2043.frm
@@ -1864,8 +1864,8 @@ tile       64   90             art\tiles\bld2043.frm
 tile       66   90             art\tiles\bld2043.frm
 tile       68   90             art\tiles\shipflr1.frm
 tile       70   90             art\tiles\shipflr1.frm
-tile       72   90             art\tiles\GRT2001.FRM
-tile       74   90             art\tiles\GRT2001.FRM
+tile       72   90             art\tiles\grt2001.frm
+tile       74   90             art\tiles\grt2001.frm
 tile       76   90             art\tiles\shipflr1.frm
 tile       78   90             art\tiles\shipflr1.frm
 tile       80   90             art\tiles\shipflr1.frm
@@ -1873,8 +1873,8 @@ tile       82   90             art\tiles\shipflr1.frm
 tile       84   90             art\tiles\shipflr1.frm
 tile       86   90             art\tiles\shipflr1.frm
 tile       88   90             art\tiles\shipflr1.frm
-tile       90   90             art\tiles\GRT2001.FRM
-tile       92   90             art\tiles\GRT2001.FRM
+tile       90   90             art\tiles\grt2001.frm
+tile       92   90             art\tiles\grt2001.frm
 tile       94   90             art\tiles\shipflr1.frm
 tile       96   90             art\tiles\bld2043.frm
 tile       98   90             art\tiles\bld2043.frm
@@ -1921,8 +1921,8 @@ tile       64   92             art\tiles\bld2043.frm
 tile       66   92             art\tiles\bld2043.frm
 tile       68   92             art\tiles\shipflr1.frm
 tile       70   92             art\tiles\shipflr1.frm
-tile       72   92             art\tiles\GRT2001.FRM
-tile       74   92             art\tiles\GRT2001.FRM
+tile       72   92             art\tiles\grt2001.frm
+tile       74   92             art\tiles\grt2001.frm
 tile       76   92             art\tiles\shipflr1.frm
 tile       78   92             art\tiles\shipflr1.frm
 tile       80   92             art\tiles\brn1000.frm
@@ -1930,8 +1930,8 @@ tile       82   92             art\tiles\brn1001.frm
 tile       84   92             art\tiles\brn1000.frm
 tile       86   92             art\tiles\shipflr1.frm
 tile       88   92             art\tiles\shipflr1.frm
-tile       90   92             art\tiles\GRT2001.FRM
-tile       92   92             art\tiles\GRT2001.FRM
+tile       90   92             art\tiles\grt2001.frm
+tile       92   92             art\tiles\grt2001.frm
 tile       94   92             art\tiles\shipflr1.frm
 tile       96   92             art\tiles\bld2043.frm
 tile       98   92             art\tiles\bld2043.frm
@@ -1977,8 +1977,8 @@ tile       64   94             art\tiles\bld2043.frm
 tile       66   94             art\tiles\bld2043.frm
 tile       68   94             art\tiles\shipflr1.frm
 tile       70   94             art\tiles\shipflr1.frm
-tile       72   94             art\tiles\GRT2001.FRM
-tile       74   94             art\tiles\GRT2001.FRM
+tile       72   94             art\tiles\grt2001.frm
+tile       74   94             art\tiles\grt2001.frm
 tile       76   94             art\tiles\shipflr1.frm
 tile       78   94             art\tiles\shipflr1.frm
 tile       80   94             art\tiles\brn1001.frm
@@ -1986,8 +1986,8 @@ tile       82   94             art\tiles\brn1000.frm
 tile       84   94             art\tiles\brn1001.frm
 tile       86   94             art\tiles\shipflr1.frm
 tile       88   94             art\tiles\shipflr1.frm
-tile       90   94             art\tiles\GRT2001.FRM
-tile       92   94             art\tiles\GRT2001.FRM
+tile       90   94             art\tiles\grt2001.frm
+tile       92   94             art\tiles\grt2001.frm
 tile       94   94             art\tiles\shipflr1.frm
 tile       96   94             art\tiles\bld2043.frm
 tile       98   94             art\tiles\bld2043.frm
@@ -2033,8 +2033,8 @@ tile       64   96             art\tiles\bld2043.frm
 tile       66   96             art\tiles\bld2043.frm
 tile       68   96             art\tiles\shipflr1.frm
 tile       70   96             art\tiles\shipflr1.frm
-tile       72   96             art\tiles\GRT2001.FRM
-tile       74   96             art\tiles\GRT2001.FRM
+tile       72   96             art\tiles\grt2001.frm
+tile       74   96             art\tiles\grt2001.frm
 tile       76   96             art\tiles\shipflr1.frm
 tile       78   96             art\tiles\shipflr1.frm
 tile       80   96             art\tiles\brn1000.frm
@@ -2042,8 +2042,8 @@ tile       82   96             art\tiles\brn1001.frm
 tile       84   96             art\tiles\brn1000.frm
 tile       86   96             art\tiles\shipflr1.frm
 tile       88   96             art\tiles\shipflr1.frm
-tile       90   96             art\tiles\GRT2001.FRM
-tile       92   96             art\tiles\GRT2001.FRM
+tile       90   96             art\tiles\grt2001.frm
+tile       92   96             art\tiles\grt2001.frm
 tile       94   96             art\tiles\shipflr1.frm
 tile       96   96             art\tiles\bld2043.frm
 tile       98   96             art\tiles\bld2043.frm
@@ -2088,8 +2088,8 @@ tile       64   98             art\tiles\bld2043.frm
 tile       66   98             art\tiles\bld2043.frm
 tile       68   98             art\tiles\shipflr1.frm
 tile       70   98             art\tiles\shipflr1.frm
-tile       72   98             art\tiles\GRT2001.FRM
-tile       74   98             art\tiles\GRT2001.FRM
+tile       72   98             art\tiles\grt2001.frm
+tile       74   98             art\tiles\grt2001.frm
 tile       76   98             art\tiles\shipflr1.frm
 tile       78   98             art\tiles\shipflr1.frm
 tile       80   98             art\tiles\brn1001.frm
@@ -2097,8 +2097,8 @@ tile       82   98             art\tiles\brn1000.frm
 tile       84   98             art\tiles\brn1001.frm
 tile       86   98             art\tiles\shipflr1.frm
 tile       88   98             art\tiles\shipflr1.frm
-tile       90   98             art\tiles\GRT2001.FRM
-tile       92   98             art\tiles\GRT2001.FRM
+tile       90   98             art\tiles\grt2001.frm
+tile       92   98             art\tiles\grt2001.frm
 tile       94   98             art\tiles\shipflr1.frm
 tile       96   98             art\tiles\bld2043.frm
 tile       98   98             art\tiles\bld2043.frm
@@ -2142,8 +2142,8 @@ tile       64   100            art\tiles\bld2043.frm
 tile       66   100            art\tiles\bld2043.frm
 tile       68   100            art\tiles\shipflr1.frm
 tile       70   100            art\tiles\shipflr1.frm
-tile       72   100            art\tiles\GRT2001.FRM
-tile       74   100            art\tiles\GRT2001.FRM
+tile       72   100            art\tiles\grt2001.frm
+tile       74   100            art\tiles\grt2001.frm
 tile       76   100            art\tiles\shipflr1.frm
 tile       78   100            art\tiles\shipflr1.frm
 tile       80   100            art\tiles\brn1000.frm
@@ -2151,8 +2151,8 @@ tile       82   100            art\tiles\brn1001.frm
 tile       84   100            art\tiles\brn1000.frm
 tile       86   100            art\tiles\shipflr1.frm
 tile       88   100            art\tiles\shipflr1.frm
-tile       90   100            art\tiles\GRT2001.FRM
-tile       92   100            art\tiles\GRT2001.FRM
+tile       90   100            art\tiles\grt2001.frm
+tile       92   100            art\tiles\grt2001.frm
 tile       94   100            art\tiles\shipflr1.frm
 tile       96   100            art\tiles\bld2043.frm
 tile       98   100            art\tiles\bld2043.frm
@@ -2196,8 +2196,8 @@ tile       64   102            art\tiles\bld2043.frm
 tile       66   102            art\tiles\bld2043.frm
 tile       68   102            art\tiles\shipflr1.frm
 tile       70   102            art\tiles\shipflr1.frm
-tile       72   102            art\tiles\GRT2001.FRM
-tile       74   102            art\tiles\GRT2001.FRM
+tile       72   102            art\tiles\grt2001.frm
+tile       74   102            art\tiles\grt2001.frm
 tile       76   102            art\tiles\shipflr1.frm
 tile       78   102            art\tiles\shipflr1.frm
 tile       80   102            art\tiles\shipflr1.frm
@@ -2205,8 +2205,8 @@ tile       82   102            art\tiles\shipflr1.frm
 tile       84   102            art\tiles\shipflr1.frm
 tile       86   102            art\tiles\shipflr1.frm
 tile       88   102            art\tiles\shipflr1.frm
-tile       90   102            art\tiles\GRT2001.FRM
-tile       92   102            art\tiles\GRT2001.FRM
+tile       90   102            art\tiles\grt2001.frm
+tile       92   102            art\tiles\grt2001.frm
 tile       94   102            art\tiles\shipflr1.frm
 tile       96   102            art\tiles\bld2043.frm
 tile       98   102            art\tiles\bld2043.frm
@@ -2250,8 +2250,8 @@ tile       64   104            art\tiles\bld2043.frm
 tile       66   104            art\tiles\bld2043.frm
 tile       68   104            art\tiles\shipflr1.frm
 tile       70   104            art\tiles\shipflr1.frm
-tile       72   104            art\tiles\GRT2001.FRM
-tile       74   104            art\tiles\GRT2001.FRM
+tile       72   104            art\tiles\grt2001.frm
+tile       74   104            art\tiles\grt2001.frm
 tile       76   104            art\tiles\shipflr1.frm
 tile       78   104            art\tiles\shipflr1.frm
 tile       80   104            art\tiles\shipflr1.frm
@@ -2259,8 +2259,8 @@ tile       82   104            art\tiles\shipflr1.frm
 tile       84   104            art\tiles\shipflr1.frm
 tile       86   104            art\tiles\shipflr1.frm
 tile       88   104            art\tiles\shipflr1.frm
-tile       90   104            art\tiles\GRT2001.FRM
-tile       92   104            art\tiles\GRT2001.FRM
+tile       90   104            art\tiles\grt2001.frm
+tile       92   104            art\tiles\grt2001.frm
 tile       94   104            art\tiles\shipflr1.frm
 tile       96   104            art\tiles\bld2043.frm
 tile       98   104            art\tiles\bld2043.frm
@@ -2306,8 +2306,8 @@ tile       64   106            art\tiles\bld2043.frm
 tile       66   106            art\tiles\bld2043.frm
 tile       68   106            art\tiles\shipflr1.frm
 tile       70   106            art\tiles\shipflr1.frm
-tile       72   106            art\tiles\GRT2001.FRM
-tile       74   106            art\tiles\GRT2001.FRM
+tile       72   106            art\tiles\grt2001.frm
+tile       74   106            art\tiles\grt2001.frm
 tile       76   106            art\tiles\shipflr1.frm
 tile       78   106            art\tiles\shipflr1.frm
 tile       80   106            art\tiles\shipflr1.frm
@@ -2315,8 +2315,8 @@ tile       82   106            art\tiles\shipflr1.frm
 tile       84   106            art\tiles\shipflr1.frm
 tile       86   106            art\tiles\shipflr1.frm
 tile       88   106            art\tiles\shipflr1.frm
-tile       90   106            art\tiles\GRT2001.FRM
-tile       92   106            art\tiles\GRT2001.FRM
+tile       90   106            art\tiles\grt2001.frm
+tile       92   106            art\tiles\grt2001.frm
 tile       94   106            art\tiles\shipflr1.frm
 tile       96   106            art\tiles\bld2043.frm
 tile       98   106            art\tiles\bld2043.frm
@@ -2364,8 +2364,8 @@ tile       64   108            art\tiles\bld2043.frm
 tile       66   108            art\tiles\bld2043.frm
 tile       68   108            art\tiles\shipflr1.frm
 tile       70   108            art\tiles\shipflr1.frm
-tile       72   108            art\tiles\GRT2001.FRM
-tile       74   108            art\tiles\GRT2001.FRM
+tile       72   108            art\tiles\grt2001.frm
+tile       74   108            art\tiles\grt2001.frm
 tile       76   108            art\tiles\shipflr1.frm
 tile       78   108            art\tiles\shipflr1.frm
 tile       80   108            art\tiles\shipflr1.frm
@@ -2373,8 +2373,8 @@ tile       82   108            art\tiles\shipflr1.frm
 tile       84   108            art\tiles\shipflr1.frm
 tile       86   108            art\tiles\shipflr1.frm
 tile       88   108            art\tiles\shipflr1.frm
-tile       90   108            art\tiles\GRT2001.FRM
-tile       92   108            art\tiles\GRT2001.FRM
+tile       90   108            art\tiles\grt2001.frm
+tile       92   108            art\tiles\grt2001.frm
 tile       94   108            art\tiles\shipflr1.frm
 tile       96   108            art\tiles\bld2043.frm
 tile       98   108            art\tiles\bld2043.frm
@@ -2421,8 +2421,8 @@ tile       64   110            art\tiles\bld2043.frm
 tile       66   110            art\tiles\bld2043.frm
 tile       68   110            art\tiles\shipflr1.frm
 tile       70   110            art\tiles\shipflr1.frm
-tile       72   110            art\tiles\GRT2001.FRM
-tile       74   110            art\tiles\GRT2001.FRM
+tile       72   110            art\tiles\grt2001.frm
+tile       74   110            art\tiles\grt2001.frm
 tile       76   110            art\tiles\shipflr1.frm
 tile       78   110            art\tiles\shipflr1.frm
 tile       80   110            art\tiles\shipflr1.frm
@@ -2430,8 +2430,8 @@ tile       82   110            art\tiles\shipflr1.frm
 tile       84   110            art\tiles\shipflr1.frm
 tile       86   110            art\tiles\shipflr1.frm
 tile       88   110            art\tiles\shipflr1.frm
-tile       90   110            art\tiles\GRT2001.FRM
-tile       92   110            art\tiles\GRT2001.FRM
+tile       90   110            art\tiles\grt2001.frm
+tile       92   110            art\tiles\grt2001.frm
 tile       94   110            art\tiles\shipflr1.frm
 tile       96   110            art\tiles\bld2043.frm
 tile       98   110            art\tiles\bld2043.frm
@@ -2477,8 +2477,8 @@ tile       64   112            art\tiles\bld2043.frm
 tile       66   112            art\tiles\bld2043.frm
 tile       68   112            art\tiles\shipflr1.frm
 tile       70   112            art\tiles\shipflr1.frm
-tile       72   112            art\tiles\GRT2001.FRM
-tile       74   112            art\tiles\GRT2001.FRM
+tile       72   112            art\tiles\grt2001.frm
+tile       74   112            art\tiles\grt2001.frm
 tile       76   112            art\tiles\shipflr1.frm
 tile       78   112            art\tiles\shipflr1.frm
 tile       80   112            art\tiles\shipflr1.frm
@@ -2486,8 +2486,8 @@ tile       82   112            art\tiles\shipflr1.frm
 tile       84   112            art\tiles\shipflr1.frm
 tile       86   112            art\tiles\shipflr1.frm
 tile       88   112            art\tiles\shipflr1.frm
-tile       90   112            art\tiles\GRT2001.FRM
-tile       92   112            art\tiles\GRT2001.FRM
+tile       90   112            art\tiles\grt2001.frm
+tile       92   112            art\tiles\grt2001.frm
 tile       94   112            art\tiles\shipflr1.frm
 tile       96   112            art\tiles\bld2043.frm
 tile       98   112            art\tiles\bld2043.frm
@@ -2533,8 +2533,8 @@ tile       64   114            art\tiles\bld2043.frm
 tile       66   114            art\tiles\bld2043.frm
 tile       68   114            art\tiles\shipflr1.frm
 tile       70   114            art\tiles\shipflr1.frm
-tile       72   114            art\tiles\GRT2001.FRM
-tile       74   114            art\tiles\GRT2001.FRM
+tile       72   114            art\tiles\grt2001.frm
+tile       74   114            art\tiles\grt2001.frm
 tile       76   114            art\tiles\shipflr1.frm
 tile       78   114            art\tiles\shipflr1.frm
 tile       80   114            art\tiles\shipflr1.frm
@@ -2542,8 +2542,8 @@ tile       82   114            art\tiles\shipflr1.frm
 tile       84   114            art\tiles\shipflr1.frm
 tile       86   114            art\tiles\shipflr1.frm
 tile       88   114            art\tiles\shipflr1.frm
-tile       90   114            art\tiles\GRT2001.FRM
-tile       92   114            art\tiles\GRT2001.FRM
+tile       90   114            art\tiles\grt2001.frm
+tile       92   114            art\tiles\grt2001.frm
 tile       94   114            art\tiles\shipflr1.frm
 tile       96   114            art\tiles\bld2043.frm
 tile       98   114            art\tiles\bld2043.frm
@@ -2588,8 +2588,8 @@ tile       64   116            art\tiles\bld2043.frm
 tile       66   116            art\tiles\bld2043.frm
 tile       68   116            art\tiles\shipflr1.frm
 tile       70   116            art\tiles\shipflr1.frm
-tile       72   116            art\tiles\GRT2001.FRM
-tile       74   116            art\tiles\GRT2001.FRM
+tile       72   116            art\tiles\grt2001.frm
+tile       74   116            art\tiles\grt2001.frm
 tile       76   116            art\tiles\shipflr1.frm
 tile       78   116            art\tiles\shipflr1.frm
 tile       80   116            art\tiles\shipflr1.frm
@@ -2597,8 +2597,8 @@ tile       82   116            art\tiles\shipflr1.frm
 tile       84   116            art\tiles\shipflr1.frm
 tile       86   116            art\tiles\shipflr1.frm
 tile       88   116            art\tiles\shipflr1.frm
-tile       90   116            art\tiles\GRT2001.FRM
-tile       92   116            art\tiles\GRT2001.FRM
+tile       90   116            art\tiles\grt2001.frm
+tile       92   116            art\tiles\grt2001.frm
 tile       94   116            art\tiles\shipflr1.frm
 tile       96   116            art\tiles\bld2043.frm
 tile       98   116            art\tiles\bld2043.frm
@@ -2642,8 +2642,8 @@ tile       64   118            art\tiles\bld2043.frm
 tile       66   118            art\tiles\bld2043.frm
 tile       68   118            art\tiles\shipflr1.frm
 tile       70   118            art\tiles\shipflr1.frm
-tile       72   118            art\tiles\GRT2001.FRM
-tile       74   118            art\tiles\GRT2001.FRM
+tile       72   118            art\tiles\grt2001.frm
+tile       74   118            art\tiles\grt2001.frm
 tile       76   118            art\tiles\shipflr1.frm
 tile       78   118            art\tiles\shipflr1.frm
 tile       80   118            art\tiles\shipflr1.frm
@@ -2651,8 +2651,8 @@ tile       82   118            art\tiles\shipflr1.frm
 tile       84   118            art\tiles\shipflr1.frm
 tile       86   118            art\tiles\shipflr1.frm
 tile       88   118            art\tiles\shipflr1.frm
-tile       90   118            art\tiles\GRT2001.FRM
-tile       92   118            art\tiles\GRT2001.FRM
+tile       90   118            art\tiles\grt2001.frm
+tile       92   118            art\tiles\grt2001.frm
 tile       94   118            art\tiles\shipflr1.frm
 tile       96   118            art\tiles\bld2043.frm
 tile       98   118            art\tiles\bld2043.frm
@@ -2697,8 +2697,8 @@ tile       64   120            art\tiles\bld2043.frm
 tile       66   120            art\tiles\bld2043.frm
 tile       68   120            art\tiles\shipflr1.frm
 tile       70   120            art\tiles\shipflr1.frm
-tile       72   120            art\tiles\GRT2001.FRM
-tile       74   120            art\tiles\GRT2001.FRM
+tile       72   120            art\tiles\grt2001.frm
+tile       74   120            art\tiles\grt2001.frm
 tile       76   120            art\tiles\shipflr1.frm
 tile       78   120            art\tiles\shipflr1.frm
 tile       80   120            art\tiles\brn1000.frm
@@ -2706,8 +2706,8 @@ tile       82   120            art\tiles\brn1001.frm
 tile       84   120            art\tiles\brn1000.frm
 tile       86   120            art\tiles\shipflr1.frm
 tile       88   120            art\tiles\shipflr1.frm
-tile       90   120            art\tiles\GRT2001.FRM
-tile       92   120            art\tiles\GRT2001.FRM
+tile       90   120            art\tiles\grt2001.frm
+tile       92   120            art\tiles\grt2001.frm
 tile       94   120            art\tiles\shipflr1.frm
 tile       96   120            art\tiles\bld2043.frm
 tile       98   120            art\tiles\bld2043.frm
@@ -2754,8 +2754,8 @@ tile       64   122            art\tiles\bld2043.frm
 tile       66   122            art\tiles\bld2043.frm
 tile       68   122            art\tiles\shipflr1.frm
 tile       70   122            art\tiles\shipflr1.frm
-tile       72   122            art\tiles\GRT2001.FRM
-tile       74   122            art\tiles\GRT2001.FRM
+tile       72   122            art\tiles\grt2001.frm
+tile       74   122            art\tiles\grt2001.frm
 tile       76   122            art\tiles\shipflr1.frm
 tile       78   122            art\tiles\shipflr1.frm
 tile       80   122            art\tiles\brn1001.frm
@@ -2763,8 +2763,8 @@ tile       82   122            art\tiles\brn1000.frm
 tile       84   122            art\tiles\brn1001.frm
 tile       86   122            art\tiles\shipflr1.frm
 tile       88   122            art\tiles\shipflr1.frm
-tile       90   122            art\tiles\GRT2001.FRM
-tile       92   122            art\tiles\GRT2001.FRM
+tile       90   122            art\tiles\grt2001.frm
+tile       92   122            art\tiles\grt2001.frm
 tile       94   122            art\tiles\shipflr1.frm
 tile       96   122            art\tiles\bld2043.frm
 tile       98   122            art\tiles\bld2043.frm
@@ -2813,8 +2813,8 @@ tile       64   124            art\tiles\bld2043.frm
 tile       66   124            art\tiles\bld2043.frm
 tile       68   124            art\tiles\shipflr1.frm
 tile       70   124            art\tiles\shipflr1.frm
-tile       72   124            art\tiles\GRT2001.FRM
-tile       74   124            art\tiles\GRT2001.FRM
+tile       72   124            art\tiles\grt2001.frm
+tile       74   124            art\tiles\grt2001.frm
 tile       76   124            art\tiles\shipflr1.frm
 tile       78   124            art\tiles\shipflr1.frm
 tile       80   124            art\tiles\brn1000.frm
@@ -2822,8 +2822,8 @@ tile       82   124            art\tiles\brn1001.frm
 tile       84   124            art\tiles\brn1000.frm
 tile       86   124            art\tiles\shipflr1.frm
 tile       88   124            art\tiles\shipflr1.frm
-tile       90   124            art\tiles\GRT2001.FRM
-tile       92   124            art\tiles\GRT2001.FRM
+tile       90   124            art\tiles\grt2001.frm
+tile       92   124            art\tiles\grt2001.frm
 tile       94   124            art\tiles\shipflr1.frm
 tile       96   124            art\tiles\bld2043.frm
 tile       98   124            art\tiles\bld2043.frm
@@ -2871,8 +2871,8 @@ tile       64   126            art\tiles\bld2043.frm
 tile       66   126            art\tiles\bld2043.frm
 tile       68   126            art\tiles\shipflr1.frm
 tile       70   126            art\tiles\shipflr1.frm
-tile       72   126            art\tiles\GRT2001.FRM
-tile       74   126            art\tiles\GRT2001.FRM
+tile       72   126            art\tiles\grt2001.frm
+tile       74   126            art\tiles\grt2001.frm
 tile       76   126            art\tiles\shipflr1.frm
 tile       78   126            art\tiles\shipflr1.frm
 tile       80   126            art\tiles\brn1001.frm
@@ -2880,8 +2880,8 @@ tile       82   126            art\tiles\brn1000.frm
 tile       84   126            art\tiles\brn1001.frm
 tile       86   126            art\tiles\shipflr1.frm
 tile       88   126            art\tiles\shipflr1.frm
-tile       90   126            art\tiles\GRT2001.FRM
-tile       92   126            art\tiles\GRT2001.FRM
+tile       90   126            art\tiles\grt2001.frm
+tile       92   126            art\tiles\grt2001.frm
 tile       94   126            art\tiles\shipflr1.frm
 tile       96   126            art\tiles\bld2043.frm
 tile       98   126            art\tiles\bld2043.frm
@@ -2928,8 +2928,8 @@ tile       64   128            art\tiles\bld2043.frm
 tile       66   128            art\tiles\bld2043.frm
 tile       68   128            art\tiles\shipflr1.frm
 tile       70   128            art\tiles\shipflr1.frm
-tile       72   128            art\tiles\GRT2001.FRM
-tile       74   128            art\tiles\GRT2001.FRM
+tile       72   128            art\tiles\grt2001.frm
+tile       74   128            art\tiles\grt2001.frm
 tile       76   128            art\tiles\shipflr1.frm
 tile       78   128            art\tiles\shipflr1.frm
 tile       80   128            art\tiles\brn1000.frm
@@ -2937,8 +2937,8 @@ tile       82   128            art\tiles\brn1001.frm
 tile       84   128            art\tiles\brn1000.frm
 tile       86   128            art\tiles\shipflr1.frm
 tile       88   128            art\tiles\shipflr1.frm
-tile       90   128            art\tiles\GRT2001.FRM
-tile       92   128            art\tiles\GRT2001.FRM
+tile       90   128            art\tiles\grt2001.frm
+tile       92   128            art\tiles\grt2001.frm
 tile       94   128            art\tiles\shipflr1.frm
 tile       96   128            art\tiles\bld2043.frm
 tile       98   128            art\tiles\bld2043.frm
@@ -2985,8 +2985,8 @@ tile       64   130            art\tiles\bld2043.frm
 tile       66   130            art\tiles\bld2043.frm
 tile       68   130            art\tiles\shipflr1.frm
 tile       70   130            art\tiles\shipflr1.frm
-tile       72   130            art\tiles\GRT2001.FRM
-tile       74   130            art\tiles\GRT2001.FRM
+tile       72   130            art\tiles\grt2001.frm
+tile       74   130            art\tiles\grt2001.frm
 tile       76   130            art\tiles\shipflr1.frm
 tile       78   130            art\tiles\shipflr1.frm
 tile       80   130            art\tiles\shipflr1.frm
@@ -2994,8 +2994,8 @@ tile       82   130            art\tiles\shipflr1.frm
 tile       84   130            art\tiles\shipflr1.frm
 tile       86   130            art\tiles\shipflr1.frm
 tile       88   130            art\tiles\shipflr1.frm
-tile       90   130            art\tiles\GRT2001.FRM
-tile       92   130            art\tiles\GRT2001.FRM
+tile       90   130            art\tiles\grt2001.frm
+tile       92   130            art\tiles\grt2001.frm
 tile       94   130            art\tiles\shipflr1.frm
 tile       96   130            art\tiles\bld2043.frm
 tile       98   130            art\tiles\bld2043.frm
@@ -3039,8 +3039,8 @@ tile       64   132            art\tiles\bld2043.frm
 tile       66   132            art\tiles\bld2043.frm
 tile       68   132            art\tiles\shipflr1.frm
 tile       70   132            art\tiles\shipflr1.frm
-tile       72   132            art\tiles\GRT2001.FRM
-tile       74   132            art\tiles\GRT2001.FRM
+tile       72   132            art\tiles\grt2001.frm
+tile       74   132            art\tiles\grt2001.frm
 tile       76   132            art\tiles\shipflr1.frm
 tile       78   132            art\tiles\shipflr1.frm
 tile       80   132            art\tiles\shipflr1.frm
@@ -3048,8 +3048,8 @@ tile       82   132            art\tiles\shipflr1.frm
 tile       84   132            art\tiles\shipflr1.frm
 tile       86   132            art\tiles\shipflr1.frm
 tile       88   132            art\tiles\shipflr1.frm
-tile       90   132            art\tiles\GRT2001.FRM
-tile       92   132            art\tiles\GRT2001.FRM
+tile       90   132            art\tiles\grt2001.frm
+tile       92   132            art\tiles\grt2001.frm
 tile       94   132            art\tiles\shipflr1.frm
 tile       96   132            art\tiles\bld2043.frm
 tile       98   132            art\tiles\bld2043.frm
@@ -3093,8 +3093,8 @@ tile       64   134            art\tiles\bld2043.frm
 tile       66   134            art\tiles\bld2043.frm
 tile       68   134            art\tiles\shipflr1.frm
 tile       70   134            art\tiles\shipflr1.frm
-tile       72   134            art\tiles\GRT2001.FRM
-tile       74   134            art\tiles\GRT2001.FRM
+tile       72   134            art\tiles\grt2001.frm
+tile       74   134            art\tiles\grt2001.frm
 tile       76   134            art\tiles\shipflr1.frm
 tile       78   134            art\tiles\shipflr1.frm
 tile       80   134            art\tiles\shipflr1.frm
@@ -3102,8 +3102,8 @@ tile       82   134            art\tiles\shipflr1.frm
 tile       84   134            art\tiles\shipflr1.frm
 tile       86   134            art\tiles\shipflr1.frm
 tile       88   134            art\tiles\shipflr1.frm
-tile       90   134            art\tiles\GRT2001.FRM
-tile       92   134            art\tiles\GRT2001.FRM
+tile       90   134            art\tiles\grt2001.frm
+tile       92   134            art\tiles\grt2001.frm
 tile       94   134            art\tiles\shipflr1.frm
 tile       96   134            art\tiles\bld2043.frm
 tile       98   134            art\tiles\bld2043.frm
@@ -3146,8 +3146,8 @@ tile       64   136            art\tiles\bld2043.frm
 tile       66   136            art\tiles\bld2043.frm
 tile       68   136            art\tiles\shipflr1.frm
 tile       70   136            art\tiles\shipflr1.frm
-tile       72   136            art\tiles\GRT2001.FRM
-tile       74   136            art\tiles\GRT2001.FRM
+tile       72   136            art\tiles\grt2001.frm
+tile       74   136            art\tiles\grt2001.frm
 tile       76   136            art\tiles\shipflr1.frm
 tile       78   136            art\tiles\shipflr1.frm
 tile       80   136            art\tiles\shipflr1.frm
@@ -3155,8 +3155,8 @@ tile       82   136            art\tiles\shipflr1.frm
 tile       84   136            art\tiles\shipflr1.frm
 tile       86   136            art\tiles\shipflr1.frm
 tile       88   136            art\tiles\shipflr1.frm
-tile       90   136            art\tiles\GRT2001.FRM
-tile       92   136            art\tiles\GRT2001.FRM
+tile       90   136            art\tiles\grt2001.frm
+tile       92   136            art\tiles\grt2001.frm
 tile       94   136            art\tiles\shipflr1.frm
 tile       96   136            art\tiles\bld2043.frm
 tile       98   136            art\tiles\bld2043.frm
@@ -3200,8 +3200,8 @@ tile       64   138            art\tiles\bld2043.frm
 tile       66   138            art\tiles\bld2043.frm
 tile       68   138            art\tiles\shipflr1.frm
 tile       70   138            art\tiles\shipflr1.frm
-tile       72   138            art\tiles\GRT2001.FRM
-tile       74   138            art\tiles\GRT2001.FRM
+tile       72   138            art\tiles\grt2001.frm
+tile       74   138            art\tiles\grt2001.frm
 tile       76   138            art\tiles\shipflr1.frm
 tile       78   138            art\tiles\shipflr1.frm
 tile       80   138            art\tiles\shipflr1.frm
@@ -3209,8 +3209,8 @@ tile       82   138            art\tiles\shipflr1.frm
 tile       84   138            art\tiles\shipflr1.frm
 tile       86   138            art\tiles\shipflr1.frm
 tile       88   138            art\tiles\shipflr1.frm
-tile       90   138            art\tiles\GRT2001.FRM
-tile       92   138            art\tiles\GRT2001.FRM
+tile       90   138            art\tiles\grt2001.frm
+tile       92   138            art\tiles\grt2001.frm
 tile       94   138            art\tiles\shipflr1.frm
 tile       96   138            art\tiles\bld2043.frm
 tile       98   138            art\tiles\bld2043.frm
@@ -3256,8 +3256,8 @@ tile       64   140            art\tiles\bld2043.frm
 tile       66   140            art\tiles\bld2043.frm
 tile       68   140            art\tiles\shipflr1.frm
 tile       70   140            art\tiles\shipflr1.frm
-tile       72   140            art\tiles\GRT2001.FRM
-tile       74   140            art\tiles\GRT2001.FRM
+tile       72   140            art\tiles\grt2001.frm
+tile       74   140            art\tiles\grt2001.frm
 tile       76   140            art\tiles\shipflr1.frm
 tile       78   140            art\tiles\shipflr1.frm
 tile       80   140            art\tiles\shipflr1.frm
@@ -3265,8 +3265,8 @@ tile       82   140            art\tiles\shipflr1.frm
 tile       84   140            art\tiles\shipflr1.frm
 tile       86   140            art\tiles\shipflr1.frm
 tile       88   140            art\tiles\shipflr1.frm
-tile       90   140            art\tiles\GRT2001.FRM
-tile       92   140            art\tiles\GRT2001.FRM
+tile       90   140            art\tiles\grt2001.frm
+tile       92   140            art\tiles\grt2001.frm
 tile       94   140            art\tiles\shipflr1.frm
 tile       96   140            art\tiles\bld2043.frm
 tile       98   140            art\tiles\bld2043.frm
@@ -3314,8 +3314,8 @@ tile       64   142            art\tiles\bld2043.frm
 tile       66   142            art\tiles\bld2043.frm
 tile       68   142            art\tiles\shipflr1.frm
 tile       70   142            art\tiles\shipflr1.frm
-tile       72   142            art\tiles\GRT2001.FRM
-tile       74   142            art\tiles\GRT2001.FRM
+tile       72   142            art\tiles\grt2001.frm
+tile       74   142            art\tiles\grt2001.frm
 tile       76   142            art\tiles\shipflr1.frm
 tile       78   142            art\tiles\shipflr1.frm
 tile       80   142            art\tiles\shipflr1.frm
@@ -3323,8 +3323,8 @@ tile       82   142            art\tiles\shipflr1.frm
 tile       84   142            art\tiles\shipflr1.frm
 tile       86   142            art\tiles\shipflr1.frm
 tile       88   142            art\tiles\shipflr1.frm
-tile       90   142            art\tiles\GRT2001.FRM
-tile       92   142            art\tiles\GRT2001.FRM
+tile       90   142            art\tiles\grt2001.frm
+tile       92   142            art\tiles\grt2001.frm
 tile       94   142            art\tiles\shipflr1.frm
 tile       96   142            art\tiles\bld2043.frm
 tile       98   142            art\tiles\bld2043.frm
@@ -3372,8 +3372,8 @@ tile       64   144            art\tiles\bld2043.frm
 tile       66   144            art\tiles\bld2043.frm
 tile       68   144            art\tiles\shipflr1.frm
 tile       70   144            art\tiles\shipflr1.frm
-tile       72   144            art\tiles\GRT2001.FRM
-tile       74   144            art\tiles\GRT2001.FRM
+tile       72   144            art\tiles\grt2001.frm
+tile       74   144            art\tiles\grt2001.frm
 tile       76   144            art\tiles\shipflr1.frm
 tile       78   144            art\tiles\shipflr1.frm
 tile       80   144            art\tiles\shipflr1.frm
@@ -3381,8 +3381,8 @@ tile       82   144            art\tiles\shipflr1.frm
 tile       84   144            art\tiles\shipflr1.frm
 tile       86   144            art\tiles\shipflr1.frm
 tile       88   144            art\tiles\shipflr1.frm
-tile       90   144            art\tiles\GRT2001.FRM
-tile       92   144            art\tiles\GRT2001.FRM
+tile       90   144            art\tiles\grt2001.frm
+tile       92   144            art\tiles\grt2001.frm
 tile       94   144            art\tiles\shipflr1.frm
 tile       96   144            art\tiles\bld2043.frm
 tile       98   144            art\tiles\bld2043.frm
@@ -3429,8 +3429,8 @@ tile       64   146            art\tiles\bld2043.frm
 tile       66   146            art\tiles\bld2043.frm
 tile       68   146            art\tiles\shipflr1.frm
 tile       70   146            art\tiles\shipflr1.frm
-tile       72   146            art\tiles\GRT2001.FRM
-tile       74   146            art\tiles\GRT2001.FRM
+tile       72   146            art\tiles\grt2001.frm
+tile       74   146            art\tiles\grt2001.frm
 tile       76   146            art\tiles\shipflr1.frm
 tile       78   146            art\tiles\shipflr1.frm
 tile       80   146            art\tiles\brn1000.frm
@@ -3438,8 +3438,8 @@ tile       82   146            art\tiles\brn1001.frm
 tile       84   146            art\tiles\brn1000.frm
 tile       86   146            art\tiles\shipflr1.frm
 tile       88   146            art\tiles\shipflr1.frm
-tile       90   146            art\tiles\GRT2001.FRM
-tile       92   146            art\tiles\GRT2001.FRM
+tile       90   146            art\tiles\grt2001.frm
+tile       92   146            art\tiles\grt2001.frm
 tile       94   146            art\tiles\shipflr1.frm
 tile       96   146            art\tiles\bld2043.frm
 tile       98   146            art\tiles\bld2043.frm
@@ -3483,8 +3483,8 @@ tile       64   148            art\tiles\bld2043.frm
 tile       66   148            art\tiles\bld2043.frm
 tile       68   148            art\tiles\shipflr1.frm
 tile       70   148            art\tiles\shipflr1.frm
-tile       72   148            art\tiles\GRT2001.FRM
-tile       74   148            art\tiles\GRT2001.FRM
+tile       72   148            art\tiles\grt2001.frm
+tile       74   148            art\tiles\grt2001.frm
 tile       76   148            art\tiles\shipflr1.frm
 tile       78   148            art\tiles\shipflr1.frm
 tile       80   148            art\tiles\brn1001.frm
@@ -3492,8 +3492,8 @@ tile       82   148            art\tiles\brn1000.frm
 tile       84   148            art\tiles\brn1001.frm
 tile       86   148            art\tiles\shipflr1.frm
 tile       88   148            art\tiles\shipflr1.frm
-tile       90   148            art\tiles\GRT2001.FRM
-tile       92   148            art\tiles\GRT2001.FRM
+tile       90   148            art\tiles\grt2001.frm
+tile       92   148            art\tiles\grt2001.frm
 tile       94   148            art\tiles\shipflr1.frm
 tile       96   148            art\tiles\bld2043.frm
 tile       98   148            art\tiles\bld2043.frm
@@ -3537,8 +3537,8 @@ tile       64   150            art\tiles\bld2043.frm
 tile       66   150            art\tiles\bld2043.frm
 tile       68   150            art\tiles\shipflr1.frm
 tile       70   150            art\tiles\shipflr1.frm
-tile       72   150            art\tiles\GRT2001.FRM
-tile       74   150            art\tiles\GRT2001.FRM
+tile       72   150            art\tiles\grt2001.frm
+tile       74   150            art\tiles\grt2001.frm
 tile       76   150            art\tiles\shipflr1.frm
 tile       78   150            art\tiles\shipflr1.frm
 tile       80   150            art\tiles\brn1000.frm
@@ -3546,8 +3546,8 @@ tile       82   150            art\tiles\brn1001.frm
 tile       84   150            art\tiles\brn1000.frm
 tile       86   150            art\tiles\shipflr1.frm
 tile       88   150            art\tiles\shipflr1.frm
-tile       90   150            art\tiles\GRT2001.FRM
-tile       92   150            art\tiles\GRT2001.FRM
+tile       90   150            art\tiles\grt2001.frm
+tile       92   150            art\tiles\grt2001.frm
 tile       94   150            art\tiles\shipflr1.frm
 tile       96   150            art\tiles\bld2043.frm
 tile       98   150            art\tiles\bld2043.frm
@@ -3592,8 +3592,8 @@ tile       64   152            art\tiles\bld2043.frm
 tile       66   152            art\tiles\bld2043.frm
 tile       68   152            art\tiles\shipflr1.frm
 tile       70   152            art\tiles\shipflr1.frm
-tile       72   152            art\tiles\GRT2001.FRM
-tile       74   152            art\tiles\GRT2001.FRM
+tile       72   152            art\tiles\grt2001.frm
+tile       74   152            art\tiles\grt2001.frm
 tile       76   152            art\tiles\shipflr1.frm
 tile       78   152            art\tiles\shipflr1.frm
 tile       80   152            art\tiles\brn1001.frm
@@ -3601,8 +3601,8 @@ tile       82   152            art\tiles\brn1000.frm
 tile       84   152            art\tiles\brn1001.frm
 tile       86   152            art\tiles\shipflr1.frm
 tile       88   152            art\tiles\shipflr1.frm
-tile       90   152            art\tiles\GRT2001.FRM
-tile       92   152            art\tiles\GRT2001.FRM
+tile       90   152            art\tiles\grt2001.frm
+tile       92   152            art\tiles\grt2001.frm
 tile       94   152            art\tiles\shipflr1.frm
 tile       96   152            art\tiles\bld2043.frm
 tile       98   152            art\tiles\bld2043.frm
@@ -3649,8 +3649,8 @@ tile       64   154            art\tiles\bld2043.frm
 tile       66   154            art\tiles\bld2043.frm
 tile       68   154            art\tiles\shipflr1.frm
 tile       70   154            art\tiles\shipflr1.frm
-tile       72   154            art\tiles\GRT2001.FRM
-tile       74   154            art\tiles\GRT2001.FRM
+tile       72   154            art\tiles\grt2001.frm
+tile       74   154            art\tiles\grt2001.frm
 tile       76   154            art\tiles\shipflr1.frm
 tile       78   154            art\tiles\shipflr1.frm
 tile       80   154            art\tiles\brn1000.frm
@@ -3658,8 +3658,8 @@ tile       82   154            art\tiles\brn1001.frm
 tile       84   154            art\tiles\brn1000.frm
 tile       86   154            art\tiles\shipflr1.frm
 tile       88   154            art\tiles\shipflr1.frm
-tile       90   154            art\tiles\GRT2001.FRM
-tile       92   154            art\tiles\GRT2001.FRM
+tile       90   154            art\tiles\grt2001.frm
+tile       92   154            art\tiles\grt2001.frm
 tile       94   154            art\tiles\shipflr1.frm
 tile       96   154            art\tiles\bld2043.frm
 tile       98   154            art\tiles\bld2043.frm
@@ -3708,8 +3708,8 @@ tile       64   156            art\tiles\bld2043.frm
 tile       66   156            art\tiles\bld2043.frm
 tile       68   156            art\tiles\shipflr1.frm
 tile       70   156            art\tiles\shipflr1.frm
-tile       72   156            art\tiles\GRT2001.FRM
-tile       74   156            art\tiles\GRT2001.FRM
+tile       72   156            art\tiles\grt2001.frm
+tile       74   156            art\tiles\grt2001.frm
 tile       76   156            art\tiles\shipflr1.frm
 tile       78   156            art\tiles\shipflr1.frm
 tile       80   156            art\tiles\shipflr1.frm
@@ -3717,8 +3717,8 @@ tile       82   156            art\tiles\shipflr1.frm
 tile       84   156            art\tiles\shipflr1.frm
 tile       86   156            art\tiles\shipflr1.frm
 tile       88   156            art\tiles\shipflr1.frm
-tile       90   156            art\tiles\GRT2001.FRM
-tile       92   156            art\tiles\GRT2001.FRM
+tile       90   156            art\tiles\grt2001.frm
+tile       92   156            art\tiles\grt2001.frm
 tile       94   156            art\tiles\shipflr1.frm
 tile       96   156            art\tiles\bld2043.frm
 tile       98   156            art\tiles\bld2043.frm
@@ -3766,8 +3766,8 @@ tile       64   158            art\tiles\bld2043.frm
 tile       66   158            art\tiles\bld2043.frm
 tile       68   158            art\tiles\shipflr1.frm
 tile       70   158            art\tiles\shipflr1.frm
-tile       72   158            art\tiles\GRT2001.FRM
-tile       74   158            art\tiles\GRT2001.FRM
+tile       72   158            art\tiles\grt2001.frm
+tile       74   158            art\tiles\grt2001.frm
 tile       76   158            art\tiles\shipflr1.frm
 tile       78   158            art\tiles\shipflr1.frm
 tile       80   158            art\tiles\shipflr1.frm
@@ -3775,8 +3775,8 @@ tile       82   158            art\tiles\shipflr1.frm
 tile       84   158            art\tiles\shipflr1.frm
 tile       86   158            art\tiles\shipflr1.frm
 tile       88   158            art\tiles\shipflr1.frm
-tile       90   158            art\tiles\GRT2001.FRM
-tile       92   158            art\tiles\GRT2001.FRM
+tile       90   158            art\tiles\grt2001.frm
+tile       92   158            art\tiles\grt2001.frm
 tile       94   158            art\tiles\shipflr1.frm
 tile       96   158            art\tiles\bld2043.frm
 tile       98   158            art\tiles\bld2043.frm
@@ -3824,8 +3824,8 @@ tile       64   160            art\tiles\bld2043.frm
 tile       66   160            art\tiles\bld2043.frm
 tile       68   160            art\tiles\shipflr1.frm
 tile       70   160            art\tiles\shipflr1.frm
-tile       72   160            art\tiles\GRT2001.FRM
-tile       74   160            art\tiles\GRT2001.FRM
+tile       72   160            art\tiles\grt2001.frm
+tile       74   160            art\tiles\grt2001.frm
 tile       76   160            art\tiles\shipflr1.frm
 tile       78   160            art\tiles\shipflr1.frm
 tile       80   160            art\tiles\shipflr1.frm
@@ -3833,8 +3833,8 @@ tile       82   160            art\tiles\shipflr1.frm
 tile       84   160            art\tiles\shipflr1.frm
 tile       86   160            art\tiles\shipflr1.frm
 tile       88   160            art\tiles\shipflr1.frm
-tile       90   160            art\tiles\GRT2001.FRM
-tile       92   160            art\tiles\GRT2001.FRM
+tile       90   160            art\tiles\grt2001.frm
+tile       92   160            art\tiles\grt2001.frm
 tile       94   160            art\tiles\shipflr1.frm
 tile       96   160            art\tiles\bld2043.frm
 tile       98   160            art\tiles\bld2043.frm
@@ -3883,8 +3883,8 @@ tile       64   162            art\tiles\bld2043.frm
 tile       66   162            art\tiles\bld2043.frm
 tile       68   162            art\tiles\shipflr1.frm
 tile       70   162            art\tiles\shipflr1.frm
-tile       72   162            art\tiles\GRT2001.FRM
-tile       74   162            art\tiles\GRT2001.FRM
+tile       72   162            art\tiles\grt2001.frm
+tile       74   162            art\tiles\grt2001.frm
 tile       76   162            art\tiles\shipflr1.frm
 tile       78   162            art\tiles\shipflr1.frm
 tile       80   162            art\tiles\shipflr1.frm
@@ -3892,8 +3892,8 @@ tile       82   162            art\tiles\shipflr1.frm
 tile       84   162            art\tiles\shipflr1.frm
 tile       86   162            art\tiles\shipflr1.frm
 tile       88   162            art\tiles\shipflr1.frm
-tile       90   162            art\tiles\GRT2001.FRM
-tile       92   162            art\tiles\GRT2001.FRM
+tile       90   162            art\tiles\grt2001.frm
+tile       92   162            art\tiles\grt2001.frm
 tile       94   162            art\tiles\shipflr1.frm
 tile       96   162            art\tiles\bld2043.frm
 tile       98   162            art\tiles\bld2043.frm
@@ -3940,17 +3940,17 @@ tile       64   164            art\tiles\bld2043.frm
 tile       66   164            art\tiles\bld2043.frm
 tile       68   164            art\tiles\shipflr1.frm
 tile       70   164            art\tiles\shipflr1.frm
-tile       72   164            art\tiles\GRT2001.FRM
-tile       74   164            art\tiles\GRT2001.FRM
-tile       76   164            art\tiles\GRT2001.FRM
-tile       78   164            art\tiles\GRT2001.FRM
-tile       80   164            art\tiles\GRT2001.FRM
-tile       82   164            art\tiles\GRT2001.FRM
-tile       84   164            art\tiles\GRT2001.FRM
-tile       86   164            art\tiles\GRT2001.FRM
-tile       88   164            art\tiles\GRT2001.FRM
-tile       90   164            art\tiles\GRT2001.FRM
-tile       92   164            art\tiles\GRT2001.FRM
+tile       72   164            art\tiles\grt2001.frm
+tile       74   164            art\tiles\grt2001.frm
+tile       76   164            art\tiles\grt2001.frm
+tile       78   164            art\tiles\grt2001.frm
+tile       80   164            art\tiles\grt2001.frm
+tile       82   164            art\tiles\grt2001.frm
+tile       84   164            art\tiles\grt2001.frm
+tile       86   164            art\tiles\grt2001.frm
+tile       88   164            art\tiles\grt2001.frm
+tile       90   164            art\tiles\grt2001.frm
+tile       92   164            art\tiles\grt2001.frm
 tile       94   164            art\tiles\shipflr1.frm
 tile       96   164            art\tiles\bld2043.frm
 tile       98   164            art\tiles\bld2043.frm
@@ -3994,17 +3994,17 @@ tile       64   166            art\tiles\bld2043.frm
 tile       66   166            art\tiles\bld2043.frm
 tile       68   166            art\tiles\shipflr1.frm
 tile       70   166            art\tiles\shipflr1.frm
-tile       72   166            art\tiles\GRT2001.FRM
-tile       74   166            art\tiles\GRT2001.FRM
-tile       76   166            art\tiles\GRT2001.FRM
-tile       78   166            art\tiles\GRT2001.FRM
-tile       80   166            art\tiles\GRT2001.FRM
-tile       82   166            art\tiles\GRT2001.FRM
-tile       84   166            art\tiles\GRT2001.FRM
-tile       86   166            art\tiles\GRT2001.FRM
-tile       88   166            art\tiles\GRT2001.FRM
-tile       90   166            art\tiles\GRT2001.FRM
-tile       92   166            art\tiles\GRT2001.FRM
+tile       72   166            art\tiles\grt2001.frm
+tile       74   166            art\tiles\grt2001.frm
+tile       76   166            art\tiles\grt2001.frm
+tile       78   166            art\tiles\grt2001.frm
+tile       80   166            art\tiles\grt2001.frm
+tile       82   166            art\tiles\grt2001.frm
+tile       84   166            art\tiles\grt2001.frm
+tile       86   166            art\tiles\grt2001.frm
+tile       88   166            art\tiles\grt2001.frm
+tile       90   166            art\tiles\grt2001.frm
+tile       92   166            art\tiles\grt2001.frm
 tile       94   166            art\tiles\shipflr1.frm
 tile       96   166            art\tiles\bld2043.frm
 tile       98   166            art\tiles\bld2043.frm
@@ -4473,19 +4473,19 @@ tile       62   182            art\tiles\bld2043.frm
 tile       64   182            art\tiles\bld2043.frm
 tile       66   182            art\tiles\bld2043.frm
 tile       68   182            art\tiles\bld2043.frm
-tile       70   182            art\tiles\GRT2001.FRM
-tile       72   182            art\tiles\GRT2001.FRM
-tile       74   182            art\tiles\GRT2001.FRM
-tile       76   182            art\tiles\GRT2001.FRM
-tile       78   182            art\tiles\GRT2001.FRM
-tile       80   182            art\tiles\GRT2001.FRM
-tile       82   182            art\tiles\GRT2001.FRM
-tile       84   182            art\tiles\GRT2001.FRM
-tile       86   182            art\tiles\GRT2001.FRM
-tile       88   182            art\tiles\GRT2001.FRM
-tile       90   182            art\tiles\GRT2001.FRM
-tile       92   182            art\tiles\GRT2001.FRM
-tile       94   182            art\tiles\GRT2001.FRM
+tile       70   182            art\tiles\grt2001.frm
+tile       72   182            art\tiles\grt2001.frm
+tile       74   182            art\tiles\grt2001.frm
+tile       76   182            art\tiles\grt2001.frm
+tile       78   182            art\tiles\grt2001.frm
+tile       80   182            art\tiles\grt2001.frm
+tile       82   182            art\tiles\grt2001.frm
+tile       84   182            art\tiles\grt2001.frm
+tile       86   182            art\tiles\grt2001.frm
+tile       88   182            art\tiles\grt2001.frm
+tile       90   182            art\tiles\grt2001.frm
+tile       92   182            art\tiles\grt2001.frm
+tile       94   182            art\tiles\grt2001.frm
 tile       96   182            art\tiles\bld2043.frm
 tile       98   182            art\tiles\bld2043.frm
 tile       100  182            art\tiles\bld2043.frm
@@ -4538,13 +4538,13 @@ tile       68   184            art\tiles\bld2043.frm
 tile       70   184            art\tiles\shipflr1.frm
 tile       72   184            art\tiles\shipflr1.frm
 tile       74   184            art\tiles\shipflr1.frm
-tile       76   184            art\tiles\GRT2001.FRM
+tile       76   184            art\tiles\grt2001.frm
 tile       78   184            art\tiles\shipflr1.frm
 tile       80   184            art\tiles\bld2043.frm
 tile       82   184            art\tiles\shipflr1.frm
 tile       84   184            art\tiles\shipflr1.frm
 tile       86   184            art\tiles\shipflr1.frm
-tile       88   184            art\tiles\GRT2001.FRM
+tile       88   184            art\tiles\grt2001.frm
 tile       90   184            art\tiles\shipflr1.frm
 tile       92   184            art\tiles\shipflr1.frm
 tile       94   184            art\tiles\bld2043.frm
@@ -4598,13 +4598,13 @@ tile       68   186            art\tiles\bld2043.frm
 tile       70   186            art\tiles\shipflr1.frm
 tile       72   186            art\tiles\shipflr1.frm
 tile       74   186            art\tiles\shipflr1.frm
-tile       76   186            art\tiles\GRT2001.FRM
+tile       76   186            art\tiles\grt2001.frm
 tile       78   186            art\tiles\shipflr1.frm
 tile       80   186            art\tiles\bld2043.frm
 tile       82   186            art\tiles\shipflr1.frm
 tile       84   186            art\tiles\shipflr1.frm
 tile       86   186            art\tiles\shipflr1.frm
-tile       88   186            art\tiles\GRT2001.FRM
+tile       88   186            art\tiles\grt2001.frm
 tile       90   186            art\tiles\shipflr1.frm
 tile       92   186            art\tiles\shipflr1.frm
 tile       94   186            art\tiles\bld2043.frm
@@ -4659,13 +4659,13 @@ tile       68   188            art\tiles\bld2043.frm
 tile       70   188            art\tiles\shipflr1.frm
 tile       72   188            art\tiles\shipflr1.frm
 tile       74   188            art\tiles\shipflr1.frm
-tile       76   188            art\tiles\GRT2001.FRM
+tile       76   188            art\tiles\grt2001.frm
 tile       78   188            art\tiles\shipflr1.frm
 tile       80   188            art\tiles\bld2043.frm
 tile       82   188            art\tiles\shipflr1.frm
 tile       84   188            art\tiles\shipflr1.frm
 tile       86   188            art\tiles\shipflr1.frm
-tile       88   188            art\tiles\GRT2001.FRM
+tile       88   188            art\tiles\grt2001.frm
 tile       90   188            art\tiles\shipflr1.frm
 tile       92   188            art\tiles\shipflr1.frm
 tile       94   188            art\tiles\bld2043.frm
@@ -4719,13 +4719,13 @@ tile       68   190            art\tiles\bld2043.frm
 tile       70   190            art\tiles\shipflr1.frm
 tile       72   190            art\tiles\shipflr1.frm
 tile       74   190            art\tiles\shipflr1.frm
-tile       76   190            art\tiles\GRT2001.FRM
+tile       76   190            art\tiles\grt2001.frm
 tile       78   190            art\tiles\shipflr1.frm
 tile       80   190            art\tiles\shipflr1.frm
 tile       82   190            art\tiles\shipflr1.frm
 tile       84   190            art\tiles\shipflr1.frm
 tile       86   190            art\tiles\shipflr1.frm
-tile       88   190            art\tiles\GRT2001.FRM
+tile       88   190            art\tiles\grt2001.frm
 tile       90   190            art\tiles\shipflr1.frm
 tile       92   190            art\tiles\shipflr1.frm
 tile       94   190            art\tiles\bld2043.frm
@@ -4778,13 +4778,13 @@ tile       68   192            art\tiles\bld2043.frm
 tile       70   192            art\tiles\bld2043.frm
 tile       72   192            art\tiles\shipflr1.frm
 tile       74   192            art\tiles\shipflr1.frm
-tile       76   192            art\tiles\GRT2001.FRM
+tile       76   192            art\tiles\grt2001.frm
 tile       78   192            art\tiles\shipflr1.frm
 tile       80   192            art\tiles\shipflr1.frm
 tile       82   192            art\tiles\shipflr1.frm
 tile       84   192            art\tiles\shipflr1.frm
 tile       86   192            art\tiles\shipflr1.frm
-tile       88   192            art\tiles\GRT2001.FRM
+tile       88   192            art\tiles\grt2001.frm
 tile       90   192            art\tiles\shipflr1.frm
 tile       92   192            art\tiles\shipflr1.frm
 tile       94   192            art\tiles\bld2043.frm
@@ -4837,13 +4837,13 @@ tile       68   194            art\tiles\bld2043.frm
 tile       70   194            art\tiles\bld2043.frm
 tile       72   194            art\tiles\shipflr1.frm
 tile       74   194            art\tiles\shipflr1.frm
-tile       76   194            art\tiles\GRT2001.FRM
+tile       76   194            art\tiles\grt2001.frm
 tile       78   194            art\tiles\shipflr1.frm
 tile       80   194            art\tiles\shipflr1.frm
 tile       82   194            art\tiles\shipflr1.frm
 tile       84   194            art\tiles\shipflr1.frm
 tile       86   194            art\tiles\shipflr1.frm
-tile       88   194            art\tiles\GRT2001.FRM
+tile       88   194            art\tiles\grt2001.frm
 tile       90   194            art\tiles\shipflr1.frm
 tile       92   194            art\tiles\shipflr1.frm
 tile       94   194            art\tiles\bld2043.frm
@@ -4895,13 +4895,13 @@ tile       68   196            art\tiles\bld2043.frm
 tile       70   196            art\tiles\bld2043.frm
 tile       72   196            art\tiles\shipflr1.frm
 tile       74   196            art\tiles\shipflr1.frm
-tile       76   196            art\tiles\GRT2001.FRM
+tile       76   196            art\tiles\grt2001.frm
 tile       78   196            art\tiles\shipflr1.frm
 tile       80   196            art\tiles\shipflr1.frm
 tile       82   196            art\tiles\shipflr1.frm
 tile       84   196            art\tiles\shipflr1.frm
 tile       86   196            art\tiles\shipflr1.frm
-tile       88   196            art\tiles\GRT2001.FRM
+tile       88   196            art\tiles\grt2001.frm
 tile       90   196            art\tiles\shipflr1.frm
 tile       92   196            art\tiles\shipflr1.frm
 tile       94   196            art\tiles\bld2043.frm
@@ -4953,13 +4953,13 @@ tile       68   198            art\tiles\bld2043.frm
 tile       70   198            art\tiles\bld2043.frm
 tile       72   198            art\tiles\shipflr1.frm
 tile       74   198            art\tiles\shipflr1.frm
-tile       76   198            art\tiles\GRT2001.FRM
+tile       76   198            art\tiles\grt2001.frm
 tile       78   198            art\tiles\shipflr1.frm
 tile       80   198            art\tiles\shipflr1.frm
 tile       82   198            art\tiles\shipflr1.frm
 tile       84   198            art\tiles\shipflr1.frm
 tile       86   198            art\tiles\shipflr1.frm
-tile       88   198            art\tiles\GRT2001.FRM
+tile       88   198            art\tiles\grt2001.frm
 tile       90   198            art\tiles\shipflr1.frm
 tile       92   198            art\tiles\shipflr1.frm
 tile       94   198            art\tiles\bld2043.frm
@@ -5011,13 +5011,13 @@ tile       68   200            art\tiles\bld2043.frm
 tile       70   200            art\tiles\bld2043.frm
 tile       72   200            art\tiles\shipflr1.frm
 tile       74   200            art\tiles\shipflr1.frm
-tile       76   200            art\tiles\GRT2001.FRM
-tile       78   200            art\tiles\GRT2001.FRM
-tile       80   200            art\tiles\GRT2001.FRM
-tile       82   200            art\tiles\GRT2001.FRM
-tile       84   200            art\tiles\GRT2001.FRM
-tile       86   200            art\tiles\GRT2001.FRM
-tile       88   200            art\tiles\GRT2001.FRM
+tile       76   200            art\tiles\grt2001.frm
+tile       78   200            art\tiles\grt2001.frm
+tile       80   200            art\tiles\grt2001.frm
+tile       82   200            art\tiles\grt2001.frm
+tile       84   200            art\tiles\grt2001.frm
+tile       86   200            art\tiles\grt2001.frm
+tile       88   200            art\tiles\grt2001.frm
 tile       90   200            art\tiles\shipflr1.frm
 tile       92   200            art\tiles\shipflr1.frm
 tile       94   200            art\tiles\bld2043.frm
@@ -5069,13 +5069,13 @@ tile       68   202            art\tiles\bld2043.frm
 tile       70   202            art\tiles\bld2043.frm
 tile       72   202            art\tiles\shipflr1.frm
 tile       74   202            art\tiles\shipflr1.frm
-tile       76   202            art\tiles\GRT2001.FRM
+tile       76   202            art\tiles\grt2001.frm
 tile       78   202            art\tiles\shipflr1.frm
 tile       80   202            art\tiles\shipflr1.frm
 tile       82   202            art\tiles\shipflr1.frm
 tile       84   202            art\tiles\shipflr1.frm
 tile       86   202            art\tiles\shipflr1.frm
-tile       88   202            art\tiles\GRT2001.FRM
+tile       88   202            art\tiles\grt2001.frm
 tile       90   202            art\tiles\shipflr1.frm
 tile       92   202            art\tiles\shipflr1.frm
 tile       94   202            art\tiles\bld2043.frm
@@ -5127,13 +5127,13 @@ tile       68   204            art\tiles\bld2043.frm
 tile       70   204            art\tiles\bld2043.frm
 tile       72   204            art\tiles\shipflr1.frm
 tile       74   204            art\tiles\shipflr1.frm
-tile       76   204            art\tiles\GRT2001.FRM
+tile       76   204            art\tiles\grt2001.frm
 tile       78   204            art\tiles\shipflr1.frm
 tile       80   204            art\tiles\shipflr1.frm
 tile       82   204            art\tiles\shipflr1.frm
 tile       84   204            art\tiles\shipflr1.frm
 tile       86   204            art\tiles\shipflr1.frm
-tile       88   204            art\tiles\GRT2001.FRM
+tile       88   204            art\tiles\grt2001.frm
 tile       90   204            art\tiles\shipflr1.frm
 tile       92   204            art\tiles\shipflr1.frm
 tile       94   204            art\tiles\bld2043.frm
@@ -5185,13 +5185,13 @@ tile       68   206            art\tiles\bld2043.frm
 tile       70   206            art\tiles\bld2043.frm
 tile       72   206            art\tiles\shipflr1.frm
 tile       74   206            art\tiles\shipflr1.frm
-tile       76   206            art\tiles\GRT2001.FRM
+tile       76   206            art\tiles\grt2001.frm
 tile       78   206            art\tiles\shipflr1.frm
 tile       80   206            art\tiles\shipflr1.frm
 tile       82   206            art\tiles\shipflr1.frm
 tile       84   206            art\tiles\shipflr1.frm
 tile       86   206            art\tiles\shipflr1.frm
-tile       88   206            art\tiles\GRT2001.FRM
+tile       88   206            art\tiles\grt2001.frm
 tile       90   206            art\tiles\shipflr1.frm
 tile       92   206            art\tiles\shipflr1.frm
 tile       94   206            art\tiles\bld2043.frm
@@ -5243,13 +5243,13 @@ tile       68   208            art\tiles\bld2043.frm
 tile       70   208            art\tiles\bld2043.frm
 tile       72   208            art\tiles\shipflr1.frm
 tile       74   208            art\tiles\shipflr1.frm
-tile       76   208            art\tiles\GRT2001.FRM
+tile       76   208            art\tiles\grt2001.frm
 tile       78   208            art\tiles\shipflr1.frm
 tile       80   208            art\tiles\shipflr1.frm
 tile       82   208            art\tiles\shipflr1.frm
 tile       84   208            art\tiles\shipflr1.frm
 tile       86   208            art\tiles\shipflr1.frm
-tile       88   208            art\tiles\GRT2001.FRM
+tile       88   208            art\tiles\grt2001.frm
 tile       90   208            art\tiles\shipflr1.frm
 tile       92   208            art\tiles\shipflr1.frm
 tile       94   208            art\tiles\bld2043.frm
@@ -5301,13 +5301,13 @@ tile       68   210            art\tiles\bld2043.frm
 tile       70   210            art\tiles\bld2043.frm
 tile       72   210            art\tiles\shipflr1.frm
 tile       74   210            art\tiles\shipflr1.frm
-tile       76   210            art\tiles\GRT2001.FRM
+tile       76   210            art\tiles\grt2001.frm
 tile       78   210            art\tiles\shipflr1.frm
 tile       80   210            art\tiles\shipflr1.frm
 tile       82   210            art\tiles\shipflr1.frm
 tile       84   210            art\tiles\shipflr1.frm
 tile       86   210            art\tiles\shipflr1.frm
-tile       88   210            art\tiles\GRT2001.FRM
+tile       88   210            art\tiles\grt2001.frm
 tile       90   210            art\tiles\shipflr1.frm
 tile       92   210            art\tiles\shipflr1.frm
 tile       94   210            art\tiles\bld2043.frm
@@ -15705,8 +15705,9 @@ ProtoId              199
 MapX                 77
 MapY                 204
 UID                  12
-Item_LockerDoorId    66666
-Item_LockerComplexity 50
+ScriptName           item_spawner_container
+FuncName             item_init
+Item_Val4            100
 
 MapObjType           1
 ProtoId              198
@@ -15749,8 +15750,9 @@ ProtoId              203
 MapX                 91
 MapY                 206
 UID                  8
-Item_LockerDoorId    66666
-Item_LockerComplexity 50
+ScriptName           item_spawner_container
+FuncName             item_init
+Item_Val4            101
 
 MapObjType           1
 ProtoId              200
@@ -15764,8 +15766,9 @@ ProtoId              199
 MapX                 76
 MapY                 209
 UID                  7
-Item_LockerDoorId    66666
-Item_LockerComplexity 50
+ScriptName           item_spawner_container
+FuncName             item_init
+Item_Val4            101
 
 MapObjType           1
 ProtoId              200
@@ -15780,8 +15783,9 @@ ProtoId              200
 MapX                 84
 MapY                 206
 UID                  9
-Item_LockerDoorId    66666
-Item_LockerComplexity 50
+ScriptName           item_spawner_container
+FuncName             item_init
+Item_Val4            100
 
 MapObjType           1
 ProtoId              200
@@ -15796,8 +15800,9 @@ ProtoId              199
 MapX                 82
 MapY                 205
 UID                  10
-Item_LockerDoorId    66666
-Item_LockerComplexity 50
+ScriptName           item_spawner_container
+FuncName             item_init
+Item_Val4            100
 
 MapObjType           2
 ProtoId              3525
@@ -20103,5 +20108,37 @@ MapObjType           2
 ProtoId              4012
 MapX                 36
 MapY                 196
+
+MapObjType           0
+ProtoId              577
+MapX                 82
+MapY                 201
+Dir                  3
+Dir                  3
+ScriptName           quest_mb
+FuncName             _Robot
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  5043
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  258
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  424
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  5001
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  -1
+Critter_ParamIndex6  ST_FACTION_RANK
+Critter_ParamValue6  1
+Critter_ParamIndex7  ST_FACTION_MODE
+Critter_ParamValue7  0
+Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
+Critter_ParamValue8  0
+Critter_ParamIndex9  ST_LEVEL
+Critter_ParamValue9  25
 
 

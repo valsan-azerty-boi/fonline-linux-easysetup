@@ -33,6 +33,38 @@ namespace CritableEditor
             file.WriteLine(@"               // Roll 0 - 20                                                21 - 45                                                       46 - 70                                                       71 - 90                                                       91 - 100                                                      100+");
             file.WriteLine(@"		   // DamageMultiplier Effects StatCheck CheckModifier FailureEffect Message FailureMessage");
             file.WriteLine(@"		   // DM  Effects     Stat  Check FailEffects Mess  FailMess");
+
+            /*
+            for (uint i = 0; i < 20; i++)
+            {
+                file.WriteLine("// " + Bodytype[i]);
+                for (uint j = 0; j < 9; j++)
+                {
+                    if (i != 1)
+                    {
+                        if ((i < 19) || (j < 8))
+                            file.WriteLine(writeLine(i * 9 + j) + ",");
+                        else
+                            file.WriteLine(writeLine(i * 9 + j));
+                    }
+                    else
+                    if ((i == 1))
+                    {
+                        if (j < 8)
+                        {
+                            if ((j == 6) || (j == 7))
+                                file.WriteLine(writeLine(i * 9) + ",");
+                            else
+                                file.WriteLine(writeLine(i * 9 + j) + ",");
+                        }
+                        else
+                            file.WriteLine(writeLine(i * 9 + j));
+                    }
+                }
+
+            }
+            */
+
             for(uint i = 0; i < 20; i++)
             {
                 file.WriteLine("// " + Bodytype[i]);
@@ -138,6 +170,7 @@ namespace CritableEditor
             FileOutput = file.ReadLine();
             FOCombat = file.ReadLine();
             FileHTML = file.ReadLine();
+            FileHTML_Men = file.ReadLine();
             file.Close();
         }
 

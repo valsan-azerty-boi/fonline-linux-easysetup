@@ -121,16 +121,16 @@ lang=engl
 48 32000 None 0 #
 0 32010 @
 60 33000 None 0 #
-64 33010 R _var p q_vc_train4 = 5 R _param p ST_EXPERIENCE + 100 #
+64 33010 R _var p q_vc_train4 = 5 R _param p ST_EXPERIENCE + 500 #
 0 33020 @
 61 34000 None 0 #
-65 34010 R _var p q_vc_train3 = 5 R _param p ST_EXPERIENCE + 100 #
+65 34010 R _var p q_vc_train3 = 5 R _param p ST_EXPERIENCE + 500 #
 0 34020 @
 62 35000 None 0 #
-66 35010 R _var p q_vc_train2 = 5 R _param p ST_EXPERIENCE + 100 #
+66 35010 R _var p q_vc_train2 = 5 R _param p ST_EXPERIENCE + 500 #
 0 35020 @
 63 36000 None 0 #
-67 36010 R _var p q_vc_train1 = 5 R _param p ST_EXPERIENCE + 100 #
+67 36010 R _var p q_vc_train1 = 5 R _param p ST_EXPERIENCE + 500 #
 0 36020 @
 64 37000 None 0 #
 47 37010 #
@@ -149,10 +149,10 @@ lang=engl
 72 41020 D _script dialog@d_IsMemberOf 1 FACTION_VAULT_CITY #
 0 41030 @
 69 42000 None 0 #
-0 42010 R _script dialog@r_AddMoney 1 300 R _var p q_vc_train_doc = 6 R _param p ST_EXPERIENCE + 750 #
-70 42020 D _param p SK_BARTER > 90 R _script dialog@r_AddMoney 1 400 R _var p q_vc_train_doc = 6 R _param p ST_EXPERIENCE + 900 #
-71 42030 D _param p SK_BARTER < 91 R _script dialog@r_AddMoney 1 300 R _var p q_vc_train_doc = 6 R _param p ST_EXPERIENCE + 750 #
-2 42040 R _script dialog@r_AddMoney 1 300 R _var p q_vc_train_doc = 6 R _param p ST_EXPERIENCE + 750 @
+0 42010 R _script dialog@r_AddMoney 1 900 R _var p q_vc_train_doc = 6 R _param p ST_EXPERIENCE + 1750 #
+70 42020 D _param p SK_BARTER > 90 R _script dialog@r_AddMoney 1 1400 R _var p q_vc_train_doc = 6 R _param p ST_EXPERIENCE + 2400 #
+71 42030 D _param p SK_BARTER < 91 R _script dialog@r_AddMoney 1 900 R _var p q_vc_train_doc = 6 R _param p ST_EXPERIENCE + 1750 #
+2 42040 R _script dialog@r_AddMoney 1 900 R _var p q_vc_train_doc = 6 R _param p ST_EXPERIENCE + 1750 @
 70 43000 None 0 #
 0 43010 #
 2 43020 @
@@ -160,8 +160,8 @@ lang=engl
 0 44010 #
 2 44020 @
 72 45000 None 0 #
-0 45010 R _script dialog@r_AddMoney 1 300 R _item p PID_STIMPAK + 5 R _var p q_vc_train_doc = 6 R _param p ST_EXPERIENCE + 800 #
-2 45020 R _script dialog@r_AddMoney 1 300 R _item p PID_STIMPAK + 5 R _var p q_vc_train_doc = 6 R _param p ST_EXPERIENCE + 800 &
+0 45010 R _script dialog@r_AddMoney 1 900 R _item p PID_STIMPAK + 5 R _var p q_vc_train_doc = 6 R _param p ST_EXPERIENCE + 1800 #
+2 45020 R _script dialog@r_AddMoney 1 900 R _item p PID_STIMPAK + 5 R _var p q_vc_train_doc = 6 R _param p ST_EXPERIENCE + 1800 &
 
 [engl]
 {100}{}{Doctor}

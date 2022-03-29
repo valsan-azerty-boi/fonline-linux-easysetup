@@ -154,17 +154,17 @@ lang=engl
 0 43030 R _var p q_mordinos_joining_quest = 6 R _param p REPUTATION_MORDINOS - 500 #
 0 43040 R _var p q_mordinos_joining_quest = 6 R _param p REPUTATION_MORDINOS - 500 @
 54 44000 None 0 #
-0 44010 R _param p ST_EXPERIENCE + 1500 R _item p PID_10MM_SMG + 1 R _item p PID_JET + 10 R _item p PID_10MM_JHP + 100 R _var p q_mordinos_joining_quest = 4 R _param p REPUTATION_MORDINOS + 200 R _script dialog@r_AddMember 0  #
+0 44010 R _param p ST_EXPERIENCE + 1500 R _item p PID_10MM_SMG + 1 R _item p PID_JET + 10 R _item p PID_10MM_JHP + 100 R _var p q_mordinos_joining_quest = 4 R _param p REPUTATION_MORDINOS + 200 #
 0 44020 R _param p ST_EXPERIENCE + 1500 R _item p PID_10MM_SMG + 1 R _item p PID_JET + 10 R _item p PID_10MM_JHP + 100 R _var p q_mordinos_joining_quest = 4 R _param p REPUTATION_MORDINOS + 200 R _script dialog@r_AddMember 0  @
 55 45000 None 0 #
-0 45010 R _param p ST_EXPERIENCE + 2000 R _item p PID_TOMMY_GUN + 1 R _item p PID_45_CALIBER_AMMO + 100 R _var p q_mordinos_joining_quest = 4 R _param p REPUTATION_MORDINOS + 300 R _script dialog@r_AddMember 0  R _item p PID_JET + 5 #
-0 45020 R _param p ST_EXPERIENCE + 2000 R _item p PID_TOMMY_GUN + 1 R _item p PID_45_CALIBER_AMMO + 100 R _var p q_mordinos_joining_quest = 4 R _param p REPUTATION_MORDINOS + 300 R _script dialog@r_AddMember 0  R _item p PID_JET + 5 @
+0 45010 R _param p ST_EXPERIENCE + 2000 R _item p PID_TOMMY_GUN + 1 R _item p PID_45_CALIBER_AMMO + 100 R _var p q_mordinos_joining_quest = 4 R _param p REPUTATION_MORDINOS + 300 R _item p PID_JET + 5 #
+0 45020 R _param p ST_EXPERIENCE + 2000 R _item p PID_TOMMY_GUN + 1 R _item p PID_45_CALIBER_AMMO + 100 R _var p q_mordinos_joining_quest = 4 R _param p REPUTATION_MORDINOS + 300 R _item p PID_JET + 5 @
 56 46000 None 0 #
-0 46010 R _param p ST_EXPERIENCE + 3000 R _item p PID_GREASE_GUN + 1 R _item p PID_45_CALIBER_AMMO + 100 R _var p q_mordinos_joining_quest = 4 R _param p REPUTATION_MORDINOS + 400 R _script dialog@r_AddMember 0  R _item p PID_JET + 8 #
-0 46020 R _param p ST_EXPERIENCE + 3000 R _item p PID_GREASE_GUN + 1 R _item p PID_45_CALIBER_AMMO + 100 R _var p q_mordinos_joining_quest = 4 R _param p REPUTATION_MORDINOS + 400 R _script dialog@r_AddMember 0  R _item p PID_JET + 8 @
+0 46010 R _param p ST_EXPERIENCE + 3000 R _item p PID_GREASE_GUN + 1 R _item p PID_45_CALIBER_AMMO + 100 R _var p q_mordinos_joining_quest = 4 R _param p REPUTATION_MORDINOS + 400 R _item p PID_JET + 8 #
+0 46020 R _param p ST_EXPERIENCE + 3000 R _item p PID_GREASE_GUN + 1 R _item p PID_45_CALIBER_AMMO + 100 R _var p q_mordinos_joining_quest = 4 R _param p REPUTATION_MORDINOS + 400 R _item p PID_JET + 8 @
 57 47000 None 0 #
-0 47010 R _param p ST_EXPERIENCE + 4500 R _item p PID_44_MAGNUM_SPEEDLOADER + 1 R _item p PID_44_MAGNUM_JHP + 100 R _var p q_mordinos_joining_quest = 4 R _param p REPUTATION_MORDINOS + 500 R _script dialog@r_AddMember 0  R _item p PID_M60 + 1 R _item p PID_7_62MM_AMMO + 30 R _item p PID_JET + 12 #
-0 47020 R _param p ST_EXPERIENCE + 4500 R _item p PID_LIGHT_SUPPORT_WEAPON + 1 R _item p PID_223_FMJ + 100 R _item p PID_44_MAGNUM_SPEEDLOADER + 1 R _item p PID_44_MAGNUM_JHP + 100 R _var p q_mordinos_joining_quest = 4 R _param p REPUTATION_MORDINOS + 500 R _script dialog@r_AddMember 0  R _item p PID_JET + 12 @
+0 47010 R _param p ST_EXPERIENCE + 4500 R _item p PID_44_MAGNUM_SPEEDLOADER + 1 R _item p PID_44_MAGNUM_JHP + 100 R _var p q_mordinos_joining_quest = 4 R _param p REPUTATION_MORDINOS + 500 R _item p PID_M60 + 1 R _item p PID_7_62MM_AMMO + 30 R _item p PID_JET + 12 #
+0 47020 R _param p ST_EXPERIENCE + 4500 R _item p PID_LIGHT_SUPPORT_WEAPON + 1 R _item p PID_223_FMJ + 100 R _item p PID_44_MAGNUM_SPEEDLOADER + 1 R _item p PID_44_MAGNUM_JHP + 100 R _var p q_mordinos_joining_quest = 4 R _param p REPUTATION_MORDINOS + 500 R _item p PID_JET + 12 @
 58 48000 None 0 #
 4 48010 #
 0 48020 &
@@ -189,9 +189,9 @@ lang=engl
 {2010}{}{Who are you?}
 {2020}{}{Sorry. I thought you were someone else.}
 {3000}{}{Eh...? You again? What do you want now?}
-{3010}{}{I had some questions…}
+{3010}{}{I had some questionsï¿½}
 {3020}{}{Nevermind. Sorry to bother you.}
-{4000}{}{(Picks fingernails with knife.) Questions…EVERYBODY got questions…@@(Picks his teeth with a dirty fingernail.) Yeah?@@Something on your mind?}
+{4000}{}{(Picks fingernails with knife.) Questionsï¿½EVERYBODY got questionsï¿½@@(Picks his teeth with a dirty fingernail.) Yeah?@@Something on your mind?}
 {4010}{}{What was that you were saying about the Mordino Family again?}
 {4020}{}{Who is this Mordino Family you were talking about?}
 {4030}{}{I'm looking for a job.}
@@ -199,55 +199,55 @@ lang=engl
 {4050}{}{Lil' Jesus, we've known each other a while, you've seen what I can do. How about letting me become a Mordino?}
 {4060}{}{Lil' Jesus, we've known each other a while, you've seen what I can do. How about letting me become a Mordino?}
 {4070}{}{Nevermind. Catch you later.}
-{5000}{}{Me? If you gotta ask…heh. Name's Jesus. Jesus Mordino. Same as my Dad, he's the BIG Jesus, head of WHOLE Mordino family here in Reno. So most call me Lil' Jesus. Prevents confusion, y'know?}
+{5000}{}{Me? If you gotta askï¿½heh. Name's Jesus. Jesus Mordino. Same as my Dad, he's the BIG Jesus, head of WHOLE Mordino family here in Reno. So most call me Lil' Jesus. Prevents confusion, y'know?}
 {5010}{}{Family Mordino? Who are they?}
 {5020}{}{I'm looking for a job. Is Family Mordino hiring?}
 {5030}{}{Know what there is to do around New Reno to relax?}
-{5040}{}{I see. Say, I had some questions…}
-{6000}{}{Family MORDINO? You been taking too much Jet, homes? We Mordinos run New Reno…and Redding, too.}
+{5040}{}{I see. Say, I had some questionsï¿½}
+{6000}{}{Family MORDINO? You been taking too much Jet, homes? We Mordinos run New Renoï¿½and Redding, too.}
 {6010}{}{What do you mean about Redding?}
 {6020}{}{Redding? Where's that?}
 {6030}{}{You Mordinos talk big, but got small cojones. What you got to say about that, LITTLE Jesus?}
-{6040}{}{Sounds like the Mordinos have a bright future. Say, I had some questions…}
+{6040}{}{Sounds like the Mordinos have a bright future. Say, I had some questionsï¿½}
 {7000}{}{To the northwest, homes. If you ain't been there, you ain't missing nothing. Bunch of no-neck miners who like to FLY, know what I'm saying?}
 {7010}{}{Not really. What do you mean?}
 {7020}{}{They're a bunch of drug addicts?}
-{7030}{}{I hear you. I had some other questions…}
+{7030}{}{I hear you. I had some other questionsï¿½}
 {7040}{}{I have to go. Later, Jesus.}
 {8000}{}{Bunch of no-neck miners, dig in the dirt, but they like to FLY, know what I'm saying?}
 {8010}{}{Not really. What do you mean?}
 {8020}{}{They're a bunch of drug addicts?}
-{8030}{}{I hear you. I had some other questions…}
+{8030}{}{I hear you. I had some other questionsï¿½}
 {8040}{}{I have to go. Later, Jesus.}
 {9000}{}{Them no-necks dig for gold, see, but what WE give them is better than gold, know what I'm saying? They give us ALL
  the gold they dig up just for a LEETLE Jet. Everybody happy.}
-{9010}{}{Sounds like it. Look, I had some other questions…}
+{9010}{}{Sounds like it. Look, I had some other questionsï¿½}
 {10000}{}{Well, when they got their first taste o' Jet, they were. You can't have just one.}
 {10010}{}{Where does the Jet come from?}
-{10020}{}{I hear you. Look, I had some other questions…}
+{10020}{}{I hear you. Look, I had some other questionsï¿½}
 {11000}{}{The Jet? It comes from HERE. See, we don't dig for gold, we MAKE it: liquid gold. Jet. Worth a fortune to the miners, costs
  next to nothing to make. We ship it to Redding, they shoot up, they fly, they ship us gold. That simple.}
 {11010}{}{How long has this been going on? It seems like you would have controlled all of Northern California by now if Jet was that
  addictive.}
-{12000}{}{You're right about that…see, we didn't always HAVE Jet. But we stumbled across this kid - he took a look at the shitty
+{12000}{}{You're right about thatï¿½see, we didn't always HAVE Jet. But we stumbled across this kid - he took a look at the shitty
  drugs we was selling and said he could do 'better.' And he did. That simple.}
 {12010}{}{Who is this kid and where is he?}
 {13000}{}{Kid's name's Myron. We lost him a couple years back. He ran out into the wastes with some fuckin' tribal. (He spits) Shitheel.}
-{13010}{}{Got it. I had some other questions…}
-{14000}{}{The Desperado is the place to be, homes. We got the Jet, the games, the action…and we got all the putas you need right outside, wet and willing. Paradise, homes. Pair-a-dice.}
-{14010}{}{Say, I had some other questions…}
+{13010}{}{Got it. I had some other questionsï¿½}
+{14000}{}{The Desperado is the place to be, homes. We got the Jet, the games, the actionï¿½and we got all the putas you need right outside, wet and willing. Paradise, homes. Pair-a-dice.}
+{14010}{}{Say, I had some other questionsï¿½}
 {14020}{}{I'm looking for a job. Know of any place that's hiring?}
 {14030}{}{Thanks for the tip, thanks.}
 {15000}{}{Yeah? That's great. You look like a dick. Why should I even care?}
-{15010}{}{All right then. I had some other questions…}
+{15010}{}{All right then. I had some other questionsï¿½}
 {15020}{}{Come on, I'm good and I'm sure you have something that needs doing. Give me a chance!}
 {15030}{}{Nevermind then. Thanks anyway.}
 {16000}{}{Eh? What are you talkin ab --? (Gets it.) You fucking PUTA! You better get yo tramp ass outta here 'fore I carve you into so many pieces your own mother won't recognize you.}
 {16010}{}{Try it and see what happens, LITTLE Jesus.}
 {16020}{}{Try it, and I'll add so many scars to your face you'll look like a jigsaw puzzle.}
-{16030}{}{Calm down…I was just kidding with you.}
+{16030}{}{Calm downï¿½I was just kidding with you.}
 {16040}{}{I'm leaving. Great talking to someone as cultured as you.}
-{17000}{}{Ha! You all right, chica. You all right. Lil' Jesus gonna be keeping an eye on you…not that I couldn't help myself. What can I do for you?}
+{17000}{}{Ha! You all right, chica. You all right. Lil' Jesus gonna be keeping an eye on youï¿½not that I couldn't help myself. What can I do for you?}
 {17010}{}{First thing you can do for me is keep your eyes to yourself, LITTLE Jesus. I'd sooner consider humping a rock before touching that cratered landscape you call a face.}
 {17020}{}{I'm looking for a job. Know of anyone who's hiring?}
 {17030}{}{Actually, I have to be going. Good talking to you, Jesus.}

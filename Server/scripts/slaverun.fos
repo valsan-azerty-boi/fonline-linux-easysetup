@@ -309,7 +309,7 @@ class SlaverunLoc : ISlaverunLoc
     {
         // pid 217
         uint[] weaps = { PID_SHOTGUN, PID_SAWED_OFF_SHOTGUN, PID_HUNTING_RIFLE, PID_10MM_PISTOL, PID_DESERT_EAGLE };
-        uint[] ammos = { PID_SHOTGUN_SHELLS, PID_SHOTGUN_SHELLS, PID_22_AMMO, PID_10MM_JHP, PID_44_MAGNUM_JHP };
+        uint[] ammos = { PID_SHOTGUN_SHELLS, PID_SHOTGUN_SHELLS, PID_223_FMJ, PID_10MM_JHP, PID_44_MAGNUM_JHP };
         uint[] min = { 5, 5, 5, 8, 7 };
         uint[] max = { 10, 10, 10, 16, 14 };
         uint     num = Random(0, 4);

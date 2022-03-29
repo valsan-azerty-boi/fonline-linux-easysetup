@@ -38,6 +38,15 @@
 #define GVAR_base_cathedral_org                 (105)
 #define GVAR_base_enclave_score                 (106)
 #define GVAR_base_bos_score                     (107)
+#define GVAR_base_sierra_refresh_time_event_id  	(108)
+#define GVAR_base_mariposa_refresh_time_event_id    (109)
+#define GVAR_base_cathedral_refresh_time_event_id   (110)
+#define GVAR_base_sierra_mob_wave_time_event_id  	(111)
+#define GVAR_base_mariposa_mob_wave_time_event_id   (112)
+#define GVAR_base_cathedral_mob_wave_time_event_id  (113)
+#define GVAR_base_sierra_check_time_event_id  		(114)
+#define GVAR_base_mariposa_check_time_event_id  	(115)
+#define GVAR_base_cathedral_check_time_event_id 	(116)
 #define LVAR_factions_points_bos                (201)
 #define LVAR_factions_points_enclave            (202)
 #define LVAR_factions_points_ncr                (203)
@@ -336,6 +345,8 @@
 #define LVAR_q_first_tent                       (7322)
 #define LVAR_q_first_tent_loc1_id               (7323)
 #define LVAR_q_first_tent_loc2_id               (7324)
+#define LLVAR_q_mb_uber_bot_terminal            (7325)
+#define LLVAR_q_mb_uber_bot_status              (7326)
 #define LVAR_blood_type                         (9001)
 #define LVAR_birth_year                         (9002)
 #define LVAR_birth_day                          (9003)
@@ -352,6 +363,12 @@
 #define GVAR_talchem_rl                         (9211)
 #define LVAR_q_secret_factory                   (9220)
 #define LVAR_q_secret_hospital                  (9221)
+#define LVAR_Book_Science                     (9946)
+#define LVAR_Book_Repair                      (9947)
+#define LVAR_Book_Outdoorsman                 (9949)
+#define LVAR_Book_Barter	                  (9950)
+#define LVAR_Book_FirstAid	                  (9951)
+#define LVAR_Book_SmallGuns	                  (9952)
 #define LVAR_current_followers                  (10010)
 #define LVAR_patrol_currentnode                 (10100)
 #define LVAR_slaverun_status                    (11100)
@@ -407,7 +424,12 @@
 #define LVAR_wm_idle_chance                     (60004)
 #define LLVAR_combat_zone                       (60005)
 #define LVAR_tb_turn_time                       (60006)
-
+#define GVAR_modoc_score	                    (61001)
+#define GVAR_klamath_score                      (61002)
+#define GVAR_gecko_score	                    (61003)
+#define GVAR_brokenhills_score                  (61004)
+#define GVAR_den_score		                    (61005)
+#define GVAR_redding_score                      (61006)
 
 /*************************************************************************************
         Id	Type	Name		Start	Min	Max	Flags
@@ -520,58 +542,97 @@
 
    $	100	0	base_sierra_rule	0	0	0	4
 **********
-   Квест на удержание баз.
-   Id руководителя базы Сиерра.
+	id of player controlling base
 **********
 
    $	101	0	base_mariposa_rule	0	0	0	4
 **********
-   Квест на удержание баз.
-   Id руководителя базы Марипоза.
+	id of player controlling base
 **********
 
    $	102	0	base_cathedral_rule	0	0	0	4
 **********
-   Квест на удержание баз.
-   Id руководителя базы Собор.
+   id of player controlling base
 **********
 
    $	103	0	base_sierra_org	0	0	2	0
 **********
-   Квест на удержание баз.
-   Принадлежность базы Сиерра к организации.
-   0 - Никто
-   1 - Анклав
-   2 - БС
+   side chosen when starting base controll
+   0 - none
+   1 - enclave
+   2 - bos
 **********
 
    $	104	0	base_mariposa_org	0	0	2	0
 **********
-   Квест на удержание баз.
-   Принадлежность базы Марипоза к организации.
-   0 - Никто
-   1 - Анклав
-   2 - БС
+   side chosen when starting base controll
+   0 - none
+   1 - enclave
+   2 - bos
 **********
 
    $	105	0	base_cathedral_org	0	0	2	0
 **********
-   Квест на удержание баз.
-   Принадлежность базы Собор к организации.
-   0 - Никто
-   1 - Анклав
-   2 - БС
+   side chosen when starting base controll
+   0 - none
+   1 - enclave
+   2 - bos
 **********
 
    $	106	0	base_enclave_score	0	0	10000000	0
 **********
-   Очки Анклава.
+   ГЋГ·ГЄГЁ ГЂГ­ГЄГ«Г ГўГ .
 **********
 
    $	107	0	base_bos_score	0	0	10000000	0
 **********
-   Квест на удержание баз.
-   Очки Братства стали.
+   ГЉГўГҐГ±ГІ Г­Г  ГіГ¤ГҐГ°Г¦Г Г­ГЁГҐ ГЎГ Г§.
+   ГЋГ·ГЄГЁ ГЃГ°Г ГІГ±ГІГўГ  Г±ГІГ Г«ГЁ.
+**********
+
+   $	108	0	base_sierra_refresh_time_event_id	0	0	0	4
+**********
+   base refresh and car spawn event
+**********
+
+   $	109	0	base_mariposa_refresh_time_event_id	0	0	0	4
+**********
+   base refresh and car spawn event
+**********
+
+   $	110	0	base_cathedral_refresh_time_event_id	0	0	0	4
+**********
+   base refresh and car spawn event
+**********
+
+   $	111	0	base_sierra_mob_wave_time_event_id	0	0	0	4
+**********
+   base mob spawning event
+**********
+
+   $	112	0	base_mariposa_mob_wave_time_event_id	0	0	0	4
+**********
+   base mob spawning event
+**********
+
+   $	113	0	base_cathedral_mob_wave_time_event_id	0	0	0	4
+**********
+   base mob spawning event
+**********
+
+   $	114	0	base_sierra_check_time_event_id	0	0	0	4
+**********
+   base controlling team check event
+**********
+
+   $	115	0	base_mariposa_check_time_event_id	0	0	0	4
+**********
+   base controlling team check event
+**********
+
+   $	116	0	base_cathedral_check_time_event_id	0	0	0	4
+**********
+   base controlling team check event
 **********
 
    $	201	1	factions_points_bos	0	0	0	4
@@ -713,12 +774,12 @@
 
    $	2015	2	name_mem_npc_player	0	0	1	0
 **********
-   Используется для того, чтобы определить знает ли Нпц о имени Игрока или нет. Если 0, то не нет. 1
+   Г€Г±ГЇГ®Г«ГјГ§ГіГҐГІГ±Гї Г¤Г«Гї ГІГ®ГЈГ®, Г·ГІГ®ГЎГ» Г®ГЇГ°ГҐГ¤ГҐГ«ГЁГІГј Г§Г­Г ГҐГІ Г«ГЁ ГЌГЇГ¶ Г® ГЁГ¬ГҐГ­ГЁ Г€ГЈГ°Г®ГЄГ  ГЁГ«ГЁ Г­ГҐГІ. Г…Г±Г«ГЁ 0, ГІГ® Г­ГҐ Г­ГҐГІ. 1
 **********
 
    $	2016	2	name_mem_player_npc	0	0	1	0
 **********
-   Используется для того, чтобы определить знает ли Игрок о имени Нпц или нет. Если 0, то не нет. 1
+   Г€Г±ГЇГ®Г«ГјГ§ГіГҐГІГ±Гї Г¤Г«Гї ГІГ®ГЈГ®, Г·ГІГ®ГЎГ» Г®ГЇГ°ГҐГ¤ГҐГ«ГЁГІГј Г§Г­Г ГҐГІ Г«ГЁ Г€ГЈГ°Г®ГЄ Г® ГЁГ¬ГҐГ­ГЁ ГЌГЇГ¶ ГЁГ«ГЁ Г­ГҐГІ. Г…Г±Г«ГЁ 0, ГІГ® Г­ГҐ Г­ГҐГІ. 1
 **********
 
    $	2017	2	interacted	0	0	0	4
@@ -861,23 +922,23 @@
 
    $	3029	1	terminal_current	0	0	0	4
 **********
-   Id криттера, счет которого пополняет игрок.
-   Используется в скрипте repl_terminal.
+   Id ГЄГ°ГЁГІГІГҐГ°Г , Г±Г·ГҐГІ ГЄГ®ГІГ®Г°Г®ГЈГ® ГЇГ®ГЇГ®Г«Г­ГїГҐГІ ГЁГЈГ°Г®ГЄ.
+   Г€Г±ГЇГ®Г«ГјГ§ГіГҐГІГ±Гї Гў Г±ГЄГ°ГЁГЇГІГҐ repl_terminal.
 **********
 
    $	3030	1	sex_exp	0	0	501	0
 **********
-   Назначение: показывает какой у вас сексуалный опыт.
+   ГЌГ Г§Г­Г Г·ГҐГ­ГЁГҐ: ГЇГ®ГЄГ Г§Г»ГўГ ГҐГІ ГЄГ ГЄГ®Г© Гі ГўГ Г± Г±ГҐГЄГ±ГіГ Г«Г­Г»Г© Г®ГЇГ»ГІ.
 
-   0 - девственник.
-   50> неплохо.
-   100> опытный.
-   500> секс эксперт.
+   0 - Г¤ГҐГўГ±ГІГўГҐГ­Г­ГЁГЄ.
+   50> Г­ГҐГЇГ«Г®ГµГ®.
+   100> Г®ГЇГ»ГІГ­Г»Г©.
+   500> Г±ГҐГЄГ± ГЅГЄГ±ГЇГҐГ°ГІ.
 **********
 
    $	3099	1	bank_money	0	0	999999	0
 **********
-   Деньги хранящиеся в банке.
+   Г„ГҐГ­ГјГЈГЁ ГµГ°Г Г­ГїГ№ГЁГҐГ±Гї Гў ГЎГ Г­ГЄГҐ.
 **********
 
    $	3100	1	tent_id1	0	0	0	4
@@ -942,36 +1003,36 @@
 
    $	3147	1	den_narc_comm_member	0	0	5	0
 **********
-   Принадлежность игрока к наркоманской общине в Яме.
-   Если переменная меньше 5, то она указывает на то, сколько наркоманов игрок спросил местонахождение старшины. 5 означает принадлежность к общине.
+   ГЏГ°ГЁГ­Г Г¤Г«ГҐГ¦Г­Г®Г±ГІГј ГЁГЈГ°Г®ГЄГ  ГЄ Г­Г Г°ГЄГ®Г¬Г Г­Г±ГЄГ®Г© Г®ГЎГ№ГЁГ­ГҐ Гў ГџГ¬ГҐ.
+   Г…Г±Г«ГЁ ГЇГҐГ°ГҐГ¬ГҐГ­Г­Г Гї Г¬ГҐГ­ГјГёГҐ 5, ГІГ® Г®Г­Г  ГіГЄГ Г§Г»ГўГ ГҐГІ Г­Г  ГІГ®, Г±ГЄГ®Г«ГјГЄГ® Г­Г Г°ГЄГ®Г¬Г Г­Г®Гў ГЁГЈГ°Г®ГЄ Г±ГЇГ°Г®Г±ГЁГ« Г¬ГҐГ±ГІГ®Г­Г ГµГ®Г¦Г¤ГҐГ­ГЁГҐ Г±ГІГ Г°ГёГЁГ­Г». 5 Г®Г§Г­Г Г·Г ГҐГІ ГЇГ°ГЁГ­Г Г¤Г«ГҐГ¦Г­Г®Г±ГІГј ГЄ Г®ГЎГ№ГЁГ­ГҐ.
 **********
 
    $	3200	1	klam_sally_pay	0	0	10	0
 **********
-   Назначение: Используется для определения оплатил ли игрок проститутку и какую.
-   Возможные значения:
-   0 - не оплачено
-   1 - проститутка 1
-   2 - проститутка 2
-   3 - проститутка 3
-   4 - Дженни
+   ГЌГ Г§Г­Г Г·ГҐГ­ГЁГҐ: Г€Г±ГЇГ®Г«ГјГ§ГіГҐГІГ±Гї Г¤Г«Гї Г®ГЇГ°ГҐГ¤ГҐГ«ГҐГ­ГЁГї Г®ГЇГ«Г ГІГЁГ« Г«ГЁ ГЁГЈГ°Г®ГЄ ГЇГ°Г®Г±ГІГЁГІГіГІГЄГі ГЁ ГЄГ ГЄГіГѕ.
+   Г‚Г®Г§Г¬Г®Г¦Г­Г»ГҐ Г§Г­Г Г·ГҐГ­ГЁГї:
+   0 - Г­ГҐ Г®ГЇГ«Г Г·ГҐГ­Г®
+   1 - ГЇГ°Г®Г±ГІГЁГІГіГІГЄГ  1
+   2 - ГЇГ°Г®Г±ГІГЁГІГіГІГЄГ  2
+   3 - ГЇГ°Г®Г±ГІГЁГІГіГІГЄГ  3
+   4 - Г„Г¦ГҐГ­Г­ГЁ
    5 - ...
 **********
 
    $	3202	1	klam_bakner_beer	0	0	1	0
 **********
-   Для отображения состояния, угощали ли вы пивком посетителей бара Бакнеров?
+   Г„Г«Гї Г®ГІГ®ГЎГ°Г Г¦ГҐГ­ГЁГї Г±Г®Г±ГІГ®ГїГ­ГЁГї, ГіГЈГ®Г№Г Г«ГЁ Г«ГЁ ГўГ» ГЇГЁГўГЄГ®Г¬ ГЇГ®Г±ГҐГІГЁГІГҐГ«ГҐГ© ГЎГ Г°Г  ГЃГ ГЄГ­ГҐГ°Г®Гў?
 
-   0 - не угощали.
-   1 - угощали.
+   0 - Г­ГҐ ГіГЈГ®Г№Г Г«ГЁ.
+   1 - ГіГЈГ®Г№Г Г«ГЁ.
 **********
 
    $	3203	1	klam_gold_beer	0	0	1	0
 **********
-   Для отображения состояния, угощали ли вы пивком посетителей бара Золотое Гекко?
+   Г„Г«Гї Г®ГІГ®ГЎГ°Г Г¦ГҐГ­ГЁГї Г±Г®Г±ГІГ®ГїГ­ГЁГї, ГіГЈГ®Г№Г Г«ГЁ Г«ГЁ ГўГ» ГЇГЁГўГЄГ®Г¬ ГЇГ®Г±ГҐГІГЁГІГҐГ«ГҐГ© ГЎГ Г°Г  Г‡Г®Г«Г®ГІГ®ГҐ ГѓГҐГЄГЄГ®?
 
-   0 - не угощали.
-   1 - угощали.
+   0 - Г­ГҐ ГіГЈГ®Г№Г Г«ГЁ.
+   1 - ГіГЈГ®Г№Г Г«ГЁ.
 **********
 
    $	3707	1	nr_catspaw_paid	0	0	0	4
@@ -1123,7 +1184,7 @@
    $	5386	1	redding_morton_brothers	0	0	0	4
 **********
    GVAR_REDDING_MORTON_BROTHERS            :=0;    //      (386)
-   Точного назначения не знаю, поставил без ограничений.
+   Г’Г®Г·Г­Г®ГЈГ® Г­Г Г§Г­Г Г·ГҐГ­ГЁГї Г­ГҐ Г§Г­Г Гѕ, ГЇГ®Г±ГІГ ГўГЁГ« ГЎГҐГ§ Г®ГЈГ°Г Г­ГЁГ·ГҐГ­ГЁГ©.
 **********
 
    $	6000	1	q_raiders_hernandez_sister	0	0	0	5
@@ -2309,6 +2370,16 @@
 **********
    Id of the farmhouse location for the First Tent quest.
 **********
+        
+   $	7325	1	q_mb_uber_bot_terminal	0	0	1	4
+**********
+   Variable for johnnys military base quest == drzwi do uber bota na lvl2 otwierane w dialogu z kompem
+**********
+
+   $	7326	1	q_mb_uber_bot_status	0	0	1	4
+**********
+   Variable for johnnys military base quest == status uber bota w zaleznosci od dialogu w kompie na lvl2
+**********
 
    $	9001	1	blood_type	0	0	0	4
 **********
@@ -2389,6 +2460,38 @@
 **********
    hospital special encounter
 **********
+
+**********
+
+$	9946	1	LVAR_FO2077_Book_Science  0	0	10	0
+************
+0 - ksiazka nie zostala jeszcze przeczytana
+1 - ksiazka zostala przeczytana
+
+Added by Kilgore 28.01.2011
+************
+
+
+$	9947	1	LVAR_FO2077_Book_Repair   0	0	10	0
+************
+************
+
+$	9949	1	LVAR_FO2077_Book_Outdoorsman  0	0	10	0
+************
+************
+
+$	9950	1	LVAR_FO2077_Book_Barter  0	0	10	0
+************
+************
+
+$	9951	1	LVAR_FO2077_Book_FirstAid  0	0	10	0
+************
+************
+
+$	9952	1	LVAR_FO2077_Book_SmallGuns  0	0	10	0
+************
+************
+
 
    $	10010	1	current_followers	0	0	0	4
 **********
@@ -2663,6 +2766,30 @@
 **********
 
    $	60006	1	tb_turn_time	0	0	0	4
+**********
+
+**********
+	$	61001	0	modoc_score	0	0	10000000	0
+**********
+
+**********
+	$	61002	0	klamath_score	0	0	10000000	0
+**********
+
+**********
+	$	61003	0	gecko_score	0	0	10000000	0
+**********
+
+********** 
+	$	61004	0	brokenhills_score	0	0	10000000	0
+**********
+
+**********	
+	$	61005	0	den_score	0	0	10000000	0
+**********
+
+**********	   
+	$	61006	0	redding_score	0	0	10000000	0
 **********
 
 **********

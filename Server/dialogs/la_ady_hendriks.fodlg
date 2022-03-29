@@ -1,5 +1,6 @@
 [comment]
 
+
 [data]
 lang=engl
 
@@ -101,7 +102,7 @@ lang=engl
 [engl]
 {100}{}{Governor Hendriks}
 {200}{}{You see Governor Hendriks.}
-{210}{}{You see Morgan Handriks, the Governor of New Adytum.}
+{210}{}{You see Morgan Hendriks, the Governor of New Adytum.}
 {1000}{}{Predialogue installations}
 {1010}{}{We are talking the first time.}
 {1020}{}{We talked already.}

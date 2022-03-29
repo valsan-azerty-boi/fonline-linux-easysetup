@@ -7,7 +7,7 @@
 
 
 {100}{}{Leather Armor}
-{101}{}{Your basic all leather apparel. Finely crafted from tanned brahmin hide.}
+{101}{}{Your basic all leather apparel. Finely crafted from tanned gecko hide.}
 {200}{}{Metal Armor}
 {201}{}{Polished metal plates, crudely forming a suit of armor.}
 {300}{}{Power Armor}
@@ -25,7 +25,7 @@
 {900}{}{10mm SMG}
 {901}{}{H&K MP9 Submachinegun (10mm variant). A medium-sized SMG, capable of single shot and burst mode.}
 {1000}{}{Hunting Rifle}
-{1001}{}{A Colt Rangemaster semi-automatic rifle, in .22 caliber. Single-shot only.}
+{1001}{}{A Colt Rangemaster semi-automatic rifle, in .223 caliber. Single-shot only.}
 {1100}{}{Flamer}
 {1101}{}{A Flambe 450 model flamethrower, varmiter variation. Fires a short spray of extremely hot, flamable liquid. Requires specialized fuel to work properly.}
 {1200}{}{Minigun}
@@ -181,7 +181,7 @@
 {8600}{}{Scout Handbook}
 {8601}{}{A book on the methods and ideals of Scouting. Very practical information regarding outdoor life.}
 {8700}{}{Buffout}
-{8701}{}{Highly advanced steroids. While in effect, they increase strength and reflexes. Very addictive.}
+{8701}{}{Highly advanced steroids. While in effect, they increase strength and endurance. Very addictive.}
 {8800}{}{Watch}
 {8801}{}{An expensive watch. Not really working, but it still looks nice.}
 {8900}{}{Motor}
@@ -295,7 +295,7 @@
 {14300}{}{Sniper Rifle}
 {14301}{}{A DKS-501 Sniper Rifle. Excellent long range projectile weapon. Originally .308, this one is chambered in the more common .223 caliber.}
 {14400}{}{Super Stimpak}
-{14401}{}{An advanced healing chem. Very powerful. Superstims will cause a small amount of damage after a period of time due to powerful nature of the chemicals used.}
+{14401}{}{An advanced healing chem. Very powerful.}
 {14500}{}{Bookshelf}
 {14501}{}{A wooden bookshelf.}
 {14600}{}{Bookshelf}
@@ -516,8 +516,8 @@
 {25801}{}{This is a Hydroelectric Magnetosphere Regulator.}
 {25900}{}{Jet}
 {25901}{}{Jet is a powerful and highly addictive metamphetamine that stimulates the central nervous system. The initial euphoric rush rarely lasts more than a few minutes, but during that time, the user is filled with a rush of energy & strength. It is believed that no antidote has been produced yet.}
-{26000}{}{Jet Antidote}
-{26001}{}{This antidote cures the addiction effects of Jet.}
+{26000}{}{Drug Antidote}
+{26001}{}{This antidote cures the addictions and effects of drugs.}
 {26100}{}{Jonny's BB Gun}
 {26101}{}{A Red Ryder BB gun with the name 'Jonny' scratched on the stock.}
 {26200}{}{Rubber Boots}
@@ -563,7 +563,7 @@
 {28200}{}{Clifton's Eye}
 {28201}{}{A small jar containing a human eye suspended in some kind of liquid. The label says General Clifton.}
 {28300}{}{Tommy Gun}
-{28301}{}{This Thompson M1928 submachine gun is a sinister looking weapon; every time you hold it, you have an urge to put on a fedora hat and crack your knuckles. The Thompson is well-fed by a large 50 round drum magazine.}
+{28301}{}{This Thompson M1928 submachine gun is a sinister looking weapon; every time you hold it, you have an urge to put on a fedora hat and crack your knuckles. The Thompson is well-fed by a large 75 round drum magazine.}
 {28400}{}{Meat Jerky}
 {28401}{}{These smoked and dried chunks of beast-flesh remain chewy-licious and even somewhat nutritious for years, and years, and years....}
 {28500}{}{Radscorpion Limbs}
@@ -766,13 +766,13 @@
 {38900}{}{Avenger Minigun}
 {38901}{}{Rockwell designed the Avenger as the replacement for their aging CZ53 Personal Minigun. The Avenger's design improvements include improved, gel-fin, cooling and chromium plated barrel-bores. This gives it a greater range and lethality.}
 {39000}{}{Solar Scorcher}
-{39001}{}{Without the sun's rays to charge this weapon's cpacitors this gun can't light a match. However, in full daylight, the experimental photo-electric cells that power the Scorcher allow it to turn almost anything into a crispy critter.}
+{39001}{}{Without the sun's rays to charge this weapon's capacitors this gun can't light a match. However, in full daylight, the experimental photo-electric cells that power the Scorcher allow it to turn almost anything into a crispy critter.}
 {39100}{}{H&K G11E}
 {39101}{}{This gun revolutionized squad level support weapon design. The gun fires a caseless cartridge consisting of a block of propellant with a bullet buried inside. The resultant weight and space savings allow it to have a very high magazine capacity.}
 {39200}{}{M72 Gauss Rifle}
 {39201}{}{The M72 rifle is of German design. It uses an electromagnetic field to propel rounds at tremendous speed... and pierce almost any obstacle. Its range, accuracy and stopping power is almost unparalleled.}
 {39300}{}{Phazer}
-{39301}{}{NEED LONG DESCRIPTION}
+{39301}{}{An EMP prototype pistol designed by Shi Labs. This weapon was used to neutralize bots in abandoned Vaults.}
 {39400}{}{PPK12 Gauss Pistol}
 {39401}{}{Praised for its range and stopping power, the PPK12 Gauss Pistol is of German design. The pistol uses an electromagnetic field to propel rounds at tremendous speed and punch through almost any armor.}
 {39500}{}{Vindicator Minigun}
@@ -785,7 +785,7 @@
 {39801}{}{A .44 Magnum Revolver with a speed loader.}
 {39900}{}{Super Cattle Prod}
 {39901}{}{A Farmer's Best Friend model cattle prod from Wattz Electronics. This model has been upgraded to increase the electrical discharge.}
-{40000}{}{Improved Flamer}
+{40000}{}{Incinerator}
 {40001}{}{A Flambe 450 model flamethrower, varmiter variation. Fires a short spray of extremely hot, flamable liquid. Requires specialized fuel to work properly. This model has been modified to fire a hotter mixture which causes greater combustibility.}
 {40100}{}{Laser Rifle (Ext. Cap.)}
 {40101}{}{This Wattz 2000 laser rifle has had its recharging system upgraded and a special recycling chip installed that reduces the drain on the micro fusion cell by 50%}
@@ -1020,7 +1020,7 @@
 {52300}{}{Survey Map}
 {52301}{}{It looks like a geological survey map of the Bay area.}
 {52400}{}{Bridgekeeper's Robe}
-{52401}{}{This smelly, filthy garment must be made out of some special fabric in order to have withstood the foulness of the bridgekeeper's body. Oddly enough, it has plasma burns and scorch marks all over it, as if these weapons were used against it... to no effect. You have NO idea why it's purple.}
+{52401}{}{This smelly, filthy garment must be made out of some special fabric in order to have withstood the foulness of the bridgekeeper's body. Oddly enough, it has plasma burns and scorch marks all over it, as if these weapons were used against it... to no effect. You have NO idea why it's red.}
 {52500}{}{Hypo}
 {52501}{}{A medical injection instrument of some kind. It looks very high tech. You don't know what it's filled with but it appears to have only one dose left.}
 {52600}{}{Dead Redshirt}
@@ -1121,6 +1121,14 @@
 {57101}{}{A wooden board which serves as a primitive workbench.}
 {57200}{}{Gold Nugget}
 {57201}{}{A small nugget of gold, it weights around 10 ounces. You probably could try to sell it in a bank.}
+{57300}{}{Pashtshuur Spike}
+{57301}{}{An organic poisoned spike that the carnivorous pashtshuurs spit at potential food.}
+{57400}{}{12 ga. Flechette Shotgun Shells}
+{57401}{}{Shotgun flechette ammunition. This ammunition is designed to aim high Armor Class targets. The ammo is marked: "12-gauge shells, not for use by children under the age of 3."}
+{57500}{}{12 ga. Slug Shotgun Shells}
+{57501}{}{Shotgun slug ammunition. Designed to penetrate armors. The ammo is marked: "12-gauge slug shells, not for use by children under the age of 3."}
+{57600}{}{12 ga. EMP Shotgun Shells}
+{57601}{}{Shotgun EMP ammunition. Effective against robotic enemies.}
 {60000}{}{Old Shovel}
 {60001}{}{This is an old shovel for digging ditches and stuff.}
 {60100}{}{Strange Iguana-on-a-stick}
@@ -1151,6 +1159,20 @@
 {61200}{}{Balloon}
 {61201}{}{A big balloon.}
 {61600}{}{Weak Flame Breath}
+{61700}{}{Banhammer}
+{61701}{}{Observer's hammer for maintaining law, justice, sometimes fun. Kicker for insubordinated objects, usually players.}
+{61800}{}{Holy Spear}
+{61801}{}{Overseer's holy spear for maintaining law and justice, even fun. Kicker for insubordinated objects, usually players.}
+{61900}{}{Grenade Pistol}
+{61901}{}{Designed well before the great war, the Fabrique Nationale 69A1 pistol grenade launcher became the standard issue portable fire support system of the US military police units stationed in Canada during the conflict.}
+{62000}{}{M79 Grenade Launcher}
+{62001}{}{A single shot grenade launcher. Go get the Roach.}
+{62100}{}{40mm Grenade}
+{62101}{}{A grenade for a grenade launcher.}
+{62200}{}{Test knife}
+{62201}{}{Test melee swing/thrust}
+{62300}{}{Book of Achievement}
+{62301}{}{A diary of an experienced wastelander.}
 #
 {65000}{}{Fridge}
 {65001}{}{A refrigerator.}
@@ -1282,6 +1304,10 @@
 {73801}{}{This Enclave variant of a combat helmet offers a good overall protection with laser target designation and fancy shielding glass.}
 {73900}{}{Enclave Combat Helmet MkII}
 {73901}{}{This helmet is a sturdier version of the Enclave combat helmet. Shaded protection glasses with includet night vision optics and a working radio are just two of its minor, yet very useful upgrades.}
+{74000}{}{Desert Combat Helmet}
+{74001}{}{This combat helmet ensuring better protection against sand and dust during operations in the desert. Sand coloured hues for better camouflage.}
+{74100}{}{NCR Ranger Combat Helmet}
+{74101}{}{This helmet is a sturdier version of its predecessor, the combat helmet. Shaded protection glasses and a working radio are just two of its minor, yet very useful upgrades. This one is modified for the Rangers of the New California Republic.}
 #====================
 # New Armors!
 #====================
@@ -1341,6 +1367,8 @@
 {77601}{}{A unique metal jacket.}
 {77700}{}{Clothes}
 {77701}{}{Generic clothes. #3}
+{77800}{}{Desert Combat Armor}
+{77801}{}{Combat armor ensuring better protection against sand and dust during operations in the desert. In addition, sand-colored hues for better camouflage.}
 #====================
 {80000}{}{Hummer}
 {80001}{}{This vehicle has been built on the base of M1025 Hummer, produced by AMG at the turn of the 20th and 21th centuries. Most of the parts are taken from its predecessor so the car inherits the quality of the original.}
@@ -1391,8 +1419,11 @@
 {82601}{}{Individual hexes of a Multihex item.}
 {83000}{}{Recycler}
 {83001}{}{Container recycling lost items. Do not use!}
-{85000}{}{.22 Hunter}
-{85001}{}{Ammunition for hunting, .22 caliber soft point.}
+{83100}{}{Corvega}
+{83101}{}{The Corvega was a line of car models manufactured by Chryslus Motors in pre-War USA. }
+{83600}{}{Corvega trunk}
+{85000}{}{12 ga. Gecko's Breath Shotgun Shells}
+{85001}{}{Shotgun fire ammunition. It consists primarily of magnesium pellets/shards. When the round is fired, sparks and flames can shoot out to about 30 meters.}
 {90000}{}{Bookshelf}
 {90001}{}{A wooden bookshelf}
 {180000}{}{Questionnaire}
@@ -1429,8 +1460,8 @@
 {181501}{}{A slighty mutated tobacco plant.}
 {181600}{}{Tobacco Plant}
 {181601}{}{A slighty mutated tobacco plant.}
-{181700}{}{Hardened Tobacco Plant}
-{181701}{}{A mutated tobacco plant. It's stalk looks like a very durable one.}
+{181700}{}{Fiber Plant}
+{181701}{}{A mutated plant. It's stalk looks like a very durable one. You could gather some fibers from it.}
 {181800}{}{Rocks}
 {181801}{}{A pile of rocks. You think you could find some minerals here.}
 {181900}{}{Still}
@@ -1461,7 +1492,7 @@
 {183101}{}{Your basic footlocker. Holds stuff, sits at foot of bed, can be locked.}
 {183200}{}{Ammo Crate}
 {183300}{}{Ammo Crate}
-{183400}{}{Dynamite Stick}
+{183400}{}{Dynacord Stick}
 {183401}{}{This lethal mixture of Dynamite and Cordex combines the best of both, leaving you no other choice than to worship it.}
 {185000}{}{Map}
 {185001}{}{This is the map of the nearby area. You can use it to mark some location for someone.}
@@ -7308,17 +7339,17 @@ a58ew64v}
 {972000}{}{Glowing Cactus}
 {972001}{}{This cactus seems to send out a pulsating light. It feels warm.}
 {972100}{}{Flare (Green)}
-{972101}{}{A flare. Creates light for a short period of time. The paper is a little worn, but otherwise it is in good condition. Twist the top to activate it.}
+{972101}{}{A flare. Creates light for a long period of time. The paper is a little worn, but otherwise it is in good condition. Twist the top to activate it.}
 {972200}{}{Flare (Green)}
-{972201}{}{A flare. Creates light for a short period of time. The paper is a little worn, but otherwise it's in good condition. It is lit.}
+{972201}{}{A flare. Creates light for a long period of time. The paper is a little worn, but otherwise it's in good condition. It is lit.}
 {972300}{}{Flare (White)}
-{972301}{}{A flare. Creates light for a short period of time. The paper is a little worn, but otherwise it is in good condition. Twist the top to activate it.}
+{972301}{}{A flare. Creates light for a long period of time. The paper is a little worn, but otherwise it is in good condition. Twist the top to activate it.}
 {972400}{}{Flare (White)}
-{972401}{}{A flare. Creates light for a short period of time. The paper is a little worn, but otherwise it's in good condition. It is lit.}
+{972401}{}{A flare. Creates light for a long period of time. The paper is a little worn, but otherwise it's in good condition. It is lit.}
 {972500}{}{Flare (Yellow)}
-{972501}{}{A flare. Creates light for a short period of time. The paper is a little worn, but otherwise it is in good condition. Twist the top to activate it.}
+{972501}{}{A flare. Creates light for a long period of time. The paper is a little worn, but otherwise it is in good condition. Twist the top to activate it.}
 {972600}{}{Flare (Yellow)}
-{972601}{}{A flare. Creates light for a short period of time. The paper is a little worn, but otherwise it's in good condition. It is lit.}
+{972601}{}{A flare. Creates light for a long period of time. The paper is a little worn, but otherwise it's in good condition. It is lit.}
 {972700}{}{Staircase}
 {972701}{}{This staircase leads up.}
 {972800}{}{Car Caravan}
@@ -7393,11 +7424,11 @@ a58ew64v}
 {976900}{}{Weapon Blueprints}
 {976901}{}{Manufacturing plans for a Dynamite.}
 {977000}{}{Weapon Blueprints}
-{977001}{}{Manufacturing plans for plastic explosives.}
+{977001}{}{Manufacturing plans for Plastic Explosives.}
 {977100}{}{Weapon Blueprints}
 {977101}{}{Manufacturing plans for a Super Sledge.}
 {977200}{}{Weapon Blueprints}
-{977201}{}{Manufacturing plans for Improved Flamethrower.}
+{977201}{}{Manufacturing plans for Incinerator.}
 #====================
 # Armor Blueprints
 #====================
@@ -7637,6 +7668,28 @@ a58ew64v}
 {2200601}{}{This is a small pile of chemical components lying around. You can collect them.}
 {2200700}{}{High Quality Chemical Components Pile}
 {2200701}{}{This is a small pile of high quality chemical components lying around. You can collect them.}
+{2205000}{}{Tales of Junktown Jerky Vendor}
+{2205001}{}{A collection of writings on the art of trading.}
+{2205100}{}{Dermal Module}
+{2205101}{}{It is designed to improve the resistance to physical trauma and concussive damage.}
+{2205200}{}{Phoenix Module}
+{2205201}{}{It is designed to improve the resistance to energy attacks.}
+{2205300}{}{Nemean Module}
+{2205301}{}{It is designed to provide increased damage tolerance by bolstering the user's skin cells with iron.}
+{2205400}{}{Hypertrophy Accelerator}
+{2205401}{}{It is designed to enhance the muscle mass of the person it's installed in by acting as an automatic version of steroids, forcing the body to make a large amount of muscle mass}
+{2205500}{}{Optics Enhancer}
+{2205501}{}{It is designed to improve eyesight of the person it's installed in by acting as a pair of sight enhancing glasses, sharpening the view of the user of the implant.}
+{2205600}{}{Nociception Regulator}
+{2205601}{}{It is designed to improve sensory receptors in the body that detect potentially damaging stimuli (such as excess pressure or heat) and send the nerve signals to the brain and spinal cord.}
+{2205700}{}{Empathy Synthesizer}
+{2205701}{}{It is designed to compute possible reactions of other human beings and suggesting actions to it's user.}
+{2205800}{}{Logic Co-processor}
+{2205801}{}{It is designed to improve logical thinking of the person it's installed in by calculating possible outcome, thus helping in solving problems and making the best decision.}
+{2205900}{}{Reflex Booster}
+{2205901}{}{It is designed to boost the reflex action of the recipient by conducting the electric current in the nervous system and sending it to the area where it needs to go to.}
+{2206000}{}{Probability Calculator}
+{2206001}{}{It is designed to aid the person it's installed in by quickly calculating the chances of every single possible thing that can happen, allowing the user to make the best choice in any situation. }
 {2300000}{}{PIDs 23000-23999 reserved for TRANSFER items}
 {2400000}{}{PIDs 24000-24999 reserved for TRIGGER items}
 #====================

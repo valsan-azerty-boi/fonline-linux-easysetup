@@ -5,6 +5,7 @@
 // quest_bos_initiate.fos
 //
 
+#include "_colors.fos"
 #include "_macros.fos"
 #include "_vars.fos"
 #include "_maps.fos"
@@ -28,13 +29,15 @@ void spawn(Critter& player, int, int, int)
 void r_SpawnBunker(Critter& player, Critter@ npc)
 {
     Critter@[] crits = { player };
-    int loc = CreateLocation(LOCATION_AnOldBunker, Random(1750, 1850), Random(1900, 1950), crits);
+    int loc = CreateLocation(LOCATION_AnOldBunker, Random(1750, 1850), Random(1900,1950), crits);
     if(loc == 0)
         return;
     GameVar@ locidv = GetLocalVar(LVAR_q_bosbunker_locid, player.Id);
     locidv = loc;
     // player.SetKnownLoc(true, loc);
     Location@ location = GetLocation(loc);
+    location.Color = COLOR_WM_QUEST;
+    location.Update();
     Map@      map = location.GetMapByIndex(0);
     SetRootMapData(map, MAP_DATA_OWNER, player.Id);
     if(player.Mode[MODE_DEFAULT_COMBAT] == COMBAT_MODE_TURN_BASED)

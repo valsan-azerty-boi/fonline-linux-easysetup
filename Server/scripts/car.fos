@@ -27,10 +27,11 @@ import void InjureCritter(Critter& cr, uint dmg, uint dmgType, uint8 dir, uint a
 
 uint GetCarCost(uint16 protoCar)   // Export
 {
-    uint       count = WorldItemCount(protoCar);
+    //uint       count = WorldItemCount(protoCar);
     ProtoItem@ car = GetProtoItem(protoCar);
     if(valid(car))
-        return car.Cost + car.Cost * count;
+        //return car.Cost + car.Cost * count;
+		return car.Cost;
     return 0;
 }
 
@@ -136,6 +137,41 @@ bool UseItemOnCar(Critter& cr, Item& car, Item& item)   // Export
         bool isBio = (pid == PID_BEER || pid == PID_BOOZE || pid == PID_GAMMA_GULP_BEER || pid == PID_ROT_GUT || pid == PID_ROENTGEN_RUM);
         bool isTool = (item.Proto.Misc_ToolSkillNum == SK_REPAIR);
 
+		if(pid == PID_LOCK)
+		{
+		if(car.LockerId==0)
+		{
+		int skill=cr.Skill[SK_REPAIR]+50;
+		uint     keyId = Random(5000,7500);
+		
+		car.LockerComplexity = Random(skill, skill+20);
+		car.LockerId = keyId;
+		car.Update();
+		
+		Item@ key = cr.AddItem(PID_KEY, 1);
+		if(valid(key))
+		{
+        key.LockerId = keyId;
+        key.Update();
+		
+		Item@ bag = car.GetChild(0);
+		if(valid(bag))
+		{
+        bag.LockerId = keyId;
+        bag.LockerComplexity = Random(skill, skill+20);
+        bag.Update();
+		}
+		}
+		
+        cr.Say(SAY_NETMSG, "You have successfully installed a new lock on this car.");		
+	    uint pidlock = item.GetProtoId();
+		_CritDeleteItem(cr,pidlock,1);
+		}
+		
+		return true;
+		}
+		
+		
         if(!isEnergo && !isBio && !isTool)
             return false;
 
@@ -255,9 +291,12 @@ void RepairCar(Critter& cr, Item& car, Item& tool)
         fix = 0;
     car.Deterioration = fix;
     CarMessage(cr, car, STR_CAR_REPAIR_SUCCESS);
+    //Removed repair cooldown and expierience
+    /*
     _SetTimeout(cr, TO_SK_REPAIR, REPAIR_TIMEOUT(cr));
     cr.StatBase[ST_EXPERIENCE] += 10;
     LogExperience(cr, 10, SK_REPAIR, "Car", car.GetProtoId());
+    */
     cr.PlaySound("CARREPAR.ACM", true);
 
     int breakBonus = cr.Skill[SK_REPAIR] > 0 ? cr.Skill[SK_REPAIR] / 10 : 0;
@@ -275,7 +314,7 @@ bool UseSkillOnCar(Critter& cr, Item& car, int skill)   // Export
     if(pid == PID_WRECKED_CAR && skill != SKILL_PICK_ON_GROUND)
         return false;
 
-    if((pid == PID_VERTIBIRD || pid == PID_TARDIS) && _IsRealPlayer(cr))
+    if((pid == PID_TARDIS) && _IsRealPlayer(cr))
     {
         cr.Say(SAY_NETMSG, "Sadly you have no idea how this vehicle works.");
         return false;
@@ -294,13 +333,13 @@ bool UseSkillOnCar(Critter& cr, Item& car, int skill)   // Export
                     cr.SayMsg(SAY_NETMSG, TEXTMSG_GAME, STR_OVERWEIGHT);
                     return true;
                 }
-                if((cr.Stat[ST_LUCK] > 5) && (Random(0, 19 - cr.Stat[ST_LUCK]) == 0))
+                if(Random(0, 9) == 0)
                 {
                     cr.AddItem(PID_CAR_FUEL_CELL_CONTROLLER, 1);
                     cr.Say(SAY_NETMSG, "You found a working fuel cell controller.");
                     found = true;
                 }
-                if(Random(0, 11 - cr.Stat[ST_LUCK]) == 0)
+                if(Random(0, 2)== 0)
                 {
                     cr.AddItem(PID_PUMP_PARTS, Random(1, 3));
                     if(Random(0, 1) == 1)
@@ -366,6 +405,13 @@ bool UseSkillOnCar(Critter& cr, Item& car, int skill)   // Export
     }
     else if(skill == SK_LOCKPICK)
     {
+		Map@ map = cr.GetMap();
+		if(map.GetLocation().GetProtoId()==LOCATION_BarterGround)
+		{
+			cr.Say(SAY_NETMSG, "You cannot do that here.");
+			return true;
+		}
+	
         if(cr.Timeout[TO_SK_LOCKPICK] > 0)
         {
             cr.SayMsg(SAY_NETMSG, TEXTMSG_GAME, STR_SKILL_WEARINESS);
@@ -377,8 +423,15 @@ bool UseSkillOnCar(Critter& cr, Item& car, int skill)   // Export
             cr.SayMsg(SAY_NETMSG, TEXTMSG_GAME, STR_SKILL_LOCKPICK_FAIL);
             return true;
         }
+		
+		
+        if(car.LockerId==0)
+        {
+            cr.SayMsg(SAY_NETMSG, TEXTMSG_GAME, STR_SKILL_LOCKPICK_FAIL);
+            return true;
+        }
 
-        int   base = cr.Skill[SK_LOCKPICK] - 200;
+        int   base = cr.Skill[SK_LOCKPICK] - 50;
         uint8 mode = 0;
         Item@ tool = _CritGetItemHand(cr);
         if(valid(tool) && tool.Proto.Misc_ToolSkillNum == SK_LOCKPICK)
@@ -481,23 +534,23 @@ int GetCarTrunkComplexity(Item@ item)
     if(item.GetProtoId() == PID_BUGGY_BAG)
         return item.LockerComplexity;
     if(item.GetProtoId() == PID_SCOUT_BAG)
-        return item.LockerComplexity + 20;
+        return item.LockerComplexity;
     if(item.GetProtoId() == PID_HUMMER_BAG)
-        return item.LockerComplexity + 40;
+        return item.LockerComplexity;
     if(item.GetProtoId() == PID_HIGHWAYMAN_BAG)
-        return item.LockerComplexity + 60;
+        return item.LockerComplexity;
     if(item.GetProtoId() == PID_VERTIBIRD_BAG)
-        return item.LockerComplexity + 100;
+        return item.LockerComplexity;
     if(item.GetProtoId() == PID_POLICE_BAG)
-        return item.LockerComplexity + 60;
+        return item.LockerComplexity;
     if(item.GetProtoId() == PID_MOTORCYCLE_BAG)
-        return item.LockerComplexity + 20;
+        return item.LockerComplexity;
     if(item.GetProtoId() == PID_FIRETRUCK_BAG)
-        return item.LockerComplexity + 50;
+        return item.LockerComplexity;
     if(item.GetProtoId() == PID_TRUCK_BAG)
-        return item.LockerComplexity + 20;
+        return item.LockerComplexity;
     if(item.GetProtoId() == PID_BARGE_BAG)
-        return item.LockerComplexity + 10;
+        return item.LockerComplexity;
 
     // no bonus for caravan trunks
     if(item.GetProtoId() == PID_CARAVAN_WHITE_BAG)
@@ -528,6 +581,7 @@ void MoveCars(Map& from, Map& to)   // export
     num += from.GetItems(PID_BARGE, cars);
     num += from.GetItems(PID_BOAT, cars);
     num += from.GetItems(PID_TARDIS, cars);
+	num += from.GetItems(PID_CORVEGA, cars);
     WLog("cars", num + " cars found");
     for(uint i = 0; i < num; i++)
     {

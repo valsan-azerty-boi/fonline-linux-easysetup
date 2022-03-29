@@ -5,6 +5,7 @@
 // quest_la_dogs.fos
 //
 
+#include "_colors.fos"
 #include "quest_killmobs_h.fos"
 #include "worldmap_h.fos"
 #include "utils_h.fos"
@@ -64,6 +65,8 @@ void r_SpawnLoc(Critter& player, Critter@ npc)
     GameVar@  locidv = GetLocalVar(LVAR_q_la_dogs_locid, player.Id);
     locidv = loc;
     Location@ location = GetLocation(loc);
+    location.Color = COLOR_WM_QUEST;
+    location.Update();
     if(player.Mode[MODE_DEFAULT_COMBAT] == COMBAT_MODE_TURN_BASED)
         SetTurnBasedAvailability(location);
     location.AutoGarbage = false;

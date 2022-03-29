@@ -129,11 +129,12 @@ bool Gather(Item& item, Critter& cr, Item@ used_item, uint16 pid, uint batch,
         RegenCounters.set("" + pid, ++counter);
         DPlayerLog(cr, "Counter: " + COUNTER(item) + " vs " + counter);
     }
-    if(IsOverweighted(cr))
+    /*if(IsOverweighted(cr))
     {
         cr.SayMsg(SAY_NETMSG, TEXTMSG_GAME, STR_OVERWEIGHT);
         return true;
     }
+	*/
 
     bool is_container = item.GetType() == ITEM_TYPE_CONTAINER;
     batch = MIN(batch, uint(AMOUNT(item)));

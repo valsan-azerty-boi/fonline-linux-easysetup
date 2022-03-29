@@ -21498,13 +21498,13 @@ MapY                 33
 
 MapObjType           2
 ProtoId              3853
-MapX                 50
-MapY                 53
+MapX                 53
+MapY                 58
 
 MapObjType           2
 ProtoId              3853
-MapX                 46
-MapY                 55
+MapX                 45
+MapY                 61
 
 MapObjType           2
 ProtoId              3853
@@ -21523,8 +21523,8 @@ MapY                 64
 
 MapObjType           2
 ProtoId              3853
-MapX                 58
-MapY                 58
+MapX                 62
+MapY                 59
 
 MapObjType           2
 ProtoId              3853
@@ -21546,8 +21546,8 @@ Scenery_ToEntire     243
 
 MapObjType           2
 ProtoId              3853
-MapX                 38
-MapY                 55
+MapX                 39
+MapY                 59
 Scenery_ToEntire     243
 
 MapObjType           2

@@ -51,7 +51,7 @@ uint16 GetIngredientReturnItem(Item& item, uint8 ingredient)
         if(item.Proto.Ingredient_Type_1 == ingredient)
             return(item.Proto.Ingredient_Returns_1);
         if(item.Proto.Ingredient_Type_2 == ingredient)
-            return(item.Proto.Ingredient_Returns_1);
+            return(item.Proto.Ingredient_Returns_2);
         if(item.Proto.Ingredient_Type_3 == ingredient)
             return(item.Proto.Ingredient_Returns_3);
     }

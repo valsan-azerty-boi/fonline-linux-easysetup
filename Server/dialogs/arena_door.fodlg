@@ -42,7 +42,7 @@ lang=engl
 {3000}{}{You're clean, come in.}
 {3010}{}{[Pass through the gate]}
 {3020}{}{[Turn away]}
-{4000}{}{Sorry, no drugs and real weapons are allowed inside the lobby and arena facilities.}
+{4000}{}{Sorry, no drugs, real weapons or any other items are allowed inside the lobby and arena facilities. Please come back without them.}
 {4010}{}{I'll be back.}
 {5000}{}{[A guard notices you] Going home already?}
 {5010}{}{Actually, I was going to stay here for a while longer.}

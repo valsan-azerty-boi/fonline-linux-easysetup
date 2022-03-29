@@ -115,18 +115,19 @@ uint e_RegenComputer(array<uint>@ values)
     Item@ item = GetItem(values[0]);
     if(!valid(item))
         return 0;
-    Regenerate(item, PID_ELECTRONIC_PARTS, __ElectronicPartsCap, __ElectronicPartsRegen, ComputerCount);
+    //Regenerate(item, PID_ELECTRONIC_PARTS, __ElectronicPartsCap, __ElectronicPartsRegen, ComputerCount);
+	if(item.Val1<25) item.Val1++;
     return RegenerationInterval;
 }
 
 void _Computer2(Item& item, bool firstTime)
 {
-    item.SetEvent(ITEM_EVENT_SKILL, "_SkillComputer2");
-    item.SetEvent(ITEM_EVENT_FINISH, "_FinishComputer2");
+    item.SetEvent(ITEM_EVENT_SKILL, "_SkillComputer");
+    item.SetEvent(ITEM_EVENT_FINISH, "_FinishComputer");
     if(firstTime)
-        AMOUNT(item) = __ElectronicParts2Cap;
-    Computer2Count++;
-    StartRegeneration(item, "e_RegenComputer2");
+        AMOUNT(item) = __ElectronicPartsCap;
+    ComputerCount++;
+    StartRegeneration(item, "e_RegenComputer");
 }
 bool _SkillComputer2(Item& item, Critter& cr, int skill)
 USE_SKILL(SK_SCIENCE, PID_ELECTRONIC_PARTS2, __ElectronicParts2Batch, TEXT_COMPUTER2, TEXT_COMPUTER2_HINT)

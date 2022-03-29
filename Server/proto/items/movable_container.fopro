@@ -1,4 +1,4 @@
-# 3.1.7
+# 3.2.0
 
 [Proto]
 ProtoId=650
@@ -11,7 +11,7 @@ Weight=38555
 Volume=1
 SoundId=65
 Material=1
-Container_Volume=500
+Container_Volume=50000
 Container_Changeble=1
 
 [Proto]
@@ -26,7 +26,7 @@ Weight=22675
 Volume=1
 SoundId=68
 Material=1
-Container_Volume=400
+Container_Volume=40000
 Container_Changeble=1
 Container_CannotPickUp=1
 Container_MagicHandsGrnd=1
@@ -43,7 +43,7 @@ Weight=22675
 Volume=1
 SoundId=68
 Material=1
-Container_Volume=400
+Container_Volume=40000
 Container_Changeble=1
 Container_CannotPickUp=1
 Container_MagicHandsGrnd=1
@@ -60,7 +60,7 @@ Weight=9070
 Volume=1
 SoundId=68
 Material=1
-Container_Volume=200
+Container_Volume=20000
 Container_Changeble=1
 Container_CannotPickUp=1
 Container_MagicHandsGrnd=1
@@ -77,7 +77,7 @@ Weight=9070
 Volume=1
 SoundId=68
 Material=1
-Container_Volume=200
+Container_Volume=20000
 Container_Changeble=1
 Container_CannotPickUp=1
 Container_MagicHandsGrnd=1
@@ -94,7 +94,7 @@ Weight=45359
 Volume=1
 SoundId=67
 Material=1
-Container_Volume=300
+Container_Volume=30000
 Container_Changeble=1
 Container_CannotPickUp=1
 Container_MagicHandsGrnd=1
@@ -111,7 +111,7 @@ Weight=4535
 Volume=1
 SoundId=48
 Material=3
-Container_Volume=0
+Container_Volume=10000
 Container_MagicHandsGrnd=1
 
 [Proto]
@@ -126,7 +126,7 @@ Weight=9070
 Volume=1
 SoundId=48
 Material=3
-Container_Volume=250
+Container_Volume=25000
 Container_CannotPickUp=1
 Container_MagicHandsGrnd=1
 
@@ -142,7 +142,7 @@ Weight=13605
 Volume=1
 SoundId=67
 Material=3
-Container_Volume=250
+Container_Volume=25000
 Container_Changeble=1
 Container_CannotPickUp=1
 Container_MagicHandsGrnd=1
@@ -159,7 +159,7 @@ Weight=22675
 Volume=1
 SoundId=68
 Material=1
-Container_Volume=250
+Container_Volume=25000
 Container_Changeble=1
 Container_CannotPickUp=1
 Container_MagicHandsGrnd=1
@@ -176,7 +176,7 @@ Weight=22675
 Volume=1
 SoundId=68
 Material=1
-Container_Volume=250
+Container_Volume=25000
 Container_Changeble=1
 Container_CannotPickUp=1
 Container_MagicHandsGrnd=1
@@ -192,7 +192,7 @@ Weight=27210
 Volume=1
 SoundId=66
 Material=1
-Container_Volume=400
+Container_Volume=25000
 Container_Changeble=1
 
 [Proto]
@@ -206,7 +206,7 @@ Weight=27210
 Volume=1
 SoundId=66
 Material=1
-Container_Volume=400
+Container_Volume=40000
 Container_Changeble=1
 
 [Proto]
@@ -220,7 +220,7 @@ Weight=22675
 Volume=1
 SoundId=66
 Material=1
-Container_Volume=400
+Container_Volume=40000
 Container_Changeble=1
 
 [Proto]
@@ -234,6 +234,6 @@ Weight=22675
 Volume=1
 SoundId=66
 Material=1
-Container_Volume=400
+Container_Volume=40000
 Container_Changeble=1
 

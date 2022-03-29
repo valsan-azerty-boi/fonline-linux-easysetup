@@ -1,5 +1,6 @@
 [comment]
 
+
 [data]
 lang=engl
 
@@ -44,13 +45,13 @@ lang=engl
 12 12000 None 0 #
 16 12010 @
 13 13000 None 0 #
-0 13010 R _var p q_raiders_hernandez_sister + 1 R _param p ST_EXPERIENCE + 500 @
+0 13010 R _var p q_raiders_hernandez_sister + 1 R _param p ST_EXPERIENCE + 1200 @
 14 14000 None 0 #
 0 14010 R _var p q_raiders_hernandez_sister + 1 @
 15 15000 None 0 #
 0 15010 R _var p q_raiders_hernandez_sister + 1 R _item p PID_CURED_LEATHER_ARMOR + 1 @
 16 16000 None 0 #
-0 16010 R _var p q_raiders_hernandez_sister + 2 R _param p ST_EXPERIENCE + 1000 @
+0 16010 R _var p q_raiders_hernandez_sister + 2 R _param p ST_EXPERIENCE + 2000 @
 17 17000 None 0 &
 
 [engl]

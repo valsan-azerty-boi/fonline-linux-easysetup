@@ -100,7 +100,7 @@ class CGMTConfig
         SETFLAG(this.OSD, GMT_OSD_INFO | GMT_OSD_INFOEX);
         this.Draw                       = true;
         this.Menu                       = true;
-        this.Motto                      = "There is nothing as demotivating as the players.";
+        this.Motto                      = "Mercenaries don't die - they just go to hell to regroup";
         this.ChatDelay          = 30;
         this.ChatBorder         = 5;
 
@@ -339,7 +339,7 @@ void GMToolsDraw(uint layer, int mouseX, int mouseY)
 
     // hell yeah
     if(GMTconfig.Access > ACCESS_CLIENT && GMTconfig.Motto.length() > 0)
-        DrawText(GMTconfig.Motto, 0, 20 + (Worldmap ? 5 : 0), __ScreenWidth, 60, COLOR_DRED, FONT_FALLOUT, FT_CENTERX | FT_BORDERED);
+        DrawText(GMTconfig.Motto, 0, 20 + (Worldmap ? 5 : 0), __ScreenWidth, 60, COLOR_GREEN, FONT_FALLOUT, FT_CENTERX | FT_BORDERED);
 
     if(FLAG(GMTconfig.OSD, GMT_OSD_INFO))
     {

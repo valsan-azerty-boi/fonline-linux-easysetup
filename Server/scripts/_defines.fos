@@ -183,6 +183,41 @@
 #define ITEM_RADIO                               (0x40000000)
 #define ITEM_CACHED                              (0x80000000) // Not used
 
+// Possible weapon bonus
+#define BONUS_WEAPON_CRITICAL_ROLL				(100)
+#define BONUS_WEAPON_CRITICAL_CHANCE			(101)
+#define BONUS_WEAPON_MIN_DMG					(102)
+#define BONUS_WEAPON_MAX_DMG					(103)
+#define BONUS_WEAPON_ACCURACY					(104)
+#define BONUS_WEAPON_MAX_AP						(105)
+#define BONUS_WEAPON_MAX_RANGE                  (106)
+
+// Possible armor bonus
+#define BONUS_ARMOR_NORMAL_DT					(100)
+#define BONUS_ARMOR_LASER_DT					(101)
+#define BONUS_ARMOR_FIRE_DT						(102)
+#define BONUS_ARMOR_PLASMA_DT					(103)
+#define BONUS_ARMOR_EXPLODE_DT					(104)
+#define BONUS_ARMOR_NORMAL_DR					(105)
+#define BONUS_ARMOR_LASER_DR					(106)
+#define BONUS_ARMOR_FIRE_DR						(107)
+#define BONUS_ARMOR_PLASMA_DR					(108)
+#define BONUS_ARMOR_EXPLODE_DR					(109)
+#define BONUS_ARMOR_CRIT_CHANCE					(110)
+#define BONUS_ARMOR_CRIT_POWER					(111)
+#define BONUS_ARMOR_MAX_AP						(112)
+#define BONUS_ARMOR_RAD_RES						(113)
+#define BONUS_ARMOR_POISON_RES					(114)
+#define BONUS_ARMOR_STRENGTH					(115)
+#define BONUS_ARMOR_PERCEPTION					(116)
+#define BONUS_ARMOR_ENDURANCE					(117)
+#define BONUS_ARMOR_CHARISMA					(118)
+#define BONUS_ARMOR_INTELLIGENCE				(119)
+#define BONUS_ARMOR_AGILITY						(120)
+#define BONUS_ARMOR_LUCK						(121)
+#define BONUS_ARMOR_CARRY_WEIGHT				(122)
+#define BONUS_ARMOR_HEALING_RATE				(123)
+
 // Grid Types
 #define GRID_EXITGRID                            (1)
 #define GRID_STAIRS                              (2)
@@ -536,6 +571,10 @@
 #endif
 // 150..179 reserved for 30 layers
 // 180..199
+#define ST_UNSPENT_TAG				(180)
+#define ST_FIXBOY_COUNTER 			(181)
+#define ST_FIXBOY_FILTER 			(182)
+#define ST_FIXBOY_FIXALL 			(183)
 
 /// Skills
 #define SKILL_BEGIN                              (__SkillBegin)
@@ -590,13 +629,21 @@
 #define TO_GATHERING                             (243)
 #define TO_SNEAK                                 (244)
 #define TO_HEALING                               (245)
-#define TO_SLEEPY                                (246)
+#define TO_CIGARETTES							 (246)
+
+#define TO_NUKA_COLA							 (247)
+#define TO_BEER                                  (248)
 
 // 246..249
 #define TO_AGGRESSOR                             (249)
-#define TO_SLEEPY_STOPPED                        (250)
-#define TO_SLEEPY_CUMULATE                       (251)
+#define TO_PSYCHO							 	 (250)
+#define TO_JET								 	 (251)
 #define TO_IMMUNITY_TIME                         (252)
+
+#define TO_MENTATS							 	 (253)
+#define TO_BUFFOUT							 	 (254)
+
+
 
 // 253..259
 
@@ -774,6 +821,14 @@
 #define PE_TREASURE_HUNTER                       (459)
 #define PE_LOCKPICK_PERK_2                       (460)
 #define PE_DEAD_MAN_WALKING                      (461)
+#define PE_NEMEAN_ARMOR							 (462)
+#define PE_IMP_STRENGTH							 (463)
+#define PE_IMP_PERCEPTION							 (464)
+#define PE_IMP_ENDURANCE							 (465)
+#define PE_IMP_CHARISMA							 (466)
+#define PE_IMP_INTELLIGENCE							 (467)
+#define PE_IMP_AGILITY							 (468)
+#define PE_IMP_LUCK							 (469)
 // 462..469
 
 /// Addictions
@@ -1040,16 +1095,16 @@
 #define TIMER_MAX_VALUE                          (599)
 
 // Timeouts in real seconds, generic values
-#define FIRST_AID_TIMEOUT                        # (cr)     ((REAL_MINUTE(100) / (((cr.Skill[SK_FIRST_AID]) > 3 ? cr.Skill[SK_FIRST_AID] : 3) * 100 / MAX_SKILL_VAL)) / (cr.Perk[PE_MEDIC] > 0 ? 2 : 1))           // Orig 3 time on day, 5 min - sk
-#define DOCTOR_TIMEOUT                           # (cr)        ((REAL_MINUTE(100) / (((cr.Skill[SK_DOCTOR]) > 3 ? cr.Skill[SK_DOCTOR] : 3) * 100 / MAX_SKILL_VAL)) / (cr.Perk[PE_MEDIC] > 0 ? 2 : 1))              // Orig 1 time on day, 20 min - sk
+#define FIRST_AID_TIMEOUT                        # (cr)     ( REAL_SECOND( (((cr.Skill[SK_FIRST_AID] > 50 ? cr.Skill[SK_FIRST_AID] : 50) * -6 / 10) + 210) / (cr.Perk[PE_MEDIC] > 0 ? 2 : 1)) )           // cd = (-6 * skill)/10 - 210 -> from 180s @sk<=50 to 90s @sk==200 (max)
+#define DOCTOR_TIMEOUT                           # (cr)     ( REAL_SECOND( (((cr.Skill[SK_DOCTOR] > 50 ? cr.Skill[SK_DOCTOR] : 50) * -6 / 10) + 210) / (cr.Perk[PE_MEDIC] > 0 ? 2 : 1)) )           // cd = (-6 * skill)/10 - 210 -> from 180s @sk<=50 to 90s @sk==200 (max)
+
 #define REPAIR_TIMEOUT                           # (cr)        (REAL_MINUTE(1))                                                                                                                                    // Orig 4 time on day, 1 min
 #define SCIENCE_TIMEOUT                          # (cr)       (REAL_MINUTE(1))                                                                                                                                     // Orig 6 time on day, 1 min
-#define LOCKPICK_TIMEOUT                         # (cr)      (REAL_MINUTE(2))                                                                                                                                      // Orig 15 minutes, 2 min
+#define LOCKPICK_TIMEOUT                         # (cr)      (REAL_SECOND(15))                                                                                                                                      // Orig 15 minutes, 2 min
 #define STEAL_TIMEOUT                            # (cr)         (cr.Perk[PE_MASTER_THIEF] != 0 ? REAL_SECOND(15) : REAL_SECOND(30))                                                                                // 30 seconds
 #define TRANSFER_TIMEOUT                         # (cr)      (REAL_SECOND(30))                                                                                                                                     // 1/2 min
 #define WEAKENED_TIMEOUT                         # (cr)          (REAL_MINUTE((16 - Random(1, cr.Stat[ST_LUCK])) / 2))
 #define HEALING_TIMEOUT                          # (cr) (cr.Trait[TRAIT_FAST_METABOLISM] > 0 ? REAL_SECOND(30) : REAL_SECOND(60))                                                                                  // 0.5 or 1 minute
-#define SLEEPY_TIMEOUT                           # (cr) (REAL_SECOND(150))
 #define IS_TURN_BASED_TIMEOUT                    # (cr) (cr.Timeout[TO_BATTLE] > 100000)
 #define MAXIMUM_TIMEOUT                          (10000000)                                                                                                                                                        // more than most expensive items timeouts
 #define SLEEPY_DEATH_IMMUNITY                    # (cr)     (REAL_SECOND(300))
@@ -1091,6 +1146,8 @@
 #define SCORE_RITCH                              (20)
 #define SCORE_CHOSEN_ONE                         (21)
 #define SCORE_EXPERT_EXCREMENT                   (22)
+#define SCORE_ARMORER							 (23)
+#define SCORE_GUNSMITH							 (24)
 
 #define SCORE_TC_MODOC                           (30)
 #define SCORE_TC_KLAMATH                         (31)
@@ -1099,16 +1156,17 @@
 #define SCORE_TC_DEN                             (34)
 #define SCORE_TC_REDDING                         (35)
 
-#define SCORE_SIERRA_CUR                         (40)
-#define SCORE_MARIPOSA_CUR                       (41)
-#define SCORE_CATHEDRAL_CUR                      (42)
-#define SCORE_SIERRA_BEST                        (43)
-#define SCORE_MARIPOSA_BEST                      (44)
-#define SCORE_CATHEDRAL_BEST                     (45)
-#define SCORE_SIERRA_ORG                         (46)
-#define SCORE_MARIPOSA_ORG                       (47)
-#define SCORE_CATHEDRAL_ORG                      (48)
-#define SCORE_BASE_BEST_ORG                      (49)
+#define SCORE_BEST_MODOC                         (40)
+#define SCORE_BEST_KLAMATH                       (41)
+#define SCORE_BEST_GECKO                         (42)
+#define SCORE_BEST_BH	                         (43)
+#define SCORE_BEST_DEN                           (44)
+#define SCORE_BEST_REDDING                       (45)
+
+#define SCORE_CATHEDRAL_CUR                      (46)
+#define SCORE_MARIPOSA_CUR                       (47)
+#define SCORE_SIERRA_CUR                         (48)
+
 #define SCORES_MAX                               (50)
 
 // Car flags
@@ -1139,7 +1197,9 @@
 #define BT_MAN_TRAP                              (20)
 #define BT_RAD_TOAD                              (21)
 #define BT_THORNSLINGER                          (22)
-#define MAX_BODY_TYPES                           (23)
+#define BT_PASHTSHUUR                            (23)
+#define MAX_BODY_TYPES                           (24)
+
 
 // Locomotion types
 #define LOCOMOTION_BIPED                         (0)
@@ -1444,6 +1504,7 @@
 #define CALIBER_HN_NEEDLER                       (17)
 #define CALIBER_7_62MM                           (18)
 #define CALIBER_22                               (19)
+#define CALIBER_40MM_GRENADE					 (20)
 
 // Geometry
 #define GEOMETRY_FALLOUT                         (0)
@@ -1586,8 +1647,8 @@
 # pragma crdata "Stat 0 199"
 # pragma crdata "Skill 200 217"
 # pragma crdata "TagSkill 226 229"
-# pragma crdata "Timeout 230 249"
-# pragma crdata "Kill 260 282"
+# pragma crdata "Timeout 230 254"
+# pragma crdata "Kill 260 283"
 # pragma crdata "Perk 300 461"
 # pragma crdata "Addiction 470 478"
 # pragma crdata "Karma 480 496"

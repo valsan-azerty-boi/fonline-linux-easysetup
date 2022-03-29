@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              201
 MaxHexY              353
-WorkHexX             143
-WorkHexY             291
+WorkHexX             97
+WorkHexY             51
 ScriptModule         map_hub
 ScriptFunc           map_init
 NoLogOut             0
@@ -26961,8 +26961,8 @@ Critter_ParamValue8  0
 
 MapObjType           0
 ProtoId              52
-MapX                 74
-MapY                 61
+MapX                 79
+MapY                 64
 Dir                  5
 Critter_Cond         1
 Critter_Anim1        0
@@ -27332,8 +27332,8 @@ Critter_ParamValue8  0
 
 MapObjType           0
 ProtoId              42
-MapX                 104
-MapY                 41
+MapX                 99
+MapY                 43
 Dir                  2
 ScriptName           npc_unlootable
 FuncName             critter_init
@@ -27341,7 +27341,7 @@ Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
 Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  2505
+Critter_ParamValue0  2541
 Critter_ParamIndex1  ST_AI_ID
 Critter_ParamValue1  273
 Critter_ParamIndex2  ST_BAG_ID
@@ -27361,7 +27361,7 @@ Critter_ParamValue8  0
 
 MapObjType           0
 ProtoId              40
-MapX                 101
+MapX                 102
 MapY                 41
 ScriptName           hub_guard
 FuncName             critter_init
@@ -30365,8 +30365,7 @@ MapObjType           1
 ProtoId              2332
 MapX                 138
 MapY                 291
-Item_LockerDoorId    25441
-Item_LockerComplexity 300
+Item_LockerComplexity 100
 
 MapObjType           2
 ProtoId              5622
@@ -30446,11 +30445,6 @@ MapY                 292
 
 MapObjType           2
 ProtoId              2067
-MapX                 142
-MapY                 292
-
-MapObjType           2
-ProtoId              2067
 MapX                 141
 MapY                 293
 
@@ -30485,11 +30479,6 @@ MapObjType           2
 ProtoId              5622
 MapX                 145
 MapY                 292
-
-MapObjType           2
-ProtoId              2067
-MapX                 143
-MapY                 293
 
 MapObjType           2
 ProtoId              5601
@@ -44910,11 +44899,6 @@ MapX                 71
 MapY                 155
 
 MapObjType           2
-ProtoId              2965
-MapX                 71
-MapY                 156
-
-MapObjType           2
 ProtoId              2369
 MapX                 67
 MapY                 156
@@ -45140,11 +45124,6 @@ MapX                 67
 MapY                 172
 
 MapObjType           2
-ProtoId              2965
-MapX                 67
-MapY                 173
-
-MapObjType           2
 ProtoId              2369
 MapX                 63
 MapY                 169
@@ -45248,11 +45227,6 @@ MapObjType           2
 ProtoId              2369
 MapX                 71
 MapY                 182
-
-MapObjType           2
-ProtoId              2965
-MapX                 67
-MapY                 184
 
 MapObjType           2
 ProtoId              2371
@@ -45390,16 +45364,6 @@ MapX                 75
 MapY                 164
 
 MapObjType           2
-ProtoId              2369
-MapX                 75
-MapY                 165
-
-MapObjType           2
-ProtoId              2965
-MapX                 75
-MapY                 165
-
-MapObjType           2
 ProtoId              2371
 MapX                 79
 MapY                 164
@@ -45456,11 +45420,6 @@ MapY                 174
 
 MapObjType           2
 ProtoId              2369
-MapX                 79
-MapY                 175
-
-MapObjType           2
-ProtoId              2965
 MapX                 79
 MapY                 175
 
@@ -45523,11 +45482,6 @@ MapObjType           2
 ProtoId              2369
 MapX                 51
 MapY                 156
-
-MapObjType           2
-ProtoId              2965
-MapX                 51
-MapY                 157
 
 MapObjType           2
 ProtoId              2369
@@ -45755,11 +45709,6 @@ MapX                 47
 MapY                 173
 
 MapObjType           2
-ProtoId              2965
-MapX                 47
-MapY                 174
-
-MapObjType           2
 ProtoId              2369
 MapX                 43
 MapY                 170
@@ -45925,11 +45874,6 @@ MapX                 55
 MapY                 176
 
 MapObjType           2
-ProtoId              2965
-MapX                 55
-MapY                 177
-
-MapObjType           2
 ProtoId              2371
 MapX                 55
 MapY                 178
@@ -46010,11 +45954,6 @@ MapX                 55
 MapY                 166
 
 MapObjType           2
-ProtoId              2965
-MapX                 55
-MapY                 166
-
-MapObjType           2
 ProtoId              2371
 MapX                 59
 MapY                 157
@@ -46071,11 +46010,6 @@ MapY                 171
 
 MapObjType           2
 ProtoId              2369
-MapX                 59
-MapY                 172
-
-MapObjType           2
-ProtoId              2965
 MapX                 59
 MapY                 172
 
@@ -46973,16 +46907,6 @@ MapObjType           2
 ProtoId              2370
 MapX                 79
 MapY                 170
-
-MapObjType           2
-ProtoId              2369
-MapX                 79
-MapY                 171
-
-MapObjType           2
-ProtoId              2965
-MapX                 79
-MapY                 171
 
 MapObjType           2
 ProtoId              2371
@@ -47346,8 +47270,8 @@ MapY                 197
 
 MapObjType           2
 ProtoId              2612
-MapX                 53
-MapY                 138
+MapX                 49
+MapY                 136
 LightColor           99975000
 LightDistance        4
 LightIntensity       50
@@ -51160,12 +51084,6 @@ ProtoId              3853
 MapX                 112
 MapY                 48
 Scenery_ToEntire     244
-
-MapObjType           2
-ProtoId              3853
-MapX                 136
-MapY                 69
-Scenery_ToEntire     243
 
 MapObjType           2
 ProtoId              2067
@@ -58659,13 +58577,6 @@ MapX                 101
 MapY                 294
 
 MapObjType           2
-ProtoId              2904
-MapX                 145
-MapY                 294
-OffsetX              16
-OffsetY              12
-
-MapObjType           2
 ProtoId              2276
 MapX                 137
 MapY                 296
@@ -58679,36 +58590,6 @@ MapObjType           2
 ProtoId              2067
 MapX                 137
 MapY                 295
-
-MapObjType           2
-ProtoId              2067
-MapX                 143
-MapY                 295
-
-MapObjType           2
-ProtoId              2067
-MapX                 144
-MapY                 294
-
-MapObjType           2
-ProtoId              2067
-MapX                 145
-MapY                 295
-
-MapObjType           2
-ProtoId              2067
-MapX                 146
-MapY                 294
-
-MapObjType           2
-ProtoId              2067
-MapX                 147
-MapY                 294
-
-MapObjType           2
-ProtoId              2067
-MapX                 143
-MapY                 294
 
 MapObjType           2
 ProtoId              2670
@@ -67090,5 +66971,205 @@ MapObjType           2
 ProtoId              2067
 MapX                 73
 MapY                 206
+
+MapObjType           1
+ProtoId              1822
+MapX                 52
+MapY                 143
+
+MapObjType           1
+ProtoId              1821
+MapX                 58
+MapY                 145
+
+MapObjType           1
+ProtoId              1820
+MapX                 52
+MapY                 146
+
+MapObjType           1
+ProtoId              1820
+MapX                 61
+MapY                 145
+
+MapObjType           1
+ProtoId              1821
+MapX                 57
+MapY                 141
+
+MapObjType           1
+ProtoId              1822
+MapX                 55
+MapY                 143
+
+MapObjType           1
+ProtoId              1820
+MapX                 129
+MapY                 163
+
+MapObjType           1
+ProtoId              1821
+MapX                 125
+MapY                 159
+
+MapObjType           1
+ProtoId              1821
+MapX                 126
+MapY                 163
+
+MapObjType           1
+ProtoId              1822
+MapX                 123
+MapY                 161
+
+MapObjType           1
+ProtoId              1822
+MapX                 120
+MapY                 161
+
+MapObjType           1
+ProtoId              1820
+MapX                 120
+MapY                 164
+
+MapObjType           1
+ProtoId              1820
+MapX                 66
+MapY                 88
+
+MapObjType           1
+ProtoId              1821
+MapX                 64
+MapY                 91
+
+MapObjType           1
+ProtoId              1821
+MapX                 63
+MapY                 95
+
+MapObjType           1
+ProtoId              1822
+MapX                 57
+MapY                 100
+
+MapObjType           1
+ProtoId              1822
+MapX                 57
+MapY                 93
+
+MapObjType           1
+ProtoId              1820
+MapX                 57
+MapY                 96
+
+MapObjType           1
+ProtoId              1822
+MapX                 60
+MapY                 92
+
+MapObjType           1
+ProtoId              1822
+MapX                 118
+MapY                 57
+
+MapObjType           1
+ProtoId              1822
+MapX                 118
+MapY                 53
+
+MapObjType           1
+ProtoId              1820
+MapX                 113
+MapY                 56
+
+MapObjType           1
+ProtoId              1822
+MapX                 144
+MapY                 69
+
+MapObjType           1
+ProtoId              1822
+MapX                 139
+MapY                 73
+
+MapObjType           1
+ProtoId              1820
+MapX                 138
+MapY                 76
+
+MapObjType           1
+ProtoId              1817
+MapX                 51
+MapY                 168
+ScriptName           prod_plant_fiber
+FuncName             item_init
+
+MapObjType           1
+ProtoId              1817
+MapX                 79
+MapY                 172
+ScriptName           prod_plant_fiber
+FuncName             item_init
+
+MapObjType           1
+ProtoId              1817
+MapX                 59
+MapY                 162
+ScriptName           prod_plant_fiber
+FuncName             item_init
+
+MapObjType           1
+ProtoId              1817
+MapX                 71
+MapY                 156
+ScriptName           prod_plant_fiber
+FuncName             item_init
+
+MapObjType           1
+ProtoId              1817
+MapX                 59
+MapY                 169
+ScriptName           prod_plant_fiber
+FuncName             item_init
+
+MapObjType           1
+ProtoId              1817
+MapX                 75
+MapY                 165
+ScriptName           prod_plant_fiber
+FuncName             item_init
+
+MapObjType           1
+ProtoId              1817
+MapX                 67
+MapY                 173
+ScriptName           prod_plant_fiber
+FuncName             item_init
+
+MapObjType           1
+ProtoId              1817
+MapX                 67
+MapY                 184
+ScriptName           prod_plant_fiber
+FuncName             item_init
+
+MapObjType           1
+ProtoId              1817
+MapX                 79
+MapY                 179
+ScriptName           prod_plant_fiber
+FuncName             item_init
+
+MapObjType           1
+ProtoId              825
+MapX                 138
+MapY                 291
+ScriptName           triggers
+FuncName             _AntiBlock
+
+MapObjType           2
+ProtoId              2334
+MapX                 143
+MapY                 293
 
 

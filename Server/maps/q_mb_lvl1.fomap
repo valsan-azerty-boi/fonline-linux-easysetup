@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              400
 MaxHexY              400
-WorkHexX             222
-WorkHexY             200
+WorkHexX             217
+WorkHexY             188
 ScriptModule         quest_mb
 ScriptFunc           _MBFirstFloor
 NoLogOut             0
@@ -15,30 +15,30 @@ DayColor2            103 95  86
 DayColor3            51  40  29 
 
 [Tiles]
-tile       198  85             art\tiles\mstrflr4.FRM
-tile       200  85             art\tiles\mstrflr15.FRM
-tile       202  85             art\tiles\mstrflr15.FRM
-tile       204  85             art\tiles\mstrflr3.FRM
-tile       198  87             art\tiles\mstrflr17.FRM
+tile       198  85             art\tiles\mstrflr4.frm
+tile       200  85             art\tiles\mstrflr15.frm
+tile       202  85             art\tiles\mstrflr15.frm
+tile       204  85             art\tiles\mstrflr3.frm
+tile       198  87             art\tiles\mstrflr17.frm
 tile       200  87             art\tiles\mstrflr1.frm
 tile       202  87             art\tiles\mstrflr1.frm
-tile       204  87             art\tiles\mstrflr16.FRM
-tile       198  89             art\tiles\mstrflr6.FRM
-tile       200  89             art\tiles\mstrflr9.FRM
-tile       202  89             art\tiles\mstrflr9.FRM
-tile       204  89             art\tiles\mstrflr5.FRM
-tile       206  93             art\tiles\mstrflr4.FRM
-tile       208  93             art\tiles\mstrflr3.FRM
-tile       204  95             art\tiles\mstrflr4.FRM
-tile       206  95             art\tiles\mstrflr7.FRM
-tile       208  95             art\tiles\mstrflr8.FRM
-tile       210  95             art\tiles\mstrflr3.FRM
-tile       204  97             art\tiles\mstrflr6.FRM
-tile       206  97             art\tiles\mstrflr9.FRM
-tile       208  97             art\tiles\mstrflr10.FRM
-tile       210  97             art\tiles\mstrflr5.FRM
-tile       206  99             art\tiles\mstrflr6.FRM
-tile       208  99             art\tiles\mstrflr5.FRM
+tile       204  87             art\tiles\mstrflr16.frm
+tile       198  89             art\tiles\mstrflr6.frm
+tile       200  89             art\tiles\mstrflr9.frm
+tile       202  89             art\tiles\mstrflr9.frm
+tile       204  89             art\tiles\mstrflr5.frm
+tile       206  93             art\tiles\mstrflr4.frm
+tile       208  93             art\tiles\mstrflr3.frm
+tile       204  95             art\tiles\mstrflr4.frm
+tile       206  95             art\tiles\mstrflr7.frm
+tile       208  95             art\tiles\mstrflr8.frm
+tile       210  95             art\tiles\mstrflr3.frm
+tile       204  97             art\tiles\mstrflr6.frm
+tile       206  97             art\tiles\mstrflr9.frm
+tile       208  97             art\tiles\mstrflr10.frm
+tile       210  97             art\tiles\mstrflr5.frm
+tile       206  99             art\tiles\mstrflr6.frm
+tile       208  99             art\tiles\mstrflr5.frm
 tile       192  111            art\tiles\cav4010.frm
 tile       194  111            art\tiles\cav4008.frm
 tile       196  111            art\tiles\cav4010.frm
@@ -1514,15 +1514,15 @@ tile       182  155            art\tiles\cav4009.frm
 tile       184  155            art\tiles\cav4009.frm
 tile       186  155            art\tiles\mstrflr1.frm
 tile       188  155            art\tiles\mstrflr1.frm
-tile       190  155            art\tiles\mstrflr10.FRM
-tile       192  155            art\tiles\mstrflr14.FRM
-tile       194  155            art\tiles\mstrflr9.FRM
+tile       190  155            art\tiles\mstrflr10.frm
+tile       192  155            art\tiles\mstrflr14.frm
+tile       194  155            art\tiles\mstrflr9.frm
 tile       196  155            art\tiles\mstrflr1.frm
 tile       198  155            art\tiles\mstrflr1.frm
 tile       200  155            art\tiles\mstrflr1.frm
 tile       202  155            art\tiles\mstrflr1.frm
-tile       204  155            art\tiles\mstrflr10.FRM
-tile       206  155            art\tiles\mstrflr5.FRM
+tile       204  155            art\tiles\mstrflr10.frm
+tile       206  155            art\tiles\mstrflr5.frm
 tile       208  155            art\tiles\plt2000.frm
 tile       210  155            art\tiles\curb16.frm
 tile       212  155            art\tiles\curb16.frm
@@ -1593,14 +1593,14 @@ tile       182  157            art\tiles\cav4010.frm
 tile       184  157            art\tiles\cav4008.frm
 tile       186  157            art\tiles\mstrflr1.frm
 tile       188  157            art\tiles\mstrflr1.frm
-tile       190  157            art\tiles\mstrflr8.FRM
-tile       192  157            art\tiles\mstrflr3.FRM
-tile       194  157            art\tiles\mstrflr17.FRM
+tile       190  157            art\tiles\mstrflr8.frm
+tile       192  157            art\tiles\mstrflr3.frm
+tile       194  157            art\tiles\mstrflr17.frm
 tile       196  157            art\tiles\mstrflr1.frm
 tile       198  157            art\tiles\mstrflr1.frm
 tile       200  157            art\tiles\mstrflr1.frm
 tile       202  157            art\tiles\mstrflr1.frm
-tile       204  157            art\tiles\mstrflr12.FRM
+tile       204  157            art\tiles\mstrflr12.frm
 tile       206  157            art\tiles\plt1000.frm
 tile       208  157            art\tiles\plt2000.frm
 tile       210  157            art\tiles\curb16.frm
@@ -1673,13 +1673,13 @@ tile       184  159            art\tiles\cav4009.frm
 tile       186  159            art\tiles\mstrflr1.frm
 tile       188  159            art\tiles\mstrflr1.frm
 tile       190  159            art\tiles\mstrflr1.frm
-tile       192  159            art\tiles\mstrflr12.FRM
-tile       194  159            art\tiles\mstrflr6.FRM
-tile       196  159            art\tiles\mstrflr9.FRM
+tile       192  159            art\tiles\mstrflr12.frm
+tile       194  159            art\tiles\mstrflr6.frm
+tile       196  159            art\tiles\mstrflr9.frm
 tile       198  159            art\tiles\mstrflr1.frm
 tile       200  159            art\tiles\mstrflr1.frm
-tile       202  159            art\tiles\mstrflr10.FRM
-tile       204  159            art\tiles\mstrflr5.FRM
+tile       202  159            art\tiles\mstrflr10.frm
+tile       204  159            art\tiles\mstrflr5.frm
 tile       206  159            art\tiles\plt2000.frm
 tile       208  159            art\tiles\plt2000.frm
 tile       210  159            art\tiles\curb16.frm
@@ -1752,12 +1752,12 @@ tile       184  161            art\tiles\cav4008.frm
 tile       186  161            art\tiles\mstrflr1.frm
 tile       188  161            art\tiles\mstrflr1.frm
 tile       190  161            art\tiles\mstrflr1.frm
-tile       192  161            art\tiles\mstrflr8.FRM
-tile       194  161            art\tiles\mstrflr3.FRM
-tile       196  161            art\tiles\mstrflr6.FRM
-tile       198  161            art\tiles\mstrflr9.FRM
-tile       200  161            art\tiles\mstrflr10.FRM
-tile       202  161            art\tiles\mstrflr5.FRM
+tile       192  161            art\tiles\mstrflr8.frm
+tile       194  161            art\tiles\mstrflr3.frm
+tile       196  161            art\tiles\mstrflr6.frm
+tile       198  161            art\tiles\mstrflr9.frm
+tile       200  161            art\tiles\mstrflr10.frm
+tile       202  161            art\tiles\mstrflr5.frm
 tile       204  161            art\tiles\plt1000.frm
 tile       206  161            art\tiles\plt1000.frm
 tile       208  161            art\tiles\plt1000.frm
@@ -1832,12 +1832,12 @@ tile       186  163            art\tiles\mstrflr1.frm
 tile       188  163            art\tiles\mstrflr1.frm
 tile       190  163            art\tiles\mstrflr1.frm
 tile       192  163            art\tiles\mstrflr1.frm
-tile       194  163            art\tiles\mstrflr8.FRM
-tile       196  163            art\tiles\mstrflr3.FRM
-tile       198  163            art\tiles\mstrflr13.FRM
-tile       200  163            art\tiles\mstrflr12.FRM
-tile       202  163            art\tiles\mstrflr4.FRM
-tile       204  163            art\tiles\mstrflr3.FRM
+tile       194  163            art\tiles\mstrflr8.frm
+tile       196  163            art\tiles\mstrflr3.frm
+tile       198  163            art\tiles\mstrflr13.frm
+tile       200  163            art\tiles\mstrflr12.frm
+tile       202  163            art\tiles\mstrflr4.frm
+tile       204  163            art\tiles\mstrflr3.frm
 tile       206  163            art\tiles\plt1000.frm
 tile       208  163            art\tiles\plt1000.frm
 tile       210  163            art\tiles\curb16.frm
@@ -1912,11 +1912,11 @@ tile       188  165            art\tiles\mstrflr1.frm
 tile       190  165            art\tiles\mstrflr1.frm
 tile       192  165            art\tiles\mstrflr1.frm
 tile       194  165            art\tiles\mstrflr1.frm
-tile       196  165            art\tiles\mstrflr8.FRM
-tile       198  165            art\tiles\mstrflr6.FRM
-tile       200  165            art\tiles\mstrflr5.FRM
-tile       202  165            art\tiles\mstrflr6.FRM
-tile       204  165            art\tiles\mstrflr5.FRM
+tile       196  165            art\tiles\mstrflr8.frm
+tile       198  165            art\tiles\mstrflr6.frm
+tile       200  165            art\tiles\mstrflr5.frm
+tile       202  165            art\tiles\mstrflr6.frm
+tile       204  165            art\tiles\mstrflr5.frm
 tile       206  165            art\tiles\plt1000.frm
 tile       208  165            art\tiles\plt2000.frm
 tile       210  165            art\tiles\curb16.frm
@@ -1986,13 +1986,13 @@ tile       178  167            art\tiles\cav4009.frm
 tile       180  167            art\tiles\cav4009.frm
 tile       182  167            art\tiles\cav4010.frm
 tile       184  167            art\tiles\cav4008.frm
-tile       186  167            art\tiles\GRT2001.FRM
-tile       188  167            art\tiles\GRT2001.FRM
-tile       190  167            art\tiles\GRT2001.FRM
-tile       192  167            art\tiles\GRT2001.FRM
-tile       194  167            art\tiles\GRT2001.FRM
+tile       186  167            art\tiles\grt2001.frm
+tile       188  167            art\tiles\grt2001.frm
+tile       190  167            art\tiles\grt2001.frm
+tile       192  167            art\tiles\grt2001.frm
+tile       194  167            art\tiles\grt2001.frm
 tile       196  167            art\tiles\mstrflr1.frm
-tile       198  167            art\tiles\mstrflr8.FRM
+tile       198  167            art\tiles\mstrflr8.frm
 tile       200  167            art\tiles\plt2000.frm
 tile       202  167            art\tiles\plt1000.frm
 tile       204  167            art\tiles\plt1000.frm
@@ -2065,13 +2065,13 @@ tile       178  169            art\tiles\cav4009.frm
 tile       180  169            art\tiles\cav4010.frm
 tile       182  169            art\tiles\cav4009.frm
 tile       184  169            art\tiles\cav4009.frm
-tile       186  169            art\tiles\GRT2001.FRM
-tile       188  169            art\tiles\GRT2001.FRM
-tile       190  169            art\tiles\GRT2001.FRM
-tile       192  169            art\tiles\GRT2001.FRM
-tile       194  169            art\tiles\GRT2001.FRM
+tile       186  169            art\tiles\grt2001.frm
+tile       188  169            art\tiles\grt2001.frm
+tile       190  169            art\tiles\grt2001.frm
+tile       192  169            art\tiles\grt2001.frm
+tile       194  169            art\tiles\grt2001.frm
 tile       196  169            art\tiles\mstrflr1.frm
-tile       198  169            art\tiles\mstrflr8.FRM
+tile       198  169            art\tiles\mstrflr8.frm
 tile       200  169            art\tiles\plt2000.frm
 tile       202  169            art\tiles\plt1000.frm
 tile       204  169            art\tiles\plt2000.frm
@@ -2144,13 +2144,13 @@ tile       178  171            art\tiles\cav4010.frm
 tile       180  171            art\tiles\cav4009.frm
 tile       182  171            art\tiles\cav4009.frm
 tile       184  171            art\tiles\cav4008.frm
-tile       186  171            art\tiles\GRT2001.FRM
-tile       188  171            art\tiles\GRT2001.FRM
-tile       190  171            art\tiles\GRT2001.FRM
-tile       192  171            art\tiles\GRT2001.FRM
-tile       194  171            art\tiles\GRT2001.FRM
+tile       186  171            art\tiles\grt2001.frm
+tile       188  171            art\tiles\grt2001.frm
+tile       190  171            art\tiles\grt2001.frm
+tile       192  171            art\tiles\grt2001.frm
+tile       194  171            art\tiles\grt2001.frm
 tile       196  171            art\tiles\mstrflr1.frm
-tile       198  171            art\tiles\mstrflr12.FRM
+tile       198  171            art\tiles\mstrflr12.frm
 tile       200  171            art\tiles\plt1000.frm
 tile       202  171            art\tiles\plt1000.frm
 tile       204  171            art\tiles\plt1000.frm
@@ -2223,13 +2223,13 @@ tile       178  173            art\tiles\cav4008.frm
 tile       180  173            art\tiles\cav4010.frm
 tile       182  173            art\tiles\cav4010.frm
 tile       184  173            art\tiles\cav4009.frm
-tile       186  173            art\tiles\GRT2001.FRM
-tile       188  173            art\tiles\GRT2001.FRM
-tile       190  173            art\tiles\GRT2001.FRM
-tile       192  173            art\tiles\GRT2001.FRM
-tile       194  173            art\tiles\GRT2001.FRM
+tile       186  173            art\tiles\grt2001.frm
+tile       188  173            art\tiles\grt2001.frm
+tile       190  173            art\tiles\grt2001.frm
+tile       192  173            art\tiles\grt2001.frm
+tile       194  173            art\tiles\grt2001.frm
 tile       196  173            art\tiles\mstrflr1.frm
-tile       198  173            art\tiles\mstrflr16.FRM
+tile       198  173            art\tiles\mstrflr16.frm
 tile       200  173            art\tiles\plt1000.frm
 tile       202  173            art\tiles\plt1000.frm
 tile       204  173            art\tiles\plt1000.frm
@@ -2302,13 +2302,13 @@ tile       178  175            art\tiles\cav4009.frm
 tile       180  175            art\tiles\cav4009.frm
 tile       182  175            art\tiles\cav4009.frm
 tile       184  175            art\tiles\cav4008.frm
-tile       186  175            art\tiles\GRT2001.FRM
-tile       188  175            art\tiles\GRT2001.FRM
-tile       190  175            art\tiles\GRT2001.FRM
-tile       192  175            art\tiles\GRT2001.FRM
-tile       194  175            art\tiles\GRT2001.FRM
-tile       196  175            art\tiles\mstrflr10.FRM
-tile       198  175            art\tiles\mstrflr5.FRM
+tile       186  175            art\tiles\grt2001.frm
+tile       188  175            art\tiles\grt2001.frm
+tile       190  175            art\tiles\grt2001.frm
+tile       192  175            art\tiles\grt2001.frm
+tile       194  175            art\tiles\grt2001.frm
+tile       196  175            art\tiles\mstrflr10.frm
+tile       198  175            art\tiles\mstrflr5.frm
 tile       200  175            art\tiles\plt2000.frm
 tile       202  175            art\tiles\plt1000.frm
 tile       204  175            art\tiles\plt1000.frm
@@ -2385,8 +2385,8 @@ tile       186  177            art\tiles\mstrflr1.frm
 tile       188  177            art\tiles\mstrflr1.frm
 tile       190  177            art\tiles\mstrflr1.frm
 tile       192  177            art\tiles\mstrflr1.frm
-tile       194  177            art\tiles\mstrflr10.FRM
-tile       196  177            art\tiles\mstrflr5.FRM
+tile       194  177            art\tiles\mstrflr10.frm
+tile       196  177            art\tiles\mstrflr5.frm
 tile       198  177            art\tiles\plt1000.frm
 tile       200  177            art\tiles\plt2000.frm
 tile       202  177            art\tiles\plt1000.frm
@@ -2447,11 +2447,11 @@ tile       178  179            art\tiles\cav4009.frm
 tile       180  179            art\tiles\cav4009.frm
 tile       182  179            art\tiles\cav4009.frm
 tile       184  179            art\tiles\cav4008.frm
-tile       186  179            art\tiles\GRT2000.FRM
-tile       188  179            art\tiles\GRT2000.FRM
-tile       190  179            art\tiles\GRT2000.FRM
-tile       192  179            art\tiles\GRT2000.FRM
-tile       194  179            art\tiles\GRT2000.FRM
+tile       186  179            art\tiles\grt2000.frm
+tile       188  179            art\tiles\grt2000.frm
+tile       190  179            art\tiles\grt2000.frm
+tile       192  179            art\tiles\grt2000.frm
+tile       194  179            art\tiles\grt2000.frm
 tile       196  179            art\tiles\plt2000.frm
 tile       198  179            art\tiles\plt2000.frm
 tile       200  179            art\tiles\plt2000.frm
@@ -2491,7 +2491,7 @@ tile       266  179            art\tiles\cav4009.frm
 tile       268  179            art\tiles\cav4009.frm
 tile       270  179            art\tiles\cav4009.frm
 tile       272  179            art\tiles\cav4009.frm
-tile       295  180            art\tiles\mstrflr9.FRM
+tile       295  180            art\tiles\mstrflr9.frm
 tile       142  181            art\tiles\cav4010.frm
 tile       144  181            art\tiles\cav4008.frm
 tile       146  181            art\tiles\cav4010.frm
@@ -2514,11 +2514,11 @@ tile       178  181            art\tiles\cav4008.frm
 tile       180  181            art\tiles\cav4010.frm
 tile       182  181            art\tiles\cav4009.frm
 tile       184  181            art\tiles\cav4009.frm
-tile       186  181            art\tiles\GRT2000.FRM
-tile       188  181            art\tiles\GRT2000.FRM
-tile       190  181            art\tiles\GRT2000.FRM
-tile       192  181            art\tiles\GRT2000.FRM
-tile       194  181            art\tiles\GRT2000.FRM
+tile       186  181            art\tiles\grt2000.frm
+tile       188  181            art\tiles\grt2000.frm
+tile       190  181            art\tiles\grt2000.frm
+tile       192  181            art\tiles\grt2000.frm
+tile       194  181            art\tiles\grt2000.frm
 tile       196  181            art\tiles\plt1000.frm
 tile       198  181            art\tiles\plt1000.frm
 tile       200  181            art\tiles\plt1000.frm
@@ -2580,11 +2580,11 @@ tile       178  183            art\tiles\cav4008.frm
 tile       180  183            art\tiles\cav4010.frm
 tile       182  183            art\tiles\cav4010.frm
 tile       184  183            art\tiles\cav4008.frm
-tile       186  183            art\tiles\GRT2000.FRM
-tile       188  183            art\tiles\GRT2000.FRM
-tile       190  183            art\tiles\GRT2000.FRM
-tile       192  183            art\tiles\GRT2000.FRM
-tile       194  183            art\tiles\GRT2000.FRM
+tile       186  183            art\tiles\grt2000.frm
+tile       188  183            art\tiles\grt2000.frm
+tile       190  183            art\tiles\grt2000.frm
+tile       192  183            art\tiles\grt2000.frm
+tile       194  183            art\tiles\grt2000.frm
 tile       196  183            art\tiles\plt1000.frm
 tile       198  183            art\tiles\plt1000.frm
 tile       200  183            art\tiles\plt1000.frm
@@ -2646,11 +2646,11 @@ tile       178  185            art\tiles\cav4009.frm
 tile       180  185            art\tiles\cav4009.frm
 tile       182  185            art\tiles\cav4009.frm
 tile       184  185            art\tiles\cav4009.frm
-tile       186  185            art\tiles\GRT2000.FRM
-tile       188  185            art\tiles\GRT2000.FRM
-tile       190  185            art\tiles\GRT2000.FRM
-tile       192  185            art\tiles\GRT2000.FRM
-tile       194  185            art\tiles\GRT2000.FRM
+tile       186  185            art\tiles\grt2000.frm
+tile       188  185            art\tiles\grt2000.frm
+tile       190  185            art\tiles\grt2000.frm
+tile       192  185            art\tiles\grt2000.frm
+tile       194  185            art\tiles\grt2000.frm
 tile       196  185            art\tiles\plt2000.frm
 tile       198  185            art\tiles\plt2000.frm
 tile       200  185            art\tiles\plt2000.frm
@@ -2712,11 +2712,11 @@ tile       178  187            art\tiles\cav4008.frm
 tile       180  187            art\tiles\cav4010.frm
 tile       182  187            art\tiles\cav4010.frm
 tile       184  187            art\tiles\cav4009.frm
-tile       186  187            art\tiles\GRT2000.FRM
-tile       188  187            art\tiles\GRT2000.FRM
-tile       190  187            art\tiles\GRT2000.FRM
-tile       192  187            art\tiles\GRT2000.FRM
-tile       194  187            art\tiles\GRT2000.FRM
+tile       186  187            art\tiles\grt2000.frm
+tile       188  187            art\tiles\grt2000.frm
+tile       190  187            art\tiles\grt2000.frm
+tile       192  187            art\tiles\grt2000.frm
+tile       194  187            art\tiles\grt2000.frm
 tile       196  187            art\tiles\plt1000.frm
 tile       198  187            art\tiles\plt1000.frm
 tile       200  187            art\tiles\plt1000.frm
@@ -7233,11 +7233,6 @@ MapX                 208
 MapY                 202
 
 MapObjType           2
-ProtoId              5992
-MapX                 207
-MapY                 202
-
-MapObjType           2
 ProtoId              5994
 MapX                 211
 MapY                 202
@@ -7306,11 +7301,6 @@ MapObjType           2
 ProtoId              6009
 MapX                 230
 MapY                 192
-
-MapObjType           2
-ProtoId              6135
-MapX                 228
-MapY                 182
 
 MapObjType           2
 ProtoId              6009
@@ -7476,7 +7466,7 @@ MapObjType           1
 ProtoId              4764
 MapX                 192
 MapY                 194
-Item_LockerDoorId    888
+Item_LockerDoorId    889
 Item_LockerComplexity 1000
 
 MapObjType           2
@@ -7687,11 +7677,6 @@ MapY                 182
 MapObjType           2
 ProtoId              5989
 MapX                 208
-MapY                 182
-
-MapObjType           2
-ProtoId              5990
-MapX                 207
 MapY                 182
 
 MapObjType           2
@@ -8143,16 +8128,6 @@ MapObjType           2
 ProtoId              6019
 MapX                 222
 MapY                 177
-
-MapObjType           2
-ProtoId              6032
-MapX                 222
-MapY                 182
-
-MapObjType           2
-ProtoId              5992
-MapX                 223
-MapY                 182
 
 MapObjType           2
 ProtoId              6027
@@ -10352,14 +10327,14 @@ MapObjType           1
 ProtoId              2019
 MapX                 222
 MapY                 161
-Item_LockerDoorId    888
+Item_LockerDoorId    112
 Item_LockerComplexity 1000
 
 MapObjType           1
 ProtoId              2019
 MapX                 222
 MapY                 175
-Item_LockerDoorId    888
+Item_LockerDoorId    111
 Item_LockerComplexity 1000
 
 MapObjType           1
@@ -10369,9 +10344,9 @@ MapY                 197
 
 MapObjType           1
 ProtoId              2018
-MapX                 204
+MapX                 226
 MapY                 182
-Item_LockerDoorId    888
+Item_LockerDoorId    110
 Item_LockerComplexity 1000
 
 MapObjType           1
@@ -10383,7 +10358,7 @@ MapObjType           1
 ProtoId              2019
 MapX                 196
 MapY                 199
-Item_LockerDoorId    888
+Item_LockerDoorId    889
 Item_LockerComplexity 1000
 
 MapObjType           2
@@ -10500,7 +10475,6 @@ MapObjType           1
 ProtoId              369
 MapX                 218
 MapY                 159
-UID                  1
 
 MapObjType           1
 ProtoId              369
@@ -15105,11 +15079,6 @@ MapX                 227
 MapY                 182
 
 MapObjType           2
-ProtoId              5621
-MapX                 225
-MapY                 182
-
-MapObjType           2
 ProtoId              2067
 MapX                 228
 MapY                 225
@@ -17562,7 +17531,7 @@ MapX                 201
 MapY                 178
 
 MapObjType           0
-ProtoId              74
+ProtoId              577
 MapX                 196
 MapY                 178
 Dir                  3
@@ -17583,7 +17552,7 @@ Critter_ParamIndex5  ST_REPLICATION_TIME
 Critter_ParamValue5  0
 
 MapObjType           0
-ProtoId              74
+ProtoId              577
 MapX                 208
 MapY                 215
 Dir                  3
@@ -17626,7 +17595,7 @@ MapX                 222
 MapY                 169
 
 MapObjType           0
-ProtoId              77
+ProtoId              592
 MapX                 224
 MapY                 168
 Dir                  3
@@ -17640,16 +17609,16 @@ Critter_ParamValue0  5042
 Critter_ParamIndex1  ST_AI_ID
 Critter_ParamValue1  258
 Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  420
+Critter_ParamValue2  421
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  5024
+Critter_ParamValue3  5022
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
 Critter_ParamValue5  0
 
 MapObjType           0
-ProtoId              77
+ProtoId              592
 MapX                 224
 MapY                 170
 Dir                  3
@@ -17663,9 +17632,9 @@ Critter_ParamValue0  5042
 Critter_ParamIndex1  ST_AI_ID
 Critter_ParamValue1  258
 Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  420
+Critter_ParamValue2  421
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  5024
+Critter_ParamValue3  5023
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -17696,22 +17665,9 @@ MapY                 206
 Scenery_ToEntire     2
 
 MapObjType           1
-ProtoId              381
-MapX                 218
-MapY                 159
-ContainerUID         1
-
-MapObjType           1
 ProtoId              369
 MapX                 218
 MapY                 163
-UID                  3
-
-MapObjType           1
-ProtoId              381
-MapX                 218
-MapY                 163
-ContainerUID         3
 
 MapObjType           1
 ProtoId              389
@@ -18473,11 +18429,6 @@ FuncName             _LeftSwitchInit
 OffsetX              6
 OffsetY              12
 
-MapObjType           1
-ProtoId              10004
-MapX                 226
-MapY                 182
-
 MapObjType           2
 ProtoId              3853
 MapX                 222
@@ -18495,11 +18446,181 @@ ProtoId              109
 MapX                 201
 MapY                 187
 ContainerUID         28
+Item_Count           2
 
 MapObjType           2
 ProtoId              3853
 MapX                 216
 MapY                 247
 Scenery_ToEntire     1
+
+MapObjType           0
+ProtoId              592
+MapX                 213
+MapY                 161
+Dir                  3
+ScriptName           quest_mb
+FuncName             _Robot
+Critter_Cond         2
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  5042
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  258
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  420
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  5020
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+
+MapObjType           0
+ProtoId              592
+MapX                 213
+MapY                 174
+Dir                  3
+ScriptName           quest_mb
+FuncName             _Robot
+Critter_Cond         2
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  5042
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  258
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  422
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  5021
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+
+MapObjType           0
+ProtoId              592
+MapX                 213
+MapY                 177
+Dir                  3
+ScriptName           quest_mb
+FuncName             _Robot
+Critter_Cond         2
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  5042
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  258
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  420
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  5021
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+
+MapObjType           0
+ProtoId              592
+MapX                 213
+MapY                 165
+Dir                  3
+ScriptName           quest_mb
+FuncName             _Robot
+Critter_Cond         2
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  5042
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  258
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  422
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  5020
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+
+MapObjType           2
+ProtoId              6032
+MapX                 222
+MapY                 182
+
+MapObjType           2
+ProtoId              5990
+MapX                 207
+MapY                 182
+
+MapObjType           2
+ProtoId              6017
+MapX                 228
+MapY                 182
+
+MapObjType           2
+ProtoId              6020
+MapX                 227
+MapY                 182
+
+MapObjType           2
+ProtoId              6018
+MapX                 225
+MapY                 182
+
+MapObjType           2
+ProtoId              5992
+MapX                 207
+MapY                 202
+
+MapObjType           1
+ProtoId              2018
+MapX                 204
+MapY                 182
+Item_LockerDoorId    889
+Item_LockerComplexity 1000
+
+MapObjType           2
+ProtoId              5991
+MapX                 224
+MapY                 182
+
+MapObjType           2
+ProtoId              5992
+MapX                 223
+MapY                 182
+
+MapObjType           2
+ProtoId              3853
+MapX                 226
+MapY                 182
+Scenery_ToEntire     23
+
+MapObjType           2
+ProtoId              2646
+MapX                 224
+MapY                 182
+ScriptName           quest_mb
+FuncName             s_ArmoryCorridorTerminal
+Scenery_CanUse       1
+Scenery_ParamsCount  1
+Scenery_Param0       23
+
+MapObjType           1
+ProtoId              223
+MapX                 201
+MapY                 187
+ContainerUID         28
+Item_LockerDoorId    888
+
+MapObjType           1
+ProtoId              501
+MapX                 219
+MapY                 155
+Item_LockerDoorId    113
+Item_LockerComplexity 100
 
 

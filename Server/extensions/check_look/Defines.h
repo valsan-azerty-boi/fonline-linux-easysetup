@@ -34,8 +34,8 @@
 #define BONUS_ARMOR_METAL			(-72)
 #define BONUS_ARMOR_COMBAT			(-36)
 
-#define BONUS_WEAPON_RIFLE			(-36)
-#define BONUS_WEAPON_HEAVY			(-72)
+#define BONUS_WEAPON_RIFLE			(-100)
+#define BONUS_WEAPON_HEAVY			(-150)
 
 #define BONUS_ACTIVE_EXPLOSIVES		(-72)
 #define BONUS_RUNNING				(-60)

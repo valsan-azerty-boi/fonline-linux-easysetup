@@ -157,8 +157,19 @@ namespace CritableEditor
 
         private void html_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Data.SaveHtml();
+            Data.SaveHtml();            
             Data.OpenHtml();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Data.SaveHtml_Men();
+            Data.OpenHtml_Men();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -74,9 +74,10 @@ void _OnMessage(Critter& npc, Critter& player, int num, int val)
     {
 
     case MSG_JNK_PLAYER_ENTRANCE:
-        if(IsNight() && npc.Stat[ST_NPC_ROLE] == ROLE_JNK_GUARD_GATE && GetGroupIndex(player) != FACTION_NONE)
+        //if(IsNight() && npc.Stat[ST_NPC_ROLE] == ROLE_JNK_GUARD_GATE && GetGroupIndex(player) != FACTION_NONE)
             npc.SayMsg(SAY_NORM_ON_HEAD, TEXTMSG_DLG, DLGSTR(DIALOG_ID, STR_ENTRANCE_NIGHT));
-        else if(npc.Stat[ST_NPC_ROLE] == ROLE_JNK_GUARD_GATE)
+        //else 
+		if(npc.Stat[ST_NPC_ROLE] == ROLE_JNK_GUARD_GATE)
             npc.SayMsg(SAY_NORM_ON_HEAD, TEXTMSG_DLG, DLGSTR(DIALOG_ID, STR_ENTRANCE_WELCOME));
         break;
 

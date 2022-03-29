@@ -8,6 +8,13 @@
 // 21-08-2010 05:09
 // 2238
 
+// 23-07-2013 Cubik:
+// poprawione obliczanie min-max dmg od bonusow crafconych broni
+// naprawiony bug z niewlasciwym wyliczaniem DT/DR armorow od bonusow (wyliczane sa w dll-ce Kilgora)
+// bonusy armorow przetwarzane w combat.fos: BONUS_ARMOR_CRIT_CHANCE, BONUS_ARMOR_CRIT_POWER	
+// pozostałe bonusy armorow przetwarzane sa w dll-ce Kilgora
+
+
 #include "_basetypes.fos"
 #include "_macros.fos"
 #include "backend_h.fos"
@@ -20,6 +27,8 @@
 #include "mapdata_h.fos"
 #include "MsgStr.h"
 #include "combat_h.fos"
+#include "_npc_pids.fos"
+
 
 import void AffectPoison(Critter& cr, int value) from "poison";
 import void AffectRadiation(Critter& cr, int value) from "radiation";
@@ -28,6 +37,7 @@ import void PostDamage(Critter& cr) from "main";
 import void QuakeScreen(Map& map) from "effects";
 import void WearItem(Critter& cr, Item& item, int wearCount) from "repair";
 
+	
 class AttackStruct
 {
     Critter@   Attacker = null;
@@ -56,6 +66,9 @@ class AttackStruct
     ProtoItem@ Ammo = null;
     bool       SilentDeathEffect = false;
     bool       InYourFaceEffect = false;
+	uint16     ammoPid;
+	uint16     weaponPid;
+	int8       weaponMode; // for swing/thrust melee weapons
 
     void set_Aim(uint8 aim)
     {
@@ -67,11 +80,47 @@ class AttackStruct
     {
         return Aim;
     }
-};
+	
+	int SelectWeaponBonus(int Int_Val_WeaponBonus)
+	{
+		if(valid(RealWeapon))
+		{
+			if(RealWeapon.Val0 == Int_Val_WeaponBonus) return  RealWeapon.Val5;
+			if(RealWeapon.Val1 == Int_Val_WeaponBonus) return  RealWeapon.Val6;
+			if(RealWeapon.Val2 == Int_Val_WeaponBonus) return  RealWeapon.Val7;
+			if(RealWeapon.Val3 == Int_Val_WeaponBonus) return  RealWeapon.Val8;
+			if(RealWeapon.Val4 == Int_Val_WeaponBonus) return  RealWeapon.Val9;
+			return 0;
+		}
+		else return 0;
+	}		
+	
+}
+
+int SelectArmorBonus(Item@ armor, int Int_Val_ArmorBonus)
+{
+	if(valid(armor))
+	{
+		if(armor.Val0 == Int_Val_ArmorBonus) return  armor.Val5;
+		if(armor.Val1 == Int_Val_ArmorBonus) return  armor.Val6;
+		if(armor.Val2 == Int_Val_ArmorBonus) return  armor.Val7;
+		if(armor.Val3 == Int_Val_ArmorBonus) return  armor.Val8;
+		if(armor.Val4 == Int_Val_ArmorBonus) return  armor.Val9;
+		return 0;
+	}
+	else return 0;
+}
+
+
 
 void CombatAttack(Critter& cr, Critter& target, ProtoItem& weapon, uint8 weaponMode, ProtoItem@ ammo)   // Export
 {
-    uint8 use = _WeaponModeUse(weaponMode);
+	uint8 use = _WeaponModeUse(weaponMode);
+	//if(cr.IsPlayer())
+	//{
+		//Log(" Use mode = " + use);
+		//Log(" attack.WeaponSubtype [WS_UNARMED==1] = " + attack.WeaponSubtype);
+	//}	
     uint8 aim = _WeaponModeAim(weaponMode);
 
     if(aim != HIT_LOCATION_NONE && aim != HIT_LOCATION_UNCALLED)
@@ -86,8 +135,12 @@ void CombatAttack(Critter& cr, Critter& target, ProtoItem& weapon, uint8 weaponM
         wpnMaxDist = MIN(wpnMaxDist, 3 * MIN(int(10), (cr.Stat[ST_STRENGTH])));
         wpnMaxDist += 3 * (cr.Perk[PE_HEAVE_HO] + cr.Perk[PE_HEAVE_HO_II]);
     }
-    int    skillVal = cr.Skill[skillNum];
-    uint8  weaponSubtype = (skillNum == SK_SMALL_GUNS || skillNum == SK_BIG_GUNS || skillNum == SK_ENERGY_WEAPONS) ? WS_GUN : ((skillNum == SK_THROWING) ? WS_THROWING : (skillNum == SK_MELEE_WEAPONS) ? WS_MELEE : WS_UNARMED);
+    int    skillVal = cr.Skill[skillNum]; // skillVal wykorzystane pozniej jako: baseToHit = skillVal; oraz WearItem(cr, realWeapon, (MAX_SKILL_VAL - MIN(skillVal,200)) / 6);
+	
+	if(valid(realWeapon) && (realWeapon.Proto.ProtoId == PID_NEEDLER_PISTOL)) skillVal = MAX(cr.Skill[SK_SMALL_GUNS], cr.Skill[SK_DOCTOR]);  //25-07-2013 Cubik: podczas uzywania Needler pistola pod uwage bedzie brany max ze skilli SG i Doc do celnosci i psucia sie pistola
+	
+	
+    uint8  weaponSubtype = (skillNum == SK_SMALL_GUNS || skillNum == SK_BIG_GUNS || skillNum == SK_ENERGY_WEAPONS /*|| skillNum == SK_DOCTOR*/) ? WS_GUN : ((skillNum == SK_THROWING) ? WS_THROWING : (skillNum == SK_MELEE_WEAPONS) ? WS_MELEE : WS_UNARMED);
     bool   isRanged = (weaponSubtype == WS_THROWING || weaponSubtype == WS_GUN);
     bool   isUnarmed = weapon.Weapon_IsUnarmed;
     bool   isHthAttack = (weaponSubtype == WS_MELEE || weaponSubtype == WS_UNARMED);
@@ -108,8 +161,14 @@ void CombatAttack(Critter& cr, Critter& target, ProtoItem& weapon, uint8 weaponM
 
     bool             isGrenade = weaponSubtype == WS_THROWING && (dmgType == DAMAGE_PLASMA || dmgType == DAMAGE_EMP || dmgType == DAMAGE_EXPLODE);   // like in fo2
     bool             isFlamethrower = (weapPid == PID_FLAMER) || (weapPid == PID_IMPROVED_FLAMETHROWER) || (weapPid == PID_FIRE_GECKO_FLAME_WEAPON);
-    bool             isRocket = (ammoPid == PID_EXPLOSIVE_ROCKET) || (ammoPid == PID_ROCKET_AP) || (ammoPid == PID_ROBO_ROCKET_AMMO);
+    bool             isRocket = (ammoPid == PID_EXPLOSIVE_ROCKET) || (ammoPid == PID_40MM_GRENADE) || (ammoPid == PID_ROCKET_AP) || (ammoPid == PID_ROBO_ROCKET_AMMO);
+	bool 			 isExplodeRocket = (ammoPid == PID_EXPLOSIVE_ROCKET) || (ammoPid == PID_40MM_GRENADE);
     bool             isShotgun = weapon.Weapon_Caliber == 11;
+	bool             isBozar = weapPid == PID_BOZAR;
+	bool             isLSW = weapPid == PID_LIGHT_SUPPORT_WEAPON;
+	
+	if(ammoPid == PID_SHOTGUN_SHELLS_EMP) dmgType=DAMAGE_EMP; // jesli uzywane ammo typu EMP to zmien dmtype broni
+	if(ammoPid == PID_SHOTGUN_DRAGON_BREATH_SHELLS) dmgType=DAMAGE_FIRE; // jesli uzywane ammo typu EMP to zmien dmtype broni
 
     bool             eyeDamage = cr.Damage[DAMAGE_EYE] != 0;
     int              weaponPerk = weapon.Weapon_Perk;
@@ -124,6 +183,8 @@ void CombatAttack(Critter& cr, Critter& target, ProtoItem& weapon, uint8 weaponM
     bool             useHex = false;      // Used to change end hex of RunFlyEffect, i.e. for thrown weapons and rockets.
     Critter@         normalTarget;        // Used as a target for weapon animations;
 
+	int CriticalChance=0;	//01-08-2013 cubik: szansa na krytyczny strzal, wykorzsystywana w AttackDamage() do wyliczania ilosci krytycznych strzalow w burst
+	
     array<CombatRes> results;
 
     int              acmod = 0;   // Used many times
@@ -167,7 +228,8 @@ void CombatAttack(Critter& cr, Critter& target, ProtoItem& weapon, uint8 weaponM
     {
         if(weaponSubtype == WS_GUN)
             AddScore(cr, SCORE_SHOOTER, 1);
-        else if(skillNum == SK_MELEE_WEAPONS || skillNum == SK_THROWING)
+        //else if(skillNum == SK_MELEE_WEAPONS || skillNum == SK_THROWING)
+		else if(skillNum == SK_UNARMED || skillNum == SK_THROWING)
             AddScore(cr, SCORE_MELEE, 1);
         else if(skillNum == SK_UNARMED)
             AddScore(cr, SCORE_UNARMED, 1);
@@ -182,6 +244,36 @@ void CombatAttack(Critter& cr, Critter& target, ProtoItem& weapon, uint8 weaponM
 
     // Essential part starts here
 
+
+    // Fill the main attack structure
+    AttackStruct attack;
+    @attack.Attacker = cr;
+    @attack.RealWeapon = realWeapon;
+    attack.Hx = hx;
+    attack.Hy = hy;
+    attack.set_Aim(aim);
+    attack.IsBurst = isBurst;
+    attack.BloodyMess = cr.Trait[TRAIT_BLOODY_MESS] != 0;
+    attack.CombatMessage = true;
+    attack.IsUnarmed = (weaponSubtype == WS_UNARMED);
+    attack.WeaponPerk = (isUnarmed && weapon.Weapon_UnarmedArmorPiercing) ? WEAPON_PERK_PENETRATE : weaponPerk;
+    attack.WeaponSubtype = weaponSubtype;
+    attack.DmgMin = _WeaponDmgMin(weapon, use);
+    attack.DmgMax = _WeaponDmgMax(weapon, use);
+    attack.DmgType = dmgType;
+    attack.BonusDmg = 0;
+	
+    if(valid(realWeapon))
+    {
+        wpnMaxDist += attack.SelectWeaponBonus(BONUS_WEAPON_MAX_RANGE);
+    }
+
+	attack.weaponMode=weaponMode;
+	attack.weaponPid=weapon.ProtoId; 
+	
+	//Log(" weaponPid = " + weapon.ProtoId);
+	
+	
     // baseToHit used for all targets, adjusted for distance and other target-dependent qualities every time it is necessary
     int baseToHit = skillVal;
     if(eyeDamage)
@@ -202,23 +294,7 @@ void CombatAttack(Critter& cr, Critter& target, ProtoItem& weapon, uint8 weaponM
             baseToHit += 20;
     }
 
-    // Fill the main attack structure
-    AttackStruct attack;
-    @attack.Attacker = cr;
-    @attack.RealWeapon = realWeapon;
-    attack.Hx = hx;
-    attack.Hy = hy;
-    attack.set_Aim(aim);
-    attack.IsBurst = isBurst;
-    attack.BloodyMess = cr.Trait[TRAIT_BLOODY_MESS] != 0;
-    attack.CombatMessage = true;
-    attack.IsUnarmed = (weaponSubtype == WS_UNARMED);
-    attack.WeaponPerk = (isUnarmed && weapon.Weapon_UnarmedArmorPiercing) ? WEAPON_PERK_PENETRATE : weaponPerk;
-    attack.WeaponSubtype = weaponSubtype;
-    attack.DmgMin = _WeaponDmgMin(weapon, use);
-    attack.DmgMax = _WeaponDmgMax(weapon, use);
-    attack.DmgType = dmgType;
-    attack.BonusDmg = 0;
+	
     @attack.Ammo = ammo;
     uint8 crDir = cr.Dir;
     uint8 tDir  = target.Dir;
@@ -229,8 +305,13 @@ void CombatAttack(Critter& cr, Critter& target, ProtoItem& weapon, uint8 weaponM
        )
         attack.SilentDeathEffect = true;
 
+				
     if(isHthAttack)
-        attack.DmgMax += cr.Stat[ST_MELEE_DAMAGE];
+	{
+		attack.DmgMin += cr.Stat[ST_MELEE_DAMAGE];
+		attack.DmgMax += cr.Stat[ST_MELEE_DAMAGE];
+	}
+	
     if(weaponSubtype == WS_GUN)
         attack.BonusDmg += cr.Perk[PE_BONUS_RANGED_DAMAGE] * 2 + cr.Perk[PE_MORE_RANGED_DAMAGE] * 3;
     attack.DmgMul = 2;
@@ -251,7 +332,7 @@ void CombatAttack(Critter& cr, Critter& target, ProtoItem& weapon, uint8 weaponM
     attack.TargetId = target.Id;
 
     // Here we are deciding the real toHit;
-    int toHit = baseToHit;
+    int toHit = baseToHit + attack.SelectWeaponBonus(BONUS_WEAPON_ACCURACY);
     toHit -= isHthAttack ? (GetHitAim(aim) / 2) : GetHitAim(aim);
 
     // Range considerations, we are storing everything for some later use
@@ -302,13 +383,6 @@ void CombatAttack(Critter& cr, Critter& target, ProtoItem& weapon, uint8 weaponM
         toHit += 15;
 
     toHit = CLAMP(toHit, 5, 95);
-    if(cr.Timeout[TO_SLEEPY] > 0 && cr.Param[TO_SLEEPY_STOPPED] == -1 && cr.Param[ST_MINIGAME_DATA] == 0)
-    {
-        if(cr.IsPlayer())
-            cr.SayMsg(SAY_NETMSG, TEXTMSG_GAME, STR_TIMEOUT_SLEEPY);
-        toHit = 5;
-    }
-    // ---
 
     // Override tohit chance by a defender perk?
     bool in_your_face_valid = false;
@@ -368,29 +442,34 @@ void CombatAttack(Critter& cr, Critter& target, ProtoItem& weapon, uint8 weaponM
             isCritical = true;
         else
         {
-            int chance = cr.Stat[ST_CRITICAL_CHANCE] + margin / 10 + (GetHitAim(aim) * (60 + 4 * cr.Stat[ST_LUCK])) / 100;
+            int chance = cr.Stat[ST_CRITICAL_CHANCE] + margin / 10 + (GetHitAim(aim) * (60 + 4 * cr.Stat[ST_LUCK])) / 100 + attack.SelectWeaponBonus(BONUS_WEAPON_CRITICAL_CHANCE);
             if(isHthAttack && cr.Perk[PE_BONUS_HTH_DAMAGE_II] > 0)
                 chance += 15;
+				
             Item@ usedArmor = _GetCritterArmor(target, attack.AimHead);
             if(valid(usedArmor))
             {
                 int addchance = usedArmor.Proto.Armor_CMCritChance;
-
-                if(cr.Perk[PE_SPRAY_AND_PRAY] != 0 && (attack.Aim == HIT_LOCATION_UNCALLED || attack.Aim == HIT_LOCATION_NONE))
-                    addchance = 0;
-                else
+				// 03-08-2013 cubik: wywalony perk spray
+                //if(cr.Perk[PE_SPRAY_AND_PRAY] != 0 && (attack.Aim == HIT_LOCATION_UNCALLED || attack.Aim == HIT_LOCATION_NONE))
+                //    addchance = 0;
+                //else
                 {
                     if(cr.Trait[TRAIT_FINESSE] != 0)
                         addchance -= usedArmor.Proto.Armor_CMCritChance / 4;
                     if(attack.AimHead && cr.Perk[PE_RIGHT_BETWEEN_THE_EYES] != 0)
                         addchance -= usedArmor.Proto.Armor_CMCritChance / 2;
                     else if(!attack.AimHead && cr.Perk[PE_HIT_THE_GAPS] != 0)
-                        addchance -= usedArmor.Proto.Armor_CMCritChance / 4;
+                       addchance -= usedArmor.Proto.Armor_CMCritChance / 2;
                 }
 
                 chance += addchance;
+				//Log("*szansa na criticala przed dodaniem ujemnego bonusa z armora: " + chance);
+				chance += SelectArmorBonus(usedArmor, BONUS_ARMOR_CRIT_CHANCE);
+				//Log("*szansa na criticala po dodaniu ujemnego bonusa z armora: " + chance);
             }
             isCritical = (Random(1, 100) <= chance);
+			CriticalChance = chance;
         }
 
         if(!isCritical && weaponSubtype == WS_GUN && cr.Perk[PE_SNIPER] != 0)
@@ -432,17 +511,17 @@ void CombatAttack(Critter& cr, Critter& target, ProtoItem& weapon, uint8 weaponM
 
     // Commencing attack, various instances
     bool criticalHit = isHit && isCritical;
-
+	
     if(isHthAttack)       // UNARMED AND MELEE ATTACK
     {
         if(isHit)
         {
-            ApplyDamage(attack, realTarget, 1, criticalHit, true, results);
+			ApplyDamage(attack, realTarget, 1, criticalHit, true, results, 0);
         }
         else
         {
             if(changedTarget)
-                ApplyDamage(attack, realTarget, 1, false, false, results);
+                ApplyDamage(attack, realTarget, 1, false, false, results, 0);
             else
                 NotifyMiss(cr, results);
         }
@@ -450,7 +529,9 @@ void CombatAttack(Critter& cr, Critter& target, ProtoItem& weapon, uint8 weaponM
     else if((weaponSubtype == WS_GUN) && !isBurst && !isRocket && !isFlamethrower)       // single shot, normal
     {
         if(isHit || changedTarget)
-            ApplyDamage(attack, realTarget, 1, criticalHit, !changedTarget, results);
+		{
+			ApplyDamage(attack, realTarget, 1, criticalHit, !changedTarget, results, 0);
+		}
         else         // standard miss here
         {
             array<Critter@> critsLine;
@@ -494,15 +575,13 @@ void CombatAttack(Critter& cr, Critter& target, ProtoItem& weapon, uint8 weaponM
                 if(critsLine[i].GetMultihex() > 0)
                     toHit += 15;
                 toHit = CLAMP(toHit, 5, 95);
-                if(cr.Timeout[TO_SLEEPY] > 0 && cr.Param[TO_SLEEPY_STOPPED] == -1 && cr.Param[ST_MINIGAME_DATA] == 0)
-                    toHit = 5;
                 toHit /= 3;               // after clamp
                 if(Random(1, 100) <= toHit)
                 {
                     NotifyOops(cr, target, critsLine[i], results);
                     @normalTarget = critsLine[i];
                     useNormal = true;
-                    ApplyDamage(attack, normalTarget, 1, false, false, results);
+                    ApplyDamage(attack, normalTarget, 1, false, false, results, 0);
                     anyHit = true;
                 }
             }
@@ -543,8 +622,6 @@ void CombatAttack(Critter& cr, Critter& target, ProtoItem& weapon, uint8 weaponM
                 blockers--;
             toHit -= 10 * blockers;
             toHit = CLAMP(toHit, 5, 95);
-            if(cr.Timeout[TO_SLEEPY] > 0 && cr.Param[TO_SLEEPY_STOPPED] == -1 && cr.Param[ST_MINIGAME_DATA] == 0)
-                toHit = 5;
         }
 
         // Critical hit bonus, toHit can be increased over 100
@@ -667,8 +744,6 @@ void CombatAttack(Critter& cr, Critter& target, ProtoItem& weapon, uint8 weaponM
                 if(lineLeft[i].GetMultihex() > 0)
                     toHit += 15;
                 toHit = CLAMP(toHit, 5, 95);
-                if(cr.Timeout[TO_SLEEPY] > 0 && cr.Param[TO_SLEEPY_STOPPED] == -1 && cr.Param[ST_MINIGAME_DATA] == 0)
-                    toHit = 5;
                 if(Random(1, 100) <= toHit)
                 {
                     int crIndex = FindCritterInArray(critsHit, lineLeft[i]);
@@ -727,8 +802,6 @@ void CombatAttack(Critter& cr, Critter& target, ProtoItem& weapon, uint8 weaponM
                 if(lineRight[i].GetMultihex() > 0)
                     toHit += 15;
                 toHit = CLAMP(toHit, 5, 95);
-                if(cr.Timeout[TO_SLEEPY] > 0 && cr.Param[TO_SLEEPY_STOPPED] == -1 && cr.Param[ST_MINIGAME_DATA] == 0)
-                    toHit = 5;
                 if(Random(1, 100) <= toHit)
                 {
                     int crIndex = FindCritterInArray(critsHit, lineRight[i]);
@@ -746,7 +819,9 @@ void CombatAttack(Critter& cr, Critter& target, ProtoItem& weapon, uint8 weaponM
         }         // Three lines end
 
         for(int i = 0, j = len_; i < j; i++)
-            ApplyDamage(attack, critsHit[i], 1, (realTarget.Id == critsHit[i].Id) && criticalHit, (!_IsTrueNpc(cr) && !changedTarget) || (_IsTrueNpc(cr) && critsHit[i].Id == target.Id), results);
+		{
+			ApplyDamage(attack, critsHit[i], 1, (realTarget.Id == critsHit[i].Id) && criticalHit, (!_IsTrueNpc(cr) && !changedTarget) || (_IsTrueNpc(cr) && critsHit[i].Id == target.Id), results, 0);
+		}
 
         if(!changedTarget && !attack.TargetHit)
             NotifyMiss(cr, results);
@@ -784,8 +859,6 @@ void CombatAttack(Critter& cr, Critter& target, ProtoItem& weapon, uint8 weaponM
                 blockers--;
             toHit -= 10 * blockers;
             toHit = CLAMP(toHit, 5, 95);
-            if(cr.Timeout[TO_SLEEPY] > 0 && cr.Param[TO_SLEEPY_STOPPED] == -1 && cr.Param[ST_MINIGAME_DATA] == 0)
-                toHit = 5;
         }
 
         // Critical hit bonus, toHit can be increased over 95
@@ -868,16 +941,15 @@ void CombatAttack(Critter& cr, Critter& target, ProtoItem& weapon, uint8 weaponM
                 bl++;
             if(lineCentral[i].GetMultihex() > 0)
                 toHit += 15;
-            if(cr.Timeout[TO_SLEEPY] > 0 && cr.Param[TO_SLEEPY_STOPPED] == -1 && cr.Param[ST_MINIGAME_DATA] == 0)
-                toHit = 5;
-            for(curRounds = 0; curRounds < volleyRounds;)
+
+            curRounds = 0;
+            for(int k = 0; k < volleyRounds; ++k)
             {
                 if(Random(1, 100) <= toHit)
                     curRounds++;
-                else
-                    break;
             }
             volleyRounds -= curRounds;
+
             if(curRounds > 0)
             {
                 int crIndex = FindCritterInArray(critsHit, lineCentral[i]);
@@ -895,7 +967,7 @@ void CombatAttack(Critter& cr, Critter& target, ProtoItem& weapon, uint8 weaponM
         }
 
         // Now we are shooting the rest of the bullets (=rounds-MAX(1,rounds/6))
-        bool threeLines = (GetDistantion(hx, hy, lineCentral[0].HexX, lineCentral[0].HexY) > 1) && (!isShotgun);   // target not adjacent and weapon not shotgun-like
+        bool threeLines = (GetDistantion(hx, hy, lineCentral[0].HexX, lineCentral[0].HexY) > 1) && (!isShotgun) && (!isBozar) && (!isLSW);   // target not adjacent and weapon not shotgun-like
 
         // Already shot: MAX(rounds/6,1);
         for(int lineCount = 0, lineMax = (threeLines ? 1 : 3); lineCount < lineMax; lineCount++)
@@ -946,17 +1018,16 @@ void CombatAttack(Critter& cr, Critter& target, ProtoItem& weapon, uint8 weaponM
                 if(lineCentral[i].GetMultihex() > 0)
                     toHit += 15;
                 toHit = CLAMP(toHit, 5, 95);
-                if(cr.Timeout[TO_SLEEPY] > 0 && cr.Param[TO_SLEEPY_STOPPED] == -1 && cr.Param[ST_MINIGAME_DATA] == 0)
-                    toHit = 5;
                 bl++;
-                for(curRounds = 0; curRounds < volleyRounds;)
+
+                curRounds = 0;
+                for(int k = 0; k < volleyRounds; ++k)
                 {
                     if(Random(1, 100) <= toHit)
                         curRounds++;
-                    else
-                        break;
                 }
                 volleyRounds -= curRounds;
+
                 if(curRounds > 0)
                 {
                     int crIndex = FindCritterInArray(critsHit, lineCentral[i]);
@@ -1026,16 +1097,15 @@ void CombatAttack(Critter& cr, Critter& target, ProtoItem& weapon, uint8 weaponM
                     if(lineLeft[i].GetMultihex() > 0)
                         toHit += 15;
                     toHit = CLAMP(toHit, 5, 95);
-                    if(cr.Timeout[TO_SLEEPY] > 0 && cr.Param[TO_SLEEPY_STOPPED] == -1 && cr.Param[ST_MINIGAME_DATA] == 0)
-                        toHit = 5;
-                    for(curRounds = 0; curRounds < volleyRounds;)
+
+                    curRounds = 0;
+                    for(int k = 0; k < volleyRounds; ++k)
                     {
                         if(Random(1, 100) <= toHit)
                             curRounds++;
-                        else
-                            break;
                     }
                     volleyRounds -= curRounds;
+
                     if(curRounds > 0)
                     {
                         int crIndex = FindCritterInArray(critsHit, lineLeft[i]);
@@ -1103,16 +1173,15 @@ void CombatAttack(Critter& cr, Critter& target, ProtoItem& weapon, uint8 weaponM
                     if(lineRight[i].GetMultihex() > 0)
                         toHit += 15;
                     toHit = CLAMP(toHit, 5, 95);
-                    if(cr.Timeout[TO_SLEEPY] > 0 && cr.Param[TO_SLEEPY_STOPPED] == -1 && cr.Param[ST_MINIGAME_DATA] == 0)
-                        toHit = 5;
-                    for(curRounds = 0; curRounds < volleyRounds;)
+
+                    curRounds = 0;
+                    for(int k = 0; k < volleyRounds; ++k)
                     {
                         if(Random(1, 100) <= toHit)
                             curRounds++;
-                        else
-                            break;
                     }
                     volleyRounds -= curRounds;
+                    
                     if(curRounds > 0)
                     {
                         int crIndex = FindCritterInArray(critsHit, lineRight[i]);
@@ -1130,16 +1199,17 @@ void CombatAttack(Critter& cr, Critter& target, ProtoItem& weapon, uint8 weaponM
                 }
             }             // Right line end
         }
-
+		
         for(int i = 0, j = len_; i < j; i++)
         {
-            if(!attack.InYourFaceEffect || critsHit[i].Id != target.Id)
-                ApplyDamage(attack, critsHit[i], critsHitBullets[i], (realTarget.Id == critsHit[i].Id) && criticalHit, (!_IsTrueNpc(cr) && !changedTarget) || (_IsTrueNpc(cr) && critsHit[i].Id == target.Id), results);
+			ApplyDamage(attack, critsHit[i], critsHitBullets[i], (realTarget.Id == critsHit[i].Id) && criticalHit, (!_IsTrueNpc(cr) && !changedTarget) || (_IsTrueNpc(cr) && critsHit[i].Id == target.Id), results, CriticalChance);
         }
 
         if(!changedTarget && !attack.TargetHit)
             NotifyMiss(cr, results);
-    }                                                     // Burst attack end
+    }                                                     	
+	// Burst attack end
+	
     else if(isRocket || (weaponSubtype == WS_THROWING))   // ROCKETS, THROWING
     {
         bool exploding = isRocket || isGrenade;
@@ -1147,9 +1217,9 @@ void CombatAttack(Critter& cr, Critter& target, ProtoItem& weapon, uint8 weaponM
         if(isHit || changedTarget)
         {
             if(exploding)
-                CommenceExplosion(attack, map, tx, ty, realTarget, weapPid, criticalHit, realTarget.Id, isRocket, results);
+                CommenceExplosion(attack, map, tx, ty, realTarget, weapPid, criticalHit, realTarget.Id, isRocket, results, isExplodeRocket);
             else
-                ApplyDamage(attack, realTarget, 1, criticalHit, !changedTarget, results);
+                ApplyDamage(attack, realTarget, 1, criticalHit, !changedTarget, results, 0);
         }
         else
         {
@@ -1203,8 +1273,6 @@ void CombatAttack(Critter& cr, Critter& target, ProtoItem& weapon, uint8 weaponM
                 if(critsLine[i].GetMultihex() > 0)
                     toHit += 15;
                 toHit = CLAMP(toHit, 5, 95);
-                if(cr.Timeout[TO_SLEEPY] > 0 && cr.Param[TO_SLEEPY_STOPPED] == -1 && cr.Param[ST_MINIGAME_DATA] == 0)
-                    toHit = 5;
                 toHit /= 3;               // After clamp
                 if(Random(1, 100) <= toHit)
                 {
@@ -1221,9 +1289,9 @@ void CombatAttack(Critter& cr, Critter& target, ProtoItem& weapon, uint8 weaponM
                 useNormal = true;
 
                 if(exploding)
-                    CommenceExplosion(attack, map, tx, ty, normalTarget, weapPid, false, realTarget.Id, isRocket, results);
+                    CommenceExplosion(attack, map, tx, ty, normalTarget, weapPid, false, realTarget.Id, isRocket, results, isExplodeRocket);
                 else
-                    ApplyDamage(attack, normalTarget, 1, false, false, results);
+                    ApplyDamage(attack, normalTarget, 1, false, false, results, 0);
             }
             else
             {
@@ -1257,7 +1325,7 @@ void CombatAttack(Critter& cr, Critter& target, ProtoItem& weapon, uint8 weaponM
                 }
 
                 if(exploding)
-                    CommenceExplosion(attack, map, tx, ty, null, weapPid, false, realTarget.Id, isRocket, results);
+                    CommenceExplosion(attack, map, tx, ty, null, weapPid, false, realTarget.Id, isRocket, results, isExplodeRocket);
             }
         }         // Miss
     }
@@ -1290,7 +1358,7 @@ void CombatAttack(Critter& cr, Critter& target, ProtoItem& weapon, uint8 weaponM
     if(valid(realWeapon))
     {
         if(realWeapon.IsDeteriorable() && !_CritHasExtMode(cr, MODE_EXT_NO_DETERIORATION))
-            WearItem(cr, realWeapon, (MAX_SKILL_VAL - skillVal) / 6);
+            WearItem(cr, realWeapon, (MAX_SKILL_VAL - MIN(skillVal,200)) / 6);
 
         // One time weapon, erase current and push next (if exist)
         if(wpnIsRemoved && cr.Mode[MODE_UNLIMITED_AMMO] == 0)
@@ -1325,14 +1393,19 @@ void CombatAttack(Critter& cr, Critter& target, ProtoItem& weapon, uint8 weaponM
 }
 
 
-void ApplyDamage(AttackStruct& attack, Critter& target, uint rounds, bool isCritical, bool intentionally, array<CombatRes>& results)
+
+
+
+void ApplyDamage(AttackStruct& attack, Critter& target, uint rounds, bool isCritical, bool intentionally, array<CombatRes>& results, int CriticalChance)
 {
+	Item@ usedArmor = _GetCritterArmor(target, attack.AimHead);
+	
     int      dmgMul = attack.DmgMul;
     int      bt = target.Stat[ST_BODY_TYPE];
     uint     eff = 0;
     uint     msgEff = 0;
     int      weaponPerk = attack.WeaponPerk;
-    Critter@ attacker = attack.Attacker;
+    Critter@ attacker = attack.Attacker;	
     bool     validAttacker = valid(attacker);
     Map@     map = target.GetMap();
     bool     isBloodyMess = attack.BloodyMess;
@@ -1342,10 +1415,82 @@ void ApplyDamage(AttackStruct& attack, Critter& target, uint rounds, bool isCrit
     uint     extraMessage = 0;
     uint     extraMessageSelf = 0;
     bool     isShotgun = (valid(attack.Ammo) && (attack.Ammo.Ammo_Caliber == 11));
+	//bool     isFireGeckoShell = (valid(attack.Ammo) && (attack.Ammo.ProtoId == PID_SHOTGUN_DRAGON_BREATH_SHELLS));
+	uint16   ammoPid = attack.ammoPid;
+    if(valid(attack.Ammo)) ammoPid = attack.Ammo.ProtoId;
 
+	bool     isBanhammer = (valid(realWeapon) ? realWeapon.Proto.ProtoId==PID_BAN_HAMMER : false);
+	bool     isHolySpear = (valid(realWeapon) ? realWeapon.Proto.ProtoId==PID_HOLY_SPEAR : false);
+	//bool     isWeaponBetterCriticals = (valid(realWeapon) ? realWeapon.Proto.ProtoId==PID_TURBO_PLASMA_RIFLE : false);
+	
     bool     targetIsPlayer = target.IsPlayer();
     bool     attackerIsPlayer = (valid(attacker) ? attacker.IsPlayer() : false);
+	bool     attackerIsPaszczur = (valid(attacker) ? attacker.GetProtoId()==NPC_PID_PASHTSHUUR : false);
+	uint16 	 weapPid = attack.weaponPid;
 
+	bool     isSwingThrustWeapon = (valid(realWeapon) ? (weapPid == 517 || weapPid == 160 || weapPid == 236 || weapPid == 530 || weapPid == 9676 || weapPid == 4 || weapPid == 116 || weapPid == 383 || weapPid == 6 || weapPid == 399 || weapPid == 115 || weapPid == 319 || weapPid == 622 || weapPid == 522 || weapPid == 600 || weapPid == 610 || weapPid == 289) : false);
+    bool     isThrustThrowWeapon = (valid(realWeapon) ? (weapPid == 9916 || weapPid == 618 || weapPid == 320 || weapPid == 280 || weapPid == 7) : false);
+	
+	//bool     isPrimitiveWeapon = (valid(realWeapon) ? (weapPid == PID_SPIKED_KNUCKLES || weapPid == PID_BRASS_KNUCKLES || weapPid == PID_LOUISVILLE_SLUGGER || weapPid == PID_SLEDGEHAMMER || weapPid == PID_WRENCH || weapPid == PID_WAKIZASHI_BLADE || weapPid == PID_SWITCHBLADE || weapPid == PID_SHIV || weapPid == PID_LIL_JESUS_WEAPON || weapPid == PID_COMBAT_KNIFE || weapPid == PID_ROCK || weapPid == PID_SPEAR || weapPid == PID_CLUB || weapPid == PID_KNIFE || weapPid == PID_CROWBAR) : false);
+	
+
+	array<int>	_dmgMul;
+	_dmgMul.resize(rounds);
+	for(uint i = 0; i < rounds; i++)
+	{
+		_dmgMul[i] = dmgMul;
+	}
+	
+
+
+	//#################################################
+	//### IMPLEMENTACJA melee attack swing i thrust ###
+	//#################################################
+	uint8 use=_WeaponModeUse(attack.weaponMode);
+	bool isSwing=false;
+	bool isThrust=false;
+	//if(attackerIsPlayer)
+	//{
+		//Log(" Use mode = " + use);
+		//Log(" attack.WeaponSubtype [WS_UNARMED==1] = " + attack.WeaponSubtype);
+	//}
+	
+    
+	if (isThrustThrowWeapon)  // bronie, ktore maja zamienione primary_attack mode swing na thrust 
+	{
+		if (use == MODE_PRIMARY_ATTACK)
+		{		
+			isSwing=false;	
+			isThrust=true;
+		}
+	}
+
+	if (isSwingThrustWeapon) // BRONIE MELEE posiadajace swing/thrust
+	{
+		if (use == MODE_PRIMARY_ATTACK)
+		{		
+			isSwing=true;
+			isThrust=false;
+		}
+		
+		if (use == MODE_SECONDARY_ATTACK)
+		{		
+			isSwing=false;	
+			isThrust=true;			
+		}		
+	}
+ 
+	/*  // 30-08-2011 Cubik: bron spear itp w trybie Throwing NIE jest traktowana jako attack.WeaponSubtype == WS_MELEE!!! wiec ponizsze instrukcje sa niepotrzebne
+		if((attack.weaponPid==7) || (attack.weaponPid==280) || (attack.weaponPid==320) || (attack.weaponPid==45))  // spear/sharpened spear/sharpened pole/throw knives maja na primary atak thrust a nie swing i stad ta konwersja
+		{
+			isThrust=false;
+			isSwing=false;
+			Log("Uzywasz broni typu spear w trybie swing zamienionym na tryb throw, ktory nie jest modyfikowany jako swing czy thrust, lecz jest to zwykle uderzenie (throw dla spear jest jako primary atak)");
+		}  
+	*/
+	
+	
+	
     if(target.IsDead() || !valid(map))
         return;
 
@@ -1357,7 +1502,7 @@ void ApplyDamage(AttackStruct& attack, Critter& target, uint rounds, bool isCrit
         attack.TargetHit = true;
 
     // Check no PvP
-    if(targetIsPlayer && attackerIsPlayer && validAttacker && attacker.GetAccess() == ACCESS_CLIENT &&
+    if(targetIsPlayer && (attackerIsPlayer || (valid(attacker) && _IsFollower(attacker))) && validAttacker && attacker.GetAccess() == ACCESS_CLIENT &&
        (_MapHasMode(map, MAP_MODE_NO_PVP) || attacker.Mode[MODE_NO_PVP] != 0 || target.Mode[MODE_NO_PVP] != 0))
     {
         if(validAttacker)
@@ -1372,22 +1517,33 @@ void ApplyDamage(AttackStruct& attack, Critter& target, uint rounds, bool isCrit
     if(target.Timeout[TO_BATTLE] < int(__TimeoutBattle))
         _SetTimeout(target, TO_BATTLE, __TimeoutBattle);
 
+		
     if(target.Mode[MODE_INVULNERABLE] != 0)
         isCritical = false;
-    else if(isCritical)
+    else 
+	if(isCritical || rounds>1)  // CRITICAL EFFECT
     {
-        int aim_ = aim;
+		int aim_ = aim;
         if(aim_ == HIT_LOCATION_NONE)
             aim_ = HIT_LOCATION_UNCALLED;
         aim_--;
 
-        int roll = Random(0, 100);
+		
+        int roll = Random(0, 100) + attack.SelectWeaponBonus(BONUS_WEAPON_CRITICAL_ROLL);
+		
+		//if(isWeaponBetterCriticals)  
+			//roll += 10;  // +30 dla testów
+		roll +=AddCritRollWeapon(realWeapon); //05-03-2014 Cubil: bonus bazowy do broni do crit rolla
+		
         if(target.Perk[PE_MAN_OF_STEEL] > 0)
             roll -= 10;
-        Item@ usedArmor = _GetCritterArmor(target, attack.AimHead);
-        if(valid(usedArmor))
-            roll += usedArmor.Proto.Armor_CMCritPower;
 
+        if(valid(usedArmor))
+		{
+            roll += usedArmor.Proto.Armor_CMCritPower;
+			roll += SelectArmorBonus(usedArmor, BONUS_ARMOR_CRIT_POWER); 
+		}
+			
         if(validAttacker)
         {
             if(attacker.Perk[PE_BETTER_CRITICALS] > 0)        // +20 with ranged
@@ -1434,113 +1590,202 @@ void ApplyDamage(AttackStruct& attack, Critter& target, uint rounds, bool isCrit
         // 0x00200000 - random
 
         uint offset = (bt > BT_BIG_BAD_BOSS ? 1 : bt) * 9 * 6 * 7 + aim_ * 6 * 7 + roll * 7;
-        dmgMul *= CriticalTable[offset];
-        dmgMul >>= 1;
-        eff = CriticalTable[offset + 1];
-        int  stat = CriticalTable[offset + 2];
-        int  statMod = CriticalTable[offset + 3];
+		
+		if(rounds>1)
+		{		
+			if(!isCritical)
+			{
+				uint max_ilosc_krytyczne = 70*rounds/100;
+				if(max_ilosc_krytyczne<0) max_ilosc_krytyczne=0;				
+				
+				for(uint i = 0; i < max_ilosc_krytyczne; i++)
+				{
+					if(Random(1,100)<=CriticalChance)
+					{
+						_dmgMul[i] *= CriticalTable[offset];											
+						_dmgMul[i] >>= 1;
+					}
+					
+					
+					//if(attackerIsPlayer)
+					//Log("_dmgMul["+i+"] " + _dmgMul[i]);
+				}
+				
+				for(uint i = max_ilosc_krytyczne; i < rounds; i++)
+				{		
+					//if(attackerIsPlayer)
+					//Log("_dmgMul["+i+"] " + _dmgMul[i]);
+				}
+			}
+			else
+			if(isCritical)
+			{
+				uint min_ilosc_krytyczne = 80*rounds/100;
+				if(min_ilosc_krytyczne<=0) min_ilosc_krytyczne=1;
+				
+				for(uint i = 0; i < min_ilosc_krytyczne; i++)
+				{
+					_dmgMul[i] *= CriticalTable[offset];											
+					_dmgMul[i] >>= 1;
+				
+					//if(attackerIsPlayer)
+					//Log("_dmgMul["+i+"] " + _dmgMul[i]);
+				}
+				
+				for(uint i = min_ilosc_krytyczne; i < rounds; i++)
+				{
+					if(Random(1,100)<=CriticalChance)
+					{
+						_dmgMul[i] *= CriticalTable[offset];											
+						_dmgMul[i] >>= 1;
+					}
+					
+					
+					//if(attackerIsPlayer)
+					//Log("_dmgMul["+i+"] " + _dmgMul[i]);
+				}
+			}
+		}
+		else // jezeli pojedynczy strzal to warunek ze krytyczny wczesniej spelniony i zawsze obliczaj tego krytyka
+		{
+			_dmgMul[0] *= CriticalTable[offset];
+			_dmgMul[0] >>= 1;
+		}
+		
+		if(isCritical)
+		{
+			eff = CriticalTable[offset + 1];
+			int  stat = CriticalTable[offset + 2];
+			int  statMod = CriticalTable[offset + 3];
 
-        uint cMessage = CriticalTable[offset + 5];
-        uint cFailureMessage = CriticalTable[offset + 6];
+			uint cMessage = CriticalTable[offset + 5];
+			uint cFailureMessage = CriticalTable[offset + 6];
 
-        // OLD, but keep for reference (for now):
-        // Get data for player body type
-        // delete offset=MAX_BODY_TYPES*9*6*7+aim_*6*7+roll*7;
-        // magic number 1500 = (fonline male player series minus men series)
-        // uint cMessageSelf=CriticalTable[offset+5] + 1500; //+ (target.Gender==GENDER_FEMALE?100:0);
-        // uint cFailureMessageSelf=CriticalTable[offset+6] +1500; //+ (target.Gender==GENDER_FEMALE?100:0);
+			// OLD, but keep for reference (for now):
+			// Get data for player body type
+			// delete offset=MAX_BODY_TYPES*9*6*7+aim_*6*7+roll*7;
+			// magic number 1500 = (fonline male player series minus men series)
+			// uint cMessageSelf=CriticalTable[offset+5] + 1500; //+ (target.Gender==GENDER_FEMALE?100:0);
+			// uint cFailureMessageSelf=CriticalTable[offset+6] +1500; //+ (target.Gender==GENDER_FEMALE?100:0);
 
-        extraMessage = cMessage;
+			extraMessage = cMessage;
 
-        if(stat != -1)
-            if(Random(1, 10) > target.Stat[stat] + statMod)
-            {
-                eff |= CriticalTable[offset + 4];
-                extraMessage = cFailureMessage;
-            }
+			if(stat != -1)
+				if(Random(1, 10) > target.Stat[stat] + statMod)
+				{
+					eff |= CriticalTable[offset + 4];
+					extraMessage = cFailureMessage;
+				}
 
-        if(weaponPerk == WEAPON_PERK_ENHANCED_KNOCKOUT)
+			if(weaponPerk == WEAPON_PERK_ENHANCED_KNOCKOUT)
+				SETFLAG(eff, HF_KNOCKOUT);
+				
+			if(weaponPerk == WEAPON_PERK_KNOCKBACK)
+				SETFLAG(eff, HF_KNOCKDOWN);				
+
+			if(target.Mode[MODE_NO_KNOCK] != 0)
+				UNSETFLAG(eff, HF_KNOCKDOWN);
+			else 
+			if(FLAG(eff, HF_KNOCKDOWN) && target.Perk[PE_STONEWALL] != 0 && Random(1, 10) <= target.Stat[ST_ENDURANCE] - 3)
+				UNSETFLAG(eff, HF_KNOCKDOWN);
+
+			if(FLAG(eff, HF_KNOCKOUT) && target.Perk[PE_STONEWALL] != 0 && Random(1, 10) <= (target.Stat[ST_ENDURANCE] - 5))
+				UNSETFLAG(eff, HF_KNOCKOUT);
+
+
+							
+				
+			// In the following: in no lost limbs, then clear the effects and set msgEff
+			//                   otherwise set msgEff first, then check for HF_RANDOM
+
+			if(target.Perk[PE_TREE_TRUNK_THIGHS] != 0)
+			{
+				if(FLAG(eff, HF_CRIPPLED_LEFT_LEG) && Random(1, 10) <= (target.Stat[ST_ENDURANCE] - 5))
+					UNSETFLAG(eff, HF_CRIPPLED_LEFT_LEG);
+				if(FLAG(eff, HF_CRIPPLED_RIGHT_LEG) && Random(1, 10) <= (target.Stat[ST_ENDURANCE] - 5))
+					UNSETFLAG(eff, HF_CRIPPLED_RIGHT_LEG);
+				msgEff = eff;
+			}
+
+			if(target.Perk[PE_IRON_GRIP] != 0)
+			{
+				if(FLAG(eff, HF_CRIPPLED_LEFT_ARM) && Random(1, 10) <= target.Stat[ST_ENDURANCE])
+					UNSETFLAG(eff, HF_CRIPPLED_LEFT_ARM);
+				if(FLAG(eff, HF_CRIPPLED_RIGHT_ARM) && Random(1, 10) <= target.Stat[ST_ENDURANCE])
+					UNSETFLAG(eff, HF_CRIPPLED_RIGHT_ARM);
+				msgEff = eff;
+			}
+
+			if(target.Mode[MODE_NO_LOOSE_LIMBS] != 0)
+			{
+				UNSETFLAG(eff, (HF_CRIPPLED_LEFT_LEG | HF_CRIPPLED_RIGHT_LEG | HF_CRIPPLED_LEFT_ARM | HF_CRIPPLED_RIGHT_ARM | HF_RANDOM));
+				msgEff = eff;
+			}
+			else
+			{
+				msgEff = eff;
+
+				if(FLAG(eff, HF_RANDOM))
+				{
+					UNSETFLAG(eff, HF_RANDOM);
+					switch(Random(1, 4))
+					{
+					case 1:
+						if(target.Perk[PE_TREE_TRUNK_THIGHS] == 0 || Random(1, 10) > target.Stat[ST_ENDURANCE] - 5)
+							SETFLAG(eff, HF_CRIPPLED_LEFT_LEG);
+						break;
+					case 2:
+						if(target.Perk[PE_TREE_TRUNK_THIGHS] == 0 || Random(1, 10) > target.Stat[ST_ENDURANCE] - 5)
+							SETFLAG(eff, HF_CRIPPLED_RIGHT_LEG);
+						break;
+					case 3:
+						if(target.Perk[PE_IRON_GRIP] == 0 || Random(1, 10) > target.Stat[ST_ENDURANCE])
+							SETFLAG(eff, HF_CRIPPLED_LEFT_ARM);
+						break;
+					case 4:
+						if(target.Perk[PE_IRON_GRIP] == 0 || Random(1, 10) > target.Stat[ST_ENDURANCE])
+							SETFLAG(eff, HF_CRIPPLED_LEFT_LEG);
+						break;
+					default:
+						break;
+					}
+				}
+			}
+
+			if(target.Mode[MODE_NO_DROP] != 0 || (target.Perk[PE_IRON_GRIP] > 0 && Random(1, 10) <= target.Stat[ST_ENDURANCE] - 5))
+			{
+				UNSETFLAG(eff, HF_DROPPED_WEAPON);
+				UNSETFLAG(msgEff, HF_DROPPED_WEAPON);
+			}
+
+
+			if(validAttacker && attackerIsPlayer)
+				AddScore(attacker, SCORE_SNIPER, 1);
+		}
+	}     
+	// isCritical end
+	
+	
+    if(validAttacker && (weaponPerk == WEAPON_PERK_ENHANCED_KNOCKOUT))
+	{
+		//Log("Bron melee z perkiem Knockback");
+		if(Random(1, 100) <= (attacker.Stat[ST_STRENGTH]) - 8)
+		{
             SETFLAG(eff, HF_KNOCKOUT);
+			//Log("Bron melee z perkiem Knockback >>> Ustawiona Flaga na Knockout ");
+		}
+	}
 
-        if(target.Mode[MODE_NO_KNOCK] != 0)
-            UNSETFLAG(eff, HF_KNOCKDOWN);
-        else if(FLAG(eff, HF_KNOCKDOWN) && target.Perk[PE_STONEWALL] != 0 && Random(1, 10) <= target.Stat[ST_ENDURANCE])
-            UNSETFLAG(eff, HF_KNOCKDOWN);
-
-        if(FLAG(eff, HF_KNOCKOUT) && target.Perk[PE_STONEWALL] != 0 && Random(1, 10) <= (target.Stat[ST_ENDURANCE] - 5))
-            UNSETFLAG(eff, HF_KNOCKOUT);
-
-        // In the following: in no lost limbs, then clear the effects and set msgEff
-        //                   otherwise set msgEff first, then check for HF_RANDOM
-
-        if(target.Perk[PE_TREE_TRUNK_THIGHS] != 0)
-        {
-            if(FLAG(eff, HF_CRIPPLED_LEFT_LEG) && Random(1, 10) <= (target.Stat[ST_ENDURANCE] - 5))
-                UNSETFLAG(eff, HF_CRIPPLED_LEFT_LEG);
-            if(FLAG(eff, HF_CRIPPLED_RIGHT_LEG) && Random(1, 10) <= (target.Stat[ST_ENDURANCE] - 5))
-                UNSETFLAG(eff, HF_CRIPPLED_RIGHT_LEG);
-            msgEff = eff;
-        }
-
-        if(target.Perk[PE_IRON_GRIP] != 0)
-        {
-            if(FLAG(eff, HF_CRIPPLED_LEFT_ARM) && Random(1, 10) <= target.Stat[ST_ENDURANCE])
-                UNSETFLAG(eff, HF_CRIPPLED_LEFT_ARM);
-            if(FLAG(eff, HF_CRIPPLED_RIGHT_ARM) && Random(1, 10) <= target.Stat[ST_ENDURANCE])
-                UNSETFLAG(eff, HF_CRIPPLED_RIGHT_ARM);
-            msgEff = eff;
-        }
-
-        if(target.Mode[MODE_NO_LOOSE_LIMBS] != 0)
-        {
-            UNSETFLAG(eff, (HF_CRIPPLED_LEFT_LEG | HF_CRIPPLED_RIGHT_LEG | HF_CRIPPLED_LEFT_ARM | HF_CRIPPLED_RIGHT_ARM | HF_RANDOM));
-            msgEff = eff;
-        }
-        else
-        {
-            msgEff = eff;
-
-            if(FLAG(eff, HF_RANDOM))
-            {
-                UNSETFLAG(eff, HF_RANDOM);
-                switch(Random(1, 4))
-                {
-                case 1:
-                    if(target.Perk[PE_TREE_TRUNK_THIGHS] == 0 || Random(1, 10) > target.Stat[ST_ENDURANCE] - 5)
-                        SETFLAG(eff, HF_CRIPPLED_LEFT_LEG);
-                    break;
-                case 2:
-                    if(target.Perk[PE_TREE_TRUNK_THIGHS] == 0 || Random(1, 10) > target.Stat[ST_ENDURANCE] - 5)
-                        SETFLAG(eff, HF_CRIPPLED_RIGHT_LEG);
-                    break;
-                case 3:
-                    if(target.Perk[PE_IRON_GRIP] == 0 || Random(1, 10) > target.Stat[ST_ENDURANCE])
-                        SETFLAG(eff, HF_CRIPPLED_LEFT_ARM);
-                    break;
-                case 4:
-                    if(target.Perk[PE_IRON_GRIP] == 0 || Random(1, 10) > target.Stat[ST_ENDURANCE])
-                        SETFLAG(eff, HF_CRIPPLED_LEFT_LEG);
-                    break;
-                default:
-                    break;
-                }
-            }
-        }
-
-        if(target.Mode[MODE_NO_DROP] != 0 || (target.Perk[PE_IRON_GRIP] > 0 && Random(1, 10) <= target.Stat[ST_ENDURANCE] - 5))
-        {
-            UNSETFLAG(eff, HF_DROPPED_WEAPON);
-            UNSETFLAG(msgEff, HF_DROPPED_WEAPON);
-        }
-
-
-        if(validAttacker && attackerIsPlayer)
-            AddScore(attacker, SCORE_SNIPER, 1);
-    }     // isCritical end
-
-    if(validAttacker && weaponPerk == WEAPON_PERK_ENHANCED_KNOCKOUT)
-        if(Random(1, 100) <= (attacker.Stat[ST_STRENGTH]) - 8)
-            SETFLAG(eff, HF_KNOCKOUT);
+    if(validAttacker && (weaponPerk == WEAPON_PERK_KNOCKBACK))
+	{
+		//Log("Bron melee z perkiem Knockback");
+		if(Random(1, 100) <= (attacker.Stat[ST_STRENGTH]) - 8)
+		{
+            SETFLAG(eff, HF_KNOCKDOWN);
+			//Log("Bron melee z perkiem Knockback >>> Ustawiona Flaga na Knockout ");
+		}
+	}	
+			
     // not messaged
 
     // Heavy Handed Trait
@@ -1579,10 +1824,50 @@ void ApplyDamage(AttackStruct& attack, Critter& target, uint rounds, bool isCrit
         }
     }
 
-    // This is the place to force some critical effects
-    //
+	
+  
+	// ############################################################################################
+	// ########################## POCZATEK kalkulacji damage ######################################
+	// ############################################################################################
 
-    int dmgType = attack.DmgType;
+	int dmgType = attack.DmgType;
+	
+	if(valid(attack))
+	{		
+		if(ammoPid == PID_SHOTGUN_SHELLS_EMP) dmgType=DAMAGE_EMP; // jesli uzywane ammo typu EMP to zmien dmtype broni
+		if(ammoPid == PID_SHOTGUN_DRAGON_BREATH_SHELLS) dmgType=DAMAGE_FIRE; // jesli uzywane ammo typu FIRE to zmien dmtype broni
+		//Log("ammoPid= " + ammoPid);
+	}
+	
+	
+	// #############################################
+	// ## Obliczenia melee attack swing i thrust  ##
+	// #############################################
+	if(isSwing) // dziala podobnie jak ammo JHP wg oryginalnej formuly
+	{
+		//if((targetDT == 0) && (targetDR < 15))   // ustawianie wyzszej DR dla "golasow" dla zredukowania bardzo duzych wartosci damage 
+		//{
+		//	targetDR=15;
+		//}
+		
+		//dmgMul*=5;
+		//targetDR+=59;
+		//targetDR=CLAMP(targetDR,0,100);
+		//targetDT/=0.15;    	
+	}	
+	
+	if(isThrust)  // dziala podobnie jak ammo AP wg oryginalnej formuly
+	{		
+		attack.DMMod = 4;		
+		attack.DDMod = 5;
+		attack.DRMod = -40;
+		
+		//targetDR-=40;
+		//targetDR=CLAMP(targetDR,0,100);
+		//targetDT/=2;
+	} 
+	// swing:thrust END	
+    
     int targetDR = target.GetDR(dmgType, attack.AimHead);
     int targetDT = target.GetDT(dmgType, attack.AimHead);
 
@@ -1590,19 +1875,24 @@ void ApplyDamage(AttackStruct& attack, Critter& target, uint rounds, bool isCrit
     int partialBypassedRounds = 0;
     int armorDR = target.GetArmorDR(dmgType, attack.AimHead);
     int armorDT = target.GetArmorDT(dmgType, attack.AimHead);
-    int partialBypassDR = targetDR - armorDR + (armorDR / 5);
-    int partialBypassDT = targetDT - armorDT + (armorDT / 5);
+
+    int partialBypassDR = targetDR - armorDR + (armorDR / 4);
+    int partialBypassDT = targetDT - armorDT + (armorDT / 4);
 
     if(FLAG(eff, HF_BYPASS_ARMOR) && dmgType != DAMAGE_EMP)
     {
-        targetDT /= 5;
-        targetDR /= 5;
+        targetDT /= 4; // bylo /5
+        targetDR /= 4; // bylo /5
         targetDR -= (valid(attacker) ? (attacker.Trait[TRAIT_FINESSE] != 0 ? 30 : 0) : 0);
     }
     else if(weaponPerk == WEAPON_PERK_PENETRATE)
         targetDT /= 5;
     else if(COMBAT_AMMO_AP(attack.Ammo))
         targetDT /= attack.Ammo.Ammo_DTDiv;
+	else if(isThrust)
+		targetDT /= 2;
+	
+	
 
     if(validAttacker && attacker.Trait[TRAIT_FINESSE] != 0)
     {
@@ -1611,24 +1901,35 @@ void ApplyDamage(AttackStruct& attack, Critter& target, uint rounds, bool isCrit
     }
     targetDR += attack.DRMod;   // Always
     partialBypassDR += attack.DRMod;
+	
+	
+	
 
     partialBypassDR = MIN(partialBypassDR, targetDR);
     targetDR = CLAMP(targetDR, 0, 100);
     partialBypassDR = CLAMP(partialBypassDR, 0, 100);
     partialBypassDT = MIN(partialBypassDT, targetDT);
 
-    int dmgMin = attack.DmgMin + attack.BonusDmg;
+
+    int dmgMin = attack.DmgMin + attack.BonusDmg + attack.DmgMin * attack.SelectWeaponBonus(BONUS_WEAPON_MIN_DMG)/100;	
     ;
-    int dmgMax = attack.DmgMax + attack.BonusDmg;
+    int dmgMax = attack.DmgMax + attack.BonusDmg + attack.DmgMax * attack.SelectWeaponBonus(BONUS_WEAPON_MAX_DMG)/100;
     ;
     int rawDmg;
     int totalDmg = 0;
-    dmgMul *= attack.DMMod;
+    //dmgMul *= attack.DMMod;
     int dmgDiv = 2 * attack.DDMod;
+	
+	
     for(uint i = 0; i < rounds; i++)
     {
-        rawDmg = Random(dmgMin, dmgMax);
-        rawDmg *= dmgMul;
+        //if(isPrimitiveWeapon)
+		rawDmg = Random(dmgMin, dmgMax);
+		//else
+		//rawDmg=0;
+		
+        _dmgMul[i] *= attack.DMMod;
+		rawDmg *= _dmgMul[i];
 
         rawDmg /= dmgDiv;
         if(!FLAG(eff, HF_BYPASS_ARMOR) && partialBypassChance > 0 && Random(1, 100) <= partialBypassChance)
@@ -1645,21 +1946,30 @@ void ApplyDamage(AttackStruct& attack, Critter& target, uint rounds, bool isCrit
         if(rawDmg > 0)
             totalDmg += rawDmg;
     }
-
+	
+	//if(attackerIsPlayer) 
+	//{
+	//	Log("dmg = " + totalDmg);
+	//	Log("-------------------");
+	//}
+	
     if(validAttacker)
     {
         if(attack.Attacker.Perk[PE_LIVING_ANATOMY] != 0 &&  !(bt == BT_ALIEN || bt == BT_ROBOT))
             totalDmg += 5;                                                                                      // Yes, pulse grenade works
-        if(attack.Attacker.Perk[PE_PYROMANIAC] != 0 && dmgType == DAMAGE_FIRE)
+        if(attack.Attacker.Perk[PE_PYROMANIAC] != 0 && dmgType == DAMAGE_FIRE && ammoPid != PID_SHOTGUN_DRAGON_BREATH_SHELLS)
             totalDmg += 20 * attack.Attacker.Perk[PE_PYROMANIAC];
         if(attack.Attacker.Trait[TRAIT_FAST_SHOT] != 0)
             totalDmg += 5;
         if(attack.Attacker.Trait[TRAIT_HEAVY_HANDED] != 0 && attack.IsUnarmed)
             totalDmg += 2;
-        if(attack.Attacker.Trait[TRAIT_ONE_HANDER] != 0 && (!valid(realWeapon) || FLAG(realWeapon.Flags, ITEM_TWO_HANDS)))
-            totalDmg += 5;
+        //if(attack.Attacker.Trait[TRAIT_ONE_HANDER] != 0 && (!valid(realWeapon) || FLAG(realWeapon.Flags, ITEM_TWO_HANDS)))
+        //    totalDmg += 5;
     }
 
+	//if(!isPrimitiveWeapon) totalDmg=0;
+	
+	
     // 0x00000001 - knockout
     // 0x00000002 - knockdown
     // 0x00000004 - crippled left leg
@@ -1740,6 +2050,9 @@ void ApplyDamage(AttackStruct& attack, Critter& target, uint rounds, bool isCrit
         }
     }
 
+	
+	
+	bool isOffGame = false;
     bool isKo = false;
     bool knockDown = false;
     bool knockOut = false;
@@ -1747,7 +2060,7 @@ void ApplyDamage(AttackStruct& attack, Critter& target, uint rounds, bool isCrit
     bool loseTurn = false;
     bool isBelow = false;
     int  knockDmg = totalDmg;
-
+    
     if(target.Mode[MODE_INVULNERABLE] != 0)
         eff = 0;
     else
@@ -1755,19 +2068,71 @@ void ApplyDamage(AttackStruct& attack, Critter& target, uint rounds, bool isCrit
         eff = eff & (~target.Mode[MODE_NEGATE_CRIT_EFF]);
         msgEff = msgEff & (~target.Mode[MODE_NEGATE_CRIT_EFF]);
     }
-    // Knock down
+    // Knock down	
     if(FLAG(eff, HF_KNOCKDOWN))
     {
-        isKo = true;
+        //Log("Flaga jest HF_KNOCKDOWN");
+		isKo = true;
         knockDown = true;
     }
-    else if(dmgType == DAMAGE_EXPLODE && totalDmg > 9)
-        isKo = true;
-    else if(isShotgun && rounds > 1)
-    {
-        if(GetDistantion(attack.Attacker.HexX, attack.Attacker.HexY, target.HexX, target.HexY) < 7 && Random(1, 5) <= int(rounds))
-            isKo = true;
+    //else if((dmgType == DAMAGE_EXPLODE) && (totalDmg > 9))
+	else	
+	if((dmgType == DAMAGE_EXPLODE) && (totalDmg > 9) && valid(realWeapon) && realWeapon.Proto.ProtoId!=PID_DYNACORD) //25-07-2013 Cubik: dynacord nie bedzie przewracal, miny, plastiki i dynamit beda wywracac		
+	{		
+		if(target.Perk[PE_STONEWALL] != 0)
+		{
+            /*
+                ST-5 *20 > random(1, 105) vs explosion/shotgun KD roll changed to ST-2 *10 > random(1, 100) roll
+                meaning chance to avoid such KD changed for chars with 10 -> 6 ST from 95%, 76%, 57%, 38%, 19% into 80%, 70%, 60%, 50%, 40%
+            */
+			if((target.Stat[ST_STRENGTH]-2)*10>Random(1,100)) // szansa na unikniecie KD od wybuchu, dla ST=10 szansa =80% na unik
+            {
+			    isKo = false;
+            }
+			else
+			{				
+				isKo = true;
+			}
+		}
+		else
+		{			
+			isKo = true;
+		}			
+	}
+    else 
+	if(isShotgun && rounds > 1)
+    {		
+		//if(Random(1,100)<70) // 70% szansy na KD od bursta z shotguna
+		{
+			if(target.Perk[PE_STONEWALL] != 0)
+			{
+                /*
+                    ST-5 *20 > random(1, 105) vs explosion/shotgun KD roll changed to ST-2 *10 > random(1, 100) roll
+                    meaning chance to avoid such KD changed for chars with 10 -> 6 ST from 95%, 76%, 57%, 38%, 19% into 80%, 70%, 60%, 50%, 40%
+                */
+				if((target.Stat[ST_STRENGTH]-2)*10>Random(1,100)) // szansa na unikniecie KD od shotguna, dla ST=10 szansa =80% na unik
+				{
+                    isKo = false;
+                }
+				else
+				{
+					if(GetDistantion(attack.Attacker.HexX, attack.Attacker.HexY, target.HexX, target.HexY) <= 10 && Random(1, 10) <= int(rounds)) 	
+					isKo = true;
+				}
+			}
+			else
+			{
+				if(GetDistantion(attack.Attacker.HexX, attack.Attacker.HexY, target.HexX, target.HexY) <= 10 && Random(1, 10) <= int(rounds)) 	
+				isKo = true;
+			}			
+		}
     }
+	else 
+	if(isBanhammer || isHolySpear)
+	{
+		isOffGame = true;
+        isKo = true;		
+	}
 
     // Clipped LLeg
     if(FLAG(eff, HF_CRIPPLED_LEFT_LEG))
@@ -1791,10 +2156,12 @@ void ApplyDamage(AttackStruct& attack, Critter& target, uint rounds, bool isCrit
         isKo = true;
         loseTurn = true;
     }
+	
     // Knock out
     if(FLAG(eff, HF_KNOCKOUT))
     {
-        isKo = true;
+        //Log("Flaga jest HF_KNOCKOUT");
+		isKo = true;
         knockOut = true;
         loseTurn = false;       // Overridden
     }
@@ -1809,6 +2176,29 @@ void ApplyDamage(AttackStruct& attack, Critter& target, uint rounds, bool isCrit
     {
         if(target.Mode[MODE_INVULNERABLE] == 0)
         {
+
+            /*********************************************************
+             CHARGING TARGET'S TESLA ARMOR BASED ON RECIEVED EW DAMAGE
+            **********************************************************/
+            if(attack.DmgType == DAMAGE_LASER || attack.DmgType == DAMAGE_PLASMA || attack.DmgType == DAMAGE_ELECTR || attack.DmgType == DAMAGE_EMP)
+            {
+                Item@ targetsArmor = target.GetItem(0, SLOT_ARMOR);
+                if(valid(targetsArmor) && targetsArmor.GetProtoId() == PID_TESLA_ARMOR)
+                {
+                    uint recharge = totalDmg/4;
+                    if(recharge > 0 && targetsArmor.Charge < targetsArmor.Proto.Misc_ChargeMax)
+                    {
+                        targetsArmor.Charge += recharge;
+                        if(targetsArmor.Charge > targetsArmor.Proto.Misc_ChargeMax) 
+                            targetsArmor.Charge = targetsArmor.Proto.Misc_ChargeMax;
+                        targetsArmor.Update();
+                        target.Say(SAY_NETMSG, "Charging armor with "+recharge+" charges.");
+                        target.Say(SAY_NETMSG, "Charges: "+targetsArmor.Charge+"/"+targetsArmor.Proto.Misc_ChargeMax+".");
+                    }
+                }            
+            }
+            //END
+
             target.StatBase[ST_CURRENT_HP] -= totalDmg;
             if(target.Stat[ST_CURRENT_HP] < 1)
             {
@@ -1832,11 +2222,31 @@ void ApplyDamage(AttackStruct& attack, Critter& target, uint rounds, bool isCrit
     if((dir == target.Dir || ((dir + 1) % 6) == target.Dir || ((dir + 5) % 6) == target.Dir))
         attackFront = false;
 
-    int   armorDr = target.GetDR(dmgType, attack.AimHead);
-    Item@ armor = _GetCritterArmor(target, attack.AimHead);
-    if(valid(armor) && targetIsPlayer)
-        WearItem(target, armor, ((100 - armorDr) * rounds + totalDmg) / 3);
 
+
+		
+	
+		
+    int   armorDr = target.GetDR(dmgType, attack.AimHead);
+    Item@ armor_ = _GetCritterArmor(target, attack.AimHead);
+	
+    
+	if(valid(armor_) && targetIsPlayer)
+	{
+		if(attackerIsPaszczur) 
+		{
+			WearItem(target, armor_, ((100 - armorDr) * rounds + 2 * totalDmg) / 3);
+		}
+		else
+			WearItem(target, armor_, ((100 - armorDr) * rounds + totalDmg) / 6);
+	}
+
+	// 30-08-2013 Cubik: Banhammer effect - kick player from game
+	if(isOffGame)
+	{
+		if(target.IsPlayer()) target.Disconnect();	
+	}
+	
     // Dead
     if(isDead)
     {
@@ -1916,8 +2326,10 @@ void ApplyDamage(AttackStruct& attack, Critter& target, uint rounds, bool isCrit
         if(validAttacker && attackerIsPlayer)
         {
             AddScore(attacker, SCORE_KILLER, 1);
-            if(targetIsPlayer)
+            if(targetIsPlayer) 
+            {
                 AddScore(attacker, SCORE_MANIAC, 1);
+            }
             else if(target.Id == attack.TargetId)
                 target.AddEnemyInStack(attacker.Id);
         }
@@ -1927,18 +2339,104 @@ void ApplyDamage(AttackStruct& attack, Critter& target, uint rounds, bool isCrit
 
         if(valid(attacker))
         {
+            // OLD VERSION
+            /*
             if(bt != BT_MEN && bt != BT_WOMEN && bt != BT_SUPER_MUTANT && bt != BT_GHOUL && bt != BT_CHILDREN && bt != BT_BRAHMIN || !IsTown(map))
                 attacker.StatBase[ST_EXPERIENCE] += target.Stat[ST_KILL_EXPERIENCE];
             attacker.KillBase[KILL_BEGIN + bt]++;
             if(target.IsNpc())
-                LogExperience(attacker, target.Stat[ST_KILL_EXPERIENCE], valid(realWeapon) ? realWeapon.Proto.Weapon_Skill_0 : SK_UNARMED, "Kill", target.GetProtoId());                      // may cause errors with spear
-        }
+                LogExperience(attacker, target.Stat[ST_KILL_EXPERIENCE], valid(realWeapon) ? realWeapon.Proto.Weapon_Skill_0 : SK_UNARMED, "Kill", target.GetProtoId()); // may cause errors with spear
+            */
+            //_OLD VERSION_
 
+            //_NEW VERSION_
+            if(IsTown(map))
+            {
+                if(bt != BT_MEN && bt != BT_WOMEN && bt != BT_SUPER_MUTANT && bt != BT_GHOUL && bt != BT_CHILDREN && bt != BT_BRAHMIN)
+                    attacker.StatBase[ST_EXPERIENCE] += target.Stat[ST_KILL_EXPERIENCE];
+            }
+            else
+            {
+                // VERSION3 - all alive players who see killed critter and are grouped by follow tags
+                if(attackerIsPlayer)
+                {
+                    array<Critter@> playersToShare;
+                    int             cnt = 0;
+                    int             exp = 0;
+                    int             expDiv = 0;
+                    
+                    //players who see killed critter
+                    cnt = target.GetCritters(true, FIND_LIFE | FIND_ONLY_PLAYERS, playersToShare);
+                    if(cnt > 0)
+                    {
+                        //filter players who are following me or my leader
+                        Critter@ myLeader = attacker.GetFollowLeader();
+                        for(int i=0; i < cnt; ++i)
+                        {
+                            ++expDiv;
+                            //player is attacker
+                            if(playersToShare[i].Id == attacker.Id)
+                                continue;
+
+                            //player is followed by attacker
+                            if(valid(myLeader) && playersToShare[i].Id == myLeader.Id)
+                                continue;
+
+                            Critter@ tmpLeader = playersToShare[i].GetFollowLeader();
+                            //player is following attacker
+                            if(valid(tmpLeader) && attacker.Id == tmpLeader.Id)
+                                continue;
+
+                            //player is following attacker's leader
+                            if(valid(tmpLeader) && valid(myLeader) && tmpLeader.Id == myLeader.Id)
+                                continue;
+
+                            //no match - remove player from array
+                            playersToShare.removeAt(i);
+                            --i;
+                            --cnt;
+                            --expDiv;
+                        }
+
+                        if(expDiv > 0)
+                            exp = target.Stat[ST_KILL_EXPERIENCE]/expDiv;
+                        else
+                            exp = 0;
+                            
+                        if(exp > 0) 
+                        {
+                            for(int i=0; i < expDiv; ++i)
+                            {
+                                if(playersToShare[i].Id == attacker.Id && expDiv > 1)
+                                    playersToShare[i].StatBase[ST_EXPERIENCE] += exp*1.25;      //killer gets 25% bonus exp when in group
+                                else
+                                    playersToShare[i].StatBase[ST_EXPERIENCE] += exp;
+                            }
+                        }
+                    }   
+                }
+                else
+                {
+                    attacker.StatBase[ST_EXPERIENCE] += target.Stat[ST_KILL_EXPERIENCE];
+                }
+                
+                // _VERSION3_
+
+            }
+
+            attacker.KillBase[KILL_BEGIN + bt]++;
+            if(target.IsNpc())
+                LogExperience(attacker, target.Stat[ST_KILL_EXPERIENCE], valid(realWeapon) ? realWeapon.Proto.Weapon_Skill_0 : SK_UNARMED, "Kill", target.GetProtoId()); // may cause errors with spear
+            //_NEW VERSION_
+        }
+        
         target.ToDead(anim2Dead, attacker);
     }
-    else if(isKo)
+    else 
+	if(isKo)
     {
-        int  maxAp = target.Stat[ST_ACTION_POINTS];
+        //Log("isKo = True");
+		int  maxAp = target.Stat[ST_ACTION_POINTS];
         int  currentAp = target.Stat[ST_CURRENT_AP];
         int  targetAp = currentAp;
         bool quick = target.Perk[PE_QUICK_RECOVERY] > 0;
@@ -1947,25 +2445,32 @@ void ApplyDamage(AttackStruct& attack, Critter& target, uint rounds, bool isCrit
             targetAp = quick ? -maxAp / 3 : -maxAp;
             target.StatBase[ST_MOVE_AP] = 0;
         }
+		
         if(knockOut)
             targetAp = quick ? -Random(maxAp, 3 * maxAp) / 3 : -Random(maxAp, 3 * maxAp);
-        if(knockDown && !(target.IsKnockout() && map.IsTurnBased()))
+        
+		if(knockDown && !(target.IsKnockout() && map.IsTurnBased()))
             targetAp -= quick ? 1 : 3;
-        if((isBelow || knockOut || knockDown || dmgType == DAMAGE_EXPLODE || isShotgun) && !target.IsKnockout() && target.Mode[MODE_NO_KNOCK] == 0)
+        	
+		if((isBelow || knockOut || knockDown || dmgType == DAMAGE_EXPLODE || isShotgun ) && !target.IsKnockout() && target.Mode[MODE_NO_KNOCK] == 0)
         {
-            int knockDist = knockDmg;
-            if((dmgType == DAMAGE_EXPLODE || attack.WeaponSubtype == WS_MELEE || isShotgun) && target.IsCanWalk())
+            //Log("jest knockOut albo knockDown");
+			int knockDist = knockDmg;
+			//Log("knockDist = " + knockDist);
+            if((dmgType == DAMAGE_EXPLODE || attack.WeaponSubtype == WS_MELEE || isShotgun || weaponPerk == WEAPON_PERK_KNOCKBACK) && target.IsCanWalk())
             {
-                if(weaponPerk == WEAPON_PERK_KNOCKBACK)
+				//Log(" bron jest WS_MELEE");
+				if(weaponPerk == WEAPON_PERK_KNOCKBACK)
                     knockDist /= 5;
                 else
                     knockDist /= 10;
                 if(target.Perk[PE_STONEWALL] != 0)
                     knockDist /= 2;
                 knockDist--;
+//Log("knockDist = " + knockDist);				
                 if(knockDist > 10)
                     knockDist = 10;
-                uint16 knockHx = attack.Hx;
+                uint16 knockHx = attack.Hx; 
                 uint16 knockHy = attack.Hy;
                 if(knockDist > 0)
                 {
@@ -2031,7 +2536,7 @@ void ApplyDamage(AttackStruct& attack, Critter& target, uint rounds, bool isCrit
     bool isAimed = (aim != HIT_LOCATION_NONE) && (aim != HIT_LOCATION_TORSO) && (aim != HIT_LOCATION_UNCALLED);
 
     uint mainMsg = CMSG_HIT;
-    uint length = 3;
+    uint length = 4;
 
     if(isCritical)
     {
@@ -2052,11 +2557,12 @@ void ApplyDamage(AttackStruct& attack, Critter& target, uint rounds, bool isCrit
     array<uint> sendEff(length);
     sendEff[0] = mainMsg;
     sendEff[1] = target.Id;
-    uint now = 2;
-
+    sendEff[2] = (valid(attacker))?attacker.Id:0;
+    uint now = 3;
+//Log("SENDEFF "+sendEff[0]+" "+sendEff[1]+" "+sendEff[2]);
     if(isAimed)
     {
-        sendEff[2] = aim;
+        sendEff[now] = aim;
         now++;
     }
 
@@ -2089,39 +2595,51 @@ void ApplyDamage(AttackStruct& attack, Critter& target, uint rounds, bool isCrit
     // Poisoning and irradiating:
     if(validAttacker)
     {
-        int poison = attacker.Stat[ST_TOXIC];
-        int radiation = attacker.Stat[ST_RADIOACTIVE];
-        if(poison != 0 || radiation != 0)
-        {
-            if(Random(2, 11) > target.Stat[ST_LUCK])
-            {
-                if(poison > 0)
-                    AffectPoison(target, Random(poison / 3, poison));
-                if(radiation > 0)
-                    AffectRadiation(target, Random(radiation / 3, radiation));
-            }
-        }
-        else
-        {
-            int attackerBt = attacker.Stat[ST_BODY_TYPE];
-            if(attackerBt == BT_RADSCORPION || attackerBt == BT_FLOATER || attackerBt == BT_ALIEN || attackerBt == BT_CENTAUR)
-            {
-                if(Random(2, 11) > target.Stat[ST_LUCK])
-                {
-                    if(attackerBt == BT_RADSCORPION)
-                        AffectPoison(target, Random(3, 15));
-                    else if(attackerBt == BT_FLOATER)
-                        AffectPoison(target, Random(10, 40));
-                    else if(attackerBt == BT_ALIEN)
-                        AffectRadiation(target, Random(10, 40));
-                    else if(attackerBt == BT_CENTAUR)
-                    {
-                        AffectPoison(target, Random(10, 20));
-                        AffectRadiation(target, Random(10, 20));
-                    }
-                }
-            }
-        }
+        if(valid(realWeapon) && (realWeapon.Proto.ProtoId == PID_NEEDLER_PISTOL))
+		{
+			AffectPoison(target, Random(1, 10));
+		}
+		else
+        if(valid(realWeapon) && (realWeapon.Proto.ProtoId == PID_PASHTSHUUR_SPIKE))
+		{
+			AffectPoison(target, Random(1, 5));
+		}		
+		else
+		{
+			int poison = attacker.Stat[ST_TOXIC];
+			int radiation = attacker.Stat[ST_RADIOACTIVE];
+			if(poison != 0 || radiation != 0)
+			{
+				if(Random(2, 11) > target.Stat[ST_LUCK])
+				{
+					if(poison > 0)
+						AffectPoison(target, Random(poison / 3, poison));
+					if(radiation > 0)
+						AffectRadiation(target, Random(radiation / 3, radiation));
+				}
+			}
+			else
+			{
+				int attackerBt = attacker.Stat[ST_BODY_TYPE];
+				if(attackerBt == BT_RADSCORPION || attackerBt == BT_FLOATER || attackerBt == BT_ALIEN || attackerBt == BT_CENTAUR)
+				{
+					if(Random(2, 11) > target.Stat[ST_LUCK])
+					{
+						if(attackerBt == BT_RADSCORPION)
+							AffectPoison(target, Random(3, 15));
+						else if(attackerBt == BT_FLOATER)
+							AffectPoison(target, Random(10, 40));
+						else if(attackerBt == BT_ALIEN)
+							AffectRadiation(target, Random(10, 40));
+						else if(attackerBt == BT_CENTAUR)
+						{
+							AffectPoison(target, Random(10, 20));
+							AffectRadiation(target, Random(10, 20));
+						}
+					}
+				}
+			}
+		}
     }
 
     LogDamage(map, attacker, target, realWeapon, attack.Ammo, aim, attack.IsBurst, totalDmg, isCritical, eff, rounds);
@@ -2129,9 +2647,12 @@ void ApplyDamage(AttackStruct& attack, Critter& target, uint rounds, bool isCrit
 }
 
 
-void CommenceExplosion(AttackStruct& attack, Map@ map, uint16 tx, uint16 ty, Critter@ target, uint weapPid, bool isCritical, uint intentionallyId, bool isRocket, array<CombatRes>& results)
+void CommenceExplosion(AttackStruct& attack, Map@ map, uint16 tx, uint16 ty, Critter@ target, uint weapPid, bool isCritical, uint intentionallyId, bool isRocket, array<CombatRes>& results, bool isExplodeRocket)
 {
-    uint radius = isRocket ? 3 : 2;
+    uint radius = 2;	
+    if(isRocket) radius = isExplodeRocket?4:3;	
+	
+	
     if(weapPid == PID_DYNACORD)
         radius = 4;
     if(weapPid == PID_MOLOTOV_COCKTAIL)
@@ -2140,7 +2661,7 @@ void CommenceExplosion(AttackStruct& attack, Map@ map, uint16 tx, uint16 ty, Cri
         map.RunEffect(PID_EXPLODE_FIRE_SMALL, tx, ty, 2);
     else if(weapPid == PID_PULSE_GRENADE)
         map.RunEffect(PID_EXPLODE_EMP, tx, ty, 2);
-    else if(weapPid == PID_PLASMA_GRENADE)
+    else if(weapPid == PID_PLASMA_GRENADE || weapPid == PID_FAKE_PLASMA_GRENADE)
         map.RunEffect(PID_EXPLODE_PLASMA, tx, ty, 2);
     else if(isRocket)
         map.RunEffect(PID_EXPLODE_ROCKET, tx, ty, 1);
@@ -2165,7 +2686,9 @@ void CommenceExplosion(AttackStruct& attack, Map@ map, uint16 tx, uint16 ty, Cri
     if(validTarget)
     {
         targetId = target.Id;
-        ApplyDamage(attack, target, 1, isCritical, intentionally, results);
+		int CriticalChance; 
+		if(isCritical) CriticalChance=100;
+        ApplyDamage(attack, target, 1, isCritical, intentionally, results, CriticalChance);
     }
 
     attack.Hx = tx;
@@ -2173,10 +2696,10 @@ void CommenceExplosion(AttackStruct& attack, Map@ map, uint16 tx, uint16 ty, Cri
 
     for(int i = 0, j = critsHit.length(); i < j; i++)
         if(!validTarget || targetId != critsHit[i].Id)
-            ApplyDamage(attack, critsHit[i], 1, false, intentionally, results);
+            ApplyDamage(attack, critsHit[i], 1, false, intentionally, results, 0);
 }
 
-void CommenceExplosionEx(Critter@ attacker, Map@ map, uint16 tx, uint16 ty, Critter@ target, uint weapPid, bool isCritical, uint intentionallyId, bool isRocket)   // export
+void CommenceExplosionEx(Critter@ attacker, Map@ map, uint16 tx, uint16 ty, Critter@ target, uint weapPid, bool isCritical, uint intentionallyId, bool isRocket, bool isExplodeRocket)   // export
 {
     array<CombatRes> results;
     AttackStruct     attack;
@@ -2184,11 +2707,128 @@ void CommenceExplosionEx(Critter@ attacker, Map@ map, uint16 tx, uint16 ty, Crit
     attack.Aim = HIT_LOCATION_UNCALLED;
     ProtoItem@ proto = GetProtoItem(weapPid);
 
+    attack.DmgMin = _WeaponDmgMin(proto, 0) + _WeaponDmgMin(proto, 0) * attack.SelectWeaponBonus(BONUS_WEAPON_MIN_DMG)/100;
+    attack.DmgMax = _WeaponDmgMax(proto, 0) + _WeaponDmgMax(proto, 0) * attack.SelectWeaponBonus(BONUS_WEAPON_MAX_DMG)/100;
+    attack.DmgType = _WeaponDmgType(proto, 0);
+    attack.WeaponPerk = proto.Weapon_Perk;
+
+    CommenceExplosion(attack, map, tx, ty, target, weapPid, isCritical, intentionallyId, isRocket, results, isExplodeRocket);
+    FlushResults(results);
+}
+
+void CommenceExplosionHexEx(Critter@ attacker, Map@ map, uint16 tx, uint16 ty, Critter@ target, uint weapPid, Item@ usedWeapon, uint ammoPid, bool isCritical, uint intentionallyId, bool isRocket, bool isExplodeRocket)   // export
+{
+    array<CombatRes> results;
+    AttackStruct     attack;
+    @attack.Attacker = attacker;
+    attack.Aim = HIT_LOCATION_UNCALLED;
+    @attack.RealWeapon = usedWeapon;
+    ProtoItem@ proto = GetProtoItem(weapPid);
+
     attack.DmgMin = _WeaponDmgMin(proto, 0);
     attack.DmgMax = _WeaponDmgMax(proto, 0);
     attack.DmgType = _WeaponDmgType(proto, 0);
     attack.WeaponPerk = proto.Weapon_Perk;
-    CommenceExplosion(attack, map, tx, ty, target, weapPid, isCritical, intentionallyId, isRocket, results);
+    if(ammoPid > 0)
+        attack.ammoPid = ammoPid;
+
+    CommenceExplosion(attack, map, tx, ty, target, weapPid, isCritical, intentionallyId, isRocket, results, isExplodeRocket);
+    FlushResults(results);
+}
+
+void CommenceDischargeEx(Critter@ attacker, Map@ map, uint16 tx, uint16 ty, uint dmgRad, uint dmgMin, uint dmgMax, int effChance, uint rechargeVal)   //export
+{
+    array<CombatRes> results;
+    
+    AttackStruct     attack;
+    @attack.Attacker = attacker;
+    attack.Aim = HIT_LOCATION_UNCALLED;
+    attack.DmgMin = dmgMin;
+    attack.DmgMax = dmgMax;
+    attack.DmgType = DAMAGE_ELECTR;
+
+    uint radius = dmgRad;    
+    uint16 stepX = attacker.HexX;
+    uint16 stepY = attacker.HexY;
+    
+    //drawing effects
+    //map.MoveHexByDir(stepX, stepY, 4, 1);
+    //for(uint8 stepDir = 0; stepDir < 6; stepDir++)
+    //{
+    //    map.MoveHexByDir(stepX, stepY, stFepDir, 1);
+    //    map.RunEffect(PID_EXPLODE_EMP, stepX, stepY, 0);
+    //}
+
+    for(uint rad = radius; rad <= radius; ++rad)
+    {
+    stepX = attacker.HexX;
+    stepY = attacker.HexY;
+        map.MoveHexByDir(stepX, stepY, 4, rad);
+        for(uint8 stepDir = 0; stepDir < 6; stepDir++)
+        {
+            for(uint step = 0; step < rad; step++)
+            {
+                map.MoveHexByDir(stepX, stepY, stepDir, 1);
+                //if(Random(1, 100) < effChance)
+                map.RunEffect(PID_EXPLODE_EMP, stepX, stepY, 0);
+            }
+        }
+    }
+    map.PlaySound("was1xxx" + Random(1, 2), tx, ty, 50);
+
+    //getting critters in range
+    array<Critter@> crits;
+    uint foundCritters = map.GetCrittersHex(tx, ty, radius, FIND_LIFE_AND_KO, crits);
+    for(uint c = 0; c < foundCritters; c++)
+    {
+        if(crits[c].Id == attacker.Id)
+        {
+            crits.removeAt(c);
+            foundCritters--;
+            break;
+        }
+            
+    }
+
+    uint recharge = (foundCritters>0)?rechargeVal/foundCritters:0;
+
+    //commencing attack
+    bool intentionally = (valid(attack.Attacker) && !_IsTrueNpc(attack.Attacker));
+    for(uint c = 0; c < foundCritters; c++)
+    {
+        map.RunEffect(PID_EXPLODE_EMP, crits[c].HexX, crits[c].HexY, 0);
+        ApplyDamage(attack, crits[c], 1, false, intentionally, results, 0);
+        
+        Item@ usedArmor = crits[c].GetItem(0, SLOT_ARMOR);
+        if(!valid(usedArmor) || usedArmor.GetProtoId() != PID_TESLA_ARMOR)
+        {
+            crits.removeAt(c);
+            --foundCritters;
+            --c;
+        }
+    }
+
+    //charging affected armors
+    if(foundCritters > 0 && recharge > 0)
+    {
+        for(uint c = 0; c < foundCritters; c++)
+        {
+            if(crits[c].IsLife())
+            {
+                Item@ usedArmor = crits[c].GetItem(0, SLOT_ARMOR);
+                if(valid(usedArmor) || usedArmor.GetProtoId() == PID_TESLA_ARMOR)
+                {
+                    usedArmor.Charge += recharge;
+                    if(usedArmor.Charge > usedArmor.Proto.Misc_ChargeMax)
+                        usedArmor.Charge = usedArmor.Proto.Misc_ChargeMax;
+                    usedArmor.Update();
+                    crits[c].Say(SAY_NETMSG, "Charging armor with "+recharge+" charges.");
+                    crits[c].Say(SAY_NETMSG, "Charges: "+usedArmor.Charge+"/"+usedArmor.Proto.Misc_ChargeMax+".");
+                }
+            }
+        }
+    }
+    
     FlushResults(results);
 }
 
@@ -2209,6 +2849,8 @@ void CriticalFailure(Critter& cr, ProtoItem& weapon, uint8 weaponUse, ProtoItem@
     // 0x00800000 lost next turn
     // 0x02000000 knocked down
 
+	AttackStruct attack;
+	
     int   totalDmg = 0;
     bool  tookDamage = false;
     Item@ realWeapon = _CritGetItemHand(cr);
@@ -2221,20 +2863,42 @@ void CriticalFailure(Critter& cr, ProtoItem& weapon, uint8 weaponUse, ProtoItem@
     if(FLAG(eff, MF_HIT_SELF) || FLAG(eff, MF_WEAPON_EXPLODED))        // Only one bullet because burst weapons do not have the ability
     {
         bool validAmmo = valid(ammo);
+        uint16 ammoPid = 0;
+        if(validAmmo)
+            ammoPid = ammo.ProtoId;
+
         int  dmgType = _WeaponDmgType(weapon, weaponUse);
-        int  targetDR = cr.GetDR(dmgType, false);
+		if(ammoPid == PID_SHOTGUN_SHELLS_EMP) dmgType=DAMAGE_EMP; // jesli uzywane ammo typu EMP to zmien dmtype broni
+		if(ammoPid == PID_SHOTGUN_DRAGON_BREATH_SHELLS) dmgType=DAMAGE_FIRE; // jesli uzywane ammo typu FIRE to zmien dmtype broni
         int  targetDT = cr.GetDT(dmgType, false);
+		int  targetDR = cr.GetDR(dmgType, false);
+
+		Item@ armor_ = _GetCritterArmor(cr, attack.AimHead);
+		//if(dmgType==DAMAGE_EXPLODE)
+		//{
+			//targetDT += SelectArmorBonus(armor_, BONUS_ARMOR_EXPLODE_DT);
+			//targetDR += SelectArmorBonus(armor_, BONUS_ARMOR_EXPLODE_DR);
+		//}	
+		//else
+		//if((dmgType!=DAMAGE_ELECTR) && (dmgType!=DAMAGE_EMP))
+		//{
+			//targetDT += SelectArmorBonus(armor_, BONUS_ARMOR_NORMAL_DT - 1 + dmgType);
+			//targetDR += SelectArmorBonus(armor_, BONUS_ARMOR_NORMAL_DR - 1 + dmgType);
+		//}			
+	
+        
 
         int  partialBypassChance = GetPartialBypassChance(cr, false);
-        int  armorDR = cr.GetArmorDR(dmgType, false);
         int  armorDT = cr.GetArmorDT(dmgType, false);
+		int  armorDR = cr.GetArmorDR(dmgType, false);	
+		
         int  partialBypassDR = targetDR - armorDR + (armorDR / 5);
         int  partialBypassDT = targetDT - armorDT + (armorDT / 5);
 
         if(weapon.Weapon_Perk == WEAPON_PERK_PENETRATE)
             targetDT /= 5;
-        else if(COMBAT_AMMO_AP(ammo))
-            targetDT /= ammo.Ammo_DTDiv;
+        else if(validAmmo && COMBAT_AMMO_AP(ammo))
+            targetDT /= validAmmo ? ammo.Ammo_DTDiv : 1;
 
         if(cr.Trait[TRAIT_FINESSE] != 0)
         {
@@ -2250,8 +2914,8 @@ void CriticalFailure(Critter& cr, ProtoItem& weapon, uint8 weaponUse, ProtoItem@
         partialBypassDR = CLAMP(partialBypassDR, 0, 100);
         partialBypassDT = MIN(partialBypassDT, targetDT);
 
-        int dmgMin = _WeaponDmgMin(weapon, weaponUse);
-        int dmgMax = _WeaponDmgMax(weapon, weaponUse);
+        int dmgMin = _WeaponDmgMin(weapon, weaponUse) + _WeaponDmgMin(weapon, weaponUse) * attack.SelectWeaponBonus(BONUS_WEAPON_MIN_DMG)/100;
+        int dmgMax = _WeaponDmgMax(weapon, weaponUse) + _WeaponDmgMax(weapon, weaponUse) * attack.SelectWeaponBonus(BONUS_WEAPON_MAX_DMG)/100;
         int dmgMul = validAmmo ? ammo.Ammo_DmgMult : 1;   // Technically, should be *2
         int dmgDiv = validAmmo ? ammo.Ammo_DmgDiv : 1;    // Technically, should be *2
         totalDmg = Random(dmgMin, dmgMax) + 2 * cr.Perk[PE_BONUS_RANGED_DAMAGE] + cr.Perk[PE_MORE_RANGED_DAMAGE] * 3;
@@ -2268,20 +2932,21 @@ void CriticalFailure(Critter& cr, ProtoItem& weapon, uint8 weaponUse, ProtoItem@
             totalDmg -= targetDT;
             totalDmg -= (totalDmg * targetDR) / 100;
         }
+
         if(totalDmg < 0)
             totalDmg = 0;
         int bt = cr.Stat[ST_BODY_TYPE];
         // The damage perks are used even in this case!
         if(cr.Perk[PE_LIVING_ANATOMY] != 0 &&  !(bt == BT_ALIEN || bt == BT_ROBOT))
             totalDmg += 5;
-        if(cr.Perk[PE_PYROMANIAC] != 0 && dmgType == DAMAGE_FIRE)
+        if(cr.Perk[PE_PYROMANIAC] != 0 && dmgType == DAMAGE_FIRE && ammoPid != PID_SHOTGUN_DRAGON_BREATH_SHELLS)
             totalDmg += 20 * cr.Perk[PE_PYROMANIAC];
         if(cr.Trait[TRAIT_FAST_SHOT] != 0)
             totalDmg += 5;
         if(cr.Trait[TRAIT_HEAVY_HANDED] != 0 && weapon.Weapon_IsUnarmed)
             totalDmg += 2;
-        if(cr.Trait[TRAIT_ONE_HANDER] != 0 && (!valid(realWeapon) || FLAG(realWeapon.Flags, ITEM_TWO_HANDS)))
-            totalDmg += 5;
+        //if(cr.Trait[TRAIT_ONE_HANDER] != 0 && (!valid(realWeapon) || FLAG(realWeapon.Flags, ITEM_TWO_HANDS)))
+        //    totalDmg += 5;
         tookDamage = true;
     }
 
@@ -2300,7 +2965,7 @@ void CriticalFailure(Critter& cr, ProtoItem& weapon, uint8 weaponUse, ProtoItem@
     if(cr.Mode[MODE_NO_LOOSE_LIMBS] != 0)
         UNSETFLAG(eff, MF_CRIPPLED_RANDOM_LIMB);
     if(cr.Perk[PE_STONEWALL] > 0)
-        if(FLAG(eff, MF_KNOCKED_DOWN) && Random(0, 10) <= cr.Stat[ST_ENDURANCE])
+        if(FLAG(eff, MF_KNOCKED_DOWN) && Random(0, 10) <= cr.Stat[ST_ENDURANCE] - 3)
             UNSETFLAG(eff, MF_KNOCKED_DOWN);
 
     if(FLAG(eff, MF_WEAPON_DROPPED) && valid(realWeapon))
@@ -2432,13 +3097,13 @@ void CriticalFailure(Critter& cr, ProtoItem& weapon, uint8 weaponUse, ProtoItem@
     if(totalDmg > 0)
         cr.StatBase[ST_CURRENT_HP] -= totalDmg;
 
-    uint[] allEff = { CMSG_CRIT_MISS, cr.Id, eff };
+    uint[] allEff = { CMSG_CRIT_MISS, cr.Id, 0, eff };
 
 
     if(tookDamage)
     {
-        allEff.resize(4);
-        allEff[3] = totalDmg;
+        allEff.resize(5);
+        allEff[4] = totalDmg;
         allEff[0] = CMSG_CRIT_MISS_DAMAGE;
     }
 
@@ -2516,7 +3181,7 @@ void InjureCritter(Critter& cr, uint dmg, uint dmgType, uint8 dir, uint attacker
     attack.ShowHitAnimForce = true;
 
     array<CombatRes> results;
-    ApplyDamage(attack, cr, 1, false, true, results);
+    ApplyDamage(attack, cr, 1, false, true, results, 0);
 
     FlushResults(results);
 }
@@ -2675,9 +3340,6 @@ int RawToHit(Critter& cr, Critter& target, ProtoItem@ weapon, uint8 weaponUse, P
     if(target.GetMultihex() > 0)
         toHit += 15;
 
-    if(cr.Timeout[TO_SLEEPY] > 0 && cr.Param[TO_SLEEPY_STOPPED] == -1 && cr.Param[ST_MINIGAME_DATA] == 0)
-        toHit = 5;
-
     return toHit;
 }
 
@@ -2688,7 +3350,7 @@ void NotifyOops(Critter@ cr, Critter@ t1, Critter@ t2, array<CombatRes>& results
     // otherwise pass "Oops! t2 was hit instead of t1!"
     if(!valid(t2))
     {
-        uint[] allEff = { CMSG_HIT_RANDOMLY, cr.Id };
+        uint[] allEff = { CMSG_HIT_RANDOMLY, cr.Id, 0 };
         Critter@[] him = { cr };
         array<Critter@> crits;
         cr.GetMap().GetCrittersSeeing(him, true, FIND_ALL | FIND_ONLY_PLAYERS, crits);
@@ -2708,7 +3370,7 @@ void NotifyOops(Critter@ cr, Critter@ t1, Critter@ t2, array<CombatRes>& results
 
 void NotifyMiss(Critter@ cr, array<CombatRes>& results)
 {
-    uint[] allEff = { CMSG_MISS, cr.Id };
+    uint[] allEff = { CMSG_MISS, cr.Id, 0 };
     Critter@[] him = { cr };
     array<Critter@> crits;
     cr.GetMap().GetCrittersSeeing(him, true, FIND_ALL | FIND_ONLY_PLAYERS, crits);
@@ -2764,4 +3426,15 @@ int GetPartialBypassChance(Critter& target, bool aimHead)
     if(!armor.IsDeteriorable() || _CritHasExtMode(target, MODE_EXT_NO_DETERIORATION) || deterPercent <= 50)
         return 0;
     return ((deterPercent - 50) * 100) / 50;
+}
+
+int AddCritRollWeapon(Item@ realWeapon)
+{
+	int _roll=0;
+	if(valid(realWeapon))
+	{
+		if(realWeapon.Proto.ProtoId==PID_TURBO_PLASMA_RIFLE) _roll = 5;
+		if(realWeapon.Proto.ProtoId==PID_PLASMA_RIFLE) _roll = 5;
+	}
+	return _roll;
 }

@@ -48,9 +48,16 @@ lang=engl
 63 19000 car_seller@dlg_PrepareBuy 0 #
 63 19010 D _script car_seller@d_CanAffordCockroach 0  D _item p PID_CAR_FUEL_CELL_CONTROLLER > 0 R _script car_seller@r_BuyCockroach 1 0 R _item p PID_CAR_FUEL_CELL_CONTROLLER - 1 R _var p q_cock_fuelcontroller = 2 #
 0 19020 D _script car_seller@d_CanNotAffordCockroach 0  #
-64 19030 @
+65 19030 #
+64 19040 @
 64 20000 None 0 #
-0 20010 &
+0 20010 @
+65 21000 car_seller@dlg_PrepareBuy 0 #
+65 21010 D _item p PID_CAR_FUEL_CELL_CONTROLLER > 0 D _script car_seller@d_CanAffordPoliceCar 0  R _script car_seller@r_BuyPoliceCar 1 0 R _item p PID_CAR_FUEL_CELL_CONTROLLER - 1 R _var p q_cock_fuelcontroller = 2 #
+65 21020 D _script car_seller@d_CanAffordMotorcycle 0  D _item p PID_CAR_FUEL_CELL_CONTROLLER > 0 R _script car_seller@r_BuyMotorcycle 1 0 R _item p PID_CAR_FUEL_CELL_CONTROLLER - 1 R _var p q_cock_fuelcontroller = 2 #
+65 21030 D _script car_seller@d_CanAffordFiretruck 0  D _item p PID_CAR_FUEL_CELL_CONTROLLER > 0 R _var p q_cock_fuelcontroller = 2 R _script car_seller@r_BuyFiretruck 1 0 R _item p PID_CAR_FUEL_CELL_CONTROLLER - 1 #
+65 21040 D _script car_seller@d_CanAffordTruck 0  D _item p PID_CAR_FUEL_CELL_CONTROLLER > 0 R _item p PID_CAR_FUEL_CELL_CONTROLLER - 1 R _script car_seller@r_BuyTruck 1 0 R _var p q_cock_fuelcontroller = 2 #
+0 21050 &
 
 [engl]
 {100}{}{Junkyard Todd}
@@ -98,7 +105,14 @@ lang=engl
 {19000}{}{You know, that's pretty cool! Give it to me. Also give me the money... That's @lex cockroach@ caps and I'll assemble the car.}
 {19010}{}{That's cool. Here are the caps and the fuel controller...}
 {19020}{}{I gotta get some more caps. I'll be back.}
-{19030}{}{Meh. No, maybe next time.}
+{19030}{}{Do you have anything special?}
+{19040}{}{Meh. No, maybe next time.}
 {20000}{}{Your choice, you know.}
 {20010}{}{Yes, I know. Bye.}
+{21000}{}{Hmm.. now that you are asking about it, I can put that fuel controller into one of these wrecks: Police car for @lex policecar@ caps, Motorcycle for @lex motorcycle@ caps, Firetruck for @lex firetruck@ caps, Truck for @lex truck@ caps. Are you interested?}
+{21010}{}{Yeah, fix Police Car for me.}
+{21020}{}{I'll take that Motorcycle.}
+{21030}{}{Firetruck suits me, get it running!}
+{21040}{}{A truck is all I need now.}
+{21050}{}{Nevermind.}
 

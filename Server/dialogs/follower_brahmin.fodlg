@@ -17,7 +17,8 @@ lang=engl
 3 2040 #
 65506 2050 #
 9 2060 #
-0 2070 @
+0 2070 R _script follower@r_DropAllItems 0  #
+0 2080 @
 3 3000 None 0 #
 2 3010 R _script follower@r_Distance 1 0 #
 2 3020 R _script follower@r_Distance 1 1 #
@@ -54,7 +55,8 @@ lang=engl
 {2040}{}{Good cow, let's change our distance a bit!}
 {2050}{}{You need to carry something for me, cow...}
 {2060}{}{I'm gonna leave you with someone else for a while...}
-{2070}{}{Nevermind.}
+{2070}{}{Drop all items you carry.}
+{2080}{}{Nevermind.}
 {3000}{}{Moo!@@Moo.@@Moo-ooo@@Mmmmmmmmoooooooooooo!}
 {3010}{}{Stay close to me.}
 {3020}{}{Stick at medium range.}

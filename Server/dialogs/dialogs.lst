@@ -474,8 +474,8 @@ $	1333	redd_oldman
 $	1334	redd_lost_computer
 $	1335	redd_baseseller
 $	1336	redd_christopher
- 	1337	redd_old_parker
- 	1338	redd_mel_williams
+$ 	1337	redd_old_parker
+$ 	1338	redd_mel_williams
 
 $	1400	san_citizen_shue
 $	1401	san_guard_shue
@@ -645,6 +645,7 @@ $	2537	hub_waterboy
 $	2538	hub_watermerchant_guard
 $	2539	hub_water_merchant
 $	2540	hub_thief_connection
+$	2541	hub_caravan_master
 
 $	2700	raiders_guard
 $	2701	raiders_scully
@@ -737,6 +738,8 @@ $	5056	mob_alien
 $	5057	mob_tribal
 $	5058	mob_bandit
 $	5059	mob_mutant
+$	5060	mob_pashtshuur
+$	5061	mob_uber_sentry_bot
 	8100	trib_sulik
 	8101	trib_manota
 	8102	trib_naiara
@@ -789,6 +792,7 @@ $ 	9316  	slaver_caravan_1
 $ 	9319  	slaver_junkies_1
 $	9320	follower_companion
 $	9321	follower_companion_pre
+$	9322	follower_rat
 
 $	9400	cafe_1
 $	9401	cafe_2
@@ -841,6 +845,7 @@ $	9475	gun_gunrnr2
 $	9476	la_blade_trisha
 $	9477	la_lib_therese
 $	9478	gun_facility_worker
+$	9479	la_locker_guards
 
     10000   nuka_vending_machine
 
@@ -907,10 +912,11 @@ $	10803	arena_scheduler
 $	10804	arena_outfitter
 $	10805	arena_guard
 $	10806	arena_door
- 	10807	zax
+$	10807	arena_barman
 $	10808	dialogimage
 $	10809 event_outfitter2
 $	10810	event_teleporter
+$   10811   event_outfitter_special
  	
 $	10900	billboard_hub
 $	10901	billboard_adytum
@@ -925,6 +931,8 @@ $ 	21200	q_mb_energetics
 $	21201	q_mb_reactor
 $	21202	q_mb_infi
 $	21203	q_mb_body
+$	21204	q_mb_uber_bot_terminal
+
 $	22120	talchem_l5
 $	22121	talchem_rl
 $	22122	talchem_Ter

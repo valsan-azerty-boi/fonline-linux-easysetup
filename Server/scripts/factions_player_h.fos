@@ -34,7 +34,7 @@
 #define BLADES_COST             (130000)
 
 // Very Big
-#define BUNKER_COST             (500000)
+#define BUNKER_COST             (350000)
 
 #ifndef __FACTIONS_PLAYER__
 import bool CreateFaction(Critter& leader, string@ name, uint locationpid, uint currentlocation, uint& force) from "factions_player";

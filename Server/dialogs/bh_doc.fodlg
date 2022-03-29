@@ -1,16 +1,15 @@
 [comment]
 
+
 [data]
 lang=engl
 
 [dialog]
 &
 1 1000 None 0 #
-39 1010 D _param p ST_CHARISMA > 99 #
-3 1020 D _param p ST_INTELLECT < 4 #
-2 1030 D _var p name_mem_npc_player = 0 R _var p name_mem_npc_player = 1 #
-36 1040 D _var p name_mem_npc_player = 1 #
-38 1050 D _param p ST_KARMA < -100 @
+2 1010 D _var p name_mem_npc_player = 0 R _var p name_mem_npc_player = 1 #
+36 1020 D _var p name_mem_npc_player = 1 #
+38 1030 D _param p ST_KARMA < -100 @
 2 2000 None 0 #
 9 2010 D _script dialog@d_IsToHeal 0  #
 6 2020 #
@@ -105,35 +104,33 @@ lang=engl
 {210}{}{You see Doc Holliday.}
 {210}{}{You see a wizened old man in a slightly bloody doctor’s coat. The man radiates an air of knowledge. He also seems slightly sickly.}
 {1000}{}{Predialogue installations}
-{1010}{}{ugly}
-{1020}{}{Idiot}
-{1030}{}{Unknown}
-{1040}{}{Known}
-{1050}{}{Hated}
-{2000}{}{::wheeze:: Hi there. I’m Doc Holliday. How can I help you?}
-{2010}{}{I’m hurt and need healing.}
+{1010}{}{Unknown}
+{1020}{}{Known}
+{1030}{}{Hated}
+{2000}{}{::wheeze:: Hi there. Iï¿½m Doc Holliday. How can I help you?}
+{2010}{}{Iï¿½m hurt and need healing.}
 {2020}{}{What do you do here?}
 {2030}{}{Tell me about the town.}
 {2040}{}{Any gossip?}
 {2050}{}{Just sell me some stimpacks.}
 {2060}{}{Forget it. Sorry.}
-{3000}{}{::wheeze:: Hi there. I’m Doc Holliday. How can I help you?}
+{3000}{}{::wheeze:: Hi there. Iï¿½m Doc Holliday. How can I help you?}
 {3010}{}{Ouchie!}
-{4000}{}{What do I do here? You’re in a hospital. I’m wearing a doctor’s coat. I’m covered with blood. There are sharp, pointy things lying all around. Either I’m a successful killer or a fair doctor. Take your pick.}
+{4000}{}{What do I do here? Youï¿½re in a hospital. Iï¿½m wearing a doctorï¿½s coat. Iï¿½m covered with blood. There are sharp, pointy things lying all around. Either Iï¿½m a successful killer or a fair doctor. Take your pick.}
 {4010}{}{I guess I can call you a doctor.}
-{4020}{}{Don’t get smart with me, old man.}
+{4020}{}{Donï¿½t get smart with me, old man.}
 {4030}{}{A really good doctor would get blood all over himself.}
-{5000}{}{Let’s see. I was born here years ago. Place was just getting started. I picked up when I was a teen and tooled around the place for a while. Met a woman. Fell in love. She died of sickness. I decided then that I was going to become a doctor.}
+{5000}{}{Letï¿½s see. I was born here years ago. Place was just getting started. I picked up when I was a teen and tooled around the place for a while. Met a woman. Fell in love. She died of sickness. I decided then that I was going to become a doctor.}
 {5010}{}{Yeah? Go on.}
 {5020}{}{We were talking about Broken Hills, not your history.}
-{6000}{}{You’d be surprised what people say when they’re in pain.}
+{6000}{}{Youï¿½d be surprised what people say when theyï¿½re in pain.}
 {6010}{}{Oh yeah? Like what?}
-{6020}{}{I changed my mind. I’d rather ask other questions.}
+{6020}{}{I changed my mind. Iï¿½d rather ask other questions.}
 {7000}{}{You been seeing some action? I remember back when I was a little spitfire. Got plenty of holes in me, too. This misadventure will cost you $@lex price@.}
 {7010}{}{Can't afford it. Sorry.}
-{7020}{}{I’ll pay.}
+{7020}{}{Iï¿½ll pay.}
 {7030}{}{Maybe later. Goodbye, Doc.}
-{8000}{}{It’s been a pleasure.}
+{8000}{}{Itï¿½s been a pleasure.}
 {8010}{}{Thanks.}
 {9000}{}{Sorry kid, I wish I could help you, I really could.}
 {9010}{}{Don't worry about it, I've got some more questions.}
@@ -143,11 +140,11 @@ lang=engl
 {10020}{}{Sowee.}
 {11000}{}{Let me take a look at your bag. (he looks through your bag and takes something) Okay. Now, this may hurt a little bit.}
 {11010}{}{Hurt?}
-{12000}{}{Yes. Now… There! We’re done. Good luck to you, okay? Don’t get hurt!}
+{12000}{}{Yes. Nowï¿½ There! Weï¿½re done. Good luck to you, okay? Donï¿½t get hurt!}
 {12010}{}{Tanks!}
-{13000}{}{That’s right. I’m a doctor. Good to see that intelligence is alive and well in the post-nuclear world.}
-{13010}{}{Ha! And it’s kicking around inside a 70-year-old man!}
-{13020}{}{I don’t want to be taking shit from you, old man.}
+{13000}{}{Thatï¿½s right. Iï¿½m a doctor. Good to see that intelligence is alive and well in the post-nuclear world.}
+{13010}{}{Ha! And itï¿½s kicking around inside a 70-year-old man!}
+{13020}{}{I donï¿½t want to be taking shit from you, old man.}
 {13030}{}{Ummm.. Yeah. I had more questions.}
 {13040}{}{Bye.}
 {14000}{}{Threaten the only doctor in town. Good thinking. ::cough:: Friend, if you want something, you can ask politely. Otherwise, get the hell out of my hospital.}
@@ -158,42 +155,42 @@ lang=engl
 {15000}{}{Stripling,  you have a lot to learn about respect.}
 {15010}{}{Yeah, all right.}
 {15020}{}{Yeah, whatever. I'm leaving.}
-{16000}{}{(You can see a glint of laughter in his eyes behind his glasses.) Don’t see it too many other places these days. The young of the world, for example…}
+{16000}{}{(You can see a glint of laughter in his eyes behind his glasses.) Donï¿½t see it too many other places these days. The young of the world, for exampleï¿½}
 {16010}{}{Hey!}
-{16020}{}{Old man, don’t push me.}
+{16020}{}{Old man, donï¿½t push me.}
 {16030}{}{...are the repository of what our elders once knew...}
-{16040}{}{Yeah, yeah, yeah… I gotta go.}
+{16040}{}{Yeah, yeah, yeahï¿½ I gotta go.}
 {17000}{}{Relax, kid. Just joking around with you.}
-{17010}{}{Yeah, I know. So… ummm… bye.}
-{18000}{}{… and what we refuse to tell you little bastards! (he bursts out laughing) Kid, you're a riot. Come back anytime.}
+{17010}{}{Yeah, I know. Soï¿½ ummmï¿½ bye.}
+{18000}{}{ï¿½ and what we refuse to tell you little bastards! (he bursts out laughing) Kid, you're a riot. Come back anytime.}
 {18010}{}{I had some other questions.}
-{18020}{}{Thanks. I’ll see you around.}
-{19000}{}{Surprisingly little. Sorry, but when I’m concentrating on healing someone, I don’t usually pay attention to their innermost secrets.}
+{18020}{}{Thanks. Iï¿½ll see you around.}
+{19000}{}{Surprisingly little. Sorry, but when Iï¿½m concentrating on healing someone, I donï¿½t usually pay attention to their innermost secrets.}
 {19010}{}{Oh. Will you answer more questions?}
-{20000}{}{So then I traveled to San Francisco and studied under the Chinese there… an old gentleman by the name of Mr. Fung taught me everything I know about medicine. He also taught me some wisdom.}
+{20000}{}{So then I traveled to San Francisco and studied under the Chinese thereï¿½ an old gentleman by the name of Mr. Fung taught me everything I know about medicine. He also taught me some wisdom.}
 {20010}{}{So then what happened?}
 {20020}{}{And this ties into Broken Hills how?}
 {21000}{}{Then, I came back here and watched the old sheriff, Marcus. build the town from the shanties I remember from my youth into the "sprawling metropolis" you see before you. I saw people attracted by promises of wealth. I saw people grow up and die. I saw the currents of history.}
-{21010}{}{So that means…}
-{22000}{}{That means that I don’t know most of the new people these days. Most of my memories are just that -- memories.}
+{21010}{}{So that meansï¿½}
+{22000}{}{That means that I donï¿½t know most of the new people these days. Most of my memories are just that -- memories.}
 {22010}{}{Oh. Well, thanks for the story.}
 {22020}{}{You jerk! You made me wait that long for nothing?}
 {23000}{}{No, thank you for listening to me ramble. Take care of yourself, kid.}
-{23010}{}{Thanks! So anyway…}
+{23010}{}{Thanks! So anywayï¿½}
 {23020}{}{Thanks. So long!}
 {24000}{}{Yeah. Hope it was worth it! (he cackles)}
 {24010}{}{No. Not really. Tell me something else.}
 {24020}{}{No. You shriveled old jerk. Bye.}
 {25000}{}{What do you want now?}
-{25010}{}{I’m hurt and need healing.}
+{25010}{}{Iï¿½m hurt and need healing.}
 {25020}{}{What do you do here?}
 {25030}{}{Tell me about the town.}
 {25040}{}{Any gossip?}
 {25050}{}{Just sell me some stimpacks.}
 {25060}{}{Forget it. Sorry.}
-{26000}{}{I’m getting to that! Kids these days… so impatient.}
+{26000}{}{Iï¿½m getting to that! Kids these daysï¿½ so impatient.}
 {26010}{}{Sorry. Go on.}
-{26020}{}{This sucks. I’m outta here.}
+{26020}{}{This sucks. Iï¿½m outta here.}
 {27000}{}{I've heard about you. I don't want you causing any trouble in my clinic, so I'm gonna be asking you to leave, fella.}
 {27010}{}{Fuck you, then.}
 {28000}{}{Sorry, clinic's, uh.. closed today!@@Sorry, I can't do anything for your face.@@Please, you're scaring my patients.@@I'm going to have to ask you to leave. I'm so sorry.}

@@ -21,11 +21,13 @@
 #include "MsgStr.h"
 
 import void DropDrugEffects(Critter& cr) from "drugs";
+import void DropDrugsEffectsHinkley(Critter& cr) from "drugs";
 import void DropPoison(Critter& cr) from "poison";
 // import void DropRadiation(Critter& cr) from "radiation";
 import void CapRadiation(Critter& cr) from "radiation";
 import Map@ GetRoomPosition(uint PlayerId, uint16& out hx, uint16& out hy) from "rooms";
 import bool IsInsideArena(Critter&) from "arena";
+import bool IsDeadInsideLobby(Critter&) from "arena";
 import void OnTeleportToLobby(Critter&) from "arena";
 import void ClearInfluenceBuffer(Critter& cr) from "town";
 
@@ -120,7 +122,8 @@ void SetStartLocation(Critter& cr)   // Export
 
     // Spawn player in instanced starter location
     uint x, y = 0;
-    uint startloc = Random(LOCATION_Spawnpoint1, LOCATION_Spawnpoint3);
+   // uint startloc = Random(LOCATION_Spawnpoint1, LOCATION_Spawnpoint3);
+    uint startloc = LOCATION_Spawnpoint1;
     switch(startloc)
     {
     case LOCATION_Spawnpoint1:
@@ -200,7 +203,7 @@ void SetReplicationTime(Critter& cr)   // Export
     {
         // DLog("Take default values");
         if(cr.IsPlayer())
-            replTime = REAL_SECOND(20);
+            replTime = REAL_MINUTE(1);
         else
             replTime = REAL_MINUTE(10);
     }
@@ -369,7 +372,7 @@ void ReplicateCritter(Critter& cr)   // Export
         }
         else
         {
-            _SetTimeout(cr, TO_REPLICATION, REAL_SECOND(10));
+            _SetTimeout(cr, TO_REPLICATION, REAL_MINUTE(1));
         }
         return;
     }
@@ -419,6 +422,9 @@ void ReplicateCritter(Critter& cr)   // Export
             // Try dynamic respawn points.
             if(valid(deathMap))
             {
+                if(deathMap.GetLocation().GetProtoId() == LOCATION_Hinkley && IsDeadInsideLobby(cr)) 
+                    DropDrugsEffectsHinkley(cr);
+
                 Item@ dynRespawn = GetDSpawn(deathMap, cr.Param[ST_MINIGAME_DATA]);
                 if(valid(dynRespawn))
                 {
@@ -557,8 +563,8 @@ void ReplicateCritter(Critter& cr)   // Export
 
         if(IsWarzone(map))     // Full life on warzone
             cr.StatBase[ST_CURRENT_HP] = cr.Stat[ST_MAX_LIFE];
-        else
-            _SetTimeout(cr, TO_WEAKENED, WEAKENED_TIMEOUT(cr));
+        //else
+        //   _SetTimeout(cr, TO_WEAKENED, WEAKENED_TIMEOUT(cr));
     }
 
 

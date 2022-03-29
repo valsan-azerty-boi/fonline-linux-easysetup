@@ -17,7 +17,7 @@
 import bool GetItemPid(const string& in, int& out) from "main";
 import bool GetVarId(const string& in, int& out) from "main";
 import bool GetBaseType(const string& in, int& out) from "main";
-import void ExplodeEx(Map& map, uint16 hexX, uint16 hexY, uint16 effectPid, uint effectRadius, uint damage, uint damageType, uint damageRadius, uint ownerId) from "explode";
+import void ExplodeEx(Map& map, uint16 hexX, uint16 hexY, uint16 effectPid, uint effectRadius, uint damage, uint damageType, uint damageRadius, uint ownerId, uint16 explodePid) from "explode";
 import uint GetRandomDeathAnimation() from "cheats";
 
 //
@@ -357,7 +357,7 @@ void Airstrike(Critter& player, int crId, int x, int y, string@ param3, array<in
     uint   damageRadius = 3;
 
     for(int i = 0; i < 20; i++)
-        ExplodeEx(player.GetMap(), x + Random(-10, 10), y + Random(-10, 10), effectPid, effectRadius, damage, damageType, damageRadius, 0);
+        ExplodeEx(player.GetMap(), x + Random(-10, 10), y + Random(-10, 10), effectPid, effectRadius, damage, damageType, damageRadius, 0, 0);
 
     LogCommandUsage(player, "using airstrike");
 }

@@ -31,6 +31,7 @@
 #define SPAWNER_CONTAINER_BLUEPRINT_HIGH      (17)
 
 #define SPAWNER_CONTAINER_SEWER_TRASH         (18)
+#define SPAWNER_CONTAINER_AMMO_47MM	      (19) // 4.7mm 
 
 #define SPAWNER_RESERVED_MAX                  (30)
 // above that can be used runtime
@@ -160,7 +161,21 @@
 #define TALCHEM_MATERIALS_LOWER               (93)
 #define TALCHEM_MATERIALS_HIGHER              (94)
 
-#define GHOST_TOWN_HIGH                       (95) // This is for "the end"
+#define GHOST_TOWN_HIGH                       (95)
+
+#define WAREHOUSE_BASEMENT_BOX_BG_HIGH_BONUS  (96)
+#define WAREHOUSE_BASEMENT_BOX_EW_HIGH_BONUS  (97)
+
+#define V15_CONTAINER_WEAPON_BONUS_LOW        (98)
+#define V15_CONTAINER_ARMOR_BONUS_LOW         (99) 
+
+
+#define TANKER_CONTAINER_WEAPON_BONUS_LOW     (100)
+#define TANKER_CONTAINER_ARMOR_BONUS_LOW      (101)
+
+#define GUNRUNNER_CRV_CONTAINER_WEAPON_BONUS_LOW     (102)
+#define GUNRUNNER_CRV_CONTAINER_ARMOR_BONUS_LOW      (103) // This is for "the end"
+
 
 shared interface IItemSpawner
 {
@@ -169,6 +184,9 @@ shared interface IItemSpawner
     IItemSpawner@ AddItem(uint16 pid, uint chance, uint min, uint max);
     IItemSpawner@ AddItem(uint16 pid, uint chance);
     IItemSpawner@ SetSeparate(bool separate);
+	IItemSpawner@ SetBonus(bool bonus);
+	IItemSpawner@ SetBonusLow(bool bonus);
+	IItemSpawner@ SetClearAtSpawn(bool clearSpawn);
     IItemSpawner@ Clear();
 };
 

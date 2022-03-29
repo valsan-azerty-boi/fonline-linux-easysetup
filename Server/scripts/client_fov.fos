@@ -346,3 +346,76 @@ void CalculateFovSextantHexes(uint16 x, uint16 y, uint8 dir, uint sight, uint ma
         hexes[len + 1] = preBlockHy;
     }
 }
+
+
+void DrawMsFov() // export
+{
+    if(!__ConfigMsFov)
+        return;
+
+    CritterCl@ chosen = GetChosen();
+    if(!valid(chosen) || __GmapActive || GetCurrentMapPid() == 0)
+        return;
+
+    ItemCl@ item1 = chosen.GetItem(0, SLOT_HAND1);
+    ItemCl@ item2 = chosen.GetItem(0, SLOT_HAND2);
+
+    if( (valid(item1)?item1.GetProtoId() != PID_ACTIVE_MOTION_SENSOR:true)
+     && (valid(item2)?item2.GetProtoId() != PID_ACTIVE_MOTION_SENSOR:true))
+        return;
+
+    array<uint16> msFovVert =
+    {
+        chosen.HexX, chosen.HexY,
+        chosen.HexX, chosen.HexY,
+        chosen.HexX, chosen.HexY,
+        chosen.HexX, chosen.HexY,
+        chosen.HexX, chosen.HexY,
+        chosen.HexX, chosen.HexY
+    };
+
+    int fovSize = 15;
+
+    MoveHexByDir(msFovVert[0], msFovVert[1], 0, fovSize);
+    MoveHexByDir(msFovVert[2], msFovVert[3], 1, fovSize);
+    MoveHexByDir(msFovVert[4], msFovVert[5], 2, fovSize);
+    MoveHexByDir(msFovVert[6], msFovVert[7], 3, fovSize);
+    MoveHexByDir(msFovVert[8], msFovVert[9], 4, fovSize);
+    MoveHexByDir(msFovVert[10], msFovVert[11], 5, fovSize);
+
+    #define MS_FOV_BORDER      (0x77BBBBBB)
+
+    DrawHexArea(msFovVert, false, MS_FOV_BORDER);
+}
+
+void DrawCustomBorder() // export
+{
+    if(!__ConfigCustomBorder)
+        return;
+
+    CritterCl@ chosen = GetChosen();
+    if(!valid(chosen) || __GmapActive || GetCurrentMapPid() == 0)
+        return;
+
+    if(__ConfigCustomBorderRange <= 0)
+        return;
+
+    array<uint16> customBorder =
+    {
+        chosen.HexX, chosen.HexY,
+        chosen.HexX, chosen.HexY,
+        chosen.HexX, chosen.HexY,
+        chosen.HexX, chosen.HexY,
+        chosen.HexX, chosen.HexY,
+        chosen.HexX, chosen.HexY
+    };
+
+    MoveHexByDir(customBorder[0], customBorder[1], 0, __ConfigCustomBorderRange);
+    MoveHexByDir(customBorder[2], customBorder[3], 1, __ConfigCustomBorderRange);
+    MoveHexByDir(customBorder[4], customBorder[5], 2, __ConfigCustomBorderRange);
+    MoveHexByDir(customBorder[6], customBorder[7], 3, __ConfigCustomBorderRange);
+    MoveHexByDir(customBorder[8], customBorder[9], 4, __ConfigCustomBorderRange);
+    MoveHexByDir(customBorder[10], customBorder[11], 5, __ConfigCustomBorderRange);
+
+    DrawHexArea(customBorder, false, __ConfigCustomBorderColor);
+}

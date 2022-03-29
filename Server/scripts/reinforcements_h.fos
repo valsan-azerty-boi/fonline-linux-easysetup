@@ -18,14 +18,14 @@
 #define ALERT_LEVEL_HEAVY             (60)
 
 // threshold for making all guards reacting to an offense
-#define ALERT_LEVEL_REACT             (12)
+#define ALERT_LEVEL_REACT             (50)
 
 // points of alert level increase per death of guard or allied npc
-#define ALERT_COUNT_GUARD             (4)
+#define ALERT_COUNT_GUARD             (2)
 #define ALERT_COUNT_NPC               (1)
 
 // main cycle length
-#define ALERT_CYCLE                   (GAME_MINUTE(160))     // ingame minutes
+#define ALERT_CYCLE                   (GAME_MINUTE(30))     // ingame minutes
 
 // minimum points of alert level dropped every cycle
 #define ALERT_COUNT_DROP              (4)

@@ -5,6 +5,7 @@
 // quest_antlair.fos
 //
 
+#include "_colors.fos"
 #include "quest_killmobs_h.fos"
 #include "utils_h.fos"
 #include "npc_planes_h.fos"
@@ -22,6 +23,8 @@ void r_SpawnLair(Critter& player, Critter@ npc)
     GameVar@  locidv = GetLocalVar(LVAR_q_san_antlair_locid, player.Id);
     locidv = loc;
     Location@ location = GetLocation(loc);
+    location.Color = COLOR_WM_QUEST;
+    location.Update();
     if(player.Mode[MODE_DEFAULT_COMBAT] == COMBAT_MODE_TURN_BASED)
         SetTurnBasedAvailability(location);
     Map@ map = location.GetMapByIndex(0);

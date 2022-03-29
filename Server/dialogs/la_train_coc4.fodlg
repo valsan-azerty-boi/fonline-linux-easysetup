@@ -24,7 +24,7 @@ lang=engl
 0 6010 @
 8 7000 None 0 #
 9 7010 #
-10 7020 D _item p PID_DEANS_ELECTRONICS > 0 R _item p PID_DEANS_ELECTRONICS - 1 R _param p ST_EXPERIENCE + 250 R _var p q_coc_train = 3 R _script dialog@r_AddMoney 1 800 @
+10 7020 D _item p PID_DEANS_ELECTRONICS > 0 R _item p PID_DEANS_ELECTRONICS - 1 R _param p ST_EXPERIENCE + 1350 R _var p q_coc_train = 3 R _script dialog@r_AddMoney 1 800 @
 9 8000 None 0 #
 0 8010 @
 10 9000 None 0 #

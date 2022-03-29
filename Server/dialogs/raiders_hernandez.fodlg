@@ -1,19 +1,19 @@
 [comment]
 
+
 [data]
 lang=engl
 
 [dialog]
 &
 1 1000 None 0 #
-200 1010 D _param p ST_INTELLECT < 4 #
-200 1020 D _script dialog@d_IsNotMember 0  #
-2 1030 D _script dialog@d_IsMember 0  D _var n name_mem_player_npc = 0 D _var p q_raiders_hernandez_sister = 0 #
-10 1040 D _script dialog@d_IsMember 0  D _var n name_mem_player_npc = 1 D _var p q_raiders_hernandez_sister = 0 #
-12 1050 D _var p q_raiders_hernandez_sister = 1 #
-13 1060 D _var p q_raiders_hernandez_sister = 2 D _var p acquaintance = 0 #
-13 1070 D _var p q_raiders_hernandez_sister = 3 D _var p acquaintance = 0 #
-201 1080 D _var n acquaintance = 1 @
+200 1010 D _script dialog@d_IsNotMember 0  #
+2 1020 D _script dialog@d_IsMember 0  D _var n name_mem_player_npc = 0 D _var p q_raiders_hernandez_sister = 0 #
+10 1030 D _script dialog@d_IsMember 0  D _var n name_mem_player_npc = 1 D _var p q_raiders_hernandez_sister = 0 #
+12 1040 D _var p q_raiders_hernandez_sister = 1 #
+13 1050 D _var p q_raiders_hernandez_sister = 2 D _var p acquaintance = 0 #
+13 1060 D _var p q_raiders_hernandez_sister = 3 D _var p acquaintance = 0 #
+201 1070 D _var n acquaintance = 1 @
 200 2000 None 0 @
 2 3000 None 0 #
 3 3010 #
@@ -54,13 +54,13 @@ lang=engl
 14 14010 #
 15 14020 @
 14 15000 None 0 #
-0 15010 R _param p ST_EXPERIENCE + 100 R _var p acquaintance + 1 R _var p q_raiders_hernandez_sister = 4 @
+0 15010 R _param p ST_EXPERIENCE + 250 R _var p acquaintance + 1 R _var p q_raiders_hernandez_sister = 4 @
 15 16000 None 0 #
-0 16010 R _param p ST_EXPERIENCE + 500 R _var p acquaintance + 1 R _var p q_raiders_hernandez_sister = 4 @
+0 16010 R _param p ST_EXPERIENCE + 1200 R _var p acquaintance + 1 R _var p q_raiders_hernandez_sister = 4 @
 16 17000 None 0 #
 17 17010 @
 17 18000 None 0 #
-0 18010 R _param p ST_EXPERIENCE + 500 R _item p PID_BEER + 2 R _item p PID_JET + 5 R _var n acquaintance + 1 @
+0 18010 R _param p ST_EXPERIENCE + 1200 R _item p PID_BEER + 2 R _item p PID_JET + 5 R _var n acquaintance + 1 @
 201 19000 None 0 &
 
 [engl]
@@ -72,14 +72,13 @@ lang=engl
 {260}{}{You see Hernandez's corpse.}
 {270}{}{Wow, someone really did a number on Hernandez.  You can recognise a few anatomical features, but it's mostly a horrific mess.}
 {1000}{}{Predialogue installations}
-{1010}{}{dumb floats}
-{1020}{}{No raider}
-{1030}{}{Raider, first meeting}
-{1040}{}{Raider, second meeting, not started the quest}
-{1050}{}{Started quest, not met sister yet}
-{1060}{}{Finished quest, poor outcome}
-{1070}{}{Finished quest, good outcome}
-{1080}{}{Friendly floats}
+{1010}{}{No raider}
+{1020}{}{Raider, first meeting}
+{1030}{}{Raider, second meeting, not started the quest}
+{1040}{}{Started quest, not met sister yet}
+{1050}{}{Finished quest, poor outcome}
+{1060}{}{Finished quest, good outcome}
+{1070}{}{Friendly floats}
 {2000}{}{Who the fuck are you?@@The fuck are you?@@What are you looking at?@@You look like a punk@@You look like a bitch@@You look like a wimp@@You look like a faggot@@Get the fuck outta here@@Gimme some jet or fuck off@@Look at me again and I'll kick your head in, dick@@Go fuck yourself@@Fuck off@@Who the fuck is this guy?@@Look at what the cat dragged in...a shithead@@Who's this asshole?@@Fuck off, shithead@@Get lost, no dick@@Fuck yourself, asshole@@Wanna feel my foot in your face?@@Wanna feel my cock in your ass?@@Dickhead@@Asshole@@Shithead@@Why don't you dickheads walk all the way home?}
 {3000}{}{Hm?  Watchu want, man?}
 {3010}{}{I got nothin goin on, let's chew the fat.}

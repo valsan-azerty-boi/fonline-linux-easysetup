@@ -23,7 +23,7 @@ lang=engl
 4 2030 R _var n name_mem_npc_player = 1 #
 0 2040 #
 15 2050 D _var p mod_q_meat_jerky = 1 D _item p PID_MEAT_BAG > 0 @
-3 3000 None 0 #
+3 3000 dialog@dlg_SayBuyBeer 0 #
 8 3010 D _item p PID_BOTTLE_CAPS > 9 R _item p PID_BEER + 1 R _script dialog@r_RemoveMoney 1 10 #
 8 3020 D _item p PID_BOTTLE_CAPS > 29 R _item p PID_BOOZE + 1 R _script dialog@r_RemoveMoney 1 30 #
 4 3030 #
@@ -70,7 +70,7 @@ lang=engl
 14 16000 None 0 #
 13 16010 @
 15 17000 None 0 #
-0 17010 D _item p PID_MEAT_BAG } 1 R _var p mod_q_meat_jerky = 2 R _item p PID_MEAT_BAG - 1 R _param p ST_EXPERIENCE + 150 R _script dialog@r_AddMoney 1 120 @
+0 17010 D _item p PID_MEAT_BAG } 1 R _var p mod_q_meat_jerky = 2 R _item p PID_MEAT_BAG - 1 R _param p ST_EXPERIENCE + 550 R _script dialog@r_AddMoney 1 320 @
 16 18000 None 0 @
 17 19000 None 0 #
 65507 19010 R _var p acquaintance = 1 R _script dialog@r_AddMoney 1 200 #
@@ -92,7 +92,7 @@ lang=engl
 {2030}{}{Anything interesting going on around here?}
 {2040}{}{Nothing today, thanks.}
 {2050}{}{Grisham sent me. I got a big bag of jerky with your name on it.}
-{3000}{}{Beer for 10 caps, shot of whiskey for 30. Nothing special. Why, you want something?}
+{3000}{}{Beer for 10 caps, shot of whiskey for 30. Nothing special. Why, you want something? [You can use SAY to enter number of beer you want to buy]}
 {3010}{}{I'll take a beer.}
 {3020}{}{I'll take a shot.}
 {3030}{}{Anything interesting going on around here?}

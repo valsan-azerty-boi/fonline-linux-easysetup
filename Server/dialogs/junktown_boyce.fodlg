@@ -49,7 +49,7 @@ lang=engl
 83 13000 None 0 #
 0 13010 @
 500 14000 None 0 #
-501 14010 D _script perks@d_PerkCheck 1 455 R _param p PE_BEST_OF_A_BAD_LOT = 1 #
+501 14010 D _script perks@d_PerkCheck 1 455 D _param p ST_STRENGTH > 11 R _param p PE_BEST_OF_A_BAD_LOT = 1 #
 501 14020 D _script perks@d_PerkCheck 1 456 R _param p PE_DISMANTLER = 1 #
 0 14030 @
 501 15000 None 0 #

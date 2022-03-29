@@ -53,7 +53,7 @@ uint GetMaxRange(CritterMutual& cr, ItemMutual@ item)
         float lbs = GRAMM_TO_LBS(item.Proto.Weight);
         lbs = MAX(lbs, 1.0f);
         lbs = sqrt(lbs);
-        return uint(float(max) / lbs);
+        return (bonus + uint(float(max) / lbs));
     }
 }
 
@@ -127,24 +127,16 @@ int ThrowingToHit(CritterMutual& cr, uint16 tx, uint16 ty, ProtoItem& weapon)
     if(cr.Damage[DAMAGE_EYE] != 0)
         toHit -= 25;
     toHit = CLAMP(toHit, 5, 95);
-    if(cr.Timeout[TO_SLEEPY] > 0 && cr.Param[TO_SLEEPY_STOPPED] == -1 && cr.Param[ST_MINIGAME_DATA] == 0)
-    {
-        #ifdef __SERVER
-        if(cr.IsPlayer())
-            cr.SayMsg(SAY_NETMSG, TEXTMSG_GAME, STR_TIMEOUT_SLEEPY);
-        #endif
-        toHit = 5;
-    }
 
     return toHit;
 }
 
-int ActionPointsCost(ItemMutual& item)
+int ActionPointsCost(ItemMutual& item, uint8 brofBonus)
 {
     if(IsThrowingWeapon(item))
     {
         uint8 use = _WeaponModeUse(item.Mode);
-        return _WeaponApCost(item.Proto, use);
+        return _WeaponApCost(item.Proto, use) - brofBonus;
     }
     float lbs = GRAMM_TO_LBS(item.Proto.Weight);
     lbs = MAX(lbs, 1.0f);
@@ -157,7 +149,8 @@ bool IsThrowableThere(CritterMutual& cr, ItemMutual@ item, uint16 tx, uint16 ty)
     if(!valid(item) || !IsThrowable(item.Proto) || !cr.IsLife())
         return false;
     #ifdef __SERVER
-    if(cr.Stat[ST_CURRENT_AP] < ActionPointsCost(item))
+    uint8 brofBonus = (cr.Perk[PE_BONUS_RATE_OF_FIRE]>0)?1:0;
+    if(cr.Stat[ST_CURRENT_AP] < ActionPointsCost(item, brofBonus))
         return false;
     #endif
     return GetMaxRange(cr, item) >= GetDistantion(cr.HexX, cr.HexY, tx, ty);
@@ -166,7 +159,7 @@ bool IsThrowableThere(CritterMutual& cr, ItemMutual@ item, uint16 tx, uint16 ty)
 
 #ifdef __SERVER
 
-import void CommenceExplosionEx(Critter@ attacker, Map@ map, uint16 tx, uint16 ty, Critter@ target, uint weapPid, bool isCritical, uint intentionallyId, bool isRocket) from "combat";
+import void CommenceExplosionEx(Critter@ attacker, Map@ map, uint16 tx, uint16 ty, Critter@ target, uint weapPid, bool isCritical, uint intentionallyId, bool isRocket, bool isExplodeRocket) from "combat";
 
 void unsafe_Throw(Critter& player, int px, int py, int p2, string@ param3, array<int>@ param4)
 {
@@ -241,7 +234,8 @@ void CommenceThrowing(Critter& cr, Map& map, Item& item, uint16 tx, uint16 ty)
             cr.ModeBase[MODE_HIDE] = 0;
     }
     cr.Wait(__Breaktime);
-    cr.StatBase[ST_CURRENT_AP] -= 100 * ActionPointsCost(item);
+    uint8 brofBonus = (cr.Perk[PE_BONUS_RATE_OF_FIRE]>0)?1:0;
+    cr.StatBase[ST_CURRENT_AP] -= 100 * ActionPointsCost(item, brofBonus);
     map.RunFlyEffect(item.GetProtoId(), cr, null, cr.HexX, cr.HexY, tx, ty);
     uint16 pid = item.GetProtoId();
     if(IsGrenade(item) && (!IsArenaItem(item) || IsInsideArena(cr)))
@@ -270,7 +264,7 @@ uint e_Explode(array<uint>@ values)     // map id, tx, ty, pid, attacker id
     if(!valid(map))
         return 0;
     Critter@ cr = GetCritter(values[4]);
-    CommenceExplosionEx(GetCritter(values[4]), map, values[1], values[2], null, values[3], false, 0, false);
+    CommenceExplosionEx(GetCritter(values[4]), map, values[1], values[2], null, values[3], false, 0, false, false);
     return 0;
 }
 #endif
@@ -347,7 +341,8 @@ void RenderThrowing() // export
         return;                           // should not happen
 
     uint tohit = ::ThrowingToHit(chosen, hx, hy, item.Proto);
-    int  ap = ::ActionPointsCost(item);
+    uint8 brofBonus = (chosen.Perk[PE_BONUS_RATE_OF_FIRE]>0)?1:0;
+    int  ap = ::ActionPointsCost(item, brofBonus);
     bool hasAp = ap <= chosen.Stat[ST_CURRENT_AP];
 
     // todo: adjust offsets

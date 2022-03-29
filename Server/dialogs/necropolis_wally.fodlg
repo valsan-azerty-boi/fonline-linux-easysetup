@@ -1,12 +1,13 @@
 [comment]
 
+
 [data]
 lang=engl
 
 [dialog]
 &
 1 1000 None 0 #
-21 1010 D _var p q_bunker_base > 20 D _var p name_mem_npc_player = 0 R _var p name_mem_npc_player = 1 R _param p ST_EXPERIENCE + 150 #
+21 1010 D _var p q_bunker_base > 20 D _var p name_mem_npc_player = 0 R _var p name_mem_npc_player = 1 R _param p ST_EXPERIENCE + 1500 #
 2 1020 D _var p name_mem_npc_player = 1 D _var p q_bunker_base > 20 #
 20 1030 @
 2 2000 None 0 #
@@ -71,7 +72,7 @@ lang=engl
 {2040}{}{Nothing. I'm outta here.}
 {3000}{}{And... uhh... Smoothskin, what is it you guys call yourselves... not that I want to know... i'm just curious, you know? [Make sure that everyone in your group is following you right now, otherwise they won't count as members]}
 {3010}{}{Nevermind.}
-{4000}{}{Good, good, uhh... Smoothskin. Your people'll be thrilled. Let me just mark it on your map...how will you this hole?}
+{4000}{}{Good, good, uhh... Smoothskin. Your people'll be thrilled. Let me just mark it on your map...how will you name this hole?}
 {4010}{}{Nevermind.}
 {5000}{}{Never heard of you guys, Smoothskin. Sorry. Don't think I can help you. Nothing personal.}
 {5010}{}{Ooops, I think I mispoke, let me repeat myself...}
@@ -97,8 +98,8 @@ lang=engl
 {13000}{}{Uhm... Smoothskin... Here? It's just a shitty old town, full with ghouls and other lost people.}
 {13010}{}{Yeh. Ok, but what about a area that is a bit... more away. You know, even if it is far away... [You paint some irrecognizable image with your hands in the air.]}
 {13020}{}{That's too much for me. Screw it.}
-{14000}{}{Uhh... Maybe... yes. It could be possible that I saw something a while ago... but it costs you 500.000 caps to fresh up my mind, Smoothskin...}
-{14010}{}{Okay. Here, take the 500.000 caps and show me the way. I hope it's worth it.}
+{14000}{}{Uhh... Maybe... yes. It could be possible that I saw something a while ago... but it costs you 350.000 caps to fresh up my mind, Smoothskin...}
+{14010}{}{Okay. Here, take the 350.000 caps and show me the way. I hope it's worth it.}
 {14020}{}{Damn, I don't have enough money right now. I will come back later.}
 {15000}{}{What do you want, Smoothskin?@@Leave me alone, Smoothskin.@@What? Uh!@@Hi.@@Arrrr!@@Grrrrr!@@Uungh.@@Uhh.@@Hey, did you hear that? No?@@Ever since the mutants left, it's been better.@@Hello Smoothskin.}
 {16000}{}{You better get outa here, buddy. }

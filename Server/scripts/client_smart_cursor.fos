@@ -16,12 +16,12 @@
 
 
 uint ValidToolForTarget(ItemCl@ tool, ItemCl@ target)
-{
+{		
     if(valid(tool) && valid(target) && FLAG(target.Flags, ITEM_CAN_USE))
     {
         switch(target.Proto.ProtoId)
         {
-
+		
         case PID_PLANT_FIBER:
         {
             uint16 pid = tool.Proto.ProtoId;
@@ -87,7 +87,7 @@ uint ValidToolForTarget(ItemCl@ tool, ItemCl@ target)
         case PID_VEIN_MINERALS2:
         {
             uint16 pid = tool.Proto.ProtoId;
-            if(pid == PID_SUPER_SLEDGE)
+            if(pid == PID_SLEDGEHAMMER || pid == PID_SUPER_SLEDGE)
             {
                 return SMART_EXTRACT_MINERALS2;
             }
@@ -111,6 +111,16 @@ uint ValidToolForTarget(ItemCl@ tool, ItemCl@ target)
             }
             return SMART_NULL;
         }
+		case PID_TABLE_BRAHMIN:
+		{
+			uint16 pid = tool.Proto.ProtoId;
+
+			if(pid == PID_KNIFE || pid == PID_COMBAT_KNIFE)
+			{
+				return SMART_MEAT;
+			}
+			return SMART_NULL;
+        }
 
         case PID_GRAVESITE_V:     // Should be merged into one pid with different Dir...
         case PID_GRAVESITE_H:
@@ -124,7 +134,7 @@ uint ValidToolForTarget(ItemCl@ tool, ItemCl@ target)
             return SMART_NULL;
         }
 
-        }
+		}
     }
     return SMART_NULL;
 }

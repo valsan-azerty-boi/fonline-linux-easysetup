@@ -21,7 +21,7 @@
 void InitSkumpittEvents()
 {
     DLog("Creating junktown events");
-    CreateTimeEvent(GetNearFullSecond(0, 0, 0, 4, 0, 0), "e_CloseSkumpitt", false);
+    //CreateTimeEvent(GetNearFullSecond(0, 0, 0, 4, 0, 0), "e_CloseSkumpitt", false);
     CreateTimeEvent(GetNearFullSecond(0, 0, 0, 17, 0, 0), "e_OpenSkumpitt", false);
 }
 

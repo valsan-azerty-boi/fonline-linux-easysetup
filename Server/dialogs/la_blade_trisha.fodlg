@@ -23,14 +23,14 @@ lang=engl
 6 5010 #
 0 5020 @
 6 6000 None 0 #
-7 6010 D _item p PID_PUMP_PARTS > 0 R _script dialog@r_AddMoney 1 5 R _item p PID_PUMP_PARTS - 1 R _param p REPUTATION_SCAVENGERS + 1 R _var p q_la_junk_merchant + 1 #
-7 6020 D _item p PID_ELECTRONIC_PARTS > 0 R _script dialog@r_AddMoney 1 20 R _item p PID_ELECTRONIC_PARTS - 1 R _param p REPUTATION_SCAVENGERS + 1 R _var p q_la_junk_merchant + 1 #
+7 6010 D _item p PID_PUMP_PARTS > 0 R _script dialog@r_AddMoney 1 40 R _item p PID_PUMP_PARTS - 1 R _param p REPUTATION_SCAVENGERS + 1 R _var p q_la_junk_merchant + 1 #
+7 6020 D _item p PID_ELECTRONIC_PARTS > 0 R _script dialog@r_AddMoney 1 50 R _item p PID_ELECTRONIC_PARTS - 1 R _param p REPUTATION_SCAVENGERS + 1 R _var p q_la_junk_merchant + 1 #
 7 6030 D _item p PID_GOLD_LOCKET > 0 R _script dialog@r_AddMoney 1 100 R _item p PID_GOLD_LOCKET - 1 R _param p REPUTATION_SCAVENGERS + 1 R _var p q_la_junk_merchant + 1 #
 7 6040 D _item p PID_WATER_CHIP > 0 R _script dialog@r_AddMoney 1 200 R _item p PID_WATER_CHIP - 1 R _param p REPUTATION_SCAVENGERS + 20 R _var p q_la_junk_merchant + 1 #
 7 6050 D _item p PID_TAPE_RECORDER > 0 R _script dialog@r_AddMoney 1 30 R _item p PID_TAPE_RECORDER - 1 R _param p REPUTATION_SCAVENGERS + 1 R _var p q_la_junk_merchant + 1 #
 7 6060 D _item p PID_MOTIVATOR > 0 R _script dialog@r_AddMoney 1 50 R _item p PID_MOTIVATOR - 1 R _param p REPUTATION_SCAVENGERS + 20 R _var p q_la_junk_merchant + 1 #
-7 6070 D _item p PID_HOLODISK > 0 R _script dialog@r_AddMoney 1 20 R _item p PID_HOLODISK - 1 R _param p REPUTATION_SCAVENGERS + 1 R _var p q_la_junk_merchant + 1 #
-7 6080 D _item p PID_CAR_FUEL_CELL_CONTROLLER > 0 R _script dialog@r_AddMoney 1 100 R _item p PID_CAR_FUEL_CELL_CONTROLLER - 1 R _param p REPUTATION_SCAVENGERS + 20 R _var p q_la_junk_merchant + 1 #
+7 6070 D _item p PID_HOLODISK > 0 R _script dialog@r_AddMoney 1 100 R _item p PID_HOLODISK - 1 R _param p REPUTATION_SCAVENGERS + 1 R _var p q_la_junk_merchant + 1 #
+7 6080 D _item p PID_CAR_FUEL_CELL_CONTROLLER > 0 R _script dialog@r_AddMoney 1 500 R _item p PID_CAR_FUEL_CELL_CONTROLLER - 1 R _param p REPUTATION_SCAVENGERS + 20 R _var p q_la_junk_merchant + 1 #
 7 6090 D _item p PID_CAR_FUEL_INJECTION > 0 R _script dialog@r_AddMoney 1 100 R _item p PID_CAR_FUEL_INJECTION - 1 R _param p REPUTATION_SCAVENGERS + 20 R _var p q_la_junk_merchant + 1 #
 7 6100 D _item p PID_ROBOT_PARTS > 0 R _script dialog@r_AddMoney 1 50 R _item p PID_ROBOT_PARTS - 1 R _param p REPUTATION_SCAVENGERS + 20 R _var p q_la_junk_merchant + 1 #
 7 6110 D _item p PID_MOTIVATOR > 0 R _script dialog@r_AddMoney 1 250 R _item p PID_ROBOT_MOTIVATOR - 1 R _param p REPUTATION_SCAVENGERS + 20 R _var p q_la_junk_merchant + 1 #
@@ -64,14 +64,14 @@ lang=engl
 {5010}{}{Interesting. This is what I have with me right now...}
 {5020}{}{That's all I wanted to know. Bye.}
 {6000}{}{[She takes a look.]}
-{6010}{}{I've got some junk. 5 caps.@@Here is some junk. 5 caps.@@Some junk for you. 5 caps.}
-{6020}{}{I've got some electronic parts. 20 caps.@@Here are some electronic parts. 20 caps.@@I've found some electronic parts. 20 caps.@@Take the electronic parts. 20 caps.}
+{6010}{}{I've got some junk. 40 caps.@@Here is some junk. 40 caps.@@Some junk for you. 40 caps.}
+{6020}{}{I've got some electronic parts. 50 caps.@@Here are some electronic parts. 50 caps.@@I've found some electronic parts. 50 caps.@@Take the electronic parts. 50 caps.}
 {6030}{}{I've found this gold locket. 100 caps.}
 {6040}{}{Do you have any use for a waterchip? 200 caps.@@I found this waterchip. 200 caps.}
 {6050}{}{You can have this tape recorder. 30 caps.@@Take this tape recorder. 30 caps.@@This tape recorder here. 30 caps.}
 {6060}{}{I've found a small piece of machinery. 50 caps.}
-{6070}{}{You can have the holodisk. 20 caps.@@Take the holodisk. 20 caps.@@Here is a holodisk. 20 caps.}
-{6080}{}{I've got some car fuel cell controller for you. 100 caps.}
+{6070}{}{You can have the holodisk. 100 caps.@@Take the holodisk. 100 caps.@@Here is a holodisk. 100 caps.}
+{6080}{}{I've got some car fuel cell controller for you. 500 caps.}
 {6090}{}{You can take the car fuel cell regulator. 100 caps.}
 {6100}{}{I have this robot parts. 50 caps.@@The robot parts, that's what you can have. 50 caps.@@I am selling this robot parts. 50 caps.}
 {6110}{}{I am selling this robot motivator. 250 caps.}

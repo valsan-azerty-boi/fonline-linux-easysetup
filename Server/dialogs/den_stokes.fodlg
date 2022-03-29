@@ -94,7 +94,7 @@ lang=engl
 35 35000 None 0 #
 36 35010 @
 36 36000 None 0 #
-37 36010 R _script dialog@r_AddMoney 1 500 R _item p PID_7_62MM_AMMO + 50 R _item p PID_BEER + 2 R _item p PID_JET + 2 R _var p acquaintance = 1 R _var p q_raiders_induction = 5 @
+37 36010 R _script dialog@r_AddMoney 1 500 R _item p PID_7_62MM_AMMO + 100 R_item p PID_FN_FAL_HPFA + 1 R _item p PID_BEER + 2 R _item p PID_JET + 2 R _var p acquaintance = 1 R _var p q_raiders_induction = 5 @
 37 37000 None 0 #
 0 37010 @
 38 38000 None 0 &

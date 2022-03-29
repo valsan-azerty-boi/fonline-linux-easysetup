@@ -146,8 +146,10 @@
 #define CLIENT_SCREEN_ONLINE_STATS         (48) // client_online_stats.fos
 #define CLIENT_SCREEN_REVIEW               (49) // client_dialog.fos
 #define CLIENT_SCREEN_PICTURE              (50) // client_screen_picture.fos
+#define CLIENT_SCREEN_TAG			       (51)
 
 #define CLIENT_SCREEN_FIXBOY               (100)
+
 
 // Cursors
 #define CURSOR_DEFAULT                     (0)
@@ -376,6 +378,14 @@
 #define EFFECT_FONT                        (3) // Font_Default.fx
 // Subtype for fonts used font type
 #define EFFECT_PRIMITIVE                   (4) // Primitive_Default.fx
+
+// Pickup screen filters
+# define PICKUP_FILTER_NONE      (-1)
+# define PICKUP_FILTER_ARMOR     (0)
+# define PICKUP_FILTER_WEAPON    (1)
+# define PICKUP_FILTER_AMMO      (2)
+# define PICKUP_FILTER_DRUG      (3)
+# define PICKUP_FILTER_MISC      (4)
 
 ////////
 // NOTE: chosen actions defines moved to chosen_actions_h.fos

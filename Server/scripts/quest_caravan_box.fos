@@ -54,10 +54,10 @@ void r_StartQuest(Critter& player, Critter@ npc)
 
 void r_CompleteQuest(Critter& player, Critter@ npc)
 {
-    player.AddItem(PID_BOTTLE_CAPS, 100);
-    player.StatBase[ST_EXPERIENCE] += 50;
+    player.AddItem(PID_BOTTLE_CAPS, 250);
+    player.StatBase[ST_EXPERIENCE] += 300;
     LogQuestExperience(player, 50, "caravan_box");
-    AddReputation(player, ReputationIndex(player.GetMap().GetLocation().GetProtoId()), Random(0, 10), REP_CARAVAN_BOX_CAP);
+    AddReputation(player, ReputationIndex(player.GetMap().GetLocation().GetProtoId()), Random(5, 10), REP_CARAVAN_BOX_CAP);
     SetUvar(UVAR_q_box_unload_status, npc.Id, player.Id, BOX_STATUS_NONE);
 }
 

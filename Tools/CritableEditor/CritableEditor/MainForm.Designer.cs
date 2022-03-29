@@ -72,6 +72,8 @@
             this.messagenum = new System.Windows.Forms.NumericUpDown();
             this.failurenum = new System.Windows.Forms.NumericUpDown();
             this.html = new System.Windows.Forms.LinkLabel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.multiplier)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testmod)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.messagenum)).BeginInit();
@@ -104,7 +106,7 @@
             "BT_PLAYER"});
             this.critable.Location = new System.Drawing.Point(12, 12);
             this.critable.Name = "critable";
-            this.critable.Size = new System.Drawing.Size(121, 290);
+            this.critable.Size = new System.Drawing.Size(121, 316);
             this.critable.TabIndex = 0;
             this.critable.SelectedIndexChanged += new System.EventHandler(this.listBox_SelectedIndexChanged);
             // 
@@ -150,7 +152,7 @@
             // knockout1
             // 
             this.knockout1.AutoSize = true;
-            this.knockout1.Location = new System.Drawing.Point(213, 54);
+            this.knockout1.Location = new System.Drawing.Point(268, 76);
             this.knockout1.Name = "knockout1";
             this.knockout1.Size = new System.Drawing.Size(72, 17);
             this.knockout1.TabIndex = 4;
@@ -162,7 +164,7 @@
             // knockdown1
             // 
             this.knockdown1.AutoSize = true;
-            this.knockdown1.Location = new System.Drawing.Point(213, 77);
+            this.knockdown1.Location = new System.Drawing.Point(268, 99);
             this.knockdown1.Name = "knockdown1";
             this.knockdown1.Size = new System.Drawing.Size(83, 17);
             this.knockdown1.TabIndex = 5;
@@ -174,7 +176,7 @@
             // crarm1
             // 
             this.crarm1.AutoSize = true;
-            this.crarm1.Location = new System.Drawing.Point(213, 154);
+            this.crarm1.Location = new System.Drawing.Point(268, 176);
             this.crarm1.Name = "crarm1";
             this.crarm1.Size = new System.Drawing.Size(93, 17);
             this.crarm1.TabIndex = 6;
@@ -186,7 +188,7 @@
             // clarm1
             // 
             this.clarm1.AutoSize = true;
-            this.clarm1.Location = new System.Drawing.Point(213, 131);
+            this.clarm1.Location = new System.Drawing.Point(268, 153);
             this.clarm1.Name = "clarm1";
             this.clarm1.Size = new System.Drawing.Size(91, 17);
             this.clarm1.TabIndex = 7;
@@ -198,7 +200,7 @@
             // crleg1
             // 
             this.crleg1.AutoSize = true;
-            this.crleg1.Location = new System.Drawing.Point(213, 176);
+            this.crleg1.Location = new System.Drawing.Point(268, 198);
             this.crleg1.Name = "crleg1";
             this.crleg1.Size = new System.Drawing.Size(93, 17);
             this.crleg1.TabIndex = 8;
@@ -210,7 +212,7 @@
             // clleg1
             // 
             this.clleg1.AutoSize = true;
-            this.clleg1.Location = new System.Drawing.Point(213, 199);
+            this.clleg1.Location = new System.Drawing.Point(268, 221);
             this.clleg1.Name = "clleg1";
             this.clleg1.Size = new System.Drawing.Size(91, 17);
             this.clleg1.TabIndex = 9;
@@ -222,7 +224,7 @@
             // blinded1
             // 
             this.blinded1.AutoSize = true;
-            this.blinded1.Location = new System.Drawing.Point(322, 54);
+            this.blinded1.Location = new System.Drawing.Point(377, 76);
             this.blinded1.Name = "blinded1";
             this.blinded1.Size = new System.Drawing.Size(61, 17);
             this.blinded1.TabIndex = 10;
@@ -235,7 +237,7 @@
             // 
             this.death1.AutoSize = true;
             this.death1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.death1.Location = new System.Drawing.Point(322, 98);
+            this.death1.Location = new System.Drawing.Point(377, 120);
             this.death1.Name = "death1";
             this.death1.Size = new System.Drawing.Size(55, 17);
             this.death1.TabIndex = 11;
@@ -248,7 +250,7 @@
             // 
             this.fire1.AutoSize = true;
             this.fire1.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.fire1.Location = new System.Drawing.Point(322, 131);
+            this.fire1.Location = new System.Drawing.Point(377, 153);
             this.fire1.Name = "fire1";
             this.fire1.Size = new System.Drawing.Size(109, 17);
             this.fire1.TabIndex = 12;
@@ -260,7 +262,7 @@
             // bypass1
             // 
             this.bypass1.AutoSize = true;
-            this.bypass1.Location = new System.Drawing.Point(322, 77);
+            this.bypass1.Location = new System.Drawing.Point(377, 99);
             this.bypass1.Name = "bypass1";
             this.bypass1.Size = new System.Drawing.Size(89, 17);
             this.bypass1.TabIndex = 13;
@@ -272,7 +274,7 @@
             // drop1
             // 
             this.drop1.AutoSize = true;
-            this.drop1.Location = new System.Drawing.Point(322, 154);
+            this.drop1.Location = new System.Drawing.Point(377, 176);
             this.drop1.Name = "drop1";
             this.drop1.Size = new System.Drawing.Size(108, 17);
             this.drop1.TabIndex = 14;
@@ -284,7 +286,7 @@
             // lost1
             // 
             this.lost1.AutoSize = true;
-            this.lost1.Location = new System.Drawing.Point(213, 98);
+            this.lost1.Location = new System.Drawing.Point(268, 120);
             this.lost1.Name = "lost1";
             this.lost1.Size = new System.Drawing.Size(90, 17);
             this.lost1.TabIndex = 15;
@@ -296,7 +298,7 @@
             // random1
             // 
             this.random1.AutoSize = true;
-            this.random1.Location = new System.Drawing.Point(322, 177);
+            this.random1.Location = new System.Drawing.Point(377, 199);
             this.random1.Name = "random1";
             this.random1.Size = new System.Drawing.Size(66, 17);
             this.random1.TabIndex = 16;
@@ -308,7 +310,7 @@
             // random2
             // 
             this.random2.AutoSize = true;
-            this.random2.Location = new System.Drawing.Point(576, 177);
+            this.random2.Location = new System.Drawing.Point(742, 200);
             this.random2.Name = "random2";
             this.random2.Size = new System.Drawing.Size(66, 17);
             this.random2.TabIndex = 29;
@@ -320,7 +322,7 @@
             // lost2
             // 
             this.lost2.AutoSize = true;
-            this.lost2.Location = new System.Drawing.Point(467, 98);
+            this.lost2.Location = new System.Drawing.Point(633, 121);
             this.lost2.Name = "lost2";
             this.lost2.Size = new System.Drawing.Size(90, 17);
             this.lost2.TabIndex = 28;
@@ -332,7 +334,7 @@
             // drop2
             // 
             this.drop2.AutoSize = true;
-            this.drop2.Location = new System.Drawing.Point(576, 154);
+            this.drop2.Location = new System.Drawing.Point(742, 177);
             this.drop2.Name = "drop2";
             this.drop2.Size = new System.Drawing.Size(108, 17);
             this.drop2.TabIndex = 27;
@@ -344,7 +346,7 @@
             // bypass2
             // 
             this.bypass2.AutoSize = true;
-            this.bypass2.Location = new System.Drawing.Point(576, 76);
+            this.bypass2.Location = new System.Drawing.Point(742, 99);
             this.bypass2.Name = "bypass2";
             this.bypass2.Size = new System.Drawing.Size(89, 17);
             this.bypass2.TabIndex = 26;
@@ -357,7 +359,7 @@
             // 
             this.fire2.AutoSize = true;
             this.fire2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.fire2.Location = new System.Drawing.Point(576, 131);
+            this.fire2.Location = new System.Drawing.Point(742, 154);
             this.fire2.Name = "fire2";
             this.fire2.Size = new System.Drawing.Size(109, 17);
             this.fire2.TabIndex = 25;
@@ -369,7 +371,7 @@
             // death2
             // 
             this.death2.AutoSize = true;
-            this.death2.Location = new System.Drawing.Point(576, 99);
+            this.death2.Location = new System.Drawing.Point(742, 122);
             this.death2.Name = "death2";
             this.death2.Size = new System.Drawing.Size(55, 17);
             this.death2.TabIndex = 24;
@@ -381,7 +383,7 @@
             // blinded2
             // 
             this.blinded2.AutoSize = true;
-            this.blinded2.Location = new System.Drawing.Point(576, 54);
+            this.blinded2.Location = new System.Drawing.Point(742, 77);
             this.blinded2.Name = "blinded2";
             this.blinded2.Size = new System.Drawing.Size(61, 17);
             this.blinded2.TabIndex = 23;
@@ -393,7 +395,7 @@
             // clleg2
             // 
             this.clleg2.AutoSize = true;
-            this.clleg2.Location = new System.Drawing.Point(467, 199);
+            this.clleg2.Location = new System.Drawing.Point(633, 222);
             this.clleg2.Name = "clleg2";
             this.clleg2.Size = new System.Drawing.Size(91, 17);
             this.clleg2.TabIndex = 22;
@@ -405,7 +407,7 @@
             // crleg2
             // 
             this.crleg2.AutoSize = true;
-            this.crleg2.Location = new System.Drawing.Point(467, 176);
+            this.crleg2.Location = new System.Drawing.Point(633, 199);
             this.crleg2.Name = "crleg2";
             this.crleg2.Size = new System.Drawing.Size(93, 17);
             this.crleg2.TabIndex = 21;
@@ -417,7 +419,7 @@
             // clarm2
             // 
             this.clarm2.AutoSize = true;
-            this.clarm2.Location = new System.Drawing.Point(467, 131);
+            this.clarm2.Location = new System.Drawing.Point(633, 154);
             this.clarm2.Name = "clarm2";
             this.clarm2.Size = new System.Drawing.Size(91, 17);
             this.clarm2.TabIndex = 20;
@@ -429,7 +431,7 @@
             // crarm2
             // 
             this.crarm2.AutoSize = true;
-            this.crarm2.Location = new System.Drawing.Point(467, 154);
+            this.crarm2.Location = new System.Drawing.Point(633, 177);
             this.crarm2.Name = "crarm2";
             this.crarm2.Size = new System.Drawing.Size(93, 17);
             this.crarm2.TabIndex = 19;
@@ -441,7 +443,7 @@
             // knockdown2
             // 
             this.knockdown2.AutoSize = true;
-            this.knockdown2.Location = new System.Drawing.Point(467, 77);
+            this.knockdown2.Location = new System.Drawing.Point(633, 100);
             this.knockdown2.Name = "knockdown2";
             this.knockdown2.Size = new System.Drawing.Size(83, 17);
             this.knockdown2.TabIndex = 18;
@@ -453,7 +455,7 @@
             // knockout2
             // 
             this.knockout2.AutoSize = true;
-            this.knockout2.Location = new System.Drawing.Point(467, 54);
+            this.knockout2.Location = new System.Drawing.Point(633, 77);
             this.knockout2.Name = "knockout2";
             this.knockout2.Size = new System.Drawing.Size(72, 17);
             this.knockout2.TabIndex = 17;
@@ -466,7 +468,7 @@
             // 
             this.teststat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.teststat.FormattingEnabled = true;
-            this.teststat.Location = new System.Drawing.Point(467, 28);
+            this.teststat.Location = new System.Drawing.Point(633, 51);
             this.teststat.Name = "teststat";
             this.teststat.Size = new System.Drawing.Size(149, 21);
             this.teststat.TabIndex = 30;
@@ -475,7 +477,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(464, 12);
+            this.label1.Location = new System.Drawing.Point(630, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 31;
@@ -483,7 +485,7 @@
             // 
             // multiplier
             // 
-            this.multiplier.Location = new System.Drawing.Point(213, 28);
+            this.multiplier.Location = new System.Drawing.Point(268, 50);
             this.multiplier.Name = "multiplier";
             this.multiplier.Size = new System.Drawing.Size(47, 20);
             this.multiplier.TabIndex = 32;
@@ -492,7 +494,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(210, 12);
+            this.label2.Location = new System.Drawing.Point(265, 34);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 13);
             this.label2.TabIndex = 33;
@@ -500,7 +502,7 @@
             // 
             // testmod
             // 
-            this.testmod.Location = new System.Drawing.Point(643, 28);
+            this.testmod.Location = new System.Drawing.Point(809, 51);
             this.testmod.Maximum = new decimal(new int[] {
             9,
             0,
@@ -519,7 +521,7 @@
             // Modifierlabel
             // 
             this.Modifierlabel.AutoSize = true;
-            this.Modifierlabel.Location = new System.Drawing.Point(640, 12);
+            this.Modifierlabel.Location = new System.Drawing.Point(806, 35);
             this.Modifierlabel.Name = "Modifierlabel";
             this.Modifierlabel.Size = new System.Drawing.Size(47, 13);
             this.Modifierlabel.TabIndex = 35;
@@ -528,7 +530,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(210, 237);
+            this.label3.Location = new System.Drawing.Point(265, 259);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 13);
             this.label3.TabIndex = 37;
@@ -537,7 +539,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(464, 237);
+            this.label4.Location = new System.Drawing.Point(630, 260);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(124, 13);
             this.label4.TabIndex = 38;
@@ -545,18 +547,18 @@
             // 
             // failuretext
             // 
-            this.failuretext.Location = new System.Drawing.Point(467, 279);
+            this.failuretext.Location = new System.Drawing.Point(633, 302);
             this.failuretext.Name = "failuretext";
             this.failuretext.ReadOnly = true;
-            this.failuretext.Size = new System.Drawing.Size(220, 20);
+            this.failuretext.Size = new System.Drawing.Size(340, 20);
             this.failuretext.TabIndex = 41;
             // 
             // messagetext
             // 
-            this.messagetext.Location = new System.Drawing.Point(213, 279);
+            this.messagetext.Location = new System.Drawing.Point(268, 301);
             this.messagetext.Name = "messagetext";
             this.messagetext.ReadOnly = true;
-            this.messagetext.Size = new System.Drawing.Size(220, 20);
+            this.messagetext.Size = new System.Drawing.Size(347, 20);
             this.messagetext.TabIndex = 42;
             // 
             // critnum
@@ -577,7 +579,7 @@
             // 
             // messagenum
             // 
-            this.messagenum.Location = new System.Drawing.Point(213, 253);
+            this.messagenum.Location = new System.Drawing.Point(268, 275);
             this.messagenum.Maximum = new decimal(new int[] {
             1000000000,
             0,
@@ -590,7 +592,7 @@
             // 
             // failurenum
             // 
-            this.failurenum.Location = new System.Drawing.Point(467, 253);
+            this.failurenum.Location = new System.Drawing.Point(633, 276);
             this.failurenum.Maximum = new decimal(new int[] {
             1000000000,
             0,
@@ -612,11 +614,40 @@
             this.html.Text = "Generate html";
             this.html.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.html_LinkClicked);
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.linkLabel1.LinkColor = System.Drawing.Color.Blue;
+            this.linkLabel1.Location = new System.Drawing.Point(133, 307);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(125, 13);
+            this.linkLabel1.TabIndex = 47;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Generate html - MEN";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.Info;
+            this.textBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.textBox1.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.textBox1.Location = new System.Drawing.Point(633, 11);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(302, 21);
+            this.textBox1.TabIndex = 48;
+            this.textBox1.Text = "if (Random(1, 10) > target.stat + statmod) then Failure_effect";
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(698, 311);
+            this.ClientSize = new System.Drawing.Size(993, 331);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.html);
             this.Controls.Add(this.failurenum);
             this.Controls.Add(this.messagenum);
@@ -719,6 +750,8 @@
         private System.Windows.Forms.NumericUpDown messagenum;
         private System.Windows.Forms.NumericUpDown failurenum;
         private System.Windows.Forms.LinkLabel html;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

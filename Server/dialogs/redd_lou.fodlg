@@ -25,7 +25,9 @@ lang=engl
 65506 3030 #
 20 3040 D _script rooms@d_IsFreeRoom 1 0 D _script rooms@d_NotRentingHere 1 0 #
 21 3050 D _script rooms@d_NoFreeRooms 1 0 D _script rooms@d_NotRentingHere 1 0 #
-0 3060 @
+0 3060 #
+31 3070 #
+32 3080 @
 4 4000 None 0 #
 12 4010 #
 18 4020 D _item p PID_BOTTLE_CAPS > 39 R _script dialog@r_RemoveMoney 1 40 #
@@ -90,7 +92,13 @@ lang=engl
 0 21010 R _script rooms@r_ShowRoom 1 1 @
 23 22000 None 0 #
 0 22010 @
-25 23000 None 0 &
+25 23000 None 0 @
+31 24000 dialog@dlg_SayBuyNuka 0 #
+3 24010 D _item p PID_BOTTLE_CAPS > 99 R _item p PID_NUKA_COLA + 1 R _script dialog@r_RemoveMoney 1 100 #
+0 24020 @
+32 25000 dialog@dlg_SayBuyCigarettes 0 #
+3 25010 D _item p PID_BOTTLE_CAPS > 99 R _item p PID_CIGARETTES + 1 R _script dialog@r_RemoveMoney 1 100 #
+0 25020 &
 
 [engl]
 {100}{}{Lou}
@@ -117,6 +125,8 @@ lang=engl
 {3040}{}{I need a good night's sleep.@@Can I get a room?@@I want to rent a room.}
 {3050}{}{I need a good night's sleep.@@Can I get a room?@@I want to rent a room.}
 {3060}{}{Nothing for now, Lou. Goodbye.}
+{3070}{}{I want a bottle of Nuka-Cola.}
+{3080}{}{I want a pack of cigarettes.}
 {4000}{}{You wanna get some sleep, huh? Well, that's going to cost you $40. Includes fresh, mostly clean sheets too. You still interested?}
 {4010}{}{Hmm, I guess I'm not that tired. Let me ask you about something else.}
 {4020}{}{I'll take it, Lou.}
@@ -169,12 +179,12 @@ lang=engl
 {16020}{}{That's all I need to know for now. Thanks. Goodbye.}
 {17000}{}{Looking for someone to help you warm up that big lonely bed, huh? Let me see who I've got available. Hmm, why don't you try Fannie Mae? She oughta be around here somewheres. You can make the arrangements with her yourself.}
 {17010}{}{Sounds like a good idea. I'll go do that. Goodbye.}
-{17020}{}{But I didn't…okay. Goodbye.}
+{17020}{}{But I didn'tï¿½okay. Goodbye.}
 {18000}{}{Just head out back, there'll be a place free.}
 {19000}{}{We still have a room free and this will cost you @lex price@ caps for @lex time@ days. You want it?}
-{19010}{}{Sounds like a fair price to me. I’ll take it.@@Yes, I'll take the room.}
+{19010}{}{Sounds like a fair price to me. Iï¿½ll take it.@@Yes, I'll take the room.}
 {19020}{}{Uh, this is a little rich for me. You couldn't let me sleep there on the house, could ya?}
-{19030}{}{I don’t think I’ll take you up on that offer just now. Maybe later.}
+{19030}{}{I donï¿½t think Iï¿½ll take you up on that offer just now. Maybe later.}
 {20000}{}{Sorry, but we don't have any rooms free. Maybe you should try later again.}
 {20010}{}{Oh well...}
 {20020}{}{[Leave] Damn!}
@@ -183,4 +193,13 @@ lang=engl
 {22000}{}{You need some money before I can rent you a room. Nothing else works.@@You need some money before I can rent you a room. It only works this way.}
 {22010}{}{Alright, I'm leaving.}
 {23000}{}{You're scaring off all my business!@@Go on, git!@@Someone git this freak outta here!@@We don't let no freakshows drink here.}
+{24000}{}{Nuka-Cola, this makes 100 caps. [You can use SAY to enter number of items you want to buy]
+}
+{24010}{}{Sure.}
+{24020}{}{No, thanks.}
+{25000}{}{Sure, that'll be $100. [You can use SAY to enter number of items you want to buy]
+
+}
+{25010}{}{Sure.}
+{25020}{}{No, thanks.}
 

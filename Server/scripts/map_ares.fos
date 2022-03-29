@@ -101,12 +101,22 @@ void _MobIdle(Critter& mob)
     uint dist = GetDistance(mob);
     for(uint i = 0; i < num; i++)
     {
-        if(GetCrittersDistantion(mob, crits[i]) > dist)
+        uint curDist = GetCrittersDistantion(mob, crits[i]);
+        if(curDist > dist)
             continue;
         else
         {
             // attack
-            mob.AddEnemyInStack(crits[i].Id);
+            if(crits[i].Mode[MODE_HIDE] != 0 || curDist < 5)
+            {
+                //mob.Say(SAY_NORM, "Attack now!");
+                AttackCritter(mob, crits[i]);
+            }
+            else
+            {
+                //mob.Say(SAY_NORM, "Attack soon!");
+                mob.AddEnemyInStack(crits[i].Id);
+            }
             return;
         }
     }
@@ -137,12 +147,22 @@ void _MobIdle2(Critter& mob)
     uint dist = GetDistance(mob);
     for(uint i = 0; i < num; i++)
     {
-        if(GetCrittersDistantion(mob, crits[i]) > dist)
+        uint curDist = GetCrittersDistantion(mob, crits[i]);
+        if(curDist > dist)
             continue;
         else
         {
             // attack
-            mob.AddEnemyInStack(crits[i].Id);
+            if(crits[i].Mode[MODE_HIDE] != 0 || curDist < 5)
+            {
+                //mob.Say(SAY_NORM, "Attack now!");
+                AttackCritter(mob, crits[i]);
+            }
+            else
+            {
+                //mob.Say(SAY_NORM, "Attack soon!");
+                mob.AddEnemyInStack(crits[i].Id);
+            }
             return;
         }
     }

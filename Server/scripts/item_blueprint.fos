@@ -11,7 +11,6 @@
 #include "_macros.fos"
 #include "debug_h.fos"
 
-import void   ExplodeEx(Map& map, uint16 hexX, uint16 hexY, uint16 effectPid, uint effectRadius, uint damage, uint damageType, uint damageRadius, uint ownerId) from "explode";
 import void   ConsumeBlueprint(Critter& player, Item& item) from "blueprints";
 import bool   ConsumedBlueprint(Critter& player, uint pid) from "blueprints";
 import uint16 GetRandomTypeBlueprintPid(int8 type, uint8 level) from "blueprints";

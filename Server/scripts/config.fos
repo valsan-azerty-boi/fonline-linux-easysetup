@@ -76,7 +76,7 @@ void InitializeGame()                  // Export
     __DeadHitPoints = -40;      // -40 only with perk, -20 otherwise
     __BagRefreshTime = 20000;
     __WisperDist = 2;
-    __ShoutDist = 100;
+    __ShoutDist = 600;
 
     # ifdef __CLIENT
     __RunModMul = 0;
@@ -106,8 +106,8 @@ void InitializeGame()                  // Export
     SETFLAG(__LookChecks, LOOK_CHECK_ITEM_SCRIPT);    // Allow bool check_look(...) in main.fos, all other defines ignored
 
     __CustomItemCost = true;
-    __RegistrationTimeout = 5 * 60;                   // In real seconds, 0 to disable
-    __AccountPlayTime = 10 * 60;                      // In real seconds, 0 to disable
+    __RegistrationTimeout = 0;                   // In real seconds, 0 to disable
+    __AccountPlayTime = 0;                      // In real seconds, 0 to disable
 
     # ifdef __DEBUG__
     __RegistrationTimeout = 0;
@@ -115,13 +115,13 @@ void InitializeGame()                  // Export
     # endif
 
     __TalkDistance = 3;
-    __NpcMaxTalkers = 1;
+    __NpcMaxTalkers = 20;
     __MinNameLength = 4;   // Minimum 1
-    __MaxNameLength = 12;  // Maximum 30
-    __DlgTalkMinTime = 45000;
-    __DlgBarterMinTime = 30000;
+    __MaxNameLength = 18;  // Maximum 30
+    __DlgTalkMinTime = 1000000;
+    __DlgBarterMinTime = 1000000;
     __GlobalMapMoveTime         = 250;
-    __EncounterTime             = 5000;
+    __EncounterTime             = 4000;
     __MinimumOfflineTime        = 180000;     // 3 minutes
 
     // Range of values for client engine
@@ -129,11 +129,11 @@ void InitializeGame()                  // Export
     __SkillBegin = 200;
     __SkillEnd = 217;
     __TimeoutBegin = 230;
-    __TimeoutEnd = 249;
+    __TimeoutEnd = 254;
     __KillBegin = 260;
-    __KillEnd = 282;
+    __KillEnd = 283;
     __PerkBegin = 300;
-    __PerkEnd = 462;
+    __PerkEnd = 469;
     __AddictionBegin = 470;
     __AddictionEnd = 478;
     __KarmaBegin = 480;
@@ -225,7 +225,6 @@ void InitializeGame()                  // Export
         SetParameterGetBehaviour(i, dllName + "getParam_DamageThreshold");                                                    // changed roundings
     for(uint i = TIMEOUT_BEGIN; i <= TIMEOUT_END; i++)
         SetParameterGetBehaviour(i, dllName + "getParam_Timeout");
-    SetParameterGetBehaviour(TO_SLEEPY, dllName + "getParam_SleepinessTimeout");
     for(uint i = REPUTATION_BEGIN; i <= REPUTATION_END; i++)
         SetParameterGetBehaviour(i, dllName + "getParam_Reputation");
     // for(uint i=REPUTATION_BEGIN;i<=REPUTATION_END;i++) SetParameterChangeBehaviour(i,dllName+"changedParam_Reputation");
@@ -247,6 +246,7 @@ void InitializeGame()                  // Export
     SetParameterChangeBehaviour(ST_LEVEL, "parameters@changedParam_Level");
     SetParameterChangeBehaviour(ST_EXPERIENCE, "parameters@changedParam_Experience");
     SetParameterChangeBehaviour(ST_UNSPENT_PERKS, "parameters@changedParam_UnspentPerks");
+	SetParameterChangeBehaviour(ST_UNSPENT_TAG, "parameters@changedParam_UnspentTag");
     SetParameterChangeBehaviour(MODE_HIDE, "parameters@changedParam_Hide");
     # endif    // __CLIENT
 

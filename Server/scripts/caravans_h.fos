@@ -13,6 +13,7 @@
 #include "debug_h.fos"
 #include "economy_h.fos"
 #include "npc_common_h.fos"
+#include "backend_h.fos"
 
 #define CARAVAN_ENTIRE    (125)       // Entire marker id where the caravan can spawn in towns
 
@@ -803,8 +804,13 @@ class CCaravan : ICaravan
             crits[i].Say(SAY_NETMSG, "You have departed with caravan.");
         }
 
-        uint neededGuards = 9 - playerCount;
-        // Log("plaz "+playerCount);
+        //uint neededGuards = 4 - playerCount;
+		//uint neededGuards = MAX(0, 4 - playerCount);
+		uint neededGuards;
+		if(playerCount>5) neededGuards=0;
+		else neededGuards=6-playerCount;
+		//Log("Player count: " + playerCount);
+		//Log("Needed guards: " + neededGuards);
         critters.resize(2 + neededGuards);
         if(valid(map))
         {
@@ -837,9 +843,12 @@ class CCaravan : ICaravan
             {
                 if(crits[i].IsPlayer())
                 {
-                    uint reward = GetActPay();
+                    uint reward = GetActPay()*2;
                     BanksTransferToCritter(crits[i], reward, TRANSACTION_DEFAULT, false);
-                    crits[i].Say(SAY_NETMSG, "You have recieved " + reward + " caps as your pay.");
+                    crits[i].Say(SAY_NETMSG, "You have received " + reward + " caps as your pay.");
+					int expAmount = crits[i].Stat[ST_LEVEL]*reward/10;
+					crits[i].StatBase[ST_EXPERIENCE] += expAmount;
+                    crits[i].Say(SAY_NETMSG, "|0xFFFFFF You have gained " + expAmount + " experience points.");
                 }
             }
         }

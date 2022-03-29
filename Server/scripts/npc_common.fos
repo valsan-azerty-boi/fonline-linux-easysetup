@@ -137,6 +137,52 @@ void PutAwayItems(Critter& critter)
     }
 }
 
+void DropAllItems(Critter& critter)
+{    
+    array<Item@> items;
+    int          count = critter.GetItems(SLOT_INV, items);
+    if(count > 0)
+    {
+        if(valid(critter.GetMap())) 
+        {
+            for(uint i = 0, j = items.length(); i < j; i++)
+            {
+                if(items[i].GetProtoId()==PID_ADVANCED_BENCH || items[i].GetProtoId()==PID_WORKBENCH_RAIDERS || items[i].GetProtoId()==PID_AMMO_FACILITY || items[i].GetProtoId()==PID_WORKBENCH || items[i].GetProtoId()==PID_MED_MACHINE ||  items[i].GetProtoId()==PID_WORKBENCH_PRIMITIVE || items[i].GetType()==ITEM_TYPE_CONTAINER || items[i].GetProtoId()==PID_ACTIVE_DYNAMITE || items[i].GetProtoId()==PID_ACTIVE_PLASTIC_EXPLOSIVE || items[i].GetProtoId()==PID_ACTIVE_MINE)
+                    @items[i] = null;
+            }
+            if(critter.Stat[ST_BODY_TYPE] == BT_RAT)
+                critter.Say(SAY_NORM_ON_HEAD, "Squeak! Squeak!");
+            else if(critter.Stat[ST_BODY_TYPE] == BT_DOG)
+                critter.Say(SAY_NORM_ON_HEAD, "Wuff! Wuff!");
+            else if(critter.Stat[ST_BODY_TYPE] == BT_BRAHMIN)
+                critter.Say(SAY_NORM_ON_HEAD, "Moo-moo!");
+            else
+                critter.Say(SAY_NORM_ON_HEAD, "Dropping all items.");
+            _CritAnimatePickup(critter);
+            critter.Wait(1000);
+            if(valid(critter.GetMap())) 
+                MoveItems(items, critter.GetMap(), critter.HexX, critter.HexY);
+            else  
+                DeleteItems(items);
+        }
+        else 
+        {
+            return;
+        }
+    }
+    else
+    {
+        if(critter.Stat[ST_BODY_TYPE] == BT_RAT)
+            critter.Say(SAY_NORM_ON_HEAD, "Squeak!");
+        else if(critter.Stat[ST_BODY_TYPE] == BT_DOG)
+            critter.Say(SAY_NORM_ON_HEAD, "Wuff!");
+        else if(critter.Stat[ST_BODY_TYPE] == BT_BRAHMIN)
+            critter.Say(SAY_NORM_ON_HEAD, "Moo!");
+        else
+            critter.Say(SAY_NORM_ON_HEAD, "Nothing to drop.");
+    }
+}
+
 /**
  * Get illegal flag status of critter in a specific location.
  */

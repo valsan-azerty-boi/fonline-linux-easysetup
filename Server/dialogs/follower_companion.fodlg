@@ -15,15 +15,17 @@ lang=engl
 7 2030 R _script npc_common@r_MoveRandom 1 0 #
 3 2040 #
 4 2050 #
-9 2060 D _script town@d_CanBecomeMilitia 0  R _script town_militia@r_BecomeMilitia 0  #
-18 2070 #
-17 2080 #
-20 2090 #
-2 2100 R _script follower@r_TellWeaponSkill 0  #
-7 2110 R _script follower@r_ArmBestWeapon 0  #
-7 2120 R _script follower@r_PutDownWeapon 0  #
-65506 2130 #
-0 2140 @
+18 2060 #
+17 2070 #
+20 2080 #
+2 2090 R _script follower@r_TellWeaponSkill 0  #
+7 2100 R _script follower@r_ArmBestWeapon 0  #
+7 2110 R _script follower@r_PutDownWeapon 0  #
+65506 2120 #
+23 2130 #
+110 2140 #
+0 2150 R _script follower@r_DropAllItems 0  #
+0 2160 @
 3 3000 None 0 #
 2 3010 R _script follower@r_Distance 1 0 #
 2 3020 R _script follower@r_Distance 1 1 #
@@ -63,19 +65,22 @@ lang=engl
 22 16010 #
 2 16020 D _item n PID_PURPLE_ROBE > 0 R _script follower@r_SetArmor 1 113 #
 2 16030 D _item n PID_SAND_ROBE > 0 R _script follower@r_SetArmor 1 750 #
-2 16040 D _item n PID_LEATHER_JACKET > 0 R _script follower@r_SetArmor 1 74 #
-2 16050 D _item n PID_LEATHER_ARMOR > 0 R _script follower@r_SetArmor 1 1 #
-2 16060 D _item n PID_LEATHER_ARMOR_MK_II > 0 R _script follower@r_SetArmor 1 379 #
-2 16070 D _item n PID_CURED_LEATHER_ARMOR > 0 R _script follower@r_SetArmor 1 265 #
-2 16080 D _item n PID_METAL_ARMOR > 0 R _script follower@r_SetArmor 1 2 #
-2 16090 D _item n PID_METAL_ARMOR_MK_II > 0 R _script follower@r_SetArmor 1 380 #
-2 16100 D _item n PID_TESLA_ARMOR > 0 R _script follower@r_SetArmor 1 240 #
-2 16110 D _item n PID_COMBAT_ARMOR > 0 R _script follower@r_SetArmor 1 17 #
-2 16120 D _item n PID_COMBAT_ARMOR_MK_II > 0 R _script follower@r_SetArmor 1 381 #
-2 16130 D _item n PID_NCR_ARMOR > 0 R _script follower@r_SetArmor 1 9654 #
-2 16140 D _item n PID_BROTHERHOOD_COMBAT_ARMOR > 0 R _script follower@r_SetArmor 1 239 #
-2 16150 R _script follower@r_RemoveArmor 0  #
-2 16160 @
+2 16040 D _item n PID_KEEPBRIGE_ROBE > 0 R _script follower@r_SetArmor 1 524 #
+2 16050 D _item n PID_LEATHER_JACKET > 0 R _script follower@r_SetArmor 1 74 #
+2 16060 D _item n PID_LEATHER_ARMOR > 0 R _script follower@r_SetArmor 1 1 #
+2 16070 D _item n PID_LEATHER_ARMOR_MK_II > 0 R _script follower@r_SetArmor 1 379 #
+2 16080 D _item n PID_CURED_LEATHER_ARMOR > 0 R _script follower@r_SetArmor 1 265 #
+2 16090 D _item n PID_METAL_ARMOR > 0 R _script follower@r_SetArmor 1 2 #
+2 16100 D _item n PID_METAL_ARMOR_MK_II > 0 R _script follower@r_SetArmor 1 380 #
+2 16110 D _item n PID_TESLA_ARMOR > 0 R _script follower@r_SetArmor 1 240 #
+2 16120 D _item n PID_COMBAT_ARMOR > 0 R _script follower@r_SetArmor 1 17 #
+2 16130 D _item n PID_COMBAT_ARMOR_MK_II > 0 R _script follower@r_SetArmor 1 381 #
+2 16140 D _item n PID_NCR_ARMOR > 0 R _script follower@r_SetArmor 1 9654 #
+2 16150 D _item n PID_BROTHERHOOD_COMBAT_ARMOR > 0 R _script follower@r_SetArmor 1 239 #
+2 16160 D _item n PID_ENCLAVE_COMBAT_ARMOR > 0 R _script follower@r_SetArmor 1 752 #
+2 16170 D _item n PID_DESERT_COMBAT_ARMOR > 0 R _script follower@r_SetArmor 1 778 #
+2 16180 R _script follower@r_RemoveArmor 0  #
+2 16190 @
 19 17000 follower@dlg_ChooseBase 0 #
 2 17010 @
 20 18000 None 0 #
@@ -99,8 +104,16 @@ lang=engl
 2 20090 D _item n PID_COMBAT_HELMET > 0 R _script follower@r_SetHelmet 1 725 #
 2 20100 D _item n PID_COMBAT_HELMET_MK_II > 0 R _script follower@r_SetHelmet 1 726 #
 2 20110 D _item n PID_BROTHERHOOD_HELMET > 0 R _script follower@r_SetHelmet 1 727 #
-2 20120 R _script follower@r_RemoveHelmet 0  #
-2 20130 &
+2 20120 D _item n PID_ENCLAVE_COMBAT_HELMET > 0 R _script follower@r_SetHelmet 1 738 #
+2 20130 D _item n PID_DESERT_COMBAT_HELMET > 0 R _script follower@r_SetHelmet 1 740 #
+2 20140 D _item n PID_NCR_HELMET > 0 R _script follower@r_SetHelmet 1 741 #
+2 20150 R _script follower@r_RemoveHelmet 0  #
+2 20160 @
+23 21000 follower@dlg_GiveFollower 0 #
+0 21010 @
+100 22000 None 0 @
+110 23000 follower@dlg_ShowStats 0 #
+2 23010 &
 
 [engl]
 {100}{}{Wastelander}
@@ -121,15 +134,17 @@ lang=engl
 {2030}{}{You're blocking my way, could you please move?}
 {2040}{}{I want to talk to you about distance.}
 {2050}{}{I want to talk about combat.}
-{2060}{}{I want you to join the local militia to protect this town.}
-{2070}{}{Let's talk about your armor.}
-{2080}{}{If we ever get separated, I think we should agree to meet up at some place.}
-{2090}{}{I have some food for you.}
-{2100}{}{What kind of weapons are you most proficient with?}
-{2110}{}{Arm yourself.}
-{2120}{}{Put down your weapon.}
-{2130}{}{Let's see if we can exchange some stuff.}
-{2140}{}{Nevermind.}
+{2060}{}{Let's talk about your armor.}
+{2070}{}{If we ever get separated, I think we should agree to meet up at some place.}
+{2080}{}{I have some food for you.}
+{2090}{}{What kind of weapons are you most proficient with?}
+{2100}{}{Arm yourself.}
+{2110}{}{Put down your weapon.}
+{2120}{}{Let's see if we can exchange some stuff.}
+{2130}{}{I want someone else to be your new friend.}
+{2140}{}{[Check stats]}
+{2150}{}{Drop all items you carry.}
+{2160}{}{Nevermind.}
 {3000}{}{Sure, how far do you want me to be?}
 {3010}{}{Stay close to me.}
 {3020}{}{Stick at medium range.}
@@ -169,19 +184,22 @@ lang=engl
 {16010}{}{I think you should rather change your helmet.}
 {16020}{}{Robes.}
 {16030}{}{Sand Robes.}
-{16040}{}{Leather Jacket.}
-{16050}{}{Leather Armor.}
-{16060}{}{Leather Armor Mark II.}
-{16070}{}{Combat Leather Jacket.}
-{16080}{}{Metal Armor}
-{16090}{}{Metal Armor Mark II.}
-{16100}{}{Tesla Armor.}
-{16110}{}{Combat Armor.}
-{16120}{}{Combat Armor Mark II.}
-{16130}{}{NCR Ranger Armor.}
-{16140}{}{Brotherhood Armor.}
-{16150}{}{Remove your current armor.}
-{16160}{}{Nevermind.}
+{16040}{}{Bridgekeeper's Robes.}
+{16050}{}{Leather Jacket.}
+{16060}{}{Leather Armor.}
+{16070}{}{Leather Armor Mark II.}
+{16080}{}{Combat Leather Jacket.}
+{16090}{}{Metal Armor}
+{16100}{}{Metal Armor Mark II.}
+{16110}{}{Tesla Armor.}
+{16120}{}{Combat Armor.}
+{16130}{}{Combat Armor Mark II.}
+{16140}{}{NCR Ranger Armor.}
+{16150}{}{Brotherhood Armor.}
+{16160}{}{Enclave Armor.}
+{16170}{}{Desert Armor.}
+{16180}{}{Remove your current armor.}
+{16190}{}{Nevermind.}
 {17000}{}{Which one? [Type the name of the base]
 -- Faction bases -- 
 @lex bases@}
@@ -207,7 +225,16 @@ lang=engl
 {20090}{}{Combat Helmet.}
 {20100}{}{Combat Helmet Mark II.}
 {20110}{}{Brotherhood Helmet.}
-{20120}{}{Remove your current helmet.}
-{20130}{}{Nevermind.}
+{20120}{}{Enclave Helmet.}
+{20130}{}{Desert Helmet.}
+{20140}{}{NCR Helmet.}
+{20150}{}{Remove your current helmet.}
+{20160}{}{Nevermind.}
+{21000}{}{Well, okay, if that is what you want.. So, who is it?}
+{21010}{}{I've changed my mind, let's get going.}
+{22000}{}{Let's get going.}
+{23000}{}{Current statistics:
+@lex stats@}
+{23010}{}{[Done]}
 {100000001}{}{Time to kick some asses . . .@@Is it time again?@@It's time again!}
 

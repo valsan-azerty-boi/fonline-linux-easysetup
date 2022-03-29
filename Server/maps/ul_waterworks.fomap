@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              270
 MaxHexY              255
-WorkHexX             137
-WorkHexY             130
+WorkHexX             172
+WorkHexY             143
 ScriptModule         -
 ScriptFunc           -
 NoLogOut             0
@@ -5634,7 +5634,7 @@ tile       88   94             art\tiles\curb16.frm
 roof       88   94             art\tiles\tp103.frm
 tile       90   94             art\tiles\curb16.frm
 roof       90   94             art\tiles\tp102.frm
-tile       92   94             art\tiles\GRT2001.FRM
+tile       92   94             art\tiles\grt2001.frm
 roof       92   94             art\tiles\tp104.frm
 tile       94   94             art\tiles\curb16.frm
 roof       94   94             art\tiles\tp105.frm
@@ -5824,7 +5824,7 @@ tile       88   96             art\tiles\curb16.frm
 roof       88   96             art\tiles\tp097.frm
 tile       90   96             art\tiles\curb16.frm
 roof       90   96             art\tiles\tp096.frm
-tile       92   96             art\tiles\GRT2001.FRM
+tile       92   96             art\tiles\grt2001.frm
 roof       92   96             art\tiles\tp087.frm
 tile       94   96             art\tiles\curb16.frm
 roof       94   96             art\tiles\tp088.frm
@@ -6009,7 +6009,7 @@ tile       88   98             art\tiles\curb16.frm
 roof       88   98             art\tiles\tp104.frm
 tile       90   98             art\tiles\curb16.frm
 roof       90   98             art\tiles\tp105.frm
-tile       92   98             art\tiles\GRT2001.FRM
+tile       92   98             art\tiles\grt2001.frm
 roof       92   98             art\tiles\tp099.frm
 tile       94   98             art\tiles\curb16.frm
 roof       94   98             art\tiles\tp098.frm
@@ -6190,7 +6190,7 @@ tile       88   100            art\tiles\curb16.frm
 roof       88   100            art\tiles\tp097.frm
 tile       90   100            art\tiles\curb16.frm
 roof       90   100            art\tiles\tp096.frm
-tile       92   100            art\tiles\GRT2001.FRM
+tile       92   100            art\tiles\grt2001.frm
 roof       92   100            art\tiles\tp106.frm
 tile       94   100            art\tiles\curb16.frm
 roof       94   100            art\tiles\tp105.frm
@@ -6355,7 +6355,7 @@ tile       88   102            art\tiles\curb16.frm
 roof       88   102            art\tiles\tp105.frm
 tile       90   102            art\tiles\curb16.frm
 roof       90   102            art\tiles\tp106.frm
-tile       92   102            art\tiles\GRT2001.FRM
+tile       92   102            art\tiles\grt2001.frm
 roof       92   102            art\tiles\tp097.frm
 tile       94   102            art\tiles\curb16.frm
 roof       94   102            art\tiles\tp096.frm
@@ -6519,7 +6519,7 @@ tile       88   104            art\tiles\curb16.frm
 roof       88   104            art\tiles\tp088.frm
 tile       90   104            art\tiles\curb16.frm
 roof       90   104            art\tiles\tp089.frm
-tile       92   104            art\tiles\GRT2001.FRM
+tile       92   104            art\tiles\grt2001.frm
 roof       92   104            art\tiles\tp087.frm
 tile       94   104            art\tiles\curb16.frm
 roof       94   104            art\tiles\tp088.frm
@@ -6681,7 +6681,7 @@ tile       88   106            art\tiles\curb16.frm
 roof       88   106            art\tiles\tp098.frm
 tile       90   106            art\tiles\curb16.frm
 roof       90   106            art\tiles\tp097.frm
-tile       92   106            art\tiles\GRT2001.FRM
+tile       92   106            art\tiles\grt2001.frm
 roof       92   106            art\tiles\tp103.frm
 tile       94   106            art\tiles\curb16.frm
 roof       94   106            art\tiles\tp106.frm
@@ -6847,7 +6847,7 @@ tile       88   108            art\tiles\curb16.frm
 roof       88   108            art\tiles\tp105.frm
 tile       90   108            art\tiles\curb16.frm
 roof       90   108            art\tiles\tp104.frm
-tile       92   108            art\tiles\GRT2001.FRM
+tile       92   108            art\tiles\grt2001.frm
 roof       92   108            art\tiles\tp097.frm
 tile       94   108            art\tiles\curb16.frm
 roof       94   108            art\tiles\tp098.frm
@@ -7003,7 +7003,7 @@ tile       88   110            art\tiles\curb16.frm
 roof       88   110            art\tiles\tp096.frm
 tile       90   110            art\tiles\curb16.frm
 roof       90   110            art\tiles\tp096.frm
-tile       92   110            art\tiles\GRT2001.FRM
+tile       92   110            art\tiles\grt2001.frm
 roof       92   110            art\tiles\tp089.frm
 tile       94   110            art\tiles\curb16.frm
 roof       94   110            art\tiles\tp090.frm
@@ -7035,15 +7035,15 @@ tile       132  110            art\tiles\curb16.frm
 tile       134  110            art\tiles\curb16.frm
 tile       136  110            art\tiles\curb16.frm
 tile       138  110            art\tiles\curb16.frm
-tile       140  110            art\tiles\GRT2001.FRM
-tile       142  110            art\tiles\GRT2001.FRM
-tile       144  110            art\tiles\GRT2001.FRM
-tile       146  110            art\tiles\GRT2001.FRM
-tile       148  110            art\tiles\GRT2001.FRM
-tile       150  110            art\tiles\GRT2001.FRM
-tile       152  110            art\tiles\GRT2001.FRM
-tile       154  110            art\tiles\GRT2001.FRM
-tile       156  110            art\tiles\GRT2001.FRM
+tile       140  110            art\tiles\grt2001.frm
+tile       142  110            art\tiles\grt2001.frm
+tile       144  110            art\tiles\grt2001.frm
+tile       146  110            art\tiles\grt2001.frm
+tile       148  110            art\tiles\grt2001.frm
+tile       150  110            art\tiles\grt2001.frm
+tile       152  110            art\tiles\grt2001.frm
+tile       154  110            art\tiles\grt2001.frm
+tile       156  110            art\tiles\grt2001.frm
 tile       158  110            art\tiles\curb16.frm
 tile       160  110            art\tiles\edg5006.frm
 tile       162  110            art\tiles\edg5004.frm
@@ -7160,7 +7160,7 @@ tile       88   112            art\tiles\curb16.frm
 roof       88   112            art\tiles\tp088.frm
 tile       90   112            art\tiles\curb16.frm
 roof       90   112            art\tiles\tp089.frm
-tile       92   112            art\tiles\GRT2001.FRM
+tile       92   112            art\tiles\grt2001.frm
 roof       92   112            art\tiles\tp097.frm
 tile       94   112            art\tiles\curb16.frm
 roof       94   112            art\tiles\tp098.frm
@@ -7200,7 +7200,7 @@ tile       148  112            art\tiles\curb16.frm
 tile       150  112            art\tiles\curb16.frm
 tile       152  112            art\tiles\curb16.frm
 tile       154  112            art\tiles\curb16.frm
-tile       156  112            art\tiles\GRT2001.FRM
+tile       156  112            art\tiles\grt2001.frm
 tile       158  112            art\tiles\curb16.frm
 tile       160  112            art\tiles\edg5000.frm
 tile       162  112            art\tiles\edg5002.frm
@@ -7327,7 +7327,7 @@ tile       88   114            art\tiles\curb16.frm
 roof       88   114            art\tiles\tp106.frm
 tile       90   114            art\tiles\curb16.frm
 roof       90   114            art\tiles\tp105.frm
-tile       92   114            art\tiles\GRT2001.FRM
+tile       92   114            art\tiles\grt2001.frm
 roof       92   114            art\tiles\tp105.frm
 tile       94   114            art\tiles\curb16.frm
 roof       94   114            art\tiles\tp106.frm
@@ -7367,7 +7367,7 @@ tile       148  114            art\tiles\curb16.frm
 tile       150  114            art\tiles\curb16.frm
 tile       152  114            art\tiles\curb16.frm
 tile       154  114            art\tiles\curb16.frm
-tile       156  114            art\tiles\GRT2001.FRM
+tile       156  114            art\tiles\grt2001.frm
 tile       158  114            art\tiles\curb16.frm
 tile       160  114            art\tiles\edg5006.frm
 tile       162  114            art\tiles\edg5003.frm
@@ -7493,7 +7493,7 @@ tile       88   116            art\tiles\curb16.frm
 roof       88   116            art\tiles\tp114.frm
 tile       90   116            art\tiles\curb16.frm
 roof       90   116            art\tiles\tp113.frm
-tile       92   116            art\tiles\GRT2001.FRM
+tile       92   116            art\tiles\grt2001.frm
 roof       92   116            art\tiles\tp112.frm
 tile       94   116            art\tiles\curb16.frm
 roof       94   116            art\tiles\tp111.frm
@@ -7510,7 +7510,7 @@ roof       104  116            art\tiles\levl001.frm
 tile       106  116            art\tiles\curb16.frm
 roof       106  116            art\tiles\levl018.frm
 tile       108  116            art\tiles\curb16.frm
-tile       110  116            art\tiles\GRT2001.FRM
+tile       110  116            art\tiles\grt2001.frm
 tile       112  116            art\tiles\curb16.frm
 tile       114  116            art\tiles\curb16.frm
 tile       116  116            art\tiles\curb52.frm
@@ -7533,7 +7533,7 @@ tile       148  116            art\tiles\curb02.frm
 tile       150  116            art\tiles\curb55.frm
 tile       152  116            art\tiles\curb16.frm
 tile       154  116            art\tiles\curb16.frm
-tile       156  116            art\tiles\GRT2001.FRM
+tile       156  116            art\tiles\grt2001.frm
 tile       158  116            art\tiles\curb16.frm
 tile       160  116            art\tiles\edg5002.frm
 tile       162  116            art\tiles\edg5000.frm
@@ -7654,7 +7654,7 @@ tile       88   118            art\tiles\curb16.frm
 roof       88   118            art\tiles\levl031.frm
 tile       90   118            art\tiles\curb16.frm
 roof       90   118            art\tiles\levl031.frm
-tile       92   118            art\tiles\GRT2001.FRM
+tile       92   118            art\tiles\grt2001.frm
 roof       92   118            art\tiles\levl031.frm
 tile       94   118            art\tiles\curb16.frm
 roof       94   118            art\tiles\levl031.frm
@@ -7671,7 +7671,7 @@ roof       104  118            art\tiles\levl001.frm
 tile       106  118            art\tiles\curb16.frm
 roof       106  118            art\tiles\levl018.frm
 tile       108  118            art\tiles\curb16.frm
-tile       110  118            art\tiles\GRT2001.FRM
+tile       110  118            art\tiles\grt2001.frm
 tile       112  118            art\tiles\curb16.frm
 tile       114  118            art\tiles\curb16.frm
 tile       116  118            art\tiles\curb08.frm
@@ -7694,7 +7694,7 @@ tile       148  118            art\tiles\grof068.frm
 tile       150  118            art\tiles\curb11.frm
 tile       152  118            art\tiles\curb16.frm
 tile       154  118            art\tiles\curb16.frm
-tile       156  118            art\tiles\GRT2001.FRM
+tile       156  118            art\tiles\grt2001.frm
 tile       158  118            art\tiles\curb16.frm
 tile       160  118            art\tiles\edg5003.frm
 tile       162  118            art\tiles\edg5002.frm
@@ -7813,7 +7813,7 @@ tile       88   120            art\tiles\curb19.frm
 roof       88   120            art\tiles\levl032.frm
 tile       90   120            art\tiles\curb16.frm
 roof       90   120            art\tiles\levl032.frm
-tile       92   120            art\tiles\GRT2001.FRM
+tile       92   120            art\tiles\grt2001.frm
 roof       92   120            art\tiles\levl032.frm
 tile       94   120            art\tiles\curb16.frm
 roof       94   120            art\tiles\levl032.frm
@@ -7830,7 +7830,7 @@ roof       104  120            art\tiles\levl001.frm
 tile       106  120            art\tiles\curb16.frm
 roof       106  120            art\tiles\levl018.frm
 tile       108  120            art\tiles\curb16.frm
-tile       110  120            art\tiles\GRT2001.FRM
+tile       110  120            art\tiles\grt2001.frm
 tile       112  120            art\tiles\curb16.frm
 tile       114  120            art\tiles\curb16.frm
 tile       116  120            art\tiles\curb08.frm
@@ -7853,7 +7853,7 @@ tile       148  120            art\tiles\grof072.frm
 tile       150  120            art\tiles\curb11.frm
 tile       152  120            art\tiles\curb16.frm
 tile       154  120            art\tiles\curb16.frm
-tile       156  120            art\tiles\GRT2001.FRM
+tile       156  120            art\tiles\grt2001.frm
 tile       158  120            art\tiles\curb16.frm
 tile       160  120            art\tiles\edgs004.frm
 tile       162  120            art\tiles\edg5003.frm
@@ -7971,7 +7971,7 @@ tile       88   122            art\tiles\curb16.frm
 roof       88   122            art\tiles\levl008.frm
 tile       90   122            art\tiles\curb16.frm
 roof       90   122            art\tiles\levl008.frm
-tile       92   122            art\tiles\GRT2001.FRM
+tile       92   122            art\tiles\grt2001.frm
 roof       92   122            art\tiles\levl033.frm
 tile       94   122            art\tiles\curb16.frm
 roof       94   122            art\tiles\levl008.frm
@@ -7988,7 +7988,7 @@ roof       104  122            art\tiles\levl001.frm
 tile       106  122            art\tiles\curb16.frm
 roof       106  122            art\tiles\levl018.frm
 tile       108  122            art\tiles\curb16.frm
-tile       110  122            art\tiles\GRT2001.FRM
+tile       110  122            art\tiles\grt2001.frm
 tile       112  122            art\tiles\curb16.frm
 tile       114  122            art\tiles\curb16.frm
 tile       116  122            art\tiles\curb08.frm
@@ -8011,7 +8011,7 @@ tile       148  122            art\tiles\shore09.frm
 tile       150  122            art\tiles\curb11.frm
 tile       152  122            art\tiles\curb16.frm
 tile       154  122            art\tiles\curb16.frm
-tile       156  122            art\tiles\GRT2001.FRM
+tile       156  122            art\tiles\grt2001.frm
 tile       158  122            art\tiles\curb16.frm
 tile       160  122            art\tiles\edg6007.frm
 tile       162  122            art\tiles\edg5004.frm
@@ -8129,24 +8129,24 @@ tile       88   124            art\tiles\curb16.frm
 roof       88   124            art\tiles\levl031.frm
 tile       90   124            art\tiles\curb16.frm
 roof       90   124            art\tiles\levl031.frm
-tile       92   124            art\tiles\GRT2001.FRM
+tile       92   124            art\tiles\grt2001.frm
 roof       92   124            art\tiles\levl031.frm
-tile       94   124            art\tiles\GRT2001.FRM
+tile       94   124            art\tiles\grt2001.frm
 roof       94   124            art\tiles\levl031.frm
-tile       96   124            art\tiles\GRT2001.FRM
+tile       96   124            art\tiles\grt2001.frm
 roof       96   124            art\tiles\levl031.frm
-tile       98   124            art\tiles\GRT2001.FRM
+tile       98   124            art\tiles\grt2001.frm
 roof       98   124            art\tiles\levl031.frm
-tile       100  124            art\tiles\GRT2001.FRM
+tile       100  124            art\tiles\grt2001.frm
 roof       100  124            art\tiles\levl031.frm
-tile       102  124            art\tiles\GRT2001.FRM
+tile       102  124            art\tiles\grt2001.frm
 roof       102  124            art\tiles\levl003.frm
-tile       104  124            art\tiles\GRT2001.FRM
+tile       104  124            art\tiles\grt2001.frm
 roof       104  124            art\tiles\levl002.frm
-tile       106  124            art\tiles\GRT2001.FRM
+tile       106  124            art\tiles\grt2001.frm
 roof       106  124            art\tiles\levl018.frm
-tile       108  124            art\tiles\GRT2001.FRM
-tile       110  124            art\tiles\GRT2001.FRM
+tile       108  124            art\tiles\grt2001.frm
+tile       110  124            art\tiles\grt2001.frm
 tile       112  124            art\tiles\curb16.frm
 tile       114  124            art\tiles\curb16.frm
 tile       116  124            art\tiles\curb08.frm
@@ -8302,7 +8302,7 @@ roof       104  126            art\tiles\levl005.frm
 tile       106  126            art\tiles\curb16.frm
 roof       106  126            art\tiles\levl004.frm
 tile       108  126            art\tiles\curb16.frm
-tile       110  126            art\tiles\GRT2001.FRM
+tile       110  126            art\tiles\grt2001.frm
 tile       112  126            art\tiles\curb16.frm
 tile       114  126            art\tiles\curb16.frm
 tile       116  126            art\tiles\curb08.frm
@@ -8458,7 +8458,7 @@ tile       106  128            art\tiles\curb16.frm
 roof       106  128            art\tiles\levl007.frm
 tile       108  128            art\tiles\curb16.frm
 roof       108  128            art\tiles\levl006.frm
-tile       110  128            art\tiles\GRT2001.FRM
+tile       110  128            art\tiles\grt2001.frm
 tile       112  128            art\tiles\curb16.frm
 tile       114  128            art\tiles\curb16.frm
 tile       116  128            art\tiles\curb53.frm
@@ -8585,7 +8585,7 @@ tile       102  130            art\tiles\edg3000.frm
 tile       104  130            art\tiles\edg2003.frm
 tile       106  130            art\tiles\edg4001.frm
 tile       108  130            art\tiles\curb16.frm
-tile       110  130            art\tiles\GRT2001.FRM
+tile       110  130            art\tiles\grt2001.frm
 tile       112  130            art\tiles\curb16.frm
 tile       114  130            art\tiles\curb16.frm
 tile       116  130            art\tiles\curb16.frm
@@ -8706,7 +8706,7 @@ tile       102  132            art\tiles\edg2003.frm
 tile       104  132            art\tiles\edg4000.frm
 tile       106  132            art\tiles\edg2000.frm
 tile       108  132            art\tiles\curb16.frm
-tile       110  132            art\tiles\GRT2001.FRM
+tile       110  132            art\tiles\grt2001.frm
 tile       112  132            art\tiles\curb16.frm
 tile       114  132            art\tiles\curb16.frm
 tile       116  132            art\tiles\curb16.frm
@@ -8827,7 +8827,7 @@ tile       102  134            art\tiles\edg4000.frm
 tile       104  134            art\tiles\edg1001.frm
 tile       106  134            art\tiles\edg5006.frm
 tile       108  134            art\tiles\curb16.frm
-tile       110  134            art\tiles\GRT2001.FRM
+tile       110  134            art\tiles\grt2001.frm
 tile       112  134            art\tiles\curb16.frm
 tile       114  134            art\tiles\curb16.frm
 tile       116  134            art\tiles\curb52.frm
@@ -8955,7 +8955,7 @@ tile       102  136            art\tiles\edg3000.frm
 tile       104  136            art\tiles\edg7002.frm
 tile       106  136            art\tiles\edg5000.frm
 tile       108  136            art\tiles\curb16.frm
-tile       110  136            art\tiles\GRT2001.FRM
+tile       110  136            art\tiles\grt2001.frm
 tile       112  136            art\tiles\curb16.frm
 tile       114  136            art\tiles\curb16.frm
 tile       116  136            art\tiles\curb08.frm
@@ -9091,7 +9091,7 @@ tile       106  138            art\tiles\edg5006.frm
 roof       106  138            art\tiles\wroof02.frm
 tile       108  138            art\tiles\curb16.frm
 roof       108  138            art\tiles\wroof02.frm
-tile       110  138            art\tiles\GRT2001.FRM
+tile       110  138            art\tiles\grt2001.frm
 roof       110  138            art\tiles\wroof01.frm
 tile       112  138            art\tiles\curb16.frm
 tile       114  138            art\tiles\curb16.frm
@@ -62981,93 +62981,53 @@ ProtoId              21002
 MapX                 149
 MapY                 109
 
+MapObjType           2
+ProtoId              2397
+MapX                 79
+MapY                 102
+
+MapObjType           1
+ProtoId              21002
+MapX                 79
+MapY                 102
+
+MapObjType           2
+ProtoId              2397
+MapX                 86
+MapY                 121
+
+MapObjType           1
+ProtoId              21002
+MapX                 86
+MapY                 121
+
+MapObjType           1
+ProtoId              21002
+MapX                 100
+MapY                 78
+
+MapObjType           2
+ProtoId              2397
+MapX                 100
+MapY                 78
+
+MapObjType           2
+ProtoId              2397
+MapX                 113
+MapY                 167
+
 MapObjType           1
 ProtoId              21002
 MapX                 99
 MapY                 149
 
-MapObjType           1
-ProtoId              21002
-MapX                 97
-MapY                 149
-
-MapObjType           2
-ProtoId              2397
-MapX                 79
-MapY                 102
-
-MapObjType           1
-ProtoId              21002
-MapX                 79
-MapY                 102
-
-MapObjType           2
-ProtoId              2397
-MapX                 86
-MapY                 121
-
-MapObjType           1
-ProtoId              21002
-MapX                 86
-MapY                 121
-
-MapObjType           1
-ProtoId              21002
-MapX                 100
-MapY                 78
-
-MapObjType           2
-ProtoId              2397
-MapX                 100
-MapY                 78
-
-MapObjType           2
-ProtoId              2397
-MapX                 113
-MapY                 167
-
-MapObjType           1
-ProtoId              21002
-MapX                 113
-MapY                 167
-
 MapObjType           2
 ProtoId              2397
 MapX                 141
 MapY                 83
 
-MapObjType           1
-ProtoId              21002
-MapX                 141
-MapY                 83
-
 MapObjType           2
 ProtoId              2397
-MapX                 191
-MapY                 124
-
-MapObjType           1
-ProtoId              21002
-MapX                 191
-MapY                 124
-
-MapObjType           2
-ProtoId              2397
-MapX                 174
-MapY                 138
-
-MapObjType           1
-ProtoId              21002
-MapX                 174
-MapY                 138
-
-MapObjType           2
-ProtoId              2397
-MapX                 163
-MapY                 179
-
-MapObjType           1
-ProtoId              21002
 MapX                 163
 MapY                 179
 
@@ -63086,11 +63046,6 @@ ProtoId              2397
 MapX                 120
 MapY                 64
 
-MapObjType           1
-ProtoId              21002
-MapX                 120
-MapY                 64
-
 MapObjType           2
 ProtoId              2397
 MapX                 152
@@ -63100,16 +63055,6 @@ MapObjType           1
 ProtoId              21002
 MapX                 152
 MapY                 158
-
-MapObjType           2
-ProtoId              2397
-MapX                 182
-MapY                 74
-
-MapObjType           1
-ProtoId              21002
-MapX                 182
-MapY                 74
 
 MapObjType           2
 ProtoId              2398
@@ -63135,16 +63080,6 @@ MapY                 119
 LightDistance        2
 LightIntensity       20
 
-MapObjType           2
-ProtoId              2397
-MapX                 171
-MapY                 174
-
-MapObjType           1
-ProtoId              21002
-MapX                 171
-MapY                 174
-
 MapObjType           1
 ProtoId              22006
 MapX                 151
@@ -63158,5 +63093,10 @@ MapX                 152
 MapY                 158
 LightDistance        2
 LightIntensity       20
+
+MapObjType           1
+ProtoId              21002
+MapX                 113
+MapY                 167
 
 

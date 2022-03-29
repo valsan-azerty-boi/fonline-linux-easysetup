@@ -7,10 +7,8 @@ lang=engl
 [dialog]
 &
 1 1000 None 1 #
-4 1010 D _param p ST_CHARISMA > 99 #
-3 1020 D _param p ST_INTELLECT < 4 #
-8 1030 D _var p q_modoc_balthas_fetcher = 3 #
-2 1040 @
+8 1010 D _var p q_modoc_balthas_fetcher = 3 #
+2 1020 @
 2 2000 None 0 #
 65506 2010 #
 80 2020 D _script dialog@d_CheckProfession 1 0 D _script dialog@d_CheckArmorer0 1 0 #
@@ -24,17 +22,17 @@ lang=engl
 6 5010 #
 0 5020 @
 6 6000 None 0 #
-0 6010 D _param p ST_CHARISMA > 5 R _var p q_modoc_balthas_fetcher = 1 #
+0 6010 D _param p ST_CHARISMA < 11 R _var p q_modoc_balthas_fetcher = 1 #
 2 6020 @
 7 7000 None 0 #
-0 7010 D _param p ST_CHARISMA > 5 R _var p q_modoc_balthas_fetcher = 1 #
+0 7010 D _param p ST_CHARISMA < 11 R _var p q_modoc_balthas_fetcher = 1 #
 2 7020 @
 8 8000 None 0 #
 9 8010 @
 9 9000 None 0 #
 10 9010 @
 10 10000 None 0 #
-0 10010 R _param p ST_EXPERIENCE + 900 R _item p PID_LEATHER_JACKET + 1 R _var p q_modoc_balthas_fetcher = 0 R _var n acquaintance = 1 R _script dialog@r_QuestTimeout 1 120 @
+0 10010 R _param p ST_EXPERIENCE + 900 R _item p PID_CURED_LEATHER_ARMOR + 1 R _var p q_modoc_balthas_fetcher = 0 R _var n acquaintance = 1 R _script dialog@r_QuestTimeout 1 5 @
 80 11000 None 0 #
 82 11010 D _item p PID_BOTTLE_CAPS > 1499 R _script dialog@r_RemoveMoney 1 1500 R _param p PE_PROFESSION_ARMORER = 1 #
 0 11020 @
@@ -51,12 +49,10 @@ lang=engl
 {200}{}{A heavy set man wearing a leather apron.}
 {210}{}{A tall, muscular man who looks and smells of leather.}
 {1000}{}{Predialogue installations}
-{1010}{}{ugly}
-{1020}{}{Idiot}
-{1030}{}{finished his little fetchquest}
-{1040}{}{Answer text}
-{2000}{}{Hello, my name’s Balthas. I run the Tannery here in Modoc. Can I help you?}
-{2010}{}{I’d like to see your wares.}
+{1010}{}{finished his little fetchquest}
+{1020}{}{Answer text}
+{2000}{}{Hello, my name's Balthas. I run the Tannery here in Modoc. Can I help you?}
+{2010}{}{I'd like to see your wares.}
 {2020}{}{Tannery, huh? Say, can you make jackets and armors from the brahmin hide? I'm quite eager to learn how to do it properly.}
 {2030}{}{Could you teach me something more about armors?}
 {2040}{}{How's business, Balthas?}

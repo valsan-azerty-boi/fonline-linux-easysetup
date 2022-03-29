@@ -1,5 +1,6 @@
 [comment]
 
+
 [data]
 lang=engl
 
@@ -10,7 +11,7 @@ lang=engl
 38 1020 D _var p q_mordinos_metzger_delivery = 1 D _item p PID_METZGERS_CASE = 1 D _param p KARMA_SLAVER = 1 #
 33 1030 D _var p q_mordinos_metzger_delivery = 1 D _item p PID_METZGERS_CASE = 1 #
 19 1040 D _param p KARMA_SLAVER > 0 #
-22 1050 D _param p ST_INTELLECT < 4 #
+22 1050 D _param p ST_INTELLECT < 4 D _param p ST_INTELLECT > 4 #
 26 1060 D _param p ST_CHARISMA < 4 D _var n name_mem_npc_player = 0 #
 50 1070 D _var n name_mem_npc_player = 1 D _item p PID_NUKA_COLA > 0 D _var n acquaintance < 1 #
 12 1080 D _var n name_mem_npc_player > 0 D _var n acquaintance > 0 #
@@ -29,9 +30,10 @@ lang=engl
 3 5000 None 0 #
 42 5010 #
 4 5020 #
-14 5030 D _param p REPUTATION_SLAVERS_GUILD > 119 D _var p q_raiders_induction < 2 #
-0 5040 #
-0 5050 @
+2 5030 D _script dialog@d_IsGangMember 0  D _script town@d_IsNotControllingTown 1 1 D _script town@d_CanTakeOver 0  R _script town@r_ClaimControl 1 0 #
+14 5040 D _param p REPUTATION_SLAVERS_GUILD > 119 D _var p q_raiders_induction < 2 #
+0 5050 #
+0 5060 @
 4 6000 None 0 #
 44 6010 #
 0 6020 #
@@ -50,7 +52,9 @@ lang=engl
 40 11010 #
 13 11020 #
 90 11030 D _script town@d_CanRecruitMilitia 0  #
-0 11040 @
+500 11040 D _script town@d_CanChangeLaws 0  #
+75 11050 D _script town@d_IsControllingTown 1 1 #
+0 11060 @
 50 12000 None 0 #
 51 12010 D _item p PID_NUKA_COLA } 1 R _item p PID_NUKA_COLA - 1 @
 51 13000 None 0 #
@@ -60,8 +64,10 @@ lang=engl
 2 14020 D _script dialog@d_IsGangMember 0  D _script town@d_IsNotControllingTown 1 1 R _script town@r_ClaimControl 1 0 #
 120 14030 D _script town@d_IsControllingTown 1 1 #
 14 14040 D _param p REPUTATION_SLAVERS_GUILD > 119 D _var p q_raiders_induction < 2 #
-500 14050 D _script town@d_CanChangeLaws 0  #
-0 14060 @
+90 14050 D _script town@d_CanRecruitMilitia 0  #
+75 14060 D _script town@d_IsControllingTown 1 1 #
+500 14070 D _script town@d_CanChangeLaws 0  #
+0 14080 @
 13 15000 None 0 #
 15 15010 #
 0 15020 @
@@ -83,9 +89,12 @@ lang=engl
 29 21010 #
 21 21020 R _script merc_dialog@r_GetSlaveTypes 1 0 #
 2 21030 D _script dialog@d_IsGangMember 0  D _script town@d_IsNotControllingTown 1 1 D _script town@d_CanTakeOver 0  R _script town@r_ClaimControl 1 0 #
-58 21040 D _script slaverun_dialog@d_NotStatusFlag 1 2 R _script slaverun_dialog@r_SelectNode 1 0 #
-14 21050 D _param p REPUTATION_SLAVERS_GUILD > 119 D _var p q_raiders_induction < 2 #
-0 21060 @
+90 21040 D _script town@d_CanRecruitMilitia 0  #
+500 21050 D _script town@d_CanChangeLaws 0  #
+75 21060 D _script town@d_IsControllingTown 1 1 #
+58 21070 D _script slaverun_dialog@d_NotStatusFlag 1 2 D _param p ST_LEVEL } 18 R _script slaverun_dialog@r_SelectNode 1 0 #
+14 21080 D _param p REPUTATION_SLAVERS_GUILD > 119 D _var p q_raiders_induction < 2 #
+0 21090 @
 20 22000 None 0 #
 21 22010 #
 0 22020 @
@@ -206,30 +215,40 @@ lang=engl
 66 63000 None 0 #
 0 63010 #
 65507 63020 @
-500 64000 town@dlg_ShowPolicies 0 #
-500 64010 D _script town@d_IsPolicy 1 2 R _script town@r_SetPolicy 2 2 0 #
-500 64020 D _script town@d_IsNotPolicy 1 2 R _script town@r_SetPolicy 2 2 1 #
-500 64030 D _script town@d_IsNotPolicy 1 1 R _script town@r_SetPolicy 2 1 1 #
-500 64040 D _script town@d_IsPolicy 1 1 R _script town@r_SetPolicy 2 1 0 #
-500 64050 D _script town@d_IsNotPolicy 1 3 R _script town@r_SetPolicy 2 3 1 #
-500 64060 D _script town@d_IsPolicy 1 3 R _script town@r_SetPolicy 2 3 0 #
-12 64070 D _param p KARMA_SLAVER = 0 #
-19 64080 D _param p KARMA_SLAVER > 0 @
-38 65000 None 0 #
-34 65010 @
-90 66000 town@dlg_ShowMilitiaCost 0 #
-90 66010 R _script town@r_RecruitMilitia 0  #
-2 66020 @
-410 67000 None 0 #
-0 67010 @
-420 68000 None 0 #
-0 68010 @
-430 69000 None 0 #
-0 69010 @
-440 70000 None 0 @
-450 71000 None 0 #
+75 64000 None 0 #
+76 64010 #
+77 64020 R _script town@r_SetFriendlyFactionsMode 1 1 #
+77 64030 R _script town@r_SetFriendlyFactionsMode 1 0 @
+76 65000 town@dlg_ShowFriendlyFactions 0 #
+44 65010 #
+76 65020 R _script town@r_FriendlyFactionsBrowse 1 1 #
+76 65030 R _script town@r_FriendlyFactionsBrowse 1 -1 @
+77 66000 town@dlg_ManipulateFriendlyFactions 0 #
+44 66010 @
+500 67000 town@dlg_ShowPolicies 0 #
+500 67010 D _script town@d_IsPolicy 1 2 R _script town@r_SetPolicy 2 2 0 #
+500 67020 D _script town@d_IsNotPolicy 1 2 R _script town@r_SetPolicy 2 2 1 #
+500 67030 D _script town@d_IsNotPolicy 1 1 R _script town@r_SetPolicy 2 1 1 #
+500 67040 D _script town@d_IsPolicy 1 1 R _script town@r_SetPolicy 2 1 0 #
+500 67050 D _script town@d_IsNotPolicy 1 3 R _script town@r_SetPolicy 2 3 1 #
+500 67060 D _script town@d_IsPolicy 1 3 R _script town@r_SetPolicy 2 3 0 #
+12 67070 D _param p KARMA_SLAVER = 0 #
+19 67080 D _param p KARMA_SLAVER > 0 @
+38 68000 None 0 #
+34 68010 @
+90 69000 town@dlg_ShowMilitiaCost 0 #
+90 69010 R _script town@r_RecruitMilitia 0  #
+2 69020 @
+410 70000 None 0 #
+0 70010 @
+420 71000 None 0 #
 0 71010 @
-330 72000 None 0 &
+430 72000 None 0 #
+0 72010 @
+440 73000 None 0 @
+450 74000 None 0 #
+0 74010 @
+330 75000 None 0 &
 
 [engl]
 {100}{}{Metzger}
@@ -267,9 +286,10 @@ lang=engl
 {5000}{}{What?}
 {5010}{}{Who are you?}
 {5020}{}{What is this place?}
-{5030}{}{Do you do anything outside of the slave trade? I'm sick of these disgusting slaves following me everywhere.}
-{5040}{}{Nothing, just poking around.  Catch you later.}
-{5050}{}{I'm looking for a G.E.C.K.  I need to save my shitty camp site. Wait, that's not true at all.  What the fuck am I talking about? [Wander off mumbling.]}
+{5030}{}{Enough of it. Got a vacancy for a team of bad asses like us @lex faction@?}
+{5040}{}{Do you do anything outside of the slave trade? I'm sick of these disgusting slaves following me everywhere.}
+{5050}{}{Nothing, just poking around.  Catch you later.}
+{5060}{}{I'm looking for a G.E.C.K.  I need to save my shitty camp site. Wait, that's not true at all.  What the fuck am I talking about? [Wander off mumbling.]}
 {6000}{}{It's the fucking Slaver's Guild.  Are you blind?}
 {6010}{}{Uh yeah I guess that was pretty dumb of me.  Can I ask you something else?}
 {6020}{}{Right.  Later.}
@@ -288,7 +308,9 @@ lang=engl
 {11010}{}{Well, what's up, you know?  Anything cool going on lately?}
 {11020}{}{I want to be a slaver.}
 {11030}{}{We need some volunteers to secure the town.}
-{11040}{}{Nothing, actually. bye.}
+{11040}{}{Hey, let's change the laws around here.}
+{11050}{}{I want to talk about our allies.}
+{11060}{}{Nothing, actually. bye.}
 {12000}{}{Shit, it's a real nice day.  I could go for a nuka cola and a smoke out on the patio.  You see that shit out there?  I got a patio, and sometimes I like to sit out on it and drink a cola and smoke.  Didn't expect that did you?  Hey, you got a nuka cola? Our fridge is all out.}
 {12010}{}{Have a nuka cola on me Metzger [hand it over]}
 {13000}{}{Yeah this looks good.  Good job.  I'll trade you a dose for it. Yeah, I'm gonna have myself a nice drink on the patio when shit settles down for a few minutes.}
@@ -298,8 +320,10 @@ lang=engl
 {14020}{}{Enough of the slaving for a minute. Got a vacancy for a team of bad asses like us @lex faction@?}
 {14030}{}{So, where is our piece of the action?}
 {14040}{}{Do you have any jobs I could do that don't involve slaving? That shit is getting old.}
-{14050}{}{Hey, let's change the laws around here.}
-{14060}{}{Fuck all dude.  I am bored as shit.  Going to go shoot molerats catch you later.}
+{14050}{}{We need some volunteers to secure the town.}
+{14060}{}{I want to talk about our allies.}
+{14070}{}{Hey, let's change the laws around here.}
+{14080}{}{Fuck all dude.  I am bored as shit.  Going to go shoot molerats catch you later.}
 {15000}{}{You interested in becoming a slaver? Hmm, I dunno. I just had to flush the last bunch of new recruits. They weren't worth shit. Figure we're better off lean and mean. But if you really think you're up to it, we could give you a shot. This shit is for life though. No wimping out.}
 {15010}{}{Let me in, I won't let you down.}
 {15020}{}{Yeah on second thought, no thanks.}
@@ -321,9 +345,12 @@ lang=engl
 {21010}{}{I want to purchase some stock from you.}
 {21020}{}{I got some stock to sell.}
 {21030}{}{Enough of the slaving for a minute. Got a vacancy for a team of bad asses like us @lex faction@?}
-{21040}{}{Do you have a vacancy in your Guild, Metzger? I'm tired of being a solo slaver. I have big plans!}
-{21050}{}{Do you have any jobs I could do that don't involve slaving? That shit is getting old.}
-{21060}{}{Nothing, actually. Just stopping by.}
+{21040}{}{We need some volunteers to secure the town.}
+{21050}{}{Hey, let's change the laws around here.}
+{21060}{}{I want to talk about our allies.}
+{21070}{}{Do you have a vacancy in your Guild, Metzger? I'm tired of being a solo slaver. I have big plans!}
+{21080}{}{Do you have any jobs I could do that don't involve slaving? That shit is getting old.}
+{21090}{}{Nothing, actually. Just stopping by.}
 {22000}{}{Sorry cutter, we're full right now. Check back later, if we get a vacancy I'll let you try out.}
 {22010}{}{Okay. Can I just sell some slaves then?}
 {22020}{}{Okay. Just checking. Goodbye Metzger.}
@@ -444,31 +471,41 @@ lang=engl
 {63000}{}{What the FUCK!? You piece of shit! I want to rip that tattoo off your fucking face. Get the fuck out of here before I try.}
 {63010}{}{[Leave. Quickly.]}
 {63020}{}{Well, since I'm here, I might as well kill you, eh?}
-{64000}{}{Here's the current laws in Den:
+{64000}{}{So, what about friendly factions? Do you want me to make sure the militia looks after a certain faction?}
+{64010}{}{Show me the friendly factions.}
+{64020}{}{I want to remove a faction from the list.}
+{64030}{}{I want to add a new faction to the list.}
+{65000}{}{@lex faction@}
+{65010}{}{Ok, that's all.}
+{65020}{}{Next}
+{65030}{}{Previous}
+{66000}{}{And what might their name be?}
+{66010}{}{Ok, that's all.}
+{67000}{}{Here's the current laws in Den:
 Stealing is prosecuted: @lex stealing@
 Carrying weapons openly is illegal: @lex weapons@
 Attacking criminals on sight: @lex attackflagged@}
-{64010}{}{I want it to be legal to carry weapons openly.}
-{64020}{}{I want it to be illegal to carry weapons openly.}
-{64030}{}{I've seen enough thieves by now, let's punish every last one of them!}
-{64040}{}{I don't think guards should look for thieves, we have higher priorities...}
-{64050}{}{I want every last criminal dead, don't let them enter our city under any circumstances!}
-{64060}{}{I don't think we have time to go after every little petty criminal, let's relax the laws a bit regarding this...}
-{64070}{}{Ok, looks good.}
-{64080}{}{Ok, looks good.}
-{65000}{}{Yeah, what now?}
-{65010}{}{I brought your case from the Mordinos.}
-{66000}{}{This is not a problem, there's plenty of people ready to join the militia, but you'll have to pay for the equipments and training. This costs about @lex cost@ caps.}
-{66010}{}{Sounds good, here's @lex cost@ caps.}
-{66020}{}{Nah, I think we're doing fine as it is now.}
-{67000}{}{Alright, there you go.}
-{67010}{}{Right.}
-{68000}{}{I'm afraid there's no more volunteers, come back later and check again.}
-{68010}{}{Ok.}
-{69000}{}{Like I said, training and equipment isn't free. Come back when you have the caps.}
-{69010}{}{Yeah, yeah...}
-{70000}{}{Error. Report this.}
-{71000}{}{Are you crazy? We are in the middle of an ongoing attack, start protecting us instead of jerking around in here!}
-{71010}{}{Uh, sure!}
-{72000}{}{Guards, get those retards!}
+{67010}{}{I want it to be legal to carry weapons openly.}
+{67020}{}{I want it to be illegal to carry weapons openly.}
+{67030}{}{I've seen enough thieves by now, let's punish every last one of them!}
+{67040}{}{I don't think guards should look for thieves, we have higher priorities...}
+{67050}{}{I want every last criminal dead, don't let them enter our city under any circumstances!}
+{67060}{}{I don't think we have time to go after every little petty criminal, let's relax the laws a bit regarding this...}
+{67070}{}{Ok, looks good.}
+{67080}{}{Ok, looks good.}
+{68000}{}{Yeah, what now?}
+{68010}{}{I brought your case from the Mordinos.}
+{69000}{}{This is not a problem, there's plenty of people ready to join the militia, but you'll have to pay for the equipments and training. This costs about @lex cost@ caps.}
+{69010}{}{Sounds good, here's @lex cost@ caps.}
+{69020}{}{Nah, I think we're doing fine as it is now.}
+{70000}{}{Alright, there you go.}
+{70010}{}{Right.}
+{71000}{}{I'm afraid there's no more volunteers, come back later and check again.}
+{71010}{}{Ok.}
+{72000}{}{Like I said, training and equipment isn't free. Come back when you have the caps.}
+{72010}{}{Yeah, yeah...}
+{73000}{}{Error. Report this.}
+{74000}{}{Are you crazy? We are in the middle of an ongoing attack, start protecting us instead of jerking around in here!}
+{74010}{}{Uh, sure!}
+{75000}{}{Guards, get those retards!}
 

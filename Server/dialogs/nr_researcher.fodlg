@@ -1,5 +1,6 @@
 [comment]
 
+
 [data]
 lang=engl
 
@@ -51,7 +52,7 @@ lang=engl
 15 13010 #
 0 13020 @
 14 14000 None 0 #
-24 14010 D _param p SK_SPEECH > 70 D _var p loyality < 5 R _param p ST_STRENGTH + 5 R _var p loyality + 5 #
+24 14010 D _param p SK_SPEECH > 70 D _var p loyality < 5 R _var p loyality + 5 #
 9 14020 D _param p SK_SPEECH < 71 #
 0 14030 @
 15 15000 None 0 #
@@ -101,19 +102,19 @@ lang=engl
 {3050}{}{Wander off.}
 {4000}{}{(The woman looks up and glares at you.) Are you one of the control subjects? As if matters anyway...Guards! Detain this slave!}
 {4010}{}{Where slave? Me no see one}
-{5000}{}{Look, I'm VERY busy, so if you don't mind… [Glances up from her clipboard at you, then scowls.] WHO are you? How did you get in here?}
-{5010}{}{Your barn door's open. Heh-heh…get it? I kill me.}
+{5000}{}{Look, I'm VERY busy, so if you don't mind [Glances up from her clipboard at you, then scowls.] WHO are you? How did you get in here?}
+{5010}{}{Your barn door's open. Heh-heh get it? I kill me.}
 {5020}{}{I'm one of the new personnel assigned here.}
 {5030}{}{Nevermind. Sorry to bother you.}
-{6000}{}{This area is not open for…visitors. Leave or I will call the guards.}
-{6010}{}{But hey, I had some questions for you…}
+{6000}{}{This area is not open for visitors. Leave or I will call the guards.}
+{6010}{}{But hey, I had some questions for you }
 {6020}{}{Alright, I'm going.}
 {7000}{}{Guards! Guards, detain this person!}
 {7010}{}{Aw, hell...}
-{8000}{}{MORE guards. Ha! As if they do any good…look, you SHOULD have received instructions from whoever sent you here. Talk
+{8000}{}{MORE guards. Ha! As if they do any good look, you SHOULD have received instructions from whoever sent you here. Talk
  to the other guards to find out your assignment. Now go.}
 {8010}{}{I'm not a guard; I'm one of the new researchers. Do you have an assignment for me?}
-{8020}{}{Excuse me, but I was hoping YOU could show me around. I saw you standing over here and felt COMPELLED to talk to you. Perhaps after the tour we could have dinner…?}
+{8020}{}{Excuse me, but I was hoping YOU could show me around. I saw you standing over here and felt COMPELLED to talk to you. Perhaps after the tour we could have dinner?}
 {8030}{}{Thanks. You've been very helpful.}
 {9000}{}{You're a RESEARCHER...? Hmmmm. I've never seen you before. How much do you know about pharmaceutical research?}
 {9010}{}{Uh, enough. Just sit back and watch me go.}
@@ -121,7 +122,7 @@ lang=engl
 {9030}{}{I have to be going.}
 {10000}{}{Ha! I think I'll just watch you go, period. Leave before I call the guards.}
 {10010}{}{All right.}
-{10020}{}{I'm going…::mumble::…you bald-headed bitch.}
+{10020}{}{I'm going ::mumble:: you bald-headed bitch.}
 {11000}{}{Hmmmm. All right then. Let me give you a run-down on what we do here: we test the effects and potency of a metamphetamine called Jet.}
 {11010}{}{I see. And how is the research coming?}
 {11020}{}{I think I have the idea. I'll examine the rest of the testing area myself}
@@ -137,15 +138,15 @@ lang=engl
 {14020}{}{Perhaps I could get a sample? I may be able to provide some additional analysis.}
 {14030}{}{Thanks for the information. I'll be back later.}
 {15000}{}{Addict the miners in Redding to Jet, and whoever controls the Jet, controls Redding. Typical power play.}
-{15010}{}{So…who does control the drugs?}
+{15010}{}{So who does control the drugs?}
 {16000}{}{Who controls the drugs? The Mordinos. Of course, Myron laid all the groundwork for Jet's composition. We do mostly clean-up work.}
 {16010}{}{Is Myron your boss?}
 {17000}{}{He WAS, until he upped and left a couple years back with that idiot tribal. Typical project leader.}
 {17010}{}{Anyway, thanks for the information. I'll be back later.}
-{18000}{}{Oh, not THAT busy…heh…well, no, pretty busy. I mean, mostly its routine drug testing, and occasionally we have a slave go over the edge…}
+{18000}{}{Oh, not THAT busy heh well, no, pretty busy. I mean, mostly its routine drug testing, and occasionally we have a slave go over the edge }
 {18010}{}{Doesn't purposely injecting experimental metamphetamines into enslaved humans make you question your basic humanity?}
 {18020}{}{Wow. That sounds dangerous. You ever get hurt? Do you have many patient fatalities?}
-{18030}{}{Sounds interesting, but I have to go….uh, I'll be back, though.}
+{18030}{}{Sounds interesting, but I have to go. uh, I'll be back, though.}
 {19000}{}{Was that some poor attempt at a joke?}
 {19010}{}{Just asking. I mean, what if you had been sold into slavery, been taken here, then pumped full of drugs?}
 {19020}{}{Uh, yes. I have to be going.}
@@ -154,11 +155,11 @@ lang=engl
 {21000}{}{Slave deaths? A few. Mostly accidental overdoses - usually a tech's fault - or self-inflicted injuries. Some ingest too much Jet, and they REALLY want to fly.}
 {21010}{}{Other than that, how's the drug testing going?}
 {21020}{}{I bet. Well, thanks for the information. You've been very helpful.}
-{22000}{}{Look, I'm VERY busy, so if you don't mind… [Glances up from her clipboard at you, then scowls.] You again? What do you want now?}
+{22000}{}{Look, I'm VERY busy, so if you don't mind [Glances up from her clipboard at you, then scowls.] You again? What do you want now?}
 {22010}{}{I'm one of the new personnel assigned here.}
 {22020}{}{Nevermind. Sorry to bother you.}
-{23000}{}{This…hmm…I'm VERY flattered, but I'm also very busy at the moment…so…uh…}
-{23010}{}{Well, do you mind if I came by and picked you up after work then? No pressure…just some dinner, some conversation. You look like someone who might need to take a little break from work. Things here must keep you very busy.}
+{23000}{}{This hmm I'm VERY flattered, but I'm also very busy at the moment so uh }
+{23010}{}{Well, do you mind if I came by and picked you up after work then? No pressure just some dinner, some conversation. You look like someone who might need to take a little break from work. Things here must keep you very busy.}
 {23020}{}{Well, I had to ask. Thanks anyway.}
 {24000}{}{Fine. Here's a couple samples of the latest batch we've been working on. Do a little fieldwork, try and bring back some data from the outside.}
 {24010}{}{Yes ma'am!}

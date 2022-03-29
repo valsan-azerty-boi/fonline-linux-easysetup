@@ -115,6 +115,13 @@
 
 #define ENTIRE_ARENA_CONTAINER               (30)
 
+#define ENTIRE_ARENA_LOBBY_POLYGON_BEGIN     (31) // area lobby polygon by these coords
+#define ENTIRE_ARENA_LOBBY_POLYGON_END       (34)
+#define ENTIRE_ARENA_ARENA3_TEAM_1           (35) // start points
+#define ENTIRE_ARENA_ARENA3_TEAM_2           (36) // start points
+#define ENTIRE_ARENA_ARENA3_POLYGON_BEGIN    (37) // area polygon by these coords
+#define ENTIRE_ARENA_ARENA3_POLYGON_END      (40)
+
 #define ENTIRE_ARENA_DOOR0_OUT               (100)
 #define ENTIRE_ARENA_DOOR0_IN                (101)
 #define ENTIRE_ARENA_DOOR1_OUT               (102)

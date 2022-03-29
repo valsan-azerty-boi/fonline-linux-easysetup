@@ -547,10 +547,12 @@
 
 # Map 104, base 1050
 {1050}{}{Ruined Military Bunker Level 1}
+{1055}{}{08vats}
 {1056}{}{elevato1:25, elevator:25, electri1:15, electric:15, clank:10, clank1:10}
 
 # Map 105, base 1060
 {1060}{}{Ruined Military Bunker Level 2}
+{1065}{}{08vats}
 {1066}{}{elevato1:25, elevator:25, electri1:15, electric:15, clank:10, clank1:10}
 
 # Map 106, base 1070
@@ -1898,7 +1900,7 @@
 {101010}{}{24}
 {101020}{}{art\intrface\twnden.frm}
 {101030}{}{art\intrface\WM_DEN.FRM}
-{101090}{}{3}
+{101090}{}{4}
 {101101}{}{Downtown}
 {101102}{}{124}
 {101103}{}{293}
@@ -1908,6 +1910,9 @@
 {101121}{}{South Side}
 {101122}{}{205}
 {101123}{}{357}
+{101131}{}{Southwest}
+{101132}{}{135}
+{101133}{}{347}
 
 # Klamath, pid 2, base 102000
 {102000}{}{Klamath}
@@ -1983,7 +1988,7 @@
 {106010}{}{24}
 {106020}{}{art\intrface\twnbrokn.frm}
 {106030}{}{art\intrface\WM_HILLS.FRM}
-{106090}{}{3}
+{106090}{}{4}
 {106101}{}{Downtown}
 {106102}{}{125}
 {106103}{}{276}
@@ -1993,6 +1998,9 @@
 {106121}{}{South Side}
 {106122}{}{246}
 {106123}{}{359}
+{106131}{}{North Side}
+{106132}{}{230}
+{106133}{}{201}
 
 # New Reno, pid 7, base 107000
 {107000}{}{New Reno}
@@ -2084,7 +2092,7 @@
 {113010}{}{24}
 {113020}{}{art\intrface\twnredng.frm}
 {113030}{}{art\intrface\WM_RED.FRM}
-{113090}{}{3}
+{113090}{}{4}
 {113101}{}{Downtown}
 {113102}{}{160}
 {113103}{}{231}
@@ -2094,6 +2102,9 @@
 {113121}{}{Mine}
 {113122}{}{115}
 {113123}{}{204}
+{113131}{}{Wanamingo}
+{113132}{}{64}
+{113133}{}{252}
 
 # San Francisco, pid 14, base 114000
 {114000}{}{San Francisco}
@@ -2330,10 +2341,16 @@
 {137005}{}{An old warehouse between the ruins.}
 {137010}{}{6}
 {137020}{}{art\intrface\Twnmap10.frm}
-{137090}{}{1}
-{137101}{}{Warehouse}
+{137090}{}{3}
+{137101}{}{West Side}
 {137102}{}{297}
 {137103}{}{165}
+{137111}{}{East Side}
+{137112}{}{397}
+{137113}{}{165}
+{137121}{}{Southeast}
+{137122}{}{397}
+{137123}{}{225}
 
 # Salvagers, pid 38, base 138000
 {138000}{}{Salvagers}
@@ -3258,6 +3275,26 @@
 {468005}{}{A military outpost of the NCR, composed of a few barracks and protective walls.}
 {468010}{}{6}
 
+# Cubik Camp, pid 369, base 469000
+{469000}{}{Cubik Camp}
+{469005}{}{Special location for testing extraordinary new technology and incredible genetically engineered creatures.}
+{469010}{}{6}
+
+# Barter Ground, pid 370, base 470000
+{470000}{}{Barter Ground}
+{470005}{}{A small camp of traders.}
+{470010}{}{12}
+
+# Talchem California HQ, pid 371, base 471000
+{471000}{}{Talchem California HQ}
+{471005}{}{An abandoned compound.}
+{471010}{}{6}
+
+# Bounty Hunters HQ, pid 372, base 472000
+{472000}{}{Bounty Hunters HQ}
+{472005}{}{A hidden base of Bounty Hunters.}
+{472010}{}{6}
+
 #
 # Worldmap Encounter messages
 #
@@ -3285,18 +3322,38 @@
 {10000018}{}{Do you wish to encounter: @lex str1@@lex str2@@lex str3@@lex str4@@lex str5@@lex str6@@lex str7@@lex str8@}
 {10000019}{}{Do you wish to encounter: @lex str1@@lex str2@@lex str3@@lex str4@@lex str5@@lex str6@@lex str7@@lex str8@@lex str9@}
 
+
+
+
 # count (prefix) TODO
 {10000020}{}{a small group of }
 {10000021}{}{a group of }
+
+
+# brakujace linie powodujace blad nie wbijania w enco w ktorym jest inny gracz (psikus od 2238 ;p)
+{10000022}{}{Do you wish to encounter: @lex who@ and @lex player@ group.}
+{10000023}{}{Do you wish to encounter: @lex player@.}
+{10000024}{}{Do you wish to encounter: @lex player@ group.}
+
+# ostrzezenie o wejsciu do enco, ktore jest w TB (12.04.2014)
+{10000025}{}{Do you wish to encounter: @lex player@. @lex str1@@lex str2@}
+{10000026}{}{Do you wish to encounter: @lex player@ group. @lex str1@@lex str2@}
+
+
 
 # action
 {10000030}{}{fighting }
 {10000131}{}{fending off}
 
+
+
+# {10000200}{}{Do you wish to enter to encounter in TURN-BASED mode?}
+
 #
 # New encounters 20000000 + <group>
 #
 
+{19999999}{}{None}
 {20000000}{}{Raiders}
 {20000001}{}{Radscorpions}
 {20000002}{}{Giant rats}
@@ -3415,7 +3472,7 @@
 {20000115}{}{Powder Ganger}
 {20000116}{}{Hoover Dam caravan}
 {20000117}{}{Endless Walker}
-{20000118}{}{Radtoads}
+{20000118}{}{Desert Mantis}
 {20000119}{}{Hermit}
 {20000120}{}{Followers of the Apocalypse}
 {20000121}{}{Farm Thug}
@@ -3431,4 +3488,16 @@
 {20000131}{}{NCR Army}
 {20000132}{}{80s}
 {20000133}{}{Brotherhood Initiate Patrol}
-{20000134}{}{The what?}
+{20000134}{}{Pashtshuur}
+{20000135}{}{Rebeliants}
+{20000136}{}{Renegades}
+{20000137}{}{Master's Elite Crew}
+{20000138}{}{Mad Warriors}
+{20000139}{}{Melchior's Pets}
+{20000140}{}{Cultists of Colt}
+{20000141}{}{Dead Walkers}
+{20000142}{}{Bots Patrol}
+{20000143}{}{Sentry Bot Patrol}
+{20000144}{}{Followers of Rat God}
+{20000145}{}{Desert Hunters}
+{20000146}{}{The what?}

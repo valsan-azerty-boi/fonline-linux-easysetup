@@ -39,7 +39,7 @@ lang=engl
 9 9000 None 0 #
 10 9010 @
 10 10000 None 0 #
-11 10010 D _param p ST_CHARISMA > 5 #
+11 10010 D _param p ST_CHARISMA < 11 #
 0 10020 @
 11 11000 None 0 #
 0 11010 R _var p q_modoc_balthas_fetcher = 3 @

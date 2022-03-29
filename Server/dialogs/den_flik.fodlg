@@ -22,8 +22,8 @@ lang=engl
 4 3020 #
 65506 3030 #
 0 3040 #
-12 3050 D _param p ST_STRENGTH = 11 #
-15 3060 D _var p q_den_mom_orphanage = 2 D _param p ST_STRENGTH = 11 @
+12 3050 D _param p ST_STRENGTH = 6 # 
+15 3060 D _var p q_den_mom_orphanage = 2 D _param p ST_STRENGTH = 6 @ 
 4 4000 None 0 #
 5 4010 #
 3 4020 #
@@ -89,8 +89,8 @@ lang=engl
 {3020}{}{What the hell do you do here?}
 {3030}{}{I'd like to trade with you.}
 {3040}{}{Gotta go. Bye.}
-{3050}{}{(DISABLED, SEE DEMAND) Got any work?}
-{3060}{}{(DISABLED, SEE DEMAND) Look Flick, Mom will run an orphanage in town soon, and your children may live there if they wish to. I don't want you bringing her any trouble you hear? Or I'm gonna have to tear your head out of your body and feed the birds with it.}
+{3050}{}{Got any work?}
+{3060}{}{Look Flick, Mom will run an orphanage in town soon, and your children may live there if they wish to. I don't want you bringing her any trouble you hear? Or I'm gonna have to tear your head out of your body and feed the birds with it.}
 {4000}{}{I'm a fuckin' provider, waddya think? I'm like a good Samurai-itan guy.}
 {4010}{}{Say what?}
 {4020}{}{Yeah, uh, well…let me ask you something else.}

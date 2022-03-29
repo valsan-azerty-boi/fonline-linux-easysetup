@@ -75,9 +75,9 @@ lang=engl
 25 21000 None 0 #
 0 21010 R _var p q_klam_bob_thehole = 1 @
 26 22000 None 0 #
-0 22010 D _param p ST_CHARISMA < 6 R _param p ST_EXPERIENCE + 350 R _item p PID_BEER + 2 R _var p q_klam_bob_thehole = 3 R _script dialog@r_QuestTimeout 1 144 R _script dialog@r_AddMoney 1 75 #
-0 22020 D _param p ST_CHARISMA < 8 D _param p ST_CHARISMA > 5 R _param p ST_EXPERIENCE + 350 R _item p PID_BOOZE + 2 R _item p PID_ROT_GUT + 2 R _var p q_klam_bob_thehole = 3 R _script dialog@r_QuestTimeout 1 144 R _script dialog@r_AddMoney 1 75 #
-0 22030 D _param p ST_CHARISMA > 7 R _param p ST_EXPERIENCE + 350 R _item p PID_ROT_GUT + 5 R _var p q_klam_bob_thehole = 3 R _script dialog@r_QuestTimeout 1 144 R _script dialog@r_AddMoney 1 75 @
+0 22010 D _param p ST_CHARISMA < 6 R _param p ST_EXPERIENCE + 750 R _item p PID_BEER + 2 R _var p q_klam_bob_thehole = 3 R _script dialog@r_QuestTimeout 1 144 R _script dialog@r_AddMoney 1 275 #
+0 22020 D _param p ST_CHARISMA < 8 D _param p ST_CHARISMA > 5 R _param p ST_EXPERIENCE + 750 R _item p PID_BOOZE + 2 R _item p PID_ROT_GUT + 2 R _var p q_klam_bob_thehole = 3 R _script dialog@r_QuestTimeout 1 144 R _script dialog@r_AddMoney 1 275 #
+0 22030 D _param p ST_CHARISMA > 7 R _param p ST_EXPERIENCE + 750 R _item p PID_ROT_GUT + 5 R _var p q_klam_bob_thehole = 3 R _script dialog@r_QuestTimeout 1 144 R _script dialog@r_AddMoney 1 275 @
 27 23000 None 0 #
 0 23010 R _var p q_klam_bob_thehole = 1 &
 

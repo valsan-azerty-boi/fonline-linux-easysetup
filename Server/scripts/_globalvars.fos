@@ -33,8 +33,8 @@
 
 
 // facility regeneration interval (real minutes)
-# pragma globalvar "int __FacilitiesRegenTimeMin = 10"
-# pragma globalvar "int __FacilitiesRegenTimeMax = 30"
+# pragma globalvar "int __FacilitiesRegenTimeMin = 2"
+# pragma globalvar "int __FacilitiesRegenTimeMax = 10"
 // interval for which global counters are cleared
 # pragma globalvar "int __ClearRegenCountersTime = 60"
 
@@ -53,9 +53,9 @@
 # pragma globalvar "int __JunkBatch			= 1"
 
 # pragma globalvar "int __ElectronicPartsTimeout = 96"
-# pragma globalvar "int __ElectronicPartsBatch	 = 1"
+# pragma globalvar "int __ElectronicPartsBatch	 = 2"
 # pragma globalvar "int __ElectronicPartsRegen   = 100"
-# pragma globalvar "int __ElectronicPartsCap = 5"
+# pragma globalvar "int __ElectronicPartsCap = 25"
 
 # pragma globalvar "int __ElectronicParts2Timeout = 96"
 # pragma globalvar "int __ElectronicParts2Batch	 = 1"
@@ -89,7 +89,7 @@
 # pragma globalvar "int __MeatTimeout		= 60"
 # pragma globalvar "int __MeatBatch			= 5"
 # pragma globalvar "int __MeatRegen         = 500"
-# pragma globalvar "int __MeatCapacity		= 10"
+# pragma globalvar "int __MeatCapacity		= 100"
 
 # pragma globalvar "int __BrahminCrapTimeout = 48"
 # pragma globalvar "int __BrahminCrapBatch	= 1"
@@ -153,6 +153,14 @@
 # pragma globalvar "bool  __ConfigFog                 = false"
 # pragma globalvar "uint  __ConfigFogColor           = 0" // default set in InitConfig()
 # pragma globalvar "bool  __ConfigIgnoreLangChange    = false"
+# pragma globalvar "bool  __ConfigMsFov  = false"
+# pragma globalvar "uint8 __ConfigOnHeadAwareness  = 1"
+# pragma globalvar "bool  __ConfigShowNpcAwareness  = false"
+# pragma globalvar "bool  __ConfigShowPlayerAwareness  = false"
+# pragma globalvar "bool  __ConfigCustomBorder		     = false"
+# pragma globalvar "uint8 __ConfigCustomBorderRange	     = 0"
+# pragma globalvar "uint  __ConfigCustomBorderColor      = 0" // default set in InitConfig()
+
 
 # pragma globalvar "uint __ConfigDamageHitColor    = 0"   // default set in InitConfig()
 # pragma globalvar "int8 __ConfigDamageHitOffXfrom = -15"
@@ -165,8 +173,8 @@
 # pragma globalvar "uint __ConfigVerboseActionColor    = 0" // default set in InitConfig()
 # pragma globalvar "int8 __ConfigVerboseActionOffXfrom = -15"
 # pragma globalvar "int8 __ConfigVerboseActionOffXto   =  15"
-# pragma globalvar "int8 __ConfigVerboseActionOffYfrom = -20"
-# pragma globalvar "int8 __ConfigVerboseActionOffYto   = -20"
+# pragma globalvar "int8 __ConfigVerboseActionOffYfrom = -25"
+# pragma globalvar "int8 __ConfigVerboseActionOffYto   = -25"
 
 # pragma globalvar "bool __ConfigFollowerExperience = false"
 #endif // __CLIENT

@@ -5,6 +5,7 @@
 // quest_raiders.fos
 //
 
+#include "_colors.fos"
 #include "_maps.fos"
 #include "_vars.fos"
 #include "_macros.fos"
@@ -23,6 +24,9 @@ void r_SpawnFarmhome(Critter& player, Critter@ npc)
     int loc = CreateLocation(LOCATION_Farmhome, Random(1800, 2050), Random(1400, 1500), crits);
     if(loc == 0)
         return;
+    Location@ location = GetLocation(loc);
+    location.Color = COLOR_WM_QUEST;
+    location.Update();
     GameVar@ acq = GetUnicumVar(UVAR_acquaintance, player.Id, npc.Id);
     acq = 1;
     GameVar@ locidv = GetLocalVar(LVAR_q_raiders_induction_locid, player.Id);

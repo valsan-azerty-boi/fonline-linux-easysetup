@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              202
 MaxHexY              186
-WorkHexX             114
-WorkHexY             105
+WorkHexX             104
+WorkHexY             113
 ScriptModule         map_ares
 ScriptFunc           map_init
 NoLogOut             1
@@ -12956,7 +12956,6 @@ MapObjType           1
 ProtoId              2143
 MapX                 62
 MapY                 103
-Item_LockerCondition 1
 Item_Val3            1
 
 MapObjType           2
@@ -19715,7 +19714,7 @@ MapX                 133
 MapY                 122
 Dir                  3
 ScriptName           map_ares
-FuncName             _DontMove
+FuncName             _Mob
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
@@ -19777,7 +19776,7 @@ MapX                 139
 MapY                 123
 Dir                  1
 ScriptName           map_ares
-FuncName             _Mob
+FuncName             _DontMove
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
@@ -19804,7 +19803,7 @@ Critter_ParamValue9  18
 
 MapObjType           0
 ProtoId              121
-MapX                 74
+MapX                 70
 MapY                 126
 Dir                  3
 ScriptName           map_ares
@@ -19839,7 +19838,7 @@ MapX                 54
 MapY                 98
 Dir                  3
 ScriptName           map_ares
-FuncName             _Mob
+FuncName             _DontMove
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
@@ -19959,8 +19958,9 @@ Critter_ParamValue9  18
 
 MapObjType           0
 ProtoId              120
-MapX                 62
-MapY                 85
+MapX                 103
+MapY                 115
+Dir                  2
 ScriptName           map_ares
 FuncName             _Mob
 Critter_Cond         1
@@ -21233,5 +21233,65 @@ MapObjType           2
 ProtoId              5621
 MapX                 143
 MapY                 75
+
+MapObjType           0
+ProtoId              845
+MapX                 61
+MapY                 106
+Dir                  4
+ScriptName           mob
+FuncName             _DontMove
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  10277
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  47
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  19
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  5000
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  10
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  1800
+Critter_ParamIndex6  ST_FACTION_RANK
+Critter_ParamValue6  0
+Critter_ParamIndex7  ST_FACTION_MODE
+Critter_ParamValue7  0
+Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
+Critter_ParamValue8  21
+Critter_ParamIndex9  ST_LEVEL
+Critter_ParamValue9  10
+
+MapObjType           0
+ProtoId              843
+MapX                 152
+MapY                 104
+Dir                  5
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  10227
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  47
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  194
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  5000
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  10
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  1800
+Critter_ParamIndex6  ST_FACTION_RANK
+Critter_ParamValue6  0
+Critter_ParamIndex7  ST_FACTION_MODE
+Critter_ParamValue7  0
+Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
+Critter_ParamValue8  20
+Critter_ParamIndex9  ST_LEVEL
+Critter_ParamValue9  10
 
 

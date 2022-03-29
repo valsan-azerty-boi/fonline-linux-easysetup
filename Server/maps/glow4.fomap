@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              130
 MaxHexY              120
-WorkHexX             59
-WorkHexY             60
+WorkHexX             66
+WorkHexY             55
 ScriptModule         map_glow
 ScriptFunc           map_init
 NoLogOut             1
@@ -767,11 +767,11 @@ tile       50   32             art\tiles\brn1000.frm
 tile       52   32             art\tiles\brn1000.frm
 tile       54   32             art\tiles\brn1000.frm
 tile       56   32             art\tiles\brn1000.frm
-tile       58   32             art\tiles\GRT2001.FRM
-tile       60   32             art\tiles\GRT2001.FRM
-tile       62   32             art\tiles\GRT2001.FRM
-tile       64   32             art\tiles\GRT2001.FRM
-tile       66   32             art\tiles\GRT2001.FRM
+tile       58   32             art\tiles\grt2001.frm
+tile       60   32             art\tiles\grt2001.frm
+tile       62   32             art\tiles\grt2001.frm
+tile       64   32             art\tiles\grt2001.frm
+tile       66   32             art\tiles\grt2001.frm
 tile       68   32             art\tiles\brn1000.frm
 tile       70   32             art\tiles\brn1000.frm
 tile       72   32             art\tiles\brn1000.frm
@@ -826,11 +826,11 @@ tile       50   34             art\tiles\brn1000.frm
 tile       52   34             art\tiles\brn1000.frm
 tile       54   34             art\tiles\brn1000.frm
 tile       56   34             art\tiles\brn1000.frm
-tile       58   34             art\tiles\GRT2001.FRM
-tile       60   34             art\tiles\GRT2001.FRM
-tile       62   34             art\tiles\GRT2001.FRM
-tile       64   34             art\tiles\GRT2001.FRM
-tile       66   34             art\tiles\GRT2001.FRM
+tile       58   34             art\tiles\grt2001.frm
+tile       60   34             art\tiles\grt2001.frm
+tile       62   34             art\tiles\grt2001.frm
+tile       64   34             art\tiles\grt2001.frm
+tile       66   34             art\tiles\grt2001.frm
 tile       68   34             art\tiles\brn1000.frm
 tile       70   34             art\tiles\brn1000.frm
 tile       72   34             art\tiles\brn1000.frm
@@ -885,11 +885,11 @@ tile       50   36             art\tiles\brn1000.frm
 tile       52   36             art\tiles\brn1000.frm
 tile       54   36             art\tiles\brn1000.frm
 tile       56   36             art\tiles\brn1000.frm
-tile       58   36             art\tiles\GRT2001.FRM
-tile       60   36             art\tiles\GRT2001.FRM
-tile       62   36             art\tiles\GRT2001.FRM
-tile       64   36             art\tiles\GRT2001.FRM
-tile       66   36             art\tiles\GRT2001.FRM
+tile       58   36             art\tiles\grt2001.frm
+tile       60   36             art\tiles\grt2001.frm
+tile       62   36             art\tiles\grt2001.frm
+tile       64   36             art\tiles\grt2001.frm
+tile       66   36             art\tiles\grt2001.frm
 tile       68   36             art\tiles\brn1000.frm
 tile       70   36             art\tiles\brn1000.frm
 tile       72   36             art\tiles\brn1000.frm
@@ -945,11 +945,11 @@ tile       50   38             art\tiles\brn1000.frm
 tile       52   38             art\tiles\brn1000.frm
 tile       54   38             art\tiles\brn1000.frm
 tile       56   38             art\tiles\brn1000.frm
-tile       58   38             art\tiles\GRT2001.FRM
-tile       60   38             art\tiles\GRT2001.FRM
-tile       62   38             art\tiles\GRT2001.FRM
-tile       64   38             art\tiles\GRT2001.FRM
-tile       66   38             art\tiles\GRT2001.FRM
+tile       58   38             art\tiles\grt2001.frm
+tile       60   38             art\tiles\grt2001.frm
+tile       62   38             art\tiles\grt2001.frm
+tile       64   38             art\tiles\grt2001.frm
+tile       66   38             art\tiles\grt2001.frm
 tile       68   38             art\tiles\brn1000.frm
 tile       70   38             art\tiles\brn1000.frm
 tile       72   38             art\tiles\brn1000.frm
@@ -1005,11 +1005,11 @@ tile       50   40             art\tiles\brn1000.frm
 tile       52   40             art\tiles\brn1000.frm
 tile       54   40             art\tiles\brn1000.frm
 tile       56   40             art\tiles\brn1000.frm
-tile       58   40             art\tiles\GRT2001.FRM
-tile       60   40             art\tiles\GRT2001.FRM
-tile       62   40             art\tiles\GRT2001.FRM
-tile       64   40             art\tiles\GRT2001.FRM
-tile       66   40             art\tiles\GRT2001.FRM
+tile       58   40             art\tiles\grt2001.frm
+tile       60   40             art\tiles\grt2001.frm
+tile       62   40             art\tiles\grt2001.frm
+tile       64   40             art\tiles\grt2001.frm
+tile       66   40             art\tiles\grt2001.frm
 tile       68   40             art\tiles\brn1000.frm
 tile       70   40             art\tiles\brn1000.frm
 tile       72   40             art\tiles\brn1000.frm
@@ -1066,11 +1066,11 @@ tile       50   42             art\tiles\brn1000.frm
 tile       52   42             art\tiles\brn1000.frm
 tile       54   42             art\tiles\brn1000.frm
 tile       56   42             art\tiles\brn1000.frm
-tile       58   42             art\tiles\GRT2001.FRM
-tile       60   42             art\tiles\GRT2001.FRM
-tile       62   42             art\tiles\GRT2001.FRM
-tile       64   42             art\tiles\GRT2001.FRM
-tile       66   42             art\tiles\GRT2001.FRM
+tile       58   42             art\tiles\grt2001.frm
+tile       60   42             art\tiles\grt2001.frm
+tile       62   42             art\tiles\grt2001.frm
+tile       64   42             art\tiles\grt2001.frm
+tile       66   42             art\tiles\grt2001.frm
 tile       68   42             art\tiles\brn1000.frm
 tile       70   42             art\tiles\brn1000.frm
 tile       72   42             art\tiles\brn1000.frm
@@ -3813,11 +3813,6 @@ ProtoId              5670
 MapX                 71
 MapY                 31
 
-MapObjType           1
-ProtoId              138
-MapX                 72
-MapY                 31
-
 MapObjType           2
 ProtoId              5666
 MapX                 72
@@ -4123,11 +4118,11 @@ MapY                 32
 
 MapObjType           1
 ProtoId              188
-MapX                 82
+MapX                 84
 MapY                 32
 ScriptName           item_spawner_container
 FuncName             item_init
-Item_Val4            76
+Item_Val4            77
 
 MapObjType           2
 ProtoId              2067
@@ -4137,11 +4132,6 @@ MapY                 32
 MapObjType           2
 ProtoId              5622
 MapX                 83
-MapY                 32
-
-MapObjType           1
-ProtoId              188
-MapX                 84
 MapY                 32
 
 MapObjType           2
@@ -9182,7 +9172,7 @@ MapX                 64
 MapY                 83
 ScriptName           item_spawner_container
 FuncName             item_init
-Item_Val4            93
+Item_Val4            94
 
 MapObjType           2
 ProtoId              5666
@@ -9196,11 +9186,11 @@ MapY                 83
 
 MapObjType           1
 ProtoId              138
-MapX                 66
-MapY                 83
+MapX                 72
+MapY                 31
 ScriptName           item_spawner_container
 FuncName             item_init
-Item_Val4            94
+Item_Val4            59
 
 MapObjType           2
 ProtoId              5666
@@ -9210,11 +9200,6 @@ MapY                 83
 MapObjType           2
 ProtoId              5670
 MapX                 67
-MapY                 83
-
-MapObjType           1
-ProtoId              138
-MapX                 68
 MapY                 83
 
 MapObjType           2
@@ -11326,5 +11311,116 @@ MapObjType           1
 ProtoId              9647
 MapX                 89
 MapY                 73
+
+MapObjType           0
+ProtoId              78
+MapX                 53
+MapY                 79
+Dir                  3
+ScriptName           mob
+FuncName             critter_init
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  0
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  32
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  242
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  5024
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+Critter_ParamIndex6  ST_FACTION_RANK
+Critter_ParamValue6  1
+Critter_ParamIndex7  ST_FACTION_MODE
+Critter_ParamValue7  0
+Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
+Critter_ParamValue8  0
+
+MapObjType           0
+ProtoId              76
+MapX                 68
+MapY                 86
+Dir                  5
+ScriptName           mob
+FuncName             critter_init
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  0
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  0
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  319
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  5024
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+Critter_ParamIndex6  ST_FACTION_RANK
+Critter_ParamValue6  1
+Critter_ParamIndex7  ST_FACTION_MODE
+Critter_ParamValue7  0
+Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
+Critter_ParamValue8  0
+
+MapObjType           0
+ProtoId              76
+MapX                 63
+MapY                 87
+Dir                  5
+ScriptName           mob
+FuncName             critter_init
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  0
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  0
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  319
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  5024
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  0
+Critter_ParamIndex6  ST_FACTION_RANK
+Critter_ParamValue6  1
+Critter_ParamIndex7  ST_FACTION_MODE
+Critter_ParamValue7  0
+Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
+Critter_ParamValue8  0
+
+MapObjType           1
+ProtoId              138
+MapX                 66
+MapY                 83
+ScriptName           item_spawner_container
+FuncName             item_init
+Item_Val4            93
+
+MapObjType           1
+ProtoId              138
+MapX                 68
+MapY                 83
+ScriptName           item_spawner_container
+FuncName             item_init
+Item_Val4            94
+
+MapObjType           1
+ProtoId              188
+MapX                 82
+MapY                 32
+ScriptName           item_spawner_container
+FuncName             item_init
+Item_Val4            76
 
 

@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              119
 MaxHexY              119
-WorkHexX             92
-WorkHexY             64
+WorkHexX             66
+WorkHexY             73
 ScriptModule         -
 ScriptFunc           -
 NoLogOut             0
@@ -5904,8 +5904,8 @@ MapY                 74
 
 MapObjType           2
 ProtoId              2141
-MapX                 68
-MapY                 74
+MapX                 69
+MapY                 78
 LightDistance        8
 LightIntensity       50
 
@@ -6437,26 +6437,6 @@ MapY                 81
 MapObjType           2
 ProtoId              5167
 MapX                 67
-MapY                 81
-
-MapObjType           2
-ProtoId              5166
-MapX                 68
-MapY                 81
-
-MapObjType           2
-ProtoId              5167
-MapX                 69
-MapY                 81
-
-MapObjType           2
-ProtoId              5166
-MapX                 70
-MapY                 81
-
-MapObjType           2
-ProtoId              5167
-MapX                 71
 MapY                 81
 
 MapObjType           2
@@ -10452,5 +10432,97 @@ MapObjType           2
 ProtoId              4012
 MapX                 118
 MapY                 87
+
+MapObjType           2
+ProtoId              5165
+MapX                 68
+MapY                 81
+
+MapObjType           2
+ProtoId              5169
+MapX                 70
+MapY                 81
+
+MapObjType           2
+ProtoId              5167
+MapX                 71
+MapY                 81
+
+MapObjType           2
+ProtoId              2141
+MapX                 69
+MapY                 72
+LightDistance        8
+LightIntensity       50
+
+MapObjType           2
+ProtoId              2493
+MapX                 69
+MapY                 76
+
+MapObjType           2
+ProtoId              2067
+MapX                 71
+MapY                 76
+
+MapObjType           2
+ProtoId              2067
+MapX                 71
+MapY                 75
+
+MapObjType           2
+ProtoId              2067
+MapX                 70
+MapY                 74
+
+MapObjType           2
+ProtoId              2067
+MapX                 70
+MapY                 75
+
+MapObjType           2
+ProtoId              2067
+MapX                 69
+MapY                 75
+
+MapObjType           2
+ProtoId              2067
+MapX                 68
+MapY                 74
+
+MapObjType           2
+ProtoId              2067
+MapX                 69
+MapY                 74
+
+MapObjType           2
+ProtoId              2067
+MapX                 68
+MapY                 75
+
+MapObjType           2
+ProtoId              2067
+MapX                 67
+MapY                 76
+
+MapObjType           2
+ProtoId              2067
+MapX                 67
+MapY                 75
+
+MapObjType           2
+ProtoId              2067
+MapX                 67
+MapY                 74
+
+MapObjType           2
+ProtoId              2666
+MapX                 69
+MapY                 74
+
+MapObjType           2
+ProtoId              2676
+MapX                 69
+MapY                 77
 
 

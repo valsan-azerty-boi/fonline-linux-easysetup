@@ -28,7 +28,7 @@ void MakeSleepy(Critter& player)
         player.Say(SAY_NETMSG, "You feel sleepy.");
         player.ModeBase[MODE_HIDE] = 0;
         player.ModeBase[MODE_LAST_IP] = player.GetIp();
-        _SetTimeout(player, TO_SLEEPY, SLEEPY_TIMEOUT(player));
+        //_SetTimeout(player, TO_SLEEPY, SLEEPY_TIMEOUT(player));
         SetLvar(player, LVAR_wm_idle_chance, 0);
 
 
@@ -37,7 +37,7 @@ void MakeSleepy(Critter& player)
             Critter@ follower = GetCritter(player.Param[i]);
             if(valid(follower))
             {
-                _SetTimeout(follower, TO_SLEEPY, SLEEPY_TIMEOUT(player));
+                //_SetTimeout(follower, TO_SLEEPY, SLEEPY_TIMEOUT(player));
             }
         }
         if(player.GetMapId() < 1)
@@ -211,27 +211,29 @@ void UpdateSleepiness(Critter& cr)
     uint immunity = cr.Param[TO_IMMUNITY_TIME];
     if(stopped != 0 && stopped != uint(-1))
     {
-        cr.ParamBase[TO_SLEEPY] = cr.ParamBase[TO_SLEEPY] + (ELAPSED_TIME - stopped);
-        cr.ParamBase[TO_SLEEPY_STOPPED] = ELAPSED_TIME;
+        //cr.ParamBase[TO_SLEEPY] = cr.ParamBase[TO_SLEEPY] + (ELAPSED_TIME - stopped);
+        //cr.ParamBase[TO_SLEEPY_STOPPED] = ELAPSED_TIME;
+		;
     }
     if(cumulated != 0)
     {
         if(ELAPSED_TIME > immunity)
         {
-            cr.ParamBase[TO_SLEEPY] = cr.ParamBase[TO_SLEEPY] + (ELAPSED_TIME - MAX(cumulated, immunity));
+           ;      
+           //cr.ParamBase[TO_SLEEPY] = cr.ParamBase[TO_SLEEPY] + (ELAPSED_TIME - MAX(cumulated, immunity));
         }
-        cr.ParamBase[TO_SLEEPY_CUMULATE] = ELAPSED_TIME;
+        //cr.ParamBase[TO_SLEEPY_CUMULATE] = ELAPSED_TIME;
     }
-    if(uint(cr.Param[TO_SLEEPY]) > SLEEPY_TIMEOUT(cr))
-        _SetTimeout(cr, TO_SLEEPY, SLEEPY_TIMEOUT(cr));
+    //if(uint(cr.Param[TO_SLEEPY]) > SLEEPY_TIMEOUT(cr))
+        //_SetTimeout(cr, TO_SLEEPY, SLEEPY_TIMEOUT(cr));
 }
 
 void DecumulateSleepiness(Critter& cr)
 {
-    if(uint(cr.Param[TO_SLEEPY]) > SLEEPY_TIMEOUT(cr))
-        _SetTimeout(cr, TO_SLEEPY, SLEEPY_TIMEOUT(cr));
-    if(cr.Param[TO_SLEEPY_STOPPED] != -1)
-        cr.ParamBase[TO_SLEEPY_STOPPED] = 0;
+    //if(uint(cr.Param[TO_SLEEPY]) > SLEEPY_TIMEOUT(cr))
+        //_SetTimeout(cr, TO_SLEEPY, SLEEPY_TIMEOUT(cr));
+    //if(cr.Param[TO_SLEEPY_STOPPED] != -1)
+       // cr.ParamBase[TO_SLEEPY_STOPPED] = 0;
     cr.ParamBase[TO_SLEEPY_CUMULATE] = 0;
 }
 
@@ -239,10 +241,11 @@ void FreezeSleepiness(Critter& cr)
 {
     if(_IsFollower(cr) || (_IsRealPlayer(cr) && !WrathOfTheGod(cr)))
     {
-        if(uint(cr.Param[TO_SLEEPY]) > SLEEPY_TIMEOUT(cr))
-            _SetTimeout(cr, TO_SLEEPY, SLEEPY_TIMEOUT(cr));
-        cr.ParamBase[TO_SLEEPY_STOPPED] = ELAPSED_TIME;
-        cr.ParamBase[TO_SLEEPY_CUMULATE] = 0;
+        ;
+        //if(uint(cr.Param[TO_SLEEPY]) > SLEEPY_TIMEOUT(cr))
+            //_SetTimeout(cr, TO_SLEEPY, SLEEPY_TIMEOUT(cr));
+        //cr.ParamBase[TO_SLEEPY_STOPPED] = ELAPSED_TIME;
+        //cr.ParamBase[TO_SLEEPY_CUMULATE] = 0;
     }
 }
 
@@ -250,12 +253,13 @@ void CumulateSleepiness(Critter& cr)
 {
     if(_IsFollower(cr) || (_IsRealPlayer(cr) && !WrathOfTheGod(cr)))
     {
-        if(uint(cr.Param[TO_SLEEPY]) > SLEEPY_TIMEOUT(cr))
-            _SetTimeout(cr, TO_SLEEPY, SLEEPY_TIMEOUT(cr));
-        if(cr.Param[TO_SLEEPY] <= 0)
-            cr.ParamBase[TO_SLEEPY] = ELAPSED_TIME;
-        cr.ParamBase[TO_SLEEPY_STOPPED] = ELAPSED_TIME;
-        cr.ParamBase[TO_SLEEPY_CUMULATE] = ELAPSED_TIME;
+        ;
+        //if(uint(cr.Param[TO_SLEEPY]) > SLEEPY_TIMEOUT(cr))
+            //_SetTimeout(cr, TO_SLEEPY, SLEEPY_TIMEOUT(cr));
+        //if(cr.Param[TO_SLEEPY] <= 0)
+            //cr.ParamBase[TO_SLEEPY] = ELAPSED_TIME;
+        //cr.ParamBase[TO_SLEEPY_STOPPED] = ELAPSED_TIME;
+        //cr.ParamBase[TO_SLEEPY_CUMULATE] = ELAPSED_TIME;
     }
 }
 
@@ -363,9 +367,10 @@ void MasterSleepiness(Critter& cr)
     Critter@ master = GetCritter(cr.Param[FV_MASTER]);
     if(valid(master) && master.GetMapId() == cr.GetMapId())
     {
-        cr.ParamBase[TO_SLEEPY_STOPPED] = master.ParamBase[TO_SLEEPY_STOPPED];
-        cr.ParamBase[TO_SLEEPY_CUMULATE] = master.ParamBase[TO_SLEEPY_CUMULATE];
-        cr.ParamBase[TO_SLEEPY] = master.ParamBase[TO_SLEEPY];
+	;
+        //cr.ParamBase[TO_SLEEPY_STOPPED] = master.ParamBase[TO_SLEEPY_STOPPED];
+        //cr.ParamBase[TO_SLEEPY_CUMULATE] = master.ParamBase[TO_SLEEPY_CUMULATE];
+        //cr.ParamBase[TO_SLEEPY] = master.ParamBase[TO_SLEEPY];
     }
 }
 
@@ -377,12 +382,14 @@ void TryExitCombatZone(Critter& player)
 
 void SendCombatZones(Critter& cr)
 {
+return;
+/*
     array<Location@> locations;
     uint             locCount = GetVisibleLocations(cr.WorldX, cr.WorldY, __GlobalMapZoneLength * 2, cr, locations);
     for(uint i = 0; i < locCount; i++)
     {
         SendCombatZone(cr, locations[i]);
-    }
+    }*/
 }
 
 void TrySendCombatZones(Critter& cr)

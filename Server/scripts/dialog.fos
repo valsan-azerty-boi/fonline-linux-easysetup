@@ -1394,4 +1394,172 @@ void r_Outfitter(Critter& player, Critter@npc, int outfitId)
     GameVar@ outfitted = GetLocalVar(LVAR_event_outfitted, player.Id);
     outfitted = 1;
 }
+
+bool d_IsAdmin( Critter& player, Critter@ )
+{
+    return( player.GetAccess() == ACCESS_ADMIN );
+}
+
+uint dlg_SayBuyJet(Critter& player, Critter@ npc, string@ text)
+{
+    if(!IS_DIALOG_SAY_MODE(text))
+        return DIALOG_END;
+
+    uint price = 500;
+    uint cnt = 0;
+    if(!StrToInt(text, cnt))
+        return DIALOG_END;
+
+    if(cnt > 0)
+    {
+        if(_CritCountItem(player, PID_BOTTLE_CAPS) >= price*cnt)
+        {
+            _CritDeleteItem(player, PID_BOTTLE_CAPS, (price*cnt));
+            player.AddItem(PID_JET, cnt);
+            npc.Say(SAY_NORM_ON_HEAD, "Pleasure doing business.");
+        }
+        else
+        {
+            npc.Say(SAY_NORM_ON_HEAD, "Come back with money!");
+            return DIALOG_END;
+        }
+    }
+    return DIALOG_END;
+}
+
+uint dlg_SayBuyNuka(Critter& player, Critter@ npc, string@ text)
+{
+    if(!IS_DIALOG_SAY_MODE(text))
+        return DIALOG_END;
+
+    uint price = 100;
+    uint cnt = 0;
+    if(!StrToInt(text, cnt))
+        return DIALOG_END;
+        
+    if(cnt > 0)
+    {
+        if(_CritCountItem(player, PID_BOTTLE_CAPS) >= price*cnt)
+        {
+            _CritDeleteItem(player, PID_BOTTLE_CAPS, (price*cnt));
+            player.AddItem(PID_NUKA_COLA, cnt);
+            npc.Say(SAY_NORM_ON_HEAD, "Pleasure doing business.");
+        }
+        else
+        {
+            npc.Say(SAY_NORM_ON_HEAD, "Come back with money!");
+            return DIALOG_END;
+        }
+    }
+    return DIALOG_END;
+}
+
+uint dlg_SayBuyBeer(Critter& player, Critter@ npc, string@ text)
+{
+    if(!IS_DIALOG_SAY_MODE(text))
+        return DIALOG_END;
+
+    uint price = 10;
+    uint cnt = 0;
+    if(!StrToInt(text, cnt))
+        return DIALOG_END;
+        
+    if(cnt > 0)
+    {
+        if(_CritCountItem(player, PID_BOTTLE_CAPS) >= price*cnt)
+        {
+            _CritDeleteItem(player, PID_BOTTLE_CAPS, (price*cnt));
+            player.AddItem(PID_BEER, cnt);
+            npc.Say(SAY_NORM_ON_HEAD, "Pleasure doing business.");
+        }
+        else
+        {
+            npc.Say(SAY_NORM_ON_HEAD, "Come back with money!");
+            return DIALOG_END;
+        }
+    }
+    return DIALOG_END;
+}
+
+uint dlg_SayBuyCigarettes(Critter& player, Critter@ npc, string@ text)
+{
+    if(!IS_DIALOG_SAY_MODE(text))
+        return DIALOG_END;
+
+    uint price = 100;
+    uint cnt = 0;
+    if(!StrToInt(text, cnt))
+        return DIALOG_END;
+        
+    if(cnt > 0)
+    {
+        if(_CritCountItem(player, PID_BOTTLE_CAPS) >= price*cnt)
+        {
+            _CritDeleteItem(player, PID_BOTTLE_CAPS, (price*cnt));
+            player.AddItem(PID_CIGARETTES, cnt);
+            npc.Say(SAY_NORM_ON_HEAD, "Pleasure doing business.");
+        }
+        else
+        {
+            npc.Say(SAY_NORM_ON_HEAD, "Come back with money!");
+            return DIALOG_END;
+        }
+    }
+    return DIALOG_END;
+}
+
+uint dlg_SayBuyLighter(Critter& player, Critter@ npc, string@ text)
+{
+    if(!IS_DIALOG_SAY_MODE(text))
+        return DIALOG_END;
+
+    uint price = 100;
+    uint cnt = 0;
+    if(!StrToInt(text, cnt))
+        return DIALOG_END;
+        
+    if(cnt > 0)
+    {
+        if(_CritCountItem(player, PID_BOTTLE_CAPS) >= price*cnt)
+        {
+            _CritDeleteItem(player, PID_BOTTLE_CAPS, (price*cnt));
+            player.AddItem(PID_LIGHTER, cnt);
+            npc.Say(SAY_NORM_ON_HEAD, "Pleasure doing business.");
+        }
+        else
+        {
+            npc.Say(SAY_NORM_ON_HEAD, "Come back with money!");
+            return DIALOG_END;
+        }
+    }
+    return DIALOG_END;
+}
+
+uint dlg_SayBuyMedGel(Critter& player, Critter@ npc, string@ text)
+{
+    if(!IS_DIALOG_SAY_MODE(text))
+        return DIALOG_END;
+
+    uint price = 25;
+    uint cnt = 0;
+    if(!StrToInt(text, cnt))
+        return DIALOG_END;
+        
+    if(cnt > 0)
+    {
+        if(_CritCountItem(player, PID_BOTTLE_CAPS) >= price*cnt)
+        {
+            _CritDeleteItem(player, PID_BOTTLE_CAPS, (price*cnt));
+            player.AddItem(PID_BIO_GEL, cnt);
+            npc.Say(SAY_NORM_ON_HEAD, "Pleasure doing business.");
+        }
+        else
+        {
+            npc.Say(SAY_NORM_ON_HEAD, "Come back with money!");
+            return DIALOG_END;
+        }
+    }
+    return DIALOG_END;
+}
+
 #endif // __DIALOG__ //

@@ -46,7 +46,7 @@ lang=engl
 17 11020 D _var p bar_drink = 1 D _item p PID_BOTTLE_CAPS > 1 R _script dialog@r_RemoveMoney 1 2 #
 0 11030 D _var p bar_drink = 2 #
 0 11040 @
-12 12000 None 0 #
+12 12000 dialog@dlg_SayBuyBeer 0 #
 15 12010 D _item p PID_BOTTLE_CAPS > 9 R _item p PID_BEER + 1 R _script dialog@r_RemoveMoney 1 10 #
 0 12020 @
 13 13000 None 0 #
@@ -102,7 +102,7 @@ lang=engl
 {4000}{}{Typical of you scumbags to try and get somethin' for nothin'. Get the hell out.}
 {4010}{}{Alright, I'm leaving.}
 {5000}{}{We still have a room free and it will cost you @lex price@ caps for @lex time@ days. You want it?}
-{5010}{}{Sounds like a fair price to me. I’ll take it.@@Yes, I'll take the room.}
+{5010}{}{Sounds like a fair price to me. Iâ€™ll take it.@@Yes, I'll take the room.}
 {5020}{}{Uh, this is a little rich for me. You couldn't let me sleep there on the house, could ya?}
 {5030}{}{Hmm, maybe later. What about something else?}
 {6000}{}{Alright, let me show you your room...}
@@ -120,7 +120,7 @@ lang=engl
 {11020}{}{Sure.@@Okay.}
 {11030}{}{I changed my mind... I feel a bit sick.}
 {11040}{}{No, thanks.}
-{12000}{}{That'll be ten caps.}
+{12000}{}{That'll be ten caps. [You can use SAY to enter number of items you want to buy]}
 {12010}{}{Sure.@@Okay.}
 {12020}{}{No, thanks.}
 {13000}{}{That'll be ten caps.}

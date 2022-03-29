@@ -195,7 +195,7 @@ int[][] PerksData =
     },
     #endif
 
-    { 314, 0, 1 },    // Strong Back, Levelling, 1 ranks
+    { 314, 1, 1 },    // Strong Back, Support, 1 ranks
     {                 // level 1 requirements
         77, 1, 6,     // Level at least 6
         2, 1, 6,      // Endurance at least 6
@@ -402,13 +402,13 @@ int[][] PerksData =
     },
     #ifdef __SERVER
     {              // level 1 perk up effects
-        7, 1, 20,  // Maximum Hit Points increased by 20
+        7, 1, 40,  // Maximum Hit Points increased by 40
     },
     {              // level 2 perk up effects
         7, 1, 30,  // Maximum Hit Points increased by 30
     },
     {              // level 3 perk up effects
-        7, 1, 40,  // Maximum Hit Points increased by 40
+        7, 1, 20,  // Maximum Hit Points increased by 20
     },
     {              // level 1 perk down effects
         -1         // Just revert
@@ -452,7 +452,7 @@ int[][] PerksData =
 
     { 332, 1, 1 },   // Mr. Fixit, Support, 1 ranks
     {                // level 1 requirements
-        213, 1, 150, // Repair at least 150
+        213, 1, 120, // Repair at least 150
     },
     #ifdef __SERVER
     {                // level 1 perk up effects
@@ -477,7 +477,7 @@ int[][] PerksData =
 
     { 334, 1, 1 },   // Master Thief, Support, 1 ranks
     {                // level 1 requirements
-        210, 1, 150, // Steal at least 150
+        210, 1, 125, // Steal at least 125
     },
     #ifdef __SERVER
     {                // level 1 perk up effects
@@ -525,7 +525,7 @@ int[][] PerksData =
 
     { 338, 1, 1 },   // Pickpocket, Support, 1 ranks
     {                // level 1 requirements
-        210, 1, 175, // Steal at least 175
+        210, 1, 125, // Steal at least 125
     },
     #ifdef __SERVER
     {                // level 1 perk up effects
@@ -595,7 +595,7 @@ int[][] PerksData =
 
     { 344, 1, 1 },   // Pathfinder, Support, 1 ranks
     {                // level 1 requirements
-        217, 1, 175, // Outdoorsman at least 175
+        217, 1, 150, // Outdoorsman at least 150
     },
     #ifdef __SERVER
     {                // level 1 perk up effects
@@ -653,7 +653,7 @@ int[][] PerksData =
 
     { 349, 0, 1 }, // Quick Pockets, Levelling, 1 ranks
     {              // level 1 requirements
-        77, 1, 3,  // Level at least 3
+        77, 1, 6,  // Level at least 3
         5, 1, 5,   // Agility at least 5
     },
     #ifdef __SERVER
@@ -1215,7 +1215,7 @@ int[][] PerksData =
 
     { 400, 1, 1 },   // Negotiator, Support, 1 ranks
     {                // level 1 requirements
-        215, 1, 150, // Barter at least 150
+        215, 1, 125, // Barter at least 125
     },
     #ifdef __SERVER
     {                // level 1 perk up effects
@@ -1225,10 +1225,10 @@ int[][] PerksData =
     },
     #endif
 
-    { 401, 0, 1 }, // Pack Rat, Levelling, 1 ranks
+    { 401, 1, 1 }, // Pack Rat, Support, 1 ranks
     {              // level 1 requirements
         77, 1, 3,  // Level at least 3
-        4, 1, 6,   // Intelligence at least 6
+        4, 1, 1,   // Intelligence at least 1
     },
     #ifdef __SERVER
     {              // level 1 perk up effects
@@ -1430,7 +1430,7 @@ int[][] PerksData =
     },
     #endif
 
-    { 426, 0, 1 }, // Fast Reload, Levelling, 1 ranks
+    { 426, 2, 1 }, // Fast Reload, Levelling, 1 ranks
     {              // level 1 requirements
         77, 1, 6,  // Level at least 6
     },
@@ -1442,7 +1442,7 @@ int[][] PerksData =
     },
     #endif
 
-    { 427, 0, 1 }, // Spray and Pray, Levelling, 1 ranks
+    { 427, 2, 1 }, // Spray and Pray, Levelling, 1 ranks
     {              // level 1 requirements
         77, 1, 6,  // Level at least 6
     },
@@ -1502,44 +1502,59 @@ int[][] PerksData =
     },
     #endif
 
-    { 432, 2, 1 }, // Dermal Impact Armor, Disabled, 1 ranks
+    { 432, 1, 1 }, // Dermal Impact Armor, Implant, 1 ranks
     {              // level 1 requirements
     },
     #ifdef __SERVER
     {              // level 1 perk up effects
+	    23, 1, 4,  // Normal Resistance increased by 4%
+        29, 1, 4,  // Explode Resistance increased by 4%
     },
     {              // level 1 perk down effects
         -1         // Just revert
     },
     #endif
 
-    { 433, 2, 1 }, // Dermal Impact Asslt. Enhance., Disabled, 1 ranks
+    { 433, 1, 1 }, // Dermal Impact Asslt. Enhance., Disabled, 1 ranks
     {              // level 1 requirements
     },
     #ifdef __SERVER
     {              // level 1 perk up effects
+	    16, 1, 1,  // Normal Threshold increased by 1
+        22, 1, 1,  // Explode Threshold increased by 1
+		23, 1, 4,  // Normal Resistance increased by 4%
+        29, 1, 4,  // Explode Resistance increased by 4%
     },
     {              // level 1 perk down effects
         -1         // Just revert
     },
     #endif
 
-    { 434, 2, 1 }, // Phoenix Armor Implants, Disabled, 1 ranks
+    { 434, 1, 1 }, // Phoenix Armor Implants, Disabled, 1 ranks
     {              // level 1 requirements
     },
     #ifdef __SERVER
     {              // level 1 perk up effects
+        24, 1, 4,  // Laser Resistance increased by 4%
+	    25, 1, 4,  // Fire Resistance increased by 4%
+        26, 1, 4,  // Plasma Resistance increased by 4%
     },
     {              // level 1 perk down effects
         -1         // Just revert
     },
     #endif
 
-    { 435, 2, 1 }, // Phoenix Assault Enhancement, Disabled, 1 ranks
+    { 435, 1, 1 }, // Phoenix Assault Enhancement, Disabled, 1 ranks
     {              // level 1 requirements
     },
     #ifdef __SERVER
     {              // level 1 perk up effects
+        17, 1, 1,  // Laser Threshold increased by 1
+	    18, 1, 1,  // Fire Threshold increased by 1
+        19, 1, 1,  // Plasma Threshold increased by 1
+	    24, 1, 4,  // Laser Resistance increased by 4%
+	    25, 1, 4,  // Fire Resistance increased by 4%
+        26, 1, 4,  // Plasma Resistance increased by 4%
     },
     {              // level 1 perk down effects
         -1         // Just revert
@@ -1798,7 +1813,7 @@ int[][] PerksData =
 
     { 456, 1, 1 },   // Dismantler, Support, 1 ranks
     {                // level 1 requirements
-        212, 1, 150, // Science at least 150
+        212, 1, 120, // Science at least 120
     },
     #ifdef __SERVER
     {                // level 1 perk up effects
@@ -1835,7 +1850,7 @@ int[][] PerksData =
 
     { 459, 1, 1 },   // Treasure Hunter, Support, 1 ranks
     {                // level 1 requirements
-        209, 1, 150, // Lockpick at least 150
+        209, 1, 125, // Lockpick at least 150
     },
     #ifdef __SERVER
     {                // level 1 perk up effects
@@ -1869,5 +1884,110 @@ int[][] PerksData =
         -1          // Just revert
     },
     #endif
+
+    { 462, 1, 2 }, // Nemean Armor, Implant, 2 ranks
+    {              // level 1 requirements
+	},
+    {              // level 2 requirements
+    },
+    #ifdef __SERVER
+    {              // level 1 perk up effects
+        7, 1, 20,  // Maximum Hit Points increased by 20
+    },
+    {              // level 2 perk up effects
+        7, 1, 20,  // Maximum Hit Points increased by 20
+    },
+    {              // level 1 perk down effects
+        -1         // Just revert
+    },
+    {              // level 2 perk down effects
+        -1         // Just revert
+    },
+    #endif
+	
+    { 463, 1, 1 }, // Strength Implant, Levelling, 1 ranks
+    {              // level 1 requirements
+    },
+    #ifdef __SERVER
+    {              // level 1 perk up effects
+        0, 1, 1,   // Strength increased by 1
+    },
+    {              // level 1 perk down effects
+        -1         // Just revert
+    },
+    #endif	
+	
+    { 464, 1, 1 }, // Perception Implant, Levelling, 1 ranks
+    {              // level 1 requirements
+    },
+    #ifdef __SERVER
+    {              // level 1 perk up effects
+        1, 1, 1,   // Perception increased by 1
+    },
+    {              // level 1 perk down effects
+        -1         // Just revert
+    },
+    #endif
+	
+	{ 465, 1, 1 }, // Endurance Implant, Levelling, 1 ranks
+    {              // level 1 requirements
+    },
+    #ifdef __SERVER
+    {              // level 1 perk up effects
+        2, 1, 1,   // Endurance increased by 1
+    },
+    {              // level 1 perk down effects
+        -1         // Just revert
+    },
+    #endif
+	
+	{ 466, 1, 1 }, // Charisma Implant, Levelling, 1 ranks
+    {              // level 1 requirements
+    },
+    #ifdef __SERVER
+    {              // level 1 perk up effects
+        3, 1, 1,   // Charisma increased by 1
+    },
+    {              // level 1 perk down effects
+        -1         // Just revert
+    },
+    #endif
+	
+	{ 467, 1, 1 }, // Intelligence Implant, Levelling, 1 ranks
+    {              // level 1 requirements
+    },
+    #ifdef __SERVER
+    {              // level 1 perk up effects
+        4, 1, 1,   // Intelligence increased by 1
+    },
+    {              // level 1 perk down effects
+        -1         // Just revert
+    },
+    #endif
+	
+	{ 468, 1, 1 }, // Agility Implant, Levelling, 1 ranks
+    {              // level 1 requirements
+    },
+    #ifdef __SERVER
+    {              // level 1 perk up effects
+        5, 1, 1,   // Agility increased by 1
+    },
+    {              // level 1 perk down effects
+        -1         // Just revert
+    },
+    #endif
+	
+	{ 469, 1, 1 }, // Luck Implant, Levelling, 1 ranks
+    {              // level 1 requirements
+    },
+    #ifdef __SERVER
+    {              // level 1 perk up effects
+        6, 1, 1,   // Luck increased by 1
+    },
+    {              // level 1 perk down effects
+        -1         // Just revert
+    },
+    #endif
+	
     { -1, -1, -1 }
 };

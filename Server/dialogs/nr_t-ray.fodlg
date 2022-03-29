@@ -7,9 +7,7 @@ lang=engl
 [dialog]
 &
 1 1000 None 0 #
-50 1010 D _param p ST_INTELLECT < 4 #
-58 1020 D _param p ST_CHARISMA < 2 #
-2 1030 @
+2 1010 @
 2 2000 None 0 #
 3 2010 #
 10 2020 R _script car_seller@r_CheckCar 1 0 #
@@ -23,8 +21,9 @@ lang=engl
 7 3020 R _script car_seller@r_BuyBuggy 1 0 #
 7 3030 R _script car_seller@r_BuyScout 1 0 #
 7 3040 R _script car_seller@r_BuyHighwayman 1 0 #
-2 3050 #
-0 3060 @
+7 3050 R _script car_seller@r_BuyCorvega 1 0 #
+2 3060 #
+0 3070 @
 5 4000 None 0 @
 6 5000 None 0 @
 7 6000 None 0 #
@@ -95,9 +94,7 @@ lang=engl
 {210}{}{You see T-Ray. He occasionally flexes and feels his biceps, whispering "damn" to himself.}
 {210}{}{You can barely make out T-Ray past all that attitude.}
 {1000}{}{Preddialogue settings}
-{1010}{}{Idiot}
-{1020}{}{ugly}
-{1030}{}{2}
+{1010}{}{2}
 {2000}{}{Hey, what can T-Ray do for you? We're in the business of buyin', sellin', repairin' and modifyin' all kinds of vehicles.}
 {2010}{}{Vehicles, huh? What do you have in stock?}
 {2020}{}{I want to sell my car. You interested?}
@@ -106,20 +103,21 @@ lang=engl
 {2050}{}{That's not what I'm here for. You interested in some of this? (Show him case)}
 {2060}{}{I haven't met such tough bargainer since -- well, ever! How do you get to be that good at arranging prices and attracting costumers? [Negotiator]}
 {2070}{}{I'll just be going now.}
-{3000}{}{Let's see now. We got hummers for @lex hummer@, buggies goin' for @lex buggy@, scouts for @lex scout@. If you're feeling classy, we'll sell you a Highwayman for @lex highwayman@.}
+{3000}{}{Let's see now. We got hummers for @lex hummer@, buggies goin' for @lex buggy@, scouts for @lex scout@. If you're feeling classy, we'll sell you a Highwayman for @lex highwayman@. And if it's still not enough for you, we've got Corvega for sale - that's only @lex corvega@.}
 {3010}{}{Give me a hummer.}
 {3020}{}{I'll take a buggy.}
 {3030}{}{A scout sounds good.}
 {3040}{}{I've got the chips, give me the Highwayman.}
-{3050}{}{Nope, nothing for me there. But maybe you could do something else for me?}
-{3060}{}{Good selection, but I gotta go now.}
+{3050}{}{Nothing less than Corvega will suit my needs.}
+{3060}{}{Nope, nothing for me there. But maybe you could do something else for me?}
+{3070}{}{Good selection, but I gotta go now.}
 {4000}{}{No money, no car, pal. Get yourself some serious chips, and we can do bitness.}
 {5000}{}{Our garage is a little full right now. Come back when we got a little more room.}
 {6000}{}{(He throws you the keys) She's waiting for you in the garage. You want it repaired or modified, you come back to us, y'hear?}
 {6010}{}{Thanks, T-Ray. Bye.}
 {7000}{}{(He throws you the keys) She's waiting for you in the garage. You want it repaired or modified, you come back to us, y'hear?}
 {7010}{}{Thanks, T-Ray. Bye.}
-{8000}{}{Hmm, doesn't look too impressive. Uses too much 'tricity, smells *sniff* somethin' died in here, trunk's too small… I guess I could scrap her and use her for parts. I'll give you @lex sell_cost@ for it.}
+{8000}{}{Hmm, doesn't look too impressive. Uses too much 'tricity, smells *sniff* somethin' died in here, trunk's too smallï¿½ I guess I could scrap her and use her for parts. I'll give you @lex sell_cost@ for it.}
 {8010}{}{Fine, deal.}
 {8020}{}{Not today. I'll hang onto it for now.}
 {9000}{}{Excellent. Hey boys, take care of this one! (He throws the keys out to the garage)}

@@ -18,11 +18,11 @@ lang=engl
 3 3000 None 0 #
 5 3010 #
 9 3020 D _var p q_den_becky_table = 0 #
-13 3030 D _var p q_den_becky_table = 2 R _param p ST_EXPERIENCE + 300 R _var p q_den_becky_table = 5 R _script dialog@r_AddMoney 1 200 #
+13 3030 D _var p q_den_becky_table = 2 R _param p ST_EXPERIENCE + 900 R _var p q_den_becky_table = 5 R _script dialog@r_AddMoney 1 400 #
 14 3040 D _var p q_den_becky_table = 3 R _var p q_den_becky_table = 4 #
 15 3050 D _var p q_den_becky_table = 3 D _var p q_den_becky_clubs = 0 #
-17 3060 D _var p q_den_becky_clubs = 2 R _param p ST_EXPERIENCE + 300 R _var p q_den_becky_clubs = 4 R _script dialog@r_AddMoney 1 50 #
-18 3070 D _var p q_den_becky_clubs = 3 R _var p q_den_becky_clubs = 4 R _param p ST_EXPERIENCE + 150 #
+17 3060 D _var p q_den_becky_clubs = 2 R _param p ST_EXPERIENCE + 450 R _var p q_den_becky_clubs = 4 R _script dialog@r_AddMoney 1 150 #
+18 3070 D _var p q_den_becky_clubs = 3 R _var p q_den_becky_clubs = 4 R _param p ST_EXPERIENCE + 250 #
 0 3080 @
 5 4000 None 0 #
 8 4010 D _item p PID_BOTTLE_CAPS > 4 R _item p PID_BOOZE + 1 R _script dialog@r_RemoveMoney 1 5 #

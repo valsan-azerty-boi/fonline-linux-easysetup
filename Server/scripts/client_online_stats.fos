@@ -38,7 +38,7 @@
 #define OS_MSG_OK                  ("Click to send current settings.")
 #define OS_MSG_CANCEL              ("Click to abandon all changes.")
 #define OS_MSG_LINK                ("Click to visit this page:\n\n" + this.msg)
-#define OS_MSG_URL                 ("http://fonline2238.net/vtdb/")
+#define OS_MSG_URL                 ("")
 #define OS_MSG_URL_ID              ("%ID%")
 #define OS_MSG_URL_CHAR            ("char.php?" + OS_MSG_URL_ID)
 

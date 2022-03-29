@@ -21,6 +21,7 @@
 // idle time in milseconds (normal is slower for performance issues)
 #define IDLE_NORMAL       (5000)
 #define IDLE_ALERTED      (1000)
+#define IDLE_ALERTED_2    (200)
 
 void critter_init(Critter& mob, bool firstTime)
 {
@@ -29,6 +30,16 @@ void critter_init(Critter& mob, bool firstTime)
     // mob.SetEvent(CRITTER_EVENT_SHOW_CRITTER, "_MobShowCritter");
     // mob.SetEvent(CRITTER_EVENT_HIDE_CRITTER, "_MobHideCritter");
     // mob.SetEvent(CRITTER_EVENT_ATTACK, "MobAttacked");
+    _CritSetExtMode(mob, MODE_EXT_MOB);
+}
+
+void critter_init_aggr(Critter& mob, bool firstTime)
+{
+    mob.SetEvent(CRITTER_EVENT_IDLE, "_MobIdleAggr");
+    mob.SetEvent(CRITTER_EVENT_DEAD, "_MobDead");
+    mob.SetEvent(CRITTER_EVENT_SHOW_CRITTER, "_MobShowCritterAggr");
+    //mob.SetEvent(CRITTER_EVENT_HIDE_CRITTER, "_MobHideCritter");
+    //mob.SetEvent(CRITTER_EVENT_ATTACK, "MobAttacked");
     _CritSetExtMode(mob, MODE_EXT_MOB);
 }
 
@@ -49,6 +60,58 @@ void _MineMob(Critter& mob, bool firstTime)
     _CritSetExtMode(mob, MODE_EXT_MOB);
 }
 
+
+void critter_init_half_agro(Critter& mob, bool firstTime)
+{
+    mob.SetEvent(CRITTER_EVENT_IDLE, "_MobIdleHalfAgro");
+    mob.SetEvent(CRITTER_EVENT_DEAD, "_MobDead");
+    // mob.SetEvent(CRITTER_EVENT_SHOW_CRITTER, "_MobShowCritter");
+    // mob.SetEvent(CRITTER_EVENT_HIDE_CRITTER, "_MobHideCritter");
+    // mob.SetEvent(CRITTER_EVENT_ATTACK, "MobAttacked");
+    _CritSetExtMode(mob, MODE_EXT_MOB);
+}
+
+void _MobIdleHalfAgro(Critter& mob)
+{
+	// the great optimizer
+    if(!mob.IsLife())
+    {
+		mob.Wait(IDLE_ALERTED_2);
+        return;
+    }
+
+    // check critters in sight
+    array<Critter@> crits;
+    // get visible players
+    uint            num = mob.GetCritters(false, FIND_ONLY_PLAYERS | FIND_LIFE, crits);
+
+    // mob.Say(SAY_NORM_ON_HEAD, ""+num);
+    // check distance
+    uint dist = GetDistance(mob);
+    for(uint i = 0; i < num; i++)
+    {
+		if(GetCrittersDistantion(mob, crits[i]) > dist)
+            continue;
+        else
+        {
+            // attack
+			mob.AddEnemyInStack(crits[i].Id);
+            return;
+        }
+    }
+	
+    if(crits.length() > 0)
+    {
+        // MoveMob(mob, false);
+        mob.Wait(IDLE_ALERTED_2);
+    }
+    else
+    {
+        MoveMob(mob, false);
+        //mob.Say(SAY_NORM_ON_HEAD, "Don't care");
+        mob.Wait(IDLE_ALERTED_2);
+    }	
+}
 
 //
 // Checks if critter is within attack distance
@@ -221,3 +284,48 @@ void _MobHideCritter(Critter& mob, Critter& hideCrit)
 
 void _MobDead(Critter& mob)
 {}
+
+
+void _MobIdleAggr(Critter& mob)
+{
+    // the great optimizer
+    if(!mob.IsLife())
+    {
+        return;
+    }
+
+    // check critters in sight
+    array<Critter@> crits;
+    // get visible players
+    uint            num = mob.GetCritters(false, FIND_ONLY_PLAYERS | FIND_LIFE, crits);
+
+    // mob.Say(SAY_NORM_ON_HEAD, ""+num);
+    // check distance
+    uint dist = GetDistance(mob);
+    for(uint i = 0; i < num; i++)
+    {
+        if(GetCrittersDistantion(mob, crits[i]) > dist)
+            continue;
+        else
+        {
+            // attack
+            mob.AddEnemyInStack(crits[i].Id);
+            return;
+        }
+    }
+    if(crits.length() > 0)
+    {
+        // MoveMob(mob, false);
+    }
+    else
+    {
+        MoveMob(mob, false);
+        // mob.Say(SAY_NORM_ON_HEAD, "Don't care");
+    }
+}
+
+void _MobShowCritterAggr(Critter& mob, Critter& showCrit)
+{
+    if(showCrit.IsPlayer())
+        mob.AddEnemyInStack(showCrit.Id);
+}

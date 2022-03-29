@@ -27,10 +27,15 @@ void item_init(Item& item, bool firstTime)
 
 uint e_Regen(array<uint>@ values)
 {
-    Item@ item = GetItem(values[0]);
+    //Item@ item = GetItem(values[0]);
+    //if(!valid(item))
+    //    return 0;
+    //Regenerate(item, PID_MEAT, __MeatCapacity, __MeatRegen, TotalCount);
+	Item@ item = GetItem(values[0]);
     if(!valid(item))
-        return 0;
-    Regenerate(item, PID_MEAT, __MeatCapacity, __MeatRegen, TotalCount);
+    return 0;
+    //Regenerate(item, PID_ELECTRONIC_PARTS, __ElectronicPartsCap, __ElectronicPartsRegen, ComputerCount);
+	if(item.Val1<100) item.Val1=MIN(item.Val1+5,100);
     return RegenerationInterval;
 }
 

@@ -25512,4 +25512,14 @@ ProtoId              21001
 MapX                 106
 MapY                 55
 
+MapObjType           2
+ProtoId              5621
+MapX                 75
+MapY                 39
+
+MapObjType           2
+ProtoId              5621
+MapX                 22
+MapY                 53
+
 

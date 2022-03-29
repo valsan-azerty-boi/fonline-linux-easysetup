@@ -402,13 +402,12 @@ bool out_message(string& message, int& sayType)
             RunServerScriptUnsafe("unsafe_client@unsafe_PartyPoints", 0, 0, 0, null, null);
             return false;
         }
-        /*
-           else if( message == "~influence" )
+		else if( message == "~influence" )
            {
                 RunServerScriptUnsafe( "unsafe_client@unsafe_ExecShowFactionInfluence", 0, 0, 0, null, null );
                 return false;
-           }
-         */
+        }
+   
         else if(message == "~logautosave")
         {
             LogAutoSave = !LogAutoSave;
@@ -427,6 +426,22 @@ bool out_message(string& message, int& sayType)
         else if(message == "~freefactionnames" || message == "~ffn")
         {
             RunServerScriptUnsafe("unsafe_client@unsafe_FreeFactionNames", 0, 0, 0, null, null);
+            return false;
+        }
+        else if(message == "~factionnames" || message == "~fn")
+        {
+            RunServerScriptUnsafe("unsafe_client@unsafe_FactionNames", 0, 0, 0, null, null);
+            return false;
+        }
+		else if(message == "~rr")
+        {
+            RunServerScriptUnsafe("unsafe_client@unsafe_play_rr", 0, 0, 0, null, null);
+            return false;
+        }
+        else if(words.length() == 2 && ( words[0] == "~customborder" || words[0] == "~cb" ))
+        {
+            __ConfigCustomBorderRange = CLAMP(string2uint(words[1]), 0, 100);
+            __ConfigCustomBorder = true;
             return false;
         }
         ret = OnlineStatsCommand(message);
@@ -683,6 +698,32 @@ bool out_message(string& message, int& sayType)
             message = substring(message, 1, message.length() - 2);
         }
     }
+	
+	ItemCl@ headItem = chosen.GetItem( 0, SLOT_HEAD );
+	if( valid(headItem) && headItem.Proto.ProtoId == 470 ) // PID_BALL_GAG
+	{
+		if( sayType == SAY_SHOUT || sayType == SAY_SHOUT_ON_HEAD )
+			sayType += 2;
+
+		for( uint s=0, slen=message.length(); s<slen; s++ )
+		{
+			uint rand = Random(1,100);
+			if( message[s] == ' ' && rand >= 50 )
+				continue;
+
+		if( rand <= 20 )
+		{
+			if( Random( 1, 100 ) <= 35 )
+				message[s] = (Random(0,5)==0?'R':'r');
+			else
+				message[s] = (Random(0,2)==0?'H':'h');
+		}
+		else if( rand <= 30 )
+			message[s] = (Random(0,7)==0?'G':'g');
+		else
+			message[s] = (Random(0,10)<=3?'M':'m');
+	}
+	}
 
     bool result = false;
     for(uint i = 0, j = message.length(); i < j; i++)
@@ -798,5 +839,10 @@ void map(int type, int hx, int hy, string@ text, array<int>@ data)
         return;
     }
 
-    MapMessage(text, hx, hy, __TextDelay + text.length() * delay, color, fade, Random(fromX, toX), Random(fromY, toY));
+    uint16 xx = hx, yy = hy;
+
+    //start displaying message a little higher not to overlap with nick/hp
+    MoveHexByDir(xx, yy, 5, 3);
+    MoveHexByDir(xx, yy, 0, 3);
+    MapMessage(text, xx, yy, __TextDelay + text.length() * delay, color, fade, Random(fromX, toX), Random(fromY, toY));
 }

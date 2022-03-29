@@ -227,6 +227,10 @@
 #define LOCATION_MountainPassage                  (366)      // A small pathway through the mountains.
 #define LOCATION_SlaverCamp                       (367)      // A hidden slaver breakpoint.
 #define LOCATION_FortSeth                         (368)      // A military outpost of the NCR, composed of a few barracks and protective walls.
+#define LOCATION_CubikCamp                        (369)      // Testowa lokacja Cubika
+#define LOCATION_BarterGround					  (370)		 // Barter Ground
+#define LOCATION_TalChem						  (371)		 // Tal Chem HQ
+#define LOCATION_BountyHuntersCave				  (372)		 // BH Cave
 
 // ************************************************************************/
 // *  336 Maps                                                            */
@@ -568,4 +572,6 @@
 #define MAP_MountainPassage                       (567)      // test_mountain, Mountain Passage(366)
 #define MAP_SlaverCamp                            (568)      // ul_slavecamp1, Slaver Camp(367)
 #define MAP_MilitaryCamp                          (569)      // ncr_army, Fort Seth(368)
+#define MAP_Cubik		                          (570)      // _cubik, mapa dla testowej lokacji Cubik Camp(369)
+#define MAP_BarterGround						  (571)		 // BARTER GROUND
 #endif // __MAPS__

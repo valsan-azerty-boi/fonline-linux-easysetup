@@ -7,9 +7,8 @@ lang=engl
 [dialog]
 &
 1 1000 None 0 #
-2 1010 D _param p ST_INTELLECT < 4 #
-3 1020 D _var n name_mem_npc_player = 0 R _var n name_mem_npc_player = 1 #
-4 1030 R _var n name_mem_npc_player = 1 @
+3 1010 D _var n name_mem_npc_player = 0 R _var n name_mem_npc_player = 1 #
+4 1020 R _var n name_mem_npc_player = 1 @
 2 2000 None 0 @
 3 3000 None 0 #
 5 3010 R _var n acquaintance = 1 #
@@ -48,20 +47,19 @@ lang=engl
 {210}{}{You see Skeeter, the Ghoul Gadgeteer.}
 {210}{}{You see a grubby but intelligent-looking ghoul, wearing greasy overalls with a micrometer sticking out of his pocket.}
 {1000}{}{Predialogue installations}
-{1010}{}{Idiot}
-{1020}{}{Unknown}
-{1030}{}{Known}
-{2000}{}{Just don’t touch anything - you might hurt yourself.@@You can watch. You might even learn something, but I doubt it.@@Well, ain’t you something special.@@Are you just pretending to be dumb, or are you really that stupid?}
-{3000}{}{Hello there, I’m Skeeter.}
+{1010}{}{Unknown}
+{1020}{}{Known}
+{2000}{}{Just don't touch anything - you might hurt yourself.@@You can watch. You might even learn something, but I doubt it.@@Well, ain't you something special.@@Are you just pretending to be dumb, or are you really that stupid?}
+{3000}{}{Hello there, I'm Skeeter.}
 {3010}{}{What do you do here?}
 {3020}{}{Elmer in Necropolis sent me with this.}
 {3030}{}{Uh, I was just looking around. Goodbye.}
-{4000}{}{Whatcha lookin’ fer?}
+{4000}{}{Whatcha lookin' fer?}
 {4010}{}{What do you do here?}
 {4020}{}{Let's talk about guns, I've got a few questions for you.}
 {4030}{}{Elmer in Necropolis sent me with this.}
 {4040}{}{Uh, I was just looking around. Goodbye.}
-{5000}{}{Mostly I jist sorta tinker with things. Take ‘em apart an try to put ‘em all back t’gether… mostly. Make ‘em work better… sometimes. Keepin’ myself outta trouble. Know what I mean?}
+{5000}{}{Mostly I jist sorta tinker with things. Take 'em apart an try to put 'em all back t'gether' mostly. Make 'em work better' sometimes. Keepin' myself outta trouble. Know what I mean?}
 {5010}{}{I guess. Let me ask you something else.}
 {5020}{}{I bet you're skilful with guns and their modifications -- I had a few questions, if you don't mind.}
 {5030}{}{Well, I think I better go do something myself. Goodbye.}

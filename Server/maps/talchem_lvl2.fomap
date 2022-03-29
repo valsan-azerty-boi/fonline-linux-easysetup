@@ -2,11 +2,11 @@
 Version              4
 MaxHexX              400
 MaxHexY              400
-WorkHexX             199
-WorkHexY             195
-ScriptModule         Tch_rad2
-ScriptFunc           _DangerZone
-NoLogOut             0
+WorkHexX             232
+WorkHexY             191
+ScriptModule         -
+ScriptFunc           -
+NoLogOut             1
 Time                 0
 DayTime              300  600  1140 1380
 DayColor0            18  18  53 
@@ -2698,20 +2698,20 @@ tile       214  190            art\tiles\brn1000.frm
 tile       216  190            art\tiles\brn1000.frm
 tile       218  190            art\tiles\brn1000.frm
 tile       220  190            art\tiles\brn1000.frm
-tile       222  190            art\tiles\GRT2001.FRM
-tile       224  190            art\tiles\GRT2001.FRM
-tile       226  190            art\tiles\GRT2001.FRM
-tile       228  190            art\tiles\GRT2001.FRM
-tile       230  190            art\tiles\GRT2001.FRM
-tile       232  190            art\tiles\GRT2001.FRM
-tile       234  190            art\tiles\GRT2001.FRM
-tile       236  190            art\tiles\GRT2001.FRM
-tile       238  190            art\tiles\GRT2001.FRM
-tile       240  190            art\tiles\GRT2001.FRM
-tile       242  190            art\tiles\GRT2001.FRM
-tile       244  190            art\tiles\GRT2001.FRM
-tile       246  190            art\tiles\GRT2001.FRM
-tile       248  190            art\tiles\GRT2001.FRM
+tile       222  190            art\tiles\grt2001.frm
+tile       224  190            art\tiles\grt2001.frm
+tile       226  190            art\tiles\grt2001.frm
+tile       228  190            art\tiles\grt2001.frm
+tile       230  190            art\tiles\grt2001.frm
+tile       232  190            art\tiles\grt2001.frm
+tile       234  190            art\tiles\grt2001.frm
+tile       236  190            art\tiles\grt2001.frm
+tile       238  190            art\tiles\grt2001.frm
+tile       240  190            art\tiles\grt2001.frm
+tile       242  190            art\tiles\grt2001.frm
+tile       244  190            art\tiles\grt2001.frm
+tile       246  190            art\tiles\grt2001.frm
+tile       248  190            art\tiles\grt2001.frm
 tile       250  190            art\tiles\cav4010.frm
 tile       252  190            art\tiles\cav4008.frm
 tile       254  190            art\tiles\cav4008.frm
@@ -2793,20 +2793,20 @@ tile       214  192            art\tiles\brn1000.frm
 tile       216  192            art\tiles\brn1000.frm
 tile       218  192            art\tiles\brn1000.frm
 tile       220  192            art\tiles\brn1000.frm
-tile       222  192            art\tiles\GRT2001.FRM
-tile       224  192            art\tiles\GRT2001.FRM
-tile       226  192            art\tiles\GRT2001.FRM
-tile       228  192            art\tiles\GRT2001.FRM
-tile       230  192            art\tiles\GRT2001.FRM
-tile       232  192            art\tiles\GRT2001.FRM
-tile       234  192            art\tiles\GRT2001.FRM
-tile       236  192            art\tiles\GRT2001.FRM
-tile       238  192            art\tiles\GRT2001.FRM
-tile       240  192            art\tiles\GRT2001.FRM
-tile       242  192            art\tiles\GRT2001.FRM
-tile       244  192            art\tiles\GRT2001.FRM
-tile       246  192            art\tiles\GRT2001.FRM
-tile       248  192            art\tiles\GRT2001.FRM
+tile       222  192            art\tiles\grt2001.frm
+tile       224  192            art\tiles\grt2001.frm
+tile       226  192            art\tiles\grt2001.frm
+tile       228  192            art\tiles\grt2001.frm
+tile       230  192            art\tiles\grt2001.frm
+tile       232  192            art\tiles\grt2001.frm
+tile       234  192            art\tiles\grt2001.frm
+tile       236  192            art\tiles\grt2001.frm
+tile       238  192            art\tiles\grt2001.frm
+tile       240  192            art\tiles\grt2001.frm
+tile       242  192            art\tiles\grt2001.frm
+tile       244  192            art\tiles\grt2001.frm
+tile       246  192            art\tiles\grt2001.frm
+tile       248  192            art\tiles\grt2001.frm
 tile       250  192            art\tiles\cav4009.frm
 tile       252  192            art\tiles\cav4008.frm
 tile       254  192            art\tiles\cav4008.frm
@@ -2888,20 +2888,20 @@ tile       214  194            art\tiles\brn1000.frm
 tile       216  194            art\tiles\brn1000.frm
 tile       218  194            art\tiles\brn1000.frm
 tile       220  194            art\tiles\brn1000.frm
-tile       222  194            art\tiles\GRT2001.FRM
-tile       224  194            art\tiles\GRT2001.FRM
-tile       226  194            art\tiles\GRT2001.FRM
-tile       228  194            art\tiles\GRT2001.FRM
-tile       230  194            art\tiles\GRT2001.FRM
-tile       232  194            art\tiles\GRT2001.FRM
-tile       234  194            art\tiles\GRT2001.FRM
-tile       236  194            art\tiles\GRT2001.FRM
-tile       238  194            art\tiles\GRT2001.FRM
-tile       240  194            art\tiles\GRT2001.FRM
-tile       242  194            art\tiles\GRT2001.FRM
-tile       244  194            art\tiles\GRT2001.FRM
-tile       246  194            art\tiles\GRT2001.FRM
-tile       248  194            art\tiles\GRT2001.FRM
+tile       222  194            art\tiles\grt2001.frm
+tile       224  194            art\tiles\grt2001.frm
+tile       226  194            art\tiles\grt2001.frm
+tile       228  194            art\tiles\grt2001.frm
+tile       230  194            art\tiles\grt2001.frm
+tile       232  194            art\tiles\grt2001.frm
+tile       234  194            art\tiles\grt2001.frm
+tile       236  194            art\tiles\grt2001.frm
+tile       238  194            art\tiles\grt2001.frm
+tile       240  194            art\tiles\grt2001.frm
+tile       242  194            art\tiles\grt2001.frm
+tile       244  194            art\tiles\grt2001.frm
+tile       246  194            art\tiles\grt2001.frm
+tile       248  194            art\tiles\grt2001.frm
 tile       250  194            art\tiles\cav4010.frm
 tile       252  194            art\tiles\cav4010.frm
 tile       254  194            art\tiles\cav4008.frm
@@ -2983,20 +2983,20 @@ tile       214  196            art\tiles\brn1000.frm
 tile       216  196            art\tiles\brn1000.frm
 tile       218  196            art\tiles\brn1000.frm
 tile       220  196            art\tiles\brn1000.frm
-tile       222  196            art\tiles\GRT2001.FRM
-tile       224  196            art\tiles\GRT2001.FRM
-tile       226  196            art\tiles\GRT2001.FRM
-tile       228  196            art\tiles\GRT2001.FRM
-tile       230  196            art\tiles\GRT2001.FRM
-tile       232  196            art\tiles\GRT2001.FRM
-tile       234  196            art\tiles\GRT2001.FRM
-tile       236  196            art\tiles\GRT2001.FRM
-tile       238  196            art\tiles\GRT2001.FRM
-tile       240  196            art\tiles\GRT2001.FRM
-tile       242  196            art\tiles\GRT2001.FRM
-tile       244  196            art\tiles\GRT2001.FRM
-tile       246  196            art\tiles\GRT2001.FRM
-tile       248  196            art\tiles\GRT2001.FRM
+tile       222  196            art\tiles\grt2001.frm
+tile       224  196            art\tiles\grt2001.frm
+tile       226  196            art\tiles\grt2001.frm
+tile       228  196            art\tiles\grt2001.frm
+tile       230  196            art\tiles\grt2001.frm
+tile       232  196            art\tiles\grt2001.frm
+tile       234  196            art\tiles\grt2001.frm
+tile       236  196            art\tiles\grt2001.frm
+tile       238  196            art\tiles\grt2001.frm
+tile       240  196            art\tiles\grt2001.frm
+tile       242  196            art\tiles\grt2001.frm
+tile       244  196            art\tiles\grt2001.frm
+tile       246  196            art\tiles\grt2001.frm
+tile       248  196            art\tiles\grt2001.frm
 tile       250  196            art\tiles\cav4009.frm
 tile       252  196            art\tiles\cav4009.frm
 tile       254  196            art\tiles\cav4009.frm
@@ -3078,20 +3078,20 @@ tile       214  198            art\tiles\brn1000.frm
 tile       216  198            art\tiles\brn1000.frm
 tile       218  198            art\tiles\brn1000.frm
 tile       220  198            art\tiles\brn1000.frm
-tile       222  198            art\tiles\GRT2001.FRM
-tile       224  198            art\tiles\GRT2001.FRM
-tile       226  198            art\tiles\GRT2001.FRM
-tile       228  198            art\tiles\GRT2001.FRM
-tile       230  198            art\tiles\GRT2001.FRM
-tile       232  198            art\tiles\GRT2001.FRM
-tile       234  198            art\tiles\GRT2001.FRM
-tile       236  198            art\tiles\GRT2001.FRM
-tile       238  198            art\tiles\GRT2001.FRM
-tile       240  198            art\tiles\GRT2001.FRM
-tile       242  198            art\tiles\GRT2001.FRM
-tile       244  198            art\tiles\GRT2001.FRM
-tile       246  198            art\tiles\GRT2001.FRM
-tile       248  198            art\tiles\GRT2001.FRM
+tile       222  198            art\tiles\grt2001.frm
+tile       224  198            art\tiles\grt2001.frm
+tile       226  198            art\tiles\grt2001.frm
+tile       228  198            art\tiles\grt2001.frm
+tile       230  198            art\tiles\grt2001.frm
+tile       232  198            art\tiles\grt2001.frm
+tile       234  198            art\tiles\grt2001.frm
+tile       236  198            art\tiles\grt2001.frm
+tile       238  198            art\tiles\grt2001.frm
+tile       240  198            art\tiles\grt2001.frm
+tile       242  198            art\tiles\grt2001.frm
+tile       244  198            art\tiles\grt2001.frm
+tile       246  198            art\tiles\grt2001.frm
+tile       248  198            art\tiles\grt2001.frm
 tile       250  198            art\tiles\cav4010.frm
 tile       252  198            art\tiles\cav4010.frm
 tile       254  198            art\tiles\cav4008.frm
@@ -3173,20 +3173,20 @@ tile       214  200            art\tiles\brn1000.frm
 tile       216  200            art\tiles\brn1000.frm
 tile       218  200            art\tiles\brn1000.frm
 tile       220  200            art\tiles\brn1000.frm
-tile       222  200            art\tiles\GRT2001.FRM
-tile       224  200            art\tiles\GRT2001.FRM
-tile       226  200            art\tiles\GRT2001.FRM
-tile       228  200            art\tiles\GRT2001.FRM
-tile       230  200            art\tiles\GRT2001.FRM
-tile       232  200            art\tiles\GRT2001.FRM
-tile       234  200            art\tiles\GRT2001.FRM
-tile       236  200            art\tiles\GRT2001.FRM
-tile       238  200            art\tiles\GRT2001.FRM
-tile       240  200            art\tiles\GRT2001.FRM
-tile       242  200            art\tiles\GRT2001.FRM
-tile       244  200            art\tiles\GRT2001.FRM
-tile       246  200            art\tiles\GRT2001.FRM
-tile       248  200            art\tiles\GRT2001.FRM
+tile       222  200            art\tiles\grt2001.frm
+tile       224  200            art\tiles\grt2001.frm
+tile       226  200            art\tiles\grt2001.frm
+tile       228  200            art\tiles\grt2001.frm
+tile       230  200            art\tiles\grt2001.frm
+tile       232  200            art\tiles\grt2001.frm
+tile       234  200            art\tiles\grt2001.frm
+tile       236  200            art\tiles\grt2001.frm
+tile       238  200            art\tiles\grt2001.frm
+tile       240  200            art\tiles\grt2001.frm
+tile       242  200            art\tiles\grt2001.frm
+tile       244  200            art\tiles\grt2001.frm
+tile       246  200            art\tiles\grt2001.frm
+tile       248  200            art\tiles\grt2001.frm
 tile       250  200            art\tiles\cav4009.frm
 tile       252  200            art\tiles\cav4009.frm
 tile       254  200            art\tiles\cav4009.frm
@@ -5216,7 +5216,7 @@ tile       146  240            art\tiles\cav4008.frm
 tile       148  240            art\tiles\cav4010.frm
 tile       150  240            art\tiles\cav4010.frm
 tile       152  240            art\tiles\cav4008.frm
-tile       154  240            art\tiles\GRT2001.FRM
+tile       154  240            art\tiles\grt2001.frm
 tile       156  240            art\tiles\mstrflr1.frm
 tile       158  240            art\tiles\mstrflr1.frm
 tile       160  240            art\tiles\brn1000.frm
@@ -5310,7 +5310,7 @@ tile       146  242            art\tiles\cav4009.frm
 tile       148  242            art\tiles\cav4009.frm
 tile       150  242            art\tiles\cav4009.frm
 tile       152  242            art\tiles\cav4009.frm
-tile       154  242            art\tiles\GRT2001.FRM
+tile       154  242            art\tiles\grt2001.frm
 tile       156  242            art\tiles\mstrflr1.frm
 tile       158  242            art\tiles\mstrflr1.frm
 tile       160  242            art\tiles\brn1000.frm
@@ -9013,7 +9013,7 @@ MapObjType           2
 ProtoId              2139
 MapX                 236
 MapY                 190
-Scenery_ToMapPid     622
+Scenery_ToMapPid     578
 Scenery_ToEntire     5
 
 MapObjType           2
@@ -24944,7 +24944,7 @@ MapObjType           2
 ProtoId              2139
 MapX                 242
 MapY                 190
-Scenery_ToMapPid     622
+Scenery_ToMapPid     578
 Scenery_ToEntire     4
 
 MapObjType           2

@@ -46,10 +46,10 @@ lang=engl
 12 11020 #
 12 11030 @
 12 12000 None 0 #
-14 12010 D _param p SK_BARTER } 150 D or D _param p SK_GAMBLING } 150 R _script dialog@r_AddMoney 1 3000 R _var p q_jt_power_house = 5 R _param p ST_EXPERIENCE + 1000 R _param p REPUTATION_JUNKTOWN + 150 #
-13 12020 D _param p SK_GAMBLING < 150 D _param p SK_BARTER < 150 #
-14 12030 D _param p SK_BARTER } 100 D or D _param p SK_GAMBLING } 100 R _script dialog@r_AddMoney 1 2000 R _var p q_jt_power_house = 5 R _param p ST_EXPERIENCE + 1000 R _param p REPUTATION_JUNKTOWN + 300 #
-13 12040 D _param p SK_GAMBLING < 100 D _param p SK_BARTER < 100 #
+14 12010 D _param p SK_BARTER } 150 D or D _param p SK_SCIENCE } 125 R _script dialog@r_AddMoney 1 3000 R _var p q_jt_power_house = 5 R _param p ST_EXPERIENCE + 1000 R _param p REPUTATION_JUNKTOWN + 150 #
+13 12020 D _param p SK_SCIENCE < 125 D _param p SK_BARTER < 150 #
+14 12030 D _param p SK_BARTER } 100 D or D _param p SK_SCIENCE } 100 R _script dialog@r_AddMoney 1 2000 R _var p q_jt_power_house = 5 R _param p ST_EXPERIENCE + 1000 R _param p REPUTATION_JUNKTOWN + 300 #
+13 12040 D _param p SK_SCIENCE < 100 D _param p SK_BARTER < 100 #
 14 12050 R _script dialog@r_AddMoney 1 1000 R _var p q_jt_power_house = 5 R _param p ST_EXPERIENCE + 1000 R _param p REPUTATION_JUNKTOWN + 500 @
 13 13000 None 0 #
 12 13010 @
@@ -57,7 +57,7 @@ lang=engl
 30 14010 #
 0 14020 @
 15 15000 None 0 #
-16 15010 D _var p q_jt_power_house_handy = 3 R _var p q_jt_power_house_handy_talk = 1 R _param p REPUTATION_JUNKTOWN + 100 R _param p ST_EXPERIENCE + 500 R _script dialog@r_AddMoney 1 400 R _item p PID_BLUEPRINT_NEEDLER_PISTOL + 1 #
+16 15010 D _var p q_jt_power_house_handy = 3 R _var p q_jt_power_house_handy_talk = 1 R _param p REPUTATION_JUNKTOWN + 100 R _param p ST_EXPERIENCE + 500 R _script dialog@r_AddMoney 1 400 R _item p PID_BLUEPRINT_SUPER_SLEDGE + 1 #
 0 15020 @
 16 16000 None 0 #
 30 16010 #

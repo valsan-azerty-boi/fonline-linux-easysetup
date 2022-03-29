@@ -200,15 +200,15 @@ void InitShufflingSpawns() // export
     // NewSpawnData(0).Add(PID1, 7).Add(PID2, 20).Add(PID3, 30);
 
     NewSpawnData(0);                                                                                                                                             // Default (based on map pid)
-    NewSpawnData(1).Add(PID_VEIN_IRON, 50).Add(PID_VEIN_MINERALS, 50).SetDelay(REAL_SECOND(120));                                                                // Guarded mines
-    NewSpawnData(2).Add(PID_VEIN_IRON, 50).Add(PID_VEIN_MINERALS, 50).SetDelay(REAL_SECOND(120));                                                                // Ghost Farm
-    NewSpawnData(3).Add(PID_VEIN_IRON, 50).Add(PID_VEIN_MINERALS, 50).SetDelay(REAL_SECOND(600));                                                                // Bunker Base
+    NewSpawnData(1).Add(PID_VEIN_IRON, 50).Add(PID_VEIN_MINERALS, 50);      						                                                            // Guarded mines
+    NewSpawnData(2).Add(PID_VEIN_IRON, 50).Add(PID_VEIN_MINERALS, 50);                                                                							// Ghost Farm
+    NewSpawnData(3).Add(PID_VEIN_IRON, 50).Add(PID_VEIN_MINERALS, 50).SetDelay(REAL_SECOND(1200));                                                                // Bunker Base
     NewSpawnData(4).Add(PID_VEIN_IRON, 10).Add(PID_VEIN_MINERALS, 10).Add(PID_VEIN_IRON2, 40).Add(PID_VEIN_MINERALS2, 40);                                       // Vault City mine
     NewSpawnData(5).Add(PID_VEIN_IRON, 15).Add(PID_VEIN_MINERALS, 15).Add(PID_VEIN_IRON2, 30).Add(PID_VEIN_MINERALS2, 30).Add(PID_VEIN_GOLD, 10);                // Redding mine
     NewSpawnData(6).Add(PID_VEIN_IRON, 15).Add(PID_VEIN_MINERALS, 15).Add(PID_VEIN_IRON2, 30).Add(PID_VEIN_MINERALS2, 30).Add(PID_VEIN_URANIUM, 10);             // Broken Hills mine
-    NewSpawnData(7).Add(PID_VEIN_IRON2, 100).SetDelay(REAL_HOUR(12));                                                                                            // Private mines
-    NewSpawnData(8).Add(PID_PILE_CHEMICALS, 100).SetDelay(REAL_SECOND(30));                                                                                      // Toxic Caves and Waterworks
-    NewSpawnData(9).Add(PID_PROD_BROC, 50).Add(PID_PROD_XANDER, 50).SetDelay(REAL_SECOND(420));                                                                  // Klamath
+    NewSpawnData(7).Add(PID_VEIN_IRON2, 20).Add(PID_VEIN_MINERALS2, 20).Add(PID_VEIN_IRON, 30).Add(PID_VEIN_MINERALS, 30).SetDelay(REAL_SECOND(1200));            // Private mines
+    NewSpawnData(8).Add(PID_PILE_CHEMICALS, 100);                                                                                      // Toxic Caves and Waterworks
+    NewSpawnData(9).Add(PID_PROD_BROC, 50).Add(PID_PROD_XANDER, 50).SetDelay(REAL_SECOND(210));                                                                  // Klamath
 }
 
 

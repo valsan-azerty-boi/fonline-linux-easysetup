@@ -81,26 +81,26 @@ void CreateCompanion()
     switch(type)
     {
     case COMPANION_TYPE_MELEE:
-        cr.SkillBase[SK_MELEE_WEAPONS] = Random(125, 150);
+        cr.SkillBase[SK_MELEE_WEAPONS] = Random(150, 175);
         break;
     case COMPANION_TYPE_SG:
-        cr.SkillBase[SK_SMALL_GUNS] = Random(125, 150);
+        cr.SkillBase[SK_SMALL_GUNS] = Random(150, 175);
         break;
     case COMPANION_TYPE_BG:
-        cr.SkillBase[SK_BIG_GUNS] = Random(125, 150);
+        cr.SkillBase[SK_BIG_GUNS] = Random(150, 175);
         break;
     case COMPANION_TYPE_ENERGY:
-        cr.SkillBase[SK_ENERGY_WEAPONS] = Random(125, 150);
+        cr.SkillBase[SK_ENERGY_WEAPONS] = Random(150, 175);
         break;
     case COMPANION_TYPE_THROW:
-        cr.SkillBase[SK_THROWING] = Random(125, 150);
+        cr.SkillBase[SK_THROWING] = Random(150, 175);
         break;
     default:
         break;
     }
 
     for(uint i = 0; i <= ST_LUCK; i++)
-        cr.StatBase[i] = Random(1, 10);
+        cr.StatBase[i] = Random(6, 10);
 
     // perks?
 
@@ -217,7 +217,7 @@ uint e_UpdateCompanions(array<uint>@ values)
     DLog("Updating companions...");
     #endif
 
-    if(Random(0, 2) == 0)
+    if(Random(0, 1) == 0)
         CreateCompanion();
 
     for(uint i = 0; i < Companions.length(); i++)

@@ -1,5 +1,6 @@
 [comment]
 
+
 [data]
 lang=engl
 
@@ -28,7 +29,8 @@ lang=engl
 48 4060 #
 53 4070 D _var n acquaintance = 0 D _var p q_mordinos_joining_quest = 1 #
 60 4080 #
-0 4090 @
+70 4090 #
+0 4100 @
 5 5000 None 0 #
 9 5010 #
 6 5020 #
@@ -203,7 +205,15 @@ lang=engl
 61 60000 None 0 #
 0 60010 @
 62 61000 None 0 #
-0 61010 &
+0 61010 @
+70 62000 None 0 #
+71 62010 D _item p PID_BOTTLE_CAPS > 19 R _item p PID_EMPTY_JET + 1 R _script dialog@r_RemoveMoney 1 20 #
+72 62020 D _item p PID_BOTTLE_CAPS > 359 R _item p PID_EMPTY_JET + 20 R _script dialog@r_RemoveMoney 1 360 #
+0 62030 @
+71 63000 None 0 #
+0 63010 @
+72 64000 None 0 #
+0 64010 &
 
 [engl]
 {100}{}{Jules}
@@ -215,14 +225,14 @@ lang=engl
 {1030}{}{Known}
 {2000}{}{(Smiles, displaying a gleaming gold tooth. His cologne is so strong it almost chokes you.)@sex@|WELCOME to the glittering city of New Reno, my brother!||WELCOME to the glittering city of New Reno, my sister!|}
 {2010}{}{Hunh? Wh-?}
-{2020}{}{And you are…?}
+{2020}{}{And you are...?}
 {2030}{}{Cut the crap Jules. You lookin' for some new stock?}
 {3000}{}{@sex@|Name's Jules, and I would be MOST pleased to make your acquaintance, show you around, and set you up with whatever you're looking for.||Name's Jules, and may I say I have NEVER seen a more beautiful woman stride down this street until this moment. It'd be MY pleasure to give you a tour of Reno and set you up with WHATEVER you're looking for.|}
-{3010}{}{Well, I had some questions…}
-{3020}{}{Look…"Jules," is it? You obviously expect something out of this conversation, so level with me up front.
+{3010}{}{Well, I had some questions...}
+{3020}{}{Look..."Jules," is it? You obviously expect something out of this conversation, so level with me up front.
 
  What are YOU looking for?}
-{3030}{}{So, I'm curious…what do YOU get out of playing tour guide, Jules?}
+{3030}{}{So, I'm curious...what do YOU get out of playing tour guide, Jules?}
 {3040}{}{Not today, Jules, thanks.}
 {3050}{}{Cut the crap Jules. You lookin' for some new stock?}
 {4000}{}{So what can Jules do for you?}
@@ -234,19 +244,20 @@ lang=engl
 {4060}{}{Are there any other dealers in town?}
 {4070}{}{Heey, you lookin' for some new stock?}
 {4080}{}{Do you have any empty Hypo's lying around?}
-{4090}{}{Nothing today, thanks.}
+{4090}{}{Do you have any empty Jet canisters anywhere?}
+{4100}{}{Nothing today, thanks.}
 {5000}{}{Can Jules TELL you 'bout New Reno? Hell, yes! FIRST thing you should know: Reno's ruled by four families: Mordinos, the Salvatores, the Bishops and the Wrights. Each o' them got a slice of th' Reno pie.}
 {5010}{}{Tell me about the families.}
 {5020}{}{What about the law?}
-{5030}{}{Actually, I had some other questions…}
+{5030}{}{Actually, I had some other questions...}
 {5040}{}{Interesting. Thanks for talking with me.}
 {6000}{}{Ain't no law, ain't no po-lice, ain't no sheriff, ain't no government body. JUST the families.}
 {6010}{}{Who keeps order in Reno then?}
-{6020}{}{I see. I had some other questions…}
+{6020}{}{I see. I had some other questions...}
 {7000}{}{The Families keep things running smooth. They don't LIKE trouble in Reno 'cause it hurts the tourist trade, and that means less money for them. Don't make trouble and cover yer bets, you'll stay off Golgotha.}
 {7010}{}{Golgotha?}
 {8000}{}{Yeah, this graveyard outside o' town. It's where they put debtors and people who've crossed the families. They just string 'em up on posts and let 'em die slowly in the sun. Not my choice a' dying. Stinks like hell out there.}
-{8010}{}{Interesting. Say, I had some other questions…}
+{8010}{}{Interesting. Say, I had some other questions...}
 {8020}{}{Can I ask you about the families?}
 {8030}{}{Sounds great. Thanks for the information.}
 {9000}{}{Well, now, that kind of info don't come cheap. You got the chips? Then you got my attention.}
@@ -254,24 +265,24 @@ lang=engl
 {9020}{}{Pay him 50 chips.}
 {9030}{}{Pay him 75 chips.}
 {9040}{}{Pay him 100 chips.}
-{9050}{}{Actually, I had some other…non-family…related questions.}
+{9050}{}{Actually, I had some other...non-family...related questions.}
 {9060}{}{Looks like I can't afford any information right now. I'll be back when I have some chips.}
 {9070}{}{I'll keep that in mind. Thanks for the tip, Jules.}
-{10000}{}{(Jules pockets the chips so quickly, you swear they vanished.) So… which of the fine families interests you today?}
+{10000}{}{(Jules pockets the chips so quickly, you swear they vanished.) So... which of the fine families interests you today?}
 {10010}{}{Tell me about the Mordino Family.}
 {10020}{}{Tell me about the Salvatore Family.}
 {10030}{}{Tell me about the Bishop Family.}
 {10040}{}{Tell me about the Wright Family.}
-{10050}{}{I had some questions about New Reno…}
+{10050}{}{I had some questions about New Reno...}
 {10060}{}{Actually, nevermind. We'll talk some other time.}
 {11000}{}{(Holds up two fingers.) The Mordinos are a two-headed beast, friend, an' each head's named Jesus Mordino.}
-{11010}{}{Go on…}
+{11010}{}{Go on...}
 {11020}{}{I always suspected Jesus had ties to organized crime.}
 {11030}{}{Let's go back to the other families.}
 {11040}{}{Actually, nevermind. Thanks for talking with me.}
 {12000}{}{There's the father, Big Jesus Mordino, and the son, Lil' Jesus, and both are the meanest sons of bitches you ever met. Used to be slaves here, but they turned the tables years ago and carved out their own lil' empire.}
 {12010}{}{How big is their "empire?"}
-{13000}{}{They own the Desperado just down the street. Can't miss it. They also got the biggest supply of Jet in ALL o' New Reno. So if you got the urge to fly…}
+{13000}{}{They own the Desperado just down the street. Can't miss it. They also got the biggest supply of Jet in ALL o' New Reno. So if you got the urge to fly...}
 {13010}{}{Speaking of which, do you know where can I get some drugs around here?}
 {13020}{}{How come the Mordinos have the biggest supply of Jet?}
 {13030}{}{Tell me about the other families.}
@@ -279,12 +290,12 @@ lang=engl
 {14010}{}{What factory?}
 {14020}{}{What "maker?"}
 {14030}{}{How extensive is their distribution network?}
-{15000}{}{Got factories all over New Reno, cranking out the shit day and night. That's why you can buy all the Jet you need most anywhere: bars, casinos, on th' street…and a-course, from ME.}
+{15000}{}{Got factories all over New Reno, cranking out the shit day and night. That's why you can buy all the Jet you need most anywhere: bars, casinos, on th' street...and a-course, from ME.}
 {15010}{}{Can I see what you got in stock?}
-{15020}{}{Back to the Mordinos and Jet…}
-{16000}{}{Yeah… (Leans in.) ...see, the Mordinos got themselves a lil' gold mine by the name o' Myron. Hit the jackpot with him…see, he MADE jet.}
+{15020}{}{Back to the Mordinos and Jet...}
+{16000}{}{Yeah... (Leans in.) ...see, the Mordinos got themselves a lil' gold mine by the name o' Myron. Hit the jackpot with him...see, he MADE jet.}
 {16010}{}{What about distribution?}
-{17000}{}{They pump it all over New Reno, for starters. Up north to the Den, and also…uh… (Catches himself, then shrugs and continues.) ... well, it's also makin' it's way to Redding nowadays, too, which don't hurt the Mordinos purse none.}
+{17000}{}{They pump it all over New Reno, for starters. Up north to the Den, and also...uh... (Catches himself, then shrugs and continues.) ... well, it's also makin' it's way to Redding nowadays, too, which don't hurt the Mordinos purse none.}
 {17010}{}{Tell me about Redding.}
 {18000}{}{Not much TO say. Mining town northwest o' here. Word is, Mordino wants to get some influence there, get some of that Redding GOLD they dig up. So he ships them jet, they ship back gold, everybody happy.}
 {18010}{}{Interesting. Tell me something about the other families.}
@@ -293,40 +304,40 @@ lang=engl
 {20000}{}{Some free advice: You see a Salvatore, keep your head down n' mouth shut, or they'll cut you in two. They got the best firepower this side of Cee-Ay, so nobody with any kinda sense fucks with them, understand?}
 {20010}{}{What kind of "firepower" do the Salvatores have?}
 {20020}{}{Sounds like they got some pretty heavy shit. What are they packing?}
-{20030}{}{Interesting…thanks for the warning.}
-{21000}{}{Pistols…'cept they shoot LIGHT. Now, Reno's a city o' lights, but the light THOSE pistols shine can cut a man in two... *swuppp*... (Jules makes slicing motion.) Makes a clean burn 'tween the two halves, it does.}
+{20030}{}{Interesting...thanks for the warning.}
+{21000}{}{Pistols...'cept they shoot LIGHT. Now, Reno's a city o' lights, but the light THOSE pistols shine can cut a man in two... *swuppp*... (Jules makes slicing motion.) Makes a clean burn 'tween the two halves, it does.}
 {21010}{}{They shoot light? Do they call the pistols 'laser pistols?'}
 {21020}{}{I'll be sure to be careful, then. Can you tell me about the other families?}
-{22000}{}{Well, uh, I don't really know… I ain't sure what you're talking about. But take my word for it: don't go asking the Salvatores about those pistols. They have this twitchy habit a killing people who're curious.}
+{22000}{}{Well, uh, I don't really know... I ain't sure what you're talking about. But take my word for it: don't go asking the Salvatores about those pistols. They have this twitchy habit a killing people who're curious.}
 {22010}{}{By 'laser pistols,' Jules, I mean pistols that emit beams of coherent light. A beam of sufficient wattage - say, several megawatts - could do considerable damage if focused on a target for a few seconds, producing the effect you've described.}
 {22020}{}{Did they always have these pistols?}
-{23000}{}{They didn't always have 'em…else they'd be in charge o' New Reno…ALL of New Reno. As it stands, they're just building up quietly. Those pistols showed up…maybe a few years back, 'round the time o' the massacre.}
+{23000}{}{They didn't always have 'em...else they'd be in charge o' New Reno...ALL of New Reno. As it stands, they're just building up quietly. Those pistols showed up...maybe a few years back, 'round the time o' the massacre.}
 {23010}{}{Massacre?}
-{24000}{}{Oh, yeah…two Salvatore boys with those pistols killed a buncha Bishop's men, then shot down some of Mordino's boys who'd
+{24000}{}{Oh, yeah...two Salvatore boys with those pistols killed a buncha Bishop's men, then shot down some of Mordino's boys who'd
  been tryin' to muscle in on the West Side. Since then, the other families steered clear of the Salvatores.}
 {24010}{}{Definitely sounds like lasers. Do you know how the Salvatores power their laser pistols? Do they employ battery packs, fusion cells, or cabled power systems of any kind?}
 {24020}{}{Any idea where they're getting these pistols from?}
-{25000}{}{No idea, friend, I ain't asking, and you shouldn't neither…take my advice. You looking for weapons, there's other…safer…places you can try.}
+{25000}{}{No idea, friend, I ain't asking, and you shouldn't neither...take my advice. You looking for weapons, there's other...safer...places you can try.}
 {25010}{}{Like where?}
 {25020}{}{Tell me some more about the families.}
 {26000}{}{Uh... now, I  don't know 'bout that, and... hmmmm. Y'know, you talk like one of them whitecoats over at the Stables. Y'sure you ain't one of them?}
 {26010}{}{Stables?}
 {27000}{}{(Leans in.) Now, I don't want to go on 'bout the less PLEASANT New Reno sites, but there's a buncha whitecoats who talk like you in this building, the Stables, north o' town. Heavily guarded by Mordino's men.}
 {27010}{}{What do they do there?}
-{28000}{}{Test new kinds o' Jet, from what I hear. Now, I'm telling you this in CONFIDENCE, friend: don't go poking around there…the Mordinos don't like visitors. 'Sides…Jules can get you all the Jet you need.}
+{28000}{}{Test new kinds o' Jet, from what I hear. Now, I'm telling you this in CONFIDENCE, friend: don't go poking around there...the Mordinos don't like visitors. 'Sides...Jules can get you all the Jet you need.}
 {28010}{}{Why do the Mordinos keep testing Jet? It sounds like it's addictive enough as it is.}
 {28020}{}{Who do the Mordinos test the drugs on?}
 {28030}{}{Do you know how I can get into the Stables?}
-{29000}{}{Slaves, pretty much. Keep 'em in stalls in the stables, like brahmin. They buy a helluva lot, too, cause the slaves keep getting sick, running away…or die. Mostly die.}
+{29000}{}{Slaves, pretty much. Keep 'em in stalls in the stables, like brahmin. They buy a helluva lot, too, cause the slaves keep getting sick, running away...or die. Mostly die.}
 {29010}{}{Do you know how I can get into the Stables?}
 {29020}{}{Why do the Mordinos keep testing Jet? It sounds like it's addictive enough as it is.}
-{30000}{}{Just to make it better, I guess, refine the process, refine the drug. Jet's good, but if they can make it even BETTER…difference between scraping the sky and flying to the moon, I s'pose.}
+{30000}{}{Just to make it better, I guess, refine the process, refine the drug. Jet's good, but if they can make it even BETTER...difference between scraping the sky and flying to the moon, I s'pose.}
 {30010}{}{Who do the Mordinos test the drugs on?}
 {30020}{}{Do you know how I can get into the Stables?}
 {31000}{}{Now hold on a minute -- I wouldn't even THINK about that if I were you, friend. The Mordinos guard that place like rabid dogs. Just put the thought outta your mind.}
-{31010}{}{There must be a way in…}
+{31010}{}{There must be a way in...}
 {31020}{}{All right, nevermind then. Thanks for the information.}
-{32000}{}{Well... if you can talk all smart like you were doing, you could pass for one of the whitecoats there. 'Course, you could also hire on with the Mordinos and get put there…}
+{32000}{}{Well... if you can talk all smart like you were doing, you could pass for one of the whitecoats there. 'Course, you could also hire on with the Mordinos and get put there...}
 {32010}{}{Tell me about the other families...}
 {32020}{}{Maybe I will. Bye, Jules.}
 {33000}{}{Ha! John Bishop? Not much to say: Bishop's a smart one, tough, and he's looking to get it ALL.}
@@ -345,45 +356,45 @@ lang=engl
 {37010}{}{They're family? How many are there?}
 {38000}{}{Almost twenty or more true-blooded Wrights. Mean as spit and each of them uglier than the next.}
 {38010}{}{What do the Wrights control in New Reno?}
-{39000}{}{They ain't got no casino, they mostly deal in alcohol and sell it to the other families. So if you're looking for hootch…they hang out in the east side o' town in a big mansion.}
+{39000}{}{They ain't got no casino, they mostly deal in alcohol and sell it to the other families. So if you're looking for hootch...they hang out in the east side o' town in a big mansion.}
 {39010}{}{Tell me something else about the families.}
 {40000}{}{Friend, you need look no farther than humble Jules himself. I got it ALL, and if I ain't got it, you don't want it. Shall we get down to bizness?}
 {40010}{}{Sure. Let's deal.}
 {40020}{}{What kind of drugs can I get in New Reno?}
-{40030}{}{Not right now. I had some other questions…}
+{40030}{}{Not right now. I had some other questions...}
 {40040}{}{Actually, I'm not interested in any drugs right now. I have to be going.}
-{41000}{}{@sex@|All KINDS o' shit. I got shit make you horny, make your woman horny, make you hard, make you happy, make you strong, make you smart…and, o course, I got THE drug, the shit that'll let you FLY…Jet.||All KINDS o' shit. I got shit make you horny, make you wet, dry you out, calm you down, sex you up, make you happy, make you strong, make you smart…and, o course, I got THE shit that'll let you FLY…Jet.|}
+{41000}{}{@sex@|All KINDS o' shit. I got shit make you horny, make your woman horny, make you hard, make you happy, make you strong, make you smart...and, o course, I got THE drug, the shit that'll let you FLY...Jet.||All KINDS o' shit. I got shit make you horny, make you wet, dry you out, calm you down, sex you up, make you happy, make you strong, make you smart...and, o course, I got THE shit that'll let you FLY...Jet.|}
 {41010}{}{Where does Jet come from? Has it always been around?}
-{42000}{}{Well... uh... Jet comes from here…Reno, I mean. It ain't been around long, but it's in DEMAND, know what I'm saying? (Winks.)
+{42000}{}{Well... uh... Jet comes from here...Reno, I mean. It ain't been around long, but it's in DEMAND, know what I'm saying? (Winks.)
  Number one reason we get tourists like yourself.}
 {42010}{}{Well, I'm looking to buy some drugs. Let's deal.}
 {42020}{}{But why did Jet come from here?}
-{43000}{}{Aw, now…see, Family Mordino struck the jackpot one day when they found this little brainiac called Myron. Seems he's a natural when it comes to making drugs. He MADE Jet.}
+{43000}{}{Aw, now...see, Family Mordino struck the jackpot one day when they found this little brainiac called Myron. Seems he's a natural when it comes to making drugs. He MADE Jet.}
 {43010}{}{Myron, huh? Where can I find him?}
 {44000}{}{You can't. He upped and left a couple years back. Hightailed it outta town with some stinkin' tribal. No one's seen him since, and the Mordinos done hired a bunch of whitecoats to replace him.}
 {44010}{}{I see. I had some other questions.}
 {45000}{}{You want weapons, you go see my man Eldridge on the West End. He got shit that'll kill people you ain't even MET yet. Tell him I sent you.}
 {45010}{}{I had some other questions.}
 {45020}{}{Thanks for the tip, I think I better be going.}
-{46000}{}{You need some supplies? Well, you CAN go see Renesco up on the West End…but here's the catch: don't buy no drugs from him, cause they ain't SAFE. He's got supplies all right, but if you want drugs, talk to me.}
-{46010}{}{I'll keep that in mind. Say, I had some more questions…}
+{46000}{}{You need some supplies? Well, you CAN go see Renesco up on the West End...but here's the catch: don't buy no drugs from him, cause they ain't SAFE. He's got supplies all right, but if you want drugs, talk to me.}
+{46010}{}{I'll keep that in mind. Say, I had some more questions...}
 {46020}{}{His drugs aren't safe, huh? Well, thanks for the tip, I think I better be going.}
 {47000}{}{ @sex@|I hear you, brother. Most TOURISTS, see, they stride down Virgin street and get suckered by some two-chip whore. You look like you got class, so head over to the Cat's Paw 'cross the street there. Tell 'em Jules sent you.||I hear you, sister. Most TOURISTS, see, they stride down Virgin street and get suckered by some glitterboy. You look like you got class, so head over to the Cat's Paw 'cross the street there. Tell 'em Jules sent you.|}
-{47010}{}{I had some more questions…}
+{47010}{}{I had some more questions...}
 {47020}{}{Well, thanks for the tip. I think I better be going.}
-{48000}{}{Lotta dealers in town…Lil' Jesus Mordino, but he's a fuckin' psychopath. There's Jagged Jimmy J up on 2nd Street, north of here, but he's small time. You can stick with Jules.}
+{48000}{}{Lotta dealers in town...Lil' Jesus Mordino, but he's a fuckin' psychopath. There's Jagged Jimmy J up on 2nd Street, north of here, but he's small time. You can stick with Jules.}
 {48010}{}{Lil' Jesus Mordino? Where can I find him?}
 {48020}{}{"Jagged Jimmy J?" Who's that?}
-{48030}{}{Say, I had some other questions…}
+{48030}{}{Say, I had some other questions...}
 {49000}{}{(Jules' smile dies.) I'm lookin' for people like you comin' into Reno. This is the prime spot to deal. Plus, certain establishments pay me to point newcomers their way. THAT a good enough answer for you?}
-{49010}{}{Yes. Now I need the answer to some other questions…}
+{49010}{}{Yes. Now I need the answer to some other questions...}
 {49020}{}{Just curious. Thanks for the honesty.}
 {50000}{}{He's this dumb sonuvabitch who thinks he's a big-time dealer. You can't miss him...his face is all scarred up. The fool was flying on Jet one night and tried to shave with a combat knife. Sad part is, it didn't KILL 'im.}
 {50010}{}{And Lil' Jesus Mordino? Where can I find him?}
-{50020}{}{Lotta love in this town...say, I had some other questions…}
+{50020}{}{Lotta love in this town...say, I had some other questions...}
 {51000}{}{Well, friend, I'd be careful about just walkin' in and talkin' to Lil' Jesus 'bout anything. But if you REALLY want to talk with him, I ain't gonna stop you. He hangs out at the Desperado 'cross the street there.}
 {51010}{}{And "Jagged Jimmy J?" Who's that?}
-{51020}{}{Say, I had some other questions…}
+{51020}{}{Say, I had some other questions...}
 {52000}{}{Eh... don't strain the brain. You just don't hurt yourself, now, hear?}
 {53000}{}{Happens to be I DO need some. But... (Looks around) Now you listen good. You better not tell ANYONE about this. My shit is PREMIUM, straight from the TOP sources.}
 {53010}{}{Nobody will ever know. It's straight from The Family anyway. Wholesale rate. How about...}
@@ -412,4 +423,12 @@ lang=engl
 {60010}{}{See you later.}
 {61000}{}{Here are your hypos. See you round.}
 {61010}{}{See you later, Jules.}
+{62000}{}{Sure I do, these addicts are always leavin' 'em around. Lucky for me I know theres a roarin' trade in 'em with you Doctor types! You can have one for $20 or the special offer: 20 for 360$ only!}
+{62010}{}{I'll take just one, here's your money.}
+{62020}{}{What the hell, I'll take the special offer!}
+{62030}{}{I can't afford that right now, cya later.}
+{63000}{}{Here's your canister, See you round.}
+{63010}{}{See you later.}
+{64000}{}{Here are your canisters. See you round.}
+{64010}{}{See you later, Jules.}
 

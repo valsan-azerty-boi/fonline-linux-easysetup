@@ -9,7 +9,9 @@
 // Thread: http://www.fonline.ru/forum/showthread.php?t=18316
 // rewritten for 2238
 
+#include "_colors.fos"
 #include "_macros.fos"
+#include "utils_h.fos"
 #define STR_LIGHT_FLARE         (4070)
 
 // active flares lifetime, in minutes
@@ -35,8 +37,9 @@ void _GroundFlareInit(Item& item, bool firstTime)
 {
     if(firstTime)
     {
-        CreateTimeEvent(AFTER(REAL_MINUTE(Random(FLAREGROUND_AGE_MIN, FLAREGROUND_AGE_MAX))),
-                        "e_DeleteFlare", item.Id, true);
+        ;
+		//CreateTimeEvent(AFTER(REAL_MINUTE(Random(FLAREGROUND_AGE_MIN, FLAREGROUND_AGE_MAX))),
+        //                "e_DeleteFlare", item.Id, true);
     }
 }
 
@@ -44,6 +47,14 @@ bool _Used(Item& item, Critter& crit, Critter@ onCritter, Item@ onItem, Scenery@
 {
     uint old_pid = item.GetProtoId();
     _SubItem(item, 1);
+	
+	Map@ map = crit.GetMap();
+    if(valid(map) && IsEncounterMap(map))
+    {
+	Location@ loc = map.GetLocation();
+			if(loc.Visible!=true) loc.Visible = true;
+			loc.Color = COLOR_CHANGE_ALPHA(COLOR_RGB(0xC8,0,0), 80);
+	}
 
     uint new_pid = 0;
     switch(old_pid)
@@ -70,8 +81,8 @@ bool _Used(Item& item, Critter& crit, Critter@ onCritter, Item@ onItem, Scenery@
         if(valid(new))
         {
             crit.SayMsg(SAY_NETMSG, TEXTMSG_TEXT, STR_LIGHT_FLARE);
-            CreateTimeEvent(AFTER(REAL_MINUTE(Random(FLARE_AGE_MIN, FLARE_AGE_MAX))),
-                            "e_DeleteFlare", new.Id, true);
+            //CreateTimeEvent(AFTER(REAL_MINUTE(Random(FLARE_AGE_MIN, FLARE_AGE_MAX))),
+            //                "e_DeleteFlare", new.Id, true);
             return(true);
         }
     }

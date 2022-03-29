@@ -50,6 +50,12 @@ bool UseSkillOnLocker(Critter& cr, Item& locker, int skill)   // Export
                 cr.SayMsg(SAY_NETMSG,TEXTMSG_GAME,STR_USE_NOTHING);
                 return true;
            }*/
+		Map@ map = cr.GetMap();
+		if(map.GetLocation().GetProtoId()==LOCATION_BarterGround)
+		{
+			cr.Say(SAY_NETMSG, "You cannot do that here.");
+			return true;
+		}
 
         if(cr.Timeout[TO_SK_LOCKPICK] > 0)
         {
@@ -122,6 +128,27 @@ bool HandleLocker(Critter& cr, Map@ map, Item& locker, bool disregardKey)   // e
     if(locker.GetType() == ITEM_TYPE_DOOR)
     {
 
+        bool not_auto_door = false; // w Special Enco Ruined Military Base wyłączone autozamykanie sie drzwi - zabezpiecza przed zatrzasnieciem się drzwi, ktorych po ewentualnej utracie klucza, nie mozna byloby otworzyc
+    
+        uint mapProtoId = map.GetProtoId();
+        if(mapProtoId == MAP_RuinedMilitaryBunkerLevel2 || mapProtoId == MAP_RuinedMilitaryBunkerSurface) // mapy, na ktorych ponizsze drzwi beda miec wylaczone auto-zamykanie
+        {
+            if(
+                (locker.HexX == 192 && locker.HexY == 210) || // MAP_RuinedMilitaryBunkerLevel2
+                (locker.HexX == 202 && locker.HexY == 188)    // MAP_RuinedMilitaryBunkerLevel2
+                )  
+
+            {
+                not_auto_door = true;
+                //Log("not_auto_door = true" + " mapProtoId " + mapProtoId + " locker.HexX " + locker.HexX + ", " + locker.HexY);
+            }
+            else
+            {
+                not_auto_door = false;
+                //Log("not_auto_door = false" + " mapProtoId " + mapProtoId + " locker.HexX " + locker.HexX + ", " + locker.HexY);
+            }
+        }
+
         // NoOpen
         if(!locker.Proto.Container_Changeble)
         {
@@ -168,11 +195,11 @@ bool HandleLocker(Critter& cr, Map@ map, Item& locker, bool disregardKey)   // e
             }
 
 
-            LockerOpen(locker);
+            LockerOpen(locker);         
             if(IsAutoDoor(locker))
-                OnOpenAutoDoor(locker);
+                OnOpenAutoDoor(locker, not_auto_door);
             else
-                OnOpenDoor(locker);
+                OnOpenDoor(locker, not_auto_door);
         }
     }
     else if(locker.GetType() == ITEM_TYPE_CONTAINER)
@@ -322,20 +349,20 @@ bool DoorIsBlocked(Item@ door)
 //
 // Spawns event that will close door
 //
-void OnOpenAutoDoor(Item@ targetItem)
+void OnOpenAutoDoor(Item@ targetItem, bool not_auto_door)
 {
     if(targetItem.Val5 != 0)
         EraseTimeEvent(targetItem.Val5);
     // // we don't store info about this event for now,
     // // server can't load event handler, don't know why)
-    targetItem.Val5 = CreateTimeEvent(AFTER(REAL_SECOND(Random(10, 20))),
-                                      "e_CloseDoor", targetItem.Id, true);
+    if(not_auto_door == false)
+        targetItem.Val5 = CreateTimeEvent(AFTER(REAL_SECOND(Random(10, 20))), "e_CloseDoor", targetItem.Id, true);
 }
 
 //
 // Spawns event that will close normal door (long time)
 //
-void OnOpenDoor(Item@ targetItem)
+void OnOpenDoor(Item@ targetItem, bool not_auto_door)
 {
     if(targetItem.Val5 != 0)
         EraseTimeEvent(targetItem.Val5);
@@ -346,8 +373,8 @@ void OnOpenDoor(Item@ targetItem)
         map.GetLocation().IsTCTown() ||
         map.GetLocation().IsReplication()))
     {
-        targetItem.Val5 = CreateTimeEvent(AFTER(REAL_MINUTE(Random(3, 6))),
-                                          "e_CloseDoor", targetItem.Id, true);
+        if(not_auto_door == false)
+            targetItem.Val5 = CreateTimeEvent(AFTER(REAL_MINUTE(Random(3, 6))), "e_CloseDoor", targetItem.Id, true);
     }
 }
 

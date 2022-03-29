@@ -5,6 +5,7 @@
 // quest_railgang.fos
 //
 
+#include "_colors.fos"
 #include "_maps.fos"
 #include "_vars.fos"
 #include "_macros.fos"
@@ -29,6 +30,8 @@ void r_SpawnCamp(Critter& player, Critter@ npc)
     GameVar@  varLocId = GetLocalVar(LVAR_q_ncr_rail_gang_locid, player.Id);
     varLocId = loc;
     Location@ location = GetLocation(loc);
+    location.Color = COLOR_WM_QUEST;
+    location.Update();
 
     Map@      map = location.GetMapByIndex(0);
     map.SetData(MAP_DATA_RAILGANG_OWNER, player.Id);

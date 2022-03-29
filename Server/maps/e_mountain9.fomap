@@ -21855,7 +21855,7 @@ MapX                 25
 MapY                 30
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 25
 MapY                 30
 
@@ -21985,7 +21985,7 @@ MapX                 29
 MapY                 29
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 25
 MapY                 31
 
@@ -22125,7 +22125,7 @@ MapX                 31
 MapY                 29
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 25
 MapY                 32
 
@@ -22890,12 +22890,12 @@ MapX                 3
 MapY                 43
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 25
 MapY                 33
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 25
 MapY                 33
 
@@ -22905,7 +22905,7 @@ MapX                 3
 MapY                 44
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 25
 MapY                 34
 
@@ -22915,7 +22915,7 @@ MapX                 4
 MapY                 44
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 25
 MapY                 35
 
@@ -22925,7 +22925,7 @@ MapX                 4
 MapY                 45
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 25
 MapY                 36
 
@@ -22935,7 +22935,7 @@ MapX                 5
 MapY                 46
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 25
 MapY                 37
 
@@ -22945,7 +22945,7 @@ MapX                 5
 MapY                 47
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 25
 MapY                 38
 
@@ -22955,7 +22955,7 @@ MapX                 6
 MapY                 47
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 25
 MapY                 39
 
@@ -22965,7 +22965,7 @@ MapX                 6
 MapY                 48
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 25
 MapY                 40
 
@@ -22980,7 +22980,7 @@ MapX                 7
 MapY                 49
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 25
 MapY                 41
 
@@ -23000,7 +23000,7 @@ MapX                 7
 MapY                 50
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 25
 MapY                 42
 
@@ -23020,7 +23020,7 @@ MapX                 8
 MapY                 50
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 25
 MapY                 43
 
@@ -23035,7 +23035,7 @@ MapX                 8
 MapY                 51
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 25
 MapY                 44
 
@@ -23050,7 +23050,7 @@ MapX                 9
 MapY                 52
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 25
 MapY                 45
 
@@ -23075,7 +23075,7 @@ MapX                 9
 MapY                 53
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 25
 MapY                 46
 
@@ -23170,7 +23170,7 @@ MapX                 14
 MapY                 60
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 25
 MapY                 55
 
@@ -23180,12 +23180,12 @@ MapX                 15
 MapY                 61
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 24
 MapY                 56
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 25
 MapY                 56
 
@@ -23195,7 +23195,7 @@ MapX                 15
 MapY                 62
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 24
 MapY                 57
 
@@ -23205,7 +23205,7 @@ MapX                 16
 MapY                 62
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 24
 MapY                 58
 
@@ -23215,7 +23215,7 @@ MapX                 16
 MapY                 63
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 24
 MapY                 59
 
@@ -23235,7 +23235,7 @@ MapX                 23
 MapY                 61
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 24
 MapY                 60
 
@@ -23250,7 +23250,7 @@ MapX                 17
 MapY                 65
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 25
 MapY                 61
 
@@ -23265,7 +23265,7 @@ MapX                 18
 MapY                 65
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 25
 MapY                 62
 
@@ -23275,7 +23275,7 @@ MapX                 18
 MapY                 66
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 25
 MapY                 63
 
@@ -23285,7 +23285,7 @@ MapX                 19
 MapY                 67
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 26
 MapY                 63
 
@@ -23295,7 +23295,7 @@ MapX                 19
 MapY                 68
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 26
 MapY                 64
 
@@ -23305,7 +23305,7 @@ MapX                 20
 MapY                 68
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 26
 MapY                 65
 
@@ -23315,7 +23315,7 @@ MapX                 20
 MapY                 69
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 26
 MapY                 66
 
@@ -23350,7 +23350,7 @@ MapX                 22
 MapY                 71
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 26
 MapY                 69
 
@@ -23360,7 +23360,7 @@ MapX                 22
 MapY                 72
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 26
 MapY                 70
 
@@ -23370,7 +23370,7 @@ MapX                 23
 MapY                 73
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 26
 MapY                 71
 
@@ -23380,7 +23380,7 @@ MapX                 23
 MapY                 74
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 26
 MapY                 72
 
@@ -23390,7 +23390,7 @@ MapX                 24
 MapY                 74
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 26
 MapY                 73
 
@@ -23400,7 +23400,7 @@ MapX                 24
 MapY                 75
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 26
 MapY                 74
 
@@ -23410,7 +23410,7 @@ MapX                 25
 MapY                 76
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 26
 MapY                 75
 
@@ -23420,7 +23420,7 @@ MapX                 25
 MapY                 77
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 26
 MapY                 76
 
@@ -26155,62 +26155,62 @@ MapX                 37
 MapY                 88
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 26
 MapY                 67
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 26
 MapY                 68
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 25
 MapY                 48
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 25
 MapY                 49
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 25
 MapY                 50
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 25
 MapY                 51
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 24
 MapY                 51
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 25
 MapY                 52
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 24
 MapY                 52
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 25
 MapY                 53
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 25
 MapY                 54
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 25
 MapY                 47
 
@@ -26895,17 +26895,17 @@ MapX                 39
 MapY                 54
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 38
 MapY                 54
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 37
 MapY                 55
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 36
 MapY                 55
 
@@ -26920,7 +26920,7 @@ MapX                 45
 MapY                 52
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 39
 MapY                 55
 
@@ -26930,17 +26930,17 @@ MapX                 38
 MapY                 55
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 38
 MapY                 55
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 37
 MapY                 56
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 36
 MapY                 56
 
@@ -26960,17 +26960,17 @@ MapX                 42
 MapY                 54
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 39
 MapY                 56
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 38
 MapY                 56
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 37
 MapY                 57
 
@@ -26995,17 +26995,17 @@ MapX                 42
 MapY                 55
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 40
 MapY                 56
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 39
 MapY                 57
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 38
 MapY                 57
 
@@ -27030,12 +27030,12 @@ MapX                 45
 MapY                 55
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 40
 MapY                 57
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 39
 MapY                 58
 
@@ -27110,17 +27110,17 @@ MapX                 47
 MapY                 59
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 46
 MapY                 59
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 48
 MapY                 59
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 48
 MapY                 59
 
@@ -27130,7 +27130,7 @@ MapX                 47
 MapY                 60
 
 MapObjType           2
-ProtoId              5622
+ProtoId              5621
 MapX                 47
 MapY                 60
 

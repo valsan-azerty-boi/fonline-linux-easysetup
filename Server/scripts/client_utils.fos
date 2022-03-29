@@ -261,7 +261,7 @@ uint range_string2int(string& text, int& from, int& to)
 
     if(range.length() >= 1)
     {
-        int _int = string2uint(range[0]);
+        int _int = string2int(range[0]);
 
         from = _int;
         to   = _int;
@@ -269,7 +269,7 @@ uint range_string2int(string& text, int& from, int& to)
 
         if(range.length() >= 2)
         {
-            int _int = string2uint(range[1]);
+            int _int = string2int(range[1]);
             to = _int;
             if(to < from)
                 to = from;

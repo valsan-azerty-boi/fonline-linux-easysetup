@@ -64,8 +64,10 @@ bool InNoBombZone(Critter@ cr)
 bool InWeaponAllowedZone(Critter@ cr)
 {
     uint pid = cr.GetMap().GetProtoId();
-    if((pid == MAP_VaultCityDowntown && cr.HexY <= 243) || (pid == MAP_Junktown && cr.HexY <= 327) || (pid == MAP_NCR && cr.HexY >= 158))
-        return false;
+    /*if((pid == MAP_VaultCityDowntown && cr.HexY <= 243) || (pid == MAP_Junktown && cr.HexY <= 327) || (pid == MAP_NCR && cr.HexY >= 158) || (pid==MAP_DenBusiness) || (pid==MAP_ModocLarge) || (pid==MAP_KlamathDowntown) || (pid==MAP_GeckoSettlement ) || (pid==MAP_BrokenHills) || (pid==MAP_Redding))
+        return false;*/
+	if((pid==MAP_DenBusiness) || (pid==MAP_ModocLarge) || (pid==MAP_KlamathDowntown) || (pid==MAP_GeckoSettlement ) || (pid==MAP_BrokenHills) || (pid==MAP_Redding))
+        return false;	
     return true;
 }
 
@@ -326,6 +328,7 @@ void GuardOnSomeoneSteal(Critter& guard, Critter& target, Critter& thief, bool s
                 guard.Say(SAY_NORM_ON_HEAD, "Useless bastard");
             }
         }
+		AttackCritter(guard, thief);
         return;
     }
 

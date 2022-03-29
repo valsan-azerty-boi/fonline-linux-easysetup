@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              152
 MaxHexY              147
-WorkHexX             82
-WorkHexY             81
+WorkHexX             93
+WorkHexY             68
 ScriptModule         map_encounter
 ScriptFunc           map_init
 NoLogOut             0
@@ -30424,8 +30424,8 @@ MapY                 50
 
 MapObjType           2
 ProtoId              3853
-MapX                 74
-MapY                 64
+MapX                 78
+MapY                 63
 
 MapObjType           2
 ProtoId              3853
@@ -30439,18 +30439,18 @@ MapY                 74
 
 MapObjType           2
 ProtoId              3853
-MapX                 78
-MapY                 80
-
-MapObjType           2
-ProtoId              3853
-MapX                 72
+MapX                 80
 MapY                 83
 
 MapObjType           2
 ProtoId              3853
-MapX                 68
-MapY                 73
+MapX                 76
+MapY                 85
+
+MapObjType           2
+ProtoId              3853
+MapX                 74
+MapY                 74
 
 MapObjType           2
 ProtoId              3853
@@ -30472,8 +30472,8 @@ Scenery_ToEntire     243
 
 MapObjType           2
 ProtoId              3853
-MapX                 56
-MapY                 90
+MapX                 53
+MapY                 92
 Scenery_ToEntire     243
 
 MapObjType           1

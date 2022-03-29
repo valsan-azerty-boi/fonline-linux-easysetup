@@ -28,8 +28,9 @@ lang=engl
 11 4030 #
 12 4040 #
 13 4050 #
-14 4060 #
-0 4070 @
+14 4060 D _param p ST_STRENGTH > 11 #
+24 4070 #
+0 4080 @
 5 5000 None 0 #
 0 5010 @
 7 6000 None 0 #
@@ -38,24 +39,24 @@ lang=engl
 4 7010 #
 0 7020 @
 9 8000 None 0 #
-15 8010 D _item p PID_BOTTLE_CAPS > 709 R _item p PID_BIG_BOOK_OF_SCIENCE + 1 R _script dialog@r_RemoveMoney 1 710 #
-16 8020 D _item p PID_BOTTLE_CAPS < 710 #
+15 8010 D _item p PID_BOTTLE_CAPS > 1599 R _item p PID_BIG_BOOK_OF_SCIENCE + 1 R _script dialog@r_RemoveMoney 1 1600 #
+16 8020 D _item p PID_BOTTLE_CAPS < 1600 #
 4 8030 @
 10 9000 None 0 #
-15 9010 D _item p PID_BOTTLE_CAPS > 299 R _item p PID_DEANS_ELECTRONICS + 1 R _script dialog@r_RemoveMoney 1 300 #
-16 9020 D _item p PID_BOTTLE_CAPS < 300 #
+15 9010 D _item p PID_BOTTLE_CAPS > 1599 R _item p PID_DEANS_ELECTRONICS + 1 R _script dialog@r_RemoveMoney 1 1600 #
+16 9020 D _item p PID_BOTTLE_CAPS < 1600 #
 4 9030 @
 11 10000 None 0 #
-15 10010 D _item p PID_BOTTLE_CAPS > 379 R _item p PID_FIRST_AID_BOOK + 1 R _script dialog@r_RemoveMoney 1 380 #
-16 10020 D _item p PID_BOTTLE_CAPS < 380 #
+15 10010 D _item p PID_BOTTLE_CAPS > 1799 R _item p PID_FIRST_AID_BOOK + 1 R _script dialog@r_RemoveMoney 1 1800 #
+16 10020 D _item p PID_BOTTLE_CAPS < 1800 #
 4 10030 @
 12 11000 None 0 #
-15 11010 D _item p PID_BOTTLE_CAPS > 839 R _item p PID_GUNS_AND_BULLETS + 1 R _script dialog@r_RemoveMoney 1 840 #
-16 11020 D _item p PID_BOTTLE_CAPS < 840 #
+15 11010 D _item p PID_BOTTLE_CAPS > 1799 R _item p PID_GUNS_AND_BULLETS + 1 R _script dialog@r_RemoveMoney 1 1800 #
+16 11020 D _item p PID_BOTTLE_CAPS < 1800 #
 4 11030 @
 13 12000 None 0 #
-15 12010 D _item p PID_BOTTLE_CAPS > 439 R _item p PID_SCOUT_HANDBOOK + 1 R _script dialog@r_RemoveMoney 1 440 #
-16 12020 D _item p PID_BOTTLE_CAPS < 440 #
+15 12010 D _item p PID_BOTTLE_CAPS > 1599 R _item p PID_SCOUT_HANDBOOK + 1 R _script dialog@r_RemoveMoney 1 1600 #
+16 12020 D _item p PID_BOTTLE_CAPS < 1600 #
 4 12030 @
 14 13000 None 0 #
 15 13010 D _item p PID_BOTTLE_CAPS > 889 R _item p PID_CHEMISTRY_MANUAL + 1 R _script dialog@r_RemoveMoney 1 890 #
@@ -86,7 +87,11 @@ lang=engl
 23 21010 #
 0 21020 @
 23 22000 None 0 #
-0 22010 R _item p PID_DEANS_ELECTRONICS + 1 R _var p q_la_library_book = 2 &
+0 22010 R _item p PID_DEANS_ELECTRONICS + 1 R _var p q_la_library_book = 2 @
+24 23000 None 0 #
+15 23010 D _item p PID_BOTTLE_CAPS > 1999 R _item p PID_BARTER_BOOK + 1 R _script dialog@r_RemoveMoney 1 2000 #
+16 23020 D _item p PID_BOTTLE_CAPS < 2000 #
+4 23030 &
 
 [engl]
 {100}{}{Veronica}
@@ -117,7 +122,8 @@ lang=engl
 {4040}{}{I am searching some guns and bullets books.@@Do you have books about guns and bullets?@@Books about guns and bullets is what I am searching for.}
 {4050}{}{I am searching some scout books.@@Do you have books about scouting?@@Books about scouting is what I am searching for.}
 {4060}{}{I am searching some chemistry books.@@Do you have books about chemistry?@@Books about chemistry is what I am searching for.}
-{4070}{}{Ok. It seems like there is nothing I would need now. Thanks anyway.}
+{4070}{}{I am searching some trading books.@@Do you have books about trading?@@Books about trading is what I am searching for.}
+{4080}{}{Ok. It seems like there is nothing I would need now. Thanks anyway.}
 {5000}{}{I'm sorry, but I don't understand you. Somewhere I have a Holodisk on learning the English language, if you're interested.}
 {5010}{}{Wha?@@Wah!}
 {6000}{}{@sex@|Maybe later, young boy.||Maybe later, young lady.|}
@@ -125,24 +131,24 @@ lang=engl
 {7000}{}{Yes?}
 {7010}{}{What do you have in the way of books?}
 {7020}{}{Nothing, but thanks.}
-{8000}{}{Yes, I think I have what you are searching for. What about this exemplar of the big book of science? It costs 710 caps.}
-{8010}{}{I'll take it. [You give her 710 caps.]}
+{8000}{}{Yes, I think I have what you are searching for. What about this exemplar of the big book of science? It costs 1600 caps.}
+{8010}{}{I'll take it. [You give her 1600 caps.]}
 {8020}{}{It seems like I don't have enough money...}
 {8030}{}{This is not what I am searching for. Do you have something else?}
-{9000}{}{Yes, I think I have what you are searching for. What about this exemplar of Deans Electronics? It costs 300 caps.}
-{9010}{}{I'll take it. [You give her 300 caps.]}
+{9000}{}{Yes, I think I have what you are searching for. What about this exemplar of Deans Electronics? It costs 1600 caps.}
+{9010}{}{I'll take it. [You give her 1600 caps.]}
 {9020}{}{It seems like I don't have enough money...}
 {9030}{}{This is not what I am searching for. Do you have something else?}
-{10000}{}{Yes, I think I have what you are searching for. What about this first aid book here? It costs 380 caps.}
-{10010}{}{I'll take it. [You give her 380 caps.]}
+{10000}{}{Yes, I think I have what you are searching for. What about this first aid book here? It costs 1800 caps.}
+{10010}{}{I'll take it. [You give her 1800 caps.]}
 {10020}{}{It seems like I don't have enough money...}
 {10030}{}{This is not what I am searching for. Do you have something else?}
-{11000}{}{Yes, I think I have what you are searching for. Here, Guns and Bullets, the book isn't in that good state anymore. It costs 840 caps.}
-{11010}{}{I'll take it. [You give her 840 caps.]}
+{11000}{}{Yes, I think I have what you are searching for. Here, Guns and Bullets, the book isn't in that good state anymore. It costs 1800 caps.}
+{11010}{}{I'll take it. [You give her 1800 caps.]}
 {11020}{}{It seems like I don't have enough money...}
 {11030}{}{This is not what I am searching for. Do you have something else?}
-{12000}{}{Yes, I think I have what you are searching for. What about this scouting handbook? It costs 440 caps.}
-{12010}{}{I'll take it. [You give her 440 caps.]}
+{12000}{}{Yes, I think I have what you are searching for. What about this scouting handbook? It costs 1600 caps.}
+{12010}{}{I'll take it. [You give her 1600 caps.]}
 {12020}{}{It seems like I don't have enough money...}
 {12030}{}{This is not what I am searching for. Do you have something else?}
 {13000}{}{Yes, I think I have what you are searching for. What about this chemistry handbooks? It costs 890 caps.}
@@ -175,4 +181,8 @@ lang=engl
 {21020}{}{Don't have time for this, bye.}
 {22000}{}{Nice! Thank's in advance. Tell her, Veronica sends you.}
 {22010}{}{[You take the book and go.]}
+{23000}{}{Yes, I think I have what you are searching for. What about these fascinating Tales of Junktown Jerky Trader here? It costs 2000 caps.}
+{23010}{}{I'll take it. [You give her 2000 caps.]}
+{23020}{}{It seems like I don't have enough money...}
+{23030}{}{This is not what I am searching for. Do you have something else?}
 

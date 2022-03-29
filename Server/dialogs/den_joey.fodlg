@@ -25,7 +25,7 @@ lang=engl
 0 5020 @
 6 6000 None 0 #
 0 6010 @
-7 7000 None 0 #
+7 7000 dialog@dlg_SayBuyJet 0 #
 8 7010 D _item p PID_BOTTLE_CAPS > 499 R _item p PID_JET + 1 R _script dialog@r_RemoveMoney 1 500 #
 5 7020 #
 0 7030 @
@@ -56,7 +56,7 @@ lang=engl
 {5020}{}{Um, never mind. See you around.}
 {6000}{}{The church? Metzger currently uses it as a warehouse. Don't ask me what he stores in there.}
 {6010}{}{OK, thanks. Bye.}
-{7000}{}{For you, I will sell jet for $500.}
+{7000}{}{For you, I will sell jet for $500. [You can use SAY to enter number of items you want to buy]}
 {7010}{}{OK, I’ll buy it.}
 {7020}{}{No, thanks, but I would like to ask you something.}
 {7030}{}{No, thanks. Bye.}

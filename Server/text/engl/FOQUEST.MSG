@@ -362,6 +362,7 @@
 {7074026}{}{I've completed my fourth mission and have again been rewarded. I should return for my next mission.}
 {7074027}{}{I've been ordered to investigate a BoS bunker on lockdown near Necropolis, collect survivors, and most importantly, retrieve data from the base's main terminal.}
 {7074028}{}{I was able to extract the data, but the bunker is compromised and there were no survivors. I should report to Lost Hills with this information.}
+{7074029}{}{I've completed my investigation. All the data I managed to retrieve are in safe hands now.}
 
 {7074101}{}{Brotherhood of Steel: Welcome to the Brotherhood}
 {7074102}{}{Rise among the ranks of the Brotherhood of Steel.}
@@ -505,7 +506,7 @@
 # 7112
 # Boneyard, Gun Runners Caravan
 #=======================================
-{7112001}{}{Marshall from the Gun Runners got a job for me, if I can get a team together of at least four people. It's about a package that has been stolen by a group of Super Mutant remnants. It's dangerous but should be worth it.}
+{7112001}{}{Marshall from the Gun Runners got a job for me. It's about a package that has been stolen by a group of Super Mutant remnants. He suggested to get a team of at least three people. It's dangerous but should be worth it.}
 {7112002}{}{The deal is clear: Marshall from the Gun Runners told me to bring him back the Gun Runners metal box with weapon manufacturing plans inside. The metal case is rigged with explosives, so we shouldn't touch them or it goes BOOM! He also told me that nobody else should get the package... Not the Brotherhood and not the Khans, not anyone else. 
 
 The mutants are using some heavy weaponry- our group should prepare for that.}

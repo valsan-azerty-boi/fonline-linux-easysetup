@@ -69,9 +69,11 @@
 // int Val6;
 // this val is visible in client
 //	dogtags - type (blank/military/custom)
+//  doors: Maximum HP of doors (used for respawned doors to restore Val7)
 
 // int Val7;
 //  3d items attributes
+//  doors: current HP of doors (can be lowered by explosions dynamite, plastic etc)
 
 // int Val8;
 //  special item id

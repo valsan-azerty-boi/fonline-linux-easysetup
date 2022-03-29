@@ -192,7 +192,7 @@
                                 >
                         </File>
                         <File
-                                RelativePath="..\..\client_container_volume.fos"
+                                RelativePath="..\..\client_container_addons.fos"
                                 >
                         </File>
                         <File

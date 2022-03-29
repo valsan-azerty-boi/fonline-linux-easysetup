@@ -133,6 +133,62 @@ uint e_Update(array<uint>@ values)
     f.open("logs/traders.log", "a");
     f.writeString(GetCurrentDateTimeString() + "> Updating trader: " + GetScriptName(npc.GetScriptId()) + "\n");
 
+    array<Item@> npcItems;
+    uint npcItemsNumber = npc.GetItems(SLOT_INV, npcItems);
+
+    array<uint> npcItemsPids;
+    array<uint> npcItemsPidsAll;
+    array<uint> npcItemsCount;
+
+    npcItemsPids.resize(0);
+    npcItemsPidsAll.resize(0);
+    npcItemsCount.resize(0);
+    for(uint i=0; i < npcItemsNumber; ++i)
+    {
+        npcItemsPidsAll.insertLast(npcItems[i].GetProtoId());
+    }
+    npcItemsPidsAll.sortAsc();
+    
+    uint lastPid = 0;
+    for(uint i=0, j=npcItemsPidsAll.length(), k=0; i < j; ++i)
+    {
+        if(lastPid == 0)
+        {
+            lastPid = npcItemsPidsAll[i];
+            npcItemsCount.insertLast(1);
+            npcItemsPids.insertLast(lastPid);
+        }
+        else
+        {
+            if(lastPid == npcItemsPidsAll[i])
+            {
+                ++npcItemsCount[k];
+            }
+            else
+            {
+                ++k;
+                lastPid = npcItemsPidsAll[i];
+                npcItemsCount.insertLast(1);
+                npcItemsPids.insertLast(lastPid);
+            }
+        }
+    }
+
+    uint remainingCount = 1;
+    if(npcItemsPids.length() == npcItemsCount.length())
+    {
+        for(uint i=0; i < npcItemsPids.length(); ++i)
+        {
+            remainingCount = (npcItemsCount[i]*2)/10;
+            remainingCount = CLAMP(remainingCount, 1, npcItemsCount[i]);
+
+            if(npcItemsCount[i] > remainingCount)
+            {
+                npc.DeleteItem(npcItemsPids[i], (npcItemsCount[i]-remainingCount));
+            }
+        }
+    }
+
     array<Item@> items;
     uint         totalValue = 0;
     // removing old items (new way)
@@ -984,6 +1040,7 @@ void AddItems(Critter@ npc, array<int>@ tvalues, array<Item@>@ items)
         items.insertLast(it);
     }
 
+	/*
     caps = npc.CountItem(PID_BOTTLE_CAPS);
     if(caps < int(TraderMoneyCapacity(npc)))
     {
@@ -991,6 +1048,16 @@ void AddItems(Critter@ npc, array<int>@ tvalues, array<Item@>@ items)
         if(valid(items))
             items.insertLast(it);
     }
+	*/
+
+	caps = npc.CountItem(PID_BOTTLE_CAPS);
+	if(caps < 5000)
+	{
+	  Item@ it = npc.AddItem(PID_BOTTLE_CAPS, Random(5000,10000));
+      if (valid(items) && valid(it)) items.insertLast(it);
+	}
+	
+	
     // Log(""+npc.Id+" SI end with "+TraderMoneyCapacity(npc)+" caps, barter "+npc.Skill[SK_BARTER]);
     // uint __endZZZ=GetTick(); Log("I am being executed for a very long time! ("+(__endZZZ-__nowZZZ)+" ms)");
 }
@@ -1021,37 +1088,36 @@ void AddItems(Critter@ npc, array<int>@ tvalues, array<Item@>@ items)
    }
  */
 // starting lists
-uint[][] sg1 = { { PID_10MM_PISTOL, 1 }, { PID_44_MAGNUM_REVOLVER, 1 }, { PID_DESERT_EAGLE, 1 }, { PID_9MM_MAUSER, 1 }, { PID_RED_RYDER_BB_GUN, 1 }, { PID_HUNTING_RIFLE, 1 }, { PID_TOMMY_GUN, 1 }, { PID_SHOTGUN, 1 }, { PID_SAWED_OFF_SHOTGUN, 1 }, { PID_GREASE_GUN, 1 },
-                 { PID_BBS, 50 }, { PID_44_MAGNUM_JHP, 50 }, { PID_10MM_JHP, 50 }, { PID_9MM_BALL, 50 }, { PID_SHOTGUN_SHELLS, 50 }, { PID_45_CALIBER_AMMO, 50 } };
+uint[][] sg1 = { { PID_44_MAGNUM_REVOLVER, 1 }, { PID_DESERT_EAGLE, 1 }, { PID_HUNTING_RIFLE, 1 }, { PID_TOMMY_GUN, 1 }, { PID_SHOTGUN, 1 }, { PID_SAWED_OFF_SHOTGUN, 1 }, { PID_GREASE_GUN, 1 }, { PID_44_MAGNUM_JHP, 20 }, { PID_10MM_JHP, 50 }, { PID_9MM_BALL, 10 }, { PID_SHOTGUN_SHELLS, 30 }, { PID_SHOTGUN_SHELLS_FLECHETTE, 10 }, { PID_SHOTGUN_SHELLS_SLUG, 10 }, { PID_45_CALIBER_AMMO, 20 } };
 
-uint[][] sg2 = { { PID_14MM_PISTOL, 1 }, { PID_ASSAULT_RIFLE, 1 }, { PID_10MM_SMG, 1 }, { PID_COMBAT_SHOTGUN, 1 }, { PID_SHOTGUN_SHELLS, 50 }, { PID_5MM_JHP, 50 }, { PID_14MM_AP, 100 } };
-uint[][] sg3 = { { PID_SNIPER_RIFLE, 1 }, { PID_HK_CAWS, 1 }, { PID_223_PISTOL, 1 }, { PID_INDEPENDENT, 1 }, { PID_HK_P90C, 1 }, { PID_PANCOR_JACKHAMMER, 1 },
-                 { PID_22_AMMO, 100 }, { PID_5MM_AP, 100 }, { PID_SHOTGUN_SHELLS, 50 }, { PID_10MM_AP, 50 } };
+uint[][] sg2 = { { PID_14MM_PISTOL, 1 }, { PID_ASSAULT_RIFLE, 1 }, { PID_10MM_SMG, 1 }, { PID_COMBAT_SHOTGUN, 1 }, { PID_SHOTGUN_SHELLS, 30 }, { PID_SHOTGUN_SHELLS_FLECHETTE, 20 }, { PID_SHOTGUN_SHELLS_EMP, 10 }, { PID_SHOTGUN_SHELLS_SLUG, 20 }, { PID_5MM_JHP, 250 }, { PID_14MM_AP, 100 },{PID_40MM_GRENADE, 10},{PID_GRENADE_LAUNCHER,1}, {PID_GRENADE_PISTOL,1},   {PID_223_FMJ, 100} };
+uint[][] sg3 = { { PID_SNIPER_RIFLE, 1 }, { PID_HK_CAWS, 1 }, { PID_223_PISTOL, 1 }, { PID_INDEPENDENT, 1 }, { PID_HK_P90C, 1 }, { PID_PANCOR_JACKHAMMER, 1 }, 
+                 {PID_40MM_GRENADE, 10}, {PID_GRENADE_LAUNCHER,1}, {PID_GRENADE_PISTOL,1}, { PID_5MM_AP, 250 }, { PID_SHOTGUN_SHELLS, 50 }, { PID_SHOTGUN_SHELLS_FLECHETTE, 20 }, { PID_SHOTGUN_SHELLS_SLUG, 20 }, { PID_SHOTGUN_SHELLS_EMP, 20 },{ PID_10MM_AP, 50 }};
 
-uint[][] bg1 = { { PID_FLAMER, 1 }, { PID_ROCKET_LAUNCHER, 1 }, { PID_FLAMETHROWER_FUEL, 10 }, { PID_EXPLOSIVE_ROCKET, 1 } };
-uint[][] bg2 = { { PID_5MM_AP, 100 }, { PID_ADV_SUPERBURN, 40 }, { PID_ROCKET_AP, 5 }, { PID_5MM_JHP, 50 },
-                 { PID_MINIGUN, 1 }, { PID_LIGHT_SUPPORT_WEAPON, 1 } };
+uint[][] bg1 = { { PID_FLAMER, 1 }, { PID_ROCKET_LAUNCHER, 1 }, { PID_FLAMETHROWER_FUEL, 10 }, { PID_EXPLOSIVE_ROCKET, 1 }, {PID_7_62MM_AMMO, 100}, {PID_M60,1} };
+uint[][] bg2 = { { PID_5MM_AP, 250 }, { PID_ADV_SUPERBURN, 10 }, { PID_ROCKET_AP, 8 }, { PID_5MM_JHP, 250 }, {PID_223_FMJ, 100},
+                 { PID_MINIGUN, 1 }, { PID_LIGHT_SUPPORT_WEAPON, 1 }, {PID_AVENGER_MINIGUN,1}};
 uint[][] bg3 = {};
 
-uint[][] en1 = { { PID_LASER_PISTOL, 1 }, { PID_LASER_RIFLE, 1 }, { PID_CATTLE_PROD, 1 }, { PID_SMALL_ENERGY_CELL, 50 } };
-uint[][] en2 = { { PID_PLASMA_RIFLE, 1 }, { PID_RIPPER, 1 }, { PID_PLASMA_PISTOL, 1 }, { PID_POWER_FIST, 1 }, { PID_MICRO_FUSION_CELL, 100 }, { PID_PLASMA_GRENADE, 5 } };
+uint[][] en1 = { { PID_LASER_RIFLE, 1 }, { PID_SMALL_ENERGY_CELL, 30 }};
+uint[][] en2 = { { PID_PLASMA_RIFLE, 1 }, { PID_RIPPER, 1 }, { PID_PLASMA_PISTOL, 1 }, { PID_POWER_FIST, 1 }, { PID_MICRO_FUSION_CELL, 150 }, { PID_PLASMA_GRENADE, 5 }, {PID_GEIGER_COUNTER,1}, {PID_MOTION_SENSOR,1}  };
 uint[][] en3 = {};
 
-uint[][] arm1 = { { PID_SAND_ROBE, 1 }, { PID_LEATHER_JACKET, 1 }, { PID_LEATHER_ARMOR, 1 }, { PID_LEATHER_ARMOR_MK_II, 1 }, { PID_CURED_LEATHER_ARMOR, 1 }, { PID_GECKO_PELT, 1 }, { PID_GOLDEN_GECKO_PELT, 1 }, { PID_BRAHMIN_HIDE, 1 } };
-uint[][] arm2 = { { PID_TESLA_ARMOR, 1 }, { PID_COMBAT_ARMOR, 1 }, { PID_METAL_ARMOR, 1 }, { PID_METAL_ARMOR_MK_II, 1 } };
+uint[][] arm1 = { { PID_SAND_ROBE, 1 }, { PID_LEATHER_ARMOR, 1 }, { PID_LEATHER_ARMOR_MK_II, 1 }, { PID_CURED_LEATHER_ARMOR, 1 }, { PID_GECKO_PELT, 1 }, { PID_GOLDEN_GECKO_PELT, 1 }, { PID_BRAHMIN_HIDE, 1 }, {PID_COMBAT_LEATHER_JACKET_HELMET,1}, {PID_LEATHER_ARMOR_HELMET,1}, {PID_LEATHER_ARMOR_HELMET_MK2,1} };
+uint[][] arm2 = { { PID_TESLA_ARMOR, 1 }, { PID_COMBAT_ARMOR, 1 }, { PID_METAL_ARMOR, 1 }, { PID_METAL_ARMOR_MK_II, 1 }, { PID_COMBAT_ARMOR_MK_II, 1}, {PID_COMBAT_HELMET,1}, {PID_COMBAT_HELMET_MK_II,1}, {PID_METAL_HELMET,1}, {PID_METAL_HELMET_MK2,1}, {PID_TESLA_HELMET,1} };
 uint[][] arm3 = {};
 
-uint[][] drug1 = { { PID_BUFFOUT, 1 }, { PID_MENTATS, 1 }, { PID_PSYCHO, 1 }, { PID_RADAWAY, 1 }, { PID_RAD_X, 1 } };
+uint[][] drug1 = { { PID_BUFFOUT, 1 }, { PID_MENTATS, 1 }, { PID_PSYCHO, 1 }, { PID_RADAWAY, 1 }, { PID_RAD_X, 1 }, {PID_JET,1} };
 uint[][] drug2 = {};
 uint[][] drug3 = {};
 
-uint[][] med1 = { { PID_STIMPAK, 1 }, { PID_SUPER_STIMPAK, 1 }, { PID_HEALING_POWDER, 1 }, { PID_ANTIDOTE, 1 } };
+uint[][] med1 = { { PID_STIMPAK, 1 }, { PID_SUPER_STIMPAK, 1 }, { PID_HEALING_POWDER, 1 }, { PID_ANTIDOTE, 1 }, { PID_JET_ANTIDOTE, 1}, {PID_HN_NEEDLER_CARTRIDGE, 10}, {PID_HN_AP_NEEDLER_CARTRIDGE, 10}, {PID_NEEDLER_PISTOL, 1}};
 uint[][] med2 = {};
 uint[][] med3 = {};
 
-uint[][] misc1 = { { PID_BRASS_KNUCKLES, 1 }, { PID_KNIFE, 10 }, { PID_SPEAR, 1 }, { PID_THROWING_KNIFE, 10 }, { PID_SLEDGEHAMMER, 1 }, { PID_ROPE, 1 }, { PID_RADIO, 1 }, { PID_GECKO_PELT, 1 }, { PID_GOLDEN_GECKO_PELT, 1 }, { PID_BRAHMIN_HIDE, 1 }, { PID_MOLOTOV_COCKTAIL, 10 },
-                   { PID_AXE, 1 }, { PID_WATERBAG_EMPTY, 1 }, { PID_SHOVEL, 1 }, { PID_RADIO, 1 }, { PID_LOCKPICKS, 1 }, { PID_LOCK, 1 }, { PID_HOLODISK, 1 } };
-uint[][] misc2 = { { PID_SUPER_SLEDGE, 1 }, { PID_FRAG_GRENADE, 5 }, { PID_SPIKED_KNUCKLES, 1 }, { PID_COMBAT_KNIFE, 1 }, { PID_RADIO, 1 }, { PID_GECKO_PELT, 1 }, { PID_GOLDEN_GECKO_PELT, 1 }, { PID_BRAHMIN_HIDE, 1 }, { PID_FRAG_GRENADE, 5 } };
+uint[][] misc1 = { { PID_KNIFE, 5 }, { PID_SPEAR, 1 }, { PID_THROWING_KNIFE, 5 }, { PID_SLEDGEHAMMER, 1 }, { PID_ROPE, 1 }, { PID_GECKO_PELT, 1 }, { PID_GOLDEN_GECKO_PELT, 1 }, { PID_BRAHMIN_HIDE, 1 }, { PID_MOLOTOV_COCKTAIL, 5 },
+                   { PID_AXE, 1 }, { PID_WATERBAG_EMPTY, 1 }, { PID_LOCKPICKS, 1 }, { PID_LOCK, 1 }, { PID_HOLODISK, 1 } };
+uint[][] misc2 = { { PID_SUPER_SLEDGE, 1 }, { PID_GECKO_PELT, 1 }, { PID_GOLDEN_GECKO_PELT, 1 }, { PID_BRAHMIN_HIDE, 1 }, { PID_FRAG_GRENADE, 5 }};
 uint[][] misc3 = {};
 
 uint[][] @[] lists = { sg1, sg2, sg3, bg1, bg2, bg3, en1, en2, en3, arm1, arm2, arm3, drug1, drug2, drug3, med1, med2, med3, misc1, misc2, misc3 };

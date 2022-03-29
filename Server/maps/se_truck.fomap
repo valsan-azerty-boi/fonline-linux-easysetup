@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              125
 MaxHexY              125
-WorkHexX             40
-WorkHexY             34
+WorkHexX             61
+WorkHexY             35
 ScriptModule         -
 ScriptFunc           -
 NoLogOut             1
@@ -1838,7 +1838,7 @@ tile       86   80             art\tiles\road02.frm
 tile       88   80             art\tiles\road02.frm
 tile       90   80             art\tiles\road36.frm
 tile       92   80             art\tiles\road02.frm
-tile       94   80             art\tiles\road53.FRM
+tile       94   80             art\tiles\road53.frm
 tile       96   80             art\tiles\road22.frm
 tile       98   80             art\tiles\edg4001.frm
 tile       100  80             art\tiles\edg2000.frm
@@ -9174,8 +9174,8 @@ MapY                 29
 
 MapObjType           2
 ProtoId              3853
-MapX                 61
-MapY                 39
+MapX                 59
+MapY                 40
 Scenery_ToEntire     100
 
 MapObjType           2
@@ -9738,5 +9738,11 @@ MapY                 33
 ScriptName           triggers
 FuncName             _Aggravate
 Item_Val2            5000
+
+MapObjType           2
+ProtoId              3853
+MapX                 59
+MapY                 53
+Scenery_ToEntire     101
 
 

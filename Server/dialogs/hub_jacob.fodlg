@@ -21,7 +21,8 @@ lang=engl
 5 3050 D _var n name_mem_npc_player = 0 R _var n name_mem_npc_player = 1 #
 80 3060 D _var n name_mem_npc_player = 1 D _param p PE_PROFESSION_GUNSMITH_B < 2 #
 30 3070 D _item p PID_Q_GUNRUNNER_COURIER_BOX > 0 D _var p q_la_gunr_courier = 2 R _param p REPUTATION_HUB + 2 R _var p q_la_gunr_courier = 7 R _item p PID_Q_GUNRUNNER_COURIER_BOX - 1 #
-0 3080 @
+70 3080 #
+0 3090 @
 4 4000 None 0 #
 65506 4010 #
 5 4020 D _var n name_mem_npc_player = 0 R _var n name_mem_npc_player = 1 #
@@ -64,8 +65,8 @@ lang=engl
 13 18000 None 0 #
 12 18010 D _script dialog@d_IsLocationNotVisible 1 39 R _script dialog@r_ShowLocation 1 39 #
 18 18020 D _var p q_hub_gunrunner_supplies = 5 D _var p q_hub_gunrunner_supplies_deal = 2 R _var p q_hub_gunrunner_supplies = 6 R _script dialog@r_AddMoney 1 400 R _param p REPUTATION_HUB + 50 R _item p PID_10MM_AP + 50 R _param p ST_EXPERIENCE + 750 R _item p PID_10MM_JHP + 150 #
-19 18030 D _var p q_hub_gunrunner_supplies_deal = 3 D _var p q_hub_gunrunner_supplies = 5 R _var p q_hub_gunrunner_supplies = 6 R _script dialog@r_AddMoney 1 600 R _param p REPUTATION_HUB + 50 R _item p PID_10MM_AP + 100 R _item p PID_BLUEPRINT_10MM_SMG + 1 R _param p ST_EXPERIENCE + 1000 #
-17 18040 D _var p q_hub_gunrunner_supplies_deal = 4 D _var p q_hub_gunrunner_supplies = 5 R _var p q_hub_gunrunner_supplies = 6 R _script dialog@r_AddMoney 1 400 R _param p REPUTATION_HUB + 50 R _item p PID_10MM_AP + 100 R _item p PID_BLUEPRINT_10MM_SMG + 1 R _param p ST_EXPERIENCE + 500 #
+19 18030 D _var p q_hub_gunrunner_supplies_deal = 3 D _var p q_hub_gunrunner_supplies = 5 R _var p q_hub_gunrunner_supplies = 6 R _script dialog@r_AddMoney 1 600 R _param p REPUTATION_HUB + 50 R _item p PID_10MM_AP + 100 R _item p PID_BLUEPRINT_METAL_HELMET_MK2 + 1 R _param p ST_EXPERIENCE + 1000 #
+17 18040 D _var p q_hub_gunrunner_supplies_deal = 4 D _var p q_hub_gunrunner_supplies = 5 R _var p q_hub_gunrunner_supplies = 6 R _script dialog@r_AddMoney 1 400 R _param p REPUTATION_HUB + 50 R _item p PID_10MM_AP + 100 R _item p PID_BLUEPRINT_METAL_HELMET_MK2 + 1 R _param p ST_EXPERIENCE + 500 #
 14 18050 D _var p q_hub_gunrunner_supplies = 2 #
 0 18060 @
 14 19000 None 0 #
@@ -74,7 +75,7 @@ lang=engl
 15 20000 None 0 #
 0 20010 R _var p q_hub_gunrunner_supplies = 3 @
 16 21000 None 0 #
-20 21010 R _var p q_hub_gunrunner_supplies = 6 R _param p REPUTATION_HUB + 50 R _script dialog@r_AddMoney 1 300 R _item p PID_BLUEPRINT_10MM_SMG + 1 R _item p PID_10MM_AP + 30 R _param p ST_EXPERIENCE + 750 @
+20 21010 R _var p q_hub_gunrunner_supplies = 6 R _param p REPUTATION_HUB + 50 R _script dialog@r_AddMoney 1 300 R _item p PID_BLUEPRINT_METAL_HELMET_MK2 + 1 R _item p PID_10MM_AP + 30 R _param p ST_EXPERIENCE + 750 @
 17 22000 None 0 #
 0 22010 @
 18 23000 None 0 #
@@ -90,7 +91,23 @@ lang=engl
 22 27000 None 0 #
 0 27010 @
 30 28000 None 0 #
-0 28010 &
+0 28010 @
+70 29000 None 0 #
+71 29010 D _item p PID_BOTTLE_CAPS > 12499 R _script dialog@r_RemoveMoney 1 12500 R _item p PID_BLUEPRINT_ASSAULT_RIFLE + 1 #
+71 29020 D _item p PID_BOTTLE_CAPS > 12999 R _script dialog@r_RemoveMoney 1 13000 R _item p PID_BLUEPRINT_FN_FAL + 1 #
+71 29030 D _item p PID_BOTTLE_CAPS > 24999 R _script dialog@r_RemoveMoney 1 25000 R _item p PID_BLUEPRINT_SNIPER_RIFLE + 1 #
+71 29040 D _item p PID_BOTTLE_CAPS > 5999 R _script dialog@r_RemoveMoney 1 6000 R _item p PID_BLUEPRINT_14MM_PISTOL + 1 #
+71 29050 D _item p PID_BOTTLE_CAPS > 24999 R _script dialog@r_RemoveMoney 1 25000 R _item p PID_BLUEPRINT_223_PISTOL + 1 #
+71 29060 D _item p PID_BOTTLE_CAPS > 14999 R _script dialog@r_RemoveMoney 1 15000 R _item p PID_BLUEPRINT_HK_CAWS + 1 #
+71 29070 D _item p PID_BOTTLE_CAPS > 29999 R _script dialog@r_RemoveMoney 1 30000 R _item p PID_BLUEPRINT_PANCOR_JACKHAMMER + 1 #
+71 29080 D _item p PID_BOTTLE_CAPS > 19999 R _script dialog@r_RemoveMoney 1 20000 R _item p PID_BLUEPRINT_P90 + 1 #
+71 29090 D _item p PID_BOTTLE_CAPS > 39999 R _script dialog@r_RemoveMoney 1 40000 R _item p PID_BLUEPRINT_MINIGUN + 1 #
+71 29100 D _item p PID_BOTTLE_CAPS > 24999 R _script dialog@r_RemoveMoney 1 25000 R _item p PID_BLUEPRINT_ROCKET_LAUNCHER + 1 #
+71 29110 D _item p PID_BOTTLE_CAPS > 24999 R _script dialog@r_RemoveMoney 1 25000 R _item p PID_BLUEPRINT_LIGHT_SUPPORT_WEAPON + 1 #
+71 29120 D _item p PID_BOTTLE_CAPS > 24999 R _script dialog@r_RemoveMoney 1 25000 R _item p PID_BLUEPRINT_IMPROVED_FLAMETHROWER + 1 #
+0 29130 @
+71 30000 None 0 #
+0 30010 &
 
 [engl]
 {100}{}{Jacob}
@@ -112,7 +129,8 @@ lang=engl
 {3050}{}{Do you provide any other services?}
 {3060}{}{Let's talk about big guns.}
 {3070}{}{I've got your Gun Runners shipment with me.}
-{3080}{}{Maybe I'll check out your stuff later. Bye.}
+{3080}{}{Do you have any blueprints for sale?}
+{3090}{}{Maybe I'll check out your stuff later. Bye.}
 {4000}{}{I deal with high end arms. The best stuff you can find this side of the Brotherhood, and since the Brotherhood doesn't deal with outsiders, I've gotta say I'm the best. I have a contact who can get me sniper rifles, and you would be hard pressed to find Flame Thrower fuel anywhere else in the wastes. On yeah... I sometimes get Geiger counters, too. Very rare.}
 {4010}{}{Let's deal then!}
 {4020}{}{Do you provide any other services?}
@@ -182,4 +200,20 @@ lang=engl
 {27010}{}{Goodbye.}
 {28000}{}{Man, it's about time! Give it to me, had been waiting for the delivery since weeks!@@About time! Give me the package and thanks.@@Thanks for the delivery, @sex@|boy||girl|, it's about time!@@Ah, finally! Hand it over, I'll take care from now on.}
 {28010}{}{Goodbye.}
+{29000}{}{Yeah, I've got some blueprints right here. Assault Rifle for 12.500, FN FAL for 13.000, Sniper Rifle for 25.000, 14mm Pistol for 6.000, .223 Pistol for 25.000, Minigun for 40.000, Incinerator for 25.000, Rocket Launcher 25.000, Light Support Weapon for 25.000, Pancor Jackhammer for 30.000, H&K P90c for 20.000 and H&K CAWS for 15.000 caps. Are you interested?}
+{29010}{}{I'd like Assault Rifle blueprint.}
+{29020}{}{I'd like FN FAL blueprint.}
+{29030}{}{I'd like Sniper Rifle blueprint.}
+{29040}{}{I'd like 14mm Pistol blueprint.}
+{29050}{}{I'd like .223 Pistol blueprint.}
+{29060}{}{I'd like H&K CAWS blueprint.}
+{29070}{}{I'd like Pancor Jackhammer blueprint.}
+{29080}{}{I'd like H&K P90c blueprint.}
+{29090}{}{I'd like Minigun blueprint.}
+{29100}{}{I'd like Rocket Launcher blueprint.}
+{29110}{}{I'd like Light Support Weapon blueprint.}
+{29120}{}{I'd like Incinerator blueprint.}
+{29130}{}{Maybe some other time.}
+{30000}{}{Here's your blueprint. Come back if you need another one.}
+{30010}{}{Sure. Thanks!}
 

@@ -1,5 +1,6 @@
 [comment]
 
+
 [data]
 lang=engl
 
@@ -22,7 +23,7 @@ lang=engl
 0 5010 R _var p q_necro_gecko = 1 R _script dialog@r_GiveHolodisk 1 43 #
 0 5020 @
 6 6000 None 0 #
-8 6010 D _script dialog@d_HasHolodisk 1 44 D or D _script dialog@d_HasHoloInfo 1 44 R _param p ST_EXPERIENCE + 500 R _param p REPUTATION_NECROPOLIS + 250 R _var p q_necro_gecko = 3 #
+8 6010 D _script dialog@d_HasHolodisk 1 44 D or D _script dialog@d_HasHoloInfo 1 44 R _param p ST_EXPERIENCE + 3000 R _param p REPUTATION_NECROPOLIS + 250 R _var p q_necro_gecko = 3 R _item p PID_GEIGER_COUNTER + 1 #
 9 6020 @
 8 7000 None 0 @
 7 8000 None 0 @

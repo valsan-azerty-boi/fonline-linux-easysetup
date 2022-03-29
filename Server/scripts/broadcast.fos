@@ -329,8 +329,8 @@ IBroadcastBuffer@ AddBroadcastBuffer(int t, int i, int s, string& m, array<int>&
 
 void DumpBroadcastBuffer(Critter@ player)
 {
-    if(BroadcastBuffer.length() == 0)
-        return;
+    //if(BroadcastBuffer.length() == 0)
+    //   return;
 
     if(!valid(player))
     {
@@ -338,7 +338,7 @@ void DumpBroadcastBuffer(Critter@ player)
         return;
     }
 
-    string dump = "";
+    string dump = " ";
     for(uint b = 0; b < BroadcastBuffer.length(); b++)
     {
         if(b > 0)
@@ -349,7 +349,6 @@ void DumpBroadcastBuffer(Critter@ player)
     DLog("BroadcastBuffer dump(" + player.Name + "): " + dump);
     array<int> data;
     player.RunClientScript(BROADCAST_SCRIPTDUMP, 0, 0, 0, dump, data);
-
 }
 
 void dump(Critter& player, int, int, int)
@@ -630,7 +629,7 @@ uint Broadcast_RequestHelp(Critter@ player, string& message)
         IBroadcastBuffer@ req = AddBroadcastBuffer(BROADCAST_REQUESTHELP, REAL_MINUTE(1), 0,
                                                    GetCritterInfo(player) + BROADCAST_SEPARATOR_MAIN + message, data, 0, BROADCAST_FILTER_AUTHENTICATED);
 
-        player.Say(SAY_NETMSG, "Sending help request. If a GM won't appear within a few minutes, you can try #2238help: |0x00FFFF http://fonline2238.net/help/");
+        player.Say(SAY_NETMSG, "Sending help request. If an administrator won't appear within a few minutes, try again later.");
         FLog(LOG_GM_HELP, player.Name + " Asking the GM/Admin " + gm.Name + " to assist.");
 
         if(req.Send(gm) == true)
@@ -677,7 +676,7 @@ uint Broadcast_RequestHelp(Critter@ player, string& message)
                                                    GetCritterInfo(player) + BROADCAST_SEPARATOR_MAIN + msg, data, REAL_MINUTE(30),
                                                    BROADCAST_FILTER_AUTHENTICATED);
 
-        player.Say(SAY_NETMSG, "Sending help request. If a GM won't appear within a few minutes, you can try #2238help: |0x00FFFF http://fonline2238.net/help/");
+        player.Say(SAY_NETMSG, "Sending help request. If an admin won't appear within a few minutes, you can try #reloaded.");
         return 0;
     }
 }
@@ -775,5 +774,21 @@ void wipe(Critter& player, int, int, int)
     array<int> data;
     AddBroadcastBuffer(BROADCAST_MESSAGE, ELAPSED_TIME * 10, 0, "Everything is dead or dying.", data, ELAPSED_TIME * 10, BROADCAST_FILTER_NONE)
     .SendToAll();
+}
+
+void baseControl(string msg, int mapId, uint time)
+{
+    array<int> data = { mapId };
+    AddBroadcastBuffer(BROADCAST_BASE_CONTROL, time, 0, msg, data, time, BROADCAST_FILTER_NONE)
+    .SendToAll();
+}
+
+void baseControlRadio(string msg, uint time, int mapId, uint factionId)
+{
+    array<int> data;
+    IBroadcastBuffer@ radioInfo = AddBroadcastBuffer(BROADCAST_BASE_RADIO, time, 0, msg, data, 0, BROADCAST_FILTER_NONE);
+    radioInfo.SetFilter(BROADCAST_FILTER_MAP, mapId);
+    radioInfo.SetFilter(BROADCAST_FILTER_FACTION, factionId);
+    radioInfo.SendToAll();
 }
 #endif /* __BROADCAST__ */

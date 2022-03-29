@@ -43,23 +43,23 @@ lang=engl
 13 12000 None 0 @
 15 13000 None 0 #
 16 13010 D _param p SK_SPEECH } 60 #
-0 13020 R _var p q_hub_wasteland_band = 3 R _param p ST_EXPERIENCE + 250 R _script dialog@r_AddMoney 1 200 @
+0 13020 R _var p q_hub_wasteland_band = 3 R _param p ST_EXPERIENCE + 450 R _script dialog@r_AddMoney 1 250 @
 16 14000 None 0 #
-0 14010 R _var p q_hub_wasteland_band = 3 R _param p ST_EXPERIENCE + 250 R _script dialog@r_AddMoney 1 350 @
+0 14010 R _var p q_hub_wasteland_band = 3 R _param p ST_EXPERIENCE + 950 R _script dialog@r_AddMoney 1 400 @
 17 15000 None 0 #
 18 15010 @
 18 16000 None 0 #
-0 16010 R _var p q_hub_wasteland_band = 5 R _param p ST_EXPERIENCE + 350 R _script dialog@r_AddMoney 1 400 @
+0 16010 R _var p q_hub_wasteland_band = 5 R _param p ST_EXPERIENCE + 1150 R _script dialog@r_AddMoney 1 500 @
 19 17000 None 0 #
 20 17010 @
 20 18000 None 0 #
-4 18010 R _var p q_hub_wasteland_band = 7 R _param p ST_EXPERIENCE + 500 R _item p PID_CIGARETTES + 5 R _param p REPUTATION_HUB + 250 R _script dialog@r_AddMoney 1 500 #
+4 18010 R _var p q_hub_wasteland_band = 7 R _param p ST_EXPERIENCE + 1500 R _item p PID_CIGARETTES + 5 R_item p PID_SCOUT_HANDBOOK + 1 R _param p REPUTATION_HUB + 250 R _script dialog@r_AddMoney 1 500 #
 21 18020 #
 22 18030 D _param p SK_SPEECH } 85 @
 21 19000 None 0 #
-0 19010 R _item p PID_CIGARETTES + 5 R _var p q_hub_wasteland_band = 7 R _param p ST_EXPERIENCE + 500 R _param p REPUTATION_HUB + 250 R _item p PID_CURED_LEATHER_ARMOR + 1 @
+0 19010 R _item p PID_CIGARETTES + 5 R _var p q_hub_wasteland_band = 7 R _param p ST_EXPERIENCE + 1500 R _param p REPUTATION_HUB + 250 R_item p PID_SCOUT_HANDBOOK + 1 R _item p PID_CURED_LEATHER_ARMOR + 1 @
 22 20000 None 0 #
-0 20010 R _param p REPUTATION_HUB + 250 R _var p q_hub_wasteland_band = 7 R _item p PID_CIGARETTES + 5 R _item p PID_STIMPAK + 3 R _script dialog@r_AddMoney 1 750 R _param p ST_EXPERIENCE + 500 &
+0 20010 R _param p REPUTATION_HUB + 250 R _var p q_hub_wasteland_band = 7 R _item p PID_CIGARETTES + 5 R_item p PID_SCOUT_HANDBOOK + 1 R _item p PID_STIMPAK + 3 R _script dialog@r_AddMoney 1 750 R _param p ST_EXPERIENCE + 1500 &
 
 [engl]
 {100}{}{Mick}

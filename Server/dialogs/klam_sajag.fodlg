@@ -8,11 +8,9 @@ lang=engl
 &
 1 1000 None 0 #
 24 1010 D _param p KARMA_SLAVER > 0 #
-23 1020 D _param p ST_INTELLECT < 4 #
-27 1030 D _param p ST_CHARISMA > 99 #
-4 1040 D _var n name_mem_npc_player = 1 #
-24 1050 D _param p ST_KARMA < -100 #
-2 1060 D _var n name_mem_npc_player = 0 R _var p name_mem_npc_player = 1 @
+4 1020 D _var n name_mem_npc_player = 1 #
+24 1030 D _param p ST_KARMA < -100 #
+2 1040 D _var n name_mem_npc_player = 0 R _var p name_mem_npc_player = 1 @
 2 2000 None 0 #
 3 2010 D _param p ST_INTELLECT < 4 #
 3 2020 D _param p ST_INTELLECT < 4 #
@@ -111,12 +109,10 @@ lang=engl
 {210}{}{You see Sajag, the Golden Gecko's barman and owner.}
 {1000}{}{Predialogue installations}
 {1010}{}{slaver}
-{1020}{}{Dumb}
-{1030}{}{ugly}
-{1040}{}{Familiar}
-{1050}{}{Hated}
-{1060}{}{Unknown}
-{2000}{}{Hello there, stranger. Welcome to the Golden Gecko Tavern, Hotel, and Trading Post. I’m Sajag;
+{1020}{}{Familiar}
+{1030}{}{Hated}
+{1040}{}{Unknown}
+{2000}{}{Hello there, stranger. Welcome to the Golden Gecko Tavern, Hotel, and Trading Post. I'm Sajag;
 I run the place. What can I get for you?}
 {2010}{}{Me wanna haff drink.}
 {2020}{}{Drink! (Giggle happily)}
@@ -126,7 +122,7 @@ I run the place. What can I get for you?}
 {2060}{}{Trading post, huh? You ready to do some trading now?}
 {2070}{}{Could I get a room here?}
 {2080}{}{Could I get a room here?}
-{3000}{}{Well, if it’s not another dang idiot. Just like Torr. Get the hell out of my bar.}
+{3000}{}{Well, if it's not another dang idiot. Just like Torr. Get the hell out of my bar.}
 {4000}{}{What can I getcha?}
 {4010}{}{Just give me a beer.}
 {4020}{}{Wow, I forgot this place was this big a dump on the inside.}
@@ -136,16 +132,16 @@ I run the place. What can I get for you?}
 {4060}{}{Can I get a room?}
 {4070}{}{I'd like to pay a rent for the room.}
 {4080}{}{Nothing, thanks. I'm out of here.}
-{5000}{}{I’ve got all kinds of things right here, buddy: healing supplies, booze, all kinds of stuff. I've got special sources, ya' might say. Always willing to look at a good gecko pelt, too.}
+{5000}{}{Iï¿½ve got all kinds of things right here, buddy: healing supplies, booze, all kinds of stuff. I've got special sources, ya' might say. Always willing to look at a good gecko pelt, too.}
 {5010}{}{Alright, let me take a look.}
 {5020}{}{I'm actually looking for some information.}
-{6000}{}{Well information’s what it’s all about, pal. What do you want to know about?}
+{6000}{}{Well information's what it's all about, pal. What do you want to know about?}
 {6010}{}{Are there any other settlements nearby?}
 {6020}{}{Are there any traders here in Klamath?}
 {6030}{}{Say, I'm looking to set myself and a couple guys up with a camp somewhere. Got any idea where I should start looking?}
-{6040}{}{I’m looking for a job. Any leads?}
+{6040}{}{I'm looking for a job. Any leads?}
 {6050}{}{Where can I get healing supplies?}
-{6060}{}{That’s all I need to know for now. But there’s something else I need.}
+{6060}{}{That's all I need to know for now. But thereï¿½s something else I need.}
 {6070}{}{Alright, I gotta get going.}
 {7000}{}{One tall mug of Golden Gecko Piss coming up. Only 10 caps for the best beer north of Redding.}
 {7010}{}{You're... you're drinking piss? What the hell is wrong with you?}
@@ -157,21 +153,21 @@ I run the place. What can I get for you?}
 {8020}{}{Ah, I think I might've misplaced my wallet...}
 {8030}{}{$30? This better be the best piss I've ever tasted. Say, you got time for a couple questions?}
 {8040}{}{Piss? Uh, no thanks. Excuse me, I've got to go.}
-{9000}{}{Relax, pal; it’s just what we call the beer here. (chuckles) This is the Golden Gecko, remember?}
+{9000}{}{Relax, pal; it's just what we call the beer here. (chuckles) This is the Golden Gecko, remember?}
 {9010}{}{Oh. Right. Heh-heh. Yeah. Piss. I get it.}
 {9020}{}{I'm not drinking piss! I don't care where it's being served or what you call it!}
 {10000}{}{Typical of you scumbags to try and get somethin' for nothin'. Get the hell out.}
 {10010}{}{Alright, I'm leaving.}
-{11000}{}{Well, now that we’ve got first things first out of the way... how can I help you? (smiles)}
+{11000}{}{Well, now that we've got first things first out of the way... how can I help you? (smiles)}
 {11010}{}{A beer would be nice.}
 {11020}{}{I don't think there's anything you can do to help me, you greasy bastard.}
 {11030}{}{Give me something with a little kick.}
 {11040}{}{Well, I'm looking for some information.}
 {11050}{}{Nothing, I've got to go. Bye.}
 {12000}{}{Always plenty of rooms here for our friends. Only going to cost you @lex price@ caps for @lex time@ days. A whole room to yourself. Have a party.}
-{12010}{}{Sounds like a fair price to me. I’ll take it.}
+{12010}{}{Sounds like a fair price to me. I'll take it.}
 {12020}{}{Uh, this is a little rich for me. You couldn't let me sleep there on the house, could ya?}
-{12030}{}{I don’t think I’ll take you up on that offer just now, Sajag. What about something else?}
+{12030}{}{I don't think I'l take you up on that offer just now, Sajag. What about something else?}
 {13000}{}{Alright, let me show you your room...}
 {13010}{}{[Follow]}
 {14000}{}{Whoa there, I think some of my regulars may not take kindly to that kind of talk. Hell, look, you got 'em all riled. It's okay, I'll talk 'em down, you just better buy these guys a couple drinks else you're gonna get the everlovin' tar whooped outta ya.}
@@ -182,7 +178,7 @@ I run the place. What can I get for you?}
 {15010}{}{Piss? What the hell?!}
 {15020}{}{Enjoy the beer, everyone. Sajag, I've got some questions.}
 {15030}{}{Happy to help. I've gotta go.}
-{16000}{}{It’s just beer. Golden Gecko, Gecko Piss? Are you slow or what? (shakes his head)}
+{16000}{}{It's just beer. Golden Gecko, Gecko Piss? Are you slow or what? (shakes his head)}
 {16010}{}{Oh, yeah. I get it. Heh. Piss. It's clever. But I need some information.}
 {16020}{}{I'm not drinking piss! I'm leaving!}
 {17000}{}{You guys aren't a gang, are ya?}
@@ -193,10 +189,10 @@ I run the place. What can I get for you?}
 {19000}{}{Well, the Dunton brothers are always looking for someone to do their dirty work for them. You could try them.}
 {19010}{}{Alright, I'll go try them.}
 {19020}{}{Thanks for the info, but I've got to get going.}
-{20000}{}{There are a couple of settlements nearby. There are some tribals northwest of us, then there’s the Den a few days south of here -- that’s the closest -- and there’s a mining town called Redding quite a ways to the southeast.}
+{20000}{}{There are a couple of settlements nearby. There are some tribals northwest of us, then thereï¿½s the Den a few days south of here -- thatï¿½s the closest -- and thereï¿½s a mining town called Redding quite a ways to the southeast.}
 {20010}{}{Thanks for the info, I've got a few other questions.}
 {20020}{}{That's all for me, I'm outta here.}
-{21000}{}{Not too many traders in town. Just Vic, that I can think of. He’s got a house in the east part of town. Stupid bastard went travelling with a tribal a couple years back. Amazed he survived, those guys are nothing but trouble.}
+{21000}{}{Not too many traders in town. Just Vic, that I can think of. Heï¿½s got a house in the east part of town. Stupid bastard went travelling with a tribal a couple years back. Amazed he survived, those guys are nothing but trouble.}
 {21010}{}{Yeah, so I hear. I got a couple more questions.}
 {21020}{}{Well, I got get going.}
 {22000}{}{Hey, what can I get y-oh, jeez. Get out of here, retard. Shoo! SHOO!}

@@ -112,12 +112,12 @@ void critter_init(Critter& cr, bool firstTime)
         cr.PerkBase[PE_BONUS_HTH_DAMAGE] += Random(1, 2);
 
         for(uint i = SK_SMALL_GUNS; i <= SK_THROWING; i++)
-            cr.SkillBase[i] = Random(200, 300);
+            cr.SkillBase[i] = Random(180, 240);
 
-        cr.StatBase[ST_INTELLECT] = Random(8, 10);
-        cr.StatBase[ST_PERCEPTION] = Random(8, 10);
+        cr.StatBase[ST_INTELLECT] = Random(7, 10);
+        cr.StatBase[ST_PERCEPTION] = Random(7, 10);
 
-        cr.StatBase[ST_MAX_LIFE] += Random(50, 225);
+        //cr.StatBase[ST_MAX_LIFE] += Random(50, 100);
         cr.StatBase[ST_CURRENT_HP] = cr.Stat[ST_MAX_LIFE];
 
     }
@@ -161,19 +161,21 @@ void _Idle(Critter& cr)
 
     ITown@ town = RetrieveTown(cr);
 
-    if(!town.IsLaw(TOWN_LAW_CARRYING_WEAPONS))
+   /* if(!town.IsLaw(TOWN_LAW_CARRYING_WEAPONS))
         return;
 
     array<Critter@> crits;
     uint            num = cr.GetCritters(false, FIND_LIFE | FIND_ONLY_PLAYERS, crits);
+	
     for(uint i = 0; i < num; i++)
     {
         if(GetGroupIndex(crits[i]) == town.GetControllingFaction())
             continue;
 
-        if((GetCrittersDistantion(cr, crits[i]) < 6))
+        if((GetCrittersDistantion(cr, crits[i]) < 15))
             CheckForWeapons(cr, crits[i]);
     }
+	*/
 }
 
 bool _Attacked(Critter& follower, Critter& attacker)
@@ -197,8 +199,15 @@ void _SomeoneAttacked(Critter& cr, Critter& fromCrit, Critter& target)
     // A friendly was attacked, attack purpotrator.
     if(IsFriend(cr, target) && !IsFriend(cr, fromCrit))
         AttackCritter(cr, fromCrit, __DeadHitPoints);
-
-    ITown@ town = RetrieveTown(cr);
+		
+	// An ally was attacked
+	ITown@      town = RetrieveTown(cr);
+    array<uint> factions = town.GetFriendlyFactions();
+	for(uint i=0;i<factions.length();i++)
+		{
+		if((GetGroupIndex(target)==factions[i]) && !IsFriend(cr,fromCrit))
+		AttackCritter(cr, fromCrit, __DeadHitPoints);
+		}
 
     if(!town.IsLaw(TOWN_LAW_ATTACK_FLAGGED))
         return;
@@ -214,8 +223,8 @@ void _OnSomeoneSteal(Critter& militia, Critter& target, Critter& thief, bool suc
     if(!town.IsLaw(TOWN_LAW_STEALING))
         return;
 
-    if(DetectStealing(militia, target, thief))
-        AttackCritter(militia, target);         // kill
+    if(DetectStealing(militia, target, thief) && GetGroupIndex(thief)!=town.GetControllingFaction())
+        AttackCritter(militia, thief);         // kill
 }
 
 bool IsFriend(Critter& cr, Critter& target)

@@ -690,6 +690,7 @@
 #define DIALOG_mob_tribal                       (5057)
 #define DIALOG_mob_bandit                       (5058)
 #define DIALOG_mob_mutant                       (5059)
+#define DIALOG_mob_pashtshuur                   (5060)
 #define DIALOG_repl_bank_guard                  (9051)
 #define DIALOG_repl_bank_keeper                 (9052)
 #define DIALOG_factions_terminal                (9060)
@@ -811,6 +812,7 @@
 #define DIALOG_arena_outfitter                  (10804)
 #define DIALOG_arena_guard                      (10805)
 #define DIALOG_arena_door                       (10806)
+#define DIALOG_arena_barman                     (10807)
 #define DIALOG_dialogimage                      (10808)
 #define DIALOG_event_outfitter2                 (10809)
 #define DIALOG_event_teleporter                 (10810)
@@ -828,4 +830,5 @@
 #define DIALOG_talchem_l5                       (22120)
 #define DIALOG_talchem_rl                       (22121)
 #define DIALOG_talchem_Ter                      (22122)
+#define DIALOG_base_terminal                    (22200)
 #endif // __DIALOGS__

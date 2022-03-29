@@ -7,10 +7,7 @@ lang=engl
 [dialog]
 &
 1 1000 None 1 #
-9 1010 D _param p KARMA_SLAVER > 0 #
-3 1020 D _param p ST_CHARISMA > 99 #
-3 1030 D _param p ST_INTELLECT < 4 #
-2 1040 @
+2 1010 @
 2 2000 dialog@dlg_ShowFaction 0 #
 65506 2010 #
 8 2020 #
@@ -92,10 +89,7 @@ lang=engl
 {200}{}{Trader Jo.}
 {210}{}{An average person, of average height, of average complexion. Nothing out of the ordinary.}
 {1000}{}{Predialogue installations}
-{1010}{}{slaver}
-{1020}{}{ugly}
-{1030}{}{Retard}
-{1040}{}{Normal}
+{1010}{}{Normal}
 {2000}{}{What can I do for you?}
 {2010}{}{What do you have to trade?}
 {2020}{}{What can you tell me about this town?}
@@ -106,22 +100,22 @@ lang=engl
 {2070}{}{See you.}
 {2080}{}{Bow down! @lex faction@ is going to run this town now, so start handing over the goods before my trigger finger gets too itchy. @lex faction@ is now your police, your army, your king and your daddy.}
 {2090}{}{I want to change the laws.}
-{3000}{}{My name’s Jo. Can you say Jo? No matter; you see that rectangular thing over there? That’s a door. Be careful not to let it hit you on the way out. Freak.}
-{4000}{}{My name’s Jo and I run the trading post for Modoc. I organize trade between Modoc and other cities in need of food and leather goods. But with this drought, that could all come to an end real soon. We're getting desperate.}
+{3000}{}{My name's Jo. Can you say Jo? No matter; you see that rectangular thing over there? That's a door. Be careful not to let it hit you on the way out. Freak.}
+{4000}{}{My name's Jo and I run the trading post for Modoc. I organize trade between Modoc and other cities in need of food and leather goods. But with this drought, that could all come to an end real soon. We're getting desperate.}
 {4010}{}{Can I ask you a few more questions?}
-{5000}{}{The slaughterhouse is run by Grisham and his son Davin. It’s just east of here. He makes the best damn jerky this side of the Rockies.}
+{5000}{}{The slaughterhouse is run by Grisham and his son Davin. It's just east of here. He makes the best damn jerky this side of the Rockies.}
 {5010}{}{Can I ask about somewhere else?}
 {5020}{}{Would you mind if I asked some more questions?}
-{6000}{}{Rose’s Bed and Breakfast is on the north side of town. Travelers from all over come just to sample her world-famous omelets. Some say her omelets can cure people of what ails them. Frankly, I think that’s just a bunch of nonsense.}
+{6000}{}{Rose's Bed and Breakfast is on the north side of town. Travelers from all over come just to sample her world-famous omelets. Some say her omelets can cure people of what ails them. Frankly, I think that's just a bunch of nonsense.}
 {6010}{}{Thanks, what about the other places?}
 {6020}{}{Can I ask you a few more questions?}
-{7000}{}{Just follow your nose and you’ll find it. Can you smell that foul stench in the air? That's the  tanning vats just north of here. If you overlook the smell, you’ll not find a better place to get leather goods. Balthus can work miracles with leather.}
+{7000}{}{Just follow your nose and you'll find it. Can you smell that foul stench in the air? That's the  tanning vats just north of here. If you overlook the smell, you'll not find a better place to get leather goods. Balthus can work miracles with leather.}
 {7010}{}{What else is there in Modoc?}
 {7020}{}{That's enough about that.}
-{8000}{}{We don’t have much; just a few farms, a slaughterhouse, Rose’s Bed and Breakfast, and a tannery. Just enough to produce goods to trade. Although that could all change with this drought.}
+{8000}{}{We don't have much; just a few farms, a slaughterhouse, Rose's Bed and Breakfast, and a tannery. Just enough to produce goods to trade. Although that could all change with this drought.}
 {8010}{}{What can you tell me about the slaughterhouse?}
-{8020}{}{Rose’s Bed and Breakfast?}
-{8030}{}{Where’s the tannery?}
+{8020}{}{Rose's Bed and Breakfast?}
+{8030}{}{Where's the tannery?}
 {8040}{}{Hey, I want to know about something else.}
 {9000}{}{This is not a problem, there's plenty of people ready to join the militia, but you'll have to pay for the equipments and training. This costs about @lex cost@ caps.}
 {9010}{}{Sounds good, here's @lex cost@ caps.}

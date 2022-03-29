@@ -51,6 +51,9 @@ void InitLogs()
     AddLog("logs/perks.log",                LOG_PERKS);
     AddLog("logs/factions.log",             LOG_FACTIONS);
     AddLog("logs/wmlocations.log",  LOG_WMLOCATIONS);
+    AddLog("logs/login.log",        LOG_LOGIN);
+    AddLog("logs/perks_picked.log",        LOG_PERKS_PICKED);
+    AddLog("logs/characters_created.log",        LOG_CHARS_CREATED);
 
     LoadConfig("config/ilog.cfg");
     string@ tmp = GetConfigValue("config/ilog.cfg", "ILog", "OutputDir");

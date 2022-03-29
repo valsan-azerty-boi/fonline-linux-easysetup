@@ -1,5 +1,6 @@
 [comment]
 
+
 [data]
 lang=engl
 
@@ -31,7 +32,7 @@ lang=engl
 10 10000 None 0 #
 11 10010 @
 11 11000 None 0 #
-0 11010 R _var p q_bunker_base = 5 R _param p REPUTATION_SCAVENGERS + 25 R _param p ST_EXPERIENCE + 100 @
+0 11010 R _var p q_bunker_base = 5 R _param p REPUTATION_SCAVENGERS + 25 R _param p ST_EXPERIENCE + 1000 @
 12 12000 None 0 #
 9 12010 &
 

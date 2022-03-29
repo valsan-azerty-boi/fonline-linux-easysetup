@@ -17,7 +17,7 @@
 
 import bool ShuffleItem(Item& item) from "shuffling_spawner";
 
-#define PILE_CAPACITY_CHEMICALS     (3)
+#define PILE_CAPACITY_CHEMICALS     (6)
 #define PILE_CAPACITY_CHEMICALS2    (1)
 
 #define PILE_BATCH_CHEMICALS        (2)

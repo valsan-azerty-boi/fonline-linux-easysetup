@@ -25,7 +25,7 @@ lang=engl
 2 2000 None 0 #
 3 2010 #
 4 2020 #
-9 2030 D _var p mod_q_meat_jerky = 1 D _item p PID_MEAT_BAG > 0 R _var p mod_q_meat_jerky = 2 R _item p PID_MEAT_BAG - 1 R _param p ST_EXPERIENCE + 245 R _script dialog@r_AddMoney 1 250 #
+9 2030 D _var p mod_q_meat_jerky = 1 D _item p PID_MEAT_BAG > 0 R _var p mod_q_meat_jerky = 2 R _item p PID_MEAT_BAG - 1 R _param p ST_EXPERIENCE + 745 R _script dialog@r_AddMoney 1 350 #
 19 2040 D _var p q_iguana_pete_message = 5 #
 0 2050 @
 3 3000 None 0 #
@@ -77,7 +77,7 @@ lang=engl
 0 18010 R _var p q_iguana_pete_message = 1 R _var p name_mem_npc_player = 1 @
 18 19000 None 0 @
 19 20000 None 0 #
-20 20010 R _param p ST_EXPERIENCE + 300 R _var p q_iguana_pete_message = 7 R _script dialog@r_AddMoney 1 300 @
+20 20010 R _param p ST_EXPERIENCE + 600 R _var p q_iguana_pete_message = 7 R _script dialog@r_AddMoney 1 400 @
 20 21000 None 0 #
 0 21010 &
 

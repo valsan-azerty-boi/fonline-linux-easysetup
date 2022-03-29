@@ -7,7 +7,7 @@ lang=engl
 [dialog]
 &
 1 1000 None 0 #
-15 1010 D _script dialog@d_CheckNight 0  #
+15 1010 D _param p ST_STRENGTH > 99 D _param p ST_STRENGTH > 10 D _script dialog@d_CheckNight 0  #
 5 1020 D _script dialog@d_WeaponInHand 0  #
 2 1030 @
 2 2000 None 0 #

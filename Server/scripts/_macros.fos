@@ -306,6 +306,7 @@
 #define _IsTrader                    # (cr)     (_CritHasExtMode(cr, MODE_EXT_TRADER))
 #define _IsFollower                  # (cr)   (_CritHasExtMode(cr, MODE_EXT_FOLLOWER))
 #define _IsSlave                     # (cr)      (_CritHasExtMode(cr, MODE_EXT_FOLLOWER) && cr.Stat[ST_DIALOG_ID] == DIALOG_follower_slave)
+#define _IsBrahmin                     # (cr)      (_CritHasExtMode(cr, MODE_EXT_FOLLOWER) && cr.Stat[ST_DIALOG_ID] == DIALOG_follower_brahmin)
 #define _IsGuard                     # (cr)      (_CritHasExtMode(cr, MODE_EXT_GUARD))
 
 #define _IsTrueNpc                   # (cr)    (cr.IsNpc() && !_IsFollower(cr))

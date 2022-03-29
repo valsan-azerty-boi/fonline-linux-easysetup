@@ -141,7 +141,7 @@ bool s_RepairGenerator(Critter& player, Scenery& terminal, int skill, Item@ item
         return true;
     }
 
-    SetRootMapData(player.GetMap(), MAP_DATA_ELEVATOR_TIME, AFTER(REAL_SECOND(Random(2 * value, 3 * value))));
+    SetRootMapData(player.GetMap(), MAP_DATA_ELEVATOR_TIME, AFTER(REAL_MINUTE(Random(15, 20))));
     player.Say(SAY_NETMSG, "You've successfully repaired generator, but it doesn't look like it's going to last for more than few minutes.");
     _SetTimeout(player, TO_SK_REPAIR, REAL_MINUTE(2));
     return true;

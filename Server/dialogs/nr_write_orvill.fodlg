@@ -48,12 +48,12 @@ lang=engl
 15 15000 None 0 #
 16 15010 R _var p nr_wright_boozequest = 0 R _script dialog@r_QuestTimeout 1 168 @
 16 16000 None 0 #
-0 16010 D _param p ST_CHARISMA > 8 D _item p PID_SAWED_OFF_SHOTGUN < 1 R _item p PID_SAWED_OFF_SHOTGUN + 1 R _item p PID_SHOTGUN_SHELLS + 12 R _param p ST_EXPERIENCE + 400 R _script dialog@r_AddMoney 1 95 #
-0 16020 D _param p ST_CHARISMA < 9 D _param p ST_CHARISMA > 5 D _item p PID_10MM_PISTOL < 1 R _item p PID_10MM_PISTOL + 1 R _item p PID_10MM_JHP + 24 R _param p ST_EXPERIENCE + 400 R _script dialog@r_AddMoney 1 95 #
-0 16030 D _param p ST_CHARISMA < 6 D _item p PID_9MM_MAUSER < 1 R _item p PID_9MM_AMMO + 10 R _item p PID_9MM_MAUSER + 1 R _param p ST_EXPERIENCE + 400 R _script dialog@r_AddMoney 1 95 #
-2 16040 D _param p ST_CHARISMA > 8 D _item p PID_SAWED_OFF_SHOTGUN > 0 R _item p PID_SHOTGUN_SHELLS + 12 R _param p ST_EXPERIENCE + 400 R _script dialog@r_AddMoney 1 95 #
-2 16050 D _param p ST_CHARISMA < 9 D _param p ST_CHARISMA > 5 D _item p PID_10MM_PISTOL > 0 R _item p PID_10MM_JHP + 24 R _param p ST_EXPERIENCE + 400 R _script dialog@r_AddMoney 1 95 #
-2 16060 D _param p ST_CHARISMA < 6 D _item p PID_9MM_MAUSER > 0 R _item p PID_9MM_AMMO + 10 R _param p ST_EXPERIENCE + 400 R _script dialog@r_AddMoney 1 95 @
+0 16010 D _param p SK_SPEECH > 81 D _item p PID_SAWED_OFF_SHOTGUN < 1 R _item p PID_SAWED_OFF_SHOTGUN + 1 R _item p PID_SHOTGUN_SHELLS + 24 R _param p ST_EXPERIENCE + 1000 R _script dialog@r_AddMoney 1 495 #
+0 16020 D _param p SK_SPEECH < 80 D _param p SK_SPEECH > 51 D _item p PID_10MM_PISTOL < 1 R _item p PID_10MM_PISTOL + 1 R _item p PID_10MM_JHP + 24 R _param p ST_EXPERIENCE + 800 R _script dialog@r_AddMoney 1 395 #
+0 16030 D _param p SK_SPEECH < 50 D _item p PID_9MM_MAUSER < 1 R _item p PID_9MM_AMMO + 20 R _item p PID_9MM_MAUSER + 1 R _param p ST_EXPERIENCE + 600 R _script dialog@r_AddMoney 1 295 #
+2 16040 D _param p SK_SPEECH > 81 D _item p PID_SAWED_OFF_SHOTGUN > 0 R _item p PID_SHOTGUN_SHELLS + 24 R _param p ST_EXPERIENCE + 1000 R _script dialog@r_AddMoney 1 495 #
+2 16050 D _param p SK_SPEECH < 80 D _param p SK_SPEECH > 51 D _item p PID_10MM_PISTOL > 0 R _item p PID_10MM_JHP + 24 R _param p ST_EXPERIENCE + 800 R _script dialog@r_AddMoney 1 395 #
+2 16060 D _param p SK_SPEECH < 50 D _item p PID_9MM_MAUSER > 0 R _item p PID_9MM_AMMO + 20 R _param p ST_EXPERIENCE + 600 R _script dialog@r_AddMoney 1 295 @
 17 17000 None 0 &
 
 [engl]

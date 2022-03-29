@@ -1,4 +1,4 @@
-# 3.1.7
+# 3.2.0
 
 [Proto]
 ProtoId=41
@@ -73,7 +73,7 @@ DisableEgg=1
 Weight=1814
 Volume=1
 SoundId=48
-Cost=650
+Cost=2500
 Material=1
 StartValue_2=220
 
@@ -82,7 +82,7 @@ ProtoId=54
 Type=5
 ScriptModule=item_stealth
 ScriptFunc=_StealthBoyInit
-PicMap=art\items\box2.frm
+PicMap=art\items\misc\stealthboy.fofrm
 PicInv=art\inven\stlthboy.frm
 Flags=402653214
 DisableEgg=1
@@ -111,7 +111,7 @@ Material=1
 [Proto]
 ProtoId=56
 Type=5
-PicMap=art\items\smalbox2.frm
+PicMap=art\items\misc\dogtag.fofrm
 PicInv=art\inven\tag.frm
 Flags=134217758
 DisableEgg=1
@@ -165,7 +165,7 @@ DisableEgg=1
 Weight=3175
 Volume=1
 SoundId=48
-Cost=800
+Cost=4500
 Material=1
 LightColor=-16777216
 Misc_ChargeMax=600
@@ -195,7 +195,7 @@ DisableEgg=1
 Stackable=1
 Weight=2267
 SoundId=48
-Cost=400
+Cost=2000
 Material=3
 LightColor=-16777216
 
@@ -226,7 +226,7 @@ Stackable=1
 Weight=907
 Volume=1
 SoundId=48
-Cost=130
+Cost=1200
 Material=3
 LightColor=-16777216
 
@@ -278,7 +278,7 @@ LightColor=-16777216
 [Proto]
 ProtoId=84
 Type=5
-PicMap=art\items\smalbox2.frm
+PicMap=art\items\misc\lockpicks.fofrm
 PicInv=art\inven\lockpic2.frm
 Flags=150994974
 DisableEgg=1
@@ -317,7 +317,7 @@ Stackable=1
 Weight=1360
 Volume=1
 SoundId=48
-Cost=200
+Cost=1500
 Material=3
 LightColor=-16777216
 
@@ -392,7 +392,7 @@ Stackable=1
 Weight=2264
 Volume=1
 SoundId=48
-Cost=10
+Cost=40
 Material=1
 
 [Proto]
@@ -965,7 +965,7 @@ LightColor=-16777216
 [Proto]
 ProtoId=222
 Type=5
-PicMap=art\items\smalbox2.frm
+PicMap=art\items\misc\toggle.fofrm
 PicInv=art\inven\toggle.frm
 Flags=402653214
 DisableEgg=1
@@ -1237,7 +1237,7 @@ LightColor=-16777216
 [Proto]
 ProtoId=262
 Type=5
-PicMap=art\items\bigbox2.frm
+PicMap=art\items\misc\boots.fofrm
 PicInv=art\inven\rubrboot.frm
 Flags=134217758
 DisableEgg=1
@@ -1307,7 +1307,7 @@ LightColor=-16777216
 [Proto]
 ProtoId=269
 Type=5
-PicMap=art\items\bigbox2.frm
+PicMap=art\items\craft\robotprt.fofrm
 PicInv=art\inven\robotprt.frm
 Flags=134217758
 DisableEgg=1
@@ -1392,7 +1392,7 @@ Material=7
 [Proto]
 ProtoId=278
 Type=5
-PicMap=art\items\rock.frm
+PicMap=art\items\craft\flint.fofrm
 PicInv=art\inven\flint.frm
 Flags=134217758
 DisableEgg=1
@@ -1607,7 +1607,7 @@ LightColor=-16777216
 [Proto]
 ProtoId=305
 Type=5
-PicMap=art\items\smalbox2.frm
+PicMap=art\items\misc\passkey3.fofrm
 PicInv=art\inven\passkey3.frm
 Flags=150994974
 DisableEgg=1
@@ -1622,7 +1622,7 @@ LightColor=-16777216
 [Proto]
 ProtoId=306
 Type=5
-PicMap=art\items\smalbox2.frm
+PicMap=art\items\misc\passkey1.fofrm
 PicInv=art\inven\passkey1.frm
 Flags=150994974
 DisableEgg=1
@@ -1856,7 +1856,7 @@ LightColor=-16777216
 [Proto]
 ProtoId=328
 Type=5
-PicMap=art\items\smalbox2.frm
+PicMap=art\items\misc\8ball.fofrm
 PicInv=art\inven\mag8ball.frm
 Flags=402653214
 DisableEgg=1
@@ -2083,7 +2083,7 @@ Material=1
 [Proto]
 ProtoId=373
 Type=5
-PicMap=art\items\smalbox2.frm
+PicMap=art\items\misc\passkey1.fofrm
 PicInv=art\inven\passkey1.frm
 Flags=150994974
 DisableEgg=1
@@ -2144,7 +2144,7 @@ Misc_ToolSkillBonus=50
 [Proto]
 ProtoId=410
 Type=5
-PicMap=art\items\smalbox2.frm
+PicMap=art\items\misc\expalockpick.fofrm
 PicInv=art\inven\exlockpk.frm
 Flags=150994974
 DisableEgg=1
@@ -2161,7 +2161,7 @@ Misc_ToolSkillBonus=50
 [Proto]
 ProtoId=411
 Type=5
-PicMap=art\items\elecpic.frm
+PicMap=art\items\misc\elockpick.fofrm
 PicInv=art\inven\elockpk2.frm
 Flags=150994974
 DisableEgg=1
@@ -2176,7 +2176,7 @@ LightColor=-16777216
 [Proto]
 ProtoId=412
 Type=5
-PicMap=art\items\jar.frm
+PicMap=art\items\craft\oilcan.fofrm
 PicInv=art\inven\oilcan.frm
 Flags=150994974
 DisableEgg=1
@@ -2184,7 +2184,7 @@ Stackable=1
 Weight=1360
 Volume=1
 SoundId=48
-Cost=150
+Cost=1500
 Material=1
 LightColor=-16777216
 
@@ -2217,7 +2217,7 @@ LightColor=-16777216
 [Proto]
 ProtoId=416
 Type=5
-PicMap=art\items\bpack2.frm
+PicMap=art\items\misc\jetempty.fofrm
 PicInv=art\inven\jet2.frm
 Flags=134217758
 DisableEgg=1
@@ -2404,7 +2404,7 @@ LightColor=-16777216
 [Proto]
 ProtoId=439
 Type=5
-PicMap=art\items\smalbox2.frm
+PicMap=art\items\craft\pocketlint.fofrm
 PicInv=art\inven\pocklint.frm
 Flags=134217758
 DisableEgg=1
@@ -2431,7 +2431,7 @@ LightColor=-16777216
 [Proto]
 ProtoId=441
 Type=5
-PicMap=art\items\smalbox2.frm
+PicMap=art\items\misc\dogtag.fofrm
 PicInv=art\inven\tag.frm
 Flags=134217758
 DisableEgg=1
@@ -2444,7 +2444,7 @@ LightColor=-16777216
 [Proto]
 ProtoId=442
 Type=5
-PicMap=art\items\smalbox2.frm
+PicMap=art\items\misc\dogtag.fofrm
 PicInv=art\inven\tag.frm
 Flags=134217758
 DisableEgg=1
@@ -2457,7 +2457,7 @@ LightColor=-16777216
 [Proto]
 ProtoId=443
 Type=5
-PicMap=art\items\smalbox2.frm
+PicMap=art\items\misc\dogtag.fofrm
 PicInv=art\inven\tag.frm
 Flags=134217758
 DisableEgg=1
@@ -2470,7 +2470,7 @@ LightColor=-16777216
 [Proto]
 ProtoId=444
 Type=5
-PicMap=art\items\smalbox2.frm
+PicMap=art\items\misc\raidmap.fofrm
 PicInv=art\inven\raidmap.frm
 Flags=402653214
 DisableEgg=1
@@ -2828,7 +2828,7 @@ LightColor=-16777216
 [Proto]
 ProtoId=475
 Type=5
-PicMap=art\items\pump.frm
+PicMap=art\items\craft\metaltrash.fofrm
 PicInv=art\inven\metal_trash.frm
 Flags=134217758
 DisableEgg=1
@@ -3174,7 +3174,7 @@ StartValue_3=168652658
 [Proto]
 ProtoId=532
 Type=5
-PicMap=art\items\box2.frm
+PicMap=art\items\misc\bott_empty.frm
 PicInv=art\inven\bott_empty.frm
 Flags=134217758
 DisableEgg=1
@@ -3188,7 +3188,7 @@ LightColor=-16777216
 [Proto]
 ProtoId=533
 Type=2
-PicMap=art\items\box2.frm
+PicMap=art\items\misc\bott_full.frm
 PicInv=art\inven\bott_full.frm
 Flags=419430430
 Stackable=1
@@ -3218,7 +3218,7 @@ LightColor=-16777216
 [Proto]
 ProtoId=535
 Type=5
-PicMap=art\items\smalbox2.frm
+PicMap=art\items\craft\gunpowder.fofrm
 PicInv=art\inven\gunpowder.frm
 Flags=134217758
 DisableEgg=1
@@ -3232,7 +3232,7 @@ Material=1
 [Proto]
 ProtoId=536
 Type=5
-PicMap=art\items\rock.frm
+PicMap=art\items\craft\ironore.fofrm
 PicInv=art\inven\metal_ore.frm
 Flags=134217758
 DisableEgg=1
@@ -3246,7 +3246,7 @@ Material=5
 [Proto]
 ProtoId=537
 Type=5
-PicMap=art\items\rock.frm
+PicMap=art\items\craft\minerals.fofrm
 PicInv=art\inven\mineral.frm
 Flags=134217758
 DisableEgg=1
@@ -3275,7 +3275,7 @@ LightColor=-16777216
 [Proto]
 ProtoId=539
 Type=5
-PicMap=art\items\smalbox2.frm
+PicMap=art\items\misc\freshmeat.fofrm
 PicInv=art\inven\fresh_meat.frm
 Flags=402653214
 DisableEgg=1
@@ -3303,7 +3303,7 @@ LightColor=-16777216
 [Proto]
 ProtoId=542
 Type=5
-PicMap=art\items\beer.frm
+PicMap=art\items\misc\glassbottle.fofrm
 PicInv=art\inven\glassbottle.frm
 Flags=402653214
 DisableEgg=1
@@ -3579,6 +3579,20 @@ Material=1
 LightColor=1879048191
 
 [Proto]
+ProtoId=623
+Type=5
+ScriptModule=item_achievementbook
+ScriptFunc=_InitBook
+PicMap=art\items\book.frm
+PicInv=art\inven\f2hintbk.frm
+Flags=402653214
+DisableEgg=1
+Volume=1
+SoundId=48
+Material=7
+LightColor=-16777216
+
+[Proto]
 ProtoId=700
 Type=5
 PicMap=art\items\farmedcorn1.fofrm
@@ -3654,7 +3668,7 @@ Material=1
 [Proto]
 ProtoId=707
 Type=5
-PicMap=art\items\pump.frm
+PicMap=art\items\craft\advservos.fofrm
 PicInv=art\inven\advserv.frm
 Flags=150994974
 DisableEgg=1
@@ -3662,7 +3676,7 @@ Stackable=1
 Weight=450
 Volume=1
 SoundId=48
-Cost=1515
+Cost=100
 Material=1
 
 [Proto]
@@ -3682,7 +3696,7 @@ Material=1
 [Proto]
 ProtoId=709
 Type=5
-PicMap=art\items\box2.frm
+PicMap=art\items\craft\detonatorpart.fofrm
 PicInv=art\inven\dynatimr.frm
 Flags=150994974
 DisableEgg=1
@@ -3719,7 +3733,7 @@ Stackable=1
 Weight=800
 Volume=1
 SoundId=48
-Cost=510
+Cost=100
 Material=1
 CraftLevel=2
 
@@ -3748,7 +3762,7 @@ Stackable=1
 Weight=800
 Volume=1
 SoundId=48
-Cost=1995
+Cost=100
 Material=1
 CraftLevel=2
 
@@ -3777,7 +3791,7 @@ Stackable=1
 Weight=1200
 Volume=1
 SoundId=48
-Cost=2520
+Cost=100
 Material=1
 CraftLevel=2
 
@@ -3792,7 +3806,7 @@ Stackable=1
 Weight=450
 Volume=1
 SoundId=48
-Cost=220
+Cost=100
 Material=1
 CraftLevel=1
 
@@ -3891,20 +3905,20 @@ Stackable=1
 Weight=450
 Volume=1
 SoundId=48
-Cost=25
+Cost=50
 Material=1
 
 [Proto]
 ProtoId=1802
 Type=5
-PicMap=art\items\rock.frm
+PicMap=art\items\craft\alloys.fofrm
 PicInv=art\inven\alloys.frm
 Flags=167772190
 Stackable=1
 Weight=453
 Volume=1
 SoundId=48
-Cost=360
+Cost=100
 Material=1
 
 [Proto]
@@ -3924,14 +3938,14 @@ Material=7
 [Proto]
 ProtoId=1804
 Type=5
-PicMap=art\items\pump.frm
+PicMap=art\items\craft\metalparts.fofrm
 PicInv=art\inven\metal_trash2.fofrm
 Flags=167772190
 Stackable=1
 Weight=453
 Volume=1
 SoundId=48
-Cost=200
+Cost=100
 Material=1
 
 [Proto]
@@ -3947,7 +3961,7 @@ Material=3
 [Proto]
 ProtoId=1806
 Type=5
-PicMap=art\items\smalbox2.frm
+PicMap=art\items\misc\dogtag.fofrm
 PicInv=art\inven\tag.frm
 Flags=167772190
 Weight=180
@@ -4063,7 +4077,7 @@ Type=5
 ScriptModule=prod_table_brahmin
 ScriptFunc=item_init
 PicMap=art\items\medtbl06.frm
-Flags=134222360
+Flags=301994520
 DisableEgg=1
 SoundId=48
 Material=1
@@ -4071,7 +4085,7 @@ Material=1
 [Proto]
 ProtoId=1824
 Type=5
-PicMap=art\items\rope.frm
+PicMap=art\items\craft\fibers.fofrm
 PicInv=art\inven\fiber.frm
 Flags=134221854
 DisableEgg=1
@@ -4458,14 +4472,14 @@ Material=1
 [Proto]
 ProtoId=9628
 Type=5
-PicMap=art\items\rock.frm
+PicMap=art\items\craft\hqalloys.fofrm
 PicInv=art\inven\alloys2.fofrm
 Flags=167772190
 Stackable=1
 Weight=453
 Volume=1
 SoundId=48
-Cost=765
+Cost=180
 Material=1
 
 [Proto]
@@ -4498,14 +4512,14 @@ Material=1
 [Proto]
 ProtoId=9631
 Type=5
-PicMap=art\items\smalbox2.frm
+PicMap=art\items\craft\advancedgunpowder.fofrm
 PicInv=art\inven\gunpowder.fofrm
 Flags=167772190
 Stackable=1
 Weight=453
 Volume=1
 SoundId=48
-Cost=255
+Cost=150
 Material=1
 
 [Proto]
@@ -4523,7 +4537,7 @@ Material=1
 [Proto]
 ProtoId=9633
 Type=5
-PicMap=art\items\rock.frm
+PicMap=art\items\craft\hqironore.fofrm
 PicInv=art\inven\ore1_2.fofrm
 Flags=134217758
 DisableEgg=1
@@ -4531,13 +4545,13 @@ Stackable=1
 Weight=2000
 Volume=2
 SoundId=48
-Cost=170
+Cost=100
 Material=5
 
 [Proto]
 ProtoId=9634
 Type=5
-PicMap=art\items\rock.frm
+PicMap=art\items\craft\hqminerals.fofrm
 PicInv=art\inven\ore2.fofrm
 Flags=134217758
 DisableEgg=1
@@ -4585,14 +4599,14 @@ Material=1
 [Proto]
 ProtoId=9653
 Type=5
-PicMap=art\items\pump.frm
+PicMap=art\items\craft\metaltrash.fofrm
 PicInv=art\inven\metal_trash.frm
 Flags=167772190
 Stackable=1
 Weight=453
 Volume=1
 SoundId=48
-Cost=510
+Cost=100
 Material=1
 
 [Proto]
@@ -5020,7 +5034,7 @@ Material=1
 [Proto]
 ProtoId=9921
 Type=5
-PicMap=art\items\bag.frm
+PicMap=art\items\craft\barleys.fofrm
 PicInv=art\inven\barley.fofrm
 Flags=134217758
 Stackable=1
@@ -5075,7 +5089,7 @@ Volume=5
 [Proto]
 ProtoId=9932
 Type=5
-PicMap=art\items\box2.frm
+PicMap=art\items\craft\brahminskin.fofrm
 PicInv=art\inven\brahmin_skin.frm
 Flags=167772190
 Stackable=1
@@ -5091,4 +5105,148 @@ Type=5
 PicMap=art\scenery\ldoor_pdown.fofrm
 Corner=1
 Flags=33559040
+
+[Proto]
+ProtoId=22050
+Type=5
+PicMap=art\items\book.frm
+PicInv=art\inven\barter_book.png
+Flags=402653214
+DisableEgg=1
+Stackable=1
+Weight=2467
+SoundId=48
+Cost=2500
+Material=3
+LightColor=-16777216
+
+[Proto]
+ProtoId=22051
+Type=5
+PicMap=art\items\smalbox2.frm
+PicInv=art\inven\chipred.frm
+Flags=134217758
+DisableEgg=1
+Stackable=1
+Volume=1
+SoundId=48
+Material=1
+LightColor=-16777216
+
+[Proto]
+ProtoId=22052
+Type=5
+PicMap=art\items\smalbox2.frm
+PicInv=art\inven\chipyel.frm
+Flags=134217758
+DisableEgg=1
+Stackable=1
+Volume=1
+SoundId=48
+Material=1
+LightColor=-16777216
+
+[Proto]
+ProtoId=22053
+Type=5
+PicMap=art\items\smalbox2.frm
+PicInv=art\inven\chipgre.frm
+Flags=134217758
+DisableEgg=1
+Stackable=1
+Volume=1
+SoundId=48
+Material=1
+LightColor=-16777216
+
+[Proto]
+ProtoId=22054
+Type=5
+PicMap=art\items\smalbox2.frm
+PicInv=art\inven\chipblu.frm
+Flags=134217758
+DisableEgg=1
+Stackable=1
+Volume=1
+SoundId=48
+Material=1
+LightColor=-16777216
+
+[Proto]
+ProtoId=22055
+Type=5
+PicMap=art\items\smalbox2.frm
+PicInv=art\inven\chipblu.frm
+Flags=134217758
+DisableEgg=1
+Stackable=1
+Volume=1
+SoundId=48
+Material=1
+LightColor=-16777216
+
+[Proto]
+ProtoId=22056
+Type=5
+PicMap=art\items\smalbox2.frm
+PicInv=art\inven\chipblu.frm
+Flags=134217758
+DisableEgg=1
+Stackable=1
+Volume=1
+SoundId=48
+Material=1
+LightColor=-16777216
+
+[Proto]
+ProtoId=22057
+Type=5
+PicMap=art\items\smalbox2.frm
+PicInv=art\inven\chipblu.frm
+Flags=134217758
+DisableEgg=1
+Stackable=1
+Volume=1
+SoundId=48
+Material=1
+LightColor=-16777216
+
+[Proto]
+ProtoId=22058
+Type=5
+PicMap=art\items\smalbox2.frm
+PicInv=art\inven\chipblu.frm
+Flags=134217758
+DisableEgg=1
+Stackable=1
+Volume=1
+SoundId=48
+Material=1
+LightColor=-16777216
+
+[Proto]
+ProtoId=22059
+Type=5
+PicMap=art\items\smalbox2.frm
+PicInv=art\inven\chipblu.frm
+Flags=134217758
+DisableEgg=1
+Stackable=1
+Volume=1
+SoundId=48
+Material=1
+LightColor=-16777216
+
+[Proto]
+ProtoId=22060
+Type=5
+PicMap=art\items\smalbox2.frm
+PicInv=art\inven\chipblu.frm
+Flags=134217758
+DisableEgg=1
+Stackable=1
+Volume=1
+SoundId=48
+Material=1
+LightColor=-16777216
 

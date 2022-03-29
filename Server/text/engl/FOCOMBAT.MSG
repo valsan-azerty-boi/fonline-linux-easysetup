@@ -648,6 +648,20 @@
 {2016}{}{the sensors}
 {2017}{}{the regulator}
 {2018}{}{uncalled}
+
+#
+# Pashtshuur nr animacji==135 i stąd numeracja linii: 135 * 10 +1000 
+#
+{2350}{}{the head}
+{2351}{}{the left leg}
+{2352}{}{the right leg}
+{2353}{}{the torso}
+{2354}{}{the right leg}
+{2355}{}{the left leg}
+{2356}{}{the eyes}
+{2357}{}{the groin}
+{2358}{}{uncalled}
+
 #
 # VB Bat
 #
@@ -1046,11 +1060,22 @@
 {6209}{}{, bypassing the chitinous armor and throwing the manti around}
 {6210}{}{, blinding the insect with an accurate blow}
 #
-# series 6300 - Deathclaw
+# series 6300 - Deathclaw // bt_deadclaw = 13!!!
 #
+#{6300}{}{. Even this beast seems fazed by that stunning attack}
+#{6301}{}{, slipping past the huge claws to strike the monster. The Deathclaw shakes and growls}
+#{6302}{}{. The result is massive damage to the Deathclaw's eyes}
 {6300}{}{. Even this beast seems fazed by that stunning attack}
-{6301}{}{, slipping past the huge claws to strike the monster. The Deathclaw shakes and growls}
-{6302}{}{. The result is massive damage to the Deathclaw's eyes}
+{6301}{}{, slipping past the huge claws to strike the monster. The monster shakes and growls}
+{6302}{}{. The result is massive damage to the creatures eyes}
+
+#
+# series 7300 - Pashtshuur (tabela taka jak dla Deathclaw) // TODO: z W2155, trzeba tez DODAC nowe BT_PASHTSHUUR
+#
+#{7300}{}{. Even this beast seems fazed by that stunning attack}
+#{7301}{}{, slipping past the huge claws to strike the monster. The Pashtshuur shakes and growls}
+#{7302}{}{. The result is massive damage to the Pashtshuur's eyes}
+
 #
 # series 6400 - Spore Plant  # Was The Master
 #

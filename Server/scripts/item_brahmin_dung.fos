@@ -89,7 +89,8 @@ bool _UseOnDung(Item& item, Critter& crit, Item@ usedItem)
 
         // A chance for pen brahmin to get angry if it's standing near the player who shovels the shit.
         // Player will be given a warning and a moment later the agitated brahmin will try to ram into the player.
-        array<Critter@> critters;
+        /*
+		array<Critter@> critters;
         uint            num = crit.GetMap().GetCrittersHex(crit.HexX, crit.HexY, 5, FIND_ONLY_NPC | FIND_LIFE, critters);
         for(uint i = 0; i < num; i++)
         {
@@ -100,6 +101,7 @@ bool _UseOnDung(Item& item, Critter& crit, Item@ usedItem)
                 critters[i].Wait(Random(200, 500));
             }
         }
+		*/
 
         crit.SayMsg(SAY_NETMSG, TEXTMSG_TEXT, 4204);
 

@@ -14,9 +14,8 @@ lang=engl
 31 2020 D _var p q_nr_corsican_tattoo = 1 D _script dialog@d_NpcInLocation 1 7 #
 0 2030 @
 4 3000 None 1 #
-5 3010 D _param p ST_AGE } 18 #
-7 3020 D _param p ST_AGE { 18 #
-0 3030 @
+5 3010 #
+0 3020 @
 5 4000 None 0 #
 6 4010 #
 0 4020 @
@@ -61,8 +60,7 @@ lang=engl
 {2030}{}{[Turn your back and leave him alone]}
 {3000}{}{[He doesn't even look up from his work] What is it? You better tell me you want one of my famous tats, else you can turn around and leave just right there where you stand, I'm not here to serve random people's chit-chat adventures.}
 {3010}{}{What sort of tattoos do you provide? I might be interested in having one.}
-{3020}{}{@sex@|I want to be a cool guy! Could you do me some tattoo please?||I want to look like a real badass-bitch, could you do me some tattoo please?|}
-{3030}{}{Too bad, I actually just wanted to came here to annoy you with loads of inane questions. I'm gone then. [Exit]}
+{3020}{}{Too bad, I actually just wanted to came here to annoy you with loads of inane questions. I'm gone then. [Exit]}
 {4000}{}{Now you're talking business man.. [He shows you some examples in his old worn book. You can see finely drawn patterns, symbols... You can even spot an anchor!] 'tis all I have. If you want some fancy stuff, it'll cost you some extra caps.}
 {4010}{}{This is all cool and stuff, but I don't need anything fancy, just some words, some motto or a badass gang-name, could you do that for me, or would it hurt your aesthetic sense too much?}
 {4020}{}{I.. uh, don't like them at all. I better be going. [Exit]}

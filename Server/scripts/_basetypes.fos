@@ -56,6 +56,9 @@
 // Kid
 #define CRTYPE_FEMALE_KID                (103)
 #define CRTYPE_MALE_KID                  (27)
+// Ian & Old Ian
+#define CRTYPE_IAN						(45)
+#define CRTYPE_OLDIAN					(128)
 
 /*
  * Everything else
@@ -186,7 +189,11 @@
 #define CRTYPE_GIZMO                     (131)
 // 132-133 : NOT ASSIGNED
 #define CRTYPE_PUNK_LA                   (134)
-// 135-199 : NOT ASSIGNED
+#define CRTYPE_PASHTSHUUR                (135)
+#define CRTYPE_PUNK_MA					 (136)
+#define CRTYPE_PUNK_JUMPSUIT			 (137)
+#define CRTYPE_PUNK_PRIMITIVE			 (138)
+// 136-199 : NOT ASSIGNED
 //	135 CRTYPE_PUNK_METAL
 //	136 CRTYPE_PUNK_COMBAT
 // 200-209 : Player->3D

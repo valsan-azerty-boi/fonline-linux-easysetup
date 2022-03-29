@@ -1,5 +1,6 @@
 [comment]
 
+
 [data]
 lang=engl
 
@@ -15,5 +16,5 @@ lang=engl
 {210}{}{You see a member of the local militia.}
 {1000}{}{Predialogue installations}
 {1010}{}{Answer text}
-{2000}{}{Good day, stranger. New in town?@@Move along now. There's nothing to see here.@@Don't mess with @lex faction@.}
+{2000}{}{Good day, stranger. New in town?@@Move along now. There's nothing to see here.@@Don't mess with @lex faction@.@@This town is controlled by @lex faction@.@@Obey town rules and you will be fine.}
 

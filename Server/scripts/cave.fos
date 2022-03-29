@@ -28,8 +28,8 @@ array<uint> corpse_bags;
 
 ICaveItem@ GetCaveItem(Critter& player)
 {
-    uint rndnum = Random(0, 880);
-    uint rand = CLAMP((rndnum + (10 * player.Stat[ST_LUCK])), 0, 980);
+    uint rndnum = Random(910, 980);
+    uint rand = CLAMP(rndnum, 0, 980);
     uint group = CAVE_ITEM_GROUP_JUNK;
 
     if(rand < 910)
@@ -67,7 +67,7 @@ ICaveCritter@ GetCaveCritter(ICaveGroup@ group)
 
 bool FillItems(Map@ map, Critter& player)
 {
-    uint amount = Random(0, CAVE_ITEM_MAX);
+    uint amount = Random(1, CAVE_ITEM_MAX);
     DLog("Generating " + amount + " items");
 
     array<Entire> item_entires;

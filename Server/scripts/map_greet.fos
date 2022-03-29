@@ -84,6 +84,8 @@ void GreetPlayer(Critter@ player, Map@ map)
 
                 player.Say(SAY_NETMSG, Greet[g].message);
                 SetLvar(player, Greet[g].lvar, 1);
+				player.StatBase[ST_EXPERIENCE] += 150;
+                player.Say(SAY_NETMSG, "|0xFFFFFF You have gained 150 experience points.");
             }
             else
             {

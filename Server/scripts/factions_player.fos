@@ -18,6 +18,7 @@
 #include "follower_h.fos"
 #include "follower_common_h.fos"
 #include "debug_h.fos"
+#include "_colors.fos"
 
 import void MoveCars(Map&, Map&) from "car";
 
@@ -282,6 +283,10 @@ uint dlg_CreateFactionBase(Critter& player, Critter@ npc, string@ say)
         if(res != 0)
             return res;                  // bypass dialog flow
     }
+    // get id of new faction if you had to create one
+    if(fid == FACTION_NONE)
+        fid = player.Stat[ST_TEAM_ID];
+
     if(valid(GetFactionBase(fid, say)))
     {
         player.Say(SAY_DIALOG, "Hideout with given name exists, give new one");
@@ -308,8 +313,8 @@ uint dlg_CreateFactionBase(Critter& player, Critter@ npc, string@ say)
     }
     else if(currentlocation == MAP_NecropolisPump)
     {
-        x = Random(1878, 1738);
-        y = Random(2078, 2498);
+        x = Random(850, 1150);
+        y = Random(550, 800);
     }
     array<Critter@> players;
     players.insertLast(player);
@@ -323,7 +328,7 @@ uint dlg_CreateFactionBase(Critter& player, Critter@ npc, string@ say)
 
     FLog(LOG_WMLOCATIONS, "BASE " + loc.Id + " " + loc.GetProtoId() + " " + loc.WorldX + " " + loc.WorldY);
 
-    loc.Color = 0x307CFF22; // Blue
+    loc.Color = COLOR_WM_BASE;
     loc.Update();
 
     array<Map@> maps;
@@ -346,6 +351,7 @@ uint dlg_CreateFactionBase(Critter& player, Critter@ npc, string@ say)
 
 bool d_HasRequiredFollowers(Critter& player, Critter@ npc, int num)
 {
+/*
     #ifdef __DEBUG__
     return true;
     #endif
@@ -362,6 +368,8 @@ bool d_HasRequiredFollowers(Critter& player, Critter@ npc, int num)
 
     return(nearmembers >= num);
     #endif
+	*/
+	return true;
 }
 bool d_HasNotRequiredFollowers(Critter& player, Critter@ npc, int num)
 {
@@ -421,10 +429,10 @@ bool FindBaseEncounter(array<Critter@>& group, Item@ car, uint x, uint y, uint& 
 
 const array<int> Requirements =
 {
-    LOCATION_DEPOT, PID_FIREWOOD, 1000, PID_PUMP_PARTS, 500, PID_METAL_PARTS, 15, PID_ELECTRONIC_PARTS, 10, -1,
-    LOCATION_TENTS, PID_BRAHMIN_HIDE, 50, PID_FIREWOOD, 30, PID_METAL_PARTS, 15, PID_ELECTRONIC_PARTS, 10, -1,
-    LOCATION_SCRAPHEAP, PID_PUMP_PARTS, 2000, PID_METAL_PARTS, 100, PID_ELECTRONIC_PARTS, 10, -1,
-    LOCATION_CAMP, PID_FIREWOOD, 500, PID_PUMP_PARTS, 1750, PID_METAL_PARTS, 15, PID_ELECTRONIC_PARTS, 10, -1,
+    LOCATION_DEPOT, PID_FIREWOOD, 250, PID_PUMP_PARTS, 250, PID_METAL_PARTS, 15, PID_ELECTRONIC_PARTS, 10, -1,
+    LOCATION_TENTS, PID_BRAHMIN_HIDE, 30, PID_FIREWOOD, 30, PID_METAL_PARTS, 15, PID_ELECTRONIC_PARTS, 10, -1,
+    LOCATION_SCRAPHEAP, PID_PUMP_PARTS, 350, PID_METAL_PARTS, 50, PID_ELECTRONIC_PARTS, 10, -1,
+    LOCATION_CAMP, PID_FIREWOOD, 250, PID_PUMP_PARTS, 300, PID_METAL_PARTS, 15, PID_ELECTRONIC_PARTS, 10, -1,
 };
 
 /**
@@ -635,6 +643,9 @@ uint dlg_FinishConstruction(Critter& player, Critter@ builder, string@ say)
         return 0;
     }
     Location@ loc = GetLocation(locId);
+    loc.Color = COLOR_WM_BASE;
+    loc.Update();
+    
     Map@      entrance = loc.GetMapByIndex(0);
     MoveCars(site, entrance);
     for(uint i = 0, j = group.length(); i < j; i++)

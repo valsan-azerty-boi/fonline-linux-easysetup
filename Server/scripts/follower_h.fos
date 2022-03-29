@@ -67,12 +67,12 @@
 // Amount of time to wait before garbage collecting followers idling on WM
 #define FOLLOWER_WM_GARBAGE_TIME             (REAL_DAY(14))
 #ifndef __DEBUG__
-# define FOLLOWER_LOYALITY_INTERVAL          (REAL_DAY(1))
+# define FOLLOWER_LOYALITY_INTERVAL          (REAL_DAY(7))
 #endif
 #ifdef __DEBUG__
 # define FOLLOWER_LOYALITY_INTERVAL          (REAL_MINUTE(5))
 #endif
-#define FOLLOWER_LOYALITY_DEATH_DROP         (Random(10, 20))     // Loyality % decrease after each respawn
+#define FOLLOWER_LOYALITY_DEATH_DROP         (0)     // Loyality % decrease after each respawn
 #define FOLLOWER_SLAVE_FLEE_THRESHOLD        (20)
 
 // flags for dialogs

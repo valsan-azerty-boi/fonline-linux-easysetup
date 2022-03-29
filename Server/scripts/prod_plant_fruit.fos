@@ -32,7 +32,8 @@ uint e_Regen(array<uint>@ values)
     Item@ item = GetItem(values[0]);
     if(!valid(item))
         return 0;
-    Regenerate(item, PID_MUTATED_FRUIT, __FruitCapacity, __FruitRegen, TotalCount);
+   // Regenerate(item, PID_MUTATED_FRUIT, __FruitCapacity, __FruitRegen, TotalCount);
+   	if(item.Val1<100) item.Val1=MIN(item.Val1+2, 20);
     return RegenerationInterval;
 }
 void _EncPlant(Item& item, bool firstTime)

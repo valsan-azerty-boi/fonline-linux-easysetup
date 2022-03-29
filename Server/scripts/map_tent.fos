@@ -1046,6 +1046,39 @@ bool d_IsTentOwner(Critter& player, Critter@)
     return(IsTentOwner(map, player));
 }
 
+bool d_IsNotTentOwner(Critter& player, Critter@)
+{
+    Map@ map = player.GetMap();
+
+    if(!valid(map))
+        return(false);
+
+    return(!IsTentOwner(map, player));
+}
+
+bool d_KnowLocation(Critter& player, Critter@)
+{
+    Map@ map = player.GetMap();
+
+    if(!valid(map))
+        return(false);
+
+    return(player.IsKnownLoc(true, map.GetLocation().Id));
+}
+
+uint r_ForgetLocation(Critter& player, Critter@)
+{
+    Map@ map = player.GetMap();
+
+    if(!valid(map))
+        return(0);
+
+    if(player.IsKnownLoc(true, map.GetLocation().Id))
+        player.UnsetKnownLoc(true, map.GetLocation().Id);
+
+    return(0);
+}
+
 uint r_TentName(Critter& player, Critter@)
 {
     player.ShowScreen(SCREEN_SAY, 0, "answer_TentName");

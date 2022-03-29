@@ -7,7 +7,7 @@ lang=engl
 [dialog]
 &
 1 1000 None 0 #
-22 1010 D _param p ST_INTELLECT < 4 #
+22 1010 D _param p ST_INTELLECT < 4 D _param p ST_STRENGTH > 99 #
 18 1020 D _var p q_ncr_geigercounter = 2 #
 2 1030 D _var n name_mem_npc_player = 0 R _var n name_mem_npc_player = 1 #
 20 1040 @

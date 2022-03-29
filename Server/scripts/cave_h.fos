@@ -59,4 +59,5 @@
 #define CAVE_CRITTER_RAIDER_MELEE       (20)
 #define CAVE_CRITTER_RAIDER_GUN         (21)
 #define CAVE_CRITTER_RAIDER_GUN_2       (22)
+
 #endif

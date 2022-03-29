@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              152
 MaxHexY              147
-WorkHexX             67
-WorkHexY             99
+WorkHexX             72
+WorkHexY             58
 ScriptModule         quest_cath_basement
 ScriptFunc           map_init
 NoLogOut             0
@@ -7934,8 +7934,6 @@ MapObjType           1
 ProtoId              2438
 MapX                 58
 MapY                 57
-Item_LockerDoorId    100
-Item_LockerComplexity 100
 
 MapObjType           1
 ProtoId              2438
@@ -13270,6 +13268,7 @@ MapObjType           1
 ProtoId              61
 MapX                 92
 MapY                 62
+UID                  2
 
 MapObjType           2
 ProtoId              2067
@@ -13290,5 +13289,11 @@ MapObjType           2
 ProtoId              2067
 MapX                 86
 MapY                 62
+
+MapObjType           1
+ProtoId              86
+MapX                 92
+MapY                 62
+ContainerUID         2
 
 

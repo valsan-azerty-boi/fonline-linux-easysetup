@@ -12,9 +12,6 @@
 #include "_macros.fos"
 #include "worldmap_h.fos"
 
-import void TryEnterCombatZone(Critter& player) from "sleepiness";
-import void TryExitCombatZone(Critter& player) from "sleepiness";
-
 class CZone
 {
     // array of players
@@ -100,7 +97,6 @@ void WorldmapUpdatePlayer(Critter@ player)
     // left worldmap
     else if(!nw && ow)
     {
-        TryEnterCombatZone(player);
         // remove player from old zone
         uint idx = oy * ZONE_COUNT_X + ox;
         Zones[idx].RemovePlayer(player);
@@ -117,7 +113,6 @@ void WorldmapUpdatePlayer(Critter@ player)
     // entered worldmap
     else if(nw && !ow)
     {
-        TryExitCombatZone(player);
         // add player to zone
         uint idx = ny * ZONE_COUNT_X + nx;
         Zones[idx].AddPlayer(player);
@@ -150,6 +145,8 @@ void WorldmapRemovePlayer(Critter@ player)
         uint     oy = vy.GetValue();
         uint     idx = oy * ZONE_COUNT_X + ox;
         Zones[idx].RemovePlayer(player);
+        vx = 0;
+        vy = 0;
     }
 }
 

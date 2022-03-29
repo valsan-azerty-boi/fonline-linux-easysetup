@@ -5,6 +5,7 @@
 // quest_jt_scorpion.fos
 //
 
+#include "_colors.fos"
 #include "_maps.fos"
 #include "_vars.fos"
 #include "_macros.fos"
@@ -38,6 +39,8 @@ void r_SpawnMap(Critter& player, Critter@ npc)
     GameVar@  locidv = GetLocalVar(LVAR_q_jt_sneakeater_locid, player.Id);
     locidv = loc;
     Location@ location = GetLocation(loc);
+    location.Color = COLOR_WM_QUEST;
+    location.Update();
     Map@      map = location.GetMapByIndex(0);
 
     if(player.Mode[MODE_DEFAULT_COMBAT] == COMBAT_MODE_TURN_BASED)

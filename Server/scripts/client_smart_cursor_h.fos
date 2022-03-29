@@ -19,6 +19,7 @@
 #define SMART_SHOVEL_DUNG          (8)
 #define SMART_CHOP_WOOD            (9)
 #define SMART_DIG_GRAVE            (10)
+#define SMART_MEAT				   (11)
 
 #ifndef __CLIENT_SMART_CURSOR__
 import uint ValidToolForTarget(ItemCl@ tool, ItemCl@ target) from "client_smart_cursor";

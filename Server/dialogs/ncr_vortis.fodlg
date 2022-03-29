@@ -1,5 +1,6 @@
 [comment]
 
+
 [data]
 lang=engl
 
@@ -19,8 +20,7 @@ lang=engl
 3 3000 None 0 #
 2 3010 D _param p KARMA_SLAVER > 0 #
 24 3020 D _param p KARMA_SLAVER = 0 #
-0 3030 #
-65507 3040 @
+0 3030 @
 5 4000 None 0 #
 0 4010 @
 6 5000 None 0 #
@@ -114,7 +114,6 @@ lang=engl
 {3010}{}{One more question.}
 {3020}{}{One more question.}
 {3030}{}{Sounds like a sweet deal. Bye.}
-{3040}{}{How fucking magnanimous of you. You're like the fucking Gandhi of massive assholes.Taste my steel, demon!}
 {4000}{}{Good. Here is your slave. Take care of the slave... or don't. I don't care. }
 {4010}{}{Thanks. Good trade.}
 {5000}{}{Some error occured. Report this to admins.}

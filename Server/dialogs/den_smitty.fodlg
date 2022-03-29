@@ -7,8 +7,8 @@ lang=engl
 [dialog]
 &
 1 1000 None 0 #
-10 1010 D _param p ST_INTELLECT < 4 #
-2 1020 D _param p ST_INTELLECT > 3 @
+2 1010 #
+10 1020 D _param p ST_INTELLECT < 4 D _param p ST_STRENGTH > 99 @
 2 2000 None 0 #
 3 2010 #
 0 2020 @
@@ -25,8 +25,8 @@ lang=engl
 {200}{}{You see a greasy old coot.}
 {210}{}{You see Smitty the mechanic and junkyard owner.}
 {1000}{}{Predialogue installations}
-{1010}{}{dumb}
-{1020}{}{normal}
+{1010}{}{normal}
+{1020}{}{dumb}
 {2000}{}{What can old Smitty do ya for?}
 {2010}{}{I was just wondering what you do here?}
 {2020}{}{I was just looking around a bit. See you later, Smitty.}

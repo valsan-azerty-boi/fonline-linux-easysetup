@@ -168,7 +168,7 @@ void _OnShowCritter1Encounter(Critter& cr, Critter& target)
 
     // can occur even without a warning:
     int[] data = { target.Id, cr.Id };
-    CreateTimeEvent(AFTER(REAL_SECOND(Random(5, 8))), "e_CheckDistance", data, false);
+    //CreateTimeEvent(AFTER(REAL_SECOND(Random(5, 8))), "e_CheckDistance", data, false);
 }
 
 void _OnShowCritter2Encounter(Critter& cr, Critter& target)
@@ -200,7 +200,7 @@ void _OnShowCritter2Encounter(Critter& cr, Critter& target)
     }
 
     // can occur even without a warning:
-    CreateTimeEvent(AFTER(REAL_MS(2000)), "e_CheckDistance2", data, false);
+    //CreateTimeEvent(AFTER(REAL_MS(2000)), "e_CheckDistance2", data, false);
 }
 
 uint e_PushAway(array<uint>@ values)

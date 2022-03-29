@@ -111,6 +111,24 @@ uint GetDaysInMonth(uint16 year, uint16 month)
     return 0;
 }
 
+string GetTimeString(uint fullsecond)   // Export
+{
+    uint16 year=0, month=0, day=0, dayofweek=0, hour=0, minute=0, second=0;
+    GetGameTime(fullsecond, year, month, day, dayofweek, hour, minute, second );
+    
+    string result = "";
+    if(day<10) result+="0" + day; 
+        else result+="" + day;
+    if(month<10) result+=".0" + month; 
+        else result+="." + month;
+    result+="." + year;
+    if(hour<10) result+=" 0" + hour; 
+        else result+=" " + hour;
+    if(minute<10) result+=":0" + minute; 
+        else result+=":" + minute;
+    return result;
+}
+
 #ifdef __CLIENT
 string@ GetTimeString(const string& format, uint fullSecond)   // Export
 {

@@ -56,6 +56,8 @@ namespace CritableEditor
         public static string FileOutput = "";
         public static string FOCombat = "";
         public static string FileHTML = "";
+        public static string FileHTML_Men = "";
+        
 
         public static string[] Bodytype = 
         {

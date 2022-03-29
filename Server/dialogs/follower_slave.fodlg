@@ -17,10 +17,10 @@ lang=engl
 5 2030 R _script npc_common@r_MoveRandom 1 0 #
 13 2040 D _script follower@d_IsGuarding 1 1 R _script follower@r_Rotate 1 0 #
 65506 2050 #
-13 2060 D _script town@d_CanBecomeMilitia 0  R _script town_militia@r_BecomeMilitia 0  #
-13 2070 D _script follower@d_CanMine 0  D _script follower@d_IsNotMode 1 3 R _script follower@r_FollowMode 1 3 #
-8 2080 #
-7 2090 #
+13 2060 D _script follower@d_CanMine 0  D _script follower@d_IsNotMode 1 3 R _script follower@r_FollowMode 1 3 #
+8 2070 #
+7 2080 #
+0 2090 R _script follower@r_DropAllItems 0  #
 0 2100 @
 7 3000 None 0 #
 3 3010 #
@@ -28,7 +28,8 @@ lang=engl
 15 3030 D _item p PID_JET > 0 R _item p PID_JET - 1 R _script follower@r_IncreaseLoyality 2 5 10 #
 13 3040 R _script follower@r_PutDownWeapon 0  #
 13 3050 R _script follower@r_ArmBestWeapon 0  #
-2 3060 @
+110 3060 #
+2 3070 @
 3 4000 None 0 #
 2 4010 R _script follower@r_Distance 1 0 #
 2 4020 R _script follower@r_Distance 1 1 #
@@ -55,7 +56,9 @@ lang=engl
 13 12000 None 0 #
 0 12010 @
 14 13000 None 0 @
-15 14000 None 0 &
+15 14000 None 0 @
+110 15000 follower@dlg_ShowStats 0 #
+2 15010 &
 
 [engl]
 {100}{}{Slave}
@@ -72,10 +75,10 @@ lang=engl
 {2030}{}{I need you to move, you're blocking my way.}
 {2040}{}{I need you to rotate for me.}
 {2050}{}{Here, I've got something for you.}
-{2060}{}{I want you to join the local militia to protect this town.}
-{2070}{}{I want you to dig me some resources.}
-{2080}{}{I want someone else to command you.}
-{2090}{}{[more options]}
+{2060}{}{I want you to dig me some resources.}
+{2070}{}{I want someone else to command you.}
+{2080}{}{[more options]}
+{2090}{}{Drop all items you carry.}
 {2100}{}{Nevermind.}
 {3000}{}{Yes, master?@@Yes, my master?@@What can I do for you, master?}
 {3010}{}{We need to talk about our distance.}
@@ -83,7 +86,8 @@ lang=engl
 {3030}{}{Have some Jet. [Give 1 Jet]}
 {3040}{}{Put down your weapon.}
 {3050}{}{Arm yourself.}
-{3060}{}{[back to first page]}
+{3060}{}{[Check stats]}
+{3070}{}{[back to first page]}
 {4000}{}{Sure, how far do you want me to be, master?}
 {4010}{}{Stay close to me.}
 {4020}{}{Stick at medium range.}
@@ -111,5 +115,8 @@ lang=engl
 {12010}{}{If you don't do your job properly, I'll kill you.}
 {13000}{}{Ok, master, I'll do that if you wish me to!}
 {14000}{}{*Inhales Jet*}
+{15000}{}{Current statistics:
+@lex stats@}
+{15010}{}{[Done]}
 {100000001}{}{I feel stronger, master!@@I feel stronger!}
 

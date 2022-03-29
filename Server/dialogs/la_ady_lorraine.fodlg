@@ -45,7 +45,7 @@ lang=engl
 11 10020 #
 0 10030 @
 11 11000 None 0 #
-12 11010 D _param p ST_INTELLECT } 6 D _var p q_la_ady_lorraine_magazine = 0 R _param p ST_EXPERIENCE + 50 R _var p q_la_ady_lorraine_magazine = 1 #
+12 11010 D _param p ST_INTELLECT } 6 D _var p q_la_ady_lorraine_magazine = 0 R _param p ST_EXPERIENCE + 150 R _var p q_la_ady_lorraine_magazine = 1 #
 13 11020 @
 12 12000 None 0 #
 13 12010 @
@@ -125,7 +125,7 @@ lang=engl
 7 40020 #
 72 40030 D _param p ST_INTELLECT > 5 D _param p ST_PERCEPTION > 6 @
 72 41000 None 0 #
-7 41010 R _param p ST_EXPERIENCE + 75 @
+7 41010 R _param p ST_EXPERIENCE + 275 @
 80 42000 None 0 #
 81 42010 #
 7 42020 @
@@ -158,7 +158,7 @@ lang=engl
 0 52010 R _var p q_la_ady_lorraine_pistol = 2 #
 7 52020 R _var p q_la_ady_lorraine_pistol = 2 @
 24 53000 None 0 #
-65505 53010 D _item p PID_10MM_PISTOL } 1 R _var p q_la_ady_lorraine_pistol = 3 R _item p PID_10MM_PISTOL - 1 R _item p PID_10MM_JHP + 50 R _param p ST_EXPERIENCE + 250 #
+65505 53010 D _item p PID_10MM_PISTOL } 1 R _var p q_la_ady_lorraine_pistol = 3 R _item p PID_10MM_PISTOL - 1 R _item p PID_10MM_JHP + 350 R _param p ST_EXPERIENCE + 1350 #
 65505 53020 &
 
 [engl]

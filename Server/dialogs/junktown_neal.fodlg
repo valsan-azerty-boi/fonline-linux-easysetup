@@ -7,10 +7,9 @@ lang=engl
 [dialog]
 &
 1 1000 None 0 #
-23 1010 D _param p ST_INTELLECT < 4 #
-2 1020 D _var n name_mem_npc_player = 0 R _var p name_mem_npc_player = 1 #
-4 1030 D _var n name_mem_npc_player = 1 #
-24 1040 D _param p ST_KARMA < -100 @
+2 1010 D _var n name_mem_npc_player = 0 R _var p name_mem_npc_player = 1 #
+4 1020 D _var n name_mem_npc_player = 1 #
+24 1030 D _param p ST_KARMA < -100 @
 2 2000 None 0 #
 4 2010 D _param p ST_INTELLECT < 4 #
 4 2020 D _param p ST_INTELLECT > 3 R _var n name_mem_npc_player = 1 #
@@ -25,26 +24,28 @@ lang=engl
 8 3050 D _param p ST_INTELLECT < 4 #
 9 3060 D _param p ST_INTELLECT < 4 #
 0 3070 D _param p ST_INTELLECT < 4 #
-30 3080 @
+30 3080 #
+7 3090 @
 7 4000 None 0 #
 21 4010 #
 22 4020 #
 20 4030 #
 4 4040 #
 0 4050 @
-8 5000 None 0 #
+8 5000 dialog@dlg_SayBuyBeer 0 #
 11 5010 D _param p ST_INTELLECT > 3 D _item p PID_BOTTLE_CAPS < 10 #
 7 5020 D _param p ST_INTELLECT > 3 D _item p PID_BOTTLE_CAPS > 9 R _item p PID_BEER + 1 R _script dialog@r_RemoveMoney 1 10 #
 0 5030 D _param p ST_INTELLECT > 3 #
 11 5040 D _param p ST_INTELLECT < 4 D _item p PID_BOTTLE_CAPS < 10 #
 0 5050 D _param p ST_INTELLECT < 4 D _item p PID_BOTTLE_CAPS > 9 R _item p PID_BEER + 1 R _script dialog@r_RemoveMoney 1 10 #
 0 5060 D _param p ST_INTELLECT < 4 @
-9 6000 None 0 #
+9 6000 dialog@dlg_SayBuyNuka 0 #
 11 6010 D _param p ST_INTELLECT > 3 D _item p PID_BOTTLE_CAPS < 99 #
-7 6020 D _param p ST_INTELLECT > 3 D _item p PID_BOTTLE_CAPS > 99 R _item p PID_NUKA_COLA + 1 R _item n PID_NUKA_COLA - 1 R _script dialog@r_RemoveMoney 1 100 #
-0 6030 D _param p ST_INTELLECT > 3 #
-11 6040 D _param p ST_INTELLECT < 4 D _item p PID_BOTTLE_CAPS < 99 #
-0 6050 D _param p ST_INTELLECT < 4 D _item p PID_BOTTLE_CAPS > 99 R _item n PID_NUKA_COLA - 1 R _item p PID_NUKA_COLA + 1 R _script dialog@r_RemoveMoney 1 100 @
+7 6020 D _item p PID_BOTTLE_CAPS > 999 R _item p PID_NUKA_COLA + 10 R _item n PID_NUKA_COLA - 10 R _script dialog@r_RemoveMoney 1 1000 #
+7 6030 D _param p ST_INTELLECT > 3 D _item p PID_BOTTLE_CAPS > 99 R _item p PID_NUKA_COLA + 1 R _item n PID_NUKA_COLA - 1 R _script dialog@r_RemoveMoney 1 100 #
+0 6040 D _param p ST_INTELLECT > 3 #
+11 6050 D _param p ST_INTELLECT < 4 D _item p PID_BOTTLE_CAPS < 99 #
+0 6060 D _param p ST_INTELLECT < 4 D _item p PID_BOTTLE_CAPS > 99 R _item n PID_NUKA_COLA - 1 R _item p PID_NUKA_COLA + 1 R _script dialog@r_RemoveMoney 1 100 @
 11 7000 None 0 #
 0 7010 @
 12 8000 None 0 #
@@ -76,9 +77,10 @@ lang=engl
 26 17000 None 0 #
 4 17010 #
 0 17020 @
-30 18000 None 0 #
+30 18000 dialog@dlg_SayBuyCigarettes 0 #
 0 18010 #
-32 18020 D _item p PID_BOTTLE_CAPS > 99 R _item p PID_CIGARETTES + 1 R _script dialog@r_RemoveMoney 1 100 @
+32 18020 D _item p PID_BOTTLE_CAPS > 99 R _item p PID_CIGARETTES + 1 R _script dialog@r_RemoveMoney 1 100 #
+32 18030 D _item p PID_BOTTLE_CAPS > 999 R _item p PID_CIGARETTES + 10 R _script dialog@r_RemoveMoney 1 1000 @
 32 19000 None 0 #
 0 19010 &
 
@@ -87,10 +89,9 @@ lang=engl
 {200}{}{You see a bartender.}
 {210}{}{He looks overworked.}
 {1000}{}{Predialogue installations}
-{1010}{}{Dumb}
-{1020}{}{Unknown}
-{1030}{}{Familiar}
-{1040}{}{Hated}
+{1010}{}{Unknown}
+{1020}{}{Familiar}
+{1030}{}{Hated}
 {2000}{}{Welcome to the Skum Pitt. This is my place. You buy drinks here. And you tip me. So, what do you want?}
 {2010}{}{Uh, I'll have a drink.}
 {2020}{}{This seems to be a bar. Can I get a drink?}
@@ -106,28 +107,32 @@ lang=engl
 {3060}{}{Me wants Nuka-Cola.}
 {3070}{}{Me nothing, me going.}
 {3080}{}{Do you have any Cigarettes? I'm dyin' for a smoke.}
-{4000}{}{Well information’s what it’s all about. What do you want to know about?}
+{3090}{}{I'm looking for information.}
+{4000}{}{Well information's what it's all about. What do you want to know about?}
 {4010}{}{Are there any other settlements nearby?}
 {4020}{}{Are there any traders here in Junktown?}
-{4030}{}{I’m looking for a job. Any leads?}
-{4040}{}{That’s all I need to know for now. But there’s something else I need.}
+{4030}{}{I'm looking for a job. Any leads?}
+{4040}{}{That's all I need to know for now. But there's something else I need.}
 {4050}{}{Alright, I gotta get going.}
-{5000}{}{Ok, only 10 caps for the best beer in this town.}
+{5000}{}{Ok, only 10 caps for the best beer in this town. [You can use SAY to enter number of items you want to buy]
+}
 {5010}{}{It seems I'm a little short on cash...}
 {5020}{}{Thanks. I got a couple questions too.}
 {5030}{}{Maybe I come back later. That's all I need for now. Goodbye.}
 {5040}{}{Uh, no mony.}
 {5050}{}{Here, mony. Me going.}
 {5060}{}{Nah, me going.}
-{6000}{}{Nuka-Cola, this makes 100 caps.}
+{6000}{}{Nuka-Cola, this makes 100 caps. [You can use SAY to enter number of items you want to buy]
+}
 {6010}{}{It seems I'm a little short on cash...}
-{6020}{}{Thanks. I got a couple questions too.}
-{6030}{}{Maybe not yet, thanks anyway. See you around.}
-{6040}{}{Uh, no mony.}
-{6050}{}{Here, mony. Me going.}
+{6020}{}{Gimme ten bottles. [Hand him $1000]}
+{6030}{}{Thanks. I got a couple questions too.}
+{6040}{}{Maybe not yet, thanks anyway. See you around.}
+{6050}{}{Uh, no mony.}
+{6060}{}{Here, mony. Me going.}
 {7000}{}{Typical of you scumbags to try and get somethin' for nothin'. Get the hell out.}
 {7010}{}{Alright, I'm leaving.}
-{8000}{}{Well, now that we’ve got first things first out of the way... how can I help you? (smiles)}
+{8000}{}{Well, now that we've got first things first out of the way... how can I help you? (smiles)}
 {8010}{}{A beer would be nice.}
 {8020}{}{I don't think there's anything you can do to help me, you greasy bastard.}
 {8030}{}{Well, I'm looking for some information.}
@@ -140,7 +145,7 @@ lang=engl
 {10010}{}{Piss? What the hell?!}
 {10020}{}{Enjoy the beer, everyone. Neal, I've got some questions.}
 {10030}{}{Happy to help. I've gotta go.}
-{11000}{}{It’s just the way we call beer around here. Are you slow or what? (shakes his head)}
+{11000}{}{It's just the way we call beer around here. Are you slow or what? (shakes his head)}
 {11010}{}{Oh, yeah. I get it. Heh. Piss. It's clever. But I need some information.}
 {11020}{}{I'm not drinking piss! I'm leaving!}
 {12000}{}{Not from me and not at the moment. Sorry.@@Maybe Thomas in the power house got some use for you, if you know how to repair things.}
@@ -156,9 +161,11 @@ lang=engl
 {17000}{}{Good, it's better to be sure about your posessions, am I right?}
 {17010}{}{Right...}
 {17020}{}{[Leave]Right...}
-{18000}{}{Sure, that'll be $100}
+{18000}{}{Sure, that'll be $100. [You can use SAY to enter number of items you want to buy]
+}
 {18010}{}{Sorry, too much for me}
 {18020}{}{It's a bit steep, you're just lucky I'm hooked. [Hand him $100]}
+{18030}{}{I want ten packs at once. [Hand him $1000]}
 {19000}{}{Here you go, don't smoke 'em all at once.}
 {19010}{}{Gee, thanks.}
 {100000001}{}{We're closed. Come back around four o'clock.}

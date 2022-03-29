@@ -1,7 +1,5 @@
 {10}{}{Hero Male}
-{11}{}{ }
 {20}{}{Hero Female}
-{21}{}{ }
 {30}{}{Villager}
 {40}{}{Villager}
 {50}{}{Radscorpion}
@@ -194,16 +192,16 @@
 {1780}{}{Reactor Ghoul}
 {1790}{}{Generic Ghoul}
 {1800}{}{Matt}
-{1810}{}{B. Hunter Lead (1-6)}
-{1820}{}{Bounty Hunter (1-6)}
-{1830}{}{B. Hunter Lead (7-12)}
-{1840}{}{Bounty Hunter (7-12)}
-{1850}{}{Bounty Hunter (7-12)}
-{1860}{}{B. Hunter Lead (13-18)}
-{1870}{}{Bounty Hunter (13-18)}
-{1880}{}{Bounty Hunter (13-18)}
-{1890}{}{B. Hunter Lead (19-?)}
-{1900}{}{Bounty Hunter (19-?)}
+{1810}{}{Bounty Hunter}
+{1820}{}{Bounty Hunter}
+{1830}{}{Bounty Hunter}
+{1840}{}{Bounty Hunter}
+{1850}{}{Bounty Hunter}
+{1860}{}{Bounty Hunter}
+{1870}{}{Bounty Hunter}
+{1880}{}{Bounty Hunter}
+{1890}{}{Bounty Hunter}
+{1900}{}{Bounty Hunter}
 {1910}{}{Bess}
 {1911}{}{A two headed, mutant cow.}
 {1920}{}{Balthas}
@@ -526,11 +524,11 @@
 {5070}{}{Endless Walker}
 {5080}{}{Bat}
 {5090}{}{Beetle}
-{5100}{}{Centipede}
+{5100}{}{Cave rat}
 {5110}{}{Cougar}
 {5120}{}{Cow}
 {5130}{}{Venus Mantrap}
-{5140}{}{Radtoad}
+{5140}{}{Desert Mantis}
 {5150}{}{Thornslinger}
 {5160}{}{Giant Wasp}
 {5170}{}{Young Alien}
@@ -544,3 +542,160 @@
 {5231}{}{Brahmin from a Brahmin Run}
 {5240}{}{Mother Squeak-Squeak}
 {5241}{}{The mighty Mother Squeak-Squeak, don't run, You'll only die tired.}
+{5250}{}{Pashtshuur}
+{5260}{}{Deathclaw}
+{5270}{}{Tough Deathclaw}
+{5280}{}{Mother Deathclaw}
+{5290}{}{Elder Deathclaw}
+{5300}{}{Mr Handy}
+{5310}{}{Repair Bot}
+{5320}{}{Robobrain}
+{5330}{}{Floating Eye Bot}
+{5340}{}{Sentry Bot}
+{5350}{}{Gun Turret}
+{5360}{}{Auto-Cannon}
+{5370}{}{Laser Gun Turret}
+{5380}{}{Female rebeliant}
+{5381}{}{Female rebeliant}
+{5390}{}{Rebeliant}
+{5391}{}{Male rebeliant}
+{5400}{}{Rebeliant}
+{5401}{}{Male rebeliant}
+{5410}{}{Melee female rebeliant}
+{5411}{}{Female rebeliant}
+{5420}{}{Long hair rebeliant}
+{5421}{}{Long hair rebeliant}
+{5430}{}{Bald rebeliant}
+{5431}{}{Bald rebeliant}
+{5440}{}{Female renegade}
+{5441}{}{Female renegade}
+{5450}{}{Male renegade}
+{5451}{}{Male renegade}
+{5460}{}{Tough female renegade}
+{5461}{}{Tough female renegade}
+{5470}{}{Tough male renegade}
+{5471}{}{Tough male renegade}
+{5480}{}{Bald renegade}
+{5481}{}{Bald renegade}
+{5490}{}{Master Elite Nightkin}
+{5491}{}{Master Elite Nightkin}
+{5500}{}{Master Elite Supermutant}
+{5501}{}{Master Elite Supermutant}
+{5510}{}{Master Elite Leader}
+{5511}{}{Master Elite Leader}
+{5520}{}{Master Elite Tough Nightkin}
+{5521}{}{Master Elite Tough Nightkin}
+{5530}{}{Master Elite Tough Supermutant}
+{5531}{}{Master Elite Tough Supermutant}
+{5540}{}{Female Mad Warrior}
+{5541}{}{Female Mad Warrior}
+{5550}{}{Male Mad Warrior}
+{5560}{}{Female Mad Warrior}
+{5570}{}{Male Mad Warrior}
+{5580}{}{Bald Black Mad Warrior}
+{5590}{}{Long Hair Mad Warrior}
+{5600}{}{Long Hair Tough Mad Warrior}
+{5610}{}{Bald Mad Warrior}
+{5620}{}{Melchior's Deathclaw}
+{5630}{}{Melchior's Fire Gecko}
+{5640}{}{Melchior's Centaur}
+{5650}{}{Melchior's Floater}
+{5660}{}{Melchior}
+{5670}{}{Purple Children of Colt}
+{5671}{}{Male member of Children of Colt}
+{5680}{}{Blue Children of Colt}
+{5690}{}{Brown Children of Colt}
+{5700}{}{Black Children of Colt}
+{5710}{}{Sand Children of Colt}
+{5720}{}{Endless Walker}
+{5730}{}{Tough Endless Walker}
+{5740}{}{Endless Walker's Guard}
+{5750}{}{Endless Walker's Tough Guard}
+{5760}{}{Mr Handy}
+{5770}{}{Amplified Mr Handy}
+{5780}{}{Brain Bot}
+{5790}{}{Adaptive Brain Bot}
+{5800}{}{Eye Bot}
+{5810}{}{Improved Eye Bot}
+{5820}{}{Sentry Bot}
+{5830}{}{Corrected Sentry Bot}
+{5840}{}{Boosted Sentry Bot}
+{5850}{}{Master Molerat}
+{5860}{}{Mutated Molerat}
+{5870}{}{Mutated Pigrat}
+{5880}{}{Mutated Rat}
+{5890}{}{Caravan Leader}
+{5900}{}{Desert Hunter Male}
+{5910}{}{Desert Hunter Female}
+{5920}{}{Sentry Bot Mk II}
+{5930}{}{Uber Sentry Bot}
+{5940}{}{Vault Raider}
+{5950}{}{Vault Raider}
+{5960}{}{Vault Raider}
+{5970}{}{Vault Raider}
+{5980}{}{Vault Raider}
+{5990}{}{Vault Raider}
+{8000}{}{Mother Centaur}
+{8010}{}{Mother Floater}
+{8020}{}{Mother Alien}
+{8030}{}{Father Deathclaw}
+{8040}{}{Mother Fire Gecko}
+{8050}{}{Mother Gecko}
+{8060}{}{R.R.R.R. Agency Man}
+{8061}{}{Rick Ron Roy Robbers Agency}
+{8070}{}{R.R.R.R. Agency Green Hair}
+{8071}{}{Rick Ron Roy Robbers Agency}
+{8080}{}{R.R.R.R. Agency Woman}
+{8081}{}{Rick Ron Roy Robbers Agency}
+{8090}{}{R.R.R.R. Agency Long Hair}
+{8091}{}{Rick Ron Roy Robbers Agency}
+{8100}{}{R.R.R.R. Agency Bald Man}
+{8101}{}{Rick Ron Roy Robbers Agency}
+{8110}{}{Ronin Long Hair}
+{8120}{}{Ronin Bald Man}
+{8130}{}{Ronin Man}
+{8140}{}{Adicted Miners}
+{8150}{}{Fallen Paladin Pvt.}
+{8160}{}{Fallen Paladin Sgt.}
+{8170}{}{Fallen Paladin Pvt.}
+{8180}{}{Fallen Paladin Cpl.}
+{8190}{}{Fallen Paladin Col.}
+{8200}{}{Fallen Paladin Cpt.}
+{8210}{}{Fallen Paladin Pvt.}
+{8220}{}{Fallen Paladin Sgt.}
+{8230}{}{Fallen Paladin Pvt.}
+{8240}{}{Fallen Paladin Cpl.}
+{8250}{}{Locker Guard - NeedlerPistol_APammo}
+{8260}{}{Locker Guard - HK Caws_fioletowe}
+{8270}{}{Locker Guard - Ripper}
+{8280}{}{Locker Guard - Laser Rifle}
+{8290}{}{Locker Guard - Minigun_APammo}
+{8300}{}{Locker Guard - P90_AP}
+{8310}{}{Crater Ghoul - Claw}
+{8320}{}{Crater Ghoul - HK Caws}
+{8330}{}{Crater Ghoul - Assult Rifle}
+{8340}{}{Crater Ghoul - FN FAL HPFA}
+{8350}{}{Crater Ghoule - 223 pistol}
+{8360}{}{Crater Ghoul - SMG}
+{8370}{}{Crater Ghoul - Hunting rifle}
+{8380}{}{Crater Ghoul - Ripper}
+{8390}{}{Crater Ghoul - Combat Shotgun}
+{8400}{}{Crater Ghoul - Greas Gun}
+{8410}{}{Ares Mutant - Laser Rifle}
+{8420}{}{Ares Mutant - M60}
+{8430}{}{Ares Mutant - LSW}
+{8440}{}{Ares Mutant - Improved Flamer}
+{8450}{}{Ares Mutant - Plasma Rifle}
+{8460}{}{Ares Mutant - Minigun}
+{8470}{}{Ares Mutant - Avenger}
+{8480}{}{Ares Mutant - MidBoss Gatling Laser}
+{8490}{}{Ares Mutant - Bozar}
+{8500}{}{Ares Mutant - YK Pulse Rifle}
+{8510}{}{Ares Mutant - Boss Vindicator}
+{8520}{}{Ares Mutant - Rocket Launcher}
+{8530}{}{Sewer Scavenger}
+{8540}{}{Sewer Scavenger}
+{8550}{}{Sewer Scavenger}
+{8560}{}{Sewer Scavenger}
+{8570}{}{Sewer Scavenger}
+{8580}{}{Sewer Scavenger}

@@ -25,6 +25,7 @@ void item_init(Item& item, bool firstTime)
     // set events
     item.SetEvent(ITEM_EVENT_SKILL, "_UseSkill");
     item.SetEvent(ITEM_EVENT_DROP, "_Drop");
+    item.SetEvent(ITEM_EVENT_MOVE, "_Move");
 }
 
 void _Campfire(Item& item, bool firstTime)   // WIPENIGHT: old campfire
@@ -37,6 +38,7 @@ void _Primitive(Item& item, bool firstTime)
     // set events
     item.SetEvent(ITEM_EVENT_SKILL, "_UseSkillPrimitive");
     item.SetEvent(ITEM_EVENT_DROP, "_Drop");
+    item.SetEvent(ITEM_EVENT_MOVE, "_Move");
 }
 
 void _Advanced(Item& item, bool firstTime)
@@ -44,6 +46,7 @@ void _Advanced(Item& item, bool firstTime)
     // set events
     item.SetEvent(ITEM_EVENT_SKILL, "_UseSkillAdvanced");
     item.SetEvent(ITEM_EVENT_DROP, "_Drop");
+    item.SetEvent(ITEM_EVENT_MOVE, "_Move");
 }
 
 void _Tobacco(Item& item, bool firstTime)
@@ -51,6 +54,7 @@ void _Tobacco(Item& item, bool firstTime)
     // set events
     item.SetEvent(ITEM_EVENT_SKILL, "_UseSkillTobacco");
     item.SetEvent(ITEM_EVENT_DROP, "_Drop");
+    item.SetEvent(ITEM_EVENT_MOVE, "_Move");
 }
 
 void _Raiders(Item& item, bool firstTime)
@@ -58,6 +62,7 @@ void _Raiders(Item& item, bool firstTime)
     // set events
     item.SetEvent(ITEM_EVENT_SKILL, "_UseSkillRaiders");
     item.SetEvent(ITEM_EVENT_DROP, "_Drop");
+    item.SetEvent(ITEM_EVENT_MOVE, "_Move");
 }
 
 void _SierraAmmo(Item& item, bool firstTime)
@@ -65,6 +70,7 @@ void _SierraAmmo(Item& item, bool firstTime)
     // set events
     item.SetEvent(ITEM_EVENT_SKILL, "_UseSkillSierraAmmo");
     item.SetEvent(ITEM_EVENT_DROP, "_Drop");
+    item.SetEvent(ITEM_EVENT_MOVE, "_Move");
 }
 
 void _SierraMed(Item& item, bool firstTime)
@@ -72,6 +78,7 @@ void _SierraMed(Item& item, bool firstTime)
     // set events
     item.SetEvent(ITEM_EVENT_SKILL, "_UseSkillSierraMed");
     item.SetEvent(ITEM_EVENT_DROP, "_Drop");
+    item.SetEvent(ITEM_EVENT_MOVE, "_Move");
 }
 
 void _VCMed(Item& item, bool firstTime)
@@ -79,10 +86,16 @@ void _VCMed(Item& item, bool firstTime)
     // set events
     item.SetEvent(ITEM_EVENT_SKILL, "_UseSkillVCMed");
     item.SetEvent(ITEM_EVENT_DROP, "_Drop");
+    item.SetEvent(ITEM_EVENT_MOVE, "_Move");
 }
 
 // removes item if dropped
 void _Drop(Item& item, Critter& cr)
+{
+    DeleteItem(item);
+}
+
+void _Move(Item& item, Critter& cr, uint8 fromSlot)
 {
     DeleteItem(item);
 }
@@ -353,11 +366,11 @@ bool s_Power_SAD(Critter& player, Scenery& terminal, int skill, Item@ item)
 
     if(player.IsPlayer() && skill == SK_REPAIR && !valid(item))
     {
-        int check = Random(140, 200);           // check
+        int check = Random(80, 120);           // check
 
         if(power == 0)
         {
-            if(((player.Skill[SK_REPAIR] + player.Stat[ST_LUCK] * 10) > check))
+            if(((player.Skill[SK_REPAIR]) > check))
             {
                 power = 1;
                 // DLog("Gvar == " + power);

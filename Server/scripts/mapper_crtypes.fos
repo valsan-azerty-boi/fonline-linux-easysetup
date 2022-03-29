@@ -134,6 +134,7 @@ void NormalizeCrtype(MapperObject@ critter)
         return;
     uint16 pid = GetArmorPid(critter);
     uint   implied = critter.Critter_ParamValue8;
+	//Log("ArmorPid= " + pid + "  Critter_ParamValue8= " + implied);
     if(implied == 0)
     {
         if(pid == 0)
@@ -142,9 +143,11 @@ void NormalizeCrtype(MapperObject@ critter)
         {
             ProtoItem@ proto = GetProtoItem(pid);
             implied = critter.CritterCl_GetParam(ST_GENDER) == GENDER_MALE ? proto.Armor_CrTypeMale : proto.Armor_CrTypeFemale;
+			//Log("NOWE Critter_ParamValue8= " + implied);
         }
+		
+		UpdateImplied(critter, pid, implied);
     }
-    UpdateImplied(critter, pid, implied);
     if(implied != critter.CritterCl_GetBaseType())
         ChangeCrtype(critter, implied);
 }

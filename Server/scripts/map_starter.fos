@@ -19,8 +19,9 @@ void map_init(Map& map, bool firstTime)
 
 void _OnLeaveMap(Map& map, Critter& cr)
 {
-    if(map.Id != 0)
+    if(valid(cr.GetMap()))
         return;
+
     Location@ loc = map.GetLocation();
     if(valid(loc))
         DeleteLocation(loc.Id);

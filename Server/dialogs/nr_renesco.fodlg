@@ -25,7 +25,8 @@ lang=engl
 100 2070 D _var n name_mem_npc_player = 1 D _var n acquaintance = 0 D _var p factions_q_vc_kohl_books = 11 #
 23 2080 D _var n name_mem_npc_player > 0 #
 21 2090 D _var n name_mem_npc_player > 0 #
-0 2100 @
+70 2100 #
+0 2110 @
 3 3000 None 0 #
 6 3010 D _param p ST_CHARISMA > 4 R _var n name_mem_npc_player = 1 #
 6 3020 D _param p ST_CHARISMA < 5 R _var n name_mem_npc_player = 1 #
@@ -161,7 +162,15 @@ lang=engl
 56 42010 @
 56 43000 None 0 #
 0 43010 R _var p q_redding_mcgrew_runner = 4 R _param p ST_EXPERIENCE + 2000 @
-57 44000 None 0 &
+57 44000 None 0 @
+70 45000 None 0 #
+71 45010 D _item p PID_BOTTLE_CAPS > 7499 R _script dialog@r_RemoveMoney 1 7500 R _item p PID_BLUEPRINT_BUFFOUT + 1 #
+71 45020 D _item p PID_BOTTLE_CAPS > 6999 R _script dialog@r_RemoveMoney 1 7000 R _item p PID_BLUEPRINT_MENTATS + 1 #
+71 45030 D _item p PID_BOTTLE_CAPS > 5999 R _script dialog@r_RemoveMoney 1 6000 R _item p PID_BLUEPRINT_JET + 1 #
+71 45040 D _item p PID_BOTTLE_CAPS > 9999 R _script dialog@r_RemoveMoney 1 10000 R _item p PID_BLUEPRINT_PSYCHO + 1 #
+0 45050 @
+71 46000 None 0 #
+0 46010 &
 
 [engl]
 {100}{}{Renesco}
@@ -183,7 +192,8 @@ lang=engl
 {2070}{}{Hey, I've heard you've got a couple First Aid manuals lying around. Mind if I have one?}
 {2080}{}{You have an interesting vocabulary... Renesco. Are you from around here?}
 {2090}{}{Hey, nice pair of glasses you got there.}
-{2100}{}{Man, am I in the wrong place. Goodbye.}
+{2100}{}{Do you have any blueprints for sale?}
+{2110}{}{Man, am I in the wrong place. Goodbye.}
 {3000}{}{Me? Oh, I'm just jolly Saint Nick, you cranially challenged half-wit.}
 {3010}{}{Well, I'm glad I don't have to introduce myself then. What do you do here, "Nick?"}
 {3020}{}{Saint Nick? Who the hell is that?}
@@ -320,4 +330,12 @@ lang=engl
 {43000}{}{Yes, yes, for everyone. Go and tell the people of Redding their next shipment will be considerably larger than before.}
 {43010}{}{Fantastic. I'll go tell Dangerous Dan.}
 {44000}{}{Look, I have no idea what makes you think I'd buy anything from a brahmin-thief like you. Just get the hell outta here, pest.}
+{45000}{}{Yeah, I've got some blueprints right here. Buffout for 7.500 caps, Mentats for 7.000 caps, Jet for 6.000 caps and Psycho for 10.000 caps. Are you interested?}
+{45010}{}{I'd like Buffout blueprint.}
+{45020}{}{I'd like Mentats blueprint.}
+{45030}{}{I'd like Jet blueprint.}
+{45040}{}{I'd like Psycho blueprint.}
+{45050}{}{Nevermind, I'm outta here.}
+{46000}{}{Here's your blueprint. Come back if you need another one.}
+{46010}{}{Thanks, man!}
 

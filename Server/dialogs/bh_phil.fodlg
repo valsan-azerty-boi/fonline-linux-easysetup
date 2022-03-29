@@ -61,12 +61,12 @@ lang=engl
 16 14000 None 0 #
 9 14010 #
 0 14020 @
-17 15000 None 0 #
+17 15000 dialog@dlg_SayBuyNuka 0 #
 21 15010 D _item p PID_BOTTLE_CAPS > 99 R _item p PID_NUKA_COLA + 1 R _script dialog@r_RemoveMoney 1 100 #
 24 15020 D _item p PID_BOTTLE_CAPS > 100 R _var p loyality + 1 R _item p PID_NUKA_COLA + 1 R _script dialog@r_RemoveMoney 1 101 #
 25 15030 D _item p PID_BOTTLE_CAPS > 101 R _var p loyality + 2 R _item p PID_NUKA_COLA + 1 R _script dialog@r_RemoveMoney 1 102 #
 20 15040 @
-18 16000 None 0 #
+18 16000 dialog@dlg_SayBuyBeer 0 #
 21 16010 D _item p PID_BOTTLE_CAPS > 9 R _item p PID_BEER + 1 R _script dialog@r_RemoveMoney 1 10 #
 24 16020 D _item p PID_BOTTLE_CAPS > 10 R _var p loyality + 1 R _item p PID_BEER + 1 R _script dialog@r_RemoveMoney 1 11 #
 25 16030 D _item p PID_BOTTLE_CAPS > 11 R _var p loyality + 2 R _item p PID_BEER + 1 R _script dialog@r_RemoveMoney 1 12 #
@@ -128,30 +128,30 @@ lang=engl
 {1050}{}{Idiot unknown}
 {1060}{}{Idiot known}
 {1070}{}{Low karma}
-{2000}{}{Howdy, stranger. Welcome to town. What’s your name?}
+{2000}{}{Howdy, stranger. Welcome to town. What's your name?}
 {2010}{}{Doi?}
 {2020}{}{@pname@!}
-{3000}{}{Howdy, stranger. Welcome to town. What’s your name?}
+{3000}{}{Howdy, stranger. Welcome to town. What's your name?}
 {3010}{}{@pname@.}
 {3020}{}{None of your business, pal.}
-{3030}{}{Well, I’m kind of undercover right now.}
-{4000}{}{Doi’s your name? Ha! Just kidding, pal. Try not to disturb the other customers.}
+{3030}{}{Well, I'm kind of undercover right now.}
+{4000}{}{Doi's your name? Ha! Just kidding, pal. Try not to disturb the other customers.}
 {4010}{}{Ganks!}
 {5000}{}{@pname@, eh? Well, pleased to meet you, bucko. Want something to drink?}
 {5010}{}{Grink yes!}
 {5020}{}{Oh no. No no no no.}
-{6000}{}{@pname@, pleased to meet you. I’m Phil. I own this place. Now… what’ll it be?}
+{6000}{}{@pname@, pleased to meet you. I'm Phil. I own this place. Now: what'll it be?}
 {6010}{}{Nuka-Cola.}
 {6020}{}{Beer.}
 {6030}{}{Nothing.}
 {6040}{}{Nothing, sorry. Bye!}
-{7000}{}{Fine, pal. Be that way. I’m Phil. I own this place and run it. What’ll it be?}
+{7000}{}{Fine, pal. Be that way. I'm Phil. I own this place and run it. What'll it be?}
 {7010}{}{Nuka-Cola.}
 {7020}{}{Beer.}
 {7030}{}{Rotgut.}
 {7040}{}{Nothing.}
 {7050}{}{Nothing, sorry. Bye!}
-{8000}{}{Undercover, eh? I guess I can understand that. I’m Phil, by the way. What’ll it be?}
+{8000}{}{Undercover, eh? I guess I can understand that. I'm Phil, by the way. What'll it be?}
 {8010}{}{Nuka-Cola.}
 {8020}{}{Beer.}
 {8030}{}{Rotgut.}
@@ -161,54 +161,54 @@ lang=engl
 {9010}{}{Deer!}
 {9020}{}{Gola!}
 {9030}{}{Nuffiiiink.}
-{10000}{}{Well, you just let me know when you want something and I’ll get you set up, friend. Try not to disturb the other customers, all right?}
+{10000}{}{Well, you just let me know when you want something and I'll get you set up, friend. Try not to disturb the other customers, all right?}
 {10010}{}{O-tay!}
-{11000}{}{One beer it is. That’ll be 10 caps, plus one cap tip for me. That’s 11 caps, kiddo.}
-{11010}{}{‘Ere!}
+{11000}{}{One beer it is. That'll be 10 caps, plus one cap tip for me. That's 11 caps, kiddo.}
+{11010}{}{'Ere!}
 {11020}{}{No have.}
-{12000}{}{Good for you, good for your skin. That’s 100 caps. I’ll even let you off without tipping me. That’s 100 caps, straight up.}
-{12010}{}{‘Ere!}
+{12000}{}{Good for you, good for your skin. That's 100 caps. I'll even let you off without tipping me. That's 100 caps, straight up.}
+{12010}{}{'Ere!}
 {12020}{}{No have.}
 {13000}{}{@pname@! You want something to drink?}
-{13010}{}{Grink ‘es!}
+{13010}{}{Grink 'es!}
 {13020}{}{Grink no!}
 {14000}{}{Hey, Doi! Welcome back. Got your seat all warmed up for you back there.}
 {14010}{}{Grink?}
 {14020}{}{Anks. Byefil.}
-{15000}{}{That’ll be 100 caps.}
+{15000}{}{That'll be 100 caps. [You can use SAY to enter number of items you want to buy]}
 {15010}{}{Thanks.}
 {15020}{}{[Give Phil a $1 Tip] Here you go, Phil.}
 {15030}{}{[Give Phil a $2 Tip] Thanks, Phil.}
-{15040}{}{Oops, I’m tapped.}
-{16000}{}{That’ll be 10 caps.}
+{15040}{}{Oops, I'm tapped.}
+{16000}{}{That'll be 10 caps. [You can use SAY to enter number of items you want to buy]}
 {16010}{}{Thanks.}
 {16020}{}{[Give Phil a $1 Tip] Here you go, Phil.}
 {16030}{}{[Give Phil a $2 Tip] Thanks, Phil.}
-{16040}{}{Oops, I’m tapped.}
-{17000}{}{Tapped, eh? Too bad. You can stick around here, but don’t bug the customers. I got work to do. See you.}
+{16040}{}{Oops, I'm tapped.}
+{17000}{}{Tapped, eh? Too bad. You can stick around here, but don't bug the customers. I got work to do. See you.}
 {17010}{}{Fine, bye.}
 {18000}{}{Anything else?}
 {18010}{}{I want more to drink.}
-{18020}{}{What’s been going on in town?}
-{18030}{}{What’s there to do around here?}
+{18020}{}{What's been going on in town?}
+{18030}{}{What's there to do around here?}
 {18040}{}{Nothing. Forget it.}
 {19000}{}{Hey, thanks! Anything else?}
 {19010}{}{I want more to drink.}
-{19020}{}{What’s been going on in town?}
-{19030}{}{What’s there to do around here?}
+{19020}{}{What's been going on in town?}
+{19030}{}{What's there to do around here?}
 {19040}{}{Nothing. Forget it.}
 {20000}{}{Wow! Thanks! Anything else I can do for you?}
 {20010}{}{I want more to drink.}
-{20020}{}{What’s been going on in town?}
-{20030}{}{What’s there to do around here?}
+{20020}{}{What's been going on in town?}
+{20030}{}{What's there to do around here?}
 {20040}{}{Nothing. Forget it.}
-{21000}{}{What’s been going on in town? Well… a couple of loons’ve been locked up for spreading hate propaganda. Caravans all over the place. That’s about normal.}
+{21000}{}{What's been going on in town? Well: a couple of loons've been locked up for spreading hate propaganda. Caravans all over the place. That's about normal.}
 {21010}{}{Thanks. I have more questions.}
 {21020}{}{Thanks. Bye.}
-{22000}{}{There’s always a caravan headed out someplace. If you wanna be part of one of those, you can talk to the Bill, the Outfitter. Other than that, we haven’t got much to do in this place. Sorry.}
+{22000}{}{There's always a caravan headed out someplace. If you wanna be part of one of those, you can talk to the Bill, the Outfitter. Other than that, we haven't got much to do in this place. Sorry.}
 {22010}{}{Thanks! I have a few more questions.}
-{22020}{}{All right. Well, I’m outta here. See ya.}
-{23000}{}{‘Til you’re buying, I ain’t talking. What’s your pleasure?}
+{22020}{}{All right. Well, I'm outta here. See ya.}
+{23000}{}{Til you're buying, I ain't talking. What's your pleasure?}
 {23010}{}{Nuka-Cola.}
 {23020}{}{Beer.}
 {23030}{}{Rotgut.}
@@ -224,8 +224,8 @@ lang=engl
 {26010}{}{I want a drink, Phil.}
 {26020}{}{Nothing, I've got a few questions.}
 {26030}{}{Nothing, bye.}
-{27000}{}{Nothing? Ha. Ha. You don’t park yourself here without drinking something, friend. I gotta pay the bills, too. Let’s try that again. SO! What’ll it be?}
+{27000}{}{Nothing? Ha. Ha. You don't park yourself here without drinking something, friend. I gotta pay the bills, too. Let's try that again. SO! What'll it be?}
 {27010}{}{Fine, I'll buy a drink.}
-{27020}{}{Forget it. I’m out of here.}
+{27020}{}{Forget it. I'm out of here.}
 {28000}{}{Get the heck outta my bar@@No, I don't want to be your friend.@@Just 'cause I'm a ghoul don't mean I don't got standards.@@Sheesh, I gotta wonder why I attract the freaks. Like flies to shit, y'know?}
 

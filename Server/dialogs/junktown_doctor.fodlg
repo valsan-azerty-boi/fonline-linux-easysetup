@@ -21,7 +21,7 @@ lang=engl
 6 2030 #
 80 2040 D _param p PE_PROFESSION_DOCTOR < 2 #
 60 2050 D _var p q_jt_sneakeater = 0 #
-63 2060 D _var p q_jt_sneakeater = 1 D _item p PID_SCORPION_EGG } 5 R _param p ST_EXPERIENCE + 250 R _var p q_jt_sneakeater = 3 R _item p PID_ANTIDOTE + 3 R _item p PID_SCORPION_EGG - 5 R _script quest_jt_scorpion@r_DeleteMap 0  R _script dialog@r_AddMoney 1 100 #
+63 2060 D _var p q_jt_sneakeater = 1 D _item p PID_SCORPION_EGG } 5 R _param p ST_EXPERIENCE + 1250 R _var p q_jt_sneakeater = 3 R _item p PID_ANTIDOTE + 3 R _item p PID_SCORPION_EGG - 5 R _script quest_jt_scorpion@r_DeleteMap 0  R _script dialog@r_AddMoney 1 400 #
 64 2070 D _var p q_jt_sneakeater_perk = 0 D _var p q_jt_sneakeater = 3 #
 0 2080 @
 3 3000 None 0 #
@@ -82,8 +82,8 @@ lang=engl
 65 23010 #
 0 23020 @
 65 24000 None 0 #
-66 24010 D _param p ST_ENDURANCE } 6 R _var p q_jt_sneakeater_perk = 1 R _param p ST_EXPERIENCE + 250 R _param p PE_SNAKEATER = 1 #
-66 24020 D _param p ST_ENDURANCE < 6 R _var p q_jt_sneakeater_perk = 1 R _param p ST_EXPERIENCE + 250 #
+66 24010 D _param p ST_ENDURANCE } 6 R _var p q_jt_sneakeater_perk = 1 R _param p ST_EXPERIENCE + 450 R _param p PE_SNAKEATER = 1 #
+66 24020 D _param p ST_ENDURANCE < 6 R _var p q_jt_sneakeater_perk = 1 R _param p ST_EXPERIENCE + 450 #
 2 24030 #
 0 24040 @
 66 25000 None 0 #

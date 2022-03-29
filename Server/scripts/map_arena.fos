@@ -17,6 +17,7 @@
 
 import void ProcessArena(Map& map) from "arena";
 import void InitArenas(Map& map) from "arena";
+import void InitLobby(Map& map) from "arena";
 
 void map_init(Map& map, bool firstTime)
 {
@@ -25,6 +26,7 @@ void map_init(Map& map, bool firstTime)
     map.SetEvent(MAP_EVENT_LOOP_0, "_Arenas");
     map.SetLoopTime(0, 4500);
     InitArenas(map);
+    InitLobby(map);
 }
 
 void _Arenas(Map& map)

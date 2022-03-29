@@ -1,5 +1,6 @@
 [comment]
 
+
 [data]
 lang=engl
 
@@ -38,8 +39,8 @@ lang=engl
 0 11010 @
 17 12000 None 0 @
 18 13000 None 0 #
-19 13010 R _item p PID_14MM_PISTOL + 1 R _param p REPUTATION_COMMUNISTS + 250 R _var p q_frisco_subway = 4 R _item p PID_14MM_AP + 15 R _param p ST_EXPERIENCE + 250 #
-20 13020 R _param p REPUTATION_COMMUNISTS + 250 R _script dialog@r_AddMoney 1 1000 R _var p q_frisco_subway = 4 R _param p ST_EXPERIENCE + 250 @
+19 13010 R _item p PID_14MM_PISTOL + 1 R _param p REPUTATION_COMMUNISTS + 250 R _var p q_frisco_subway = 4 R _item p PID_14MM_AP + 15 R _param p ST_EXPERIENCE + 2500 #
+20 13020 R _param p REPUTATION_COMMUNISTS + 250 R _script dialog@r_AddMoney 1 1000 R _var p q_frisco_subway = 4 R _param p ST_EXPERIENCE + 2500 @
 19 14000 None 0 #
 0 14010 @
 20 15000 None 0 #

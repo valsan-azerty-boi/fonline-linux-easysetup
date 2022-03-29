@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              152
 MaxHexY              147
-WorkHexX             89
-WorkHexY             69
+WorkHexX             71
+WorkHexY             58
 ScriptModule         -
 ScriptFunc           -
 NoLogOut             0
@@ -22247,7 +22247,6 @@ MapObjType           1
 ProtoId              63
 MapX                 61
 MapY                 58
-UID                  3
 OffsetX              5
 OffsetY              -2
 
@@ -23803,13 +23802,6 @@ ProtoId              5622
 MapX                 79
 MapY                 62
 
-MapObjType           1
-ProtoId              2361
-MapX                 77
-MapY                 62
-OffsetX              -5
-OffsetY              -12
-
 MapObjType           2
 ProtoId              2067
 MapX                 82
@@ -24732,11 +24724,5 @@ Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  0
 Critter_ParamIndex9  ST_LEVEL
 Critter_ParamValue9  0
-
-MapObjType           1
-ProtoId              86
-MapX                 61
-MapY                 58
-ContainerUID         3
 
 

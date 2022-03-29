@@ -1,5 +1,6 @@
 [comment]
 
+
 [data]
 lang=engl
 
@@ -78,15 +79,15 @@ lang=engl
 0 21010 @
 22 22000 None 0 #
 0 22010 @
-23 23000 Attack 0 #
+23 23000 None 0 #
 0 23010 @
-24 24000 Attack 0 #
+24 24000 None 0 #
 0 24010 R _var n name_mem_npc_player = 2 #
 0 24020 @
-25 25000 Attack 0 #
+25 25000 None 0 #
 12 25010 #
 20 25020 @
-26 26000 Attack 0 #
+26 26000 None 0 #
 0 26010 &
 
 [engl]

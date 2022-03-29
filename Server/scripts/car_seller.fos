@@ -46,11 +46,16 @@
 #define CAR_COCKROACH                (4)
 #define CAR_CARAVAN_ORANGE           (5)
 #define CAR_CARAVAN_WHITE            (6)
+#define CAR_POLICE_CAR				 (7)
+#define CAR_MOTORCYCLE				 (8)
+#define CAR_FIRETRUCK				 (9)
+#define CAR_TRUCK					 (10)
+#define CAR_CORVEGA					 (11)
 
-#define CAR_COUNT                    (7)
+#define CAR_COUNT                    (12)
 
 #define CAR_PRICE_UPDATE_INTERVAL    (REAL_MINUTE(30))
-#define CAR_MINIMUM_PRICE            (3000)     // Car price can't go under this price.
+#define CAR_MINIMUM_PRICE            (5000)     // Car price can't go under this price.
 
 #define KEY_COPY_COST                (1000)
 
@@ -64,8 +69,8 @@ Serializator serializer;
 
 void InitCars()
 {
-    if(IS_FIRST_TIME)
-    {
+    //if(IS_FIRST_TIME)
+    //{
         SetGvar(GVAR_car_id, CARS_INIT_ID);
         CarPrices.resize(CAR_COUNT);
         CarPrices[CAR_HUMMER] = GetProtoItem(PID_HUMMER).Cost;
@@ -75,10 +80,15 @@ void InitCars()
         CarPrices[CAR_COCKROACH] = GetProtoItem(PID_COCKROACH).Cost;
         CarPrices[CAR_CARAVAN_ORANGE] = GetProtoItem(PID_CARAVAN_ORANGE).Cost;
         CarPrices[CAR_CARAVAN_WHITE] = GetProtoItem(PID_CARAVAN_WHITE).Cost;
-        CreateTimeEvent(AFTER(CAR_PRICE_UPDATE_INTERVAL), "e_UpdateCarPrices", true);
-    }
-    else
-        LoadCarPriceData();
+		CarPrices[CAR_POLICE_CAR] = GetProtoItem(PID_POLICE_CAR).Cost;
+		CarPrices[CAR_MOTORCYCLE] = GetProtoItem(PID_MOTORCYCLE).Cost;
+		CarPrices[CAR_FIRETRUCK] = GetProtoItem(PID_FIRETRUCK).Cost;
+		CarPrices[CAR_TRUCK] = GetProtoItem(PID_TRUCK).Cost;
+		CarPrices[CAR_CORVEGA] = GetProtoItem(PID_CORVEGA).Cost;
+        //CreateTimeEvent(AFTER(CAR_PRICE_UPDATE_INTERVAL), "e_UpdateCarPrices", true);
+    //}
+    //else
+    //    LoadCarPriceData();
 }
 
 void SetPrice(uint index, int value)
@@ -124,6 +134,16 @@ uint PidToIndex(uint16 protoCar)
         return 5;
     case PID_CARAVAN_WHITE:
         return 6;
+	case PID_POLICE_CAR:
+		return 7;
+	case PID_MOTORCYCLE:
+		return 8;
+	case PID_FIRETRUCK:
+		return 9;
+	case PID_TRUCK:
+		return 10;
+	case PID_CORVEGA:
+		return 11;
     default:
         return 0;
     }
@@ -169,12 +189,33 @@ string PidToStr(uint16 protoCar)
         return "PID_CARAVAN_ORANGE";
     case PID_CARAVAN_WHITE:
         return "PID_CARAVAN_WHITE";
+	case PID_POLICE_CAR:
+		return "PID_POLICE_CAR";
+	case PID_MOTORCYCLE:
+		return "PID_MOTORCYCLE";
+	case PID_FIRETRUCK:
+		return "PID_FIRETRUCK";
+	case PID_TRUCK:
+		return "PID_TRUCK";
+	case PID_CORVEGA:
+		return "PID_CORVEGA";
     default:
         return "Unknown";
     }
     return "Unknown";
 }
 
+uint GetCarCost(uint16 protoCar)   // Export
+{
+    //uint       count = WorldItemCount(protoCar);
+    ProtoItem@ car = GetProtoItem(protoCar);
+    if(valid(car))
+        //return car.Cost + car.Cost * count;
+		return car.Cost;
+    return 0;
+}
+
+/*
 int GetCarCost(uint16 protoCar)
 {
     uint       count = WorldItemCount(protoCar);
@@ -185,6 +226,7 @@ int GetCarCost(uint16 protoCar)
     }
     return 0;
 }
+*/
 
 int GetFuelCost(Item@ car)
 {
@@ -213,6 +255,11 @@ void dlg_PrepareBuy(Critter& player, Critter@ tray, string@ lexems)
     lexems += "$cockroach" + GetCarCost(PID_COCKROACH);
     lexems += "$orange" + GetCarCost(PID_CARAVAN_ORANGE);
     lexems += "$white" + GetCarCost(PID_CARAVAN_WHITE);
+	lexems += "$policecar" + GetCarCost(PID_POLICE_CAR);
+	lexems += "$motorcycle" + GetCarCost(PID_MOTORCYCLE);
+	lexems += "$firetruck" + GetCarCost(PID_FIRETRUCK);
+	lexems += "$truck" + GetCarCost(PID_TRUCK);
+	lexems += "$corvega" + GetCarCost(PID_CORVEGA);
 }
 
 uint r_BuyHummer(Critter& player, Critter@ tray, int val)
@@ -250,9 +297,59 @@ uint r_BuyCaravanOrange(Critter& player, Critter@ tray, int val)
     return TryCreateCar(player, PID_CARAVAN_ORANGE);
 }
 
+uint r_BuyPoliceCar(Critter& player, Critter@ tray, int val)
+{
+    return TryCreateCar(player, PID_POLICE_CAR);
+}
+
+uint r_BuyMotorcycle(Critter& player, Critter@ tray, int val)
+{
+    return TryCreateCar(player, PID_MOTORCYCLE);
+}
+
+uint r_BuyFiretruck(Critter& player, Critter@ tray, int val)
+{
+    return TryCreateCar(player, PID_FIRETRUCK);
+}
+
+uint r_BuyTruck(Critter& player, Critter@ tray, int val)
+{
+    return TryCreateCar(player, PID_TRUCK);
+}
+
+uint r_BuyCorvega(Critter& player, Critter@ tray, int val)
+{
+    return TryCreateCar(player, PID_CORVEGA);
+}
+
 bool d_CanAffordCockroach(Critter& player, Critter@ someone)
 {
     return(_CritCountItem(player, PID_BOTTLE_CAPS) >= uint(GetCarCost(PID_COCKROACH)));
+}
+
+bool d_CanAffordPoliceCar(Critter& player, Critter@ someone)
+{
+    return(_CritCountItem(player, PID_BOTTLE_CAPS) >= uint(GetCarCost(PID_POLICE_CAR)));
+}
+
+bool d_CanAffordMotorcycle(Critter& player, Critter@ someone)
+{
+    return(_CritCountItem(player, PID_BOTTLE_CAPS) >= uint(GetCarCost(PID_MOTORCYCLE)));
+}
+
+bool d_CanAffordFiretruck(Critter& player, Critter@ someone)
+{
+    return(_CritCountItem(player, PID_BOTTLE_CAPS) >= uint(GetCarCost(PID_FIRETRUCK)));
+}
+
+bool d_CanAffordTruck(Critter& player, Critter@ someone)
+{
+    return(_CritCountItem(player, PID_BOTTLE_CAPS) >= uint(GetCarCost(PID_TRUCK)));
+}
+
+bool d_CanAffordCorvega(Critter& player, Critter@ someone)
+{
+    return(_CritCountItem(player, PID_BOTTLE_CAPS) >= uint(GetCarCost(PID_CORVEGA)));
 }
 
 bool d_CanNotAffordCockroach(Critter& player, Critter@ someone)
@@ -282,7 +379,8 @@ bool d_CanNotAffordCaravanOrange(Critter& player, Critter@ tray)
 
 uint TryCreateCar(Critter& player, uint16 protoCar)
 {
-    if(protoCar != PID_HUMMER && protoCar != PID_BUGGY && protoCar != PID_SCOUT && protoCar != PID_HIGHWAYMAN && protoCar != PID_COCKROACH && protoCar != PID_CARAVAN_WHITE && protoCar != PID_CARAVAN_ORANGE)
+    if(protoCar != PID_HUMMER && protoCar != PID_BUGGY && protoCar != PID_SCOUT && protoCar != PID_HIGHWAYMAN && protoCar != PID_COCKROACH && protoCar != PID_CARAVAN_WHITE && protoCar != PID_CARAVAN_ORANGE 
+	&& protoCar != PID_POLICE_CAR && protoCar != PID_MOTORCYCLE && protoCar != PID_FIRETRUCK && protoCar != PID_TRUCK && protoCar != PID_CORVEGA)
         return FD_GENERIC_ERROR;
 
     int cost = GetCarCost(protoCar);

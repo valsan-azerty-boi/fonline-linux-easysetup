@@ -4,7 +4,7 @@
 
 
 # Version info
-{1}{}{FOnline: 2238 Open Beta}
+{1}{}{FOnline}
 
 ####################################################################################################################################
 #
@@ -233,7 +233,7 @@
 {424}{}{Unarmed dmg:}
 {425}{}{You cannot pick that up. You are at your maximum weight capacity.}
 {426}{}{There is no space left for that item.}
-{429}{}{You gain %d experience points for successfully using your Steal skill.}
+{429}{}{|0xFFFFFF You gain %d experience points for successfully using your Steal skill.}
 {430}{}{Wt.}
 {433}{}{You can't find anything to take from that.}
 {434}{}{Ammo: VALUE/MAX_VALUE, AMMO}
@@ -361,8 +361,6 @@
 {790}{}{Transition timeout. Wait.}
 {791}{}{Combat timeout. Wait.}
 {792}{}{Sneak timeout. Wait.}
-{793}{}{You're too sleepy.}
-
 
 ####################################################################################################################################
 #
@@ -446,7 +444,7 @@
 {1041}{}{|4291317840 Knock-knock, anybody here?}
 {1042}{}{|4291317840 Discovered frequent registration from one IP address. Please try again later.}
 {1043}{}{|4291317840 Your IP is banned.}
-{1044}{}{|4291317840 Minimum time from one computer to one account is 10 minutes.}
+{1044}{}{|4291317840 Minimum time from one computer to one account is 3 minutes.}
 {1045}{}{|4291317840 Time left: @lex time@ minutes.}
 {1046}{}{|4291317840 You have been banned.}
 {1047}{}{|4291317840 Ban by: @lex banby@, Duration: @lex time@ hours, Comment: @lex reason@.}
@@ -612,17 +610,17 @@
 #
 #  Experience-gain messages
 #
-{4090}{}{You have gone up a level.}
-{4091}{}{You have gained VALUE experience points.}
-{4092}{}{You gain %d experience points for killing: %s.}
-{4093}{}{%s you earn %d exp. points.}
-{4094}{}{For defeating your enemies, }  # 622-626 prepend to line 621
-{4095}{}{For slaying your opponents, }
-{4096}{}{You are victorious in combat, }
-{4097}{}{For crushing your enemies, }
-{4098}{}{For destroying your enemies without taking a scratch, }
+{4090}{}{|0xFFFFFF You have gone up a level.}
+{4091}{}{|0xFFFFFF You have gained VALUE experience points.}
+{4092}{}{|0xFFFFFF You gain %d experience points for killing: %s.}
+{4093}{}{|0xFFFFFF %s you earn %d exp. points.}
+{4094}{}{|0xFFFFFF For defeating your enemies, }  # 622-626 prepend to line 621
+{4095}{}{|0xFFFFFF For slaying your opponents, }
+{4096}{}{|0xFFFFFF You are victorious in combat, }
+{4097}{}{|0xFFFFFF For crushing your enemies, }
+{4098}{}{|0xFFFFFF For destroying your enemies without taking a scratch, }
 
-{4099}{}{Your follower, @lex name@, has gone up a level.}
+{4099}{}{|0xFFFFFF Your follower, @lex name@, has gone up a level.}
 
 #
 # Editor
@@ -650,27 +648,27 @@
 #
 # Mob Wave warnings.
 # 
-{5000}{}{You hear shouting.}   # Humans
-{5001}{}{You hear thumping.}   # Super mutants
-{5002}{}{You hear gurgling.}   # Ghouls
-{5003}{}{You hear mooing.}     # Brahmins
-{5004}{}{You hear rattling.}   # Radscorpions
-{5005}{}{You hear squeaking.}  # Rats
-{5006}{}{You hear squealing.}  # Pigrats
-{5007}{}{You hear snorting.}   # Molerats
-{5008}{}{You hear slurping.}   # Floaters
-{5009}{}{You hear moaning.}    # Centaurs
-{5010}{}{You hear beeping.}    # Robots
-{5011}{}{You hear howling.}    # Dogs
-{5012}{}{You hear rustling.}   # Mantis
-{5013}{}{You hear growling.}   # Deathclaws
-{5014}{}{You hear crunching.}  # Desert stalkers
-{5015}{}{You hear hissing.}    # Geckos
-{5016}{}{You hear shrieking.}  # Aliens
-{5017}{}{You hear clicking.}   # Ants, Centipedes
-{5018}{}{You hear croaking.}   # Rad toads
+{5000}{}{|4291317840 You hear shouting.}   # Humans
+{5001}{}{|4291317840 You hear thumping.}   # Super mutants
+{5002}{}{|4291317840 You hear gurgling.}   # Ghouls
+{5003}{}{|4291317840 You hear mooing.}     # Brahmins
+{5004}{}{|4291317840 You hear rattling.}   # Radscorpions
+{5005}{}{|4291317840 You hear squeaking.}  # Rats
+{5006}{}{|4291317840 You hear squealing.}  # Pigrats
+{5007}{}{|4291317840 You hear snorting.}   # Molerats
+{5008}{}{|4291317840 You hear slurping.}   # Floaters
+{5009}{}{|4291317840 You hear moaning.}    # Centaurs
+{5010}{}{|4291317840 You hear beeping.}    # Robots
+{5011}{}{|4291317840 You hear howling.}    # Dogs
+{5012}{}{|4291317840 You hear rustling.}   # Mantis
+{5013}{}{|4291317840 You hear growling.}   # Deathclaws
+{5014}{}{|4291317840 You hear crunching.}  # Desert stalkers
+{5015}{}{|4291317840 You hear hissing.}    # Geckos
+{5016}{}{|4291317840 You hear shrieking.}  # Aliens
+{5017}{}{|4291317840 You hear clicking.}   # Ants, Centipedes
+{5018}{}{|4291317840 You hear croaking.}   # Rad toads
 
-{5099}{}{You hear something.}  # Other
+{5099}{}{|4291317840 You hear something.}  # Other
 
 
 #
@@ -860,6 +858,7 @@
 {10455}{}{You learn how to handle your guns better.}
 {10456}{}{You learn how to handle your energy guns better.}
 {10457}{}{You learn a lot about wilderness survival.}
+{10458}{}{You learn a lot about art of trading.}
 # Use on
 {10500}{}{The supplies in the Doctor's Bag run out.}
 {10501}{}{The supplies in the First Aid Kit run out.}
@@ -915,6 +914,7 @@
 {10917}{}{HN needler}
 {10918}{}{7.62mm}
 {10919}{}{.22 cal}
+{10920}{}{40mm}
 
 ####################################################################################################################################
 #
@@ -1203,12 +1203,12 @@
 {13011}{}{Hero for an hour (maximum carma)}
 {13021}{}{Event of an hour (maximum carma change in an hour)}
 
-{13030}{}{The leaders}
-{13031}{}{Biggest Mouth in the Wasteland - most chat messages}
-{13041}{}{Best Barter Alt - most trading}
+{13030}{}{The Leaders}
+{13031}{}{Chit-chat Master - most chat messages}
+{13041}{}{Best Trader - most trading}
 {13051}{}{Embarrassment Award - most deaths}
 {13061}{}{Charmer - the most charming}
-{13071}{}{Beserker Award - most kills}
+{13071}{}{Berserker Award - most kills}
 {13081}{}{True Man of the Wastes - the most well-travelled}
 {13091}{}{Gold Stethoscope award: the Wasteland's best doctor}
 {13101}{}{Cassidy Award - best marksman}
@@ -1223,11 +1223,13 @@
 {13171}{}{True Adventurer (Most quests completed)}
 {13181}{}{Cat Burglar (Most successful break ins)}
 {13191}{}{Bonecrusher (Highest sum of unarmed damage)}
-{13201}{}{Rockefeller Award (Richest)}
+{13201}{}{The Elder (Most experienced)}
 
-{13210}{}{Chosen one}
+#{13210}{}{Chosen one}
 {13211}{}{Chosen one (best of the best)}
 {13221}{}{Expert Excrement Expeditor}
+{13231}{}{Best Armorer (Most quality armors crafted)}
+{13241}{}{Best Gunsmith (Most quality weapons crafted)}
 
 {13300}{}{Town Control}
 {13301}{}{Faction controlling Modoc}
@@ -1236,6 +1238,19 @@
 {13331}{}{Faction controlling Broken Hills}
 {13341}{}{Faction controlling Den}
 {13351}{}{Faction controlling Redding}
+
+{13400}{}{Domination}
+{13401}{}{Faction dominating Modoc}
+{13411}{}{Faction dominating Klamath}
+{13421}{}{Faction dominating Gecko}
+{13431}{}{Faction dominating Broken Hills}
+{13441}{}{Faction dominating Den}
+{13451}{}{Faction dominating Redding}
+
+{13460}{}{Base Control}
+{13461}{}{Current Cathedral controller}
+{13471}{}{Current Mariposa Military Base controller}
+{13481}{}{Current Sierra Army Depot controller}
 
 ####################################################################################################################################
 #
@@ -1426,11 +1441,11 @@
 {102021}{}{Energy Weapons}
 {102022}{}{The care and feeding of energy-based weapons.  How to arm and operate weapons that use laser or plasma technology.}
 # SK_UNARMED
-{102031}{}{Unarmed}
-{102032}{}{A combination of martial arts, boxing and other hand-to-hand martial arts.  Combat with your hands and feet.}
+{102031}{}{Close Combat}
+{102032}{}{A combination of martial arts, non-ranged weapons in hand-to-hand, or melee combat - knives, sledgehammers, spears, clubs and so on.}
 # SK_MELEE_WEAPONS
-{102041}{}{Melee Weapons}
-{102042}{}{Using non-ranged weapons in hand-to-hand, or melee combat - knives, sledgehammers, spears, clubs and so on.}
+{102041}{}{Reserved}
+{102042}{}{This skill is no longer useful, but it might be changed some day.}
 # SK_THROWING
 {102051}{}{Throwing}
 {102052}{}{The skill of muscle-propelled ranged weapons, such as throwing knives, spears and grenades.}
@@ -1493,7 +1508,7 @@
 # TO_SK_STEAL, timeouts
 {102351}{}{Steal}
 # TO_WEAKENED
-{102361}{}{Weakened}
+# {102361}{}{Weakened}
 # TO_FIXBOY
 {102371}{}{Crafting}
 # 102380
@@ -1502,15 +1517,13 @@
 # # TO_TRANSFER, timeouts
 # {102391}{}{Transitions}
 # TO_REMOVE_FROM_GAME, timeouts
-{102401}{}{Exit game}
+# {102401}{}{Exit game}
 # TO_REPLICATION, timeouts
 {102411}{}{Replication}
 # TO_KARMA_VOTING, timeouts
 #{102421}{}{Voting}
 # TO_GATHERING
 {102431}{}{Gathering}
-# TO_SLEEPY, timeouts
-{102461}{}{Idling}
 # TO_SNEAK, timeouts
 # {102432}{}{Sneak}
 
@@ -1572,6 +1585,9 @@
 {102812}{}{This line shows the number of Rad Toads that you have put to death during your adventure.}
 {102821}{}{Thornslingers}
 {102822}{}{This line shows the number of plants you have weeded out of the world.}
+{102831}{}{Pashtshuurs}
+{102832}{}{The number of terrifying monsters you have killed during your adventure.}
+
 
 ####################################################################################################################################
 #
@@ -1669,7 +1685,7 @@
 {103282}{}{Mental Block is the ability to tune out any outside mental interference.  You must have learned this talent from a passing guru, or from a really late night at a bar.}
 # PE_LIFEGIVER
 {103291}{}{Lifegiver}
-{103292}{}{With each respective level of this Perk, you gain an additional 20, 30 and 40 Hit Points.  This is in addition to the hit points you already gain per level based off of your Endurance.}
+{103292}{}{With each respective level of this Perk, you gain an additional 40, 30 and 20 Hit Points.  This is in addition to the hit points you already gain per level based off of your Endurance.}
 # PE_DODGER
 {103301}{}{Dodger}
 {103302}{}{You are less likely to be hit in combat if you have this Perk. You gain a +20 to your Armor Class.}
@@ -1726,7 +1742,7 @@
 {103472}{}{With this Perk, you have gained the attention of a Mysterious Stranger, who will appear to help you from time to time.  If your ally is lost in combat, do not expect him (or her) to be replaced.}
 # PE_RANGER
 {103481}{}{Ranger}
-{103482}{}{Due to the extensive amount of time spent in the wilderness, you have learned to create the right items and tools necessary for survival. From now on, you will make a Safe House instead of a tent.}
+{103482}{}{Due to the extensive amount of time spend in the wilderness, you have learned to create the right items and tools necessary for survival. From now on, you will make a Safe House instead of a tent.}
 # PE_QUICK_POCKETS
 {103491}{}{Quick Pockets}
 {103492}{}{You have learned to pack your equipment better, your increased dexterity enables you to retrieve and put away items in half the time.}
@@ -1877,7 +1893,7 @@
 # PE_MAN_OF_STEEL             (423)
 {104231}{}{Man of Steel}
 {104232}{}{You are as tough as they come. Critical hits just don’t seem to affect you as much as they do others.}
-# PE_EVEN_MORE_CRITICAL       (424)
+# PE_EVEN_MORE_CRITICALS       (424)
 {104241}{}{Even More Criticals}
 {104242}{}{You are able to spot the vulnerable points in enemies. You gain 10% critical chance.}
 # PE_RIGHT_BETWEEN_THE_EYES   (425)
@@ -1902,16 +1918,16 @@
 {104311}{}{Vault City Inoculations}
 {104312}{}{You have gained +10% resistance to both poison and radiation.}
 # PE_DERMAL_IMPACT
-{104321}{}{Dermal Impact Armor}
+{104321}{}{Implant: Dermal Impact Armor}
 {104322}{}{You have inherent protection against physical attacks.}
 # PE_DERMAL_IMPACT_ENH
-{104331}{}{Dermal Impact Asslt. Enhance.}
+{104331}{}{Implant: Dermal Impact Assault Enhancement}
 {104332}{}{You have extra inherent protection against physical attacks.}
 # PE_PHOENIX_IMPLANTS
-{104341}{}{Phoenix Armor Implants}
+{104341}{}{Implant: Phoenix Armor Implants}
 {104342}{}{You have inherent protection against energy attacks.}
 # PE_PHOENIX_IMPLANTS_ENH
-{104351}{}{Phoenix Assault Enhancement}
+{104351}{}{Implant: Phoenix Assault Enhancement}
 {104352}{}{You have extra inherent protection against energy attacks.}
 # PE_HTH_EVADE_II             (436)
 {104361}{}{HtH Evade+}
@@ -1935,16 +1951,16 @@
 {104421}{}{Melt Into Shadow}
 {104422}{}{}
 # PE_BONUS_HTH_DAMAGE_II      (443)
-{104431}{}{Bonus HtH Damage+}
+{104431}{}{More HtH Criticals}
 {104432}{}{Mastery in unarmed combat has given you the edge when it comes to damage.  You cause +15% critical chance with hand-to-hand and melee attacks.}
 # PE_IN_YOUR_FACE             (444)
 {104441}{}{In Your Face!}
 {104442}{}{You cut an intimidating figure and people cower when you are near. Opponents have a 50% chance of missing you when in an adjacent square.}
 # PE_HIT_THE_GAPS             (445)
 {104451}{}{Hit the Gaps}
-{104452}{}{You are an expert at punching through the weak spots in armor. The Critical Modifier value of any armor is reduced by 25% }
+{104452}{}{You are an expert at punching through the weak spots in armor. The Critical Modifier value of any armor is reduced by 50% }
 # PE_HTH_CRITICALS            (446)
-{104461}{}{HtH Criticals}
+{104461}{}{Better HtH Criticals}
 {104462}{}{The critical hits you cause in hand to hand combat are more devastating. You gain a +25 bonus on the critical hit table. This does not affect the chance to cause a critical hit.}
 # PE_HEAVE_HO_II              (447)
 {104471}{}{Heave Ho!!}
@@ -1991,6 +2007,31 @@
 # PE_DEAD_MAN_WALKING         (461)
 {104611}{}{Dead Man Walking}
 {104612}{}{Like Rasputin, it takes a lot to finally finish you off.  Your health points can drop to twice the negative value before you finally die.}
+# PE_NEMEAN_ARMOR			  (462)
+{104621}{}{Implant: Nemean Armor}
+{104622}{}{It is designed to provide increased damage tolerance by bolstering the user's skin cells with iron.}
+# PE_IMP_STRENGTH			  (463)
+{104631}{}{Implant: Hypertrophy Accelerator}
+{104632}{}{It is designed to enhance the muscle mass of the person it's installed in by acting as an automatic version of steroids, forcing the body to make a large amount of muscle mass.}
+# PE_IMP_PERCEPTION			  (464)
+{104641}{}{Implant: Optics Enhancer}
+{104642}{}{It is designed to improve eyesight of the person it's installed in by acting as a pair of sight enhancing glasses, sharpening the view of the user of the implant.}
+# PE_IMP_ENDURANCE			  (465)
+{104651}{}{Implant: Nociception Regulator}
+{104652}{}{It is designed to improve sensory receptors in the body that detect potentially damaging stimuli (such as excess pressure or heat) and send the nerve signals to the brain and spinal cord.}
+# PE_IMP_CHARISMA			  (466)
+{104661}{}{Implant: Empathy Synthesizer}
+{104662}{}{It is designed to compute possible reactions of other human beings and suggesting actions to it's user.}
+# PE_IMP_INTELLIGENCE		  (467)
+{104671}{}{Implant: Logic Co-processor}
+{104672}{}{It is designed to improve logical thinking of the person it's installed in by calculating possible outcome, thus helping in solving problems and making the best decision.}
+# PE_IMP_AGILITY			  (468)
+{104681}{}{Implant: Reflex Booster}
+{104682}{}{It is designed to boost the reflex action of the recipient by conducting the electric current in the nervous system and sending it to the area where it needs to go to.}
+# PE_IMP_LUCK				  (469)
+{104691}{}{Implant: Probability Calculator}
+{104692}{}{It is designed to aid the person it's installed in by quickly calculating the chances of every single possible thing that can happen, allowing the user to make the best choice in any situation.}
+
 # 104700
 # ADDICTION_NUKA_COLA, addictions
 {104701}{}{Nuka-Cola Addiction}
@@ -2122,7 +2163,7 @@
 {105552}{}{By not paying attention to any threats, you can act a lot faster in a turn.  This lowers your damage resistance, but increases armor class.}
 # TRAIT_HEAVY_HANDED
 {105561}{}{Heavy Handed}
-{105562}{}{You swing harder, not better.  Your attacks are very brutal, but lack finesse.  You rarely cause a good critical, but you always do more unarmed damage. Additionally, all your unarmed attacks knock down the opponent if a successful Strength roll was made.}
+{105562}{}{You swing harder, not better.  Your attacks are very brutal, but lack finesse.  You rarely cause a good critical, but you always do more unarmed damage. Additionally, all your close combat attacks knock down the opponent if a successful Strength roll was made.}
 # TRAIT_FAST_SHOT
 {105571}{}{Fast Shot}
 {105572}{}{You don't have time to aim for a targeted attack, because you attack faster than normal people.  It costs you one less action point for guns and thrown weapons, and then one less with two handed weapons.}
@@ -2398,303 +2439,11 @@
 ####################################################################################################################################
 
 {1999000000}{}{
-я  моя
-ты  твоя
-вы  ваша
-мы  наша
-меня  мою
-мне  моей
-тебя  твою
-сказал  сказать
-скажу  сказать
-скажи  сказать
-убил  убивай
-убили  убивай
-убью  убивай
-убей  убивай
-украл  украсть
-укради  украсть
-своровал  украсть
-своруй  украсть
-воровать  красть
-хочу  хотеть
-хотел  хотеть
-положил  положить
-положи  положить
-дал  давать
-дай  давать
-верни  вернуть
-вернул  вернуть
-верну  вернуть
-отдай  отдать
-отдал  отдать
-отдам  отдать
-могу  мочь
-говорить  гварить
-говорю  гварить
-понимаю  понимать
-они  их
-думаю  думать
-думайте  думать
-думаем  думать
-думай  думать
-бежать  бечь
-бегу  бечь
-беги  бечь
-бегите  бечь
-бежим  бечь
-побежал  бечь
-побежали  бечь
-идти  ити
-идти  ходить
-хожу  ходить
-интеллект  ум
-взял  взять
-взяли  взять
-возьми  взять
-возьмите  взять
-возьму  взять
-возьмем  взять
-злодей  плохой
-злодей  злой
-убийца  плохой
-убийца  злой
-бандит  плохой
-бандит  злой
-рейдер  плохой
-рейдер  злой
-злодеи  плохие
-злодеи  злые
-убийцы  плохие
-убийцы  злые
-бандиты  плохие
-бандиты  злые
-рейдеры  плохие
-рейдеры  злые
-брамин  му-му
-брамины  му-му
-коровы  му-му
-корова  му-му
-караван  корован
-караваны  корованны
-дерьмо  какашки
-черт  шайтан
-иду  ходить
-иди  ходить
-пошел  ходить
-пошли  ходить
-пойду  ходить
-пойди  ходить
-пришел  приходить
-шел  ходил
-присоединяйся  твоя ходить за моей
-присоединись  твоя ходить за моей
-присоединяйтесь  ваша ходить за нашей
-присоединитесь  ваша ходить за нашей
-присоединился  твоя ходить за моей
-присоединяемся  наша ходить за вашей
-присоединились  наша с вашей ходить
-присоединяюсь  моя ходить за твоей
-присоединюсь  моя ходить за твоей
-научи  научай
-научите  научайте
-моего  мой
-моих  мои
-моего  мое
-мою  мой
-враг  плохой
-враг  злой
-враги  злые
-друг  хороший
-друг  приятный
-друга  хорошево
-друзья  други
-друзья  хорошие
-нормальный  хороший
-нормальные  хорошие
-привет  моя приветствует
-здравствуй  моя здаровается
-здравствуйте  моя здаровается
-машина  би-бип
-хамер  би-бип
-джип  би-бип
-оружие  пиу-пиу
-you  yoo
-are  harr
-i  me
-want  wannuh
-why  wai
-could  cudd
-did  done
-into  in
-had  haved
-join  go vith mee
-the teh
-am
-a
-an
-gun boomstick
-will gonnah
-has  got
-have gotted
-hunt killen
-attack hurt
-kill ded
-dead deaded
-mutant ugly
-FA   stich meh!
-injured hurted
-burst dakdak
-weapon hurter
-knife stabber
-encounter fite
-grenade boomer
-nade boomer 
-tank strongman
-so den
-yes yeh
-no nah
-don't donn
-dont donn
-enemies baddies
-raiders baddies
-PK baddies
-weak girly
-what? duhh
-food yummeyh
-rocket rokkeet
-Enclave Anklaff
-BoS Shiny Shiny Tinmen
-Brotherhood Tinmen
-PA Big Tin Zuit
-Powerarmor Big Tin Zuit
-ghoul stinker
-ghouls stinkers
-plasma plazme
-caps munneh
-WTB me buyyeh
-WTS me solding
-thief stealer
-laser red light
-pretty preety
-doc dok
+
 }
 
 {1999000001}{}{
-а  а
-а  я
-б  б
-б  п
-в  в
-в  ф
-г  в
-г  г
-г  х
-г  к
-д  д
-д  т
-е  е
-е  э
-е  ё
-е  й
-е  йэ
-е  о
-ё  ё
-ё  е
-ё  о
-ё  йо
-ж  ж
-ж  з
-з  з
-з  с
-з  ж
-и  и
-и  е
-и  ы
-й  й
-й  е
-й  и
-к  к
-к  г
-л  л
-л  р
-м  м
-н  н
-о  а
-о  ё
-п  п
-п  б
-р  р
-р  л
-с  с
-с  з
-т  т
-т  д
-у  у
-у  о
-у  ю
-ф  ф
-ф  в
-х  х
-х  г
-ц  ц
-ц  тс
-ч  ч
-ш  ш
-щ  щ
-щ  шч
-ъ
-ы  ы
-ы  и
-ь
-э  э
-э  е
-э  йе
-ю  ю
-ю  йу
-ю  у
-я  я
-я  йа
-я  а
-a  a
-b  b
-c  c
-c  k
-d  d
-e  e
-f  f
-f  v
-f  w
-g  g
-g  j
-h  h
-i  i
-j  j
-j  g
-k  k
-k  q
-l  l
-m  m
-n  n
-o  o
-p  p
-q  q
-r  r
-s  s
-t  t
-u  u
-v  v
-v  f
-v  w
-w  w
-w  v
-w  f
-x  x
-x  ks
-y  y
-z  z
-th  z
-ing  in
+
 }
 
 ####################################################################################################################################

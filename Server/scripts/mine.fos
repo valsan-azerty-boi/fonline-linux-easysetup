@@ -20,12 +20,15 @@ import void SetAmountOfResources(array<Item@>&, int value) from "production";
 
 uint r_CheckCanBuy(Critter& player, Critter@ npc)
 {
+/*
     uint lastTime = uint(GetLvar(player, LVAR_mine_bought_time));
 
     if(GetLvar(player, LVAR_mine_id) == 0 || (ELAPSED_TIME > (lastTime + MINE_TIME)))
         return FORCE_DIALOG_MINE_CAN_BUY;
 
     return FORCE_DIALOG_MINE_ALREADY_HAS_MINE;
+	*/
+	return FORCE_DIALOG_MINE_CAN_BUY;
 }
 
 bool d_CanAfford(Critter& player, Critter@ npc)
@@ -61,7 +64,7 @@ void r_PurchaseMine(Critter& player, Critter@ npc)
     }
     else
     {
-        x = Random(500, 738);
+        x = Random(500, 695);
         y = Random(500, 672);
     }
 
@@ -102,18 +105,19 @@ void r_PurchaseMine(Critter& player, Critter@ npc)
         pid = NPC_PID_Rat;
     else if(pidrnd == 5)
         pid = NPC_PID_BlackRadscorpion;
-
+/*
     for(uint i = 0; i < num; i++)
     {
         if(Random(0, 1) == 0)
         {
-            Critter@ mob = AddNpc(map, pid, spots[i].HexX, spots[i].HexY, Random(0, 5), 0, "mob@_MineMob", AIPACKET_MEAN_DEATHCLAW, 1, Random(5000, 5009), false, Random(0, 12));
+            Critter@ mob = AddNpc(map, pid, spots[i].HexX, spots[i].HexY, Random(0, 5), 0, "mob@critter_init", AIPACKET_MEAN_DEATHCLAW, 1, Random(5000, 5009), false, Random(0, 12));
             mob.ParamBase[ST_REPLICATION_TIME] = 3600 * Random(36, 96);
             mob.ParamBase[ST_NPC_ROLE] = ROLE_MOB_MINE;
             mob.ParamBase[ST_PERCEPTION] = 10;
         }
 
     }
+	*/
 
     /*
         array<Item@> minerals;

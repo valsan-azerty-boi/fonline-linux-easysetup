@@ -39,10 +39,10 @@ lang=engl
 65507 10020 #
 0 10030 @
 18 11000 None 0 #
-20 11010 R _script quest_first_tent@r_SpawnFarmhouse 0  R _item p PID_IGUANA_ON_A_STICK + 2 #
+20 11010 R _script quest_first_tent@r_SpawnFarmhouse 0  R _item p PID_HEALING_POWDER + 2 #
 0 11020 @
 19 12000 None 0 #
-20 12010 R _script quest_first_tent@r_SpawnFarmhouse 0  R _item p PID_IGUANA_ON_A_STICK + 2 #
+20 12010 R _script quest_first_tent@r_SpawnFarmhouse 0  R _item p PID_HEALING_POWDER + 2 #
 0 12020 @
 20 13000 None 0 #
 0 13010 D _param p ST_INTELLECT } 4 #

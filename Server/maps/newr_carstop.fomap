@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              152
 MaxHexY              144
-WorkHexX             77
-WorkHexY             72
+WorkHexX             96
+WorkHexY             73
 ScriptModule         -
 ScriptFunc           -
 NoLogOut             0
@@ -2621,15 +2621,15 @@ tile       70   64             art\tiles\curb16.frm
 roof       70   64             art\tiles\wroof14.frm
 tile       72   64             art\tiles\curb16.frm
 roof       72   64             art\tiles\wroof13.frm
-tile       74   64             art\tiles\GRT2000.FRM
+tile       74   64             art\tiles\grt2000.frm
 roof       74   64             art\tiles\wroof06.frm
-tile       76   64             art\tiles\GRT2000.FRM
+tile       76   64             art\tiles\grt2000.frm
 roof       76   64             art\tiles\wroof14.frm
-tile       78   64             art\tiles\GRT2000.FRM
+tile       78   64             art\tiles\grt2000.frm
 roof       78   64             art\tiles\wroof13.frm
-tile       80   64             art\tiles\GRT2000.FRM
+tile       80   64             art\tiles\grt2000.frm
 roof       80   64             art\tiles\wroof06.frm
-tile       82   64             art\tiles\GRT2000.FRM
+tile       82   64             art\tiles\grt2000.frm
 roof       82   64             art\tiles\wroof14.frm
 tile       84   64             art\tiles\curb16.frm
 roof       84   64             art\tiles\wroof13.frm
@@ -15695,16 +15695,6 @@ MapX                 101
 MapY                 43
 Scenery_ToEntire     6
 Scenery_ToDir        2
-
-MapObjType           2
-ProtoId              5622
-MapX                 94
-MapY                 61
-
-MapObjType           2
-ProtoId              5622
-MapX                 94
-MapY                 73
 
 MapObjType           2
 ProtoId              4023

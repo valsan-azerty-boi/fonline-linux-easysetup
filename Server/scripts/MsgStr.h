@@ -270,7 +270,6 @@
 #define STR_TIMEOUT_TRANSFER_WAIT       (790)
 #define STR_TIMEOUT_BATTLE_WAIT         (791)
 #define STR_TIMEOUT_SNEAK_WAIT          (792)
-#define STR_TIMEOUT_SLEEPY              (793)
 
 // Dialog
 #define STR_DIALOG_CANT_TALK_WITH_MOB   (800)

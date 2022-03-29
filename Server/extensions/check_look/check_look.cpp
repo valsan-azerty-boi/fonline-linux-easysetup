@@ -221,15 +221,22 @@ EXPORT bool check_look(Map& map, Critter& cr, Critter& opponent)
 		// armor penalty, TODO: move values to protos?
 		switch(opponent.ItemSlotArmor->GetProtoId())
 		{
+			case 1100: // for bluesuit, default armor prototype
+				sk-=50;
+				break;
 			case PID_METAL_ARMOR:
 			case PID_METAL_ARMOR_MK_II:
 			case PID_TESLA_ARMOR:
-				sk+=BONUS_ARMOR_METAL;
+				sk=-10000;
 				break;
 			case PID_COMBAT_ARMOR:
 			case PID_COMBAT_ARMOR_MK_II:
 			case PID_BROTHERHOOD_COMBAT_ARMOR:
-				sk+=BONUS_ARMOR_COMBAT;
+			case PID_NCR_ARMOR:
+			case PID_ENCLAVE_COMBAT_ARMOR:
+			case PID_KEEPBRIGE_ROBE:
+			case PID_DESERT_COMBAT_ARMOR:
+				sk=-10000;
 				break;
 			case PID_POWERED_ARMOR :
 			case PID_HARDENED_POWER_ARMOR:
@@ -242,7 +249,7 @@ EXPORT bool check_look(Map& map, Critter& cr, Critter& opponent)
 
 		// weapons penalty
 		const ProtoItem* proto=opponent.ItemSlotMain->Proto;
-		if(proto->Type==ITEM_TYPE_WEAPON && FLAG(proto->Flags,ITEM_TWO_HANDS))
+		if(proto->Type==ITEM_TYPE_WEAPON && (FLAG(proto->Flags,ITEM_TWO_HANDS) || proto->Weapon_Anim1==ANIM1_SMG))
 		{
 			switch(proto->Weapon_Anim1)
 			{
@@ -254,6 +261,23 @@ EXPORT bool check_look(Map& map, Critter& cr, Critter& opponent)
 				break;
 			default:
 				if(proto->Weapon_Skill[0]<=SK_ENERGY_WEAPONS) sk+=BONUS_WEAPON_RIFLE;
+				break;
+			}
+		}
+
+		const ProtoItem* proto2=opponent.ItemSlotExt->Proto;
+		if(proto2->Type==ITEM_TYPE_WEAPON && (FLAG(proto2->Flags,ITEM_TWO_HANDS) || proto2->Weapon_Anim1==ANIM1_SMG))
+		{
+			switch(proto2->Weapon_Anim1)
+			{
+			case ANIM1_HEAVY_RIFLE:
+			case ANIM1_MINIGUN:
+			case ANIM1_ROCKET_LAUNCHER:
+			case ANIM1_FLAMER:
+				sk+=BONUS_WEAPON_HEAVY;
+				break;
+			default:
+				if(proto2->Weapon_Skill[0]<=SK_ENERGY_WEAPONS) sk+=BONUS_WEAPON_RIFLE;
 				break;
 			}
 		}

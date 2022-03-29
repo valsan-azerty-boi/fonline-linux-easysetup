@@ -7,9 +7,10 @@ lang=engl
 [dialog]
 &
 1 1000 None 1 #
-13 1010 D _script caravans@d_CheckReputationTooLow 1 0 #
-3 1020 D _param p ST_LEVEL > 19 #
-2 1030 @
+15 1010 D _script caravans@d_IsFull 0  #
+13 1020 D _script caravans@d_CheckReputationTooLow 1 0 #
+3 1030 D _param p ST_LEVEL > 19 #
+2 1040 @
 2 2000 None 0 #
 5 2010 #
 0 2020 @
@@ -23,8 +24,8 @@ lang=engl
 9 4030 #
 0 4040 @
 5 5000 caravans@dlg_CaravanName 0 #
-6 5010 D _param p ST_LEVEL { 9 #
-4 5020 D _param p ST_LEVEL > 9 #
+6 5010 D _param p ST_LEVEL < 9 #
+4 5020 D _param p ST_LEVEL } 9 #
 7 5030 #
 8 5040 #
 0 5050 @
@@ -54,14 +55,21 @@ lang=engl
 0 11020 @
 12 12000 None 0 #
 0 12010 @
-13 13000 None 0 &
+13 13000 None 0 #
+14 13010 #
+0 13020 @
+14 14000 None 0 #
+4 14010 D _item p PID_BOTTLE_CAPS } 2500 R _item p PID_BOTTLE_CAPS - 2500 R _script caravans@r_ResetReputation 0  #
+0 14020 @
+15 15000 caravans@dlg_CaravanName 0 &
 
 [engl]
 {100}{}{Caravan Master}
 {1000}{}{Predialogue installations}
-{1010}{}{-}
+{1010}{}{ }
 {1020}{}{-}
 {1030}{}{-}
+{1040}{}{-}
 {2000}{}{Hey there,}
 {2010}{}{Who are you?}
 {2020}{}{Nevermind.}
@@ -101,10 +109,16 @@ lang=engl
 {10020}{}{OK, I take the job.}
 {10030}{}{What was the pay again?}
 {10040}{}{I changed my mind.}
-{11000}{}{Allright.}
+{11000}{}{Alright.}
 {11010}{}{[Follow him.]}
 {11020}{}{Hold on. I changed my mind.}
-{12000}{}{We usually start loading an hour before departure. So if you're really intrested get prepared and come back later.}
-{12010}{}{Allright.}
+{12000}{}{We usually start loading an hour before departure. So if you're really interested get prepared and come back later.}
+{12010}{}{Alright.}
 {13000}{}{I don't talk with people like you.}
+{13010}{}{What if I pay some caps?}
+{13020}{}{Whatever, bye.}
+{14000}{}{I might change my mind for 2500 bottle caps.}
+{14010}{}{Here you go [you pay 2500 caps]}
+{14020}{}{Nevermind.}
+{15000}{}{We are riding with @lex caravan@. Sorry, we have all guards already.}
 

@@ -7,9 +7,9 @@ lang=engl
 [dialog]
 &
 1 1000 None 0 #
-4 1010 D _param p ST_INTELLECT < 4 #
-27 1020 D _param p ST_CHARISMA < 4 D _param p ST_AGILITY = 10 #
-28 1030 D _param p ST_CHARISMA < 4 D _param p ST_ENDURANCE = 10 #
+4 1010 D _param p ST_INTELLECT < 1 #
+27 1020 D _param p ST_CHARISMA < 1 D _param p ST_AGILITY = 11 #
+28 1030 D _param p ST_CHARISMA < 1 D _param p ST_ENDURANCE = 11 #
 3 1040 D _var p name_mem_npc_player = 1 #
 2 1050 D _var p name_mem_npc_player = 0 R _var p name_mem_npc_player = 1 @
 2 2000 None 0 #

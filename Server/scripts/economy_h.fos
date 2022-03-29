@@ -131,7 +131,7 @@ import uint TradingItemType(uint pid) from "economy";
 
 /** @name Saving interest */
 # define SAVING_INTEREST_MIN_RESERVE_RATIO      (0.9f) // bank will try to never have less money than this value times balance of all account - freezing the interests if necessary. MUST NOT be outside (0,1) interval!
-# define SAVING_INTEREST_MAX                    (2.5f)
+# define SAVING_INTEREST_MAX                    (0.5f)
 
 /** @name Credit rating thresholds */
 # define CREDITVALUE_FIRST                      (1000)

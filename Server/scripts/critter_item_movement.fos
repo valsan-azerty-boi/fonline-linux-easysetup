@@ -142,8 +142,8 @@ const int[][] armorRedirect =
 
     /* NPC */
     {
-        CRTYPE_PUNK,                                    GENDER_FEMALE,                          CRTYPE_PUNK,
-        CRTYPE_FEMALE_LEATHER_ARMOR,    CRTYPE_PUNK,
+        CRTYPE_PUNK_JUMPSUIT,           GENDER_FEMALE,                          -1,
+        CRTYPE_FEMALE_LEATHER_ARMOR,    CRTYPE_PUNK_JUMPSUIT,
     }
 };
 
@@ -225,16 +225,52 @@ void critter_move_item(Critter& cr, Item& item, uint8 fromSlot)
             }
 
             // Punk Girl redirects
-            if(cr.Stat[ST_BASE_CRTYPE] == CRTYPE_PUNK && !isMale)
+            if(cr.Stat[ST_BASE_CRTYPE] == CRTYPE_PUNK_JUMPSUIT && !isMale)
             {
-                crType = CRTYPE_PUNK;
+                crType = CRTYPE_PUNK_JUMPSUIT;
                 if(toSlot == SLOT_ARMOR)
                 {
                     crType = item.Proto.Armor_CrTypeFemale;
                     if(crType == CRTYPE_FEMALE_LEATHER_ARMOR)
                         crType = CRTYPE_PUNK_LA;
-                    else
+					else if(crType == CRTYPE_FEMALE_METAL_ARMOR)
+                        crType = CRTYPE_PUNK_MA;
+					else if(crType == CRTYPE_FEMALE_LEATHER_JACKET)
                         crType = CRTYPE_PUNK;
+                    //else
+                    //    crType = CRTYPE_PUNK;
+                }
+            }
+			
+			// Ian redirects
+            if(cr.Stat[ST_BASE_CRTYPE] == CRTYPE_IAN && isMale)
+            {
+                crType = CRTYPE_IAN;
+                if(toSlot == SLOT_ARMOR)
+                {
+                    crType = item.Proto.Armor_CrTypeMale;
+                    if(crType == CRTYPE_MALE_LEATHER_ARMOR)
+                        crType = CRTYPE_LHD_LEATHER_ARMOR;
+                    else if(crType == CRTYPE_MALE_LEATHER_JACKET)
+                        crType = CRTYPE_LHD_LEATHER_JACKET;
+                    else if(crType == CRTYPE_MALE_METAL_ARMOR)
+                        crType = CRTYPE_LHD_METAL_ARMOR;
+                }
+            }
+			
+			// Old Ian redirects
+            if(cr.Stat[ST_BASE_CRTYPE] == CRTYPE_OLDIAN && isMale)
+            {
+                crType = CRTYPE_OLDIAN;
+                if(toSlot == SLOT_ARMOR)
+                {
+                    crType = item.Proto.Armor_CrTypeMale;
+                    if(crType == CRTYPE_MALE_LEATHER_ARMOR)
+                        crType = CRTYPE_LHD_LEATHER_ARMOR;
+                    else if(crType == CRTYPE_MALE_LEATHER_JACKET)
+                        crType = CRTYPE_LHD_LEATHER_JACKET;
+                    else if(crType == CRTYPE_MALE_METAL_ARMOR)
+                        crType = CRTYPE_LHD_METAL_ARMOR;
                 }
             }
 

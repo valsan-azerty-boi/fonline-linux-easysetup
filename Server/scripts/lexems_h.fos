@@ -19,6 +19,7 @@
         $@		overwrites name over head, can be empty. player only
         $name	overwrites name used in long/short description and combat messages
         $tatoo
+		$faction
 
    Item
    ----
@@ -32,6 +33,7 @@
         $~		overwrites long description
 
         $desc	key description
+		$crafter
 
    Special Item
    -------------

@@ -96,8 +96,20 @@ bool InitBinds() // export
     ret = ret && InitGMBinds();
     ret = ret && InitAimBinds();
     ret = ret && InitReloadBind();
+    ret = ret && InitDropallBind();
+    ret = ret && InitPickupBind();
     ret = ret && InitUseBinds();
     ret = ret && InitFogBind();
+    ret = ret && InitFASelfBind();
+    ret = ret && InitDocSelfBind();
+    ret = ret && InitSSOtherBind();
+    ret = ret && InitMsFovBind();
+    ret = ret && InitRoofBind();
+    ret = ret && InitWallBind();
+    ret = ret && InitDischargeBind();
+    ret = ret && InitStopCritterBind();
+    ret = ret && InitScienceAtHexBind();
+    ret = ret && InitCenterChosenBind();
     return ret;
 }
 
@@ -218,6 +230,13 @@ bool InitUseBinds()
     return true;
 }
 
+bool InitStopCritterBind()
+{
+    string@    s = GetConfigValue(CONFIG_FILE, "Bindings", "StopMove");
+    StopCritterBind bnd;
+    return TryAddBind(s, bnd);
+}
+
 bool InitReloadBind()
 {
     string@    s = GetConfigValue(CONFIG_FILE, "Bindings", "Reload");
@@ -225,10 +244,85 @@ bool InitReloadBind()
     return TryAddBind(s, bnd);
 }
 
+bool InitPickupBind()
+{
+    PickupBind bnd;
+    return TryAddBind("Ctrl G", bnd);
+}
+
+bool InitDropallBind()
+{
+    DropallBind bnd;
+    return TryAddBind("Ctrl D", bnd);
+}
+
+bool InitFASelfBind()
+{
+    string@    s = GetConfigValue(CONFIG_FILE, "Bindings", "FASelf");
+    FASelfBind bnd;
+    return TryAddBind(s, bnd);
+}
+
+bool InitDocSelfBind()
+{
+    string@    s = GetConfigValue(CONFIG_FILE, "Bindings", "DocSelf");
+    DocSelfBind bnd;
+    return TryAddBind(s, bnd);
+}
+
+bool InitSSOtherBind()
+{
+    string@    s = GetConfigValue(CONFIG_FILE, "Bindings", "SSOther");
+    SSOtherBind bnd;
+    return TryAddBind(s, bnd);
+}
+
 bool InitFogBind()
 {
-    string@       s = GetConfigValue(CONFIG_FILE, "Bindings", "ToggleFog");
+    string@    s = GetConfigValue(CONFIG_FILE, "Bindings", "ToggleFog");
     ToggleFogBind bnd;
+    return TryAddBind(s, bnd);
+}
+
+bool InitRoofBind()
+{
+    string@    s = GetConfigValue(CONFIG_FILE, "Bindings", "ToggleRoof");
+    ToggleRoofBind bnd;
+    return TryAddBind(s, bnd);
+}
+
+bool InitWallBind()
+{
+    string@    s = GetConfigValue(CONFIG_FILE, "Bindings", "ToggleWall");
+    ToggleWallBind bnd;
+    return TryAddBind(s, bnd);
+}
+
+bool InitMsFovBind()
+{
+    string@    s = GetConfigValue(CONFIG_FILE, "Bindings", "ToggleMsFov");
+    ToggleMsFovBind bnd;
+    return TryAddBind(s, bnd);
+}
+
+bool InitDischargeBind()
+{
+    string@    s = GetConfigValue(CONFIG_FILE, "Bindings", "Discharge");
+    DischargeBind bnd;
+    return TryAddBind(s, bnd);
+}
+
+bool InitScienceAtHexBind()
+{
+    string@    s = GetConfigValue(CONFIG_FILE, "Bindings", "ScienceAtHex");
+    ScienceAtHexBind bnd;
+    return TryAddBind(s, bnd);
+}
+
+bool InitCenterChosenBind()
+{
+    string@    s = GetConfigValue(CONFIG_FILE, "Bindings", "CenterChosen");
+    CenterChosenBind bnd;
     return TryAddBind(s, bnd);
 }
 

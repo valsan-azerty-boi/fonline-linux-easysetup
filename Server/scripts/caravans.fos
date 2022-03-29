@@ -14,6 +14,7 @@
 #include "npc_planes_h.fos"
 #include "npc_common_h.fos"
 #include "reputations_h.fos"
+#include "_maps.fos"
 
 #define CARAVAN_CFG    "config\\Caravans.cfg"
 
@@ -91,6 +92,12 @@ void r_Start(Critter& player, Critter@ npc)
     CaravanStart(npc);
 }
 
+void r_ResetReputation(Critter& player, Critter@ npc)
+{
+	uint factionReputationIndex = npc.Param[ST_TEAM_ID];
+	AddReputation(player, npc.Param[ST_TEAM_ID], player.Reputation[factionReputationIndex]*(-1));
+}
+
 bool d_CheckReputationTooLow(Critter& player, Critter@ npc, int reputationNeeded)
 {
     uint factionReputationIndex = npc.Param[ST_TEAM_ID];
@@ -99,10 +106,19 @@ bool d_CheckReputationTooLow(Critter& player, Critter@ npc, int reputationNeeded
 
 void _CaravanGuard(Critter& cr, bool firstTime)
 {
+	_CritSetMode(cr, MODE_UNLIMITED_AMMO);
+    cr.ParamBase[ST_PERCEPTION] = 10;
+    cr.ParamBase[ST_MAX_LIFE] += 30;
+    cr.ParamBase[SK_SMALL_GUNS]=200;
+    cr.ParamBase[SK_BIG_GUNS]=200;
+    cr.ParamBase[SK_ENERGY_WEAPONS]=200;
     cr.SetEvent(CRITTER_EVENT_ATTACKED, "_GuardAttacked");
     cr.SetEvent(CRITTER_EVENT_SMTH_ATTACKED, "_GuardSmthAttacked");
     cr.SetEvent(CRITTER_EVENT_IDLE, "_OnIdleEncounter");
     cr.SetEvent(CRITTER_EVENT_SMTH_MOVE_ITEM, "_OnSmthMoveItemEncounter");
+	cr.StatBase[ST_CURRENT_HP] = cr.Stat[ST_MAX_LIFE];
+	cr.SetEvent(CRITTER_EVENT_SMTH_DEAD, "_GuardSmthDied");
+	cr.ParamBase[ST_VAR9]=666; // used for colorizer
 }
 
 bool _GuardAttacked(Critter& cr, Critter& attacker)
@@ -111,13 +127,15 @@ bool _GuardAttacked(Critter& cr, Critter& attacker)
     Critter@  leader = GetCritter(cr.Param[ST_VAR1]);
     if(valid(leader) && valid(caravan) && (attacker.IsPlayer() || !caravan.IsCaravanMember(attacker)))
     {
-        if(caravan.IsCaravanMember(attacker))
+		if(caravan.IsCaravanMember(attacker)) return true;
+	
+		/*if(caravan.IsCaravanMember(attacker))
         {
-            SubReputation(attacker, leader.Param[ST_TEAM_ID], REP_KILL_PENALTY * MAX(1, _GroupRank(cr)));
+            //SubReputation(attacker, leader.Param[ST_TEAM_ID], REP_KILL_PENALTY * MAX(1, _GroupRank(cr)));
             // SetLvar(attacker.Id, LVAR_caravan_id, 0);
-            caravan.Leave(attacker);
+            //caravan.Leave(attacker);
         }
-        else
+        else */
             SubReputation(attacker, leader.Param[ST_TEAM_ID], REP_ATK_PENALTY * MAX(1, _GroupRank(cr)));
         leader.AddEnemyInStack(attacker.Id);
         if(leader.Param[ST_VAR0] != 0 && leader.IsLife())
@@ -129,6 +147,7 @@ bool _GuardAttacked(Critter& cr, Critter& attacker)
 
 void _GuardSmthAttacked(Critter& cr, Critter& fromCr, Critter& attacker)
 {
+
     ICaravan@ caravan = GetCaravan(cr);
     Critter@  leader = GetCritter(cr.Param[ST_VAR1]);
 
@@ -138,16 +157,11 @@ void _GuardSmthAttacked(Critter& cr, Critter& fromCr, Critter& attacker)
     {
         if(valid(leader) && (attacker.IsPlayer() || !caravan.IsCaravanMember(attacker)))
         {
-            if(caravan.IsCaravanMember(attacker))
-            {
-                // SetLvar(attacker.Id, LVAR_caravan_id, 0);
-                caravan.Leave(attacker);
-            }
+            if(caravan.IsCaravanMember(attacker) && caravan.IsCaravanMember(fromCr))		return;
 
             if(!fromCr.IsPlayer() || attacker.IsPlayer())
             {
                 cr.EventAttacked(attacker);
-
                 leader.AddEnemyInStack(attacker.Id);
                 if(leader.Param[ST_VAR0] != 0 && leader.IsLife())
                     EraseTimeEvent(leader.Param[ST_VAR0]);
@@ -157,6 +171,40 @@ void _GuardSmthAttacked(Critter& cr, Critter& fromCr, Critter& attacker)
     }
 }
 
+void _GuardSmthDied(Critter& cr, Critter& killed, Critter@ killer)
+{
+    ICaravan@ caravan = GetCaravan(cr);
+    Critter@  leader = GetCritter(cr.Param[ST_VAR1]);
+
+    if(!valid(killer))
+        return;
+
+    if(valid(leader) && leader.CheckEnemyInStack(killer.Id))
+        return;
+    if(valid(caravan) && caravan.IsCaravanMember(killed))
+    {
+        if(valid(leader) && (killer.IsPlayer() || !caravan.IsCaravanMember(killer)))
+        {
+            if(caravan.IsCaravanMember(killer))
+            {
+                // SetLvar(killer.Id, LVAR_caravan_id, 0);
+                caravan.Leave(killer);
+            }
+
+            if(!killed.IsPlayer() || killer.IsPlayer())
+            {
+                cr.EventAttacked(killer);
+                leader.AddEnemyInStack(killer.Id);
+                if(leader.Param[ST_VAR0] != 0 && leader.IsLife())
+                    EraseTimeEvent(leader.Param[ST_VAR0]);
+                leader.ParamBase[ST_VAR0] = 0;
+            }
+        }
+    }
+}
+
+
+
 
 bool _DriverAttacked(Critter& leader, Critter& attacker)
 {
@@ -165,9 +213,7 @@ bool _DriverAttacked(Critter& leader, Critter& attacker)
     {
         if(caravan.IsCaravanMember(attacker))
         {
-            SubReputation(attacker, leader.Param[ST_TEAM_ID], REP_KILL_PENALTY * MAX(1, _GroupRank(leader)));
-            // SetLvar(attacker.Id, LVAR_caravan_id, 0);
-            caravan.Leave(attacker);
+			return true;
         }
         else
             SubReputation(attacker, leader.Param[ST_TEAM_ID], REP_ATK_PENALTY * MAX(1, _GroupRank(leader)));
@@ -188,17 +234,42 @@ void _DriverSmthAttacked(Critter& leader, Critter& fromCr, Critter& attacker)
     {
         if((attacker.IsPlayer() || !caravan.IsCaravanMember(attacker)))
         {
-            if(caravan.IsCaravanMember(attacker))
-            {
-                // SetLvar(attacker.Id, LVAR_caravan_id, 0);
-                caravan.Leave(attacker);
-
-            }
+            if(caravan.IsCaravanMember(attacker) && caravan.IsCaravanMember(fromCr))	return;
 
             if(!fromCr.IsPlayer() || attacker.IsPlayer())
             {
                 leader.EventAttacked(attacker);
                 leader.AddEnemyInStack(attacker.Id);
+                if(leader.Param[ST_VAR0] != 0 && leader.IsLife())
+                    EraseTimeEvent(leader.Param[ST_VAR0]);
+                leader.ParamBase[ST_VAR0] = 0;
+            }
+        }
+    }
+}
+
+void _DriverSmthDied(Critter& leader, Critter& killed, Critter@ killer)
+{
+    ICaravan@ caravan = GetCaravan(leader);
+
+    if(!valid(killer))
+        return;
+
+    if(leader.CheckEnemyInStack(killer.Id))
+        return;
+    if(valid(caravan) && caravan.IsCaravanMember(killed))
+    {
+        if((killer.IsPlayer() || !caravan.IsCaravanMember(killer)))
+        {
+            if(caravan.IsCaravanMember(killer))
+            {
+                caravan.Leave(killer);
+            }
+
+            if(!killed.IsPlayer() || killer.IsPlayer())
+            {
+                leader.EventAttacked(killer);
+                leader.AddEnemyInStack(killer.Id);
                 if(leader.Param[ST_VAR0] != 0 && leader.IsLife())
                     EraseTimeEvent(leader.Param[ST_VAR0]);
                 leader.ParamBase[ST_VAR0] = 0;
@@ -304,13 +375,16 @@ void _CaravanDriver(Critter& cr, bool firstTime)
     cr.ParamBase[ST_CHARISMA] = 10;
     cr.ParamBase[ST_MAX_LIFE] += 100;
     cr.ParamBase[ST_CURRENT_HP] += 100;
+	cr.ParamBase[ST_VAR9]=666; // used for colorizer
     _CritSetMode(cr, MODE_GECK);
+	_CritSetMode(cr, MODE_UNLIMITED_AMMO);
     cr.SetEvent(CRITTER_EVENT_GLOBAL_PROCESS, "_GlobalProcessDriver");
     cr.SetEvent(CRITTER_EVENT_IDLE, "_DriverIdle");
     cr.SetEvent(CRITTER_EVENT_DEAD, "_DriverDead");
     cr.SetEvent(CRITTER_EVENT_ATTACKED, "_DriverAttacked");
     cr.SetEvent(CRITTER_EVENT_SMTH_ATTACKED, "_DriverSmthAttacked");
     cr.SetEvent(CRITTER_EVENT_SMTH_MOVE_ITEM, "_OnSmthMoveItemEncounter");
+	cr.SetEvent(CRITTER_EVENT_SMTH_DEAD, "_DriverSmthDied");
     /*
        cr.ParamBase[SK_SMALL_GUNS]=300;
        cr.ParamBase[SK_BIG_GUNS]=300;
@@ -383,9 +457,9 @@ void _DriverIdle(Critter& cr)
                 return;
             }
         }
-        cr.Say(SAY_NORM, "Ok, people. Get ready, we're leaving in one minute.");
+        cr.Say(SAY_NORM, "Alright, people. Get ready, we're leaving in ten minutes.");
         array<uint> values = { cr.Id, map.Id };
-        cr.ParamBase[ST_VAR0] = CreateTimeEvent(AFTER(REAL_SECOND(60)), "e_Leave", values, false);
+        cr.ParamBase[ST_VAR0] = CreateTimeEvent(AFTER(REAL_SECOND(30)), "e_Leave", values, false);
     }
 }
 
@@ -406,13 +480,24 @@ uint e_Leave(array<uint>@ values)
             {
                 if(caravan.IsCaravanMember(critters[i]))
                 {
-                    if(critters[i].Timeout[TO_BATTLE] <= 0)
+                    //if(critters[i].Timeout[TO_BATTLE] <= 0) Will take even with combat timer on
                         critters[i].TransitToGlobalGroup(leader.Id);
+						if(critters[i].IsPlayer())
+						{
+							int expAmount = 100;
+							critters[i].StatBase[ST_EXPERIENCE] += expAmount;
+							critters[i].Say(SAY_NETMSG, "|0xFFFFFF You have gained " + expAmount + " experience points for securing caravan leader in the encounter.");						
+						}
                 }
             }
+			//Log("caravans.fos: tworzenie itema (caravanCart)");
             Item@ caravanCart = GetItem(leader.ParamBase[ST_VAR2]);
+			//Log("caravans.fos: Item utworzony (caravanCart)");
             if(valid(caravanCart))
+			{
                 DeleteItem(caravanCart);
+				//Log("caravans.fos: Item skasowany (caravanCart)");
+			}
         }
     }
     return 0;
@@ -601,6 +686,18 @@ bool d_IsNotPreparing(Critter& player, Critter@ npc)
     return !(caravan.GetState() == STATE_PREPARE);
 }
 
+bool d_IsFull(Critter& player, Critter@ npc)
+{
+    ICaravan@ caravan = GetCaravan(npc);
+	Critter@ wmNpc = GetCritter(caravan.GetWMLeaderId());
+    if(valid(wmNpc)) 
+					{
+					array<Critter@> crits = wmNpc.GetGlobalGroup();
+					return (crits.length>9);
+					}
+	else return false;
+}
+
 void r_JoinCaravan(Critter& player, Critter@ npc)
 {
     ICaravan@ caravan = GetCaravan(npc);
@@ -609,6 +706,26 @@ void r_JoinCaravan(Critter& player, Critter@ npc)
         player.TransitToGlobalGroup(caravan.GetWMLeaderId());
     }
 }
+
+void r_KillCaravanDriver(Critter& player, Critter@ npc, int carNr)
+{
+    ICaravan@ caravan = GetCaravan(carNr);
+    Critter@ wmNpc = GetCritter(caravan.GetWMLeaderId());
+    Critter@ encNpc = GetCritter(caravan.GetLeaderId());
+    if(valid(encNpc))
+    {
+        encNpc.ToDead(ANIM2_DEAD_FRONT, null);
+        player.Say(SAY_NETMSG, "Driver (id "+encNpc.Id+") killed on map "+encNpc.GetMapId());
+    }
+    else if(valid(wmNpc)) 
+    {
+        wmNpc.ToDead(ANIM2_DEAD_FRONT, null);
+        player.Say(SAY_NETMSG, "Driver killed on wm.");
+    }
+    else
+        player.Say(SAY_NETMSG, "Failed to kill driver!");
+}
+
 
 void dlg_CaravanName(Critter& player, Critter@ npc, string@ text)
 {
@@ -641,6 +758,98 @@ void dlg_CaravanTime(Critter& player, Critter@ npc, string@ text)
     text += "$time" + ("" + (hour < 10 ? "0" : "") + hour + ":" + (minute < 10 ? "0" : "") + minute);
 }
 
+void dlg_CaravanLocation1(Critter& player, Critter@ npc, string@ text)
+{
+    if(!IS_DIALOG_GENERATED(text)) return;
+	text += checkCaravanPosition(1);
+}
+
+void dlg_CaravanLocation2(Critter& player, Critter@ npc, string@ text)
+{
+    if(!IS_DIALOG_GENERATED(text)) return;
+	text += checkCaravanPosition(2);
+}
+
+void dlg_CaravanLocation3(Critter& player, Critter@ npc, string@ text)
+{
+    if(!IS_DIALOG_GENERATED(text)) return;
+	text += checkCaravanPosition(3);
+}
+
+void dlg_CaravanLocation4(Critter& player, Critter@ npc, string@ text)
+{
+    if(!IS_DIALOG_GENERATED(text)) return;
+	text += checkCaravanPosition(4);
+}
+
+void dlg_CaravanLocation5(Critter& player, Critter@ npc, string@ text)
+{
+    if(!IS_DIALOG_GENERATED(text)) return;
+	text += checkCaravanPosition(5);
+}
+
+void dlg_CaravanLocation6(Critter& player, Critter@ npc, string@ text)
+{
+    if(!IS_DIALOG_GENERATED(text)) return;
+	text += checkCaravanPosition(6);
+}
+
+void dlg_CaravanLocation7(Critter& player, Critter@ npc, string@ text)
+{
+    if(!IS_DIALOG_GENERATED(text)) return;
+	text += checkCaravanPosition(7);
+}
+
+string checkCaravanPosition(uint carNr)
+{
+	string text;
+	ICaravan@ caravan = GetCaravan(carNr);
+	Critter@ wmNpc = GetCritter(caravan.GetWMLeaderId());
+	Critter@ Npc = GetCritter(caravan.GetLeaderId());
+	if(valid(Npc))
+	{
+	            Map@ map = Npc.GetMap();
+				int locPid = map.GetLocation().GetProtoId();
+				string locName="";
+				switch(locPid)
+				{
+				case LOCATION_Hub: {locName="Hub"; break;}
+				case LOCATION_Boneyard: {locName="Adytum"; break;}
+				case LOCATION_NCR: {locName="New California Republic"; break;}
+				case LOCATION_BrokenHills: {locName="Broken Hills"; break;}
+				case LOCATION_NewReno: {locName="New Reno"; break;}
+				case LOCATION_VaultCity: {locName="Vault City"; break;}
+				case LOCATION_SanFrancisco: {locName="San Francisco"; break;}
+				case LOCATION_Redding: {locName="Redding"; break;}
+				case LOCATION_Modoc: {locName="Modoc"; break;}
+				case LOCATION_TheDen: {locName="Den"; break;}
+				case LOCATION_Klamath: {locName="Klamath"; break;}
+				case LOCATION_Junktown: {locName="Junktown"; break;}
+				case LOCATION_Gecko: {locName="Gecko"; break;}
+				case LOCATION_Fortress: {locName="Fortress"; break;}
+				default: locName="Unknown";
+				}
+				uint   departTime = caravan.GetDepartTime();
+				uint16 year = 0;
+				uint16 month = 0;
+				uint16 dayOfWeek = 0;
+				uint16 day = 0;
+				uint16 hour = 0;
+				uint16 minute = 0;
+				uint16 second = 0;
+				GetGameTime(departTime, year, month, dayOfWeek, day, hour, minute, second);
+				text += "$coordinates" + "currently restocking in " + locName + "." + "\nDestination: " + caravan.GetNextDestinationName() + ". They depart at " + ("" + (hour < 10 ? "0" : "") + hour + ":" + (minute < 10 ? "0" : "") + minute) + ".";
+	}
+    else if(valid(wmNpc) && !wmNpc.IsDead()) 
+					{
+					uint16 x = wmNpc.WorldX;
+					uint16 y = wmNpc.WorldY;
+					text += "$coordinates" + "at " + x + ", " + y + "." + "\nDestination: " + caravan.GetNextDestinationName() + ".";
+					}
+	else text += "$coordinates" + "not answering my radio call. I don't know what has happened to them.";
+	return text;
+}
+
 void dlg_CaravanPayment(Critter& player, Critter@ npc, string@ text)
 {
     if(!IS_DIALOG_GENERATED(text))
@@ -648,7 +857,7 @@ void dlg_CaravanPayment(Critter& player, Critter@ npc, string@ text)
     ICaravan@ caravan = GetCaravan(npc);
     if(!valid(caravan))
         return;
-    text += "$money" + ("" + caravan.GetActPay());
+    text += "$money" + ("" + caravan.GetActPay()*2);
 }
 
 bool _LeaderMapEnter(Critter& leader, Map& map)
@@ -691,6 +900,35 @@ bool        _GlobalProcessDriver(Critter& cr, int type, Item@ car, float& x, flo
             }
             else
             {
+                Critter@ wmNpc = GetCritter(caravan.GetWMLeaderId());
+                if(valid(wmNpc)) 
+                {
+                    array<Critter@> crits = wmNpc.GetGlobalGroup();
+                    if(crits.length > 10)
+                    {
+                        string err = "ERROR: CARAVAN SIZE " + crits.length + " caravan: " + caravan.GetName() + " driver id: " + wmNpc.Id;
+
+                        array<Critter@> guards;
+                        guards.resize(0);
+                        array<Critter@> followers;
+                        followers.resize(0);
+                        array<Critter@> players;
+                        players.resize(0);
+                        for(uint i=0; i < crits.length; ++i)
+                        {
+                            if(crits[i].IsPlayer())
+                                players.insertLast(crits[i]);
+                            else if(_IsFollower(crits[i]))
+                                followers.insertLast(crits[i]);
+                            else
+                                guards.insertLast(crits[i]);
+                        }
+                        err += " guards: " + guards.length + " followers: " + followers.length + " players: " + players.length + " (";
+                        for(uint i=0; i < players.length; ++i)
+                            err += " " + players[i].Id;
+                        Log(err + " )");
+                    }
+                }
                 caravan.IncRoutePosition();
                 caravan.GetCurrentCoords(toX, toY);
             }

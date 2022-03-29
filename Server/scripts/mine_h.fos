@@ -5,8 +5,8 @@
 // mine_h.fos
 //
 
-#define MINE_COST                             (70000)
-#define MINE_TIME                             (REAL_DAY(14))
+#define MINE_COST                             (40000)
+#define MINE_TIME                             (REAL_DAY(7))
 #define MINE_RESOURCE_VALUE                   (20000) // Deprecated
 
 #define FORCE_DIALOG_MINE_CAN_BUY             (6)

@@ -69,7 +69,7 @@ LightColor=-16777216
 [Proto]
 ProtoId=223
 Type=7
-PicMap=art\items\smalbox2.frm
+PicMap=art\items\misc\passkey3.fofrm
 PicInv=art\inven\passkey3.frm
 Flags=150994974
 DisableEgg=1
@@ -116,14 +116,14 @@ Flags=419430430
 [Proto]
 ProtoId=9014
 Type=7
-PicMap=art\items\smalbox2.frm
+PicMap=art\items\misc\passkey1.fofrm
 PicInv=art\inven\passkey1.frm
 Flags=419430430
 
 [Proto]
 ProtoId=9015
 Type=7
-PicMap=art\items\smalbox2.frm
+PicMap=art\items\misc\passkey2.fofrm
 PicInv=art\inven\passkey2.frm
 Flags=419430430
 

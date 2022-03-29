@@ -18,9 +18,9 @@
 #define TRAIT_GOOD_NATURED          (560)
 #define TRAIT_CHEM_RELIANT          (561)
 #define TRAIT_CHEM_RESISTANT        (562)
-#define TRAIT_SEX_APPEAL            (563) // Used in engine
+#define TRAIT_BONEHEAD              (563) // Used in engine
 #define TRAIT_SKILLED               (564)
-#define TRAIT_NIGHT_PERSON          (565) // Used in engine
+#define TRAIT_LONER                 (565) // Used in engine
 //#define TRAIT_GIFTED                (566)
 
 /*@}*/

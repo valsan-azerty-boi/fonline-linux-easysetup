@@ -2,5 +2,5 @@
 // @ = enabled
 sdk.cs
 trains.cs
-@weather.cs
+weather.cs
 worldmap_only.cs

@@ -121,7 +121,8 @@ bool npc_plane_begin(Critter& npc, NpcPlane& plane, int reason, Critter@ someCr,
                 return false;
         }
 
-        if(_CritHasExtMode(npc, MODE_EXT_FOLLOWER) && target.IsPlayer() && (target.GetAccess() > ACCESS_CLIENT))
+       // if(_CritHasExtMode(npc, MODE_EXT_FOLLOWER) && target.IsPlayer() && (target.GetAccess() > ACCESS_CLIENT))
+	   if(_CritHasExtMode(npc, MODE_EXT_FOLLOWER) && target.IsPlayer())
             return false;
 
         if((_CritHasExtMode(target, MODE_EXT_TC_LEADER)) || _CritHasExtMode(npc, MODE_EXT_TC_LEADER))
@@ -394,6 +395,7 @@ bool LootCritter(Critter& npc, uint crId, bool lootEx, uint16 hexX, uint16 hexY)
             }
         }
         items.resize(0);
+		/*
         if(cr.GetItems(SLOT_ARMOR, items) > 0)
         {
             if(cr.Timeout[TO_REPLICATION] > 0)
@@ -403,6 +405,7 @@ bool LootCritter(Critter& npc, uint crId, bool lootEx, uint16 hexX, uint16 hexY)
                 return false;
             }
         }
+		*/
         _CritAnimatePickup(npc);   // fixme
         if(!lootEx)                // not PLANE_LOOT_EX
         {
@@ -758,7 +761,6 @@ bool npc_plane_run(Critter& npc, NpcPlane& plane, int reason, uint& r0, uint& r1
     #ifdef __TEST__
     npc.Say(SAY_NORM, "npc_plane_run: " + plane2str(plane.Type) + ", " + reason2str(reason));
     #endif
-    // Log("npc_plane_run");
     if(reason == REASON_ATTACK_WEAPON)
     {
         uint   targetId = r0;
@@ -788,6 +790,22 @@ bool npc_plane_run(Critter& npc, NpcPlane& plane, int reason, uint& r0, uint& r1
                 }
             }
         }
+        else if(npcPid == NPC_PID_PASHTSHUUR)
+        {
+			Critter@ target = GetCritter(targetId);
+            if(GetCrittersDistantion(npc, target) > 2)
+            {
+                Item@ weap = npc.GetItem(PID_PASHTSHUUR_SPIKE, -1);
+                if(valid(weap))
+                {
+                    r0 = weap.Id;
+                    r1 = 0;
+                    return true;
+                }
+            }
+        }
+		
+		
 
         // Default weapons
         r0 = 0;       // Use unarmed by default
@@ -1479,6 +1497,11 @@ bool CheckBattleWeapon(Critter& npc, Item& weapon)
 
 bool IsAmmoForWeapon(Critter& npc, Item& weapon)
 {
+	if(weapon.GetProtoId() == PID_SOLAR_SCORCHER)
+		{
+		if(!IS_NIGHT(__Hour)) return true;
+		else return false;
+		}
     if(npc.CountItem(weapon.AmmoPid) > 0)
         return true;
     if(npc.CountItem(weapon.Proto.Weapon_DefaultAmmoPid) > 0)

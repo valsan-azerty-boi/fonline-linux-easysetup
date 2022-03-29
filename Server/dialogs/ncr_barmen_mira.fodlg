@@ -32,7 +32,7 @@ lang=engl
 9 6010 #
 12 6020 #
 11 6030 @
-7 7000 None 0 #
+7 7000 dialog@dlg_SayBuyBeer 0 #
 6 7010 D _item p PID_BOTTLE_CAPS > 9 R _item p PID_BEER + 1 R _script dialog@r_RemoveMoney 1 10 #
 8 7020 #
 5 7030 #
@@ -56,7 +56,7 @@ lang=engl
 0 15010 #
 0 15020 R _var p q_ncr_mira_money = 1 R _script dialog@r_AddMoney 1 100 @
 16 16000 None 0 #
-0 16010 R _var p q_ncr_mira_money = 3 R _item p PID_MOLOTOV_COCKTAIL + 3 R _item p PID_KNIFE + 1 R _param p ST_EXPERIENCE + 75 &
+0 16010 R _var p q_ncr_mira_money = 3 R _item p PID_MOLOTOV_COCKTAIL + 3 R _item p PID_KNIFE + 1 R _param p ST_EXPERIENCE + 750 &
 
 [engl]
 {100}{}{Mira}
@@ -89,7 +89,7 @@ lang=engl
 {6010}{}{Tell me about this town.}
 {6020}{}{What's the deal on this Merk guy?}
 {6030}{}{There's this cop in town saying some pretty harsh things about you. What's the deal?}
-{7000}{}{One Rad-A-Waster coming up! Ten caps.}
+{7000}{}{One Rad-A-Waster coming up! Ten caps. [You can use SAY to enter number of items you want to buy]}
 {7010}{}{Thanks, I had some other questions.}
 {7020}{}{TEN caps? Too much for me.}
 {7030}{}{Forget it, I had some questions.}

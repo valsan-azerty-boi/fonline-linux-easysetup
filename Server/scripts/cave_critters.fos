@@ -14,7 +14,7 @@
 
 int[] small_gun_bags = { 156, 157, 212, 234, 220, 230, 240, 241, 265 }; // Shotgun, Desert Eagle, 14mm, 10mm, CAWS, Combat Shotgun,
 // Sniper rifle, Assault rifle, Hunting rifle
-// int[] big_gun_bags = { 239, 242, 272, 273, 193, 194 }; // Flamer, Minigun, Rocketlauncher, Improved flamer, Avenger minigun, Light support
+int[] big_gun_bags = { 239, 242, 272, 273, 193, 194 }; // Flamer, Minigun, Rocketlauncher, Improved flamer, Avenger minigun, Light support
 int[] melee_bags = { 215, 247, 248, 161, 150, 152, 159, 190 };          // Combat knife, Sharpened spear, Knife, Cattle prod, Crowbar, Club, Switchblade, Ripper
 
 array<int> raider_bags;
@@ -22,14 +22,14 @@ array<int> slaver_bags;
 array<int> all_bags;
 
 AddBagToBag(raider_bags, small_gun_bags);
-// AddBagToBag(raider_bags, big_gun_bags);
+AddBagToBag(raider_bags, big_gun_bags);
 
 AddBagToBag(slaver_bags, small_gun_bags);
 AddBagToBag(slaver_bags, melee_bags);
 
 AddBagToBag(all_bags, melee_bags);
 AddBagToBag(all_bags, small_gun_bags);
-// AddBagToBag(all_bags, big_gun_bags);
+AddBagToBag(all_bags, big_gun_bags);
 
 AddCaveCritter(CAVE_CRITTER_DEATHCLAW, 84, 142, AIPACKET_DEATHCLAW);
 AddCaveCritter(CAVE_CRITTER_RAT, 11, 1, AIPACKET_RAT);
@@ -50,3 +50,4 @@ AddCaveCritter(CAVE_CRITTER_BOOTLEGGER_2, 235, melee_bags, AIPACKET_PEASANTS);
 AddCaveCritter(CAVE_CRITTER_MERCENARY, 359, all_bags, AIPACKET_MERC_RAIDER);
 AddCaveCritter(CAVE_CRITTER_MERCENARY_2, 360, all_bags, AIPACKET_MERC_RAIDER);
 AddCaveCritter(CAVE_CRITTER_CENTIPEDE, 510, 1, AIPACKET_RAT);
+

@@ -18,6 +18,8 @@
 #define BROADCAST_TC                       (BROADCAST_TOWN_CONTROL)
 #define BROADCAST_INFLUENCE                (4)
 #define BROADCAST_GMCHAT                   (5)
+#define BROADCAST_BASE_CONTROL             (6)
+#define BROADCAST_BASE_RADIO               (7)
 
 // setup
 #define BROADCAST_SETUP_TC_STOP            (0)
@@ -114,6 +116,11 @@ import IBroadcastBuffer@ Broadcast_Influence(int location, int time, string& mes
 import uint Broadcast_RequestHelp(Critter@ player, string& message) from "broadcast";
 import void Broadcast_CheckRequestHelpBuffer(Critter@ gm) from "broadcast";
 import void Broadcast_DumpRequestHelpBuffer(Critter @gm) from "broadcast";
+
+// base control
+import void baseControl(string msg, int mapId, uint time) from "broadcast";
+import void baseControlRadio(string msg, uint time, int mapId, uint factionId) from "broadcast";
+
 # endif
 #endif /* __SERVER */
 #endif /* __BROADCAST_H__ */

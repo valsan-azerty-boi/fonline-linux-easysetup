@@ -243,8 +243,16 @@ bool ReloadWeapon(Critter& cr)
         return false;
 
     Item@ ammo = cr.GetItem(weapon.AmmoPid, -1);
+	if(weapon.GetProtoId()==PID_SOLAR_SCORCHER && (weapon.Proto.Weapon_MaxAmmoCount - weapon.AmmoCount)>0 && !IS_NIGHT(__Hour))
+	{
+		weapon.AmmoCount=weapon.Proto.Weapon_MaxAmmoCount;
+		cr.Action(ACTION_RELOAD_WEAPON, 3, weapon);
+		weapon.Update();
+		return true;
+	}
     if(!valid(ammo))
         return false;
+
 
     uint count = MIN(ammo.GetCount(), weapon.Proto.Weapon_MaxAmmoCount - weapon.AmmoCount);
     if(count > 0)
@@ -3280,4 +3288,13 @@ bool IsDisposableEncounter(Location@ loc)
         return(!LocationHasCritters(loc, FIND_ONLY_PLAYERS | FIND_ALL));
     }
     return false;
+}
+
+string IntToIp(int d)
+{
+  int v1 = d & 0xff;
+  int v2 = (d >> 8) & 0xff;
+  int v3 = (d >> 16) & 0xff;
+  int v4 = (d >> 24);
+  return v1 + "." + v2 + "." + v3 + "." + v4;
 }

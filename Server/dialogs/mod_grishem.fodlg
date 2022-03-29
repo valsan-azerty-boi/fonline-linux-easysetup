@@ -27,13 +27,13 @@ lang=engl
 6 6000 None 0 #
 11 6010 D _var p q_modoc_balthas_fetcher = 1 #
 4 6020 #
-7 6030 D _var p mod_q_meat_jerky = 2 D _script dialog@d_QuestTimeoutReady 0  #
+7 6030 D _var p mod_q_meat_jerky = 2 #
 8 6040 D _var p mod_q_meat_jerky = 0 #
 10 6050 D _var p mod_q_meat_jerky = 1 D _item p PID_MEAT_BAG < 1 D _script dialog@d_QuestTimeoutReady 0  R _script dialog@r_QuestTimeout 1 20 #
 3 6060 #
 0 6070 @
 7 7000 None 0 #
-0 7010 R _var p mod_q_meat_jerky = 1 R _script dialog@r_QuestTimeout 1 20 R _item p PID_MEAT_BAG + 1 @
+0 7010 R _var p mod_q_meat_jerky = 1 R _item p PID_MEAT_BAG + 1 @
 8 8000 None 0 #
 9 8010 #
 0 8020 @
@@ -55,16 +55,16 @@ lang=engl
 {1000}{}{Predialogue installations}
 {1010}{}{Answer text}
 {1020}{}{-}
-{2000}{}{The name’s Grisham. Welcome to my slaughterhouse. You dropping off or picking up?}
+{2000}{}{The name's Grisham. Welcome to my slaughterhouse. You dropping off or picking up?}
 {2010}{}{I would like you to make me some of your famous jerky.}
 {2020}{}{Can you tell me a little bit about the slaughterhouse?}
 {2030}{}{I have to go now.}
-{3000}{}{Ah! Of course, of course. Let’s see, for traveling, I recommend our world famous dried brahmin strips. Won’t spoil on the road and it’s tasty, too. All I need is two pieces of meat. You interested?}
+{3000}{}{Ah! Of course, of course. Let's see, for traveling, I recommend our world famous dried brahmin strips. Won't spoil on the road and it's tasty, too. All I need is two pieces of meat. You interested?}
 {3010}{}{Sure! Here's two pieces.}
 {3020}{}{Could you make five for me? Thanks.}
 {3030}{}{I can already feel my next trip will take some time... I'd need 20 jerky pieces, please.}
 {3040}{}{No, not right now. Maybe later.}
-{4000}{}{Not much to tell. I run the slaughterhouse in Modoc. You want something slaughtered, you bring it to me. I’ll kill it for ya and make it into some of the best jerky you’ve ever tasted.}
+{4000}{}{Not much to tell. I run the slaughterhouse in Modoc. You want something slaughtered, you bring it to me. I'll kill it for ya and make it into some of the best jerky you've ever tasted.}
 {4010}{}{I see.}
 {5000}{}{Pleasure doing business. Now, what can I do for you?}
 {5010}{}{Maybe I could do with a little bit more jerky.}

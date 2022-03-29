@@ -34,6 +34,19 @@ import void ThrowingKeyUp(uint8 key) from "throwing";
 import void ThrowingInputLost() from "throwing";
 import bool ThrowingMouseDown(int click) from "throwing";
 
+import void HexShotingKeyDown(uint8 key) from "hexShot";
+import void HexShotingKeyUp(uint8 key) from "hexShot";
+import void HexShotingInputLost() from "hexShot";
+import bool HexShotingMouseDown(int click) from "hexShot";
+
+import void HexThrowingKeyDown(uint8 key) from "hexThrow";
+import void HexThrowingKeyUp(uint8 key) from "hexThrow";
+import void HexThrowingInputLost() from "hexThrow";
+import bool HexThrowingMouseDown(int click) from "hexThrow";
+
+import void ChangeOnHeadAwarenessPlayer() from "client_critter_onhead";
+import void ChangeOnHeadAwarenessNPC() from "client_critter_onhead";
+
 // import void ShowAimScreen( CritterCl@ target ) from "client_gui_screens";
 
 #define LeftCtrl        GUI_IsKeyPressed(DIK_LCONTROL)
@@ -49,6 +62,8 @@ int PrevMouseY = __MouseY;
 void input_lost()
 {
     ThrowingInputLost();
+    HexShotingInputLost();
+    HexThrowingInputLost();
     IndicatorMouse(false, 0);
     __MapZooming = false;
 
@@ -60,6 +75,10 @@ void input_lost()
 // Return true to disable engine events.
 bool key_down(uint8 key)
 {
+	if(key!=DIK_LMENU && key!=DIK_RMENU && key != DIK_LSHIFT && key != DIK_RSHIFT && key != DIK_RCONTROL && key != DIK_LCONTROL && key == DIK_SPACE) if(EndTurnBasedTurn()) return true;
+
+	if(key!=DIK_LMENU && key!=DIK_RMENU && key != DIK_LSHIFT && key != DIK_RSHIFT && (key == DIK_RCONTROL || key == DIK_LCONTROL) && key == DIK_SPACE) if(EndTurnBasedCombat()) return true;
+
     if(key == DIK_LSHIFT && (LeftCtrl || LeftAlt) && __ConfigIgnoreLangChange)
         return(true);
 
@@ -80,6 +99,9 @@ bool key_down(uint8 key)
     #endif
 
     ThrowingKeyDown(key);
+    HexShotingKeyDown(key);
+    HexThrowingKeyDown(key);
+
     if(GMToolsProcessKey(key))
         return(true);
     if(DevMenuProcessKey(key))
@@ -110,6 +132,7 @@ bool key_down(uint8 key)
         ToggleInterfaceShown();
         break;
     // case DIK_F5: ToggleInterfaceExpanded(); break;
+    
     case DIK_F6:
         if(SetConfigValue(CONFIG_FILE, CONFIG_2238, "DisplayNames", !__ShowPlayerNames) &&
            string2bool(GetConfigValue(CONFIG_FILE, CONFIG_2238, "Autosave")))
@@ -117,6 +140,10 @@ bool key_down(uint8 key)
             SaveConfig(CONFIG_FILE);
             Message("Display player names: " + GetConfigValue(CONFIG_FILE, CONFIG_2238, "DisplayNames"));
         }
+        break;
+
+    case DIK_F7:
+        ChangeOnHeadAwarenessNPC();
         break;
 
     case DIK_F8:
@@ -127,6 +154,11 @@ bool key_down(uint8 key)
             Message("Mouse scroll: " + GetConfigValue(CONFIG_FILE, CONFIG_2238, "MouseScroll"));
         }
         break;
+
+    case DIK_F9:
+        ChangeOnHeadAwarenessPlayer();
+        break;
+
 
     case DIK_F10:
         __ConfigDisplayTCZones++;
@@ -155,6 +187,8 @@ bool key_down(uint8 key)
 bool key_up(uint8 key)
 {
     ThrowingKeyUp(key);
+    HexShotingKeyUp(key);
+    HexThrowingKeyUp(key);
 
     if(key == DIK_Z)
         __MapZooming = false;
@@ -169,6 +203,10 @@ bool key_up(uint8 key)
 bool mouse_down(int click)
 {
     if(ThrowingMouseDown(click))
+        return true;
+    if(HexShotingMouseDown(click))
+        return true;
+    if(HexThrowingMouseDown(click))
         return true;
     if(TryUseSmartCursor(click))
         return true;
@@ -318,4 +356,37 @@ void filename_screenshot(string& filename)
     }
     else
         Log("Invalid filename: " + filename);
+}
+
+
+
+
+bool EndTurnBasedTurn()
+{
+   if(__ConsoleActive) 
+      return false;
+
+   CritterCl@ chosen = GetChosen();
+   if(valid(chosen) && chosen.IsTurnBasedTurn())
+   {
+      RunServerScriptUnsafe( "unsafe_client@unsafe_EndTurnBasedTurn", 0, 0, 0, null, null );
+      return true;
+   }
+   
+   return false;
+}
+
+bool EndTurnBasedCombat()
+{
+   if(__ConsoleActive) 
+      return false;
+
+   CritterCl@ chosen = GetChosen();
+   if(valid(chosen) && chosen.IsTurnBasedTurn())
+   {
+      RunServerScriptUnsafe( "unsafe_client@unsafe_EndTurnBasedCombat", 0, 0, 0, null, null );
+      return true;
+   }
+
+   return false;
 }

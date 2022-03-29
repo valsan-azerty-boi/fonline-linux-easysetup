@@ -16,27 +16,27 @@ lang=engl
 3 3000 None 0 @
 4 4000 companion@dlg_ShowPreInfo 0 #
 4 4010 R _script follower@r_TellWeaponSkill 0  #
-3 4020 D _script follower@d_CanHaveMoreFollowers 1 1 R _script companion@r_BefriendCompanion 0  #
+3 4020 D _script follower@d_CanHaveMoreFollowers 1 1 D _param p ST_LEVEL } 12 R _script companion@r_BefriendCompanion 0  #
 0 4030 @
 5 5000 None 0 #
 0 5010 @
 11 6000 None 0 #
-3 6010 D _script follower@d_CanHaveMoreFollowers 1 1 R _script companion@r_BefriendCompanion 0  #
+3 6010 D _script follower@d_CanHaveMoreFollowers 1 1 D _param p ST_LEVEL } 12 R _script companion@r_BefriendCompanion 0  #
 0 6020 @
 12 7000 None 0 #
-3 7010 D _script follower@d_CanHaveMoreFollowers 1 1 R _script companion@r_BefriendCompanion 0  #
+3 7010 D _script follower@d_CanHaveMoreFollowers 1 1 D _param p ST_LEVEL } 12 R _script companion@r_BefriendCompanion 0  #
 0 7020 @
 13 8000 None 0 #
-3 8010 D _script follower@d_CanHaveMoreFollowers 1 1 R _script companion@r_BefriendCompanion 0  #
+3 8010 D _script follower@d_CanHaveMoreFollowers 1 1 D _param p ST_LEVEL } 12 R _script companion@r_BefriendCompanion 0  #
 0 8020 @
 14 9000 None 0 #
-3 9010 D _script follower@d_CanHaveMoreFollowers 1 1 R _script companion@r_BefriendCompanion 0  #
+3 9010 D _script follower@d_CanHaveMoreFollowers 1 1 D _param p ST_LEVEL } 12 R _script companion@r_BefriendCompanion 0  #
 0 9020 @
 15 10000 None 0 #
-3 10010 D _script follower@d_CanHaveMoreFollowers 1 1 R _script companion@r_BefriendCompanion 0  #
+3 10010 D _script follower@d_CanHaveMoreFollowers 1 1 D _param p ST_LEVEL } 12 R _script companion@r_BefriendCompanion 0  #
 0 10020 @
 16 11000 None 0 #
-3 11010 D _script follower@d_CanHaveMoreFollowers 1 1 R _script companion@r_BefriendCompanion 0  #
+3 11010 D _script follower@d_CanHaveMoreFollowers 1 1 D _param p ST_LEVEL } 12 R _script companion@r_BefriendCompanion 0  #
 0 11020 &
 
 [engl]

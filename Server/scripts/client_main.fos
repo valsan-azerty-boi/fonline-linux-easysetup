@@ -19,6 +19,9 @@
 #include "prices_server_client.fos"
 #include "config_h.fos"
 #include "client_utils_h.fos"
+#include "client_access_h.fos"
+
+import void InitCritterOnHead() from "client_critter_onhead";
 
 // import void ActionUpdate(CritterCl& cr) from "client_anti_cheat";
 
@@ -37,6 +40,9 @@ import void CutsceneProcess() from "client_cutscene";
 import void InitDevMenu() from "client_dev_menu";
 import bool IsAuthorized() from "client_dev_menu";
 
+import void InitDrawEncounters() from "client_fef";
+import void EncountersProcess() from "client_fef";
+
 import void InitFollowersMenu() from "client_followers_menu";
 
 import void GMToolsLoadConfig() from "client_gmtools";
@@ -53,13 +59,18 @@ import void InitTownDisplay() from "client_interface";
 import bool InitBinds() from "client_keybinds";
 
 import void InitOnlineStats() from "client_online_stats";
-import void InitContainerVolume() from "client_container_volume";
+import void InitContainerAddons() from "client_container_addons";
+import int GetPickupFilterOwn() from "client_container_addons";
+import int GetPickupFilterOpp() from "client_container_addons";
+
+import void InitFixboyAddons() from "client_fixboy";
 
 import bool IsReplaying() from "client_recording";
 import void Replay() from "client_recording";
 ;
 
 import void TimeoutsConfig(string& customConfig) from "client_timeouts";
+import void CombatLogConfig() from "client_combat";
 
 import void InitNameColorizing() from "name_colorizing";
 
@@ -69,6 +80,16 @@ import bool PerkCheck(CritterCl& cr, uint perk, bool always) from "perks";
 import void CritterGenerate(array<int>& data) from "parameters";
 import bool CritterGenerateCheck(array<int>& data) from "parameters";
 
+//import void    InitBaryScreen(IClientAccessLevelOpt@ ac) from "fo2077_client_screen_gameinfo";
+//import void    InitDateTime()                            from "fo2077_client_screen_gameinfo";
+//import void    UpdateDateTime()                          from "fo2077_client_screen_gameinfo";
+//import void    setAutoAimMode(uint8 key)                 from "fo2077_client_screen_gameinfo";
+//import uint8   getAutoAimMode()                          from "fo2077_client_screen_gameinfo";
+//import void    setOfftopLockMessageVisible(bool show)    from "fo2077_client_screen_gameinfo";
+import IClientAccessLevelOpt@ InitAccessControl() from "client_access";
+
+import void initTagScreen() from "fo2077_client_screen_tag";
+
 #pragma bindfunc "void OpenURL(string@+) -> client_parameters.dll OnlineStats_URL"
 
 array<int> trader_levels;               // Cached trader levels from server
@@ -77,6 +98,8 @@ int        item_prices_buy_modifier;    // Cached item prices from server
 int        item_prices_sell_modifier;   // Cached item prices from server
 
 bool       isGMT = false;
+
+IClientAccessLevelOpt@ accessControll;
 
 // TODO: delete me!
 int getParam_BonusLook(CritterCl& player, uint index)
@@ -97,10 +120,13 @@ bool start()
         // Recomendation message
         Message(GetMsgStr(TEXTMSG_GAME, STR_INVALID_RESOLUTION));
     }
+	Message("Welcome to FOnline !");
 
     // Additional dat files
 
     InitializeGame();
+
+    @accessControll = InitAccessControl();
 
     // delete me!
     SetParameterGetBehaviour(ST_BONUS_LOOK, "client_main@getParam_BonusLook");
@@ -155,12 +181,20 @@ bool start()
         Message("There were errors when initializing keybinds.");
     InitChosenTabs();
     InitBarterFilters();
+    InitFixboyAddons();
     InitOnlineStats();
-    InitContainerVolume();
+    InitContainerAddons();
     InitPerks();
 
     InitIndicators();
     InitBagCallbacks();
+   
+    //InitDateTime();
+
+    //initTagScreen();
+
+    InitCritterOnHead();
+    InitDrawEncounters();
 
     return true;
 }
@@ -169,7 +203,7 @@ bool start()
 // Main loop function. Returned time of next call in milliseconds.
 uint loop()
 {
-    GUI_Update();
+    GUI_Update(LOOP_TIME);
 
     if(IsReplaying())
         Replay();
@@ -179,6 +213,11 @@ uint loop()
         GMToolsProcess();
 
     CutsceneProcess();
+
+    if( __GmapActive )
+        EncountersProcess();
+
+    //UpdateDateTime();
 
     return LOOP_TIME;     // defined in _client_defines.fos
 }
@@ -473,8 +512,8 @@ void SetRepairItem(uint id)
 }
 
 
-import void SetVolumeFillIndicator(array<ItemCl@> items) from "client_container_volume";
-import void ZeroVolumeFillIndicator() from "client_container_volume";
+import void SetVolumeFillIndicator(array<ItemCl@> items) from "client_container_addons";
+import void ZeroVolumeFillIndicator() from "client_container_addons";
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Called on some items collection generating.
@@ -485,7 +524,7 @@ void items_collection(int collection, array<ItemCl@>& items)
 {
     if(collection == ITEMS_USE && RepairPid != 0)
     {
-        if(RepairPid == PID_MOTION_SENSOR || RepairPid == PID_ACTIVE_MOTION_SENSOR)
+        if(RepairPid == PID_MOTION_SENSOR || RepairPid == PID_ACTIVE_MOTION_SENSOR || RepairPid == PID_TESLA_ARMOR)
         {
             for(uint i = 0, j = items.length(); i < j; i++)
                 if(items[i].GetProtoId() != PID_SEC &&
@@ -510,6 +549,40 @@ void items_collection(int collection, array<ItemCl@>& items)
     if(collection == ITEMS_PICKUP_FROM)
     {
         SetVolumeFillIndicator(items);
+    }
+
+    if(collection == ITEMS_PICKUP || collection == ITEMS_PICKUP_FROM)
+    {
+        int useFilter = (collection == ITEMS_PICKUP ? GetPickupFilterOwn() : GetPickupFilterOpp());
+        if(useFilter == PICKUP_FILTER_NONE)
+            return;
+        for(uint i = 0, j = items.length(); i < j; i++)
+        {
+            uint type = items[i].GetType();
+            switch(useFilter)
+            {
+            case PICKUP_FILTER_ARMOR:
+                if(type != ITEM_TYPE_ARMOR)
+                    @items[i] = null;
+                break;
+            case PICKUP_FILTER_WEAPON:
+                if(type != ITEM_TYPE_WEAPON)
+                    @items[i] = null;
+                break;
+            case PICKUP_FILTER_AMMO:
+                if(type != ITEM_TYPE_AMMO)
+                    @items[i] = null;
+                break;
+            case PICKUP_FILTER_DRUG:
+                if(type != ITEM_TYPE_DRUG)
+                    @items[i] = null;
+                break;
+            case PICKUP_FILTER_MISC:
+            default:
+                if(type == ITEM_TYPE_ARMOR || type == ITEM_TYPE_WEAPON || type == ITEM_TYPE_AMMO || type == ITEM_TYPE_DRUG)
+                    @items[i] = null;
+            }
+        }
     }
 
     if(collection == ITEMS_BARTER || collection == ITEMS_BARTER_OPPONENT)
@@ -565,9 +638,11 @@ void InitConfig()
     // some defaults
     __ConfigDamageHitColor          = COLOR_RGB(200, 0, 0);
     __ConfigVerboseActionColor      = COLOR_RGB(58, 137, 133);
-    __ConfigFogColor                        = COLOR_RGBA(0, 0, 0, 160);
+    __ConfigFogColor                = COLOR_RGBA(0, 0, 0, 160);
+    __ConfigCustomBorderColor       = COLOR_RGB(30, 30, 90);
 
     TimeoutsConfig("");
+    CombatLogConfig();
 
     // [2238] part 1/2
     @section = GetConfigSection(CONFIG_FILE, CONFIG_2238);
@@ -645,6 +720,55 @@ void InitConfig()
         if(valid(val) && val.length() > 0)
         {
             __ConfigDisplayTC = string2bool(val);
+        }
+
+        // ShowMsFov
+        @val = GetConfigValue(CONFIG_FILE, CONFIG_2238, "ShowMsFov");
+        if(valid(val) && val.length() > 0)
+        {
+            __ConfigMsFov = string2bool(val);
+        }
+
+        // OnHeadAwareness type 0 - off, 1 - numbers, 2 - stars
+        @val = GetConfigValue(CONFIG_FILE, CONFIG_2238, "OnHeadAwareness");
+        if(valid(val) && val.length() > 0)
+        {
+            __ConfigOnHeadAwareness = CLAMP(string2uint(val), 0, 2);
+        }
+
+        // ShowNpcAwareness
+        @val = GetConfigValue(CONFIG_FILE, CONFIG_2238, "ShowNpcAwareness");
+        if(valid(val) && val.length() > 0)
+        {
+            __ConfigShowNpcAwareness = string2bool(val);
+        }
+
+        // ShowPlayerAwareness
+        @val = GetConfigValue(CONFIG_FILE, CONFIG_2238, "ShowPlayerAwareness");
+        if(valid(val) && val.length() > 0)
+        {
+            __ConfigShowPlayerAwareness = string2bool(val);
+        }
+
+        // CustomBorder
+        @val = GetConfigValue(CONFIG_FILE, CONFIG_2238, "CustomBorder");
+        if(valid(val) && val.length() > 0)
+        {
+            __ConfigCustomBorder = string2bool(val);
+        }
+
+        // CustomBorderRange
+        @val = GetConfigValue(CONFIG_FILE, CONFIG_2238, "CustomBorderRange");
+        if(valid(val) && val.length() > 0)
+        {
+            __ConfigCustomBorderRange = CLAMP(string2uint(val), 0, 100);
+        }
+
+        // CustomBorderColor
+        @val = GetConfigValue(CONFIG_FILE, CONFIG_2238, "CustomBorderColor");
+        if(valid(val) && val.length() > 0)
+        {
+            __ConfigCustomBorderColor = rgb_string2uint(val);
         }
     }
 

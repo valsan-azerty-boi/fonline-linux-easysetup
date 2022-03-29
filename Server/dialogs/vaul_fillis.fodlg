@@ -1,5 +1,6 @@
 [comment]
 
+
 [data]
 lang=engl
 
@@ -14,7 +15,7 @@ lang=engl
 3 3000 None 0 @
 4 4000 None 0 #
 0 4010 @
-5 5000 None 0 #
+5 5000 dialog@dlg_SayBuyMedGel 0 #
 6 5010 D _item p PID_BOTTLE_CAPS > 24 R _item p PID_BIO_GEL + 1 R _script dialog@r_RemoveMoney 1 25 #
 6 5020 D _item p PID_BOTTLE_CAPS > 124 R _item p PID_BIO_GEL + 5 R _script dialog@r_RemoveMoney 1 125 #
 6 5030 D _item p PID_BOTTLE_CAPS > 499 R _item p PID_BIO_GEL + 20 R _script dialog@r_RemoveMoney 1 500 #
@@ -37,7 +38,7 @@ lang=engl
 {4000}{}{Doctor Troy is next door in his office.}
 {4010}{}{Thanks for your help.
 }
-{5000}{}{Of course Citizen, but unfortunatly we can't hand this stuff out for free. Each dose will cost 25 caps.}
+{5000}{}{Of course Citizen, but unfortunatly we can't hand this stuff out for free. Each dose will cost 25 caps. [You can use SAY to enter number of items you want to buy]}
 {5010}{}{Ok, I have that with me, here you go. [Give her 25 caps]
 }
 {5020}{}{I think I'll take 5 of those right away.}

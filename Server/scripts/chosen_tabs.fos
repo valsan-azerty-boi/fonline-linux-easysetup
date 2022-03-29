@@ -104,9 +104,6 @@ void DrawChosenTabs() // Export
     if(chosen.IsOverweight())
         DrawTab(GetMsgStr(TEXTMSG_GAME, STR_OVERWEIGHT_TITLE), COLOR_DRED);
 
-    if(chosen.Timeout[TO_SLEEPY] > 0 && chosen.Param[TO_SLEEPY_STOPPED] == -1 && chosen.Param[ST_MINIGAME_DATA] == 0)
-        DrawTab("Idler", COLOR_DRED);
-
     if(chosen.Damage[DAMAGE_POISONED] != 0)
     {
         string@ ex = "";

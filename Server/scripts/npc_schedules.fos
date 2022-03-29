@@ -54,6 +54,7 @@ enum HardcodedSchedules
 int[] public_schedules =
 {
     GRAVE_KEEPER,
+	RADIATED_AI,
 //	LAST_REGISTERED
 };
 
@@ -467,12 +468,12 @@ void Grave_Keeper()
     INpcTask@     task = null;
 
     #ifdef __DEBUG__
-    # define CHECK_GRAVES_MIN    1
-    # define CHECK_GRAVES_MAX    2
+    # define CHECK_GRAVES_MIN    10
+    # define CHECK_GRAVES_MAX    20
     #endif
     #ifndef __DEBUG__
     # define CHECK_GRAVES_MIN    15
-    # define CHECK_GRAVES_MAX    60
+    # define CHECK_GRAVES_MAX    30
     #endif
 
     #define CHECK_GRAVES                                                             \
@@ -495,14 +496,15 @@ void Grave_Keeper()
             .EndIf();                                                                \
         }                                                                            \
         task.Walk_RandomHome(_idle)                                                  \
-        .Wait_Random(REAL_MINUTE(CHECK_GRAVES_MIN), REAL_MINUTE(CHECK_GRAVES_MAX))   \
+        .Wait_Random(REAL_SECOND(CHECK_GRAVES_MIN), REAL_SECOND(CHECK_GRAVES_MAX))   \
         .EndIf()
 
     uint16[] graves =
     {
         MAP_Cathedral_Enter,
         MAP_DenBusiness,
-        MAP_Redding
+        MAP_Redding,
+		MAP_NewReno_Golgotha
     };
     uint16[][] graves_cathedral =
     {
@@ -606,16 +608,59 @@ void Grave_Keeper()
         { 86, 54, 0 },
         { 86, 55, 0 }
     };
+    uint16[][] graves_golgotha =
+    {
+	// hexy grobow
+	
+	{ 42,66 },
+	{ 49,62 },
+	{ 61,65 },
+	{ 69,59 },
+	{ 76,70 },
+	{ 83,67 },
+	{ 80,55 },
+	{ 59,97 },
+	{ 72,91 },
+	{ 83,99 },
+	{ 80,105 },
+	{ 79,115 },
+	{ 77,126 },
+	{ 69,118 },
+	{ 84,138 },
+	{ 122,123 },
+	{ 119,105 },
+	{ 113,99 },
+	{ 109,94 },
+	{ 114,93 },
+	{ 123,98 },
+	{ 132,96 },
+	{ 110,67 },
+	{ 115,68 },
+	{ 122,64 },
+	{ 118,56 },
+	{ 105,58 },
+	{ 108,51 },
+	{ 113,48 },
+	{ 102,36 }
+	
+    };
+    uint16[][] idle_golgotha =
+    {
+        // punkty w ktorych odpoczywa
+        { 97, 46, 3 }
+    };	
     @task = schedule.AddTask_OnIdle("Check graves")
             .Roll(50)
             .If_NotMapPids(graves)
             .Say(SAY_SOCIAL, "INVALID MAP")
-            .Wait(REAL_MINUTE(10))
+            .Wait(REAL_SECOND(10))
             .EndIf()
             .If_MapPids(graves)
             CHECK_GRAVES(MAP_Cathedral_Enter, 344, graves_cathedral, idle_cathedral)
             CHECK_GRAVES(MAP_DenBusiness, 344, graves_den, idle_den)
             CHECK_GRAVES(MAP_Redding, 344, graves_redding, idle_redding)
+			CHECK_GRAVES(MAP_NewReno_Golgotha, 344, graves_golgotha, idle_golgotha)
+            CHECK_GRAVES(MAP_NewReno_Golgotha, 345, graves_golgotha, idle_golgotha)
             .EndIf();
 
     OverrideNpcSchedule(GRAVE_KEEPER, schedule);

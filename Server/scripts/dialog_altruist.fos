@@ -62,10 +62,14 @@ void r_Give(Critter& player, Critter@ npc, int val)
         player.AddItem(41, 100000);
         break;
     case 3:
+	{
         for(uint i = 0; i < REPUTATION_COUNT; i++)
             if(player.Reputation[i] != 0)
                 player.ReputationBase[i] = 0;
+		if(player.Param[KARMA_GRAVE_DIGGER] != 0) player.ParamBase[KARMA_GRAVE_DIGGER] = 0;
+		if(player.Param[KARMA_CHILDKILLER] != 0) player.ParamBase[KARMA_CHILDKILLER] = 0;		
         break;
+	}
     case 4:
         DropDrugEffects(player);
         break;

@@ -85,6 +85,7 @@
 {1808}{}{Shovel Dung}
 {1809}{}{Chop Wood}
 {1810}{}{Dig Grave}
+{1811}{}{Obtain Meat}
 
 #
 # Casino
@@ -121,7 +122,7 @@
 {3001}{}{You are lacking the skills to do that.}
 {3008}{}{You've gathered some seeds from the plant.}
 {3009}{}{You've harvested some tobacco from the plant.}
-{3010}{}{You've butchered some brahmin, and obtained some hide and meat.}
+{3010}{}{You've butchered some brahmin, and obtained some meat.}
 {3011}{}{You've harvested some fruits from the tree.}
 {3012}{}{You've dug some ore.}
 {3013}{}{You've dug some minerals.}
@@ -2159,8 +2160,8 @@
 {1001635}{}{The Eye Fivers}
 {1001636}{}{The Wasteland Mop Crew}
 {1001637}{}{The Wasteland Mop Crew}
-{1001638}{}{The Wasteland Heroes}
-{1001639}{}{The Wasteland Heroes}
+{1001638}{}{ARWH}
+{1001639}{}{ARWH}
 {1001640}{}{The Land Wasters}
 {1001641}{}{The Land Wasters}
 {1001642}{}{The Chainsaw Rippers}
@@ -2445,8 +2446,1378 @@
 {1001911}{}{Section 8}
 {1001912}{}{The Smokers}
 {1001913}{}{The Smokers}
-{1001913}{}{Momma's Rat Eaters}
 {1001914}{}{Momma's Rat Eaters}
-{1001915}{}{The Toilets}
+{1001915}{}{Momma's Rat Eaters}
 {1001916}{}{The Toilets}
-#1002000 - end point for factions names (change in factions_names.fos)
+{1001917}{}{The Toilets}
+{1001918}{}{Backstreet Boys}
+{1001919}{}{Backstreet Boys}
+{1001920}{}{Brotherhood of Shadow}
+{1001921}{}{Brothers of Shadow}
+{1001922}{}{Metal Militia}
+{1001923}{}{Metal Militia}
+{1001924}{}{Stalking Stalkers}
+{1001925}{}{Stalking Stalkers}
+{1001926}{}{New World Order}
+{1001927}{}{New World Order}
+{1001928}{}{Time Of Eternity}
+{1001929}{}{Time Of Eternity}
+{1001930}{}{The Gryphons}
+{1001931}{}{The Gryphons}
+{1001932}{}{Badlands Rangers}
+{1001933}{}{Badlands Rangers}
+{1001934}{}{The Snakes}
+{1001935}{}{The Snakes}
+{1001936}{}{The Scorpions}
+{1001937}{}{The Scorpions}
+{1001938}{}{The Thunder Corps}
+{1001939}{}{The Thunder Corps}
+{1001940}{}{The Gold Wolf Corps}
+{1001941}{}{The Gold Wolf Corps}
+{1001942}{}{The Black Bird Corps}
+{1001943}{}{The Black Bird Corps}
+{1001944}{}{Sharpened Pole Savages}
+{1001945}{}{Sharpened Pole Savages}
+{1001946}{}{Mad Jet Junkies}
+{1001947}{}{Mad Jet Junkies}
+{1001948}{}{Dirty Mexicans}
+{1001949}{}{Dirty Mexicans}
+{1001950}{}{Sowers of Death}
+{1001951}{}{Sowers of Death}
+{1001952}{}{Immortal Soldiers}
+{1001953}{}{Immortal Soldiers}
+{1001954}{}{10,000 Maniacs}
+{1001955}{}{10,000 Maniacs}
+{1001956}{}{Duty}
+{1001957}{}{Duty}
+{1001958}{}{Followers of the Gear}
+{1001959}{}{Followers of the Gear}
+{1001960}{}{Children of Almighty Gear}
+{1001961}{}{Children of Almighty Gear}
+{1001962}{}{Children of Gear}
+{1001963}{}{Children of Gear}
+{1001964}{}{Kool Kids Klub}
+{1001965}{}{Kool Kids Klub}
+{1001966}{}{The Outcasts}
+{1001967}{}{The Outcasts}
+{1001968}{}{Wild Virgins}
+{1001969}{}{Wild Virgins}
+{1001970}{}{White Dragon}
+{1001971}{}{White Dragon}
+{1001972}{}{NetWars}
+{1001973}{}{NetWars}
+{1001974}{}{-Chosen Soldiers-}
+{1001975}{}{-Chosen Soldiers-}
+{1001976}{}{Spaulding & Associates Tobacco Co.}
+{1001977}{}{Spaulding & Associates Tobacco Co.}
+{1001978}{}{- NetWars -}
+{1001979}{}{- NetWars -}
+{1001980}{}{JAG}
+{1001981}{}{JAG}
+{1001982}{}{Spaulding & Associates Tobacco Company}
+{1001983}{}{SAT}
+{1001984}{}{Noble House}
+{1001985}{}{Noble House}
+{1001986}{}{Equilibrium Church of Grammaton}
+{1001987}{}{ECG}
+{1001988}{}{The Muny Company}
+{1001989}{}{The Muny Company}
+{1001990}{}{The Devils Reject Pariahs}
+{1001991}{}{TDRP}
+{1001992}{}{The Desert Spear}
+{1001993}{}{The Desert Spear}
+{1001994}{}{Twisted Carnival}
+{1001995}{}{Twisted Carnival}
+{1001996}{}{Retribution}
+{1001997}{}{Retribution}
+{1001998}{}{Hammer Time}
+{1001999}{}{Hammer Time}
+{1002000}{}{The Red Tubes}
+{1002001}{}{The Red Tubes}
+{1002002}{}{Freedom}
+{1002003}{}{Freedom}
+{1002004}{}{Suicide Kings}
+{1002005}{}{Suicide Kings}
+{1002006}{}{Monty Python and the Holy Grail}
+{1002007}{}{MPHG}
+{1002008}{}{Fat Ladies Can Swim}
+{1002009}{}{FLCS}
+{1002010}{}{SG-1}
+{1002011}{}{SG-1}
+{1002012}{}{Woodstock Bitches}
+{1002013}{}{Woodstock Bitches}
+{1002014}{}{Disco Lasers and IT}
+{1002015}{}{DLIT}
+{1002016}{}{- The Hawks -}
+{1002017}{}{- The Hawks -}
+{1002018}{}{Bring The Gold}
+{1002019}{}{Bring The Gold}
+{1002020}{}{The Cafe of Broken Dreams}
+{1002021}{}{TCBD}
+{1002022}{}{Soldiers of The New World}
+{1002023}{}{STNW}
+{1002024}{}{Day of Glory}
+{1002025}{}{Day of Glory}
+{1002026}{}{The Feet Men}
+{1002027}{}{The Feet Men}
+{1002028}{}{The Shadows Hunters}
+{1002029}{}{The Shadows Hunters}
+{1002030}{}{The Strong Bulls}
+{1002031}{}{The Strong Bulls}
+{1002032}{}{Absolute Munitions}
+{1002033}{}{Absolute Munitions}
+{1002034}{}{Brahmin Shit Palace}
+{1002035}{}{Brahmin Shit Palace}
+{1002036}{}{The Brahmin Saviors}
+{1002037}{}{The Brahmin Saviors}
+{1002038}{}{The Happy Place}
+{1002039}{}{The Happy Place}
+{1002040}{}{The Primordians}
+{1002041}{}{The Primordians}
+{1002042}{}{Max Deal Syndicate}
+{1002043}{}{Max Deal Syndicate}
+{1002044}{}{The Ogre Alliance Federation}
+{1002045}{}{TOAF}
+{1002046}{}{The SOCOM Rejects}
+{1002047}{}{The SOCOM Rejects}
+{1002048}{}{Adeptus Astartes}
+{1002049}{}{Adeptus Astartes}
+{1002050}{}{The Rot Gut Riders}
+{1002051}{}{The Rot Gut Riders}
+{1002052}{}{New Rome}
+{1002053}{}{New Rome}
+{1002054}{}{Ostrogoths}
+{1002055}{}{Ostrogoths}
+{1002056}{}{The Lollipop Guild}
+{1002057}{}{TLG}
+{1002058}{}{Running With Scissors}
+{1002059}{}{RWS}
+{1002060}{}{The Pornstars}
+{1002061}{}{The Pornstars}
+{1002062}{}{Little Jimmy's Wrecking Crew}
+{1002063}{}{LJWC}
+{1002064}{}{O.P.C. Corporation}
+{1002065}{}{OPC}
+{1002066}{}{Grim Bounty Hunters}
+{1002067}{}{GBH}
+{1002068}{}{The Wise Elders}
+{1002069}{}{The Wise Elders}
+{1002070}{}{The Wasteland Community}
+{1002071}{}{TWC}
+{1002072}{}{The Wasteland Union}
+{1002073}{}{The Wasteland Union}
+{1002074}{}{The Lost Union}
+{1002075}{}{The Lost Union}
+{1002076}{}{The Lost Community}
+{1002077}{}{The Lost Community}
+{1002078}{}{Last Wasteland Doctors}
+{1002079}{}{LWD}
+{1002080}{}{The Arsenic Accumulators}
+{1002081}{}{The Arsenic Accumulators}
+{1002082}{}{Old Vault Overthrowers}
+{1002083}{}{Old Vault Overthrowers}
+{1002084}{}{The Little Doses of Mercury}
+{1002085}{}{TLDM}
+{1002086}{}{Vault Bunker Maniacs}
+{1002087}{}{Vault Bunker Maniacs}
+{1002088}{}{Bullies of the New World}
+{1002089}{}{Bullies of the New World}
+{1002090}{}{The Hidden Pistols}
+{1002091}{}{The Hidden Pistols}
+{1002092}{}{The Wasteland Radio Announcers}
+{1002093}{}{TWRA}
+{1002094}{}{The Sky Shadows}
+{1002095}{}{The Sky Shadows}
+{1002096}{}{The Welding Goggles Union}
+{1002097}{}{TWGU}
+{1002098}{}{The Demolitions Experts}
+{1002099}{}{The Demolitions Experts}
+{1002100}{}{The TV Tubes}
+{1002101}{}{The TV Tubes}
+{1002102}{}{The Knights of Oblivion}
+{1002103}{}{TKO}
+{1002104}{}{The Punctuation Crushers}
+{1002105}{}{The Punctuation Crushers}
+{1002106}{}{The Standup Comedian Killers}
+{1002107}{}{TSCK}
+{1002108}{}{The Dark Side Explorers}
+{1002109}{}{TDSE}
+{1002110}{}{The New Iron Mongers}
+{1002111}{}{TNIM}
+{1002112}{}{The Cyclones From Mexico}
+{1002113}{}{TCFM}
+{1002114}{}{The Fresh Blood Clots}
+{1002115}{}{The Fresh Blood Clots}
+{1002116}{}{The Bobblehead Collectors}
+{1002117}{}{The Bobblehead Collectors}
+{1002118}{}{The Stronghold Crusaders}
+{1002119}{}{The Stronghold Crusaders}
+{1002120}{}{The Guns of Navarone}
+{1002121}{}{The Guns of Navarone}
+{1002122}{}{Claw Company Mercs}
+{1002123}{}{Claw Company Mercs}
+{1002124}{}{The Pro-Wipers}
+{1002125}{}{The Pro-Wipers}
+{1002126}{}{The Bullet Points}
+{1002127}{}{The Bullet Points}
+{1002128}{}{The Lexums Not Found}
+{1002129}{}{The Lexums Not Found}
+{1002130}{}{The Monosodium Glutamates}
+{1002131}{}{TMG}
+{1002132}{}{The New Sand Confederates}
+{1002133}{}{TNSC}
+{1002134}{}{The Are Taking Reddings}
+{1002135}{}{TATR}
+{1002136}{}{The Breakfast Cereal Killers}
+{1002137}{}{TBCK}
+{1002138}{}{The Away From Keyboards}
+{1002139}{}{The Away From Keyboards}
+{1002140}{}{The Verti-Birds of Prey}
+{1002141}{}{The Verti-Birds of Prey}
+{1002142}{}{The Boneheads}
+{1002143}{}{Boneheads}
+{1002144}{}{The Bruisers}
+{1002145}{}{Bruisers}
+{1002146}{}{The Death Grips}
+{1002147}{}{Death Grips}
+{1002148}{}{Burned Men}
+{1002149}{}{Burned Men}
+{1002150}{}{Of The Divide}
+{1002151}{}{Of The Divide}
+{1002152}{}{The Old World Flag}
+{1002153}{}{TOWF}
+{1002154}{}{The Troublemakers}
+{1002155}{}{The Troublemakers}
+{1002156}{}{The Vice Squad}
+{1002157}{}{The Vice Squad}
+{1002158}{}{The Basement Rats}
+{1002159}{}{The Basement Rats}
+{1002160}{}{The Hooligans}
+{1002161}{}{The Hooligans}
+{1002162}{}{The Ultra Violence}
+{1002163}{}{The Ultra Violence}
+{1002164}{}{Brazilian Worker's Party Remnants}
+{1002165}{}{BWPR}
+{1002166}{}{Nuka Rangers}
+{1002167}{}{Nuka Rangers}
+{1002168}{}{The Polecats}
+{1002169}{}{The Polecats}
+{1002170}{}{The Cavefish}
+{1002171}{}{The Cavefish}
+{1002172}{}{The Vultures}
+{1002173}{}{The Vultures}
+{1002174}{}{The Road Warriors}
+{1002175}{}{The Road Warriors}
+{1002176}{}{The Varukers}
+{1002177}{}{The Varukers}
+{1002178}{}{The Banned From The Pub}
+{1002179}{}{TBFTP}
+{1002180}{}{Vegan Cannibals}
+{1002181}{}{Vegan Cannibals}
+{1002182}{}{The Red Line}
+{1002183}{}{The Red Line}
+{1002184}{}{The Lost Soldiers}
+{1002185}{}{The Lost Soldiers}
+{1002186}{}{The Truft Finders}
+{1002187}{}{The Truft Finders}
+{1002188}{}{The Bunker Dwellers}
+{1002189}{}{The Bunker Dwellers}
+{1002190}{}{The Last Bluesuits}
+{1002191}{}{The Last Bluesuits}
+{1002192}{}{Wasteland Water Thieves}
+{1002193}{}{Wasteland Water Thieves}
+{1002194}{}{9mm Ball Gag Gang}
+{1002195}{}{9mm Ball Gag Gang}
+{1002196}{}{Members Of Mayday}
+{1002197}{}{Members Of Mayday}
+{1002198}{}{Dead Presidents}
+{1002199}{}{Dead Presidents}
+{1002200}{}{The Untouchables}
+{1002201}{}{The Untouchables}
+{1002202}{}{The Walking Piranhas}
+{1002203}{}{The Walking Piranhas}
+{1002204}{}{The Anger Followers}
+{1002205}{}{The Anger Followers}
+{1002206}{}{The Necrophiliac Conspirators}
+{1002207}{}{TNC}
+{1002208}{}{The Merry Slavery Company}
+{1002209}{}{The Merry Slavery Company}
+{1002210}{}{The Ramens Eaters}
+{1002211}{}{The Ramens Eaters}
+{1002212}{}{Socialist Freedom Fighters}
+{1002213}{}{Socialist Freedom Fighters}
+{1002214}{}{Canadian Sons}
+{1002215}{}{Canadian Sons}
+{1002216}{}{Island Hoppers}
+{1002217}{}{Island Hoppers}
+{1002218}{}{War Hounds}
+{1002219}{}{War Hounds}
+{1002220}{}{The Crafters}
+{1002221}{}{The Crafters}
+{1002222}{}{The Builders}
+{1002223}{}{The Builders}
+{1002224}{}{The Last Chancers}
+{1002225}{}{The Last Chancers}
+{1002226}{}{The Legion}
+{1002227}{}{The Legion}
+{1002228}{}{The Think Tank}
+{1002229}{}{Think Tank}
+{1002230}{}{The Prospectors}
+{1002231}{}{Prospectors}
+{1002232}{}{Treasure Hunters}
+{1002233}{}{Treasure Hunters}
+{1002234}{}{Good Guy Guild}
+{1002235}{}{Good Guy Guild}
+{1002236}{}{Of Hamelin}
+{1002237}{}{Of Hamelin}
+{1002238}{}{The Khanate}
+{1002239}{}{The Khanate}
+{1002240}{}{Soldiers Of Jah Army}
+{1002241}{}{Soldiers Of Jah Army}
+{1002242}{}{The Outta Gum Gang}
+{1002243}{}{TOGG}
+{1002244}{}{Crimson Caravan Militia Co}
+{1002245}{}{CCMC}
+{1002246}{}{- The Troublemakers -}
+{1002247}{}{- The Troublemakers -}
+{1002248}{}{Amboy Dukes}
+{1002249}{}{Amboy Dukes}
+{1002250}{}{Venture Industries}
+{1002251}{}{Venture Industries}
+{1002252}{}{Free Stalkers}
+{1002253}{}{Free Stalkers}
+{1002254}{}{The Monolith}
+{1002255}{}{Monolith}
+{1002256}{}{The Renegades}
+{1002257}{}{Renegades}
+{1002258}{}{The Crimson Military}
+{1002259}{}{Crimson Military}
+{1002260}{}{The Crimson Raiders}
+{1002261}{}{Crimson Raiders}
+{1002262}{}{- Nuka Rangers -}
+{1002263}{}{- Nuka Rangers -}
+{1002264}{}{Children of the Wasteland}
+{1002265}{}{Children of the Wasteland}
+{1002266}{}{Potato Squad}
+{1002267}{}{Potato Squad}
+{1002268}{}{Republican Guard}
+{1002269}{}{Republican Guard}
+{1002270}{}{The Red Blades}
+{1002271}{}{The Red Blades}
+{1002272}{}{Tea Appreciation Society}
+{1002273}{}{Tea Appreciation Society}
+{1002274}{}{Strickland Propane Workers}
+{1002275}{}{SPW}
+{1002276}{}{Danny Sexbang Appreciation Club}
+{1002277}{}{DSAC}
+{1002278}{}{Louisville League}
+{1002279}{}{Louisville League}
+{1002280}{}{The Mad Bandits}
+{1002281}{}{The Mad Bandits}
+{1002282}{}{The Fremen}
+{1002283}{}{The Fremen}
+{1002284}{}{Damn Noisy Kids}
+{1002285}{}{Damn Noisy Kids}
+{1002286}{}{Men in Black}
+{1002287}{}{Men in Black}
+{1002288}{}{The Caravan Raiders}
+{1002289}{}{The Caravan Raiders}
+{1002290}{}{The Red Tooth Rats}
+{1002291}{}{The Red Tooth Rats}
+{1002292}{}{The Red Eye Mercenaries}
+{1002293}{}{The Red Eye Mercenaries}
+{1002294}{}{The Blackfoot Tribe}
+{1002295}{}{The Blackfoot Tribe}
+{1002296}{}{The Iron Lines}
+{1002297}{}{The Iron Lines}
+{1002298}{}{Bohemian Bastards}
+{1002299}{}{Bohemian Bastards}
+{1002300}{}{The Bloodcats}
+{1002301}{}{The Bloodcats}
+{1002302}{}{The Hicks}
+{1002303}{}{The Hicks}
+{1002304}{}{Wasteland Defence Force}
+{1002305}{}{Wasteland Defence Force}
+{1002306}{}{The Mutant Alliance}
+{1002307}{}{The Mutant Alliance}
+{1002308}{}{Core of Solid Gear}
+{1002309}{}{Core of Solid Gear}
+{1002310}{}{Desert Rats Verbande}
+{1002311}{}{Desert Rats Verbande}
+{1002312}{}{A Wastelanders Calamity}
+{1002313}{}{A Wastelanders Calamity}
+{1002314}{}{Ten Thousand Maniacs}
+{1002315}{}{Ten Thousand Maniacs}
+{1002316}{}{Fraction 44}
+{1002317}{}{Fraction 44}
+{1002318}{}{Neutron Star}
+{1002319}{}{Neutron Star}
+{1002320}{}{The Inner Circle}
+{1002321}{}{The Inner Circle}
+{1002322}{}{Guardians of the Secret}
+{1002323}{}{Guardians of the Secret}
+{1002324}{}{Llama Riders}
+{1002325}{}{Llama Riders}
+{1002326}{}{Turbo Laser Wolves}
+{1002327}{}{Turbo Laser Wolves}
+{1002328}{}{The Desert Fighters}
+{1002329}{}{The Desert Fighters}
+{1002330}{}{The Road Rangers}
+{1002331}{}{The Road Rangers}
+{1002332}{}{Black Storm Militia}
+{1002333}{}{Black Storm Militia}
+{1002334}{}{Brutish Hulks}
+{1002335}{}{Brutish Hulks}
+{1002336}{}{Children of the Sand}
+{1002337}{}{Children of the Sand}
+{1002338}{}{Red Scorpion Militia}
+{1002339}{}{Red Scorpion Militia}
+{1002340}{}{Red Sand Army}
+{1002341}{}{Red Sand Army}
+{1002342}{}{Shadow Team}
+{1002343}{}{Shadow Team}
+{1002344}{}{True Fanatics}
+{1002345}{}{True Fanatics}
+{1002346}{}{Clear Skies}
+{1002347}{}{Clear Skies}
+{1002348}{}{Genova Initiative}
+{1002349}{}{Genova Initiative}
+{1002350}{}{New Genova Corp}
+{1002351}{}{NGC}
+{1002352}{}{Post Nuclear Knights}
+{1002353}{}{PNK}
+{1002354}{}{The Sapphire Serpents}
+{1002355}{}{The Sapphire Serpents}
+{1002356}{}{Shark Muscles}
+{1002357}{}{Shark Muscles}
+{1002358}{}{Fig Puckers}
+{1002359}{}{Fig Puckers}
+{1002360}{}{Rainbow}
+{1002361}{}{Rainbow}
+{1002362}{}{Los Malditos}
+{1002363}{}{Los Malditos}
+{1002364}{}{Very Wild Geese}
+{1002365}{}{Very Wild Geese}
+{1002366}{}{Astral Energy Wolves}
+{1002367}{}{Astral Energy Wolves}
+{1002368}{}{Legiunea Romana}
+{1002369}{}{Legiunea Romana}
+{1002370}{}{Beta Colony Yellow Division}
+{1002371}{}{BCYD}
+{1002372}{}{Central Services}
+{1002373}{}{Central Services}
+{1002374}{}{Project Wasteland}
+{1002375}{}{Project Wasteland}
+{1002376}{}{Enclave Remnants}
+{1002377}{}{Enclave Remnants}
+{1002378}{}{Brotherhood Outcasts}
+{1002379}{}{Brotherhood Outcasts}
+{1002380}{}{Wasteland Express}
+{1002381}{}{Wasteland Express}
+{1002382}{}{Mutated Squad}
+{1002383}{}{Mutated Squad}
+{1002384}{}{Peacekeeper Squad}
+{1002385}{}{Peacekeeper Squad}
+{1002386}{}{Old World Glory}
+{1002387}{}{Old World Glory}
+{1002388}{}{Purple Heart}
+{1002389}{}{Purple Heart}
+{1002390}{}{The Divide}
+{1002391}{}{The Divide}
+{1002392}{}{Knights of Steel}
+{1002393}{}{Knights of Steel}
+{1002394}{}{Circle of Steel}
+{1002395}{}{Circle of Steel}
+{1002396}{}{Strange Meat Butchers}
+{1002397}{}{Strange Meat Butchers}
+{1002398}{}{Ranger Citadel}
+{1002399}{}{Ranger Citadel}
+{1002400}{}{HUBOLOGY}
+{1002401}{}{HUBOLOGY}
+{1002402}{}{Nuka Cola Cult}
+{1002403}{}{Nuka Cola Cult}
+{1002404}{}{Wasteland Storms}
+{1002405}{}{Wasteland Storms}
+{1002406}{}{Roentgen Ratpack Raiders}
+{1002407}{}{RRR}
+{1002408}{}{Cathode Crazies' Company}
+{1002409}{}{CCC}
+{1002410}{}{Boneyard Bathroom Bandits}
+{1002411}{}{BBB}
+{1002412}{}{The Boneyard Bookworms}
+{1002413}{}{TBB}
+{1002414}{}{The Mushroom-Cloud Apostles}
+{1002415}{}{TMCA}
+{1002416}{}{The Illiterate Rat Pack}
+{1002417}{}{The Illiterate Rat Pack}
+{1002418}{}{Burning Skidmarks}
+{1002419}{}{Burning Skidmarks}
+{1002420}{}{The Rotten Feast}
+{1002421}{}{The Rotten Feast}
+{1002422}{}{Strings & Bullets}
+{1002423}{}{Strings & Bullets}
+{1002424}{}{The Bald Bolt-Heads}
+{1002425}{}{The Bald Bolt-Heads}
+{1002426}{}{The Desert Rose Operatives}
+{1002427}{}{TDRO}
+{1002428}{}{Stormtroopers of the West-Coast}
+{1002429}{}{SWC}
+{1002430}{}{The Shreddz}
+{1002431}{}{The Shreddz}
+{1002432}{}{Shrapnel Storm}
+{1002433}{}{Shrapnel Storm}
+{1002434}{}{Shrapnel Burns}
+{1002435}{}{Shrapnel Burns}
+{1002436}{}{The Shrapnel Booms}
+{1002437}{}{The Shrapnel Booms}
+{1002438}{}{The Bolter Scouts}
+{1002439}{}{The Bolter Scouts}
+{1002440}{}{Sunbeam Scavengers}
+{1002441}{}{Sunbeam Scavengers}
+{1002442}{}{Blake Bad News Band}
+{1002443}{}{Blake Bad News Band}
+{1002444}{}{A Quintal of Mentats}
+{1002445}{}{A Quintal of Mentats}
+{1002446}{}{The Black Oculars}
+{1002447}{}{The Black Oculars}
+{1002448}{}{Fallen Maidens}
+{1002449}{}{Fallen Maidens}
+{1002450}{}{The Floating Machete Gang}
+{1002451}{}{TFMG}
+{1002452}{}{Tobin's Two Cents}
+{1002453}{}{Tobin's Two Cents}
+{1002454}{}{The Nuka Divers}
+{1002455}{}{The Nuka Divers}
+{1002456}{}{Green-Bearded Ladies}
+{1002457}{}{Green-Bearded Ladies}
+{1002458}{}{The Power-Fisters}
+{1002459}{}{The Power-Fisters}
+{1002460}{}{Bleeding Edge Wolfpack}
+{1002461}{}{Bleeding Edge Wolfpack}
+{1002462}{}{The Damage Amplifiers}
+{1002463}{}{The Damage Amplifiers}
+{1002464}{}{The Tattooed Girlscouts}
+{1002465}{}{The Tattooed Girlscouts}
+{1002466}{}{Coffee Commando}
+{1002467}{}{Coffee Commando}
+{1002468}{}{Bad Bruises}
+{1002469}{}{Bad Bruises}
+{1002470}{}{2 Wheel Ronins}
+{1002471}{}{2 Wheel Ronins}
+{1002472}{}{Circle of Vultures}
+{1002473}{}{Circle of Vultures}
+{1002474}{}{Buffout Buffoon Bunch}
+{1002475}{}{Buffout Buffoon Bunch}
+{1002476}{}{The Plasma Drives}
+{1002477}{}{The Plasma Drives}
+{1002478}{}{The Pick-o'-the-Bunch}
+{1002479}{}{The Pick-o'-the-Bunch}
+{1002480}{}{Methane Propulsion Engines}
+{1002481}{}{MPE}
+{1002482}{}{The Lustful Motel Crew}
+{1002483}{}{The Lustful Motel Crew}
+{1002484}{}{Young Rugged Sprits}
+{1002485}{}{Young Rugged Sprits}
+{1002486}{}{The Mosaic Gliders}
+{1002487}{}{The Mosaic Gliders}
+{1002488}{}{The Dust Wilders}
+{1002489}{}{The Dust Wilders}
+{1002490}{}{The 50 Year Old Virgins}
+{1002491}{}{The 50 Year Old Virgins}
+{1002492}{}{The Broken Promise}
+{1002493}{}{The Broken Promise}
+{1002494}{}{Six Howling Barrels}
+{1002495}{}{Six Howling Barrels}
+{1002496}{}{The Rabid Brahmin-Tippers}
+{1002497}{}{TRBT}
+{1002498}{}{The Swift & Clean}
+{1002499}{}{The Swift & Clean}
+{1002500}{}{The Social Striplings}
+{1002501}{}{The Social Striplings}
+{1002502}{}{Black Gaze Monks}
+{1002503}{}{Black Gaze Monks}
+{1002504}{}{Neon Bullets}
+{1002505}{}{Neon Bullets}
+{1002506}{}{The Stoical Bridgehead}
+{1002507}{}{The Stoical Bridgehead}
+{1002508}{}{The Indifferent Iguanas}
+{1002509}{}{The Indifferent Iguanas}
+{1002510}{}{The Hub of the Universe}
+{1002511}{}{The Hub of the Universe}
+{1002512}{}{Scream at the Winds}
+{1002513}{}{Scream at the Winds}
+{1002514}{}{The Emptied Jet Canisters}
+{1002515}{}{TEJC}
+{1002516}{}{The No More Winter Gang}
+{1002517}{}{TNMWG}
+{1002518}{}{The Whiskery Mantas}
+{1002519}{}{The Whiskery Mantas}
+{1002520}{}{The Far Beyond Drivens}
+{1002521}{}{The Far Beyond Drivens}
+{1002522}{}{Gamma Blues Band}
+{1002523}{}{Gamma Blues Band}
+{1002524}{}{The Greal White Brahmin}
+{1002525}{}{The Greal White Brahmin}
+{1002526}{}{Steaming Plasma Pool}
+{1002527}{}{Steaming Plasma Pool}
+{1002528}{}{Groovy Walkers}
+{1002529}{}{Groovy Walkers}
+{1002530}{}{The Next Guys Band}
+{1002531}{}{The Next Guys Band}
+{1002532}{}{The Plasma Pounders}
+{1002533}{}{The Plasma Pounders}
+{1002534}{}{The Ruthless Voltage Spikes}
+{1002535}{}{TRVS}
+{1002536}{}{The Spike Girls}
+{1002537}{}{The Spike Girls}
+{1002538}{}{The Perma-Downers}
+{1002539}{}{The Perma-Downers}
+{1002540}{}{The Lost Cardkeys}
+{1002541}{}{The Lost Cardkeys}
+{1002542}{}{The San Fran Fishermen}
+{1002543}{}{The San Fran Fishermen}
+{1002544}{}{The Sugar Vampires}
+{1002545}{}{The Sugar Vampires}
+{1002546}{}{The Oxi-morons}
+{1002547}{}{The Oxi-morons}
+{1002548}{}{The Feathersoft Plasmabeam}
+{1002549}{}{TFP}
+{1002550}{}{The Perfect Match}
+{1002551}{}{The Perfect Match}
+{1002552}{}{Marginalized Marauders}
+{1002553}{}{Marginalized Marauders}
+{1002554}{}{Wishful Thinking Wanamingos}
+{1002555}{}{WTW}
+{1002556}{}{Gamma Values}
+{1002557}{}{Gamma Values}
+{1002558}{}{Tesla Needles}
+{1002559}{}{Tesla Needles}
+{1002560}{}{The Ten Ton Hammers}
+{1002561}{}{The Ten Ton Hammers}
+{1002562}{}{The Neutron Cookies}
+{1002563}{}{The Neutron Cookies}
+{1002564}{}{The Large Hadron Colliders}
+{1002565}{}{TLHC}
+{1002566}{}{Les Horpeurs}
+{1002567}{}{Les Horpeurs}
+{1002568}{}{Followers of the Vault Dweller}
+{1002569}{}{FVD}
+{1002570}{}{Shop Smart at S-Mart}
+{1002571}{}{Shop Smart at S-Mart}
+{1002572}{}{Rouge Traders}
+{1002573}{}{Rouge Traders}
+{1002574}{}{Red Riders}
+{1002575}{}{Red Riders}
+{1002576}{}{Poor Mongols}
+{1002577}{}{Poor Mongols}
+{1002578}{}{Centuri Legions}
+{1002579}{}{Centuri Legions}
+{1002580}{}{Children of the Binary}
+{1002581}{}{Children of the Binary}
+{1002582}{}{Wasteland Mercs}
+{1002583}{}{Wasteland Mercs}
+{1002584}{}{Bear Force One}
+{1002585}{}{Bear Force One}
+{1002586}{}{Weyland-Yutani Corp.}
+{1002587}{}{Weyland-Yutani Corp.}
+{1002588}{}{The Machine Cult}
+{1002589}{}{The Machine Cult}
+{1002590}{}{The Darksteel Order}
+{1002591}{}{The Darksteel Order}
+{1002592}{}{Riders of Antioch}
+{1002593}{}{Riders of Antioch}
+{1002594}{}{Phalanx}
+{1002595}{}{Phalanx}
+{1002596}{}{Doctors and Medics}
+{1002597}{}{Doctors and Medics}
+{1002598}{}{Klamath Trappers}
+{1002599}{}{Klamath Trappers}
+{1002600}{}{CZE Rangers}
+{1002601}{}{CZE Rangers}
+{1002602}{}{Santa Marta Gold}
+{1002603}{}{Santa Marta Gold}
+{1002604}{}{Been Everywhere Together Adventuring}
+{1002605}{}{BETA}
+{1002606}{}{Bank Everyone Trusts A+}
+{1002607}{}{Bank Everyone Trusts A+}
+{1002608}{}{B.E.T.A.}
+{1002609}{}{B.E.T.A.}
+{1002610}{}{The Short-Timers}
+{1002611}{}{The Short-Timers}
+{1002612}{}{The Capo Men}
+{1002613}{}{The Capo Men}
+{1002614}{}{The Itchy Triggers}
+{1002615}{}{The Itchy Triggers}
+{1002616}{}{The Sub-Humans}
+{1002617}{}{The Sub-Humans}
+{1002618}{}{The Calm Bombs}
+{1002619}{}{The Calm Bombs}
+{1002620}{}{The Gun Freaks}
+{1002621}{}{The Gun Freaks}
+{1002622}{}{Pissed Off Hippies}
+{1002623}{}{Pissed Off Hippies}
+{1002624}{}{Gun Runner Loyalists}
+{1002625}{}{Gun Runner Loyalists}
+{1002626}{}{United California Project}
+{1002627}{}{United California Project}
+{1002628}{}{Propaganda Panda}
+{1002629}{}{Propaganda Panda}
+{1002630}{}{The Followers of Cain}
+{1002631}{}{The Followers of Cain}
+{1002632}{}{Red Cannibals}
+{1002633}{}{Red Cannibals}
+{1002634}{}{Vault of Broken Dreams}
+{1002635}{}{Vault of Broken Dreams}
+{1002636}{}{Emergency Response Workers}
+{1002637}{}{ERW}
+{1002638}{}{Evacuation Pilots of NCR}
+{1002639}{}{Evacuation Pilots of NCR}
+{1002640}{}{Firefighters Local 101}
+{1002641}{}{Firefighters Local 101}
+{1002642}{}{New Reno Ambulance Service}
+{1002643}{}{New Reno Ambulance Service}
+{1002644}{}{New Wasteland Marshals}
+{1002645}{}{New Wasteland Marshals}
+{1002646}{}{The Fans of Elvis}
+{1002647}{}{The Fans of Elvis}
+{1002648}{}{The Wasteland Jackhammers}
+{1002649}{}{The Wasteland Jackhammers}
+{1002650}{}{Radiated Construction Team}
+{1002651}{}{Radiated Construction Team}
+{1002652}{}{Vault Diggers Association}
+{1002653}{}{Vault Diggers Association}
+{1002654}{}{Power Miners of Rat Valley}
+{1002655}{}{PMORV}
+{1002656}{}{Dock Workers Union}
+{1002657}{}{Dock Workers Union}
+{1002658}{}{Load Lifters of Redding}
+{1002659}{}{Load Lifters of Redding}
+{1002660}{}{Safety Auditors of Necropolis}
+{1002661}{}{SAON}
+{1002662}{}{Vault City Inspectors}
+{1002663}{}{Vault City Inspectors}
+{1002664}{}{Emergency Medical Technicians}
+{1002665}{}{EMT}
+{1002666}{}{Computer Repair Servicemen}
+{1002667}{}{Computer Repair Servicemen}
+{1002668}{}{United Technology Generals}
+{1002669}{}{United Technology Generals}
+{1002670}{}{General Contractors of NCR}
+{1002671}{}{General Contractors of NCR}
+{1002672}{}{The Movers and Shakers}
+{1002673}{}{The Movers and Shakers}
+{1002674}{}{Radtoad Preservation Society}
+{1002675}{}{RPS}
+{1002676}{}{Deathclaw Appreciation Club}
+{1002677}{}{DAC}
+{1002678}{}{Harshville Landscapers}
+{1002679}{}{Harshville Landscapers}
+{1002680}{}{The Hospital Inspectors}
+{1002681}{}{The Hospital Inspectors}
+{1002682}{}{Old Handbook Authors}
+{1002683}{}{Old Handbook Authors}
+{1002684}{}{The Woodland Botanists}
+{1002685}{}{The Woodland Botanists}
+{1002686}{}{Poets and Killers}
+{1002687}{}{Poets and Killers}
+{1002688}{}{The Historic Recalibrators}
+{1002689}{}{The Historic Recalibrators}
+{1002690}{}{The Retrotech Mechanics}
+{1002691}{}{The Retrotech Mechanics}
+{1002692}{}{The Radiated Machinists}
+{1002693}{}{The Radiated Machinists}
+{1002694}{}{The Goggle Guardians}
+{1002695}{}{The Goggle Guardians}
+{1002696}{}{Keepers of the Gulp}
+{1002697}{}{Keepers of the Gulp}
+{1002698}{}{The Plutonium Blisters}
+{1002699}{}{The Plutonium Blisters}
+{1002700}{}{The Open Papercuts}
+{1002701}{}{The Open Papercuts}
+{1002702}{}{The Inoculated Cavities}
+{1002703}{}{The Inoculated Cavities}
+{1002704}{}{The Mean Dentists}
+{1002705}{}{The Mean Dentists}
+{1002706}{}{Vault Ten Fattys}
+{1002707}{}{Vault Ten Fattys}
+{1002708}{}{Last Men Standing}
+{1002709}{}{Last Men Standing}
+{1002710}{}{Life Pod Attendants}
+{1002711}{}{Life Pod Attendants}
+{1002712}{}{Hellfire Warriors}
+{1002713}{}{Hellfire Warriors}
+{1002714}{}{The Sand Pirates}
+{1002715}{}{The Sand Pirates}
+{1002716}{}{Dune Defenders}
+{1002717}{}{Dune Defenders}
+{1002718}{}{The Eager Economists}
+{1002719}{}{The Eager Economists}
+{1002720}{}{Team One Medics}
+{1002721}{}{Team One Medics}
+{1002722}{}{The Sandscape Snipers}
+{1002723}{}{The Sandscape Snipers}
+{1002724}{}{The Belt-Fed Brainiacs}
+{1002725}{}{The Belt-Fed Brainiacs}
+{1002726}{}{15th Air Cavalry}
+{1002727}{}{15th Air Cavalry}
+{1002728}{}{High Voltage Linemen}
+{1002729}{}{High Voltage Linemen}
+{1002730}{}{Digital Dreamers}
+{1002731}{}{Digital Dreamers}
+{1002732}{}{Fans of Nikolai Tesla}
+{1002733}{}{Fans of Nikolai Tesla}
+{1002734}{}{The Lumberyard Scrappers}
+{1002735}{}{The Lumberyard Scrappers}
+{1002736}{}{Oldtown Grief Counselors}
+{1002737}{}{Oldtown Grief Counselors}
+{1002738}{}{The Frito Banditos}
+{1002739}{}{The Frito Banditos}
+{1002740}{}{Hash Slinging Slashers}
+{1002741}{}{Hash Slinging Slashers}
+{1002742}{}{The Turbo Twisters}
+{1002743}{}{The Turbo Twisters}
+{1002744}{}{The Flaming Lips}
+{1002745}{}{The Flaming Lips}
+{1002746}{}{Greater Than Zero}
+{1002747}{}{Greater Than Zero}
+{1002748}{}{Legends of Waste}
+{1002749}{}{Legends of Waste}
+{1002750}{}{A Devious Bunch}
+{1002751}{}{A Devious Bunch}
+{1002752}{}{The Sleepwalkers}
+{1002753}{}{The Sleepwalkers}
+{1002754}{}{Old Bunker Bandits}
+{1002755}{}{Old Bunker Bandits}
+{1002756}{}{Red Star Raiders}
+{1002757}{}{Red Star Raiders}
+{1002758}{}{War of Rapture}
+{1002759}{}{War of Rapture}
+{1002760}{}{Children of Darkness}
+{1002761}{}{Children of Darkness}
+{1002762}{}{Children of Light}
+{1002763}{}{Children of Light}
+{1002764}{}{Sun Dogs}
+{1002765}{}{Sun Dogs}
+{1002766}{}{Twisted Hairs}
+{1002767}{}{Twisted Hairs}
+{1002768}{}{White Scars}
+{1002769}{}{White Scars}
+{1002770}{}{The Breakfast Club}
+{1002771}{}{The Breakfast Club}
+{1002772}{}{The Lunch Crew}
+{1002773}{}{The Lunch Crew}
+{1002774}{}{The Dinner Gang}
+{1002775}{}{The Dinner Gang}
+{1002776}{}{The 18th Street}
+{1002777}{}{The 18th Street}
+{1002778}{}{Sons of Korhal}
+{1002779}{}{Sons of Korhal}
+{1002780}{}{Softcore Soldiers}
+{1002781}{}{Softcore Soldiers}
+{1002782}{}{Deathwatch}
+{1002783}{}{Deathwatch}
+{1002784}{}{Armageddon Army}
+{1002785}{}{Armageddon Army}
+{1002786}{}{Striking Scorps}
+{1002787}{}{Striking Scorps}
+{1002788}{}{Red Neck Bootleggers}
+{1002789}{}{Red Neck Bootleggers}
+{1002790}{}{Mostly Mad Moonshiners}
+{1002791}{}{Mostly Mad Moonshiners}
+{1002792}{}{Desert Marines}
+{1002793}{}{Desert Marines}
+{1002794}{}{The Black Emperors}
+{1002795}{}{The Black Emperors}
+{1002796}{}{Neo Confederates}
+{1002797}{}{Neo Confederates}
+{1002798}{}{Southern Sons}
+{1002799}{}{Southern Sons}
+{1002800}{}{The Plantation}
+{1002801}{}{The Plantation}
+{1002802}{}{The Pagan Brotherhood}
+{1002803}{}{The Pagan Brotherhood}
+{1002804}{}{The Bane Train}
+{1002805}{}{The Bane Train}
+{1002806}{}{The Seven Suns}
+{1002807}{}{The Seven Suns}
+{1002808}{}{The Dark Emperors}
+{1002809}{}{The Dark Emperors}
+{1002810}{}{The Fallouts Rejects}
+{1002811}{}{The Fallouts Rejects}
+{1002812}{}{Scavenge Collect Perfect}
+{1002813}{}{Scavenge Collect Perfect}
+{1002814}{}{Mezen Guild}
+{1002815}{}{Mezen Guild}
+{1002816}{}{New Jimmy Republic}
+{1002817}{}{New Jimmy Republic}
+{1002818}{}{The Order of Gas Mask}
+{1002819}{}{The Order of Gas Mask}
+{1002820}{}{The Slayers}
+{1002821}{}{The Slayers}
+{1002822}{}{The Yellow Mongooses}
+{1002823}{}{The Yellow Mongooses}
+{1002824}{}{The Autistonauts}
+{1002825}{}{The Autistonauts}
+{1002826}{}{The Kiloton Club}
+{1002827}{}{The Kiloton Club}
+{1002828}{}{The Last Remnants}
+{1002829}{}{The Last Remnants}
+{1002830}{}{Team Dead Eye}
+{1002831}{}{Team Dead Eye}
+{1002832}{}{Train Robbers}
+{1002833}{}{Train Robbers}
+{1002834}{}{The Brown Shovels}
+{1002835}{}{The Brown Shovels}
+{1002836}{}{The Smelly Hands}
+{1002837}{}{The Smelly Hands}
+{1002838}{}{The Riot Control}
+{1002839}{}{The Riot Control}
+{1002840}{}{Riot Team}
+{1002841}{}{Riot Team}
+{1002842}{}{The Oppressed}
+{1002843}{}{The Oppressed}
+{1002844}{}{Brotherhood Of The Apocalypse}
+{1002845}{}{BOTA}
+{1002846}{}{The Gearheads}
+{1002847}{}{The Gearheads}
+{1002848}{}{The Scorchers}
+{1002849}{}{The Scorchers}
+{1002850}{}{The Northern Freebooters}
+{1002851}{}{The Northern Freebooters}
+{1002852}{}{The Joint Strike}
+{1002853}{}{The Joint Strike}
+{1002854}{}{Krvnchy Kaos Kvlt}
+{1002855}{}{Krvnchy Kaos Kvlt}
+{1002856}{}{The Warlords}
+{1002857}{}{The Warlords}
+{1002858}{}{The Warlocks}
+{1002859}{}{The Warlocks}
+{1002860}{}{Blade Runners}
+{1002861}{}{Blade Runners}
+{1002862}{}{The Montoneros}
+{1002863}{}{The Montoneros}
+{1002864}{}{The Omnipotent}
+{1002865}{}{The Omnipotent}
+{1002866}{}{Nuclear Attack}
+{1002867}{}{Nuclear Attack}
+{1002868}{}{Riders of the Wastes}
+{1002869}{}{Riders of the Wastes}
+{1002870}{}{Red Devils}
+{1002871}{}{Red Devils}
+{1002872}{}{Main Force Patrol}
+{1002873}{}{Main Force Patrol}
+{1002874}{}{The Anti-Violence}
+{1002875}{}{The Anti-Violence}
+{1002876}{}{The Genetic Drifters}
+{1002877}{}{The Genetic Drifters}
+{1002878}{}{Old School Technicians}
+{1002879}{}{Old School Technicians}
+{1002880}{}{United Museum Curators}
+{1002881}{}{United Museum Curators}
+{1002882}{}{Articulate Historians Club}
+{1002883}{}{Articulate Historians Club}
+{1002884}{}{Almond Growers of Iowa}
+{1002885}{}{Almond Growers of Iowa}
+{1002886}{}{Beer Brewers of Kansas}
+{1002887}{}{Beer Brewers of Kansas}
+{1002888}{}{Surveyors Social Society}
+{1002889}{}{Surveyors Social Society}
+{1002890}{}{Armed Imperial Guardsmen}
+{1002891}{}{Armed Imperial Guardsmen}
+{1002892}{}{The Couriers of Nobility}
+{1002893}{}{The Couriers of Nobility}
+{1002894}{}{Midnight Thunder Strikes}
+{1002895}{}{Midnight Thunder Strikes}
+{1002896}{}{Wasted Mercenaries}
+{1002897}{}{Wasted Mercenaries}
+{1002898}{}{The Faded Glory}
+{1002899}{}{The Faded Glory}
+{1002900}{}{Carebear Factory}
+{1002901}{}{Carebear Factory}
+{1002902}{}{Soldiers Of Fortune}
+{1002903}{}{Soldiers Of Fortune}
+{1002904}{}{Hillbilly Revue Orchestra}
+{1002905}{}{Hillbilly Revue Orchestra}
+{1002906}{}{The Purple Heart}
+{1002907}{}{The Purple Heart}
+{1002908}{}{The Salvation Army}
+{1002909}{}{The Salvation Army}
+{1002910}{}{The Red Cross}
+{1002911}{}{The Red Cross}
+{1002912}{}{Goodwill Society}
+{1002913}{}{Goodwill Society}
+{1002914}{}{The Society of Friends}
+{1002915}{}{The Society of Friends}
+{1002916}{}{The Quakers}
+{1002917}{}{The Quakers}
+{1002918}{}{New Imperialists}
+{1002919}{}{New Imperialists}
+{1002920}{}{The Federation}
+{1002921}{}{The Federation}
+{1002922}{}{Communist Party}
+{1002923}{}{Communist Party}
+{1002924}{}{Project Hope}
+{1002925}{}{Project Hope}
+{1002926}{}{The Electro Magnetospheres}
+{1002927}{}{The Electro Magnetospheres}
+{1002928}{}{The Ionized Polariscopes}
+{1002929}{}{The Ionized Polariscopes}
+{1002930}{}{The Revitalized Isotopes}
+{1002931}{}{The Revitalized Isotopes}
+{1002932}{}{The Geosynchronous Orbits}
+{1002933}{}{The Geosynchronous Orbits}
+{1002934}{}{The Resuscitated Synthesizers}
+{1002935}{}{TRS}
+{1002936}{}{The Asynchronous Reactors}
+{1002937}{}{The Asynchronous Reactors}
+{1002938}{}{The Calculators}
+{1002939}{}{The Calculators}
+{1002940}{}{Independent Wastelanders}
+{1002941}{}{Independent Wastelanders}
+{1002942}{}{Black Army Scouts}
+{1002943}{}{Black Army Scouts}
+{1002944}{}{Desert Wanderers}
+{1002945}{}{Desert Wanderers}
+{1002946}{}{Violent Wanderers}
+{1002947}{}{Violent Wanderers}
+{1002948}{}{The Headshot Gang}
+{1002949}{}{The Headshot Gang}
+{1002950}{}{Violent Traders}
+{1002951}{}{Violent Traders}
+{1002952}{}{Nomads of The Wastes}
+{1002953}{}{Nomads of The Wastes}
+{1002954}{}{Father Martin Sons}
+{1002955}{}{Father Martin Sons}
+{1002956}{}{The Misunderstood Overseers}
+{1002957}{}{The Misunderstood Overseers}
+{1002958}{}{Vault Guardians of Tomorrow}
+{1002959}{}{Vault Guardians of Tomorrow}
+{1002960}{}{The Hidden Operatives}
+{1002961}{}{The Hidden Operatives}
+{1002962}{}{The Baked Motherboards}
+{1002963}{}{The Baked Motherboards}
+{1002964}{}{The High-Speed Turbos}
+{1002965}{}{The High-Speed Turbos}
+{1002966}{}{Agents of Cloak}
+{1002967}{}{Agents of Cloak}
+{1002968}{}{The Uranium Rod Drivers}
+{1002969}{}{The Uranium Rod Drivers}
+{1002970}{}{Hitmen of Gear}
+{1002971}{}{Hitmen of Gear}
+{1002972}{}{Klan of Killers}
+{1002973}{}{Klan of Killers}
+{1002974}{}{Critical Timing Belts}
+{1002975}{}{Critical Timing Belts}
+{1002976}{}{Soylent Green Processors}
+{1002977}{}{Soylent Green Processors}
+{1002978}{}{Rough Rangers}
+{1002979}{}{Rough Rangers}
+{1002980}{}{The Tenacious Shooters}
+{1002981}{}{The Tenacious Shooters}
+{1002982}{}{The Dune Rangers}
+{1002983}{}{The Dune Rangers}
+{1002984}{}{Sniper Team X}
+{1002985}{}{Sniper Team X}
+{1002986}{}{Federation of Bursters}
+{1002987}{}{Federation of Bursters}
+{1002988}{}{Federation of Tanks}
+{1002989}{}{Federation of Tanks}
+{1002990}{}{The Bozar Collectors}
+{1002991}{}{The Bozar Collectors}
+{1002992}{}{Ghost Company Warriors}
+{1002993}{}{Ghost Company Warriors}
+{1002994}{}{Armored Explorers}
+{1002995}{}{Armored Explorers}
+{1002996}{}{Threshold Company Mercs}
+{1002997}{}{Threshold Company Mercs}
+{1002998}{}{Last Laser Surgeons}
+{1002999}{}{Last Laser Surgeons}
+{1003000}{}{Emergency Clinics}
+{1003001}{}{Emergency Clinics}
+{1003002}{}{High Intelligence Labs}
+{1003003}{}{High Intelligence Labs}
+{1003004}{}{High Science Labs}
+{1003005}{}{High Science Labs}
+{1003006}{}{The Barricades}
+{1003007}{}{The Barricades}
+{1003008}{}{Uzi Nine Millimeters}
+{1003009}{}{Uzi Nine Millimeters}
+{1003010}{}{The Raiders}
+{1003011}{}{The Raiders}
+{1003012}{}{The Black Sun Empire}
+{1003013}{}{The Black Sun Empire}
+{1003014}{}{The Smokehouse Fighters}
+{1003015}{}{The Smokehouse Fighters}
+{1003016}{}{Collection of Hunters}
+{1003017}{}{Collection of Hunters}
+{1003018}{}{The Lord's Choir}
+{1003019}{}{The Lord's Choir}
+{1003020}{}{Nuka Koalas}
+{1003021}{}{Nuka Koalas}
+{1003022}{}{The Midnight Gentlemen}
+{1003023}{}{The Midnight Gentlemen}
+{1003024}{}{Knights of Forbidden Tech}
+{1003025}{}{Knights of Forbidden Tech}
+{1003026}{}{The Studded Chaps}
+{1003027}{}{The Studded Chaps}
+{1003028}{}{Savage Looting Crew}
+{1003029}{}{Savage Looting Crew}
+{1003030}{}{Sunset Singers}
+{1003031}{}{Sunset Singers}
+{1003032}{}{Cappuccino Hippies}
+{1003033}{}{Cappuccino Hippies}
+{1003034}{}{The Forest Folk}
+{1003035}{}{The Forest Folk}
+{1003036}{}{Network of Nasties}
+{1003037}{}{Network of Nasties}
+{1003038}{}{Joe's Streetlight Crew}
+{1003039}{}{Joe's Streetlight Crew}
+{1003040}{}{Fragrant Wild Flowers}
+{1003041}{}{Fragrant Wild Flowers}
+{1003042}{}{Organized Criminals}
+{1003043}{}{Organized Criminals}
+{1003044}{}{The Wind Drifters}
+{1003045}{}{The Wind Drifters}
+{1003046}{}{Wasteland Daisies}
+{1003047}{}{Wasteland Daisies}
+{1003048}{}{The Proud Ones}
+{1003049}{}{The Proud Ones}
+{1003050}{}{The Victorious Rebels}
+{1003051}{}{The Victorious Rebels}
+{1003052}{}{Good Book Guardians}
+{1003053}{}{Good Book Guardians}
+{1003054}{}{San Fran Saints}
+{1003055}{}{San Fran Saints}
+{1003056}{}{San Fran Sinners}
+{1003057}{}{San Fran Sinners}
+{1003058}{}{Constant Sorrow Men}
+{1003059}{}{Constant Sorrow Men}
+{1003060}{}{The Robin Hoods}
+{1003061}{}{The Robin Hoods}
+{1003062}{}{Boneyard Brigade}
+{1003063}{}{Boneyard Brigade}
+{1003064}{}{Southern Hub Traders}
+{1003065}{}{Southern Hub Traders}
+{1003066}{}{Virgin Street Virgins}
+{1003067}{}{Virgin Street Virgins}
+{1003068}{}{The Golden Globers}
+{1003069}{}{The Golden Globers}
+{1003070}{}{The Last Confederates}
+{1003071}{}{The Last Confederates}
+{1003072}{}{Wanamingo Ranchers}
+{1003073}{}{Wanamingo Ranchers}
+{1003074}{}{The Bad Seeds}
+{1003075}{}{The Bad Seeds}
+{1003076}{}{Electro Corrupters}
+{1003077}{}{Electro Corrupters}
+{1003078}{}{Sandstorm Society}
+{1003079}{}{Sandstorm Society}
+{1003080}{}{Desert Treasure Hunters}
+{1003081}{}{Desert Treasure Hunters}
+{1003082}{}{The Ravaged Survivors}
+{1003083}{}{The Ravaged Survivors}
+{1003084}{}{The Civil Warriors}
+{1003085}{}{The Civil Warriors}
+{1003086}{}{Wolfs in the Fold}
+{1003087}{}{Wolfs in the Fold}
+{1003088}{}{Knights of Blood Oath}
+{1003089}{}{Knights of Blood Oath}
+{1003090}{}{The Game Dungeon}
+{1003091}{}{The Game Dungeon}
+{1003092}{}{Guys Not Ugly}
+{1003093}{}{Guys Not Ugly}
+{1003094}{}{The Systolic Motivators}
+{1003095}{}{The Systolic Motivators}
+{1003096}{}{The Neutron Defenders}
+{1003097}{}{The Neutron Defenders}
+{1003098}{}{The Plasma Guards}
+{1003099}{}{The Plasma Guards}
+{1003100}{}{The Cadmium Shields}
+{1003101}{}{The Cadmium Shields}
+{1003102}{}{The Voltage Regulators}
+{1003103}{}{The Voltage Regulators}
+{1003104}{}{The Intrepid Lowlanders}
+{1003105}{}{The Intrepid Lowlanders}
+{1003106}{}{Dark Valley Explorers}
+{1003107}{}{Dark Valley Explorers}
+{1003108}{}{The Dreadnaught Rangers}
+{1003109}{}{The Dreadnaught Rangers}
+{1003110}{}{The Rockfist Cruisers}
+{1003111}{}{The Rockfist Cruisers}
+{1003112}{}{The Overkill Engineer}
+{1003113}{}{The Overkill Engineer}
+{1003114}{}{The 18th Street Gang}
+{1003115}{}{The 18th Street Gang}
+{1003116}{}{The Muhosransk City}
+{1003117}{}{The Muhosransk City}
+{1003118}{}{Generic Name 13}
+{1003119}{}{Generic Name 13}
+{1003120}{}{Developers}
+{1003121}{}{Developers}
+{1003122}{}{The Tunnel Snakes}
+{1003123}{}{The Tunnel Snakes}
+{1003124}{}{Red Ribbon Army}
+{1003125}{}{Red Ribbon Army}
+{1003126}{}{The Crew}
+{1003127}{}{The Crew}
+{1003128}{}{Milf Hunters}
+{1003129}{}{Milf Hunters}
+{1003130}{}{The Scavengers}
+{1003131}{}{The Scavengers}
+{1003132}{}{Soldiers of Darkness}
+{1003133}{}{Soldiers of Darkness}
+{1003134}{}{Trooper's Clandestine}
+{1003135}{}{Trooper's Clandestine}
+{1003136}{}{Warriors of the Apocalypse}
+{1003137}{}{Warriors of the Apocalypse}
+{1003138}{}{Army Red Rising Sun}
+{1003139}{}{Army Red Rising Sun}
+{1003140}{}{Oaklands Arms Company}
+{1003141}{}{Oaklands Arms Company}
+{1003142}{}{Outer Heaven}
+{1003143}{}{Outer Heaven}
+{1003144}{}{Midwest Brotherhood of Steel}
+{1003145}{}{Midwest Brotherhood of Steel}
+{1003146}{}{The Pinkerton Detective Agency}
+{1003147}{}{TPDA}
+{1003148}{}{The Pinkertons}
+{1003149}{}{The Pinkertons}
+{1003150}{}{Punks Gasoline}
+{1003151}{}{Punks Gasoline}
+{1003152}{}{Sadistic Team}
+{1003153}{}{Sadistic Team}
+{1003154}{}{The Kings}
+{1003155}{}{The Kings}
+{1003156}{}{A Small Band of Noobs}
+{1003157}{}{A Small Band of Noobs}
+{1003158}{}{Armored Knee Organization}
+{1003159}{}{Armored Knee Organization}
+{1003160}{}{Frosty's Refreshment Rangers}
+{1003161}{}{FRR}
+{1003162}{}{Children of Leprosorium}
+{1003163}{}{Children of Leprosorium}
+{1003164}{}{The Wet Bandits}
+{1003165}{}{The Wet Bandits}
+{1003166}{}{Wild Clowns}
+{1003167}{}{Wild Clowns}
+{1003168}{}{Khan Recruits}
+{1003169}{}{Khan Recruits}
+{1003170}{}{Social Warriors}
+{1003171}{}{Social Warriors}
+{1003172}{}{Eduardo's Moonshiners}
+{1003173}{}{Eduardo's Moonshiners}
+{1003174}{}{X-Clan}
+{1003175}{}{X-Clan}
+{1003176}{}{The Michael Rosen Fanclub}
+{1003177}{}{The Michael Rosen Fanclub}
+{1003178}{}{Olympic Arms Surplus}
+{1003179}{}{Olympic Arms Surplus}
+{1003180}{}{Car Thieves Corporation}
+{1003181}{}{Car Thieves Corporation}
+{1003182}{}{Al Capone Mafia}
+{1003183}{}{Al Capone Mafia}
+{1003184}{}{Crater Cavaliers}
+{1003185}{}{Crater Cavaliers}
+{1003186}{}{Lone Wolves}
+{1003187}{}{Lone Wolves}
+{1003188}{}{Goldbrickers}
+{1003189}{}{Goldbrickers}
+{1003190}{}{Red Laugh Inc.}
+{1003191}{}{Red Laugh Inc.}
+{1003192}{}{Red Laugh Recruit}
+{1003193}{}{Red Laugh Recruit}
+{1003194}{}{The Refugees}
+{1003195}{}{The Refugees}
+{1003196}{}{The Guild of Thieves}
+{1003197}{}{The Guild of Thieves}
+{1003198}{}{Junked Brains}
+{1003199}{}{Junked Brains}
+{1003200}{}{Meme Team}
+{1003201}{}{Meme Team}
+{1003202}{}{Guardians of the Wasteland}
+{1003203}{}{GOTW}
+{1003204}{}{Fake Faking Fakers}
+{1003205}{}{Fake Faking Fakers}
+{1003206}{}{Baking Society of Bread}
+{1003207}{}{Baking Society of Bread}
+{1003208}{}{Servants of the Rat God}
+{1003209}{}{Servants of the Rat God}
+{1003210}{}{The Tall Tan Themed Trainers}
+{1003211}{}{TTTTT}
+{1003212}{}{Da Uber Muscle Boys}
+{1003213}{}{Da Uber Muscle Boys}
+{1003214}{}{The Fakerhood of Feels}
+{1003215}{}{The Fakerhood of Feels}
+{1003216}{}{The Drill Sergeants}
+{1003217}{}{The Drill Sergeants}
+{1003218}{}{Anime Fan Club}
+{1003219}{}{Anime Fan Club}
+{1003220}{}{Swamp Defenders}
+{1003221}{}{Swamp Defenders}
+{1003222}{}{House of Atom}
+{1003223}{}{House of Atom}
+{1003224}{}{Atom's Glow}
+{1003225}{}{Atom's Glow}
+{1003226}{}{Altonar's Trading Company}
+{1003227}{}{Altonar's Trading Company}
+{1003228}{}{The Order of the Builder}
+{1003229}{}{The Order of the Builder}
+{1003230}{}{The Order of Samson}
+{1003231}{}{The Order of Samson}
+{1003232}{}{Brethren of the Sands}
+{1003233}{}{Brethren of the Sands}
+{1003234}{}{Noobs With Miniguns}
+{1003235}{}{Noobs With Miniguns}
+{1003236}{}{Defenders of Wasteland}
+{1003237}{}{Defenders of Wasteland}
+{1003238}{}{Purified Fiji Thugs}
+{1003239}{}{Purified Fiji Thugs}
+{1003240}{}{The Imperial Guard}
+{1003241}{}{The Imperial Guard}
+{1003242}{}{The Friendly Hostiles}
+{1003243}{}{The Friendly Hostiles}
+{1003244}{}{Misery Incorporated}
+{1003245}{}{Misery Incorporated}
+{1003246}{}{The Movementarians}
+{1003247}{}{The Movementarians}
+{1003248}{}{Scorched Earth Co.}
+{1003249}{}{Scorched Earth Co.}
+{1003250}{}{The Lawyers Academy}
+{1003251}{}{The Lawyers Academy}
+{1003252}{}{The Death Squad}
+{1003253}{}{The Death Squad}
+{1003254}{}{The Cringe Squad}
+{1003255}{}{The Cringe Squad}
+{1003256}{}{Vault City Courtyard Gang}
+{1003257}{}{Vault City Courtyard Gang}
+{1003258}{}{Wild Deuces}
+{1003259}{}{Wild Deuces}
+{1003260}{}{The Freemasons}
+{1003261}{}{The Freemasons}
+{1003262}{}{The Illuminati}
+{1003263}{}{The Illuminati}
+{1003264}{}{The New World Order}
+{1003265}{}{The New World Order}
+{1003266}{}{The Jew World Order}
+{1003267}{}{The Jew World Order}
+{1003268}{}{The Rocketeers}
+{1003269}{}{The Rocketeers}
+{1003270}{}{The Holograms}
+{1003271}{}{The Holograms}
+{1003272}{}{The Homeless Crazies}
+{1003273}{}{The Homeless Crazies}
+{1003274}{}{Soldiers of the New Wasteland}
+{1003275}{}{SOTNW}
+{1003276}{}{Brotherhood of the New World}
+{1003277}{}{BOTNW}
+{1003278}{}{The Jews}
+{1003279}{}{The Jews}
+{1003280}{}{The Exclave}
+{1003281}{}{The Exclave}
+{1003282}{}{Niner's Gang}
+{1003283}{}{Niner's Gang}
+{1003284}{}{Scouts of MFP}
+{1003285}{}{Scouts of MFP}
+{1003286}{}{Leather Jackets Gang}
+{1003287}{}{Leather Jackets Gang}
+#1004000 - end point for factions names (change in factions_names.fos)

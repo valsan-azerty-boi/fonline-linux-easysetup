@@ -26,6 +26,14 @@ void map_init(Map& map, bool firstTime)
 
 void _OnEnterMap(Map& map, Critter& cr)
 {
+	if(cr.IsPlayer())
+	{
+    Location@ loc = map.GetLocation();
+    if (valid(loc) && !cr.IsKnownLoc(true,loc.Id)) 
+		{
+		cr.SetKnownLoc(true, loc.Id);
+		cr.Say(SAY_NETMSG, "You note coordinates of this private mine in your PipBoy.");
+		}
     uint ownerId = GetRootMapData(map, MAP_DATA_OWNER);
     if(ownerId > 0)
     {
@@ -35,6 +43,7 @@ void _OnEnterMap(Map& map, Critter& cr)
             cr.Say(SAY_NETMSG, "This mine is depleted and the owner can buy a new one (this location will disappear when a new mine is bought).");
         }
     }
+	}
 }
 
 /*

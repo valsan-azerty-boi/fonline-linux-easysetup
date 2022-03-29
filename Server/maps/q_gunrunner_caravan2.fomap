@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              198
 MaxHexY              188
-WorkHexX             127
-WorkHexY             85
+WorkHexX             72
+WorkHexY             80
 ScriptModule         -
 ScriptFunc           -
 NoLogOut             0
@@ -18016,102 +18016,6 @@ ProtoId              5801
 MapX                 111
 MapY                 118
 
-MapObjType           1
-ProtoId              545
-MapX                 92
-MapY                 139
-ScriptName           explode
-FuncName             _ExplodeInit
-Item_TrapValue       120
-
-MapObjType           1
-ProtoId              545
-MapX                 89
-MapY                 127
-ScriptName           explode
-FuncName             _ExplodeInit
-Item_TrapValue       75
-
-MapObjType           1
-ProtoId              545
-MapX                 93
-MapY                 130
-ScriptName           explode
-FuncName             _ExplodeInit
-Item_TrapValue       100
-
-MapObjType           1
-ProtoId              545
-MapX                 93
-MapY                 116
-ScriptName           explode
-FuncName             _ExplodeInit
-Item_TrapValue       100
-
-MapObjType           1
-ProtoId              545
-MapX                 99
-MapY                 122
-ScriptName           explode
-FuncName             _ExplodeInit
-Item_TrapValue       100
-
-MapObjType           1
-ProtoId              545
-MapX                 110
-MapY                 127
-ScriptName           explode
-FuncName             _ExplodeInit
-Item_TrapValue       100
-
-MapObjType           1
-ProtoId              545
-MapX                 108
-MapY                 138
-ScriptName           explode
-FuncName             _ExplodeInit
-Item_TrapValue       80
-
-MapObjType           1
-ProtoId              545
-MapX                 108
-MapY                 131
-ScriptName           explode
-FuncName             _ExplodeInit
-Item_TrapValue       80
-
-MapObjType           1
-ProtoId              545
-MapX                 138
-MapY                 92
-ScriptName           explode
-FuncName             _ExplodeInit
-Item_TrapValue       75
-
-MapObjType           1
-ProtoId              545
-MapX                 139
-MapY                 87
-ScriptName           explode
-FuncName             _ExplodeInit
-Item_TrapValue       75
-
-MapObjType           1
-ProtoId              545
-MapX                 120
-MapY                 108
-ScriptName           explode
-FuncName             _ExplodeInit
-Item_TrapValue       65
-
-MapObjType           1
-ProtoId              545
-MapX                 132
-MapY                 108
-ScriptName           explode
-FuncName             _ExplodeInit
-Item_TrapValue       110
-
 MapObjType           2
 ProtoId              5201
 MapX                 102
@@ -18443,30 +18347,6 @@ MapObjType           2
 ProtoId              5803
 MapX                 127
 MapY                 101
-
-MapObjType           1
-ProtoId              545
-MapX                 134
-MapY                 91
-ScriptName           explode
-FuncName             _ExplodeInit
-Item_TrapValue       75
-
-MapObjType           1
-ProtoId              545
-MapX                 134
-MapY                 83
-ScriptName           explode
-FuncName             _ExplodeInit
-Item_TrapValue       75
-
-MapObjType           1
-ProtoId              545
-MapX                 118
-MapY                 102
-ScriptName           explode
-FuncName             _ExplodeInit
-Item_TrapValue       75
 
 MapObjType           2
 ProtoId              2493
@@ -18903,11 +18783,6 @@ MapX                 69
 MapY                 75
 
 MapObjType           2
-ProtoId              2190
-MapX                 65
-MapY                 75
-
-MapObjType           2
 ProtoId              2192
 MapX                 65
 MapY                 77
@@ -18932,27 +18807,39 @@ ProtoId              189
 MapX                 70
 MapY                 84
 UID                  14
+ScriptName           item_spawner_container
+FuncName             item_init
+Item_Val4            102
 
 MapObjType           1
 ProtoId              189
 MapX                 70
 MapY                 88
 UID                  15
+ScriptName           item_spawner_container
+FuncName             item_init
+Item_Val4            102
 
 MapObjType           1
 ProtoId              189
 MapX                 65
 MapY                 80
 UID                  16
+ScriptName           item_spawner_container
+FuncName             item_init
+Item_Val4            102
 
 MapObjType           1
 ProtoId              188
 MapX                 73
 MapY                 76
 UID                  17
+ScriptName           item_spawner_container
+FuncName             item_init
+Item_Val4            103
 
 MapObjType           0
-ProtoId              121
+ProtoId              552
 MapX                 67
 MapY                 78
 Dir                  3
@@ -18981,7 +18868,7 @@ Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  0
 
 MapObjType           0
-ProtoId              121
+ProtoId              552
 MapX                 72
 MapY                 89
 Dir                  4
@@ -19010,7 +18897,7 @@ Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  0
 
 MapObjType           0
-ProtoId              121
+ProtoId              552
 MapX                 114
 MapY                 85
 ScriptName           quest_la_gunr_caravan
@@ -19038,7 +18925,7 @@ Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  0
 
 MapObjType           0
-ProtoId              120
+ProtoId              553
 MapX                 72
 MapY                 77
 Dir                  1
@@ -19067,7 +18954,7 @@ Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  0
 
 MapObjType           0
-ProtoId              120
+ProtoId              551
 MapX                 73
 MapY                 82
 ScriptName           quest_la_gunr_caravan
@@ -19080,7 +18967,7 @@ Critter_ParamValue0  10277
 Critter_ParamIndex1  ST_AI_ID
 Critter_ParamValue1  194
 Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  165
+Critter_ParamValue2  275
 Critter_ParamIndex3  ST_TEAM_ID
 Critter_ParamValue3  5001
 Critter_ParamIndex4  ST_NPC_ROLE
@@ -19093,9 +18980,11 @@ Critter_ParamIndex7  ST_FACTION_MODE
 Critter_ParamValue7  0
 Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  0
+Critter_ParamIndex9  ST_LEVEL
+Critter_ParamValue9  25
 
 MapObjType           0
-ProtoId              120
+ProtoId              553
 MapX                 78
 MapY                 83
 Dir                  2
@@ -19124,7 +19013,7 @@ Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  0
 
 MapObjType           0
-ProtoId              120
+ProtoId              553
 MapX                 83
 MapY                 103
 Dir                  4
@@ -19153,7 +19042,7 @@ Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  0
 
 MapObjType           0
-ProtoId              120
+ProtoId              553
 MapX                 92
 MapY                 49
 Dir                  3
@@ -19182,7 +19071,7 @@ Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  0
 
 MapObjType           0
-ProtoId              120
+ProtoId              553
 MapX                 139
 MapY                 97
 Dir                  3
@@ -19211,10 +19100,10 @@ Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  0
 
 MapObjType           0
-ProtoId              120
-MapX                 103
-MapY                 81
-Dir                  4
+ProtoId              553
+MapX                 94
+MapY                 139
+Dir                  5
 ScriptName           quest_la_gunr_caravan
 FuncName             _Mutant
 Critter_Cond         1
@@ -19240,9 +19129,9 @@ Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  0
 
 MapObjType           0
-ProtoId              120
-MapX                 102
-MapY                 85
+ProtoId              553
+MapX                 99
+MapY                 146
 Dir                  1
 ScriptName           quest_la_gunr_caravan
 FuncName             _Mutant
@@ -19269,7 +19158,7 @@ Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  0
 
 MapObjType           0
-ProtoId              120
+ProtoId              553
 MapX                 119
 MapY                 79
 ScriptName           quest_la_gunr_caravan
@@ -19297,7 +19186,7 @@ Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  0
 
 MapObjType           0
-ProtoId              120
+ProtoId              553
 MapX                 156
 MapY                 114
 ScriptName           quest_la_gunr_caravan
@@ -22699,7 +22588,7 @@ MapX                 118
 MapY                 74
 
 MapObjType           0
-ProtoId              120
+ProtoId              553
 MapX                 105
 MapY                 61
 ScriptName           quest_la_gunr_caravan
@@ -22805,52 +22694,78 @@ MapY                 76
 ContainerUID         17
 Item_Count           5
 
-MapObjType           1
-ProtoId              545
-MapX                 135
-MapY                 88
-ScriptName           explode
-FuncName             _ExplodeInit
-Item_TrapValue       75
+MapObjType           0
+ProtoId              553
+MapX                 103
+MapY                 81
+Dir                  4
+ScriptName           quest_la_gunr_caravan
+FuncName             _Mutant
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  10277
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  194
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  183
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  5001
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  -1
+Critter_ParamIndex6  ST_FACTION_RANK
+Critter_ParamValue6  1
+Critter_ParamIndex7  ST_FACTION_MODE
+Critter_ParamValue7  0
+Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
+Critter_ParamValue8  0
+
+MapObjType           0
+ProtoId              553
+MapX                 102
+MapY                 85
+Dir                  1
+ScriptName           quest_la_gunr_caravan
+FuncName             _Mutant
+Critter_Cond         1
+Critter_Anim1        0
+Critter_Anim2        0
+Critter_ParamIndex0  ST_DIALOG_ID
+Critter_ParamValue0  10277
+Critter_ParamIndex1  ST_AI_ID
+Critter_ParamValue1  194
+Critter_ParamIndex2  ST_BAG_ID
+Critter_ParamValue2  183
+Critter_ParamIndex3  ST_TEAM_ID
+Critter_ParamValue3  5001
+Critter_ParamIndex4  ST_NPC_ROLE
+Critter_ParamValue4  0
+Critter_ParamIndex5  ST_REPLICATION_TIME
+Critter_ParamValue5  -1
+Critter_ParamIndex6  ST_FACTION_RANK
+Critter_ParamValue6  1
+Critter_ParamIndex7  ST_FACTION_MODE
+Critter_ParamValue7  0
+Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
+Critter_ParamValue8  0
 
 MapObjType           1
-ProtoId              545
-MapX                 135
-MapY                 79
-ScriptName           explode
-FuncName             _ExplodeInit
-Item_TrapValue       100
+ProtoId              188
+MapX                 66
+MapY                 75
+ScriptName           item_spawner_container
+FuncName             item_init
+Item_Val4            103
 
 MapObjType           1
-ProtoId              545
-MapX                 121
-MapY                 102
-ScriptName           explode
-FuncName             _ExplodeInit
-Item_TrapValue       75
-
-MapObjType           1
-ProtoId              545
-MapX                 121
-MapY                 117
-ScriptName           explode
-FuncName             _ExplodeInit
-Item_TrapValue       100
-
-MapObjType           1
-ProtoId              545
-MapX                 111
-MapY                 136
-ScriptName           explode
-FuncName             _ExplodeInit
-Item_TrapValue       75
-
-MapObjType           1
-ProtoId              545
-MapX                 86
-MapY                 128
-ScriptName           explode
-FuncName             _ExplodeInit
-Item_TrapValue       80
+ProtoId              188
+MapX                 68
+MapY                 75
+ScriptName           item_spawner_container
+FuncName             item_init
+Item_Val4            103
 
 

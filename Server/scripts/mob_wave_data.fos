@@ -18,7 +18,7 @@ const array<array<array<array<uint> > > > MobWaves =
     {
         // Level 0 [1.5 - 3.5 min]
         {
-            { 90, 210 },             // Time to the wave from the previous one (real seconds)
+            { 270, 390 },             // Time to the wave from the previous one (real seconds)
             {
                 STR_MOB_WAVE_RATS,   // String used for wave warning (You hear...)
                 NPC_PID_Rat, 1, 0, 0 // PID, number of critters, bag, level scale (% of player level, 0 is 100%)

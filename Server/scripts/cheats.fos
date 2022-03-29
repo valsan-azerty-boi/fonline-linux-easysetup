@@ -73,7 +73,7 @@ import void            DropDrugEffects(Critter& cr, bool dropAddictions) from "d
 import void            DropPoison(Critter& cr) from "poison";
 import void            DropRadiation(Critter& cr) from "radiation";
 import void            Explode(Map@ map, uint16 hexX, uint16 hexY, Critter@ cr, uint16 explodePid, uint ownerId, int bonusDamage, int bonusRadius) from "explode";
-import void            ExplodeEx(Map& map, uint16 hexX, uint16 hexY, uint16 effectPid, uint effectRadius, uint damage, uint damageType, uint damageRadius, uint ownerId) from "explode";
+import void            ExplodeEx(Map& map, uint16 hexX, uint16 hexY, uint16 effectPid, uint effectRadius, uint damage, uint damageType, uint damageRadius, uint ownerId, uint16 explodePid) from "explode";
 import bool            GetBaseType(const string& in, int& out) from "main";
 import bool            GetItemPid(const string& in, int& out) from "main";
 import bool            GetMapData(const string& in, int& out) from "main";
@@ -147,7 +147,7 @@ string[] commandlist =
     "reviveall", "respawnallplayers", "reviveallplayers", "rotate", "rundialog",
     "saferegen", "say", "sayh", "setfaction", "setmapdata", "setanim", "sethp",
     "setlexem", "setperk", "setreputation", "setrep", "settimeout", "sto",
-    "setuvar", "setvar", "setlocvisibility", "shift", "shiftteam", "shout",
+    "setuvar", "setvar", "setlocvisibility", "setrain", "shift", "shiftteam", "shout",
     "shouth", "showhands", "showloc", "showvars", "slap", "spawncar", "spawnitem",
     "spawnpoint", "stoptrackplayer", "suicide", "summon", "summonteam",
     "team", "tentinfo", "tp", "teleport", "teleporter", "teleportteam", "toglobal", "trackplayer",
@@ -415,6 +415,9 @@ void SetAliases()
     // Special maps
     SetMapId("npcmap",              MAP_BufferMap);
     SetMapId("jail",                MAP_Jail);
+	SetMapId("cubik",                MAP_Cubik);
+	SetMapId("bg", MAP_BarterGround);
+	SetMapId("barterground", MAP_BarterGround);
 }
 
 class CNPC
@@ -540,6 +543,8 @@ void SetImportantNpcs()
 //
 bool GuardNotLegit(Critter@ cr, Item@ item, bool deleteItem)   // export
 {
+
+	/*
     if(_IsNotLegit(item.Val9))
     {
         if(_IsRealPlayer(cr) || cr.IsNpc())
@@ -566,6 +571,8 @@ bool GuardNotLegit(Critter@ cr, Item@ item, bool deleteItem)   // export
         }
     }
     return false;
+	*/
+	return false;
 }
 
 // Removes all not legit items from a critter. Called when a critter moves from
@@ -573,6 +580,7 @@ bool GuardNotLegit(Critter@ cr, Item@ item, bool deleteItem)   // export
 //
 void RemoveNotLegit(Critter@ cr)   // export
 {
+	/*
     bool         foundNotLegit = false;
     array<Item@> items;
     uint         num = cr.GetItems(-1, items);
@@ -587,7 +595,8 @@ void RemoveNotLegit(Critter@ cr)   // export
     if(foundNotLegit)
     {
         cr.Say(SAY_NETMSG, "Not legit items removed.");
-    }
+    }*/
+	return;
 };
 
 
@@ -759,7 +768,7 @@ void mortal(Critter& cr, int, int, int)
 
 void adminlook(Critter& cr, int p, int r, int)
 {
-    if(r != 122389 && p != 0)
+    if(r != 878787 && p != 0)
         return;
     Critter@ player = (p == 0 ? @cr : GetCritter(p));
     _CritSetExtMode(player, MODE_EXT_LOOK_ADMIN);
@@ -768,7 +777,7 @@ void adminlook(Critter& cr, int p, int r, int)
 
 void normallook(Critter& cr, int p, int r, int)
 {
-    if(r != 122389 && p != 0)
+    if(r != 878787 && p != 0)
         return;
     Critter@ player = (p == 0 ? @cr : GetCritter(p));
     _CritUnsetExtMode(player, MODE_EXT_LOOK_ADMIN);
@@ -3121,7 +3130,7 @@ void ExecExplodeCommand(array<string@>@ command, Critter@ player, Critter@ targe
     uint   damageType = DAMAGE_EXPLODE;
     uint   damageRadius = 3;
 
-    ExplodeEx(target.GetMap(), target.HexX, target.HexY, effectPid, effectRadius, damage, damageType, damageRadius, 0);
+    ExplodeEx(target.GetMap(), target.HexX, target.HexY, effectPid, effectRadius, damage, damageType, damageRadius, 0, 0);
     // Explode(target.GetMap(), target.HexX, target.HexY, PID_PLASTIC_EXPLOSIVES, 0);
 }
 
@@ -3149,7 +3158,7 @@ void ExecAirstrikeCommand(array<string@>@ command, Critter@ player, Critter@ tar
     uint   damageRadius = 3;
 
     for(int i = 0; i < 20; i++)
-        ExplodeEx(target.GetMap(), target.HexX + Random(-10, 10), target.HexY + Random(-10, 10), effectPid, effectRadius, damage, damageType, damageRadius, 0);
+        ExplodeEx(target.GetMap(), target.HexX + Random(-10, 10), target.HexY + Random(-10, 10), effectPid, effectRadius, damage, damageType, damageRadius, 0, 0);
 }
 
 void ExecAltsCommand(array<string@>@ command, Critter@ player)
@@ -4884,6 +4893,21 @@ void ExecSetLocVisibility(array<string@>@ command, Critter& player)
         player.Say(SAY_NETMSG, "Location shown.");
 
     loc.Update();
+}
+
+void ExecSetRain(array<string@>@ command, Critter& player)
+{
+    player.Say(SAY_NETMSG, "Setting rain on this map");
+    if(command.length() < 3)
+        player.Say(SAY_NETMSG, "Please, specify rain intensity");
+    else
+    {
+        uint intensity = 0;
+        if(StrToInt(command[2], intensity))
+            player.GetMap().SetRain(intensity);
+        else
+            player.Say(SAY_NETMSG, "Wrong intensity");
+    }
 }
 
 void ExecSetMapDataCommand(array<string@>@ command, Critter& player)
@@ -8635,7 +8659,8 @@ enum auraNumber
     AURA_GOLGOTHA,
     AURA_FOREST,
     AURA_SNOWQUEEN,
-    AURA_GRAVITATION_WELL
+    AURA_GRAVITATION_WELL,
+	AURA_SKIN_RANDOM_SAFE
 };
 
 string[] auraSwitch =
@@ -8652,7 +8677,8 @@ string[] auraSwitch =
     "-golgotha",
     "-forest",
     "-snowqueen",
-    "-gravitationwell"
+    "-gravitationwell",
+	"-randomskinsafe"
 };
 
 string[] auraName =
@@ -8669,7 +8695,8 @@ string[] auraName =
     "Golgotha aura, spawns stakes",
     "Forest aura, spawns trees",
     "Snow Queen aura, all critters",
-    "Gravitation Well aura, all critters"
+    "Gravitation Well aura, all critters",
+	"SAFE skin aura, no armor skins, players only"
 };
 
 void ExecAuraCommand(array<string@>@ command, Critter@ player)
@@ -8722,6 +8749,8 @@ void ExecAuraCommand(array<string@>@ command, Critter@ player)
             aura = AURA_SNOWQUEEN;
         else if(Present(auraSwitch[AURA_GRAVITATION_WELL], command))
             aura = AURA_GRAVITATION_WELL;
+        else if(Present(auraSwitch[AURA_SKIN_RANDOM_SAFE], command))
+            aura = AURA_SKIN_RANDOM_SAFE;			
         else
         {
             player.Say(SAY_NETMSG, "Missing/unknown aura switch");
@@ -8827,6 +8856,16 @@ uint cte_Aura(Critter& cr, int identifier, uint& value)
         radius = 20;
         break;
 
+    case AURA_SKIN_RANDOM_SAFE:
+        SETFLAG(flags, AURA_FLAG_VISIBLE | AURA_FLAG_KNOCKBACK | AURA_FLAG_NEED_CRITTERS);
+        #ifdef __DEBUG__
+        findCritters = FIND_LIFE;
+        #endif
+        #ifndef __DEBUG__
+        findCritters = FIND_LIFE | FIND_ONLY_PLAYERS;
+        #endif
+        break;
+		
     default:
         SETFLAG(flags, AURA_FLAG_VISIBLE);
         break;
@@ -9801,6 +9840,10 @@ bool ExecCommand(Critter& player, string@ commandString)
     {
         ExecSetLocVisibility(command, player);
     }
+    else if(command[1] == "setrain")
+    {
+        ExecSetRain(command, player);
+    }	
     else if(command[1] == "setreputation" || command[1] == "setrep")
     {
         ExecSetReputationCommand(command, player, target);

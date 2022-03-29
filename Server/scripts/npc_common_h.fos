@@ -50,6 +50,7 @@ import bool   HasUnusableWeapon(uint crpid, uint bag) from "npc_common";
 import Item@  ArmBestWeapon(Critter& critter) from "npc_common";
 import Item@  ArmFavoriteWeapon(Critter& critter) from "npc_common";
 import void   PutAwayItems(Critter& critter) from "npc_common";
+import void   DropAllItems(Critter& critter) from "npc_common";
 import void   Heal(Critter& cr) from "npc_common";
 import void   TryReportOffense(Critter@ cr, Critter@ offender, int reputationdrop) from "npc_common";
 import uint   GetCrittersWithScript(Map& map, uint16 pid, uint findType, string& scriptName, string& funcDeclaration, array<Critter@>@ critters) from "npc_common";

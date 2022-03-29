@@ -76,29 +76,29 @@ uint GetPartyPoints(uint FollowerType)
     case FOLLOWER_TYPE_MERC_MUTANT_BG:
         return 90;
     case FOLLOWER_TYPE_MERC_MUTANT_UNARMED:
-        return 70;
+        return 90;
     case FOLLOWER_TYPE_COMPANION:
         return 70;
     case FOLLOWER_TYPE_MERC_HUMAN_BG:
-        return 70;
+        return 80;
     case FOLLOWER_TYPE_MERC_HUMAN_EW:
-        return 70;
+        return 80;
     case FOLLOWER_TYPE_MERC_HUMAN_SG:
-        return 60;
+        return 80;
     case FOLLOWER_TYPE_MERC_GHOUL_SG:
-        return 50;
+        return 60;
     case FOLLOWER_TYPE_MERC_GHOUL_MELEE:
-        return 35;
+        return 60;
     case FOLLOWER_TYPE_MERC_HUMAN_MELEE:
-        return 50;
+        return 80;
     case FOLLOWER_TYPE_MERC_HUMAN_UNARMED:
-        return 40;
+        return 80;
     case FOLLOWER_TYPE_DOG:
         return 40;
     case FOLLOWER_TYPE_PIGRAT:
         return 40;
     case FOLLOWER_TYPE_MOLERAT:
-        return 0;
+        return 40;
     case FOLLOWER_TYPE_SLAVE:
         return 0;
     case FOLLOWER_TYPE_BRAHMIN:
@@ -202,8 +202,21 @@ bool CanHaveMoreFollowers(Critter& player, uint FollowerType)
     }
     else if(FollowerType == FOLLOWER_TYPE_MOLERAT)
     {
+		if(GetPartyPointsUsed(player) + GetPartyPoints(FollowerType) <= GetPartyPointsMax(player))
+		{
         uint Molerat = GetNumberOfType(player, FOLLOWER_TYPE_MOLERAT);
-        return(Molerat < 1 + (GetNumberOfType(player, FOLLOWER_TYPE_PIGRAT) / 2));
+		return(Molerat < 3);
+		}
+		else return false;
+    }
+	else if(FollowerType == FOLLOWER_TYPE_PIGRAT)
+    {
+		if(GetPartyPointsUsed(player) + GetPartyPoints(FollowerType) <= GetPartyPointsMax(player))
+        {
+		uint Molerat = GetNumberOfType(player, FOLLOWER_TYPE_PIGRAT);
+        return(Molerat < 3);
+		}
+		else return false;
     }
     else
     {
@@ -476,8 +489,8 @@ bool MakeFollower(Critter& critter, uint type, string& script, uint dialogid, Cr
     critter.FollowerVarBase[FV_MASTER] = owner.Id;
     critter.FollowerVarBase[FV_TYPE] = type;
     critter.StatBase[ST_REPLICATION_TIME] = REPLICATION_DELETE; // yes
-    if(FreeBarter)
-        critter.StatBase[ST_FREE_BARTER_PLAYER] = owner.Id;
+    //if(FreeBarter)
+    critter.StatBase[ST_FREE_BARTER_PLAYER] = owner.Id;
 
     if(type == FOLLOWER_TYPE_COMPANION)
     {

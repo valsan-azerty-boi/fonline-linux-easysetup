@@ -245,7 +245,8 @@ void OnMotionSensorOff(Item& item)
         Critter@ cr = GetCritter(item.CritId);
         if(valid(cr))
         {
-            cr.RefreshVisible();
+            if(valid(cr.GetMap()))
+                cr.RefreshVisible();
             if(item.Charge == 0)
                 cr.SayMsg(SAY_NETMSG, TEXTMSG_TEXT, STR_SENSOR_DEPLETED);
         }

@@ -173,32 +173,23 @@ class CMerc : IMerc
             CreateTimeEvent(AFTER(GAME_MINUTE(3)), "e_DisableBagRefresh", SpawnedNpc.Id, true);
             ArmBestWeapon(SpawnedNpc);
 
-            if(Random(0, 29 - master.Stat[ST_LUCK]) == 0)
-                SpawnedNpc.PerkBase[PE_BONUS_RATE_OF_FIRE] += 1;
-            if(Random(0, 29 - master.Stat[ST_LUCK]) == 0)
-                SpawnedNpc.PerkBase[PE_SHARPSHOOTER] += 1;
-            if(Random(0, 49 - master.Stat[ST_LUCK]) == 0)
-                SpawnedNpc.PerkBase[PE_SNIPER] += 1;
-            if(Random(0, 49 - master.Stat[ST_LUCK]) == 0)
-                SpawnedNpc.PerkBase[PE_TERMINATOR] += 1;
-            if(Random(0, 19 - master.Stat[ST_LUCK]) == 0)
-                SpawnedNpc.PerkBase[PE_STONEWALL] += 1;
-            if(Random(0, 19 - master.Stat[ST_LUCK]) == 0)
-                SpawnedNpc.PerkBase[PE_MORE_CRITICALS] += 1;
-            if(Random(0, 19 - master.Stat[ST_LUCK]) == 0)
-                SpawnedNpc.PerkBase[PE_TOUGHNESS] += 1;
-            if(Random(0, 19 - master.Stat[ST_LUCK]) == 0)
-                SpawnedNpc.PerkBase[PE_DODGER] += 1;
+            if(Random(0, 24) == 0) SpawnedNpc.PerkBase[PE_BONUS_RATE_OF_FIRE] += 1;
+            if(Random(0, 24) == 0) SpawnedNpc.PerkBase[PE_SHARPSHOOTER] += 1;
+            if(Random(0, 14) == 0) SpawnedNpc.PerkBase[PE_STONEWALL] += 1;
+            if(Random(0, 14) == 0) SpawnedNpc.PerkBase[PE_MORE_CRITICALS] += 1;
+            if(Random(0, 14) == 0) SpawnedNpc.PerkBase[PE_TOUGHNESS] += 1;
+            if(Random(0, 14) == 0) SpawnedNpc.PerkBase[PE_DODGER] += 1;
 
-            for(uint i = 0; i <= 6; i++)
-                SpawnedNpc.StatBase[i] += Random(-1, 1);
+            for(uint i = 0; i <= 6; i++) SpawnedNpc.StatBase[i] += Random(-1, 1);
 
-            if(master.Stat[ST_CHARISMA] > 8)
-                SpawnedNpc.StatBase[ST_MAX_LIFE] += (Random(7, 12) * master.Stat[ST_LUCK]);
-            else if(master.Stat[ST_CHARISMA] < 5)
-                SpawnedNpc.StatBase[ST_MAX_LIFE] -= (Random(10, 15) - master.Stat[ST_LUCK]);
+           // if(master.Stat[ST_CHARISMA] > 8) SpawnedNpc.StatBase[ST_MAX_LIFE] += (Random(7, 12) * master.Stat[ST_LUCK]);
+            //else if(master.Stat[ST_CHARISMA] < 5) SpawnedNpc.StatBase[ST_MAX_LIFE] -= (Random(10, 15) - master.Stat[ST_LUCK]);
+			
+			SpawnedNpc.StatBase[ST_MAX_LIFE] += (Random(0,20));
+			SpawnedNpc.StatBase[ST_MAX_LIFE] -= 10;			
 
             SpawnedNpc.StatBase[ST_CURRENT_HP] = SpawnedNpc.Stat[ST_MAX_LIFE];
+			SpawnedNpc.StatBase[ST_FREE_BARTER_PLAYER] = master.Id;
 
             if(!AddToFollowerlist(master, SpawnedNpc))
                 Log("Failed to assign merc's id to master(" + master.Id + ") followerlist");

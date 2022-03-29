@@ -5,6 +5,7 @@
 // quest_la_gunr_caravan.fos
 //
 
+#include "_colors.fos"
 #include "_maps.fos"
 #include "_vars.fos"
 #include "_macros.fos"
@@ -42,6 +43,8 @@ void r_SpawnLocation(Critter& player, Critter@ npc)
     GameVar@  locidv = GetLocalVar(LVAR_q_la_gunrunners_caravan_locid, player.Id);
     locidv = loc;
     Location@ location = GetLocation(loc);
+    location.Color = COLOR_WM_QUEST;
+    location.Update();
     Map@      map = location.GetMapByIndex(0);
     if(player.Mode[MODE_DEFAULT_COMBAT] == COMBAT_MODE_TURN_BASED)
         SetTurnBasedAvailability(location);
@@ -81,8 +84,8 @@ void _Mutant(Critter& cr, bool firstTime)
 {
     cr.StatBase[ST_REPLICATION_TIME] = REPLICATION_NEVER;
     // cr.ModeBase[MODE_NO_HOME] = 1;
-    cr.ModeBase[MODE_NO_LOOT] = 1;
-    cr.ModeBase[MODE_NO_DROP] = 1;
+    // cr.ModeBase[MODE_NO_LOOT] = 1;
+    // cr.ModeBase[MODE_NO_DROP] = 1;
     cr.SetEvent(CRITTER_EVENT_IDLE, "_MobIdle");
     // cr.SetEvent(CRITTER_EVENT_ATTACKED, "_Attacked");
     cr.SetEvent(CRITTER_EVENT_MESSAGE, "_OnMessage");
@@ -208,4 +211,42 @@ void _MobHideCritter(Critter& cr, Critter& hideCrit)
 {
     if(hideCrit.IsPlayer())
         ALERTED(cr) -= 1;
+}
+
+
+
+
+//
+// 30-08-2013 Cubik: dodany CD dla gracza na ponowne wybranie questu : 6-9 real-time godzin
+//
+void r_QuestCD(Critter& player, Critter@ npc)
+{
+    GameVar@ var = GetLocalVar(LVAR_q_la_gunrunners_caravan, player.Id);
+    var = 8; // zakończenie questu
+    uint[] values = { player.Id, npc.Id };
+    
+    #ifndef __DEBUG__
+    CreateTimeEvent(AFTER(REAL_HOUR(Random(6,9))), "e_reset_quest_var", values, true);
+    #endif
+    
+    #ifdef __DEBUG__
+    CreateTimeEvent(AFTER(REAL_MINUTE(Random(1,1))), "e_reset_quest_var", values, true); // dla testów 1 minute czekania na reset questu
+    #endif
+}
+
+uint e_reset_quest_var(array<uint>@ values)
+{    	
+	GameVar@ var = GetLocalVar(LVAR_q_la_gunrunners_caravan, values[0]);
+	var = 0;
+
+	GameVar@ var0 = GetLocalVar(LVAR_q_la_gunrunners_caravan_locid, values[0]);
+	var0 = 0;
+	
+	GameVar@ var1 = GetLocalVar(LVAR_q_la_gunrunners_team, values[0]);
+	var1 = 0;
+		
+	GameVar@ var2 = GetLocalVar(LVAR_q_la_gunrunners_box, values[0]);
+	var2 = 0;		
+
+    return 0;
 }

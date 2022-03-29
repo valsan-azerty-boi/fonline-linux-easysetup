@@ -373,6 +373,8 @@ class Bank
 
     bool UpdateInterestAccounts(uint startIndex, uint amount)
     {
+	return true;
+	/*
         for(uint i = startIndex, j = startIndex + amount; i < j; i++)
         {
             if(i == GetNumberOfAccounts())           // done
@@ -385,11 +387,13 @@ class Bank
                 // DLog("Balance before: " + balance);
                 float fmoney = float((balance / 100) * GetSaveInterest());
                 uint  imoney = fmoney;
+				imoney = CLAMP(imoney, 1, 5000);
                 // DLog("Balance after: " + (balance + money));
                 bankaccounts[i].AddMoney(imoney);
             }
         }
         return false;
+		*/
     }
 
     void UpdateInterest()

@@ -8,7 +8,7 @@
 #include "_macros.fos"
 #include "reputations_h.fos"
 
-import void ExplodeEx(Map& map, uint16 hexX, uint16 hexY, uint16 effectPid, uint effectRadius, uint damage, uint damageType, uint damageRadius, uint ownerId) from "explode";
+import void ExplodeEx(Map& map, uint16 hexX, uint16 hexY, uint16 effectPid, uint effectRadius, uint damage, uint damageType, uint damageRadius, uint ownerId, uint16 explodePid) from "explode";
 import int  SkillCheck(Critter& cr, int skill, int skillused, Item@ item, int bonus) from "utils";
 
 #define BOX_QUEST_GUNRUNNERS_COURIER    (0)
@@ -58,7 +58,7 @@ bool _GunRunnersBoxUsed(Item& item, Critter& player, Critter@ onCritter, Item@ o
 void ExplodeBomb(Critter& player, Item& item)
 {
     // Add explosion in here
-    ExplodeEx(player.GetMap(), player.HexX, player.HexY, PID_EXPLODE_ROCKET, /*effect radius*/ 1, /*damage*/ Random(50, 80), DAMAGE_EXPLODE, /*radius*/ 3, player.Id);
+    ExplodeEx(player.GetMap(), player.HexX, player.HexY, PID_EXPLODE_ROCKET, /*effect radius*/ 1, /*damage*/ Random(50, 80), DAMAGE_EXPLODE, /*radius*/ 3, player.Id, item.GetProtoId());
     // if (item.GetCount()>1)
     //	item.SetCount(item.GetCount()-1);
     // else
@@ -226,7 +226,7 @@ bool _GunRunnersBoxUseSkill(Item& item, Critter& player, int skill)
                 else if(_BoxReputation(item) < 600)
                 {
                     player.AddItem(PID_HUNTING_RIFLE, Random(1, 2));
-                    player.AddItem(PID_22_AMMO, 15);
+                    player.AddItem(PID_223_FMJ, 15);
                 }
                 else if(_BoxReputation(item) < 700)
                 {

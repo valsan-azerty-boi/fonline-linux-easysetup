@@ -34,7 +34,7 @@
 
 #define DUEL_BEGIN_TIMEOUT     (REAL_SECOND(20))
 #define DUEL_END_TIMEOUT       (REAL_SECOND(5))
-#define DUEL_TIME_TIMEOUT      (REAL_MINUTE(2))
+#define DUEL_TIME_TIMEOUT      (REAL_MINUTE(3))
 
 void critter_init(Critter& npc, bool firstTime)
 {
@@ -126,6 +126,7 @@ uint e_Count(array<uint>@ values)
         return 0;
     }
     npc.Say(SAY_SHOUT_ON_HEAD, DUEL_COUNT_DOWN + "...");
+	npc.Say(SAY_SHOUT, DUEL_COUNT_DOWN + "...");
     DUEL_COUNT_DOWN--;
     _TIMEEND;
     return REAL_SECOND(1);

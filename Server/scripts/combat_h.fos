@@ -47,4 +47,9 @@
 #define COMBAT_AMMO_AP             # (ammo_) (valid(ammo_) ? (ammo_.Ammo_DTDiv > 0) : false)
 // todo: move to proto
 #define COMBAT_WEAPON_ALLOWS_SD    # (__weapon)     (__weapon.Proto.ProtoId == PID_14MM_PISTOL || __weapon.Proto.ProtoId == PID_223_PISTOL)
+
+// melee weapon attack mode by Cubik & John (from 2155)
+#define MODE_PRIMARY_ATTACK                 (0)
+#define MODE_SECONDARY_ATTACK               (1)
+
 #endif // _COMBAT_H_

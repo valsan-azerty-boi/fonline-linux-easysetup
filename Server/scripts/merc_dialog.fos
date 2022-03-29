@@ -114,7 +114,7 @@ uint r_HireMerc(Critter& player, Critter@ npc, int MercId)
         return FORCE_DIALOG_ERROR;
     }
 
-    merc.Cost(merc.GetCost() + Random(10, 30));
+    //merc.Cost(merc.GetCost() + Random(10, 30));
     return FORCE_DIALOG_SUCCESS;
 }
 
@@ -272,6 +272,18 @@ void dlg_ShowEnergyWeaponCost(Critter& player, Critter@ npc, string@ text)
 
     text += "$ew1" + ew1.GetCost();
     text += "$ew2" + ew2.GetCost();
+}
+
+void dlg_ShowMoleratCost(Critter& player, Critter@ npc, string@ text)
+{
+    if(!IS_DIALOG_GENERATED(text))
+        return;
+
+    IMerc@ molerat1 = GetMerc(41);
+    IMerc@ molerat2 = GetMerc(42);
+
+    text += "$molerat1" + molerat1.GetCost();
+    text += "$molerat2" + molerat2.GetCost();
 }
 
 void dlg_ShowMercSellPrice(Critter& player, Critter@ npc, string@ text)

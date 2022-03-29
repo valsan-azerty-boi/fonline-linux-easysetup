@@ -99,6 +99,7 @@
 #define PE_EXPERT_EXCREMENT         (417)
 #define PE_JINXED_II                (419)
 #define PE_TERMINATOR               (420)
+#define PE_EVEN_MORE_CRITICALS      (424)
 #define PE_GECKO_SKINNING           (430)
 #define PE_VAULT_CITY_INOCULATIONS  (431)
 #define PE_DERMAL_IMPACT            (432)

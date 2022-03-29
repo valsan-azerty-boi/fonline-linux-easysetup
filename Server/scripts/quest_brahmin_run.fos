@@ -5,6 +5,7 @@
 // quest_brahmin_run.fos
 //
 
+#include "_colors.fos"
 #include "_macros.fos"
 #include "_ai.fos"
 #include "_npc_pids.fos"
@@ -109,6 +110,8 @@ void r_InitiateRun(Critter& player, Critter@ npc, int destinationInd, int factio
     Location@ loc = GetLocation(locId);
     if(!valid(loc))
         return;
+    loc.Color = COLOR_WM_QUEST;
+    loc.Update();
     loc.AutoGarbage = false;
 
     SetLvar(player, LVAR_q_brahmin_run_counter, brahminStartingCount);

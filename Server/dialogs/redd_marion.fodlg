@@ -9,7 +9,7 @@ lang=engl
 1 1000 None 0 #
 3 1010 D _script bounties@d_HasInfo 1 0 #
 2 1020 D _var p name_mem_npc_player = 1 #
-5 1030 D _param p ST_INTELLECT < 4 #
+5 1030 D _param p ST_INTELLECT < 4 D _param p ST_INTELLECT > 4 #
 6 1040 D _var p name_mem_npc_player = 0 R _var p name_mem_npc_player = 1 @
 2 2000 None 0 #
 100 2010 D _param p ST_INTELLECT > 1000 #
@@ -21,7 +21,8 @@ lang=engl
 220 2070 D _script town@d_IsControllingTown 1 1 #
 0 2080 #
 50 2090 D _script town@d_CanRecruitMilitia 0  #
-500 2100 D _script town@d_CanChangeLaws 0  @
+75 2100 D _script town@d_IsControllingTown 1 1 #
+500 2110 D _script town@d_CanChangeLaws 0  @
 3 3000 bounties@dlg_ShowHunter 0 #
 2 3010 #
 0 3020 @
@@ -78,45 +79,55 @@ lang=engl
 50 22000 town@dlg_ShowMilitiaCost 0 #
 50 22010 R _script town@r_RecruitMilitia 0  #
 2 22020 @
-202 23000 None 0 #
-2 23010 #
-0 23020 D _param p SK_SCIENCE > 80 #
-0 23030 @
-302 24000 None 0 #
-0 24010 #
-130 24020 D _script town@d_MembersAlmost 1 1 R _script town@r_TakeoverCheck 1 0 @
-301 25000 None 0 #
-0 25010 #
-130 25020 D _script town@d_PresentAlmost 1 1 R _script town@r_TakeoverCheck 1 0 @
-130 26000 None 0 #
-0 26010 #
-65507 26020 @
-310 27000 None 0 #
-0 27010 R _script town@r_GainControl 1 0 #
-0 27020 @
-320 28000 None 0 #
-0 28010 R _script town@r_GainControl 1 0 #
-0 28020 @
-220 29000 None 0 #
-2 29010 @
-500 30000 town@dlg_ShowPolicies 0 #
-500 30010 D _script town@d_IsPolicy 1 2 R _script town@r_SetPolicy 2 2 0 #
-500 30020 D _script town@d_IsNotPolicy 1 2 R _script town@r_SetPolicy 2 2 1 #
-500 30030 D _script town@d_IsNotPolicy 1 1 R _script town@r_SetPolicy 2 1 1 #
-500 30040 D _script town@d_IsPolicy 1 1 R _script town@r_SetPolicy 2 1 0 #
-500 30050 D _script town@d_IsNotPolicy 1 3 R _script town@r_SetPolicy 2 3 1 #
-500 30060 D _script town@d_IsPolicy 1 3 R _script town@r_SetPolicy 2 3 0 #
-2 30070 @
-410 31000 None 0 #
-0 31010 @
-420 32000 None 0 #
-0 32010 @
-430 33000 None 0 #
-0 33010 @
-440 34000 None 0 @
-450 35000 None 0 #
+75 23000 None 0 #
+76 23010 #
+77 23020 R _script town@r_SetFriendlyFactionsMode 1 1 #
+77 23030 R _script town@r_SetFriendlyFactionsMode 1 0 @
+76 24000 town@dlg_ShowFriendlyFactions 0 #
+76 24010 R _script town@r_FriendlyFactionsBrowse 1 1 #
+76 24020 R _script town@r_FriendlyFactionsBrowse 1 -1 #
+2 24030 @
+77 25000 town@dlg_ManipulateFriendlyFactions 0 #
+2 25010 @
+202 26000 None 0 #
+2 26010 #
+0 26020 D _param p SK_SCIENCE > 80 #
+0 26030 @
+302 27000 None 0 #
+0 27010 #
+130 27020 D _script town@d_MembersAlmost 1 1 R _script town@r_TakeoverCheck 1 0 @
+301 28000 None 0 #
+0 28010 #
+130 28020 D _script town@d_PresentAlmost 1 1 R _script town@r_TakeoverCheck 1 0 @
+130 29000 None 0 #
+0 29010 #
+65507 29020 @
+310 30000 None 0 #
+0 30010 R _script town@r_GainControl 1 0 #
+0 30020 @
+320 31000 None 0 #
+0 31010 R _script town@r_GainControl 1 0 #
+0 31020 @
+220 32000 None 0 #
+2 32010 @
+500 33000 town@dlg_ShowPolicies 0 #
+500 33010 D _script town@d_IsPolicy 1 2 R _script town@r_SetPolicy 2 2 0 #
+500 33020 D _script town@d_IsNotPolicy 1 2 R _script town@r_SetPolicy 2 2 1 #
+500 33030 D _script town@d_IsNotPolicy 1 1 R _script town@r_SetPolicy 2 1 1 #
+500 33040 D _script town@d_IsPolicy 1 1 R _script town@r_SetPolicy 2 1 0 #
+500 33050 D _script town@d_IsNotPolicy 1 3 R _script town@r_SetPolicy 2 3 1 #
+500 33060 D _script town@d_IsPolicy 1 3 R _script town@r_SetPolicy 2 3 0 #
+2 33070 @
+410 34000 None 0 #
+0 34010 @
+420 35000 None 0 #
 0 35010 @
-330 36000 None 0 &
+430 36000 None 0 #
+0 36010 @
+440 37000 None 0 @
+450 38000 None 0 #
+0 38010 @
+330 39000 None 0 &
 
 [engl]
 {100}{}{Sheriff}
@@ -138,7 +149,8 @@ lang=engl
 {2070}{}{How about the promised booze and smokes?}
 {2080}{}{I won't make any trouble. I was just leaving. Goodbye.}
 {2090}{}{We need some volunteers to secure the town.}
-{2100}{}{Let's discuss the law a little.}
+{2100}{}{I want to talk about our allies.}
+{2110}{}{Let's discuss the law a little.}
 {3000}{}{Hi there, I've got some good news for you. The bounty you set on @lex bountee@ was claimed by @lex hunter@. Poor bastard is six feet under by now. Or less, bounty hunters don't dig deep graves.}
 {3010}{}{Glad they got what was coming to them. I've got a few other questions.}
 {3020}{}{Great, I gotta go}
@@ -189,52 +201,62 @@ lang=engl
 {20000}{}{I know it would be. The NCR is the future of the wastes. Working together for a bigger tomorrow. Just like their posters say. They want us to join them, not submit to them.}
 {20010}{}{I see. How can you influence Redding, though?}
 {20020}{}{Everyone's got an angle, all right. Goodbye, Sheriff.}
-{21000}{}{Well, the time's not right yet for a real move. But I let people know who they'll be able to count on when push comes to shove. That's enough…for now.}
+{21000}{}{Well, the time's not right yet for a real move. But I let people know who they'll be able to count on when push comes to shove. That's enoughï¿½for now.}
 {21010}{}{Interesting. Let me ask you something else.}
 {21020}{}{Hmm, something to think about, anyhow. Goodbye.}
 {22000}{}{This is not a problem, there's plenty of people ready to join the militia, but you'll have to pay for the equipments and training. This costs about @lex cost@ caps.}
 {22010}{}{Sounds good, here's @lex cost@ caps.}
 {22020}{}{Nah, I think we're doing fine as it is now.}
-{23000}{}{Yeah, they got themselves whole teams of science types to whip up batches of jet ever since that kid working for 'em up and disappeared. You'd have to be stupid to give up such a sweet gig.}
-{23010}{}{Pretty stupid. I got a couple questions.}
-{23020}{}{Maybe they can use someone with my expertise... uh, bye Sheriff.}
-{23030}{}{I guess those science guys are useful for something. Bye Sheriff.}
-{24000}{}{I can sympathise, but we've got big problems here in Redding, and we'd need a bigger team than yours to help us handle them.}
-{24010}{}{I see.}
-{24020}{}{I don't see your team any place, Marion. But you're enough to be in charge around here on your own, right? Well so am I! We're not your regular chumps with guns, we're the elite models.}
-{25000}{}{Hmmm..[scratches chin.] There might be something. Go round up all your boys so I can get a good look at you.}
-{25010}{}{Alright, I'll come back with more of my gang.}
-{25020}{}{This is all you need right here. Take a good look. Don't you see the essence of pure bad-assery dripping from our perfect forms?}
-{26000}{}{[A deep, sincere and unplanned frown spreads across Marion's face.] Look...no.  Just no. I think you got the wrong idea about this job, son.}
-{26010}{}{Right. Sorry.}
-{26020}{}{You're not my dad, dickhead. If you were, I wouldn't be about to kill you.}
-{27000}{}{You bet. Well, I'm proud that you want to do some good out here, so I can give you work: help me uphold the law here in Redding, and I'll help you stay in booze and smokes. No fighting, no shooting, no killing, and no cussing. Alright?}
-{27010}{}{You've got yourself a deal, Marion.}
-{27020}{}{No cussing? Fuck that! I'm outta here.}
-{28000}{}{[Breathes in slowly, thinking what you said over and studying you.] Alright, you got yourself a deal: help me uphold the law here in Redding, and I'll help you stay in booze and smokes. No fighting, no shooting, no killing, and no cussing. Alright?}
-{28010}{}{You've got yourself a deal, Marion.}
-{28020}{}{No cussing? Fuck that! I'm outta here.}
-{29000}{}{Visit the nearby room and check the locker there.}
-{29010}{}{I will, Sheriff.}
-{30000}{}{Here's the current laws in Redding:
+{23000}{}{So, what about friendly factions? Do you want me to make sure the militia looks after a certain faction?}
+{23010}{}{Show me the friendly factions.}
+{23020}{}{I want to remove a faction from the list.}
+{23030}{}{I want to add a new faction to the list.}
+{24000}{}{@lex faction@}
+{24010}{}{Next}
+{24020}{}{Previous}
+{24030}{}{Ok, looks good.}
+{25000}{}{And what might their name be?}
+{25010}{}{Ok, that's all I wanted.}
+{26000}{}{Yeah, they got themselves whole teams of science types to whip up batches of jet ever since that kid working for 'em up and disappeared. You'd have to be stupid to give up such a sweet gig.}
+{26010}{}{Pretty stupid. I got a couple questions.}
+{26020}{}{Maybe they can use someone with my expertise... uh, bye Sheriff.}
+{26030}{}{I guess those science guys are useful for something. Bye Sheriff.}
+{27000}{}{I can sympathise, but we've got big problems here in Redding, and we'd need a bigger team than yours to help us handle them.}
+{27010}{}{I see.}
+{27020}{}{I don't see your team any place, Marion. But you're enough to be in charge around here on your own, right? Well so am I! We're not your regular chumps with guns, we're the elite models.}
+{28000}{}{Hmmm..[scratches chin.] There might be something. Go round up all your boys so I can get a good look at you.}
+{28010}{}{Alright, I'll come back with more of my gang.}
+{28020}{}{This is all you need right here. Take a good look. Don't you see the essence of pure bad-assery dripping from our perfect forms?}
+{29000}{}{[A deep, sincere and unplanned frown spreads across Marion's face.] Look...no.  Just no. I think you got the wrong idea about this job, son.}
+{29010}{}{Right. Sorry.}
+{29020}{}{You're not my dad, dickhead. If you were, I wouldn't be about to kill you.}
+{30000}{}{You bet. Well, I'm proud that you want to do some good out here, so I can give you work: help me uphold the law here in Redding, and I'll help you stay in booze and smokes. No fighting, no shooting, no killing, and no cussing. Alright?}
+{30010}{}{You've got yourself a deal, Marion.}
+{30020}{}{No cussing? Fuck that! I'm outta here.}
+{31000}{}{[Breathes in slowly, thinking what you said over and studying you.] Alright, you got yourself a deal: help me uphold the law here in Redding, and I'll help you stay in booze and smokes. No fighting, no shooting, no killing, and no cussing. Alright?}
+{31010}{}{You've got yourself a deal, Marion.}
+{31020}{}{No cussing? Fuck that! I'm outta here.}
+{32000}{}{Visit the nearby room and check the locker there.}
+{32010}{}{I will, Sheriff.}
+{33000}{}{Here's the current laws in Redding:
 Stealing is prosecuted: @lex stealing@
 Carrying weapons openly is illegal: @lex weapons@
 Attacking criminals on sight: @lex attackflagged@}
-{30010}{}{I want it to be legal to carry weapons openly.}
-{30020}{}{I want it to be illegal to carry weapons openly.}
-{30030}{}{I've seen enough thieves by now, let's punish every last one of them!}
-{30040}{}{I don't think guards should look for thieves, we have higher priorities...}
-{30050}{}{I want every last criminal dead, don't let them enter our city under any circumstances!}
-{30060}{}{I don't think we have time to go after every little petty criminal, let's relax the laws a bit regarding this...}
-{30070}{}{Ok, looks good.}
-{31000}{}{Alright, there you go.}
-{31010}{}{Right.}
-{32000}{}{I'm afraid there's no more volunteers, come back later and check again.}
-{32010}{}{Ok.}
-{33000}{}{Like I said, training and equipment isn't free. Come back when you have the caps.}
-{33010}{}{Yeah, yeah...}
-{34000}{}{Error. Report this.}
-{35000}{}{Are you crazy? We are in the middle of an ongoing attack, start protecting us instead of jerking around in here!}
-{35010}{}{Uh, sure!}
-{36000}{}{Guards, get those retards!}
+{33010}{}{I want it to be legal to carry weapons openly.}
+{33020}{}{I want it to be illegal to carry weapons openly.}
+{33030}{}{I've seen enough thieves by now, let's punish every last one of them!}
+{33040}{}{I don't think guards should look for thieves, we have higher priorities...}
+{33050}{}{I want every last criminal dead, don't let them enter our city under any circumstances!}
+{33060}{}{I don't think we have time to go after every little petty criminal, let's relax the laws a bit regarding this...}
+{33070}{}{Ok, looks good.}
+{34000}{}{Alright, there you go.}
+{34010}{}{Right.}
+{35000}{}{I'm afraid there's no more volunteers, come back later and check again.}
+{35010}{}{Ok.}
+{36000}{}{Like I said, training and equipment isn't free. Come back when you have the caps.}
+{36010}{}{Yeah, yeah...}
+{37000}{}{Error. Report this.}
+{38000}{}{Are you crazy? We are in the middle of an ongoing attack, start protecting us instead of jerking around in here!}
+{38010}{}{Uh, sure!}
+{39000}{}{Guards, get those retards!}
 

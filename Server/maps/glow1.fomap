@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              130
 MaxHexY              117
-WorkHexX             88
-WorkHexY             69
+WorkHexX             70
+WorkHexY             62
 ScriptModule         map_glow
 ScriptFunc           map_init
 NoLogOut             1
@@ -3642,14 +3642,6 @@ ProtoId              5622
 MapX                 43
 MapY                 32
 
-MapObjType           1
-ProtoId              188
-MapX                 44
-MapY                 32
-UID                  1
-Item_LockerComplexity 35
-Item_Val2            2293760
-
 MapObjType           2
 ProtoId              2067
 MapX                 44
@@ -3994,9 +3986,9 @@ MapObjType           1
 ProtoId              139
 MapX                 42
 MapY                 34
-UID                  2
-Item_LockerComplexity 85
-Item_Val2            5570560
+ScriptName           item_spawner_container
+FuncName             item_init
+Item_Val4            61
 
 MapObjType           2
 ProtoId              5685
@@ -4192,11 +4184,9 @@ MapObjType           1
 ProtoId              139
 MapX                 42
 MapY                 36
-UID                  3
-Item_LockerCondition 1
-Item_LockerComplexity 70
-Item_Val2            4587520
-Item_Val3            88
+ScriptName           item_spawner_container
+FuncName             item_init
+Item_Val4            63
 
 MapObjType           2
 ProtoId              5685
@@ -6959,11 +6949,11 @@ MapY                 68
 
 MapObjType           1
 ProtoId              188
-MapX                 92
-MapY                 68
+MapX                 44
+MapY                 32
 ScriptName           item_spawner_container
 FuncName             item_init
-Item_Val4            57
+Item_Val4            59
 
 MapObjType           2
 ProtoId              2067
@@ -10425,36 +10415,6 @@ ProtoId              2344
 MapX                 74
 MapY                 55
 
-MapObjType           1
-ProtoId              122
-MapX                 44
-MapY                 32
-ContainerUID         1
-
-MapObjType           1
-ProtoId              122
-MapX                 44
-MapY                 32
-ContainerUID         1
-
-MapObjType           1
-ProtoId              122
-MapX                 44
-MapY                 32
-ContainerUID         1
-
-MapObjType           1
-ProtoId              401
-MapX                 42
-MapY                 34
-ContainerUID         2
-
-MapObjType           1
-ProtoId              296
-MapX                 42
-MapY                 36
-ContainerUID         3
-
 MapObjType           2
 ProtoId              3852
 MapX                 86
@@ -10480,53 +10440,36 @@ MapX                 76
 MapY                 36
 Scenery_ToDir        2
 
-MapObjType           0
-ProtoId              102
-MapX                 65
-MapY                 79
-Dir                  2
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  0
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  5000
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
-Critter_ParamIndex6  ST_FACTION_RANK
-Critter_ParamValue6  1
-Critter_ParamIndex7  ST_FACTION_MODE
-Critter_ParamValue7  0
-Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
-Critter_ParamValue8  0
+MapObjType           1
+ProtoId              188
+MapX                 92
+MapY                 68
+ScriptName           item_spawner_container
+FuncName             item_init
+Item_Val4            59
 
 MapObjType           0
-ProtoId              103
-MapX                 63
-MapY                 81
+ProtoId              172
+MapX                 50
+MapY                 35
 Dir                  3
+ScriptName           mob
+FuncName             critter_init
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
 Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
+Critter_ParamValue0  5043
 Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  0
+Critter_ParamValue1  74
 Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
+Critter_ParamValue2  242
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  5000
+Critter_ParamValue3  5024
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
+Critter_ParamValue5  72
 Critter_ParamIndex6  ST_FACTION_RANK
 Critter_ParamValue6  1
 Critter_ParamIndex7  ST_FACTION_MODE
@@ -10535,10 +10478,12 @@ Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  0
 
 MapObjType           0
-ProtoId              104
-MapX                 66
-MapY                 84
+ProtoId              76
+MapX                 78
+MapY                 74
 Dir                  5
+ScriptName           mob
+FuncName             critter_init
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
@@ -10547,9 +10492,9 @@ Critter_ParamValue0  0
 Critter_ParamIndex1  ST_AI_ID
 Critter_ParamValue1  0
 Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
+Critter_ParamValue2  319
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  5000
+Critter_ParamValue3  5024
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME
@@ -10562,10 +10507,12 @@ Critter_ParamIndex8  ST_OVERRIDE_CRTYPE
 Critter_ParamValue8  0
 
 MapObjType           0
-ProtoId              104
-MapX                 64
-MapY                 83
-Dir                  4
+ProtoId              76
+MapX                 79
+MapY                 80
+Dir                  5
+ScriptName           mob
+FuncName             critter_init
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
@@ -10574,9 +10521,9 @@ Critter_ParamValue0  0
 Critter_ParamIndex1  ST_AI_ID
 Critter_ParamValue1  0
 Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
+Critter_ParamValue2  319
 Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  5000
+Critter_ParamValue3  5024
 Critter_ParamIndex4  ST_NPC_ROLE
 Critter_ParamValue4  0
 Critter_ParamIndex5  ST_REPLICATION_TIME

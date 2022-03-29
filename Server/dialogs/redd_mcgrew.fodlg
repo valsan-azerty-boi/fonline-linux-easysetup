@@ -8,17 +8,15 @@ lang=engl
 &
 1 1000 None 0 #
 26 1010 D _var p q_redding_mcgrew_runner = 4 R _var p q_redding_mcgrew_runner = 5 #
-50 1020 D _param p ST_INTELLECT < 4 #
-2 1030 D _var n name_mem_npc_player = 0 R _var n name_mem_npc_player = 1 #
-15 1040 D _var n name_mem_npc_player = 1 @
+2 1020 D _var n name_mem_npc_player = 0 R _var n name_mem_npc_player = 1 #
+15 1030 D _var n name_mem_npc_player = 1 @
 2 2000 None 0 #
 3 2010 #
 16 2020 #
 14 2030 #
 80 2040 D _param p PE_PROFESSION_DEMOLITION_EXPERT < 2 #
-30 2050 D _script trader_mcgrew@d_HasStock 0  #
-32 2060 D _script trader_mcgrew@d_HasNotStock 0  #
-0 2070 @
+30 2050 #
+0 2060 @
 3 3000 None 0 #
 15 3010 #
 4 3020 #
@@ -70,7 +68,8 @@ lang=engl
 30 15060 D _script trader_mcgrew@d_HasStock 0  #
 32 15070 D _script trader_mcgrew@d_HasNotStock 0  @
 16 16000 None 0 #
-17 16010 @
+17 16010 #
+500 16020 D _script perks@d_PerkCheck 1 401 R _param p PE_PACK_RAT = 1 @
 17 17000 None 0 #
 65507 17010 #
 18 17020 #
@@ -110,12 +109,15 @@ lang=engl
 26 31000 None 0 #
 0 31010 R _item p PID_LEATHER_ARMOR + 1 R _item p PID_FRAG_GRENADE + 10 R _item p PID_JET + 1 @
 30 32000 None 0 #
-31 32010 D _item p PID_BOTTLE_CAPS > 9 R _item p PID_DETONATOR_PARTS + 1 R _script dialog@r_RemoveMoney 1 10 R _script trader_mcgrew@r_ReduceStock 0  #
+31 32010 D _item p PID_BOTTLE_CAPS > 2499 R _item p PID_DETONATOR_PARTS + 1 R _script dialog@r_RemoveMoney 1 2500 #
 0 32020 @
 31 33000 None 0 #
 0 33010 @
 32 34000 None 0 #
-0 34010 &
+0 34010 @
+500 35000 None 0 #
+15 35010 #
+0 35020 &
 
 [engl]
 {100}{}{Dan McGrew}
@@ -124,17 +126,15 @@ lang=engl
 {210}{}{You see a heavily muscled man with a scar on his face. He looks tough and confident.}
 {1000}{}{Predialogue installations}
 {1010}{}{finished his more jet quest.}
-{1020}{}{Dumb}
-{1030}{}{Unknown}
-{1040}{}{Known}
+{1020}{}{Unknown}
+{1030}{}{Known}
 {2000}{}{Hello there. My name's Dangerous Dan McGrew. I run the Morningstar Mine here. What can I do for you?}
 {2010}{}{What do you mine here?}
 {2020}{}{Why do they call you *Dangerous* Dan McGrew?}
 {2030}{}{What's going on here in town lately?}
 {2040}{}{You're a miner right? Then you must know how to blow things up.}
 {2050}{}{Do you have any Detonator parts for sale?}
-{2060}{}{Do you have any Detonator parts for sale?}
-{2070}{}{I was just moving through. Goodbye.}
+{2060}{}{I was just moving through. Goodbye.}
 {3000}{}{We mine gold. Everybody wants it, too. Send it all the way to Vault City, New Reno, and even down to the NCR. You might say that Redding has something for everybody - that's what keeps us independent.}
 {3010}{}{Nice to be so well liked. Let me ask you about something else.}
 {3020}{}{I'd think that someone would try to control Redding.}
@@ -187,8 +187,9 @@ lang=engl
 {15070}{}{Do you have any Detonator parts for sale?}
 {16000}{}{Cause I'm nothing but the biggest, toughest, mine-crawling, gullywumpin', snake-eatin' buck in these here parts. *Dangerous* Dan McGrew; that's me, all right.}
 {16010}{}{You don't look so damn tough to me.}
+{16020}{}{I see. Blowing things up requires carrying a lot of equipment. I'm pretty sure you know how to arrange your backpack efficiently. Can you explain me your method? [Pack Rat]}
 {17000}{}{Them's fightin' words in these here parts. You ready to back that up?}
-{17010}{}{Yes, I am. You've opened your big yap once too many times. Draw…pilgrim.}
+{17010}{}{Yes, I am. You've opened your big yap once too many times. Draw pilgrim.}
 {17020}{}{I could if I thought you'd give me enough satisfaction to pay for the ammo it'd take to kill you.}
 {17030}{}{I could, if I wanted too. But I'm too busy to mess with you right now.}
 {18000}{}{Yeah, that's what I thought. (pause) You're yellow.}
@@ -227,11 +228,14 @@ lang=engl
 {30010}{}{Oh...okay.}
 {31000}{}{[The man's face brightens.] You don't say! Thanks, stranger. That's really good news. It'll really help out the workforce, and it'll push us a little towards Reno too. Here, take this as thanks.}
 {31010}{}{Glad to help out. And thank you, too.}
-{32000}{}{Sure I do! They're only $10, but I don't have many.}
-{32010}{}{I'll take one then please. [Give him $10]}
+{32000}{}{Sure I do! They're for $2500 each.}
+{32010}{}{I'll take one then please. [Give him $2500]}
 {32020}{}{I can't afford that right now, I'll be back later.}
 {33000}{}{Pleasure doing business with you.}
 {33010}{}{Goodbye.}
 {34000}{}{Sorry, my supplier has let me down. Don't have any at the moment.}
 {34010}{}{Oh, nevermind, goodbye.}
+{35000}{}{Yeah, lemme show ya.. [You listen for a while]}
+{35010}{}{You are the man, Dangerous Dan. I would never figure it out myself. Let me ask you about something else.}
+{35020}{}{That's what I wanted to know. I've got to go, bye!}
 

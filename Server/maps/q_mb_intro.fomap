@@ -6,7 +6,7 @@ WorkHexX             80
 WorkHexY             58
 ScriptModule         -
 ScriptFunc           -
-NoLogOut             0
+NoLogOut             1
 Time                 -1
 DayTime              300  600  1140 1380
 DayColor0            18  18  53 
@@ -25695,9 +25695,9 @@ Scenery_ToEntire     243
 
 MapObjType           2
 ProtoId              3853
-MapX                 84
-MapY                 106
-Scenery_ToEntire     243
+MapX                 75
+MapY                 108
+Scenery_ToEntire     244
 
 MapObjType           2
 ProtoId              3853
@@ -25809,5 +25809,11 @@ MapObjType           2
 ProtoId              2102
 MapX                 81
 MapY                 64
+
+MapObjType           2
+ProtoId              3853
+MapX                 84
+MapY                 106
+Scenery_ToEntire     245
 
 

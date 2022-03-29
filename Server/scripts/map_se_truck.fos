@@ -14,7 +14,7 @@
 #include "npc_roles_h.fos"
 
 // Pid of car to spawn
-array<uint> carPids = { PID_TRUCK, PID_FIRETRUCK, PID_POLICE_CAR, PID_MOTORCYCLE };
+array<uint> carPids = { PID_VERTIBIRD };
 
 void warehouseInit(Map& map, bool firstTime)
 {
@@ -45,7 +45,7 @@ void warehouseInit(Map& map, bool firstTime)
         }
 
         uint16 keyX = 0, keyY = 0;
-        map.GetEntireCoords(100, 0, keyX, keyY);
+        map.GetEntireCoords(101, 0, keyX, keyY);
         Item@  key = map.AddItem(keyX, keyY, PID_KEY, 1);
         key.LockerId = keyId;
         key.Update();

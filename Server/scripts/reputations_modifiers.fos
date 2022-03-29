@@ -42,14 +42,14 @@ void InitGroups() // export
         for(uint k = 0, l = AllianceMods[i].length(); k < l; k += 2)
             GroupAlliancesSQ[IDX(i, AllianceMods[i][k])] = AllianceMods[i][k + 1];
 
-    FactionUniformsDictionary.set("" + PID_BROTHERHOOD_COMBAT_ARMOR, FACTION_BOS);
-    UniformHelmetsDictionary.set("" + PID_BROTHERHOOD_HELMET, PID_BROTHERHOOD_COMBAT_ARMOR);
-    UniformHelmetsDictionary.set("" + PID_COMBAT_HELMET, PID_BROTHERHOOD_COMBAT_ARMOR);
+    //FactionUniformsDictionary.set("" + PID_BROTHERHOOD_COMBAT_ARMOR, FACTION_BOS);
+    //UniformHelmetsDictionary.set("" + PID_BROTHERHOOD_HELMET, PID_BROTHERHOOD_COMBAT_ARMOR);
+    //UniformHelmetsDictionary.set("" + PID_COMBAT_HELMET, PID_BROTHERHOOD_COMBAT_ARMOR);
 
-    FactionUniformsDictionary.set("" + PID_ENCLAVE_COMBAT_ARMOR, FACTION_ENCLAVE);
-    UniformHelmetsDictionary.set("" + PID_ENCLAVE_COMBAT_HELMET, PID_ENCLAVE_COMBAT_ARMOR);
-    UniformHelmetsDictionary.set("" + PID_ENCLAVE_COMBAT_HELMET_MK2, PID_ENCLAVE_COMBAT_ARMOR);
-    UniformHelmetsDictionary.set("" + PID_COMBAT_HELMET_MK_II, PID_ENCLAVE_COMBAT_ARMOR);
+    //FactionUniformsDictionary.set("" + PID_ENCLAVE_COMBAT_ARMOR, FACTION_ENCLAVE);
+    //UniformHelmetsDictionary.set("" + PID_ENCLAVE_COMBAT_HELMET, PID_ENCLAVE_COMBAT_ARMOR);
+    //UniformHelmetsDictionary.set("" + PID_ENCLAVE_COMBAT_HELMET_MK2, PID_ENCLAVE_COMBAT_ARMOR);
+    //UniformHelmetsDictionary.set("" + PID_COMBAT_HELMET_MK_II, PID_ENCLAVE_COMBAT_ARMOR);
 }
 
 

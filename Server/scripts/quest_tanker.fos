@@ -5,6 +5,7 @@
 // quest_tanker.fos
 //
 
+#include "_colors.fos"
 #include "_macros.fos"
 #include "_maps.fos"
 #include "mapdata_h.fos"
@@ -41,6 +42,8 @@ void r_SpawnTanker(Critter& player, Critter@ npc)
     locidv = loc;
     // player.SetKnownLoc(true, loc);
     Location@ location = GetLocation(loc);
+    location.Color = COLOR_WM_QUEST;
+    location.Update();
     Map@      map = location.GetMapByIndex(0);
     if(player.Mode[MODE_DEFAULT_COMBAT] == COMBAT_MODE_TURN_BASED)
         SetTurnBasedAvailability(location);
@@ -359,3 +362,35 @@ void r_QuestTimeout(Critter& player, Critter@ npc, int timeout)
     GameVar@ var = GetLocalVar(LVAR_q_strandedrust_terminal_timeout, player.Id);
     var = ELAPSED_TIME + GAME_HOUR(timeout);
 }
+
+//
+// dodany CD dla gracza na ponowne wybranie questu : 6-9 real-time godzin
+//
+void r_QuestCD(Critter& player, Critter@ npc)
+{
+	GameVar@ var = GetLocalVar(LVAR_q_strandedrust, player.Id);
+	var = 3; // zakończenie questu
+	uint[] values = { player.Id, npc.Id };
+	CreateTimeEvent(AFTER(REAL_HOUR(Random(6,9))), "e_reset_quest_var", values, true);
+}
+
+uint e_reset_quest_var(array<uint>@ values)
+{    	
+	Critter@ player = GetCritter(values[0]);
+
+    if(!valid(player))
+        return 0;
+
+    if(player.IsPlayer())
+	{
+		GameVar@ var = GetLocalVar(LVAR_q_strandedrust, player.Id);
+		var = 0;
+	}
+	else
+		return 0;
+	
+    return 0;
+}
+
+
+

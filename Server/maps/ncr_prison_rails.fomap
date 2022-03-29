@@ -42041,7 +42041,6 @@ ProtoId              261
 MapX                 174
 MapY                 96
 Dir                  2
-ScriptName           _prison
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0
@@ -42068,7 +42067,6 @@ MapObjType           0
 ProtoId              261
 MapX                 166
 MapY                 108
-ScriptName           _prison
 Critter_Cond         1
 Critter_Anim1        0
 Critter_Anim2        0

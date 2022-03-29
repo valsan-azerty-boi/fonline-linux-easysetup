@@ -46,6 +46,7 @@
 #define PID_SF_COMBAT_JACKET                (775)
 #define PID_MORDINO_METAL_JACKET            (776)
 #define PID_CLOTHES_GENERIC3                (777)
+#define PID_DESERT_COMBAT_ARMOR             (778)
 #define PID_NPC_SKIN                        (799)
 
 //Heavy
@@ -85,6 +86,8 @@
 #define PID_HARDENED_POWER_HELMET          (737)
 #define PID_ENCLAVE_COMBAT_HELMET          (738)
 #define PID_ENCLAVE_COMBAT_HELMET_MK2      (739)
+#define PID_DESERT_COMBAT_HELMET           (740)
+#define PID_NCR_HELMET                     (741)
 
 //TODO:
 //#define PID_BLACK_ROBE                      (xxx)
@@ -113,6 +116,8 @@
 #define PID_44_MAGNUM_SPEEDLOADER           (398)
 #define PID_NEEDLER_PISTOL                  (388)  // HN Needler
 #define PID_PK12_GAUSS_PISTOL               (394)  // 2mm EC
+#define PID_GRENADE_PISTOL					(619)
+
     //Rifles
 #define PID_HUNTING_RIFLE                   (10)
 #define PID_SCOPED_HUNTING_RIFLE            (287)
@@ -128,6 +133,7 @@
 #define PID_JONNY_BB_GUN                    (261)
 #define PID_INDEPENDENT                     (353)
 #define PID_M72_GAUSS_RIFLE                 (392)  // 2mm EC
+#define PID_GRENADE_LAUNCHER				(620)
     //Shotguns
 #define PID_SHOTGUN                         (94)
 #define PID_SAWED_OFF_SHOTGUN               (385)  // 12 ga.
@@ -193,6 +199,8 @@
 #define PID_ROCK                            (19) //Grouped
 #define PID_FOOLS_GOLD                      (423) //Grouped
 #define PID_GOLD_NUGGET                     (572) //Grouped
+#define PID_PASHTSHUUR_SPIKE                (573) //Grouped
+
 
 #define PID_URANIUM_ORE                     (426) //Grouped - USED FOR MICRO FUSION CELL CRAFTING!!
 #define PID_REFINED_ORE                     (486) //Grouped - USED FOR MICRO FUSION CELL CRAFTING!!
@@ -257,6 +265,8 @@
 #define PID_END_BOSS_KIFE                   (530)
 #define PID_END_BOSS_PLASMA_GUN             (531)
 #define PID_HOLY_HAND_GRENADE               (421) // Grenade
+#define PID_BAN_HAMMER		                (617) // Mlot do wywalania gracza z gry na "off"
+#define PID_HOLY_SPEAR		                (618) // Spear ze specjalnymi nieznanymi dzis efektami (30-08-2013)
 
 /******************************************************************
 ***************       Ammo                          ***************
@@ -277,9 +287,13 @@
 #define PID_44_MAGNUM_FMJ           (111) // to be name-consistent
 #define PID_45_CALIBER_AMMO                 (357)
 #define PID_223_FMJ                         (34)
-#define PID_22_AMMO                         (850)
+#define PID_SHOTGUN_DRAGON_BREATH_SHELLS    (850) // 30.03.2014 Cubik: bylo tu kiedys .22 ammo 
 #define PID_SHOTGUN_SHELLS                  (95)
 #define PID_2MM_EC_AMMO                     (358)
+#define PID_SHOTGUN_SHELLS_FLECHETTE        (574)  // from W2155
+#define PID_SHOTGUN_SHELLS_SLUG             (575)  // from W2155
+#define PID_SHOTGUN_SHELLS_EMP              (576)  // from W2155
+#define PID_40MM_GRENADE					(621)
 
 //Other
 #define PID_EXPLOSIVE_ROCKET                (14)
@@ -629,6 +643,19 @@
 #define PID_CHEMISTRY_MANUAL                (237)
 #define PID_CATS_PAW_ISSUE_5                (331)
 #define PID_BECKY_BOOK                      (471)
+#define PID_BARTER_BOOK						(22050)
+
+// Implants
+#define PID_IMPLANT_DERMAL					(22051)
+#define PID_IMPLANT_PHOENIX					(22052)
+#define PID_IMPLANT_NEMEAN					(22053)
+#define PID_IMPLANT_STRENGTH				(22054)
+#define PID_IMPLANT_PERCEPTION				(22055)
+#define PID_IMPLANT_ENDURANCE				(22056)
+#define PID_IMPLANT_CHARISMA				(22057)
+#define PID_IMPLANT_INTELLIGENCE			(22058)
+#define PID_IMPLANT_AGILITY					(22059)
+#define PID_IMPLANT_LUCK					(22060)
 
 //Dolls
 #define PID_SMALL_STATUETTE                 (224)
@@ -721,6 +748,7 @@
 #define PID_MEAT_BAG                (546) //a fucking bag of meat
 #define PID_METZGERS_CASE           (547) //a case for metzger you moron!
 #define PID_MORDINOS_CASE           (548) //mordino joining quest case
+#define PID_BOOK_OF_ACHIEVEMENT              (623)
 
 
 //Special keys
@@ -893,6 +921,7 @@
 #define PID_COCKROACH                       (560)
 #define PID_WRECKED_CAR                     (563)
 #define PID_BOAT                            (824) //Car
+#define PID_CORVEGA							(831)
 #define PID_TARDIS                          (9673)
 #define PID_TRAIN                           (9688)
 #define PID_TRAIN2                          (9689)

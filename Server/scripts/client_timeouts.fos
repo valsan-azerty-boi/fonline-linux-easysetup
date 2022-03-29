@@ -52,6 +52,15 @@ class CTimeout
     bool          Worldmap;     /**< show on worldmap */
     int           WorldmapX;    /**< position when on worldmap, @sa CTimeout::PositionX */
     int           WorldmapY;    /**< position when on worldmap, @sa CTimeout::PositionY */
+    uint          TimeFormat;   /**< 0 - 7:00:00, 7:00, 7 (default)
+                                     1 - 7:00:00, 7:00, 7s
+                                     2 - 7:00:00, 7:00, 7 sec
+                                     3 - 7:00:00, 7:00, 7 seconds
+                                     4 - 7:00:00, 7:00, 0:07 
+                                     5 - 7:00:00, 07:00, 00:07
+                                     6 - 7h 0m 0s, 7m 0s, 7s
+                                     7 - 7h 0 min 0 sec, 7 min 0 sec, 7 sec
+                                */
 
     array<string> Ini;
 
@@ -71,9 +80,56 @@ class CTimeout
         this.Worldmap   = false;
         this.WorldmapX  = -145;
         this.WorldmapY  = -110;
+        this.TimeFormat = 0;
     }
 };
 CTimeout Timeouts;
+
+class CTimeoutCustom
+{
+    int           PositionX;    /**< positive: position from left, negative: position from right */
+    int           PositionY;    /**< positive: position from top, negative: position from bottom */
+    uint          SpacingX;     /**< spacing between start position of timeout name and its value */
+    uint          NameColor;    /**< skill name color */
+    uint          ValueColor;   /**< timeout value color */
+    uint          Alpha;        /**< */
+    uint          Font;         /**< (see _client_defines.fos) (4, 5, 6, 7, 8) */
+    bool          ShowLabel;    /**< on/off */
+    int           CustomMode;   /**< 0 off, 1 all, 2 color only */
+
+    CTimeoutCustom()
+    {
+        this.PositionX  = 0;
+        this.PositionY  = 0;
+        this.SpacingX   = 72;
+        this.NameColor  = COLOR_RGB(0, 255, 0);
+        this.ValueColor = COLOR_RGB(0, 255, 0);
+        this.Font       = FONT_FALLOUT;
+        this.Alpha      = 0;
+        this.ShowLabel  = true;
+        this.CustomMode = 0;
+    }
+
+    void SetValues(int x, int y, uint sx, uint8 nR, uint8 nG, uint8 nB, uint8 vR, uint8 vG, uint8 vB, uint8 f, bool sl)
+    {
+        this.PositionX  = x;
+        this.PositionY  = y;
+        this.SpacingX   = sx;
+        this.NameColor  = COLOR_RGB(nR, nG, nB);
+        this.ValueColor = COLOR_RGB(vR, vG, vB);
+        this.Font       = f;
+        this.ShowLabel  = sl;
+        this.CustomMode = 1;
+    }
+
+    void SetValues(uint8 nR, uint8 nG, uint8 nB, uint8 vR, uint8 vG, uint8 vB)
+    {
+        this.NameColor  = COLOR_RGB(nR, nG, nB);
+        this.ValueColor = COLOR_RGB(vR, vG, vB);
+        this.CustomMode = 2;
+    }
+};
+array<CTimeoutCustom> TimeoutsCustom;
 
 #ifdef CUSTOM_TIMEOUTS
 class MyTimeout
@@ -92,8 +148,15 @@ class MyTimeout
 array<MyTimeout> MyTimeouts;
 #endif // CUSTOM_TIMEOUTS
 
+
 void TimeoutsConfig(string& customConfig)
 {
+
+    for(uint8 i=0; i < 19; ++i)
+    {
+        TimeoutsCustom.insertLast(CTimeoutCustom());
+    }
+
     string          sectioname = (customConfig == "" ? TO_SECTION : TO_SECTION + ":" + customConfig);
 
     IConfigSection@ section = GetConfigSection(CONFIG_FILE, sectioname);
@@ -145,6 +208,27 @@ void TimeoutsConfig(string& customConfig)
                 Timeouts.WorldmapX      = string2int(var.GetValue());
             else if(var.GetName() == "WorldmapY")
                 Timeouts.WorldmapY      = string2int(var.GetValue());
+            else if(var.GetName() == "TimeFormat")
+                Timeouts.TimeFormat      = CLAMP(string2uint(var.GetValue()), 0, 7);
+            else
+            {
+                for(uint i=1; i < 19; ++i)
+                {
+                    if(var.GetName() == ("CustomTimeout"+i))
+                    {
+                        array<string@>@ vals = split(var.GetValue(), " ");
+                        if(vals.length() == 11)
+                            TimeoutsCustom[i].SetValues(string2int(vals[0]), string2int(vals[1]), string2uint(vals[2]),         //x, y, spacingX
+                                                        string2uint(vals[3]), string2uint(vals[4]), string2uint(vals[5]),       //R G B of name color
+                                                        string2uint(vals[6]), string2uint(vals[7]), string2uint(vals[8]),       //R G B of value color
+                                                        string2uint(vals[9]), string2bool(vals[10]));                           //font, ShowLabel
+                        else if(vals.length() == 6)
+                            TimeoutsCustom[i].SetValues(string2uint(vals[0]), string2uint(vals[1]), string2uint(vals[2]),       //R G B of name color
+                                                        string2uint(vals[3]), string2uint(vals[4]), string2uint(vals[5]));      //R G B of value color
+                        break;
+                    }
+                }
+            }
         }
         // Message( "Loaded timeouts configuration" );
     }
@@ -155,14 +239,17 @@ void TimeoutsConfig(string& customConfig)
    {
    }
  */
-int screen_timeouts_draw(CritterCl& critter, uint skill, string& skillname, int x, int y)
+int screen_timeouts_draw(CritterCl& critter, uint skill, string& skillname, int x, int y, uint z, uint userCustomMode)
 {
     #ifdef CUSTOM_TIMEOUTS
-    return(screen_timeouts_draw(critter, skill, skillname, x, y, false));
+    return(screen_timeouts_draw(critter, skill, skillname, x, y, false, z, userCustomMode));
 }
 
-int screen_timeouts_draw(CritterCl& critter, uint skill, string& skillname, int x, int y, bool custom)
+int screen_timeouts_draw(CritterCl& critter, uint skill, string& skillname, int x, int y, bool custom, uint z, uint userCustomMode)
 {
+    if(GetCurrentMapPid() == 0 && userCustomMode == 1)
+        userCustomMode = 2;
+
     #endif // CUSTOM_TIMEOUTS
     int timeout;
     #ifdef CUSTOM_TIMEOUTS
@@ -173,6 +260,10 @@ int screen_timeouts_draw(CritterCl& critter, uint skill, string& skillname, int 
     timeout = critter.Timeout[skill];
 
     timeout /= __TimeMultiplier;
+    
+                            //we are adding 1s to skills cooldown because they were disappearing faster then they should 
+    if(!custom)             //(example skill cd no longer displayed while character's skill is still about 1s on cd).
+        timeout += 1;       //it's like that because timeout /= __TimeMultiplier is rounding down
 
     if(timeout > 0)
     {
@@ -206,25 +297,71 @@ int screen_timeouts_draw(CritterCl& critter, uint skill, string& skillname, int 
         {
             int h = timeout / 3600;
             timeout -= h * 3600;
-            if(timeout < 60)
-                text += h + " hour" + (h == 1 ? "" : "s") + " ";
+            int m = timeout / 60;
+            timeout -= m * 60;
+
+            if(Timeouts.TimeFormat < 6)
+            {
+                text += h+":";
+                text += ((m < 10)?("0"+m):(""+m))+":";
+                text += ((timeout < 10)?("0"+timeout):(""+timeout));
+            }
             else
-                text += h + "h ";
-            if(timeout > 60)
-                text += ((timeout / 60)) + "min";
+            {
+                text += h+"h ";
+                text += m+((Timeouts.TimeFormat == 6)?"m ":" min ");
+                text += timeout+((Timeouts.TimeFormat == 6)?"s":" sec");
+            }
         }
-        else if(timeout > 60)
-            text += ((timeout / 60) + 1) + " minutes";
+        else if(timeout >= 60)
+        {
+            int m = timeout / 60;
+            timeout -= m * 60;
+
+            if(Timeouts.TimeFormat < 5)
+                text += m+":"+((timeout < 10)?("0"+timeout):(""+timeout));
+            else if(Timeouts.TimeFormat == 5)
+            {
+                text += ((m < 10)?("0"+m):(""+m))+":";
+                text += ((timeout < 10)?("0"+timeout):(""+timeout));
+            }
+            else
+            {
+                text += m+((Timeouts.TimeFormat == 6)?"m ":" min ");
+                text += timeout+((Timeouts.TimeFormat == 6)?"s":" sec");
+            }
+        }
         else
-            text += timeout + " second" + (timeout == 1 ? "" : "s");
+        {
+            switch(Timeouts.TimeFormat)
+            {
+                case 0: text += timeout; break;
+                case 1: text += timeout+"s"; break;
+                case 2: text += timeout+" sec"; break;
+                case 3: text += timeout+" seconds"; break;
+                case 4: text += "0:"+((timeout < 10)?("0"+timeout):(""+timeout)); break;
+                case 5: text += "00:"+((timeout < 10)?("0"+timeout):(""+timeout)); break;
+                case 6: text += timeout+"s"; break;
+                case 7: text += timeout+" sec"; break;
+            }
+        }
+
+        int yy = y;
+        if(userCustomMode == 1)
+        {
+            x = TimeoutsCustom[z].PositionX;
+            y = TimeoutsCustom[z].PositionY;
+        }
 
         if(x < 0)
             x += __ScreenWidth;
         if(y < 0)
             y += __ScreenHeight;
+        if(yy < 0)
+            yy += __ScreenHeight;
 
-        int color1 = Timeouts.NameColor;
-        int color2 = Timeouts.ValueColor;
+        int color1 = (userCustomMode != 0)?TimeoutsCustom[z].NameColor:Timeouts.NameColor;
+        int color2 = (userCustomMode != 0)?TimeoutsCustom[z].ValueColor:Timeouts.ValueColor;
 
         if(((skillname == "Gathering" && timeout <= TO_GATHERING_OK) ||
             (skillname == "Crafting"  && timeout <= TO_CRAFTING_OK)) &&
@@ -234,14 +371,27 @@ int screen_timeouts_draw(CritterCl& critter, uint skill, string& skillname, int 
             color2 = COLOR_CHANGE_ALPHA(Timeouts.ValueColor, Timeouts.Alpha);
         }
 
-        DrawText(skillname + ":", x, y, __ScreenWidth, 10, color1, Timeouts.Font, Timeouts.FontFlags);
-        x += Timeouts.SpacingX;
-        DrawText(text, x, y, __ScreenWidth, 10, color2, Timeouts.Font, Timeouts.FontFlags);
-
-        if(Timeouts.Direction == 0)
-            y += Timeouts.SpacingY;
+        if(userCustomMode == 1)
+        {
+            if(TimeoutsCustom[z].ShowLabel)
+            {
+                DrawText(skillname + ":", x, y, __ScreenWidth, 10, color1, TimeoutsCustom[z].Font, Timeouts.FontFlags);
+                x += TimeoutsCustom[z].SpacingX;
+            }
+            DrawText(text, x, y, __ScreenWidth, 10, color2, TimeoutsCustom[z].Font, Timeouts.FontFlags);        
+            y = yy;
+        }
         else
-            y -= Timeouts.SpacingY;
+        {
+            DrawText(skillname + ":", x, y, __ScreenWidth, 10, color1, Timeouts.Font, Timeouts.FontFlags);
+            x += Timeouts.SpacingX;
+            DrawText(text, x, y, __ScreenWidth, 10, color2, Timeouts.Font, Timeouts.FontFlags);
+
+            if(Timeouts.Direction == 0)
+                y += Timeouts.SpacingY;
+            else
+                y -= Timeouts.SpacingY;        
+        }
     }
     return(y);
 }
@@ -297,61 +447,85 @@ void TimeoutsDraw() // client_main@render_iface
                     }
                     MyTimeouts[c].tick = GetTick();
                 }
-                y = screen_timeouts_draw(critter, MyTimeouts[c].value, MyTimeouts[c].name, x, y, true);
+                y = screen_timeouts_draw(critter, MyTimeouts[c].value, MyTimeouts[c].name, x, y, true, 0, 0);
             }
         }
     }
     #endif     // CUSTOM_TIMEOUTS
 
-    for(uint z = (goUp ? 1 : 12); z != (goUp ? 13 : 0); (goUp ? z++ : z--))
+    for(uint z = (goUp ? 1 : 18); z != (goUp ? 19 : 0); (goUp ? z++ : z--))
     {
         if(z == 1 && critter.Timeout[TO_GATHERING] > 0)
         {
-            y = screen_timeouts_draw(critter, TO_GATHERING, "Gathering", x, y);
+            y = screen_timeouts_draw(critter, TO_GATHERING, "Gathering", x, y, z, TimeoutsCustom[z].CustomMode);
         }
         if(z == 2 && critter.Timeout[TO_REPLICATION] > 0)
         {
-            y = screen_timeouts_draw(critter, TO_REPLICATION, "Replication", x, y);
+            y = screen_timeouts_draw(critter, TO_REPLICATION, "Replication", x, y, z, TimeoutsCustom[z].CustomMode);
         }
         if(z == 3 && critter.Timeout[TO_BATTLE] > 0 && !IsTurnBased())
         {
-            y = screen_timeouts_draw(critter, TO_BATTLE, "Battle", x, y);
+            y = screen_timeouts_draw(critter, TO_BATTLE, "Battle", x, y, z, TimeoutsCustom[z].CustomMode);
         }
         if(z == 4 && critter.Timeout[TO_FIXBOY] > 0)
         {
-            y = screen_timeouts_draw(critter, TO_FIXBOY, "Crafting", x, y);
+            y = screen_timeouts_draw(critter, TO_FIXBOY, "Crafting", x, y, z, TimeoutsCustom[z].CustomMode);
         }
         if(z == 5 && critter.Timeout[TO_WEAKENED] > 0)
         {
-            y = screen_timeouts_draw(critter, TO_WEAKENED, "Weakened", x, y);
+            y = screen_timeouts_draw(critter, TO_WEAKENED, "Weakened", x, y, z, TimeoutsCustom[z].CustomMode);
         }
         if(z == 6 && critter.Timeout[TO_SK_STEAL] > 0)
         {
-            y = screen_timeouts_draw(critter, TO_SK_STEAL, "Steal", x, y);
+            y = screen_timeouts_draw(critter, TO_SK_STEAL, "Steal", x, y, z, TimeoutsCustom[z].CustomMode);
         }
         if(z == 7 && critter.Timeout[TO_SK_LOCKPICK] > 0)
         {
-            y = screen_timeouts_draw(critter, TO_SK_LOCKPICK, "Lockpick", x, y);
+            y = screen_timeouts_draw(critter, TO_SK_LOCKPICK, "Lockpick", x, y, z, TimeoutsCustom[z].CustomMode);
         }
         if(z == 8 && critter.Timeout[TO_SK_SCIENCE] > 0)
         {
-            y = screen_timeouts_draw(critter, TO_SK_SCIENCE, "Science", x, y);
+            y = screen_timeouts_draw(critter, TO_SK_SCIENCE, "Science", x, y, z, TimeoutsCustom[z].CustomMode);
         }
         if(z == 9 && critter.Timeout[TO_SK_REPAIR] > 0)
         {
-            y = screen_timeouts_draw(critter, TO_SK_REPAIR, "Repair", x, y);
+            y = screen_timeouts_draw(critter, TO_SK_REPAIR, "Repair", x, y, z, TimeoutsCustom[z].CustomMode);
         }
         if(z == 10 && critter.Timeout[TO_SK_DOCTOR] > 0)
         {
-            y = screen_timeouts_draw(critter, TO_SK_DOCTOR, "Doctor", x, y);
+            y = screen_timeouts_draw(critter, TO_SK_DOCTOR, "Doctor", x, y, z, TimeoutsCustom[z].CustomMode);
         }
         if(z == 11 && critter.Timeout[TO_SK_FIRST_AID] > 0)
         {
-            y = screen_timeouts_draw(critter, TO_SK_FIRST_AID, "First Aid", x, y);
+            y = screen_timeouts_draw(critter, TO_SK_FIRST_AID, "First Aid", x, y, z, TimeoutsCustom[z].CustomMode);
         }
-        if(z == 12 && critter.Timeout[TO_SLEEPY] > 0 && critter.Param[TO_SLEEPY_STOPPED] == -1)
+        if(z == 12   && critter.Timeout[TO_CIGARETTES] > 0)
         {
-            y = screen_timeouts_draw(critter, TO_SLEEPY, "Idling", x, y);
+            y = screen_timeouts_draw(critter, TO_CIGARETTES, "Cigarettes", x, y, z, TimeoutsCustom[z].CustomMode);
+        }
+        if(z == 13 && critter.Timeout[TO_NUKA_COLA] > 0)
+        {
+            y = screen_timeouts_draw(critter, TO_NUKA_COLA, "Nuka Cola", x, y, z, TimeoutsCustom[z].CustomMode);
+        }
+        if(z == 14 && critter.Timeout[TO_BEER] > 0)
+        {
+            y = screen_timeouts_draw(critter, TO_BEER, "Beer", x, y, z, TimeoutsCustom[z].CustomMode);
+        }
+        if(z == 15 && critter.Timeout[TO_MENTATS] > 0)
+        {
+            y = screen_timeouts_draw(critter, TO_MENTATS, "Mentats", x, y, z, TimeoutsCustom[z].CustomMode);
+        }
+        if(z == 16 && critter.Timeout[TO_BUFFOUT] > 0)
+        {
+            y = screen_timeouts_draw(critter, TO_BUFFOUT, "Buffout", x, y, z, TimeoutsCustom[z].CustomMode);
+        }
+        if(z == 17 && critter.Timeout[TO_PSYCHO] > 0)
+        {
+            y = screen_timeouts_draw(critter, TO_PSYCHO, "Psycho", x, y, z, TimeoutsCustom[z].CustomMode);
+        }
+        if(z == 18 && critter.Timeout[TO_JET] > 0)
+        {
+            y = screen_timeouts_draw(critter, TO_JET, "Jet", x, y, z, TimeoutsCustom[z].CustomMode);
         }
     }
 }
