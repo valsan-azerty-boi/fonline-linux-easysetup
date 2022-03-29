@@ -1,4 +1,4 @@
 #!/bin/sh
-cd /home/falloutserver/FOnlineReloaded2nd/Server
+cd /Server
 killall FOnlineServer.exe &
 killall Xvfb &

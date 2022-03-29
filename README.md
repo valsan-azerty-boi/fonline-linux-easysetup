@@ -1,4 +1,6 @@
-# This repo is for people who need to quickly launch a FOnline server on linux without recompiling all files manually
+# fonline-linux-easysetup
+
+## This repo is for people who need to quickly launch a FOnline server on linux without recompiling all files manually
 
 ### Requirements : 
 - Linux (Debian 9+, Ubuntu, etc)
@@ -12,6 +14,8 @@
 - /Server/config/GetAccess.cfg => set the admin password
 - /Server/FOnlineServer.cfg => set your sql user (don't forget to create the database)
 - /Server/FOnlineServer.cfg => you can set server port (default is 4040)
+- /Server/FOnlineServerStart.sh => modify path if needed
+- /Server/FOnlineServerStop.sh => modify path if needed
 - /Client/FOnline.cfg => set host adress and port
 
 ### Use :
